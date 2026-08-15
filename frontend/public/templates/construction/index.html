@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AURASTRUCT - Premium Architectural Design & General Construction. Interactively explore our 3D digital twin blueprints.">
+    <title>AURASTRUCT | Premium Architectural Design & General Construction</title>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Sticky Editorial Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-grid">
+                    <span></span><span></span>
+                    <span></span><span></span>
+                </div>
+                AURASTRUCT
+            </a>
+            
+            <!-- Desktop Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                
+                <!-- Services dropdown menu -->
+                <div class="nav-item-dropdown">
+                    <a href="#services" class="nav-link">Services <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-grid">
+                            <a href="#services" class="dropdown-item">
+                                <div class="dropdown-item-icon"><i class="fas fa-drafting-compass"></i></div>
+                                <div>
+                                    <div class="dropdown-item-title">Architectural Design</div>
+                                    <div class="dropdown-item-desc">3D digital twins, spatial programming & blueprint modeling.</div>
+                                </div>
+                            </a>
+                            <a href="#services" class="dropdown-item">
+                                <div class="dropdown-item-icon"><i class="fas fa-helmet-safety"></i></div>
+                                <div>
+                                    <div class="dropdown-item-title">General Construction</div>
+                                    <div class="dropdown-item-desc">Rigorous site management, concrete foundations & project safety.</div>
+                                </div>
+                            </a>
+                            <a href="#services" class="dropdown-item">
+                                <div class="dropdown-item-icon"><i class="fas fa-city"></i></div>
+                                <div>
+                                    <div class="dropdown-item-title">Civil Engineering</div>
+                                    <div class="dropdown-item-desc">Urban framework planning, steel erections & heavy infrastructure.</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#portfolio" class="nav-link">Projects</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#calculator" class="nav-link">Estimator</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="header-controls">
+                <a href="#calculator" class="btn-header">Request Quote</a>
+                <button class="hamburger" aria-label="Toggle Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <nav class="mobile-nav">
+        <a href="#home" class="mobile-link active">Home</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#process" class="mobile-link">Process</a>
+        <a href="#portfolio" class="mobile-link">Projects</a>
+        <a href="#reviews" class="mobile-link">Reviews</a>
+        <a href="#calculator" class="mobile-link">Estimator</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Cinematic Background Image with Pan Motion -->
+        <div class="hero-bg-container">
+            <div class="hero-bg-img"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="container hero-container">
+            <div class="hero-grid">
+                <!-- Info Column (Left) -->
+                <div class="hero-info">
+                    <div class="subtitle-badge scramble-text">DESIGN // ENGINEERING // OPERATIONS</div>
+                    <h1 class="hero-title">Shaping Tomorrow's Skylines</h1>
+                    <p class="hero-desc">
+                        AURASTRUCT is a premium architectural design and general construction firm. We build landmarks utilizing advanced digital twin drafting grids to coordinate precision structural models before breaking ground.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#calculator" class="btn btn-primary">Cost Estimator</a>
+                        <a href="#portfolio" class="btn btn-outline">Explore Projects</a>
+                    </div>
+                </div>
+
+                <!-- 3D Modeler Column (Right) -->
+                <div class="hero-modeler">
+                    <div class="blueprint-viewport">
+                        <div class="blueprint-header">
+                            <span class="viewport-title"><i class="fas fa-cube"></i> DIGITAL TWIN BLUEPRINT</span>
+                            <span class="viewport-status"><i class="fas fa-rotate"></i> DRAG TO SPIN</span>
+                        </div>
+                        
+                        <!-- 3D Canvas Layer -->
+                        <div class="canvas-wrapper" id="hudCanvasContainer">
+                            <canvas id="hudCanvas"></canvas>
+                        </div>
+
+                        <!-- Minimal Blueprint Controls -->
+                        <div class="blueprint-footer">
+                            <button class="blueprint-btn" id="btnRebuild" title="Rebuild Construction Assembly">
+                                <i class="fas fa-hammer"></i> Rebuild Mesh
+                            </button>
+                            <button class="blueprint-btn" id="btnExplode" title="Explode Floor Slabs Vertically">
+                                <i class="fas fa-network-wired"></i> Explode blueprints
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Ribbon -->
+    <div class="stats-ribbon">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-num scramble-text" data-target="320" data-suffix="+">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num scramble-text" data-target="15" data-suffix="+">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num scramble-text" data-target="99" data-suffix="%">0</div>
+                    <div class="stat-label">Safety Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num scramble-text" data-target="45" data-suffix="">0</div>
+                    <div class="stat-label">Active Sites</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="grid-2">
+                <!-- Image Viewer -->
+                <div class="about-img-frame">
+                    <img src="about_construction.jpg" alt="Active Skyscraper Construction Site" class="about-img">
+                    <div class="about-badge">
+                        <div>FRAMEWORK // SECURE</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">15+ Yrs Field Operations</div>
+                    </div>
+                </div>
+
+                <!-- Text Info -->
+                <div class="about-text-content">
+                    <span class="subtitle-badge">Our Legacy</span>
+                    <h2 class="section-title">Architecting Precision, Delivering Integrity</h2>
+                    <p class="section-desc">
+                        For over fifteen years, AURASTRUCT has delivered elite general contracting and custom structural engineering layouts. We bridge the gap between creative visual designs and rigorous on-site mechanics.
+                    </p>
+                    <p class="section-desc">
+                        Our engineering workflow leverages interactive digital models, allowing clients to examine spacing, structural grid alignments, and estimated cost indices dynamically before project deployment.
+                    </p>
+                    <div style="margin-top: 24px;">
+                        <a href="#contact" class="btn btn-outline">Meet Our Team</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <div style="text-align: center; max-width: 650px; margin: 0 auto 60px auto;">
+                <span class="subtitle-badge">Expertise</span>
+                <h2 class="section-title">Our Professional Capabilities</h2>
+                <p class="section-desc">
+                    We manage custom developments from blueprints to structural completions, maintaining professional standards of safety and aesthetic distinction.
+                </p>
+            </div>
+
+            <div class="grid-3">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-card-banner">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="Architects Reviewing Blueprints">
+                    </div>
+                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3 class="service-card-title">Architectural Design</h3>
+                    <p class="service-card-desc">
+                        Bespoke master planning, spatial modeling, and structural layouts tailored specifically to urban requirements and aesthetics.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-card-banner">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Construction Workers on Site">
+                    </div>
+                    <div class="service-icon"><i class="fas fa-helmet-safety"></i></div>
+                    <h3 class="service-card-title">General Construction</h3>
+                    <p class="service-card-desc">
+                        Rigorous safety coordination, foundation work, and quality steel erections overseen by certified project superintendents.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-card-banner">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="Civil Engineering Framework and Steel columns">
+                    </div>
+                    <div class="service-icon"><i class="fas fa-city"></i></div>
+                    <h3 class="service-card-title">Civil Engineering</h3>
+                    <p class="service-card-desc">
+                        Infrastructure master programming, heavy concrete casting, utility layout plans, and site preparation diagnostics.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section">
+        <div class="container">
+            <div style="text-align: center; max-width: 650px; margin: 0 auto 60px auto;">
+                <span class="subtitle-badge">Milestones</span>
+                <h2 class="section-title">Our Operational Roadmap</h2>
+                <p class="section-desc">
+                    We divide our construction workflow into simple transparent phases, ensuring schedule coordination and structural excellence.
+                </p>
+            </div>
+
+            <div class="process-accordion">
+                <!-- Step 1 -->
+                <div class="process-step active">
+                    <div class="process-header">
+                        <span class="process-num">01</span>
+                        <h3 class="process-title">Blueprint Conceptualization</h3>
+                        <i class="fas fa-plus process-icon-toggle"></i>
+                    </div>
+                    <div class="process-body">
+                        <p>
+                            We analyze coordinates and client objectives, translating sketches into solid 3D digital twins to analyze spacing and structural integrity.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step">
+                    <div class="process-header">
+                        <span class="process-num">02</span>
+                        <h3 class="process-title">Pre-Construction Estimating</h3>
+                        <i class="fas fa-plus process-icon-toggle"></i>
+                    </div>
+                    <div class="process-body">
+                        <p>
+                            We calculate pricing models against concrete, steel structure heights, and finishing qualities to align the project within budget coordinates.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step">
+                    <div class="process-header">
+                        <span class="process-num">03</span>
+                        <h3 class="process-title">Active Site Mobilization</h3>
+                        <i class="fas fa-plus process-icon-toggle"></i>
+                    </div>
+                    <div class="process-body">
+                        <p>
+                            We establish site perimeter safety, deliver heavy machinery and crane grids, cast foundations, and begin the assembly timeline.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step">
+                    <div class="process-header">
+                        <span class="process-num">04</span>
+                        <h3 class="process-title">Superstructure Assembly</h3>
+                        <i class="fas fa-plus process-icon-toggle"></i>
+                    </div>
+                    <div class="process-body">
+                        <p>
+                            Erection of steel frames, column pours, interior buildout configurations, facade glass glazing, and final certification inspections.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section bg-light">
+        <div class="container">
+            <div style="display: flex; flex-direction: column; align-items: space-between; gap: 20px; margin-bottom: 50px;">
+                <div>
+                    <span class="subtitle-badge">Gallery</span>
+                    <h2 class="section-title">Selected Developments</h2>
+                </div>
+                
+                <!-- Category Filter Tabs -->
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="residential">Residential</button>
+                    <button class="filter-btn" data-filter="commercial">Commercial</button>
+                    <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+                </div>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Item 1 -->
+                <div class="portfolio-item" data-category="commercial">
+                    <img src="project_residential.jpg" alt="Aura Skyscraper Complex">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Commercial Landmark</span>
+                        <h4 class="portfolio-title">AURA SKYSCRAPER COMPLEX</h4>
+                        <p class="portfolio-desc-mini" style="font-size: 0.75rem; color: rgba(255,255,255,0.85); margin-bottom: 12px; line-height: 1.4;">
+                            42-story office headquarters featuring high-contrast double-glazed curtain walls and structural steel core reinforcements.
+                        </p>
+                        <div class="portfolio-details" style="border-top: 1px dashed rgba(255,255,255,0.25); padding-top: 8px;">
+                            <span>Seattle, WA</span>
+                            <span>120K SQ FT</span>
+                            <span>Completed 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="portfolio-item" data-category="residential">
+                    <img src="about_construction.jpg" alt="Solara Residential Towers">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Luxury Residential</span>
+                        <h4 class="portfolio-title">SOLARA RESIDENTIAL TOWERS</h4>
+                        <p class="portfolio-desc-mini" style="font-size: 0.75rem; color: rgba(255,255,255,0.85); margin-bottom: 12px; line-height: 1.4;">
+                            Twin-tower residential development including deep foundation concrete casting and 28 floors of luxury post-tension slab apartments.
+                        </p>
+                        <div class="portfolio-details" style="border-top: 1px dashed rgba(255,255,255,0.25); padding-top: 8px;">
+                            <span>Miami, FL</span>
+                            <span>85K SQ FT</span>
+                            <span>Completed 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="portfolio-item" data-category="infrastructure">
+                    <img src="excavator.jpg" alt="Heavy Machinery Excavator Site Operations">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Heavy Infrastructure</span>
+                        <h4 class="portfolio-title">APEX METROPOLITAN BRIDGES</h4>
+                        <p class="portfolio-desc-mini" style="font-size: 0.75rem; color: rgba(255,255,255,0.85); margin-bottom: 12px; line-height: 1.4;">
+                            Excavation, grading, and structural truss reinforcements for heavy municipal transit spanning coordinate bridges.
+                        </p>
+                        <div class="portfolio-details" style="border-top: 1px dashed rgba(255,255,255,0.25); padding-top: 8px;">
+                            <span>Chicago, IL</span>
+                            <span>Civil Transit</span>
+                            <span>Completed 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section">
+        <div class="container">
+            <div style="text-align: center; max-width: 650px; margin: 0 auto 60px auto;">
+                <span class="subtitle-badge">Testimonials</span>
+                <h2 class="section-title">Client Coordinates & Reviews</h2>
+                <p class="section-desc">
+                    Here is feedback from development partners and architectural agencies regarding our digital blueprinting layouts and site execution.
+                </p>
+            </div>
+
+            <div class="grid-3">
+                <!-- Card 1 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "AURASTRUCT’s digital twin blueprint technology allowed us to review structural grid tolerances in 3D before committing concrete pours. Their general construction team delivered the Solara Towers on schedule with exemplary safety marks."
+                    </p>
+                    <div class="review-meta">
+                        <div class="review-author">Sarah Jenkins</div>
+                        <div class="review-role">Managing Director, Apex Urban Holdings</div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "The interactive cost estimator matched our final steel structure expenses with 98% accuracy. Their civil engineering framework was key in coordinating the Seattle skyscraper core logistics."
+                    </p>
+                    <div class="review-meta">
+                        <div class="review-author">Marcus Vance</div>
+                        <div class="review-role">VP of Operations, Solara Development Group</div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "We were looking for a construction partner that respected design precision. AURASTRUCT delivered exactly that. The finished column pours and facade glazing are pristine."
+                    </p>
+                    <div class="review-meta">
+                        <div class="review-author">Elena Rostova</div>
+                        <div class="review-role">Chief Architect, Rostova & Associates</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator & Contact Section -->
+    <section id="calculator" class="section">
+        <div class="container">
+            <div class="grid-2">
+                <!-- Cost Calculator -->
+                <div class="calc-card">
+                    <span class="subtitle-badge">Interactive Tool</span>
+                    <h3 class="section-title" style="font-size: 1.6rem; margin-bottom: 24px;">Project Cost Estimator</h3>
+                    
+                    <form id="quoteCalculator" class="calc-form">
+                        <!-- Area Slider -->
+                        <div class="calc-group">
+                            <label class="calc-label" for="calcArea">Estimated Total Area (sq ft)</label>
+                            <div class="slider-container">
+                                <input type="range" id="calcArea" name="calcArea" min="5000" max="100000" step="5000" value="25000">
+                                <div class="slider-readout"><span id="calcAreaVal">25,000</span> SQ FT</div>
+                            </div>
+                        </div>
+
+                        <!-- Project Type -->
+                        <div class="calc-group">
+                            <label class="calc-label" for="calcType">Project Typology</label>
+                            <select id="calcType" name="calcType" class="calc-select">
+                                <option value="residential">Residential Development</option>
+                                <option value="commercial">Commercial Tower</option>
+                                <option value="industrial">Heavy Infrastructure</option>
+                            </select>
+                        </div>
+
+                        <!-- Finish Class -->
+                        <div class="calc-group">
+                            <label class="calc-label">Architectural Finish Level</label>
+                            <div class="radio-grid">
+                                <label class="radio-btn">
+                                    <input type="radio" name="finish" value="standard" checked>
+                                    <span class="radio-label">Standard Grade</span>
+                                </label>
+                                <label class="radio-btn">
+                                    <input type="radio" name="finish" value="premium">
+                                    <span class="radio-label">Premium Glazing</span>
+                                </label>
+                                <label class="radio-btn">
+                                    <input type="radio" name="finish" value="luxury">
+                                    <span class="radio-label">Luxury Bespoke</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Estimate Readout Box -->
+                        <div class="calc-result-card">
+                            <span class="result-title">ESTIMATED BUDGET OUTLINE</span>
+                            <div class="calc-price" id="calcPriceResult">$0</div>
+                            <p style="font-size: 0.7rem; color: var(--text-muted); line-height: 1.3;">
+                                Estimates are generated based on average regional material indices, crane mobilization, and structural complexities.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Inquiry Form -->
+                <div class="contact-card" id="contact">
+                    <span class="subtitle-badge">Communication Protocol</span>
+                    <h3 class="section-title" style="font-size: 1.6rem; margin-bottom: 24px;">Submit Proposal Scope</h3>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <input type="text" id="contactName" class="form-input" placeholder=" " required>
+                                <label for="contactName" class="form-label">Full Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="contactEmail" class="form-input" placeholder=" " required>
+                                <label for="contactEmail" class="form-label">Email Address</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="contactCompany" class="form-input" placeholder=" ">
+                            <label for="contactCompany" class="form-label">Organization Name</label>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 20px;">
+                            <textarea id="contactMessage" class="form-textarea" placeholder=" " required></textarea>
+                            <label for="contactMessage" class="form-label">Project Scope Coordinates & Requirements...</label>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 24px;">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Transmit Inquiry Details</button>
+                        </div>
+
+                        <!-- Feedback Message -->
+                        <div class="form-feedback" id="formFeedback"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Info -->
+                <div class="footer-info">
+                    <a href="#" class="logo" style="margin-bottom: 16px;">AURASTRUCT</a>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+                        Premium architectural engineering and construction services. Crafting safe, stunning structures utilizing digital twin planning grids.
+                    </p>
+                </div>
+
+                <!-- Links 1 -->
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home" class="footer-link">Home Portal</a></li>
+                        <li><a href="#about" class="footer-link">Our Legacy</a></li>
+                        <li><a href="#services" class="footer-link">Capabilities</a></li>
+                        <li><a href="#portfolio" class="footer-link">Portfolio Showcase</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h4 class="footer-title">Telemetry Contacts</h4>
+                    <ul class="footer-links">
+                        <li><span class="footer-link-text"><i class="fas fa-envelope"></i> info@aurastruct.sys</span></li>
+                        <li><span class="footer-link-text"><i class="fas fa-phone"></i> +1 (800) 555-BLUE</span></li>
+                        <li><span class="footer-link-text"><i class="fas fa-map-marker-alt"></i> HQ: Seattle Coordinate Grid</span></li>
+                    </ul>
+                </div>
+
+                <!-- Copy -->
+                <div>
+                    <h4 class="footer-title">Security & Safety</h4>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5;">
+                        All developments comply with international zoning, crane operation perimeters, concrete curing thresholds, and OSHA standards.
+                    </p>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--border-light); padding-top: 24px; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+                &copy; 2026 AURASTRUCT Structural Operations. All architectural blueprints protected.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Logic Script -->
+    <script src="app.js"></script>
+</body>
+</html>

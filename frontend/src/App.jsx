@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard';
 import Builder from './pages/Builder';
 import Admin from './pages/Admin';
 import Auth from './pages/Auth';
+import HotelTemplate from './pages/HotelTemplate';
 
 function Header({ cartCount, user, onLogout }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -341,28 +342,53 @@ function Footer() {
   );
 }
 
+function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLogin, handleLogout }) {
+  const location = useLocation();
+  const isHotelTemplate = location.pathname === '/hotel-template';
+
+  // Hotel template renders full-screen with its own nav/footer
+  if (isHotelTemplate) {
+    return (
+      <Routes>
+        <Route path="/hotel-template" element={<HotelTemplate />} />
+      </Routes>
+    );
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <Header cartCount={cart.length} user={user} onLogout={handleLogout} />
+      
+      <main style={{ flex: 1, maxWidth: 1300, width: '100%', margin: '0 auto', padding: '0 20px' }}>
+        <Routes>
+          <Route path="/" element={<Home addToCart={addToCart} cart={cart} />} />
+          <Route path="/templates" element={<Templates />} />
+          <Route path="/templates/:slug" element={<TemplateDetails addToCart={addToCart} cart={cart} />} />
+          <Route path="/dashboard" element={<Dashboard user={user} cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} />} />
+          <Route path="/builder" element={<Builder user={user} />} />
+          <Route path="/admin" element={<Admin user={user} />} />
+          <Route path="/auth" element={<Auth onLogin={handleLogin} />} />
+        </Routes>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+}
+
 function MainApp() {
   const [user, setUser] = useState(api.getCurrentUser());
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    // Sync active session
     setUser(api.getCurrentUser());
-    
-    // Load local cart
     const savedCart = localStorage.getItem('ts_cart');
     if (savedCart) {
-      try {
-        setCart(JSON.parse(savedCart));
-      } catch (e) {
-        setCart([]);
-      }
+      try { setCart(JSON.parse(savedCart)); } catch (e) { setCart([]); }
     }
   }, []);
 
-  const handleLogin = (userInfo) => {
-    setUser(userInfo);
-  };
+  const handleLogin = (userInfo) => setUser(userInfo);
 
   const handleLogout = () => {
     api.logout().then(() => {
@@ -372,10 +398,7 @@ function MainApp() {
   };
 
   const addToCart = (template) => {
-    if (cart.find(item => item.id === template.id)) {
-      alert('Template is already in your cart!');
-      return;
-    }
+    if (cart.find(item => item.id === template.id)) { alert('Template is already in your cart!'); return; }
     const updatedCart = [...cart, template];
     setCart(updatedCart);
     localStorage.setItem('ts_cart', JSON.stringify(updatedCart));
@@ -394,23 +417,15 @@ function MainApp() {
 
   return (
     <Router>
-      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <Header cartCount={cart.length} user={user} onLogout={handleLogout} />
-        
-        <main style={{ flex: 1, maxWidth: 1300, width: '100%', margin: '0 auto', padding: '0 20px' }}>
-          <Routes>
-            <Route path="/" element={<Home addToCart={addToCart} cart={cart} />} />
-            <Route path="/templates" element={<Templates />} />
-            <Route path="/templates/:slug" element={<TemplateDetails addToCart={addToCart} cart={cart} />} />
-            <Route path="/dashboard" element={<Dashboard user={user} cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} />} />
-            <Route path="/builder" element={<Builder user={user} />} />
-            <Route path="/admin" element={<Admin user={user} />} />
-            <Route path="/auth" element={<Auth onLogin={handleLogin} />} />
-          </Routes>
-        </main>
-        
-        <Footer />
-      </div>
+      <AppRoutes
+        user={user}
+        cart={cart}
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
+        clearCart={clearCart}
+        handleLogin={handleLogin}
+        handleLogout={handleLogout}
+      />
     </Router>
   );
 }

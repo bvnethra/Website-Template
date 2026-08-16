@@ -93,6 +93,20 @@ function onLoadingComplete(resolve) {
   resolve();
 }
 
+// --- Scroll & Responsive Metrics State ---
+let trackTop = 0;
+let trackHeight = 0;
+let maxScroll = 0;
+
+function updateScrollMetrics() {
+  if (!heroTrack) return;
+  const rect = heroTrack.getBoundingClientRect();
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  trackTop = rect.top + scrollTop;
+  trackHeight = rect.height;
+  maxScroll = trackHeight - window.innerHeight;
+}
+
 // --- Responsive Canvas Resizing ---
 function resizeCanvas() {
   const dpr = window.devicePixelRatio || 1;
@@ -102,36 +116,30 @@ function resizeCanvas() {
 
 window.addEventListener('resize', () => {
   resizeCanvas();
+  updateScrollMetrics();
   const frameIndex = Math.round(currentProgress * (TOTAL_FRAMES - 1));
   renderFrame(frameIndex);
 });
 
-// Initialize canvas scale
+// Initialize canvas scale and metrics
 resizeCanvas();
+updateScrollMetrics();
 
-// --- Scroll Synchronization ---
+// --- Scroll Synchronization (Reflow-Free, Passive Listener) ---
 window.addEventListener('scroll', () => {
-  if (!heroTrack) return;
-  
-  const rect = heroTrack.getBoundingClientRect();
-  const trackHeight = rect.height;
-  const viewportHeight = window.innerHeight;
-  
-  const relativeScroll = -rect.top;
-  const maxScroll = trackHeight - viewportHeight;
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const relativeScroll = scrollTop - trackTop;
   
   if (maxScroll > 0) {
     targetProgress = Math.max(0, Math.min(1, relativeScroll / maxScroll));
   } else {
     targetProgress = 0;
   }
-  
-  if (indicatorFill) {
-    indicatorFill.style.width = `${targetProgress * 100}%`;
-  }
-});
+}, { passive: true });
 
 // --- Continuous Animation/Lerping Loop ---
+let lastRenderedProgress = -1;
+
 function animationLoop() {
   const progressDifference = targetProgress - currentProgress;
   
@@ -141,12 +149,18 @@ function animationLoop() {
     currentProgress = targetProgress;
   }
   
-  // Render current frame based on smoothed progress
-  const frameIndex = Math.round(currentProgress * (TOTAL_FRAMES - 1));
-  renderFrame(frameIndex);
-  
-  // Update foreground text slides opacity/translation based on smoothed progress
-  updateSlides(currentProgress);
+  // Only render and update if smoothed progress has changed significantly
+  if (Math.abs(currentProgress - lastRenderedProgress) > 0.0001) {
+    const frameIndex = Math.round(currentProgress * (TOTAL_FRAMES - 1));
+    renderFrame(frameIndex);
+    updateSlides(currentProgress);
+    
+    if (indicatorFill) {
+      indicatorFill.style.width = `${currentProgress * 100}%`;
+    }
+    
+    lastRenderedProgress = currentProgress;
+  }
   
   requestAnimationFrame(animationLoop);
 }
@@ -370,6 +384,7 @@ function updateSingleSlide(id, start, peakStart, peakEnd, end, progress) {
 
 // --- Initialize and Run ---
 preloadSequence().then(() => {
+  updateScrollMetrics();
   renderFrame(0);
   animationLoop();
 });

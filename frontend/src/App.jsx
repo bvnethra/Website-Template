@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard';
 import Builder from './pages/Builder';
 import Admin from './pages/Admin';
 import Auth from './pages/Auth';
+import PhotographyCatalog from './pages/PhotographyCatalog';
 
 function Header({ cartCount, user, onLogout }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -90,7 +91,7 @@ function Header({ cartCount, user, onLogout }) {
             </div>
             <div className="dropdown-column">
               <Link to="/templates?category=events" className="dropdown-link">› Events</Link>
-              <Link to="/templates?category=photography" className="dropdown-link">› Photography</Link>
+              <Link to="/templates/photography" className="dropdown-link">› Photography</Link>
               <Link to="/templates?category=construction" className="dropdown-link">› Construction</Link>
               <Link to="/templates?category=education" className="dropdown-link">› Education</Link>
               <Link to="/templates?category=restaurant" className="dropdown-link">› Restaurant</Link>
@@ -401,6 +402,7 @@ function MainApp() {
           <Routes>
             <Route path="/" element={<Home addToCart={addToCart} cart={cart} />} />
             <Route path="/templates" element={<Templates />} />
+            <Route path="/templates/photography" element={<PhotographyCatalog />} />
             <Route path="/templates/:slug" element={<TemplateDetails addToCart={addToCart} cart={cart} />} />
             <Route path="/dashboard" element={<Dashboard user={user} cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} />} />
             <Route path="/builder" element={<Builder user={user} />} />

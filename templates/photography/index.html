@@ -103,7 +103,93 @@
           <a href="./snapfolio-template/index.html" target="_blank" class="py-3 px-5 text-center bg-[#262626] hover:bg-[#333333] text-white rounded-xl font-medium border border-white/10 text-xs flex items-center justify-center gap-2 transition-colors">
             Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
           </a>
-          <button id="download-btn" onclick="downloadTemplate()" class="py-3 px-5 text-center bg-[#544ee8] hover:bg-[#433cc8] text-white rounded-xl font-medium shadow-md text-xs flex items-center justify-center gap-2 transition-colors">
+          <button id="download-snapfolio" onclick="downloadTemplate('snapfolio-template')" class="py-3 px-5 text-center bg-[#544ee8] hover:bg-[#433cc8] text-white rounded-xl font-medium shadow-md text-xs flex items-center justify-center gap-2 transition-colors">
+            Download <i class="fa-solid fa-download"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card: Photo Studio Editorial Showcase -->
+      <div class="bg-[#1e1e1e] border border-white/10 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-white/20 hover:shadow-2xl hover:shadow-indigo-500/5">
+        <div class="space-y-5">
+          <!-- Thumbnail cover wrapper with live demo hover preview link -->
+          <a href="./photo-template/index.html" target="_blank" class="block relative group overflow-hidden rounded-2xl bg-zinc-900 border border-white/5 aspect-[16/10]">
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Photo Studio Cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span class="px-5 py-2.5 rounded-xl bg-white text-zinc-955 text-xs font-bold shadow-lg flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                Live Preview <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </span>
+            </div>
+          </a>
+
+          <!-- Details -->
+          <div class="space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 rounded-full bg-[#2a2744] text-indigo-300 text-[10px] font-semibold uppercase tracking-wider">Editorial Layout</span>
+              <span class="px-2.5 py-1 rounded-full bg-[#2a2744] text-indigo-300 text-[10px] font-semibold uppercase tracking-wider">Canvas Animation</span>
+              <span class="px-2.5 py-1 rounded-full bg-[#2a2744] text-indigo-300 text-[10px] font-semibold uppercase tracking-wider">Minimalist</span>
+            </div>
+            
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-white hover:text-indigo-400 transition-colors">
+                <a href="./photo-template/index.html" target="_blank">Photo — Editorial Photography Studio</a>
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Triggers -->
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <a href="./photo-template/index.html" target="_blank" class="py-3 px-5 text-center bg-[#262626] hover:bg-[#333333] text-white rounded-xl font-medium border border-white/10 text-xs flex items-center justify-center gap-2 transition-colors">
+            Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </a>
+          <button id="download-photo" onclick="downloadTemplate('photo-template')" class="py-3 px-5 text-center bg-[#544ee8] hover:bg-[#433cc8] text-white rounded-xl font-medium shadow-md text-xs flex items-center justify-center gap-2 transition-colors">
+            Download <i class="fa-solid fa-download"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card: Wedding Editorial Showcase -->
+      <div class="bg-[#1e1e1e] border border-white/10 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-white/20 hover:shadow-2xl hover:shadow-indigo-500/5">
+        <div class="space-y-5">
+          <!-- Thumbnail cover wrapper with live demo hover preview link -->
+          <a href="./wedding-template/index.html" target="_blank" class="block relative group overflow-hidden rounded-2xl bg-zinc-900 border border-white/5 aspect-[16/10]">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Wedding Template Cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span class="px-5 py-2.5 rounded-xl bg-white text-zinc-955 text-xs font-bold shadow-lg flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                Live Preview <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </span>
+            </div>
+          </a>
+
+          <!-- Details -->
+          <div class="space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 rounded-full bg-[#2a2744] text-indigo-300 text-[10px] font-semibold uppercase tracking-wider">Minimalist Editorial</span>
+              <span class="px-2.5 py-1 rounded-full bg-[#2a2744] text-indigo-300 text-[10px] font-semibold uppercase tracking-wider">Split Layout</span>
+              <span class="px-2.5 py-1 rounded-full bg-[#2a2744] text-indigo-300 text-[10px] font-semibold uppercase tracking-wider">Accents</span>
+            </div>
+            
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-white hover:text-indigo-400 transition-colors">
+                <a href="./wedding-template/index.html" target="_blank">Lumière — High-End Wedding Photography</a>
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Triggers -->
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <a href="./wedding-template/index.html" target="_blank" class="py-3 px-5 text-center bg-[#262626] hover:bg-[#333333] text-white rounded-xl font-medium border border-white/10 text-xs flex items-center justify-center gap-2 transition-colors">
+            Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </a>
+          <button id="download-wedding" onclick="downloadSingleFile('wedding-template')" class="py-3 px-5 text-center bg-[#544ee8] hover:bg-[#433cc8] text-white rounded-xl font-medium shadow-md text-xs flex items-center justify-center gap-2 transition-colors">
             Download <i class="fa-solid fa-download"></i>
           </button>
         </div>
@@ -160,19 +246,18 @@
     }
 
     // Client-side ZIP Bundler and Downloader
-    async function downloadTemplate() {
+    async function downloadTemplate(slug) {
       const zip = new JSZip();
       
       const files = [
-        { name: 'index.html', url: './snapfolio-template/index.html' },
-        { name: 'style.css', url: './snapfolio-template/style.css' },
-        { name: 'script.js', url: './snapfolio-template/script.js' }
+        { name: 'index.html', url: `./${slug}/index.html` },
+        { name: 'style.css', url: `./${slug}/style.css` },
+        { name: 'script.js', url: `./${slug}/script.js` }
       ];
       
-      const btn = document.getElementById('download-btn');
+      const btn = document.getElementById(slug === 'snapfolio-template' ? 'download-snapfolio' : 'download-photo');
       const originalText = btn.innerHTML;
       
-      // Enter Loading State
       btn.disabled = true;
       btn.innerHTML = `<i class="fa-solid fa-circle-notch animate-spin"></i> Zipping...`;
       
@@ -184,13 +269,31 @@
           zip.file(file.name, text);
         }
         
-        // Generate Zip Blob
+        // Fetch and add frames sequence binary files for the photo-template
+        if (slug === 'photo-template') {
+          const framesFolder = zip.folder('frames');
+          for (let i = 0; i < 100; i++) {
+            const paddedIndex = String(i).padStart(6, '0');
+            const frameName = `frame_${paddedIndex}.jpg`;
+            const frameUrl = `./${slug}/frames/${frameName}`;
+            
+            try {
+              const response = await fetch(frameUrl);
+              if (response.ok) {
+                const arrayBuffer = await response.arrayBuffer();
+                framesFolder.file(frameName, arrayBuffer);
+              }
+            } catch (e) {
+              console.warn(`Frame ${frameName} fetch skipped:`, e);
+            }
+          }
+        }
+        
         const blob = await zip.generateAsync({ type: 'blob' });
         
-        // Trigger client-side save
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
-        link.download = 'snapfolio-template.zip';
+        link.download = `${slug}.zip`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -200,7 +303,36 @@
         console.error('Error preparing zip package:', error);
         showToast('Failed to bundle template files.', true);
       } finally {
-        // Exit Loading State
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    }
+
+    async function downloadSingleFile(slug) {
+      const btn = document.getElementById('download-wedding');
+      const originalText = btn.innerHTML;
+      
+      btn.disabled = true;
+      btn.innerHTML = `<i class="fa-solid fa-circle-notch animate-spin"></i> Downloading...`;
+      
+      try {
+        const response = await fetch(`./${slug}/index.html`);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const text = await response.text();
+        
+        const blob = new Blob([text], { type: 'text/html' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'index.html';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        showToast('Template HTML downloaded successfully!');
+      } catch (error) {
+        console.error('Error downloading template:', error);
+        showToast('Failed to download template file.', true);
+      } finally {
         btn.disabled = false;
         btn.innerHTML = originalText;
       }

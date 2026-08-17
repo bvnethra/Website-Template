@@ -97,6 +97,20 @@ const MOCK_TEMPLATES = [
     description: 'A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0'
+  },
+  {
+    id: 3,
+    name: 'Lumière — High-End Wedding & Event Photography',
+    slug: 'wedding-template',
+    previewImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 8, name: 'Photography', slug: 'photography' },
+    pagesCount: 1,
+    downloadsCount: 1200,
+    description: 'A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.',
+    bootstrapVersion: 'HTML5 / Tailwind CSS',
+    version: '1.0'
   }
 ];
 

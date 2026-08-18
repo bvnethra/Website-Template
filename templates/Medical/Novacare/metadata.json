@@ -1,0 +1,6 @@
+{
+  "name": "NovaCare",
+  "description": "Smart Digital Healthcare Platform for specialist discovery, appointment booking, and emergency care services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

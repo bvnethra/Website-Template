@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import java.util.*;
 
 @RestController
@@ -32,6 +34,14 @@ public class DatabaseSeederController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @EventListener(ApplicationReadyEvent.class)
+    public void autoSeedOnStartup() {
+        if (categoryRepository.count() == 0 || templateRepository.count() == 0) {
+            System.out.println(">>> [AUTO-SEED] Seeding initial categories and templates into database...");
+            seedDatabase();
+        }
+    }
 
     @PostMapping
     @GetMapping
@@ -103,8 +113,70 @@ public class DatabaseSeederController {
             logs.put("category_" + data[1], "Created");
         }
 
-        logs.put("templates", "No templates seeded. System is clean and ready for user creation.");
-        logs.put("status", "Database Seeding Completed Successfully! All mock templates removed.");
+        // 4. Seed Qure Nexa template under Medical category
+        Category medicalCategory = categoryRepository.findBySlug("medical").orElse(null);
+        if (medicalCategory != null) {
+            Template qureNexa = new Template();
+            qureNexa.setName("Qure Nexa — Advanced Medical & Healthcare Platform");
+            qureNexa.setSlug("qure-nexa");
+            qureNexa.setDescription("A modern healthcare and hospital management platform featuring multi-role portals for Patients, Doctors, and Admins, doctor directory, intelligent slot booking, and clinical workflows.");
+            qureNexa.setCategory(medicalCategory);
+            qureNexa.setPrice(0.0);
+            qureNexa.setTemplateType("FREE");
+            qureNexa.setBootstrapVersion("React 19 / Tailwind CSS / Vite");
+            qureNexa.setDemoUrl("/templates/medical/qure-nexa/index.html");
+            qureNexa.setDownloadFile("qure-nexa-medical.zip");
+            qureNexa.setPreviewImage("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80");
+            qureNexa.setVersion("1.0");
+            qureNexa.setStatus("PUBLISHED");
+            qureNexa.setPagesCount(12);
+            qureNexa.setDownloadsCount(12400);
+            qureNexa.setTags(List.of("medical", "healthcare", "hospital", "doctor", "patient-portal", "clinic"));
+            templateRepository.save(qureNexa);
+            logs.put("qureNexaTemplate", "Seeded Qure Nexa under Medical category");
+        }
+
+        // 5. Seed Photography templates
+        Category photoCategory = categoryRepository.findBySlug("photography").orElse(null);
+        if (photoCategory != null) {
+            Template snapfolio = new Template();
+            snapfolio.setName("SnapFolio — Dark Minimalist Portfolio");
+            snapfolio.setSlug("snapfolio-template");
+            snapfolio.setDescription("A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.");
+            snapfolio.setCategory(photoCategory);
+            snapfolio.setPrice(0.0);
+            snapfolio.setTemplateType("FREE");
+            snapfolio.setBootstrapVersion("HTML5 / Tailwind CSS");
+            snapfolio.setDemoUrl("/templates/photography/snapfolio-template/index.html");
+            snapfolio.setDownloadFile("snapfolio-template.zip");
+            snapfolio.setPreviewImage("https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80");
+            snapfolio.setVersion("1.0");
+            snapfolio.setStatus("PUBLISHED");
+            snapfolio.setPagesCount(1);
+            snapfolio.setDownloadsCount(15000);
+            snapfolio.setTags(List.of("photography", "portfolio", "dark-mode"));
+            templateRepository.save(snapfolio);
+
+            Template photoStudio = new Template();
+            photoStudio.setName("Photo — Editorial Photography Studio");
+            photoStudio.setSlug("photo-template");
+            photoStudio.setDescription("A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.");
+            photoStudio.setCategory(photoCategory);
+            photoStudio.setPrice(0.0);
+            photoStudio.setTemplateType("FREE");
+            photoStudio.setBootstrapVersion("HTML5 / Vanilla CSS");
+            photoStudio.setDemoUrl("/templates/photography/photo-template/index.html");
+            photoStudio.setDownloadFile("photo-template.zip");
+            photoStudio.setPreviewImage("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80");
+            photoStudio.setVersion("1.0");
+            photoStudio.setStatus("PUBLISHED");
+            photoStudio.setPagesCount(1);
+            photoStudio.setDownloadsCount(8400);
+            photoStudio.setTags(List.of("photography", "editorial", "studio"));
+            templateRepository.save(photoStudio);
+        }
+
+        logs.put("status", "Database Seeding Completed Successfully! Qure Nexa Medical template & Photography templates seeded.");
         return ResponseEntity.ok(logs);
     }
 }

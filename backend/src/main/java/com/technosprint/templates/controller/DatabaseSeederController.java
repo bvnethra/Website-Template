@@ -97,14 +97,59 @@ public class DatabaseSeederController {
                 {"portfolio", "portfolio", "Personal resumes, developer bios, and work showcases."}
         };
 
+        Map<String, Category> catMap = new HashMap<>();
         for (String[] data : categoryData) {
             Category cat = new Category(data[0], data[1], data[2], "ACTIVE");
             categoryRepository.save(cat);
+            catMap.put(data[1], cat);
             logs.put("category_" + data[1], "Created");
         }
 
-        logs.put("templates", "No templates seeded. System is clean and ready for user creation.");
-        logs.put("status", "Database Seeding Completed Successfully! All mock templates removed.");
+        // Seed photography templates
+        Category photography = catMap.get("photography");
+        if (photography != null) {
+            // SnapFolio template
+            Template snapfolio = new Template();
+            snapfolio.setName("SnapFolio — Dark Minimalist Portfolio");
+            snapfolio.setSlug("snapfolio-template");
+            snapfolio.setDescription("A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.");
+            snapfolio.setCategory(photography);
+            snapfolio.setPrice(0.0);
+            snapfolio.setTemplateType("FREE");
+            snapfolio.setBootstrapVersion("Bootstrap 5.3");
+            snapfolio.setDemoUrl("/templates/photography/snapfolio-template/index.html");
+            snapfolio.setDownloadFile("snapfolio-template.zip");
+            snapfolio.setPreviewImage("https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80");
+            snapfolio.setVersion("1.0.0");
+            snapfolio.setStatus("PUBLISHED");
+            snapfolio.setPagesCount(1);
+            snapfolio.setDownloadsCount(12450);
+            snapfolio.setTags(new ArrayList<>(Arrays.asList("Dark Theme", "Masonry Gallery", "Lightbox Modal")));
+            templateRepository.save(snapfolio);
+            logs.put("template_snapfolio", "Created");
+
+            // Photo template
+            Template photo = new Template();
+            photo.setName("Photo — Editorial Photography Studio");
+            photo.setSlug("photo-template");
+            photo.setDescription("A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.");
+            photo.setCategory(photography);
+            photo.setPrice(0.0);
+            photo.setTemplateType("FREE");
+            photo.setBootstrapVersion("Bootstrap 5.3");
+            photo.setDemoUrl("/templates/photography/photo-template/index.html");
+            photo.setDownloadFile("photo-template.zip");
+            photo.setPreviewImage("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80");
+            photo.setVersion("1.0.0");
+            photo.setStatus("PUBLISHED");
+            photo.setPagesCount(1);
+            photo.setDownloadsCount(15200);
+            photo.setTags(new ArrayList<>(Arrays.asList("Editorial Layout", "Scroll Pinned Canvas", "Golden Hour Theme")));
+            templateRepository.save(photo);
+            logs.put("template_photo", "Created");
+        }
+
+        logs.put("status", "Database Seeding Completed Successfully! Photo & SnapFolio templates seeded.");
         return ResponseEntity.ok(logs);
     }
 }

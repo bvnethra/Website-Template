@@ -99,13 +99,10 @@
         </div>
 
         <!-- Action Triggers -->
-        <div class="mt-6 grid grid-cols-2 gap-4">
-          <a href="./snapfolio-template/index.html" target="_blank" class="py-3 px-5 text-center bg-[#262626] hover:bg-[#333333] text-white rounded-xl font-medium border border-white/10 text-xs flex items-center justify-center gap-2 transition-colors">
+        <div class="mt-6">
+          <a href="./snapfolio-template/index.html" target="_blank" class="w-full py-3 px-5 text-center bg-[#544ee8] hover:bg-[#433cc8] text-white rounded-xl font-semibold shadow-md text-xs flex items-center justify-center gap-2 transition-colors">
             Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
           </a>
-          <button id="download-btn" onclick="downloadTemplate()" class="py-3 px-5 text-center bg-[#544ee8] hover:bg-[#433cc8] text-white rounded-xl font-medium shadow-md text-xs flex items-center justify-center gap-2 transition-colors">
-            Download <i class="fa-solid fa-download"></i>
-          </button>
         </div>
       </div>
 
@@ -132,9 +129,6 @@
     <div class="text-sm font-semibold text-zinc-100 flex-1 pr-2" id="toast-message">Action processed!</div>
   </div>
 
-  <!-- JSZip Library CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-  
   <script>
     // Toast Helper
     const toast = document.getElementById('toast');
@@ -157,53 +151,6 @@
       setTimeout(() => {
         toast.classList.remove('show');
       }, 4000);
-    }
-
-    // Client-side ZIP Bundler and Downloader
-    async function downloadTemplate() {
-      const zip = new JSZip();
-      
-      const files = [
-        { name: 'index.html', url: './snapfolio-template/index.html' },
-        { name: 'style.css', url: './snapfolio-template/style.css' },
-        { name: 'script.js', url: './snapfolio-template/script.js' }
-      ];
-      
-      const btn = document.getElementById('download-btn');
-      const originalText = btn.innerHTML;
-      
-      // Enter Loading State
-      btn.disabled = true;
-      btn.innerHTML = `<i class="fa-solid fa-circle-notch animate-spin"></i> Zipping...`;
-      
-      try {
-        for (const file of files) {
-          const response = await fetch(file.url);
-          if (!response.ok) throw new Error(`HTTP error! status: ${response.status} when fetching ${file.name}`);
-          const text = await response.text();
-          zip.file(file.name, text);
-        }
-        
-        // Generate Zip Blob
-        const blob = await zip.generateAsync({ type: 'blob' });
-        
-        // Trigger client-side save
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'snapfolio-template.zip';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        showToast('Template zip downloaded successfully!');
-      } catch (error) {
-        console.error('Error preparing zip package:', error);
-        showToast('Failed to bundle template files.', true);
-      } finally {
-        // Exit Loading State
-        btn.disabled = false;
-        btn.innerHTML = originalText;
-      }
     }
   </script>
 </body>

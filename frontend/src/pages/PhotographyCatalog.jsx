@@ -258,9 +258,6 @@ export default function PhotographyCatalog() {
 
             {/* Action Buttons */}
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '12px',
               margin: '24px 0 0 0'
             }}>
               <a 
@@ -273,51 +270,22 @@ export default function PhotographyCatalog() {
                   justifyContent: 'center',
                   gap: '6px',
                   padding: '12px 16px',
-                  backgroundColor: '#262626',
-                  color: 'white',
-                  borderRadius: '12px',
-                  fontWeight: '600',
-                  fontSize: '0.8rem',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  cursor: 'pointer',
-                  transition: 'background-color 0.2s',
-                  textDecoration: 'none'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#333333'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#262626'}
-              >
-                Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
-              </a>
-              
-              <button 
-                onClick={() => handleDownload(tpl.slug, tpl.name)}
-                disabled={!!downloadingSlug}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '6px',
-                  padding: '12px 16px',
                   backgroundColor: '#544ee8',
                   color: 'white',
                   borderRadius: '12px',
                   fontWeight: '600',
-                  fontSize: '0.8rem',
+                  fontSize: '0.85rem',
                   border: 'none',
                   boxShadow: '0 4px 12px rgba(84, 78, 232, 0.2)',
                   cursor: 'pointer',
                   transition: 'background-color 0.2s',
-                  opacity: downloadingSlug ? 0.6 : 1
+                  textDecoration: 'none'
                 }}
-                onMouseEnter={(e) => { if(!downloadingSlug) e.currentTarget.style.backgroundColor = '#433cc8'; }}
-                onMouseLeave={(e) => { if(!downloadingSlug) e.currentTarget.style.backgroundColor = '#544ee8'; }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#433cc8'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#544ee8'}
               >
-                {downloadingSlug === tpl.slug ? (
-                  <>Zipping <i className="fa-solid fa-circle-notch animate-spin"></i></>
-                ) : (
-                  <>Download <i className="fa-solid fa-download"></i></>
-                )}
-              </button>
+                Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
+              </a>
             </div>
 
           </div>

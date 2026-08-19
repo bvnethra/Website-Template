@@ -323,29 +323,11 @@ export default function Home({ addToCart, cart }) {
                 <div style={{ display: 'flex', gap: 10 }}>
                   <Link
                     to={`/templates/${template.slug}`}
-                    className="btn btn-secondary"
-                    style={{ flex: 1, padding: '8px 12px', fontSize: '0.8rem' }}
+                    className="btn btn-primary"
+                    style={{ flex: 1, padding: '8px 12px', fontSize: '0.8rem', textAlign: 'center', justifyContent: 'center' }}
                   >
-                    Details
+                    View Details
                   </Link>
-                  {template.templateType === 'FREE' ? (
-                    <Link
-                      to={`/templates/${template.slug}?action=download`}
-                      className="btn btn-primary"
-                      style={{ flex: 1, padding: '8px 12px', fontSize: '0.8rem' }}
-                    >
-                      Free Download
-                    </Link>
-                  ) : (
-                    <button
-                      onClick={() => addToCart(template)}
-                      disabled={isAdded}
-                      className="btn btn-primary"
-                      style={{ flex: 1, padding: '8px 12px', fontSize: '0.8rem' }}
-                    >
-                      {isAdded ? 'Added' : `Buy ($${template.price})`}
-                    </button>
-                  )}
                 </div>
               </div>
             </div>
@@ -380,8 +362,8 @@ export default function Home({ addToCart, cart }) {
             }}>
               <Sparkles size={22} style={{ margin: 'auto' }} />
             </div>
-            <h4 style={{ marginBottom: 10 }}>PHP Forms Included</h4>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Downloadable templates contain pre-integrated PHP contact forms featuring validation and secure mail scripts.</p>
+            <h4 style={{ marginBottom: 10 }}>Visual Customizer</h4>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Use our interactive online template builder to customize elements and layouts in real-time.</p>
           </div>
           <div style={{ textAlign: 'center' }}>
             <div style={{
@@ -391,8 +373,8 @@ export default function Home({ addToCart, cart }) {
             }}>
               <Shield size={22} style={{ margin: 'auto' }} />
             </div>
-            <h4 style={{ marginBottom: 10 }}>Secure Download link</h4>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Secure checkout and download authorization. Your premium licenses are tracked in your dashboard account.</p>
+            <h4 style={{ marginBottom: 10 }}>Instant Live Demos</h4>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Experience templates interactively directly inside your browser. No setups required to preview our designs.</p>
           </div>
         </div>
       </section>

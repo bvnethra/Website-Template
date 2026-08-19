@@ -349,8 +349,6 @@ export default function PhotographyCatalog() {
 
               {/* Action Buttons */}
               <div style={{
-                display: 'flex',
-                gap: '12px',
                 marginTop: '10px'
               }}>
                 <a 
@@ -358,62 +356,31 @@ export default function PhotographyCatalog() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   style={{
-                    display: 'inline-flex',
+                    display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: '6px',
-                    padding: '10px 24px',
-                    backgroundColor: 'white',
-                    color: '#1e40af',
+                    padding: '12px 24px',
+                    backgroundColor: '#1e40af',
+                    color: 'white',
                     borderRadius: '99px',
-                    border: '1px solid rgba(30, 64, 175, 0.2)',
+                    border: 'none',
                     fontWeight: '600',
-                    fontSize: '0.82rem',
+                    fontSize: '0.85rem',
                     cursor: 'pointer',
                     transition: 'all 0.2s',
                     textDecoration: 'none',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.02)'
+                    boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#eff6ff';
-                    e.currentTarget.style.borderColor = '#1e40af';
+                    e.currentTarget.style.backgroundColor = '#1d4ed8';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'white';
-                    e.currentTarget.style.borderColor = 'rgba(30, 64, 175, 0.2)';
+                    e.currentTarget.style.backgroundColor = '#1e40af';
                   }}
                 >
                   Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
                 </a>
-                
-                <button 
-                  onClick={() => handleDownload(tpl.slug, tpl.name)}
-                  disabled={!!downloadingSlug}
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '6px',
-                    padding: '10px 24px',
-                    backgroundColor: 'white',
-                    color: '#1e40af',
-                    borderRadius: '99px',
-                    border: '1px solid #1e40af',
-                    fontWeight: '700',
-                    fontSize: '0.82rem',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                    opacity: downloadingSlug ? 0.6 : 1
-                  }}
-                  onMouseEnter={(e) => { if(!downloadingSlug) e.currentTarget.style.backgroundColor = '#eff6ff'; }}
-                  onMouseLeave={(e) => { if(!downloadingSlug) e.currentTarget.style.backgroundColor = 'white'; }}
-                >
-                  {downloadingSlug === tpl.slug ? (
-                    <>Zipping <i className="fa-solid fa-circle-notch animate-spin"></i></>
-                  ) : (
-                    <>Download <i className="fa-solid fa-download"></i></>
-                  )}
-                </button>
               </div>
 
             </div>

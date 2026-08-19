@@ -97,7 +97,8 @@ const MOCK_TEMPLATES = [
     downloadsCount: 8400,
     description: 'A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
-    version: '1.0'
+    version: '1.0',
+    demoUrl: '/templates/photography/photo-template/index.html'
   },
   {
     id: 3,
@@ -111,7 +112,8 @@ const MOCK_TEMPLATES = [
     downloadsCount: 1200,
     description: 'A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.',
     bootstrapVersion: 'HTML5 / Tailwind CSS',
-    version: '1.0'
+    version: '1.0',
+    demoUrl: '/templates/photography/wedding-template/index.html'
   }
 ];
 

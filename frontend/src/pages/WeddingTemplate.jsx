@@ -11,26 +11,6 @@ export default function WeddingTemplate() {
     details: ''
   });
 
-  // Inject Tailwind CSS CDN dynamically for this template only
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.tailwindcss.com';
-    script.id = 'tailwind-cdn-script';
-    document.head.appendChild(script);
-
-    return () => {
-      const scriptEl = document.getElementById('tailwind-cdn-script');
-      if (scriptEl) scriptEl.remove();
-      
-      // Clean up Tailwind style blocks to prevent leaks to main marketplace pages
-      const styles = document.querySelectorAll('style');
-      styles.forEach(style => {
-        if (style.textContent.includes('tailwindcss') || style.textContent.includes('--tw-') || style.id?.includes('tailwind')) {
-          style.remove();
-        }
-      });
-    };
-  }, []);
 
   // Filter functionality
   const handleFilterClick = (filter) => {

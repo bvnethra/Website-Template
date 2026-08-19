@@ -10,9 +10,9 @@ export default function AboutSection() {
 
   return (
     <section id="about" style={{
-      backgroundColor: '#0a0a0c', // Dark backdrop
+      backgroundColor: '#faf9f6', // Light backdrop
       padding: '140px 40px',
-      color: '#ffffff',
+      color: '#111827',
       fontFamily: "'Poppins', sans-serif"
     }}>
       <div style={{
@@ -34,8 +34,8 @@ export default function AboutSection() {
             borderRadius: '20px',
             overflow: 'hidden',
             aspectRatio: '3/4',
-            background: '#121316',
-            border: '1px solid rgba(255,255,255,0.03)'
+            background: '#f3f4f6',
+            border: '1px solid rgba(0,0,0,0.03)'
           }}
         >
           <img 
@@ -80,9 +80,9 @@ export default function AboutSection() {
           <p style={{
             fontSize: '0.98rem',
             lineHeight: '1.8',
-            color: '#a1a5b0',
+            color: '#374151',
             marginBottom: '40px',
-            fontWeight: '300'
+            fontWeight: '350'
           }}>
             My work explores the intersections of light, raw human emotion, and editorial composition. Rooted in cinematic storytelling, I help individuals, agencies, and international brands capture their vision with custom, bespoke visuals.
           </p>
@@ -91,7 +91,7 @@ export default function AboutSection() {
           <div style={{
             display: 'flex',
             gap: '40px',
-            borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+            borderTop: '1px solid rgba(0, 0, 0, 0.08)',
             paddingTop: '40px'
           }}>
             {stats.map((stat, idx) => (
@@ -108,7 +108,7 @@ export default function AboutSection() {
                 </span>
                 <span style={{
                   fontSize: '0.72rem',
-                  color: '#a1a5b0',
+                  color: '#4b5563',
                   fontWeight: '600',
                   textTransform: 'uppercase',
                   letterSpacing: '1px'

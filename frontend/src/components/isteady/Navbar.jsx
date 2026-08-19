@@ -37,15 +37,15 @@ export default function Navbar() {
       padding: '0 40px',
       zIndex: 1000,
       transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-      backgroundColor: isScrolled || menuOpen ? 'rgba(0, 0, 0, 0.98)' : 'transparent',
-      borderBottom: isScrolled || menuOpen ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid transparent',
+      backgroundColor: isScrolled || menuOpen ? 'rgba(255, 255, 255, 0.98)' : 'transparent',
+      borderBottom: isScrolled || menuOpen ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid transparent',
       backdropFilter: isScrolled || menuOpen ? 'blur(16px)' : 'none',
       boxSizing: 'border-box'
     }}>
       {/* Brand logo */}
       <a href="#home" style={{
         textDecoration: 'none',
-        color: '#ffffff',
+        color: '#111827',
         fontFamily: "'Poppins', sans-serif",
         fontWeight: '800',
         fontSize: '1.4rem',
@@ -61,7 +61,7 @@ export default function Navbar() {
           display: 'none',
           background: 'none',
           border: 'none',
-          color: '#ffffff',
+          color: '#111827',
           fontSize: '1.5rem',
           cursor: 'pointer',
           outline: 'none'
@@ -72,7 +72,7 @@ export default function Navbar() {
           display: 'block',
           width: '24px',
           height: '2px',
-          backgroundColor: '#ffffff',
+          backgroundColor: '#111827',
           marginBottom: '5px',
           transition: '0.3s',
           transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none'
@@ -81,7 +81,7 @@ export default function Navbar() {
           display: 'block',
           width: '24px',
           height: '2px',
-          backgroundColor: '#ffffff',
+          backgroundColor: '#111827',
           marginBottom: '5px',
           opacity: menuOpen ? 0 : 1,
           transition: '0.3s'
@@ -90,7 +90,7 @@ export default function Navbar() {
           display: 'block',
           width: '24px',
           height: '2px',
-          backgroundColor: '#ffffff',
+          backgroundColor: '#111827',
           transition: '0.3s',
           transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none'
         }} />
@@ -116,7 +116,7 @@ export default function Navbar() {
               left: 0;
               right: 0;
               bottom: 0;
-              background-color: #000000;
+              background-color: #ffffff;
               flex-direction: column;
               justify-content: center;
               gap: 40px !important;
@@ -153,14 +153,14 @@ export default function Navbar() {
                 href={link.href} 
                 onClick={() => setMenuOpen(false)}
                 style={{
-                  color: '#ffffff',
+                  color: '#111827',
                   textDecoration: 'none',
                   fontSize: '0.78rem',
                   fontWeight: '600',
                   letterSpacing: '2px',
                   textTransform: 'uppercase',
                   fontFamily: "'Poppins', sans-serif",
-                  opacity: 0.65,
+                  opacity: 0.8,
                   transition: 'all 0.2s'
                 }}
                 onMouseEnter={(e) => {
@@ -168,8 +168,8 @@ export default function Navbar() {
                   e.currentTarget.style.color = '#ff7a52'; // Coral accent
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.opacity = 0.65;
-                  e.currentTarget.style.color = '#ffffff';
+                  e.currentTarget.style.opacity = 0.8;
+                  e.currentTarget.style.color = '#111827';
                 }}
               >
                 {link.label}

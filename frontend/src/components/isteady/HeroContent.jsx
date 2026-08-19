@@ -62,7 +62,7 @@ export default function HeroContent() {
           line-height: 1.15;
           letter-spacing: -0.5px;
           margin: 0 0 24px 0;
-          background: linear-gradient(180deg, #ffffff 40%, #d1d5db 100%);
+          background: linear-gradient(180deg, #111827 30%, #4b5563 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -97,12 +97,12 @@ export default function HeroContent() {
           variants={itemVariants}
           style={{
             fontSize: 'calc(0.9rem + 0.15vw)',
-            color: '#d1d5db',
+            color: '#374151',
             maxWidth: '560px',
             margin: '0 auto',
             lineHeight: '1.75',
             letterSpacing: '0.4px',
-            fontWeight: '300'
+            fontWeight: '400'
           }}
         >
           Editorial and lifestyle photography rooted in natural light and honest emotion. Available for custom assignments worldwide.
@@ -112,7 +112,7 @@ export default function HeroContent() {
       {/* Scroll indicator down */}
       <motion.div 
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.6 }}
+        animate={{ opacity: 0.8 }}
         transition={{ delay: 1.6, duration: 1.0 }}
         style={{
           position: 'absolute',
@@ -130,7 +130,7 @@ export default function HeroContent() {
           fontWeight: '700',
           letterSpacing: '3px',
           textTransform: 'uppercase',
-          color: '#ffffff',
+          color: '#111827',
           fontFamily: "'Poppins', sans-serif"
         }}>
           Scroll
@@ -142,7 +142,7 @@ export default function HeroContent() {
           height: '42px',
           position: 'relative',
           overflow: 'hidden',
-          backgroundColor: 'rgba(255, 255, 255, 0.15)'
+          backgroundColor: 'rgba(0, 0, 0, 0.15)'
         }}>
           <motion.div 
             animate={{

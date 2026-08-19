@@ -11,10 +11,10 @@ export default function Footer() {
 
   return (
     <footer style={{
-      backgroundColor: '#000000',
-      borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+      backgroundColor: '#ffffff',
+      borderTop: '1px solid rgba(0, 0, 0, 0.06)',
       padding: '80px 40px 60px 40px',
-      color: '#ffffff',
+      color: '#111827',
       fontFamily: "'Poppins', sans-serif"
     }}>
       <div style={{
@@ -28,7 +28,7 @@ export default function Footer() {
         {/* Logo */}
         <a href="#home" style={{
           textDecoration: 'none',
-          color: '#ffffff',
+          color: '#111827',
           fontWeight: '800',
           fontSize: '1.5rem',
           letterSpacing: '3px'
@@ -43,7 +43,7 @@ export default function Footer() {
               key={link.label}
               href={link.href}
               style={{
-                color: '#a1a5b0',
+                color: '#4b5563',
                 textDecoration: 'none',
                 fontSize: '0.72rem',
                 fontWeight: '600',
@@ -52,7 +52,7 @@ export default function Footer() {
                 transition: 'color 0.2s'
               }}
               onMouseEnter={(e) => e.currentTarget.style.color = '#ff7a52'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#a1a5b0'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#4b5563'}
             >
               {link.label}
             </a>
@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(255,255,255,0.04)' }} />
+        <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(0, 0, 0, 0.06)' }} />
 
         {/* Lower row */}
         <div style={{
@@ -71,12 +71,12 @@ export default function Footer() {
           flexWrap: 'wrap',
           gap: '20px',
           fontSize: '0.75rem',
-          color: '#a1a5b0'
+          color: '#4b5563'
         }}>
           <span>&copy; 2026 Lume Studio. All rights reserved.</span>
           <div style={{ display: 'flex', gap: '20px' }}>
-            <a href="#" style={{ color: '#a1a5b0', textDecoration: 'none' }}>Privacy Policy</a>
-            <a href="#" style={{ color: '#a1a5b0', textDecoration: 'none' }}>Terms of Service</a>
+            <a href="#" style={{ color: '#4b5563', textDecoration: 'none' }}>Privacy Policy</a>
+            <a href="#" style={{ color: '#4b5563', textDecoration: 'none' }}>Terms of Service</a>
           </div>
         </div>
       </div>

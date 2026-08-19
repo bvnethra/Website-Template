@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 export default function ContactSection() {
   return (
     <section id="contact" style={{
-      backgroundColor: '#000000',
+      backgroundColor: '#ffffff',
       padding: '140px 40px',
-      color: '#ffffff',
+      color: '#111827',
       fontFamily: "'Poppins', sans-serif"
     }}>
       <div style={{
@@ -48,33 +48,33 @@ export default function ContactSection() {
           <p style={{
             fontSize: '0.95rem',
             lineHeight: '1.8',
-            color: '#a1a5b0',
+            color: '#374151',
             marginBottom: '40px',
-            fontWeight: '300'
+            fontWeight: '350'
           }}>
             Looking to book an editorial campaign, private headshots, or a creative brand partnership? Leave a brief message and we'll reply with a custom proposal and availability rates.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div>
-              <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', letterSpacing: '1px' }}>Studio Email</span>
+              <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', color: 'rgba(0,0,0,0.5)', letterSpacing: '1px' }}>Studio Email</span>
               <p style={{ marginTop: '4px', fontSize: '1.1rem', fontWeight: '500' }}>hello@lume-studio.com</p>
             </div>
             {/* Social Icons */}
             <div style={{ display: 'flex', gap: '20px', marginTop: '10px' }}>
-              <a href="#" style={{ color: '#ffffff', fontSize: '1.2rem', textDecoration: 'none', transition: 'color 0.2s' }}
+              <a href="#" style={{ color: '#111827', fontSize: '1.2rem', textDecoration: 'none', transition: 'color 0.2s' }}
                  onMouseEnter={(e) => e.currentTarget.style.color = '#ff7a52'}
-                 onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+                 onMouseLeave={(e) => e.currentTarget.style.color = '#111827'}>
                 <i className="fa-brands fa-instagram"></i>
               </a>
-              <a href="#" style={{ color: '#ffffff', fontSize: '1.2rem', textDecoration: 'none', transition: 'color 0.2s' }}
+              <a href="#" style={{ color: '#111827', fontSize: '1.2rem', textDecoration: 'none', transition: 'color 0.2s' }}
                  onMouseEnter={(e) => e.currentTarget.style.color = '#ff7a52'}
-                 onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+                 onMouseLeave={(e) => e.currentTarget.style.color = '#111827'}>
                 <i className="fa-brands fa-x-twitter"></i>
               </a>
-              <a href="#" style={{ color: '#ffffff', fontSize: '1.2rem', textDecoration: 'none', transition: 'color 0.2s' }}
+              <a href="#" style={{ color: '#111827', fontSize: '1.2rem', textDecoration: 'none', transition: 'color 0.2s' }}
                  onMouseEnter={(e) => e.currentTarget.style.color = '#ff7a52'}
-                 onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+                 onMouseLeave={(e) => e.currentTarget.style.color = '#111827'}>
                 <i className="fa-brands fa-pinterest"></i>
               </a>
             </div>
@@ -91,61 +91,61 @@ export default function ContactSection() {
           <form 
             onSubmit={(e) => { e.preventDefault(); alert('Message sent successfully! We will contact you soon.'); }}
             style={{
-              background: '#0a0a0c',
+              background: '#f9f9fb',
               padding: '40px',
               borderRadius: '20px',
-              border: '1px solid rgba(255,255,255,0.04)'
+              border: '1px solid rgba(0,0,0,0.04)'
             }}
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '20px' }}>
               <label style={{ fontSize: '0.75rem', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase', color: '#ff7a52' }}>Full Name</label>
               <input type="text" required placeholder="Enter name" style={{
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                background: '#ffffff',
+                border: '1px solid rgba(0,0,0,0.08)',
                 padding: '14px',
                 borderRadius: '8px',
-                color: '#ffffff',
+                color: '#111827',
                 fontSize: '0.9rem',
                 outline: 'none',
                 transition: 'border-color 0.2s'
               }} 
               onFocus={(e) => e.currentTarget.style.borderColor = '#ff7a52'}
-              onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
+              onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(0,0,0,0.08)'}
               />
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '20px' }}>
               <label style={{ fontSize: '0.75rem', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase', color: '#ff7a52' }}>Email Address</label>
               <input type="email" required placeholder="Enter email address" style={{
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                background: '#ffffff',
+                border: '1px solid rgba(0,0,0,0.08)',
                 padding: '14px',
                 borderRadius: '8px',
-                color: '#ffffff',
+                color: '#111827',
                 fontSize: '0.9rem',
                 outline: 'none',
                 transition: 'border-color 0.2s'
               }} 
               onFocus={(e) => e.currentTarget.style.borderColor = '#ff7a52'}
-              onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
+              onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(0,0,0,0.08)'}
               />
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '24px' }}>
               <label style={{ fontSize: '0.75rem', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase', color: '#ff7a52' }}>Project Details</label>
               <textarea required rows="3" placeholder="Tell us about the dates, style, and scope of work..." style={{
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                background: '#ffffff',
+                border: '1px solid rgba(0,0,0,0.08)',
                 padding: '14px',
                 borderRadius: '8px',
-                color: '#ffffff',
+                color: '#111827',
                 fontSize: '0.9rem',
                 outline: 'none',
                 resize: 'none',
                 transition: 'border-color 0.2s'
               }}
               onFocus={(e) => e.currentTarget.style.borderColor = '#ff7a52'}
-              onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
+              onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(0,0,0,0.08)'}
               ></textarea>
             </div>
 

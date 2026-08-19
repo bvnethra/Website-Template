@@ -27,9 +27,9 @@ export default function ServicesSection() {
 
   return (
     <section id="services" style={{
-      backgroundColor: '#000000',
+      backgroundColor: '#ffffff',
       padding: '140px 40px',
-      color: '#ffffff',
+      color: '#111827',
       fontFamily: "'Poppins', sans-serif"
     }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -71,10 +71,10 @@ export default function ServicesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
               style={{
-                background: '#0a0a0c',
+                background: '#f9f9fb',
                 padding: '40px 30px',
                 borderRadius: '16px',
-                border: '1px solid rgba(255, 255, 255, 0.03)',
+                border: '1px solid rgba(0, 0, 0, 0.04)',
                 transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
                 cursor: 'pointer'
               }}
@@ -85,7 +85,7 @@ export default function ServicesSection() {
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.03)';
+                e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.04)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
@@ -111,8 +111,8 @@ export default function ServicesSection() {
               <p style={{
                 fontSize: '0.88rem',
                 lineHeight: '1.65',
-                color: '#a1a5b0',
-                fontWeight: '300',
+                color: '#374151',
+                fontWeight: '350',
                 margin: 0
               }}>
                 {service.desc}

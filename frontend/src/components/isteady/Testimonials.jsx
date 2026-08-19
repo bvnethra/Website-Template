@@ -17,11 +17,11 @@ export default function Testimonials() {
 
   return (
     <section style={{
-      backgroundColor: '#0a0a0c',
+      backgroundColor: '#faf9f6',
       padding: '120px 40px',
-      color: '#ffffff',
+      color: '#111827',
       fontFamily: "'Poppins', sans-serif",
-      borderTop: '1px solid rgba(255, 255, 255, 0.03)'
+      borderTop: '1px solid rgba(0, 0, 0, 0.04)'
     }}>
       <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
@@ -60,10 +60,10 @@ export default function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.2, ease: [0.16, 1, 0.3, 1] }}
               style={{
-                background: '#121316',
+                background: '#f9f9fb',
                 padding: '40px',
                 borderRadius: '20px',
-                border: '1px solid rgba(255,255,255,0.03)',
+                border: '1px solid rgba(0, 0, 0, 0.04)',
                 position: 'relative'
               }}
             >
@@ -80,9 +80,9 @@ export default function Testimonials() {
               <p style={{
                 fontSize: '0.95rem',
                 lineHeight: '1.75',
-                color: '#d1d5db',
+                color: '#374151',
                 fontStyle: 'italic',
-                fontWeight: '300',
+                fontWeight: '350',
                 margin: '0 0 24px 0',
                 position: 'relative',
                 zIndex: 1
@@ -90,8 +90,8 @@ export default function Testimonials() {
                 {rev.quote}
               </p>
               <div>
-                <strong style={{ display: 'block', fontSize: '0.92rem', fontWeight: '600' }}>{rev.client}</strong>
-                <span style={{ fontSize: '0.72rem', color: '#ff7a52', fontWeight: '500' }}>{rev.role}</span>
+                <strong style={{ display: 'block', fontSize: '0.92rem', fontWeight: '600', color: '#111827' }}>{rev.client}</strong>
+                <span style={{ fontSize: '0.72rem', color: '#ff7a52', fontWeight: '600' }}>{rev.role}</span>
               </div>
             </motion.div>
           ))}

@@ -20,14 +20,14 @@ export default function Scene3D() {
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     }}>
-      {/* Dark overlay gradient to ensure high readability of overlays */}
+      {/* Light overlay gradient to ensure high readability of overlays */}
       <div style={{
         position: 'absolute',
         top: 0,
         left: 0,
         right: 0,
         bottom: 0,
-        background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.82) 80%, #000000 100%)',
+        background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.8) 75%, #ffffff 100%)',
         zIndex: 1,
         pointerEvents: 'none'
       }} />
@@ -44,16 +44,16 @@ export default function Scene3D() {
         left: '10%',
         right: '10%',
         height: '1px',
-        background: 'linear-gradient(to right, transparent, rgba(255, 122, 82, 0.35) 20%, rgba(255, 122, 82, 0.35) 80%, transparent)', // Coral accent line
-        boxShadow: '0 0 8px rgba(255, 122, 82, 0.4)',
+        background: 'linear-gradient(to right, transparent, rgba(255, 122, 82, 0.45) 20%, rgba(255, 122, 82, 0.45) 80%, transparent)', // Coral accent line
+        boxShadow: '0 0 8px rgba(255, 122, 82, 0.2)',
         zIndex: 3,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         fontSize: '10px',
-        color: 'rgba(255, 255, 255, 0.75)',
+        color: '#121316',
         fontFamily: "'Poppins', sans-serif",
-        fontWeight: '600',
+        fontWeight: '700',
         letterSpacing: '2px',
         padding: '0 20px',
         boxSizing: 'border-box'

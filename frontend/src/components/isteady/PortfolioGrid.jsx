@@ -13,9 +13,9 @@ export default function PortfolioGrid() {
 
   return (
     <section id="portfolio" style={{
-      backgroundColor: '#000000',
+      backgroundColor: '#ffffff',
       padding: '140px 40px',
-      color: '#ffffff',
+      color: '#111827',
       fontFamily: "'Poppins', sans-serif"
     }}>
       <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
@@ -62,7 +62,7 @@ export default function PortfolioGrid() {
                 overflow: 'hidden',
                 aspectRatio: '4/5',
                 cursor: 'pointer',
-                background: '#121316'
+                background: '#f3f4f6'
               }}
             >
               <motion.img

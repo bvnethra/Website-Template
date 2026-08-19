@@ -1,11 +1,11 @@
 :root {
   --font-main: 'Poppins', sans-serif;
   --accent: #ff7a52;
-  --bg-black: #000000;
-  --bg-card: #121316;
-  --bg-dark: #0a0a0c;
-  --text-white: #ffffff;
-  --text-gray: #a1a5b0;
+  --bg-black: #ffffff;
+  --bg-card: #f9f9fb;
+  --bg-dark: #faf9f6;
+  --text-white: #111827;
+  --text-gray: #374151;
 }
 
 body {
@@ -29,8 +29,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   backdrop-filter: blur(15px);
   z-index: 100;
 }
@@ -74,7 +74,7 @@ body {
 
 .btn-buy {
   background: linear-gradient(135deg, var(--accent) 0%, #ff5e3a 100%);
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
   font-size: 0.72rem;
   font-weight: 800;
@@ -98,7 +98,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: radial-gradient(circle at center, #141518 0%, #000000 75%);
+  background: radial-gradient(circle at center, #ffffff 0%, #faf9f6 75%);
   padding: 0 24px;
 }
 
@@ -117,12 +117,12 @@ body {
   left: 10%;
   right: 10%;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(160, 255, 255, 0.3) 20%, rgba(160, 255, 255, 0.3) 80%, transparent);
-  box-shadow: 0 0 6px rgba(160, 255, 255, 0.4);
+  background: linear-gradient(to right, transparent, rgba(255, 122, 82, 0.25) 20%, rgba(255, 122, 82, 0.25) 80%, transparent);
+  box-shadow: 0 0 6px rgba(255, 122, 82, 0.15);
   display: flex;
   justify-content: space-between;
   font-size: 9px;
-  color: rgba(160, 255, 255, 0.7);
+  color: var(--text-white);
   letter-spacing: 1px;
   padding: 0 20px;
 }
@@ -142,7 +142,7 @@ body {
   font-weight: 300;
   font-size: 1.4rem;
   letter-spacing: -0.5px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.75);
   margin-bottom: 15px;
 }
 
@@ -153,7 +153,7 @@ body {
 
 .hero-content .badge {
   background-color: var(--accent);
-  color: #000000;
+  color: #ffffff;
   font-size: 0.65rem;
   font-weight: 800;
   padding: 2px 6px;
@@ -167,7 +167,7 @@ body {
   line-height: 1.15;
   letter-spacing: -1px;
   margin: 0 0 20px 0;
-  background: linear-gradient(180deg, #ffffff 30%, #a1a5b0 100%);
+  background: linear-gradient(180deg, #111827 30%, #374151 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -238,7 +238,7 @@ h2 {
   background: var(--bg-card);
   padding: 24px 30px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.03);
+  border: 1px solid rgba(0,0,0,0.04);
 }
 
 .card-num {
@@ -301,7 +301,7 @@ h2 {
   background: var(--bg-card);
   padding: 40px;
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.03);
+  border: 1px solid rgba(0,0,0,0.04);
   text-align: left;
 }
 
@@ -331,7 +331,7 @@ h2 {
   background: var(--bg-dark);
   padding: 40px;
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,0,0,0.04);
 }
 
 .form .group {
@@ -350,8 +350,8 @@ h2 {
 }
 
 .form input, .form textarea {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
   padding: 14px;
   border-radius: 8px;
   color: var(--text-white);
@@ -361,8 +361,8 @@ h2 {
 
 .form button {
   width: 100%;
-  background: var(--text-white);
-  color: #000000;
+  background: linear-gradient(135deg, var(--accent) 0%, #ff5e3a 100%);
+  color: #ffffff;
   border: none;
   padding: 15px;
   border-radius: 99px;
@@ -371,16 +371,17 @@ h2 {
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 122, 82, 0.15);
   transition: all 0.3s;
 }
 
 .form button:hover {
-  background-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 /* Footer */
 .footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
   padding: 40px;
   display: flex;
   justify-content: space-between;

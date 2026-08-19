@@ -14,7 +14,7 @@
 }
 
 .photo-body {
-  background-color: var(--photo-bg-primary);
+  background-color: transparent;
   color: var(--photo-text-primary);
   font-family: var(--photo-font-sans);
   overflow-x: hidden;

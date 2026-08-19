@@ -28,6 +28,13 @@ export default function PhotographyCatalog() {
       previewImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
       tags: ['Minimalist Editorial', 'Split Layout Navbar', 'Floating Contact Buttons'],
       description: 'A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.'
+    },
+    {
+      slug: 'fineart-template',
+      name: 'Aura — Premium Fine Art Studio',
+      previewImage: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80',
+      tags: ['Premium Serif', 'Wipe Reveals', 'Hover Custom Cursor'],
+      description: 'A premium, dynamic React portfolio website for a fine art photography studio. Features Ken Burns hero animations, scroll-triggered wipe reveals, and interactive circular gallery navigations.'
     }
   ];
 

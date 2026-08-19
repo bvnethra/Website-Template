@@ -14,6 +14,7 @@ import PhotographyCatalog from './pages/PhotographyCatalog';
 import WeddingTemplate from './pages/WeddingTemplate';
 import SnapfolioTemplate from './pages/SnapfolioTemplate';
 import PhotoTemplate from './pages/PhotoTemplate';
+import FineArtTemplate from './pages/FineArtTemplate';
 
 function Header({ cartCount, user, onLogout }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -328,7 +329,9 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
     location.pathname === '/templates/photography/snapfolio-template' ||
     location.pathname === '/templates/photography/snapfolio-template/index.html' ||
     location.pathname === '/templates/photography/photo-template' ||
-    location.pathname === '/templates/photography/photo-template/index.html';
+    location.pathname === '/templates/photography/photo-template/index.html' ||
+    location.pathname === '/templates/photography/fineart-template' ||
+    location.pathname === '/templates/photography/fineart-template/index.html';
 
   // Full-screen template routes
   if (isTemplateRoute) {
@@ -341,6 +344,8 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
         <Route path="/templates/photography/snapfolio-template/index.html" element={<SnapfolioTemplate />} />
         <Route path="/templates/photography/photo-template" element={<PhotoTemplate />} />
         <Route path="/templates/photography/photo-template/index.html" element={<PhotoTemplate />} />
+        <Route path="/templates/photography/fineart-template" element={<FineArtTemplate />} />
+        <Route path="/templates/photography/fineart-template/index.html" element={<FineArtTemplate />} />
       </Routes>
     );
   }

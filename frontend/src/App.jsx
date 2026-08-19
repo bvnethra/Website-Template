@@ -17,6 +17,7 @@ import PhotoTemplate from './pages/PhotoTemplate';
 import FineArtTemplate from './pages/FineArtTemplate';
 import CinematicWedding from './pages/CinematicWedding';
 import KairoPhotography from './pages/KairoPhotography';
+import ISteadyGimbal from './pages/ISteadyGimbal';
 import DevicePreviewWrapper from './components/DevicePreviewWrapper';
 
 function Header({ cartCount, user, onLogout }) {
@@ -336,7 +337,8 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
     location.pathname === '/templates/photography/fineart-template' ||
     location.pathname === '/templates/photography/fineart-template/index.html' ||
     location.pathname.startsWith('/templates/photography/cinematic-wedding') ||
-    location.pathname.startsWith('/templates/photography/kairo-template');
+    location.pathname.startsWith('/templates/photography/kairo-template') ||
+    location.pathname.startsWith('/templates/photography/isteady-template');
 
   // Full-screen template routes
   if (isTemplateRoute) {
@@ -356,6 +358,8 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
         <Route path="/templates/photography/cinematic-wedding/:subpage" element={<DevicePreviewWrapper><CinematicWedding /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/kairo-template" element={<DevicePreviewWrapper><KairoPhotography /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/kairo-template/index.html" element={<DevicePreviewWrapper><KairoPhotography /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/isteady-template" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/isteady-template/index.html" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
       </Routes>
     );
   }

@@ -130,6 +130,21 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 8,
+    name: 'iSteady MT3 Pro — AI Stabilizer Portfolio',
+    slug: 'isteady-template',
+    previewImage: '/isteady_cover.png',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 8, name: 'Photography', slug: 'photography' },
+    pagesCount: 1,
+    downloadsCount: 9500,
+    description: 'A premium product launch page designed for camera gimbals. Features interactive 3D stabilizer rigs in R3F, multi-axis stabilizing sine movements, exploded scroll animations, and tactile specs.',
+    bootstrapVersion: 'HTML5 / Tailwind CSS',
+    version: '1.0',
+    demoUrl: '/templates/photography/isteady-template/index.html'
+  },
+  {
+    id: 9,
     name: 'Ember & Olive — Artisan Seasonal Restaurant',
     slug: 'ember-and-olive',
     previewImage: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
@@ -144,7 +159,7 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/restaurant/ember-and-olive/index.html'
   },
   {
-    id: 9,
+    id: 10,
     name: 'Nexa Commerce — High-End Ecommerce Platform',
     slug: 'nexa-commerce',
     previewImage: 'https://images.unsplash.com/photo-1472851294608-062f824d296e?auto=format&fit=crop&w=800&q=80',

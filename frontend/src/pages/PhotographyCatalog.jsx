@@ -49,6 +49,13 @@ export default function PhotographyCatalog() {
       previewImage: '/kairo_cover.png',
       tags: ['3D Scene', 'Interactive Parallax', 'Luxury Editorial'],
       description: 'A modern photography portfolio featuring interactive 3D camera lens aperture graphics rendered in React Three Fiber, scroll-linked fade animations, split-layout bio sections, and fullscreen responsive image tiles.'
+    },
+    {
+      slug: 'isteady-template',
+      name: 'iSteady MT3 Pro — AI Stabilizer Portfolio',
+      previewImage: '/isteady_cover.png',
+      tags: ['AI Stabilizer', 'OLED HUD', 'Brushed Metal Arm'],
+      description: 'A premium product launch page designed for camera gimbals. Features interactive 3D stabilizer rigs in R3F, multi-axis stabilizing sine movements, exploded scroll animations, and tactile specs.'
     }
   ];
 

@@ -23,6 +23,54 @@ const MOCK_CATEGORIES = [
 
 const MOCK_TEMPLATES = [
   {
+    id: 101,
+    name: 'Aura Resort & Spa',
+    slug: 'aura-resort',
+    description: 'A high-end, full-featured luxury hotel website template featuring glassmorphism, responsive navigation, custom theme toggle, quick-booking bar, room selection, spa ritual guides, photo gallery lightbox, and auto-playing testimonials.',
+    price: 29.00,
+    templateType: 'PREMIUM',
+    previewImage: '/hotel_template_preview.jpg',
+    demoUrl: '/hotel-template',
+    bootstrapVersion: 'Bootstrap 5',
+    pagesCount: 1,
+    downloadsCount: 1250,
+    version: '1.0.0',
+    createdAt: '2026-08-15T00:00:00Z',
+    category: { id: 6, name: 'Hotel', slug: 'hotel' }
+  },
+  {
+    id: 102,
+    name: 'Techno Admin Dashboard',
+    slug: 'techno-admin',
+    description: 'Modern admin dashboard with light/dark theme, charts, widgets and custom components.',
+    price: 19.00,
+    templateType: 'PREMIUM',
+    previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
+    demoUrl: '#',
+    bootstrapVersion: 'Bootstrap 5',
+    pagesCount: 15,
+    downloadsCount: 3400,
+    version: '2.1.0',
+    createdAt: '2026-08-10T00:00:00Z',
+    category: { id: 1, name: 'Admin', slug: 'admin' }
+  },
+  {
+    id: 103,
+    name: 'Velo Medical Portal',
+    slug: 'velo-medical',
+    description: 'Clinic and doctor appointment template with scheduling, bio pages and patient intake forms.',
+    price: 0.00,
+    templateType: 'FREE',
+    previewImage: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80',
+    demoUrl: '#',
+    bootstrapVersion: 'Bootstrap 5',
+    pagesCount: 8,
+    downloadsCount: 1800,
+    version: '1.2.0',
+    createdAt: '2026-08-05T00:00:00Z',
+    category: { id: 2, name: 'Medical', slug: 'medical' }
+  },
+  {
     id: 1,
     name: 'SnapFolio — Dark Minimalist Portfolio',
     slug: 'snapfolio-template',
@@ -49,8 +97,21 @@ const MOCK_TEMPLATES = [
     downloadsCount: 8400,
     description: 'A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
-    version: '1.0',
-    demoUrl: '/templates/photography/photo-template/index.html'
+    version: '1.0'
+  },
+  {
+    id: 3,
+    name: 'Lumière — High-End Wedding & Event Photography',
+    slug: 'wedding-template',
+    previewImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 8, name: 'Photography', slug: 'photography' },
+    pagesCount: 1,
+    downloadsCount: 1200,
+    description: 'A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.',
+    bootstrapVersion: 'HTML5 / Tailwind CSS',
+    version: '1.0'
   }
 ];
 
@@ -102,6 +163,12 @@ export const api = {
       return data;
     } catch (err) {
       console.warn("Auth failed, using mock auth:", err);
+      if (email === 'admin@technosprint.com' && password === 'adminpassword') {
+        const mockUser = { id: 99, name: 'Admin User', email: 'admin@technosprint.com', role: 'ROLE_ADMIN' };
+        localStorage.setItem('ts_token', 'mock-jwt-token');
+        localStorage.setItem('ts_user', JSON.stringify(mockUser));
+        return mockUser;
+      }
       if (email === 'admin@admin.com') {
         const dummyAdmin = { token: 'mock-token', id: 99, name: 'Admin User', email: 'admin@admin.com', role: 'ROLE_ADMIN' };
         localStorage.setItem('ts_token', dummyAdmin.token);
@@ -166,7 +233,7 @@ export const api = {
         filtered = filtered.filter(t => 
           t.name.toLowerCase().includes(queryStr) || 
           t.description.toLowerCase().includes(queryStr) ||
-          t.category.name.toLowerCase().includes(queryStr)
+          (t.category && t.category.name && t.category.name.toLowerCase().includes(queryStr))
         );
       }
       return filtered;
@@ -198,29 +265,44 @@ export const api = {
   },
 
   async createTemplate(dto) {
-    const res = await fetch(`${BASE_URL}/templates`, {
-      method: 'POST',
-      headers: getHeaders(),
-      body: JSON.stringify(dto),
-    });
-    return handleResponse(res);
+    try {
+      const res = await fetch(`${BASE_URL}/templates`, {
+        method: 'POST',
+        headers: getHeaders(),
+        body: JSON.stringify(dto),
+      });
+      return await handleResponse(res);
+    } catch (err) {
+      console.error("Failed to create template:", err);
+      throw err;
+    }
   },
 
   async updateTemplate(id, dto) {
-    const res = await fetch(`${BASE_URL}/templates/${id}`, {
-      method: 'PUT',
-      headers: getHeaders(),
-      body: JSON.stringify(dto),
-    });
-    return handleResponse(res);
+    try {
+      const res = await fetch(`${BASE_URL}/templates/${id}`, {
+        method: 'PUT',
+        headers: getHeaders(),
+        body: JSON.stringify(dto),
+      });
+      return await handleResponse(res);
+    } catch (err) {
+      console.error("Failed to update template:", err);
+      throw err;
+    }
   },
 
   async deleteTemplate(id) {
-    const res = await fetch(`${BASE_URL}/templates/${id}`, {
-      method: 'DELETE',
-      headers: getHeaders(),
-    });
-    return handleResponse(res);
+    try {
+      const res = await fetch(`${BASE_URL}/templates/${id}`, {
+        method: 'DELETE',
+        headers: getHeaders(),
+      });
+      return await handleResponse(res);
+    } catch (err) {
+      console.error("Failed to delete template:", err);
+      throw err;
+    }
   },
 
   // Categories

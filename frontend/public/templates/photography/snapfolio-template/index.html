@@ -50,7 +50,7 @@
           body.style.overflow = 'hidden';
           body.style.backgroundColor = '#f1f5f9';
           
-          // Build Top Bar (White background, Blue branding elements)
+          // Build Top Bar
           const topBar = document.createElement('div');
           topBar.id = 'technosprint-preview-header';
           topBar.style.height = '64px';
@@ -75,12 +75,20 @@
           `;
           topBar.appendChild(logoDiv);
           
-          // Center view switcher buttons
-          const centerDiv = document.createElement('div');
-          centerDiv.style.display = 'flex';
-          centerDiv.style.alignItems = 'center';
-          centerDiv.style.gap = '8px';
-          centerDiv.innerHTML = `
+          // Center Template Name
+          const titleDiv = document.createElement('div');
+          titleDiv.style.fontWeight = '600';
+          titleDiv.style.fontSize = '0.9rem';
+          titleDiv.style.color = '#334155';
+          titleDiv.innerText = `< ${document.title || 'Template Preview'} >`;
+          topBar.appendChild(titleDiv);
+          
+          // Right view switcher buttons
+          const rightDiv = document.createElement('div');
+          rightDiv.style.display = 'flex';
+          rightDiv.style.alignItems = 'center';
+          rightDiv.style.gap = '8px';
+          rightDiv.innerHTML = `
             <button id="view-desktop" style="
               background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;
               padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
@@ -109,8 +117,7 @@
               Mobile
             </button>
           `;
-          topBar.appendChild(centerDiv);
-          
+          topBar.appendChild(rightDiv);
           body.appendChild(topBar);
           
           // Create Iframe Container
@@ -161,6 +168,8 @@
               btnDesktop.style.fontWeight = '600';
               iframe.style.width = '100%';
               iframe.style.height = '100%';
+              iframe.style.borderRadius = '12px';
+              iframe.style.border = 'none';
             } else if (mode === 'tablet') {
               btnTablet.style.background = '#eff6ff';
               btnTablet.style.color = '#1e40af';
@@ -169,6 +178,8 @@
               iframe.style.width = '768px';
               iframe.style.height = '1024px';
               iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '24px';
+              iframe.style.border = '12px solid #0f172a';
             } else if (mode === 'mobile') {
               btnMobile.style.background = '#eff6ff';
               btnMobile.style.color = '#1e40af';
@@ -177,6 +188,8 @@
               iframe.style.width = '375px';
               iframe.style.height = '667px';
               iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '32px';
+              iframe.style.border = '14px solid #0f172a';
             }
           }
           

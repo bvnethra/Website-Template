@@ -41,7 +41,7 @@
           body.style.overflow = 'hidden';
           body.style.backgroundColor = '#f1f5f9';
           
-          // Build Top Bar (White background, Blue branding elements)
+          // Build Top Bar
           const topBar = document.createElement('div');
           topBar.id = 'technosprint-preview-header';
           topBar.style.height = '64px';
@@ -56,73 +56,59 @@
           topBar.style.zIndex = '99999';
           topBar.style.position = 'relative';
           topBar.style.boxSizing = 'border-box';
-                    // Left side wrapper (logo + separator + view switcher)
-          const leftWrapper = document.createElement('div');
-          leftWrapper.style.display = 'flex';
-          leftWrapper.style.alignItems = 'center';
-          leftWrapper.style.gap = '16px';
-
-          // 1. Logo
+          
+          // Left side logo
           const logoDiv = document.createElement('div');
           logoDiv.innerHTML = `
             <a href="/templates" style="display: flex; align-items: center; text-decoration: none;">
               <img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" />
             </a>
           `;
-          leftWrapper.appendChild(logoDiv);
-
-          // 2. Separator
-          const separator = document.createElement('div');
-          separator.style.width = '1px';
-          separator.style.height = '24px';
-          separator.style.background = '#e2e8f0';
-          leftWrapper.appendChild(separator);
-
-          // 3. View Switcher
-          const viewSwitcher = document.createElement('div');
-          viewSwitcher.style.display = 'flex';
-          viewSwitcher.style.alignItems = 'center';
-          viewSwitcher.style.gap = '6px';
-          viewSwitcher.innerHTML = `
-            <button id="view-website" style="
-              background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;
-              padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;
-              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
-              outline: none; box-sizing: border-box;
-            " title="Website View (Full Screen)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              Website View
-            </button>
+          topBar.appendChild(logoDiv);
+          
+          // Center Template Name
+          const titleDiv = document.createElement('div');
+          titleDiv.style.fontWeight = '600';
+          titleDiv.style.fontSize = '0.9rem';
+          titleDiv.style.color = '#334155';
+          titleDiv.innerText = `< ${document.title || 'Template Preview'} >`;
+          topBar.appendChild(titleDiv);
+          
+          // Right view switcher buttons
+          const rightDiv = document.createElement('div');
+          rightDiv.style.display = 'flex';
+          rightDiv.style.alignItems = 'center';
+          rightDiv.style.gap = '8px';
+          rightDiv.innerHTML = `
             <button id="view-desktop" style="
-              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
-              padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 500;
+              background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
               cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
               outline: none; box-sizing: border-box;
-            " title="Desktop View (1200px Frame)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="12" rx="2" ry="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line><line x1="12" y1="16" x2="12" y2="20"></line></svg>
-              Desktop View
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              Desktop
+            </button>
+            <button id="view-tablet" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Tablet
             </button>
             <button id="view-mobile" style="
               background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
-              padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 500;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
               cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
               outline: none; box-sizing: border-box;
-            " title="Mobile View (375px Frame)">
+            ">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-              Mobile View
+              Mobile
             </button>
           `;
-          leftWrapper.appendChild(viewSwitcher);
-          topBar.appendChild(leftWrapper);
-
-          // Center Template Name/Selector
-          const centerDiv = document.createElement('div');
-          centerDiv.style.fontWeight = '600';
-          centerDiv.style.fontSize = '0.9rem';
-          centerDiv.style.color = '#334155';
-          centerDiv.innerHTML = `&lt; Photo — Creative Photography Studio &gt;`;
-          topBar.appendChild(centerDiv);
-          
+          topBar.appendChild(rightDiv);
           body.appendChild(topBar);
           
           // Create Iframe Container
@@ -151,36 +137,40 @@
           body.appendChild(iframeContainer);
           
           // Interactivity
-          const btnWebsite = body.querySelector('#view-website');
           const btnDesktop = body.querySelector('#view-desktop');
+          const btnTablet = body.querySelector('#view-tablet');
           const btnMobile = body.querySelector('#view-mobile');
           
-          let activeMode = 'website';
+          let activeMode = 'desktop';
           
           function setView(mode) {
             activeMode = mode;
-            [btnWebsite, btnDesktop, btnMobile].forEach(btn => {
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
               btn.style.background = '#ffffff';
               btn.style.color = '#475569';
               btn.style.borderColor = '#e2e8f0';
               btn.style.fontWeight = '500';
             });
             
-            if (mode === 'website') {
-              btnWebsite.style.background = '#eff6ff';
-              btnWebsite.style.color = '#1e40af';
-              btnWebsite.style.borderColor = '#bfdbfe';
-              btnWebsite.style.fontWeight = '600';
-              iframe.style.width = '100%';
-              iframe.style.height = '100%';
-            } else if (mode === 'desktop') {
+            if (mode === 'desktop') {
               btnDesktop.style.background = '#eff6ff';
               btnDesktop.style.color = '#1e40af';
               btnDesktop.style.borderColor = '#bfdbfe';
               btnDesktop.style.fontWeight = '600';
-              iframe.style.width = '1200px';
-              iframe.style.height = '900px';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+              iframe.style.borderRadius = '12px';
+              iframe.style.border = 'none';
+            } else if (mode === 'tablet') {
+              btnTablet.style.background = '#eff6ff';
+              btnTablet.style.color = '#1e40af';
+              btnTablet.style.borderColor = '#bfdbfe';
+              btnTablet.style.fontWeight = '600';
+              iframe.style.width = '768px';
+              iframe.style.height = '1024px';
               iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '24px';
+              iframe.style.border = '12px solid #0f172a';
             } else if (mode === 'mobile') {
               btnMobile.style.background = '#eff6ff';
               btnMobile.style.color = '#1e40af';
@@ -189,16 +179,18 @@
               iframe.style.width = '375px';
               iframe.style.height = '667px';
               iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '32px';
+              iframe.style.border = '14px solid #0f172a';
             }
           }
           
-          btnWebsite.addEventListener('click', () => setView('website'));
           btnDesktop.addEventListener('click', () => setView('desktop'));
+          btnTablet.addEventListener('click', () => setView('tablet'));
           btnMobile.addEventListener('click', () => setView('mobile'));
           
           const btns = [
-            { btn: btnWebsite, mode: 'website' },
             { btn: btnDesktop, mode: 'desktop' },
+            { btn: btnTablet, mode: 'tablet' },
             { btn: btnMobile, mode: 'mobile' }
           ];
           
@@ -219,7 +211,7 @@
           
           document.documentElement.style.visibility = 'visible';
         });
-      } }
+      }
     })();
   </script>
 

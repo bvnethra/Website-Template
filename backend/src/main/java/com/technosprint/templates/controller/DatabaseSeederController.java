@@ -181,7 +181,7 @@ public class DatabaseSeederController {
             templateRepository.save(photo);
             logs.put("template_photo", "Created");
 
-            // Wedding template (Lumiere)
+            // Wedding template (Lumière)
             Template wedding = new Template();
             wedding.setName("Lumière — High-End Wedding & Event Photography");
             wedding.setSlug("wedding-template");
@@ -197,7 +197,7 @@ public class DatabaseSeederController {
             wedding.setStatus("PUBLISHED");
             wedding.setPagesCount(1);
             wedding.setDownloadsCount(1200);
-            wedding.setTags(new ArrayList<>(Arrays.asList("Minimalist Editorial", "Split Layout Navbar", "Floating Contact Buttons")));
+            wedding.setTags(new ArrayList<>(Arrays.asList("Wedding Theme", "Ivory Background", "Serif Typography")));
             templateRepository.save(wedding);
             logs.put("template_wedding", "Created");
 
@@ -212,7 +212,7 @@ public class DatabaseSeederController {
             fineart.setBootstrapVersion("HTML5 / Vanilla CSS");
             fineart.setDemoUrl("/templates/photography/fineart-template/index.html");
             fineart.setDownloadFile("fineart-template.zip");
-            fineart.setPreviewImage("https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80");
+            fineart.setPreviewImage("/fineart_cover.png");
             fineart.setVersion("1.0.0");
             fineart.setStatus("PUBLISHED");
             fineart.setPagesCount(1);
@@ -232,7 +232,7 @@ public class DatabaseSeederController {
             cinematic.setBootstrapVersion("HTML5 / Tailwind CSS");
             cinematic.setDemoUrl("/templates/photography/cinematic-wedding/index.html");
             cinematic.setDownloadFile("cinematic-wedding.zip");
-            cinematic.setPreviewImage("https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=80");
+            cinematic.setPreviewImage("/cinematic_cover.png");
             cinematic.setVersion("1.0.0");
             cinematic.setStatus("PUBLISHED");
             cinematic.setPagesCount(1);
@@ -252,7 +252,7 @@ public class DatabaseSeederController {
             kairo.setBootstrapVersion("HTML5 / Tailwind CSS");
             kairo.setDemoUrl("/templates/photography/kairo-template/index.html");
             kairo.setDownloadFile("kairo-template.zip");
-            kairo.setPreviewImage("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80");
+            kairo.setPreviewImage("/kairo_cover.png");
             kairo.setVersion("1.0.0");
             kairo.setStatus("PUBLISHED");
             kairo.setPagesCount(1);
@@ -262,7 +262,53 @@ public class DatabaseSeederController {
             logs.put("template_kairo", "Created");
         }
 
-        logs.put("status", "Database Seeding Completed Successfully! Qure Nexa Medical template & Photography templates seeded.");
+        // 6. Seed Restaurant templates
+        Category restaurantCategory = catMap.get("restaurant");
+        if (restaurantCategory != null) {
+            Template restaurant = new Template();
+            restaurant.setName("Ember & Olive — Artisan Seasonal Restaurant");
+            restaurant.setSlug("ember-and-olive");
+            restaurant.setDescription("An elegant, full-featured artisan restaurant template featuring wood-fired dining menus, reservation bars, chef profiles, interactive events pages, and responsive design.");
+            restaurant.setCategory(restaurantCategory);
+            restaurant.setPrice(0.0);
+            restaurant.setTemplateType("FREE");
+            restaurant.setBootstrapVersion("HTML5 / Bootstrap 5");
+            restaurant.setDemoUrl("/templates/restaurant/ember-and-olive/index.html");
+            restaurant.setDownloadFile("ember-and-olive-restaurant.zip");
+            restaurant.setPreviewImage("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80");
+            restaurant.setVersion("1.0.0");
+            restaurant.setStatus("PUBLISHED");
+            restaurant.setPagesCount(6);
+            restaurant.setDownloadsCount(9500);
+            restaurant.setTags(new ArrayList<>(Arrays.asList("Wood-Fired", "Artisan Dining", "Reservation Micro UI", "Responsive Menu")));
+            templateRepository.save(restaurant);
+            logs.put("template_restaurant", "Created");
+        }
+
+        // 7. Seed Ecommerce templates
+        Category ecommerceCategory = catMap.get("ecommerce");
+        if (ecommerceCategory != null) {
+            Template ecommerce = new Template();
+            ecommerce.setName("Nexa Commerce — High-End Ecommerce Platform");
+            ecommerce.setSlug("nexa-commerce");
+            ecommerce.setDescription("A modern, full-featured retail platform featuring dynamic product catalogs, a fully-featured customer cart, responsive checkouts, and a comprehensive admin inventory management dashboard.");
+            ecommerce.setCategory(ecommerceCategory);
+            ecommerce.setPrice(0.0);
+            ecommerce.setTemplateType("FREE");
+            ecommerce.setBootstrapVersion("HTML5 / Vanilla CSS / JS");
+            ecommerce.setDemoUrl("/templates/ecommerce/nexa/index.html");
+            ecommerce.setDownloadFile("nexa-commerce.zip");
+            ecommerce.setPreviewImage("https://images.unsplash.com/photo-1472851294608-062f824d296e?auto=format&fit=crop&w=800&q=80");
+            ecommerce.setVersion("1.0.0");
+            ecommerce.setStatus("PUBLISHED");
+            ecommerce.setPagesCount(12);
+            ecommerce.setDownloadsCount(11000);
+            ecommerce.setTags(new ArrayList<>(Arrays.asList("Retail Shop", "Product Catalog", "Cart Logic", "Inventory Dashboard")));
+            templateRepository.save(ecommerce);
+            logs.put("template_ecommerce", "Created");
+        }
+
+        logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);
     }
 }

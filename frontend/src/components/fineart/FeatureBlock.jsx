@@ -19,22 +19,24 @@ export default function FeatureBlock({ title, label, description, image, ctaText
           <div className="w-full lg:w-1/2">
             <div className="relative overflow-hidden aspect-[4/3] md:aspect-[16/10] shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
               
-              {/* Wipe Mask Reveal animation */}
+              {/* Image zoom-on-hover */}
               <motion.div
-                initial={{ clipPath: "inset(0% 100% 0% 0%)" }}
-                whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+                whileHover={{ scale: 1.04 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="w-full h-full bg-cover bg-center cursor-pointer"
+                style={{ backgroundImage: `url(${image})` }}
+              />
+
+              {/* Absolute Wipe Slide Overlay Mask */}
+              <motion.div
+                initial={{ x: "0%" }}
+                whileInView={{ x: "100%" }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-                className="w-full h-full"
-              >
-                {/* Image zoom-on-hover */}
-                <motion.div
-                  whileHover={{ scale: 1.04 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="w-full h-full bg-cover bg-center cursor-pointer"
-                  style={{ backgroundImage: `url(${image})` }}
-                />
-              </motion.div>
+                className={`absolute inset-0 z-10 ${
+                  isDark ? 'bg-[#0a0a0a]' : 'bg-[#f5f4f1]'
+                }`}
+              />
 
             </div>
           </div>

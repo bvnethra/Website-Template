@@ -11,6 +11,9 @@ import Admin from './pages/Admin';
 import Auth from './pages/Auth';
 import HotelTemplate from './pages/HotelTemplate';
 import PhotographyCatalog from './pages/PhotographyCatalog';
+import WeddingTemplate from './pages/WeddingTemplate';
+import SnapfolioTemplate from './pages/SnapfolioTemplate';
+import PhotoTemplate from './pages/PhotoTemplate';
 
 function Header({ cartCount, user, onLogout }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -318,13 +321,26 @@ function Footer() {
 
 function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLogin, handleLogout }) {
   const location = useLocation();
-  const isHotelTemplate = location.pathname === '/hotel-template';
+  const isTemplateRoute = 
+    location.pathname === '/hotel-template' ||
+    location.pathname === '/templates/photography/wedding-template' ||
+    location.pathname === '/templates/photography/wedding-template/index.html' ||
+    location.pathname === '/templates/photography/snapfolio-template' ||
+    location.pathname === '/templates/photography/snapfolio-template/index.html' ||
+    location.pathname === '/templates/photography/photo-template' ||
+    location.pathname === '/templates/photography/photo-template/index.html';
 
-  // Hotel template renders full-screen with its own nav/footer
-  if (isHotelTemplate) {
+  // Full-screen template routes
+  if (isTemplateRoute) {
     return (
       <Routes>
         <Route path="/hotel-template" element={<HotelTemplate />} />
+        <Route path="/templates/photography/wedding-template" element={<WeddingTemplate />} />
+        <Route path="/templates/photography/wedding-template/index.html" element={<WeddingTemplate />} />
+        <Route path="/templates/photography/snapfolio-template" element={<SnapfolioTemplate />} />
+        <Route path="/templates/photography/snapfolio-template/index.html" element={<SnapfolioTemplate />} />
+        <Route path="/templates/photography/photo-template" element={<PhotoTemplate />} />
+        <Route path="/templates/photography/photo-template/index.html" element={<PhotoTemplate />} />
       </Routes>
     );
   }

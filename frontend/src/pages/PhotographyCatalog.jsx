@@ -319,7 +319,7 @@ export default function PhotographyCatalog() {
                   lineHeight: '1.25'
                 }}>
                   <a 
-                    href={`/templates/photography/${tpl.slug}/index.html`} 
+                    href={`/templates/photography/${tpl.slug}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     style={{ color: '#0f172a', transition: 'color 0.2s' }}
@@ -352,7 +352,7 @@ export default function PhotographyCatalog() {
                 marginTop: '10px'
               }}>
                 <a 
-                  href={`/templates/photography/${tpl.slug}/index.html`} 
+                  href={`/templates/photography/${tpl.slug}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   style={{

@@ -156,74 +156,150 @@ export default function PhotographyCatalog() {
 
       {/* Catalog Grid */}
       <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-        gap: '30px',
-        marginTop: '30px'
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '36px',
+        marginTop: '30px',
+        width: '100%'
       }}>
         
         {TEMPLATES.map((tpl) => (
           <div key={tpl.slug} style={{
-            backgroundColor: '#1e1e1e',
-            border: '1px solid rgba(255,255,255,0.08)',
+            backgroundColor: '#ffffff',
+            border: '1px solid #e2e8f0',
             borderRadius: '24px',
-            padding: '24px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
-            maxWidth: '420px',
+            padding: '32px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+            gap: '36px',
+            alignItems: 'center',
+            boxShadow: '0 4px 20px rgba(15, 23, 42, 0.03)',
             width: '100%',
+            transition: 'all 0.3s ease-in-out',
+            boxSizing: 'border-box'
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(84, 78, 232, 0.3)';
-            e.currentTarget.style.boxShadow = '0 20px 40px -10px rgba(84, 78, 232, 0.15)';
-            e.currentTarget.style.transform = 'translateY(-4px)';
+            e.currentTarget.style.borderColor = 'rgba(84, 78, 232, 0.2)';
+            e.currentTarget.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.06)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
-            e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.05)';
-            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.borderColor = '#e2e8f0';
+            e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.03)';
           }}
           >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              
-              {/* Image Preview Wrapper */}
-              <a 
-                href={`/templates/photography/${tpl.slug}/index.html`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                style={{
-                  position: 'relative',
-                  display: 'block',
-                  width: '100%',
-                  aspectRatio: '16/10',
-                  borderRadius: '16px',
-                  overflow: 'hidden',
-                  backgroundColor: '#121212',
-                  border: '1px solid rgba(255,255,255,0.05)'
-                }}
-              >
-                <img 
-                  src={tpl.previewImage} 
-                  alt={tpl.name} 
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
-                  }}
-                />
-              </a>
+            {/* Left Column: Responsive Multi-Device CSS Mockup */}
+            <div style={{
+              position: 'relative',
+              width: '100%',
+              aspectRatio: '16/11',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: '#f8fafc',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              border: '1px solid #f1f5f9',
+              boxSizing: 'border-box',
+              padding: '24px'
+            }}>
+              {/* 1. Laptop Mockup Frame */}
+              <div style={{
+                position: 'relative',
+                width: '72%',
+                aspectRatio: '16/10',
+                background: '#0f172a',
+                borderRadius: '8px 8px 0 0',
+                border: '4px solid #1e293b',
+                boxShadow: '0 15px 35px rgba(0,0,0,0.12)',
+                overflow: 'hidden',
+                zIndex: 1,
+                transform: 'translateX(-8%)',
+                boxSizing: 'border-box'
+              }}>
+                <img src={tpl.previewImage} alt="Desktop Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                {/* Keyboard Base thin border */}
+                <div style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: '3px',
+                  background: '#64748b'
+                }} />
+              </div>
 
+              {/* 2. Tablet Mockup Frame (overlaid on the right side) */}
+              <div style={{
+                position: 'absolute',
+                right: '18%',
+                bottom: '18%',
+                width: '24%',
+                aspectRatio: '3/4',
+                background: '#0f172a',
+                border: '4px solid #0f172a',
+                borderRadius: '10px',
+                boxShadow: '0 15px 25px rgba(0,0,0,0.18)',
+                overflow: 'hidden',
+                zIndex: 2,
+                boxSizing: 'border-box'
+              }}>
+                {/* Camera sensor dot */}
+                <div style={{
+                  position: 'absolute',
+                  top: '3px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '4px',
+                  height: '4px',
+                  borderRadius: '50%',
+                  background: '#334155',
+                  zIndex: 10
+                }} />
+                <img src={tpl.previewImage} alt="Tablet Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+
+              {/* 3. Mobile Mockup Frame (overlaid in front) */}
+              <div style={{
+                position: 'absolute',
+                right: '6%',
+                bottom: '12%',
+                width: '15%',
+                aspectRatio: '9/19',
+                background: '#090d16',
+                border: '3px solid #090d16',
+                borderRadius: '12px',
+                boxShadow: '0 15px 30px rgba(0,0,0,0.22)',
+                overflow: 'hidden',
+                zIndex: 3,
+                boxSizing: 'border-box'
+              }}>
+                {/* Speaker pill notch */}
+                <div style={{
+                  position: 'absolute',
+                  top: '2px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '18px',
+                  height: '3px',
+                  borderRadius: '99px',
+                  background: '#1e293b',
+                  zIndex: 10
+                }} />
+                <img src={tpl.previewImage} alt="Mobile Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+            </div>
+
+            {/* Right Column: Title, Metadata, Description & Pill Buttons */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+              
               {/* Badges / Tags */}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {tpl.tags.map((tag) => (
                   <span key={tag} style={{
                     padding: '4px 10px',
                     borderRadius: '99px',
-                    backgroundColor: '#2a2744',
-                    color: '#a5b4fc',
+                    backgroundColor: '#eff6ff',
+                    color: '#1d4ed8',
                     fontSize: '10px',
                     fontWeight: '700',
                     textTransform: 'uppercase',
@@ -235,97 +311,111 @@ export default function PhotographyCatalog() {
               {/* Typography */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <h3 style={{
-                  fontSize: '1.25rem',
+                  fontSize: '1.6rem',
                   fontWeight: '800',
-                  color: 'white',
+                  color: '#0f172a',
                   margin: 0,
-                  fontFamily: 'var(--font-title)'
+                  fontFamily: 'var(--font-title)',
+                  lineHeight: '1.25'
                 }}>
                   <a 
                     href={`/templates/photography/${tpl.slug}/index.html`} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    style={{ color: 'white', transition: 'color 0.2s' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = '#a5b4fc'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+                    style={{ color: '#0f172a', transition: 'color 0.2s' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
                   >
                     {tpl.name}
                   </a>
                 </h3>
+                
+                {/* Updated metadata */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#64748b' }}>
+                  <i className="fa-regular fa-clock" style={{ fontSize: '0.85rem' }}></i>
+                  <span>Updated recently</span>
+                </div>
+
                 <p style={{
-                  fontSize: '0.85rem',
-                  color: '#94a3b8',
-                  lineHeight: '1.6',
-                  margin: 0
+                  fontSize: '0.88rem',
+                  color: '#64748b',
+                  lineHeight: '1.7',
+                  margin: '6px 0 0 0',
+                  fontWeight: 400
                 }}>
                   {tpl.description}
                 </p>
               </div>
 
-            </div>
+              {/* Action Buttons */}
+              <div style={{
+                display: 'flex',
+                gap: '12px',
+                marginTop: '10px'
+              }}>
+                <a 
+                  href={`/templates/photography/${tpl.slug}/index.html`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '6px',
+                    padding: '10px 24px',
+                    backgroundColor: 'white',
+                    color: '#1e40af',
+                    borderRadius: '99px',
+                    border: '1px solid rgba(30, 64, 175, 0.2)',
+                    fontWeight: '600',
+                    fontSize: '0.82rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    textDecoration: 'none',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.02)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#eff6ff';
+                    e.currentTarget.style.borderColor = '#1e40af';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'white';
+                    e.currentTarget.style.borderColor = 'rgba(30, 64, 175, 0.2)';
+                  }}
+                >
+                  Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
+                </a>
+                
+                <button 
+                  onClick={() => handleDownload(tpl.slug, tpl.name)}
+                  disabled={!!downloadingSlug}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '6px',
+                    padding: '10px 24px',
+                    backgroundColor: 'white',
+                    color: '#1e40af',
+                    borderRadius: '99px',
+                    border: '1px solid #1e40af',
+                    fontWeight: '700',
+                    fontSize: '0.82rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    opacity: downloadingSlug ? 0.6 : 1
+                  }}
+                  onMouseEnter={(e) => { if(!downloadingSlug) e.currentTarget.style.backgroundColor = '#eff6ff'; }}
+                  onMouseLeave={(e) => { if(!downloadingSlug) e.currentTarget.style.backgroundColor = 'white'; }}
+                >
+                  {downloadingSlug === tpl.slug ? (
+                    <>Zipping <i className="fa-solid fa-circle-notch animate-spin"></i></>
+                  ) : (
+                    <>Download <i className="fa-solid fa-download"></i></>
+                  )}
+                </button>
+              </div>
 
-            {/* Action Buttons */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '12px',
-              margin: '24px 0 0 0'
-            }}>
-              <a 
-                href={`/templates/photography/${tpl.slug}/index.html`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '6px',
-                  padding: '12px 16px',
-                  backgroundColor: '#262626',
-                  color: 'white',
-                  borderRadius: '12px',
-                  fontWeight: '600',
-                  fontSize: '0.8rem',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  cursor: 'pointer',
-                  transition: 'background-color 0.2s',
-                  textDecoration: 'none'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#333333'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#262626'}
-              >
-                Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
-              </a>
-              
-              <button 
-                onClick={() => handleDownload(tpl.slug, tpl.name)}
-                disabled={!!downloadingSlug}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '6px',
-                  padding: '12px 16px',
-                  backgroundColor: '#544ee8',
-                  color: 'white',
-                  borderRadius: '12px',
-                  fontWeight: '600',
-                  fontSize: '0.8rem',
-                  border: 'none',
-                  boxShadow: '0 4px 12px rgba(84, 78, 232, 0.2)',
-                  cursor: 'pointer',
-                  transition: 'background-color 0.2s',
-                  opacity: downloadingSlug ? 0.6 : 1
-                }}
-                onMouseEnter={(e) => { if(!downloadingSlug) e.currentTarget.style.backgroundColor = '#433cc8'; }}
-                onMouseLeave={(e) => { if(!downloadingSlug) e.currentTarget.style.backgroundColor = '#544ee8'; }}
-              >
-                {downloadingSlug === tpl.slug ? (
-                  <>Zipping <i className="fa-solid fa-circle-notch animate-spin"></i></>
-                ) : (
-                  <>Download <i className="fa-solid fa-download"></i></>
-                )}
-              </button>
             </div>
 
           </div>

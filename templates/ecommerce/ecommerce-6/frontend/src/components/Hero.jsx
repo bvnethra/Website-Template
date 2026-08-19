@@ -160,13 +160,14 @@ const Hero = ({ onExploreClick }) => {
               }}
             >
               <motion.img
-                src="/images/hero.webp"
+                src="./images/hero.webp"
                 alt="Aura Luxury Products"
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover'
                 }}
+
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.8 }}
               />

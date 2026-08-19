@@ -9,7 +9,7 @@ const FLOATING_ITEMS = [
   {
     id: 'vanilla-balm',
     name: 'Vanilla Lip Balm',
-    image: '/images/vanilla-balm.png',
+    image: '/templates/ecommerce/ecommerce-1/images/vanilla-balm.png',
     position: 'top-1/2 -left-6 sm:left-4 -translate-y-1/2',
     rotate: -22,
     delay: '0s',
@@ -18,7 +18,7 @@ const FLOATING_ITEMS = [
   {
     id: 'rose-oil',
     name: 'Rose Lip Oil',
-    image: '/images/lip-oil.png',
+    image: '/templates/ecommerce/ecommerce-1/images/lip-oil.png',
     position: 'top-1/2 -right-6 sm:right-4 -translate-y-1/2',
     rotate: 22,
     delay: '1.5s',
@@ -27,7 +27,7 @@ const FLOATING_ITEMS = [
   {
     id: 'cherry-tint',
     name: 'Cherry Tinted Lip Balm',
-    image: '/images/cherry-tint.png',
+    image: '/templates/ecommerce/ecommerce-1/images/cherry-tint.png',
     position: '-top-6 left-12 sm:left-28',
     rotate: -12,
     delay: '0.8s',
@@ -36,7 +36,7 @@ const FLOATING_ITEMS = [
   {
     id: 'overnight-mask',
     name: 'Overnight Lip Mask',
-    image: '/images/overnight-mask.png',
+    image: '/templates/ecommerce/ecommerce-1/images/overnight-mask.png',
     position: '-top-6 right-12 sm:right-28',
     rotate: 14,
     delay: '2.4s',
@@ -45,7 +45,7 @@ const FLOATING_ITEMS = [
   {
     id: 'strawberry-balm',
     name: 'Strawberry Lip Balm',
-    image: '/images/strawberry-balm.png',
+    image: '/templates/ecommerce/ecommerce-1/images/strawberry-balm.png',
     position: '-bottom-10 left-16 sm:left-36',
     rotate: 10,
     delay: '3.2s',
@@ -54,7 +54,7 @@ const FLOATING_ITEMS = [
   {
     id: 'honey-balm',
     name: 'Honey Lip Balm',
-    image: '/images/honey-balm.png',
+    image: '/templates/ecommerce/ecommerce-1/images/honey-balm.png',
     position: '-bottom-10 right-16 sm:right-36',
     rotate: -12,
     delay: '1.8s',

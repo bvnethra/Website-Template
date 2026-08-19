@@ -200,86 +200,6 @@ public class DatabaseSeederController {
             wedding.setTags(new ArrayList<>(Arrays.asList("Wedding Theme", "Ivory Background", "Serif Typography")));
             templateRepository.save(wedding);
             logs.put("template_wedding", "Created");
-
-            // Fine Art template (Aura)
-            Template fineart = new Template();
-            fineart.setName("Aura — Premium Fine Art Studio");
-            fineart.setSlug("fineart-template");
-            fineart.setDescription("A premium, dynamic React portfolio website for a fine art photography studio. Features Ken Burns hero animations, scroll-triggered wipe reveals, and interactive circular gallery navigations.");
-            fineart.setCategory(photography);
-            fineart.setPrice(0.0);
-            fineart.setTemplateType("FREE");
-            fineart.setBootstrapVersion("HTML5 / Vanilla CSS");
-            fineart.setDemoUrl("/templates/photography/fineart-template/index.html");
-            fineart.setDownloadFile("fineart-template.zip");
-            fineart.setPreviewImage("/fineart_cover.png");
-            fineart.setVersion("1.0.0");
-            fineart.setStatus("PUBLISHED");
-            fineart.setPagesCount(1);
-            fineart.setDownloadsCount(1500);
-            fineart.setTags(new ArrayList<>(Arrays.asList("Premium Serif", "Wipe Reveals", "Hover Custom Cursor")));
-            templateRepository.save(fineart);
-            logs.put("template_fineart", "Created");
-
-            // Cinematic Wedding template (Eden Rose)
-            Template cinematic = new Template();
-            cinematic.setName("Eden Rose — Cinematic Luxury Wedding Portfolio");
-            cinematic.setSlug("cinematic-wedding");
-            cinematic.setDescription("A cinematic wedding photography portfolio template in deep black and luxury gold tones. Features intro curtain loaders, route transition reveals, staggered portfolio grids, and boutique inquiry options.");
-            cinematic.setCategory(photography);
-            cinematic.setPrice(0.0);
-            cinematic.setTemplateType("FREE");
-            cinematic.setBootstrapVersion("HTML5 / Tailwind CSS");
-            cinematic.setDemoUrl("/templates/photography/cinematic-wedding/index.html");
-            cinematic.setDownloadFile("cinematic-wedding.zip");
-            cinematic.setPreviewImage("/cinematic_cover.png");
-            cinematic.setVersion("1.0.0");
-            cinematic.setStatus("PUBLISHED");
-            cinematic.setPagesCount(1);
-            cinematic.setDownloadsCount(12450);
-            cinematic.setTags(new ArrayList<>(Arrays.asList("Luxury Monocrom", "Preloader curtain", "Staggered Grid")));
-            templateRepository.save(cinematic);
-            logs.put("template_cinematic", "Created");
-
-            // Kairo template
-            Template kairo = new Template();
-            kairo.setName("Kairo — Modern 3D Photography Portfolio");
-            kairo.setSlug("kairo-template");
-            kairo.setDescription("A modern photography portfolio featuring interactive 3D camera lens aperture graphics rendered in React Three Fiber, scroll-linked fade animations, split-layout bio sections, and fullscreen responsive image tiles.");
-            kairo.setCategory(photography);
-            kairo.setPrice(0.0);
-            kairo.setTemplateType("FREE");
-            kairo.setBootstrapVersion("HTML5 / Tailwind CSS");
-            kairo.setDemoUrl("/templates/photography/kairo-template/index.html");
-            kairo.setDownloadFile("kairo-template.zip");
-            kairo.setPreviewImage("/kairo_cover.png");
-            kairo.setVersion("1.0.0");
-            kairo.setStatus("PUBLISHED");
-            kairo.setPagesCount(1);
-            kairo.setDownloadsCount(8200);
-            kairo.setTags(new ArrayList<>(Arrays.asList("3D Scene", "Interactive Parallax", "Luxury Editorial")));
-            templateRepository.save(kairo);
-            logs.put("template_kairo", "Created");
-
-            // Lume Studio template
-            Template isteady = new Template();
-            isteady.setName("Lume Studio — Fashion & Editorial Portfolio");
-            isteady.setSlug("isteady-template");
-            isteady.setDescription("A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.");
-            isteady.setCategory(photography);
-            isteady.setPrice(0.0);
-            isteady.setTemplateType("FREE");
-            isteady.setBootstrapVersion("HTML5 / Tailwind CSS");
-            isteady.setDemoUrl("/templates/photography/isteady-template/index.html");
-            isteady.setDownloadFile("isteady-template.zip");
-            isteady.setPreviewImage("/lume_cover.png");
-            isteady.setVersion("1.0.0");
-            isteady.setStatus("PUBLISHED");
-            isteady.setPagesCount(1);
-            isteady.setDownloadsCount(9500);
-            isteady.setTags(new ArrayList<>(Arrays.asList("Editorial Fashion", "Moody Spotlight", "Bespoke Lighting")));
-            templateRepository.save(isteady);
-            logs.put("template_isteady", "Created");
         }
 
         // 6. Seed Restaurant templates
@@ -326,7 +246,68 @@ public class DatabaseSeederController {
             ecommerce.setTags(new ArrayList<>(Arrays.asList("Retail Shop", "Product Catalog", "Cart Logic", "Inventory Dashboard")));
             templateRepository.save(ecommerce);
             logs.put("template_ecommerce", "Created");
+
+            // Seed Soft Glow template
+            Template softGlow = new Template();
+            softGlow.setName("Soft Glow — Clean Beauty & Skin-First Hydration");
+            softGlow.setSlug("soft-glow");
+            softGlow.setDescription("A high-end Next.js beauty and skincare storefront featuring dewy-gloss styles, peptide bundle builders, marquee notification bars, interactive review boards, and smooth scroll animations.");
+            softGlow.setCategory(ecommerceCategory);
+            softGlow.setPrice(0.0);
+            softGlow.setTemplateType("FREE");
+            softGlow.setBootstrapVersion("Next.js / React / Tailwind CSS");
+            softGlow.setDemoUrl("/templates/ecommerce/ecommerce-1/index.html");
+            softGlow.setDownloadFile("soft-glow-beauty.zip");
+            softGlow.setPreviewImage("https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80");
+            softGlow.setVersion("1.0.0");
+            softGlow.setStatus("PUBLISHED");
+            softGlow.setPagesCount(3);
+            softGlow.setDownloadsCount(2450);
+            softGlow.setTags(new ArrayList<>(Arrays.asList("Skincare", "Beauty Shop", "Next.js Store", "Tailwind CSS")));
+            templateRepository.save(softGlow);
+            logs.put("template_softglow", "Created");
+
+            // Seed AURA template
+            Template aura = new Template();
+            aura.setName("AURA — Premium Acoustic & Luxury Archive");
+            aura.setSlug("aura-commerce");
+            aura.setDescription("An editorial, dark-themed e-commerce experience dedicated to premium acoustics, luxury timepieces, and structural apparel. Built with interactive cart drawers, wishlist triggers, and gold gradient finishes.");
+            aura.setCategory(ecommerceCategory);
+            aura.setPrice(0.0);
+            aura.setTemplateType("FREE");
+            aura.setBootstrapVersion("React / React Router / CSS Modules");
+            aura.setDemoUrl("/templates/ecommerce/ecommerce-6/index.html");
+            aura.setDownloadFile("aura-acoustic.zip");
+            aura.setPreviewImage("https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80");
+            aura.setVersion("1.0.0");
+            aura.setStatus("PUBLISHED");
+            aura.setPagesCount(8);
+            aura.setDownloadsCount(3100);
+            aura.setTags(new ArrayList<>(Arrays.asList("Luxury Archive", "Premium Acoustics", "React Store", "Wishlist System")));
+            templateRepository.save(aura);
+            logs.put("template_aura", "Created");
+
+            // Seed AURELIA template
+            Template aurelia = new Template();
+            aurelia.setName("AURELIA — Luxury Jewelry & Emerald Archive");
+            aurelia.setSlug("aurelia-commerce");
+            aurelia.setDescription("A premium, dark emerald & gold themed e-commerce template for high-end luxury jewelry, diamonds, and bridal collections. Styled with custom drawers, search overlay, and elegant product filters.");
+            aurelia.setCategory(ecommerceCategory);
+            aurelia.setPrice(0.0);
+            aurelia.setTemplateType("FREE");
+            aurelia.setBootstrapVersion("React / React Router / Vanilla CSS");
+            aurelia.setDemoUrl("/templates/ecommerce/ecommerce-2/index.html");
+            aurelia.setDownloadFile("aurelia-jewelry.zip");
+            aurelia.setPreviewImage("https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80");
+            aurelia.setVersion("1.0.0");
+            aurelia.setStatus("PUBLISHED");
+            aurelia.setPagesCount(9);
+            aurelia.setDownloadsCount(1420);
+            aurelia.setTags(new ArrayList<>(Arrays.asList("Jewelry Store", "Emerald Collection", "React Store", "Luxury Premium")));
+            templateRepository.save(aurelia);
+            logs.put("template_aurelia", "Created");
         }
+
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);

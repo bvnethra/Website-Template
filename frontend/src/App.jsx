@@ -10,6 +10,7 @@ import Builder from './pages/Builder';
 import Admin from './pages/Admin';
 import Auth from './pages/Auth';
 import PhotographyCatalog from './pages/PhotographyCatalog';
+import EducationCatalog from './pages/EducationCatalog';
 
 function Header({ cartCount, user, onLogout }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -93,7 +94,7 @@ function Header({ cartCount, user, onLogout }) {
               <Link to="/templates?category=events" className="dropdown-link">› Events</Link>
               <Link to="/templates/photography" className="dropdown-link">› Photography</Link>
               <Link to="/templates?category=construction" className="dropdown-link">› Construction</Link>
-              <Link to="/templates?category=education" className="dropdown-link">› Education</Link>
+              <Link to="/templates/education" className="dropdown-link">› Education</Link>
               <Link to="/templates?category=restaurant" className="dropdown-link">› Restaurant</Link>
               <Link to="/templates?category=ecommerce" className="dropdown-link">› Ecommerce</Link>
             </div>
@@ -403,6 +404,7 @@ function MainApp() {
             <Route path="/" element={<Home addToCart={addToCart} cart={cart} />} />
             <Route path="/templates" element={<Templates />} />
             <Route path="/templates/photography" element={<PhotographyCatalog />} />
+            <Route path="/templates/education" element={<EducationCatalog />} />
             <Route path="/templates/:slug" element={<TemplateDetails addToCart={addToCart} cart={cart} />} />
             <Route path="/dashboard" element={<Dashboard user={user} cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} />} />
             <Route path="/builder" element={<Builder user={user} />} />

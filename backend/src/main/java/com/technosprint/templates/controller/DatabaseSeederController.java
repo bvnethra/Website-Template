@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import java.util.*;
 
 @RestController
@@ -32,6 +34,14 @@ public class DatabaseSeederController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @EventListener(ApplicationReadyEvent.class)
+    public void autoSeedOnStartup() {
+        if (categoryRepository.count() == 0 || templateRepository.count() == 0) {
+            System.out.println(">>> [AUTO-SEED] Seeding initial categories and templates into database...");
+            seedDatabase();
+        }
+    }
 
     @PostMapping
     @GetMapping
@@ -105,7 +115,30 @@ public class DatabaseSeederController {
             logs.put("category_" + data[1], "Created");
         }
 
-        // Seed photography templates
+        // 4. Seed Qure Nexa template under Medical category
+        Category medicalCategory = catMap.get("medical");
+        if (medicalCategory != null) {
+            Template qureNexa = new Template();
+            qureNexa.setName("Qure Nexa — Advanced Medical & Healthcare Platform");
+            qureNexa.setSlug("qure-nexa");
+            qureNexa.setDescription("A modern healthcare and hospital management platform featuring multi-role portals for Patients, Doctors, and Admins, doctor directory, intelligent slot booking, and clinical workflows.");
+            qureNexa.setCategory(medicalCategory);
+            qureNexa.setPrice(0.0);
+            qureNexa.setTemplateType("FREE");
+            qureNexa.setBootstrapVersion("React 19 / Tailwind CSS / Vite");
+            qureNexa.setDemoUrl("/templates/medical/qure-nexa/index.html");
+            qureNexa.setDownloadFile("qure-nexa-medical.zip");
+            qureNexa.setPreviewImage("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80");
+            qureNexa.setVersion("1.0");
+            qureNexa.setStatus("PUBLISHED");
+            qureNexa.setPagesCount(12);
+            qureNexa.setDownloadsCount(12400);
+            qureNexa.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "hospital", "doctor", "patient-portal", "clinic")));
+            templateRepository.save(qureNexa);
+            logs.put("qureNexaTemplate", "Seeded Qure Nexa under Medical category");
+        }
+
+        // 5. Seed Photography templates
         Category photography = catMap.get("photography");
         if (photography != null) {
             // SnapFolio template
@@ -116,7 +149,7 @@ public class DatabaseSeederController {
             snapfolio.setCategory(photography);
             snapfolio.setPrice(0.0);
             snapfolio.setTemplateType("FREE");
-            snapfolio.setBootstrapVersion("Bootstrap 5.3");
+            snapfolio.setBootstrapVersion("HTML5 / Tailwind CSS");
             snapfolio.setDemoUrl("/templates/photography/snapfolio-template/index.html");
             snapfolio.setDownloadFile("snapfolio-template.zip");
             snapfolio.setPreviewImage("https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80");
@@ -136,7 +169,7 @@ public class DatabaseSeederController {
             photo.setCategory(photography);
             photo.setPrice(0.0);
             photo.setTemplateType("FREE");
-            photo.setBootstrapVersion("Bootstrap 5.3");
+            photo.setBootstrapVersion("HTML5 / Vanilla CSS");
             photo.setDemoUrl("/templates/photography/photo-template/index.html");
             photo.setDownloadFile("photo-template.zip");
             photo.setPreviewImage("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80");
@@ -149,7 +182,7 @@ public class DatabaseSeederController {
             logs.put("template_photo", "Created");
         }
 
-        logs.put("status", "Database Seeding Completed Successfully! Photo & SnapFolio templates seeded.");
+        logs.put("status", "Database Seeding Completed Successfully! Qure Nexa Medical template & Photography templates seeded.");
         return ResponseEntity.ok(logs);
     }
 }

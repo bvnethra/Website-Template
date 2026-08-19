@@ -114,6 +114,22 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'HTML5 / Tailwind CSS',
     version: '1.0',
     demoUrl: '/templates/photography/wedding-template/index.html'
+  },
+  {
+    id: 4,
+    name: 'Qure Nexa — Advanced Medical & Healthcare Platform',
+    slug: 'qure-nexa',
+    previewImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 2, name: 'Medical', slug: 'medical' },
+    pagesCount: 12,
+    downloadsCount: 12400,
+    description: 'A modern healthcare and hospital management platform featuring multi-role portals for Patients, Doctors, and Admins, doctor directory, intelligent slot booking, and clinical workflows.',
+    bootstrapVersion: 'React 19 / Tailwind CSS / Vite',
+    demoUrl: '/templates/medical/qure-nexa/index.html',
+    downloadFile: 'qure-nexa-medical.zip',
+    version: '1.0'
   }
 ];
 
@@ -220,7 +236,26 @@ export const api = {
       const res = await fetch(`${BASE_URL}/templates?${query.toString()}`, {
         headers: getHeaders(),
       });
-      return await handleResponse(res);
+      const data = await handleResponse(res);
+      if (Array.isArray(data) && data.length > 0) {
+        return data;
+      }
+      let filtered = [...MOCK_TEMPLATES];
+      if (params.category && params.category !== 'all') {
+        filtered = filtered.filter(t => t.category.slug === params.category);
+      }
+      if (params.type && params.type !== 'all') {
+        filtered = filtered.filter(t => t.templateType === params.type);
+      }
+      if (params.search) {
+        const queryStr = params.search.toLowerCase();
+        filtered = filtered.filter(t => 
+          t.name.toLowerCase().includes(queryStr) || 
+          t.description.toLowerCase().includes(queryStr) ||
+          t.category.name.toLowerCase().includes(queryStr)
+        );
+      }
+      return filtered;
     } catch (err) {
       console.warn("API templates fetch failed, utilizing mock fallback:", err);
       let filtered = [...MOCK_TEMPLATES];

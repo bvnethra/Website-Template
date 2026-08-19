@@ -166,4 +166,82 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1200);
   });
 
+  // Studio Inquiry Modal Behavior
+  const modal = document.getElementById('inquiry-modal');
+  const modalContent = document.getElementById('modal-content');
+  const closeModalBtn = document.getElementById('close-modal-btn');
+  const seriesNameSpan = document.getElementById('modal-series-name');
+  const inquiryForm = document.getElementById('inquiry-form');
+  const modalSuccessMsg = document.getElementById('modal-success-msg');
+
+  // Trigger modal open on CTA click
+  document.querySelectorAll('.cta-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const section = e.target.closest('section');
+      const seriesTitle = section ? section.querySelector('h2').textContent : 'Fine Art Print';
+      seriesNameSpan.textContent = seriesTitle;
+      
+      // Show modal
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modal.classList.add('opacity-100');
+        modalContent.classList.remove('scale-95');
+        modalContent.classList.add('scale-100');
+      }, 50);
+    });
+  });
+
+  // Close modal logic
+  const closeModal = () => {
+    modal.classList.remove('opacity-100');
+    modal.classList.add('opacity-0');
+    modalContent.classList.remove('scale-100');
+    modalContent.classList.add('scale-95');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      inquiryForm.classList.remove('hidden');
+      modalSuccessMsg.classList.add('hidden');
+    }, 300);
+  };
+
+  closeModalBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (!e.target.closest('#modal-content')) {
+      closeModal();
+    }
+  });
+
+  // Inquiry form submit
+  inquiryForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nameVal = document.getElementById('inquiry-name').value;
+    const emailVal = document.getElementById('inquiry-email').value;
+    const msgVal = document.getElementById('inquiry-message').value;
+    const submitBtn = document.getElementById('submit-inquiry-btn');
+    const originalText = submitBtn.textContent;
+
+    if (!nameVal || !emailVal || !msgVal) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    setTimeout(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+
+      // Swap form with success feedback
+      inquiryForm.classList.add('hidden');
+      modalSuccessMsg.classList.remove('hidden');
+
+      // Clear values
+      document.getElementById('inquiry-name').value = '';
+      document.getElementById('inquiry-email').value = '';
+      document.getElementById('inquiry-message').value = '';
+
+      // Auto close modal
+      setTimeout(closeModal, 1500);
+    }, 1200);
+  });
+
 });

@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function FeatureBlock({ title, label, description, image, ctaText, reverse, theme }) {
+export default function FeatureBlock({ id, title, label, description, image, ctaText, reverse, theme, onCtaClick }) {
   const isDark = theme === 'dark';
 
   return (
     <section 
+      id={id}
       className={`py-24 md:py-32 w-full transition-colors duration-500 overflow-hidden ${
         isDark ? 'bg-[#0a0a0a] text-[#f5f4f1]' : 'bg-[#f5f4f1] text-[#0a0a0a]'
       }`}
@@ -90,6 +91,7 @@ export default function FeatureBlock({ title, label, description, image, ctaText
               className="pt-4"
             >
               <button 
+                onClick={onCtaClick}
                 className={`px-8 py-3 rounded-full border text-xs uppercase tracking-[0.2em] font-sans transition-all duration-500 ${
                   isDark 
                     ? 'border-[#f5f4f1]/30 text-[#f5f4f1] hover:bg-[#f5f4f1] hover:text-[#0a0a0a]' 

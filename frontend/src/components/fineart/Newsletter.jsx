@@ -23,7 +23,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-24 md:py-32 bg-[#0a0a0a] text-[#f5f4f1] border-t border-white/5">
+    <section id="artist" className="py-24 md:py-32 bg-[#0a0a0a] text-[#f5f4f1] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
           

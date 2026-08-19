@@ -36,7 +36,7 @@ export const siteConfig = {
   ],
   featureBlocks: [
     {
-      id: "featured-1",
+      id: "books",
       eyebrow: "VOL I. ARCHIVAL SERIES",
       title: "The Architecture of Solitude",
       description: "A profound exploration of structural isolation in the Nordic landscapes. Captured over three winters, this series captures the quiet tension between concrete forms and blank white tundras.",
@@ -46,7 +46,7 @@ export const siteConfig = {
       theme: "dark"
     },
     {
-      id: "featured-2",
+      id: "initiatives",
       eyebrow: "VOL II. SCULPTING VOID",
       title: "Where Shadows Align",
       description: "An ongoing study of light cast across geometric plaster models in natural morning light. Highlighting how simple gradients of charcoal and cream can transform flat planes into deep spatial dimensions.",

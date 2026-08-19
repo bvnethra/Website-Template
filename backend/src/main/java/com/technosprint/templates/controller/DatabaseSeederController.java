@@ -107,14 +107,16 @@ public class DatabaseSeederController {
                 {"portfolio", "portfolio", "Personal resumes, developer bios, and work showcases."}
         };
 
+        Map<String, Category> catMap = new HashMap<>();
         for (String[] data : categoryData) {
             Category cat = new Category(data[0], data[1], data[2], "ACTIVE");
             categoryRepository.save(cat);
+            catMap.put(data[1], cat);
             logs.put("category_" + data[1], "Created");
         }
 
         // 4. Seed Qure Nexa template under Medical category
-        Category medicalCategory = categoryRepository.findBySlug("medical").orElse(null);
+        Category medicalCategory = catMap.get("medical");
         if (medicalCategory != null) {
             Template qureNexa = new Template();
             qureNexa.setName("Qure Nexa — Advanced Medical & Healthcare Platform");
@@ -131,49 +133,53 @@ public class DatabaseSeederController {
             qureNexa.setStatus("PUBLISHED");
             qureNexa.setPagesCount(12);
             qureNexa.setDownloadsCount(12400);
-            qureNexa.setTags(List.of("medical", "healthcare", "hospital", "doctor", "patient-portal", "clinic"));
+            qureNexa.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "hospital", "doctor", "patient-portal", "clinic")));
             templateRepository.save(qureNexa);
             logs.put("qureNexaTemplate", "Seeded Qure Nexa under Medical category");
         }
 
         // 5. Seed Photography templates
-        Category photoCategory = categoryRepository.findBySlug("photography").orElse(null);
-        if (photoCategory != null) {
+        Category photography = catMap.get("photography");
+        if (photography != null) {
+            // SnapFolio template
             Template snapfolio = new Template();
             snapfolio.setName("SnapFolio — Dark Minimalist Portfolio");
             snapfolio.setSlug("snapfolio-template");
             snapfolio.setDescription("A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.");
-            snapfolio.setCategory(photoCategory);
+            snapfolio.setCategory(photography);
             snapfolio.setPrice(0.0);
             snapfolio.setTemplateType("FREE");
             snapfolio.setBootstrapVersion("HTML5 / Tailwind CSS");
             snapfolio.setDemoUrl("/templates/photography/snapfolio-template/index.html");
             snapfolio.setDownloadFile("snapfolio-template.zip");
             snapfolio.setPreviewImage("https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80");
-            snapfolio.setVersion("1.0");
+            snapfolio.setVersion("1.0.0");
             snapfolio.setStatus("PUBLISHED");
             snapfolio.setPagesCount(1);
-            snapfolio.setDownloadsCount(15000);
-            snapfolio.setTags(List.of("photography", "portfolio", "dark-mode"));
+            snapfolio.setDownloadsCount(12450);
+            snapfolio.setTags(new ArrayList<>(Arrays.asList("Dark Theme", "Masonry Gallery", "Lightbox Modal")));
             templateRepository.save(snapfolio);
+            logs.put("template_snapfolio", "Created");
 
-            Template photoStudio = new Template();
-            photoStudio.setName("Photo — Editorial Photography Studio");
-            photoStudio.setSlug("photo-template");
-            photoStudio.setDescription("A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.");
-            photoStudio.setCategory(photoCategory);
-            photoStudio.setPrice(0.0);
-            photoStudio.setTemplateType("FREE");
-            photoStudio.setBootstrapVersion("HTML5 / Vanilla CSS");
-            photoStudio.setDemoUrl("/templates/photography/photo-template/index.html");
-            photoStudio.setDownloadFile("photo-template.zip");
-            photoStudio.setPreviewImage("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80");
-            photoStudio.setVersion("1.0");
-            photoStudio.setStatus("PUBLISHED");
-            photoStudio.setPagesCount(1);
-            photoStudio.setDownloadsCount(8400);
-            photoStudio.setTags(List.of("photography", "editorial", "studio"));
-            templateRepository.save(photoStudio);
+            // Photo template
+            Template photo = new Template();
+            photo.setName("Photo — Editorial Photography Studio");
+            photo.setSlug("photo-template");
+            photo.setDescription("A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.");
+            photo.setCategory(photography);
+            photo.setPrice(0.0);
+            photo.setTemplateType("FREE");
+            photo.setBootstrapVersion("HTML5 / Vanilla CSS");
+            photo.setDemoUrl("/templates/photography/photo-template/index.html");
+            photo.setDownloadFile("photo-template.zip");
+            photo.setPreviewImage("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80");
+            photo.setVersion("1.0.0");
+            photo.setStatus("PUBLISHED");
+            photo.setPagesCount(1);
+            photo.setDownloadsCount(15200);
+            photo.setTags(new ArrayList<>(Arrays.asList("Editorial Layout", "Scroll Pinned Canvas", "Golden Hour Theme")));
+            templateRepository.save(photo);
+            logs.put("template_photo", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! Qure Nexa Medical template & Photography templates seeded.");

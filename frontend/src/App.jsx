@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard';
 import Builder from './pages/Builder';
 import Admin from './pages/Admin';
 import Auth from './pages/Auth';
+import HotelTemplate from './pages/HotelTemplate';
 import PhotographyCatalog from './pages/PhotographyCatalog';
 
 function Header({ cartCount, user, onLogout }) {
@@ -149,34 +150,7 @@ function Header({ cartCount, user, onLogout }) {
           }} />
         </div>
 
-        {/* Cart Icon */}
-        <Link to="/dashboard?tab=cart" style={{
-          position: 'relative',
-          color: 'var(--secondary-color)',
-          display: 'flex',
-          alignItems: 'center'
-        }}>
-          <ShoppingCart size={21} />
-          {cartCount > 0 && (
-            <span style={{
-              position: 'absolute',
-              top: -8,
-              right: -8,
-              background: 'var(--primary-color)',
-              color: 'white',
-              fontSize: '0.7rem',
-              fontWeight: '700',
-              borderRadius: '50%',
-              width: '18px',
-              height: '18px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-              {cartCount}
-            </span>
-          )}
-        </Link>
+
 
         {user ? (
           <div style={{ position: 'relative' }}>
@@ -298,8 +272,8 @@ function Footer() {
           <h4 style={{ color: 'white', marginBottom: 20, fontSize: '1rem' }}>Browse</h4>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.85rem' }}>
             <li><Link to="/templates" style={{ color: '#cbd5e1' }}>All Templates</Link></li>
-            <li><Link to="/templates?type=FREE" style={{ color: '#cbd5e1' }}>Free Resources</Link></li>
-            <li><Link to="/templates?type=PREMIUM" style={{ color: '#cbd5e1' }}>Premium Designs</Link></li>
+            <li><Link to="/templates?type=FREE" style={{ color: '#cbd5e1' }}>Free Templates</Link></li>
+            <li><Link to="/templates?type=PREMIUM" style={{ color: '#cbd5e1' }}>Premium Templates</Link></li>
             <li><Link to="/builder" style={{ color: '#cbd5e1' }}>Online Customizer</Link></li>
           </ul>
         </div>
@@ -342,28 +316,54 @@ function Footer() {
   );
 }
 
+function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLogin, handleLogout }) {
+  const location = useLocation();
+  const isHotelTemplate = location.pathname === '/hotel-template';
+
+  // Hotel template renders full-screen with its own nav/footer
+  if (isHotelTemplate) {
+    return (
+      <Routes>
+        <Route path="/hotel-template" element={<HotelTemplate />} />
+      </Routes>
+    );
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <Header cartCount={cart.length} user={user} onLogout={handleLogout} />
+      
+      <main style={{ flex: 1, maxWidth: 1300, width: '100%', margin: '0 auto', padding: '0 20px' }}>
+        <Routes>
+          <Route path="/" element={<Home addToCart={addToCart} cart={cart} />} />
+          <Route path="/templates" element={<Templates />} />
+          <Route path="/templates/photography" element={<PhotographyCatalog />} />
+          <Route path="/templates/:slug" element={<TemplateDetails addToCart={addToCart} cart={cart} />} />
+          <Route path="/dashboard" element={<Dashboard user={user} cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} />} />
+          <Route path="/builder" element={<Builder user={user} />} />
+          <Route path="/admin" element={<Admin user={user} />} />
+          <Route path="/auth" element={<Auth onLogin={handleLogin} />} />
+        </Routes>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+}
+
 function MainApp() {
   const [user, setUser] = useState(api.getCurrentUser());
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    // Sync active session
     setUser(api.getCurrentUser());
-    
-    // Load local cart
     const savedCart = localStorage.getItem('ts_cart');
     if (savedCart) {
-      try {
-        setCart(JSON.parse(savedCart));
-      } catch (e) {
-        setCart([]);
-      }
+      try { setCart(JSON.parse(savedCart)); } catch (e) { setCart([]); }
     }
   }, []);
 
-  const handleLogin = (userInfo) => {
-    setUser(userInfo);
-  };
+  const handleLogin = (userInfo) => setUser(userInfo);
 
   const handleLogout = () => {
     api.logout().then(() => {
@@ -373,10 +373,7 @@ function MainApp() {
   };
 
   const addToCart = (template) => {
-    if (cart.find(item => item.id === template.id)) {
-      alert('Template is already in your cart!');
-      return;
-    }
+    if (cart.find(item => item.id === template.id)) { alert('Template is already in your cart!'); return; }
     const updatedCart = [...cart, template];
     setCart(updatedCart);
     localStorage.setItem('ts_cart', JSON.stringify(updatedCart));
@@ -395,24 +392,15 @@ function MainApp() {
 
   return (
     <Router>
-      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <Header cartCount={cart.length} user={user} onLogout={handleLogout} />
-        
-        <main style={{ flex: 1, maxWidth: 1300, width: '100%', margin: '0 auto', padding: '0 20px' }}>
-          <Routes>
-            <Route path="/" element={<Home addToCart={addToCart} cart={cart} />} />
-            <Route path="/templates" element={<Templates />} />
-            <Route path="/templates/photography" element={<PhotographyCatalog />} />
-            <Route path="/templates/:slug" element={<TemplateDetails addToCart={addToCart} cart={cart} />} />
-            <Route path="/dashboard" element={<Dashboard user={user} cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} />} />
-            <Route path="/builder" element={<Builder user={user} />} />
-            <Route path="/admin" element={<Admin user={user} />} />
-            <Route path="/auth" element={<Auth onLogin={handleLogin} />} />
-          </Routes>
-        </main>
-        
-        <Footer />
-      </div>
+      <AppRoutes
+        user={user}
+        cart={cart}
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
+        clearCart={clearCart}
+        handleLogin={handleLogin}
+        handleLogout={handleLogout}
+      />
     </Router>
   );
 }

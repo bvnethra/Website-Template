@@ -128,11 +128,9 @@
           topBar.appendChild(centerDiv);
           
           const rightDiv = document.createElement('div');
-          const pathParts = window.location.pathname.split('/');
-          const templateSlug = pathParts[pathParts.length - 2] || 'wedding-template';
           
           rightDiv.innerHTML = `
-            <a id="download-btn-header" href="/templates/${templateSlug}?action=download" style="
+            <a id="download-btn-header" href="/templates/photography/wedding-template/index.html" download="index.html" style="
               background: #0066ff;
               color: #ffffff;
               text-decoration: none;

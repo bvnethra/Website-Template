@@ -82,7 +82,8 @@ const MOCK_TEMPLATES = [
     downloadsCount: 15000,
     description: 'A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.',
     bootstrapVersion: 'HTML5 / Tailwind CSS',
-    version: '1.0'
+    version: '1.0',
+    demoUrl: '/templates/photography/snapfolio-template/index.html'
   },
   {
     id: 2,

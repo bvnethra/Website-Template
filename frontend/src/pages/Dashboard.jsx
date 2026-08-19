@@ -5,7 +5,7 @@ import { Download, CreditCard, Key, History, Trash2, ShieldCheck, ArrowRight, Ex
 
 export default function Dashboard({ user, cart, removeFromCart, clearCart }) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const activeTab = searchParams.get('tab') || 'downloads';
+  const activeTab = searchParams.get('tab') || 'projects';
   const navigate = useNavigate();
 
   // Data states
@@ -148,46 +148,6 @@ export default function Dashboard({ user, cart, removeFromCart, clearCart }) {
         <aside className="glass-panel" style={{ padding: 18, background: 'white', alignSelf: 'start', borderRadius: 16 }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             <button
-              onClick={() => handleTabChange('downloads')}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 12,
-                padding: '12px 16px',
-                borderRadius: 8,
-                border: 'none',
-                background: activeTab === 'downloads' ? 'var(--primary-gradient)' : 'none',
-                color: activeTab === 'downloads' ? 'white' : 'var(--text-main)',
-                fontSize: '0.9rem',
-                fontWeight: 600,
-                textAlign: 'left',
-                cursor: 'pointer',
-                transition: 'var(--transition)'
-              }}
-            >
-              <Download size={18} /> Downloads
-            </button>
-            <button
-              onClick={() => handleTabChange('licenses')}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 12,
-                padding: '12px 16px',
-                borderRadius: 8,
-                border: 'none',
-                background: activeTab === 'licenses' ? 'var(--primary-gradient)' : 'none',
-                color: activeTab === 'licenses' ? 'white' : 'var(--text-main)',
-                fontSize: '0.9rem',
-                fontWeight: 600,
-                textAlign: 'left',
-                cursor: 'pointer',
-                transition: 'var(--transition)'
-              }}
-            >
-              <Key size={18} /> License Keys
-            </button>
-            <button
               onClick={() => handleTabChange('projects')}
               style={{
                 display: 'flex',
@@ -208,7 +168,7 @@ export default function Dashboard({ user, cart, removeFromCart, clearCart }) {
               <Edit3 size={18} /> Saved Projects
             </button>
             <button
-              onClick={() => handleTabChange('history')}
+              onClick={() => handleTabChange('licenses')}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -216,8 +176,8 @@ export default function Dashboard({ user, cart, removeFromCart, clearCart }) {
                 padding: '12px 16px',
                 borderRadius: 8,
                 border: 'none',
-                background: activeTab === 'history' ? 'var(--primary-gradient)' : 'none',
-                color: activeTab === 'history' ? 'white' : 'var(--text-main)',
+                background: activeTab === 'licenses' ? 'var(--primary-gradient)' : 'none',
+                color: activeTab === 'licenses' ? 'white' : 'var(--text-main)',
                 fontSize: '0.9rem',
                 fontWeight: 600,
                 textAlign: 'left',
@@ -225,59 +185,7 @@ export default function Dashboard({ user, cart, removeFromCart, clearCart }) {
                 transition: 'var(--transition)'
               }}
             >
-              <History size={18} /> Download Logs
-            </button>
-            <button
-              onClick={() => handleTabChange('orders')}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 12,
-                padding: '12px 16px',
-                borderRadius: 8,
-                border: 'none',
-                background: activeTab === 'orders' ? 'var(--primary-gradient)' : 'none',
-                color: activeTab === 'orders' ? 'white' : 'var(--text-main)',
-                fontSize: '0.9rem',
-                fontWeight: 600,
-                textAlign: 'left',
-                cursor: 'pointer',
-                transition: 'var(--transition)'
-              }}
-            >
-              <ShoppingBag size={18} /> Orders History
-            </button>
-            <button
-              onClick={() => handleTabChange('cart')}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '12px 16px',
-                borderRadius: 8,
-                border: 'none',
-                background: activeTab === 'cart' ? 'var(--primary-gradient)' : 'none',
-                color: activeTab === 'cart' ? 'white' : 'var(--text-main)',
-                fontSize: '0.9rem',
-                fontWeight: 600,
-                cursor: 'pointer',
-                transition: 'var(--transition)'
-              }}
-            >
-              <span style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                <CreditCard size={18} /> Checkout Cart
-              </span>
-              {cart.length > 0 && (
-                <span style={{
-                  background: activeTab === 'cart' ? 'white' : 'var(--primary-color)',
-                  color: activeTab === 'cart' ? 'var(--primary-color)' : 'white',
-                  fontSize: '0.75rem',
-                  padding: '2px 8px',
-                  borderRadius: 99
-                }}>
-                  {cart.length}
-                </span>
-              )}
+              <Key size={18} /> License Keys
             </button>
           </div>
         </aside>

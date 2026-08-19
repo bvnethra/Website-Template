@@ -1,15 +1,18 @@
+# Node packages and build outputs
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+build/
+dist/
+coverage/
+
 # Databases and large assets
 db-data/
 *.db
 *.log
 *.zip
 *.tar.gz
-
-# Frontend Node packages and build outputs
-node_modules/
-frontend/node_modules/
-frontend/dist/
-frontend/build/
 
 # Backend Spring Boot compilation outputs and tools
 target/
@@ -18,7 +21,12 @@ backend/target/
 *.class
 .factorypath
 
-# IDE configurations
+# Environment files
+.env*
+!.env.example
+
+# IDE & OS configurations
+.DS_Store
 .idea/
 .vscode/
 *.iml
@@ -30,3 +38,4 @@ backend/target/
 .gemini/
 .agents/
 bin/
+

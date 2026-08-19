@@ -150,34 +150,7 @@ function Header({ cartCount, user, onLogout }) {
           }} />
         </div>
 
-        {/* Cart Icon */}
-        <Link to="/dashboard?tab=cart" style={{
-          position: 'relative',
-          color: 'var(--secondary-color)',
-          display: 'flex',
-          alignItems: 'center'
-        }}>
-          <ShoppingCart size={21} />
-          {cartCount > 0 && (
-            <span style={{
-              position: 'absolute',
-              top: -8,
-              right: -8,
-              background: 'var(--primary-color)',
-              color: 'white',
-              fontSize: '0.7rem',
-              fontWeight: '700',
-              borderRadius: '50%',
-              width: '18px',
-              height: '18px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-              {cartCount}
-            </span>
-          )}
-        </Link>
+
 
         {user ? (
           <div style={{ position: 'relative' }}>
@@ -299,8 +272,8 @@ function Footer() {
           <h4 style={{ color: 'white', marginBottom: 20, fontSize: '1rem' }}>Browse</h4>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.85rem' }}>
             <li><Link to="/templates" style={{ color: '#cbd5e1' }}>All Templates</Link></li>
-            <li><Link to="/templates?type=FREE" style={{ color: '#cbd5e1' }}>Free Resources</Link></li>
-            <li><Link to="/templates?type=PREMIUM" style={{ color: '#cbd5e1' }}>Premium Designs</Link></li>
+            <li><Link to="/templates?type=FREE" style={{ color: '#cbd5e1' }}>Free Templates</Link></li>
+            <li><Link to="/templates?type=PREMIUM" style={{ color: '#cbd5e1' }}>Premium Templates</Link></li>
             <li><Link to="/builder" style={{ color: '#cbd5e1' }}>Online Customizer</Link></li>
           </ul>
         </div>

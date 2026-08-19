@@ -115,7 +115,7 @@ export default function HeroContent() {
           variants={itemVariants}
           className="gradient-headline"
         >
-          AI STABILIZER FOR<br/>PROFESSIONAL CREATION
+          AI STABILIZER FOR<br/>MOTION PHOTOGRAPHY
         </motion.h1>
 
         {/* Subhead Paragraph */}

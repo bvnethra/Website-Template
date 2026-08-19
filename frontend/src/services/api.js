@@ -130,6 +130,51 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/medical/qure-nexa/index.html',
     downloadFile: 'qure-nexa-medical.zip',
     version: '1.0'
+  },
+  {
+    id: 5,
+    name: 'Aura — Premium Fine Art Studio',
+    slug: 'fineart-template',
+    previewImage: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 8, name: 'Photography', slug: 'photography' },
+    pagesCount: 1,
+    downloadsCount: 1500,
+    description: 'A premium, dynamic React portfolio website for a fine art photography studio. Features Ken Burns hero animations, scroll-triggered wipe reveals, and interactive circular gallery navigations.',
+    bootstrapVersion: 'HTML5 / Vanilla CSS',
+    version: '1.0',
+    demoUrl: '/templates/photography/fineart-template/index.html'
+  },
+  {
+    id: 6,
+    name: 'Eden Rose — Cinematic Luxury Wedding Portfolio',
+    slug: 'cinematic-wedding',
+    previewImage: 'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 8, name: 'Photography', slug: 'photography' },
+    pagesCount: 1,
+    downloadsCount: 12450,
+    description: 'A cinematic wedding photography portfolio template in deep black and luxury gold tones. Features intro curtain loaders, route transition reveals, staggered portfolio grids, and boutique inquiry options.',
+    bootstrapVersion: 'HTML5 / Tailwind CSS',
+    version: '1.0',
+    demoUrl: '/templates/photography/cinematic-wedding/index.html'
+  },
+  {
+    id: 7,
+    name: 'Kairo — Modern 3D Photography Portfolio',
+    slug: 'kairo-template',
+    previewImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 8, name: 'Photography', slug: 'photography' },
+    pagesCount: 1,
+    downloadsCount: 8200,
+    description: 'A modern photography portfolio featuring interactive 3D camera lens aperture graphics rendered in React Three Fiber, scroll-linked fade animations, split-layout bio sections, and fullscreen responsive image tiles.',
+    bootstrapVersion: 'HTML5 / Tailwind CSS',
+    version: '1.0',
+    demoUrl: '/templates/photography/kairo-template/index.html'
   }
 ];
 

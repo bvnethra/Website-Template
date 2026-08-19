@@ -33,7 +33,7 @@ export const siteConfig = {
     {
       title: "Lake Como",
       caption: "Mateo & Sophia — Villa d'Este",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577fad?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "St. Moritz, Swiss Alps",
@@ -48,7 +48,7 @@ export const siteConfig = {
     {
       title: "Paris, France",
       caption: "Charles & Marguerite — Ritz Paris",
-      image: "https://images.unsplash.com/photo-1507504038482-762618e23fc4?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Majorca, Spain",
@@ -61,7 +61,7 @@ export const siteConfig = {
       eyebrow: "FEATURED EDITORIAL STORY",
       title: "A Roman Holiday",
       description: "An intimate, editorial micro-wedding set in the crumbling stone ruins of Rome. Documented entirely in fine art black and white medium-format film.",
-      image: "https://images.unsplash.com/photo-1460364117572-c556f082e666?auto=format&fit=crop&w=1200&q=80",
+      image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80",
       linkText: "View Film Story",
       reverse: false
     },
@@ -69,7 +69,7 @@ export const siteConfig = {
       eyebrow: "HIGH-SOCIETY CELEBRATIONS",
       title: "Midnight in Versailles",
       description: "A decadent, multi-day evening gala event under the golden mirrors of Versailles, capturing candle-lit tables, couture gowns, and late-night champagne towers.",
-      image: "https://images.unsplash.com/photo-1519225495810-7512c696505a?auto=format&fit=crop&w=1200&q=80",
+      image: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1200&q=80",
       linkText: "View Versailles Story",
       reverse: true
     }

@@ -180,6 +180,86 @@ public class DatabaseSeederController {
             photo.setTags(new ArrayList<>(Arrays.asList("Editorial Layout", "Scroll Pinned Canvas", "Golden Hour Theme")));
             templateRepository.save(photo);
             logs.put("template_photo", "Created");
+
+            // Wedding template (Lumiere)
+            Template wedding = new Template();
+            wedding.setName("Lumière — High-End Wedding & Event Photography");
+            wedding.setSlug("wedding-template");
+            wedding.setDescription("A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.");
+            wedding.setCategory(photography);
+            wedding.setPrice(0.0);
+            wedding.setTemplateType("FREE");
+            wedding.setBootstrapVersion("HTML5 / Tailwind CSS");
+            wedding.setDemoUrl("/templates/photography/wedding-template/index.html");
+            wedding.setDownloadFile("wedding-template.zip");
+            wedding.setPreviewImage("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80");
+            wedding.setVersion("1.0.0");
+            wedding.setStatus("PUBLISHED");
+            wedding.setPagesCount(1);
+            wedding.setDownloadsCount(1200);
+            wedding.setTags(new ArrayList<>(Arrays.asList("Minimalist Editorial", "Split Layout Navbar", "Floating Contact Buttons")));
+            templateRepository.save(wedding);
+            logs.put("template_wedding", "Created");
+
+            // Fine Art template (Aura)
+            Template fineart = new Template();
+            fineart.setName("Aura — Premium Fine Art Studio");
+            fineart.setSlug("fineart-template");
+            fineart.setDescription("A premium, dynamic React portfolio website for a fine art photography studio. Features Ken Burns hero animations, scroll-triggered wipe reveals, and interactive circular gallery navigations.");
+            fineart.setCategory(photography);
+            fineart.setPrice(0.0);
+            fineart.setTemplateType("FREE");
+            fineart.setBootstrapVersion("HTML5 / Vanilla CSS");
+            fineart.setDemoUrl("/templates/photography/fineart-template/index.html");
+            fineart.setDownloadFile("fineart-template.zip");
+            fineart.setPreviewImage("https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80");
+            fineart.setVersion("1.0.0");
+            fineart.setStatus("PUBLISHED");
+            fineart.setPagesCount(1);
+            fineart.setDownloadsCount(1500);
+            fineart.setTags(new ArrayList<>(Arrays.asList("Premium Serif", "Wipe Reveals", "Hover Custom Cursor")));
+            templateRepository.save(fineart);
+            logs.put("template_fineart", "Created");
+
+            // Cinematic Wedding template (Eden Rose)
+            Template cinematic = new Template();
+            cinematic.setName("Eden Rose — Cinematic Luxury Wedding Portfolio");
+            cinematic.setSlug("cinematic-wedding");
+            cinematic.setDescription("A cinematic wedding photography portfolio template in deep black and luxury gold tones. Features intro curtain loaders, route transition reveals, staggered portfolio grids, and boutique inquiry options.");
+            cinematic.setCategory(photography);
+            cinematic.setPrice(0.0);
+            cinematic.setTemplateType("FREE");
+            cinematic.setBootstrapVersion("HTML5 / Tailwind CSS");
+            cinematic.setDemoUrl("/templates/photography/cinematic-wedding/index.html");
+            cinematic.setDownloadFile("cinematic-wedding.zip");
+            cinematic.setPreviewImage("https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=80");
+            cinematic.setVersion("1.0.0");
+            cinematic.setStatus("PUBLISHED");
+            cinematic.setPagesCount(1);
+            cinematic.setDownloadsCount(12450);
+            cinematic.setTags(new ArrayList<>(Arrays.asList("Luxury Monocrom", "Preloader curtain", "Staggered Grid")));
+            templateRepository.save(cinematic);
+            logs.put("template_cinematic", "Created");
+
+            // Kairo template
+            Template kairo = new Template();
+            kairo.setName("Kairo — Modern 3D Photography Portfolio");
+            kairo.setSlug("kairo-template");
+            kairo.setDescription("A modern photography portfolio featuring interactive 3D camera lens aperture graphics rendered in React Three Fiber, scroll-linked fade animations, split-layout bio sections, and fullscreen responsive image tiles.");
+            kairo.setCategory(photography);
+            kairo.setPrice(0.0);
+            kairo.setTemplateType("FREE");
+            kairo.setBootstrapVersion("HTML5 / Tailwind CSS");
+            kairo.setDemoUrl("/templates/photography/kairo-template/index.html");
+            kairo.setDownloadFile("kairo-template.zip");
+            kairo.setPreviewImage("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80");
+            kairo.setVersion("1.0.0");
+            kairo.setStatus("PUBLISHED");
+            kairo.setPagesCount(1);
+            kairo.setDownloadsCount(8200);
+            kairo.setTags(new ArrayList<>(Arrays.asList("3D Scene", "Interactive Parallax", "Luxury Editorial")));
+            templateRepository.save(kairo);
+            logs.put("template_kairo", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! Qure Nexa Medical template & Photography templates seeded.");

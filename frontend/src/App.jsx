@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { ShoppingCart, User as UserIcon, LogOut, Layout, Settings, Compass, HelpCircle, Bell, Heart } from 'lucide-react';
 import { api } from './services/api';
 import Home from './pages/Home';
@@ -16,6 +16,8 @@ import SnapfolioTemplate from './pages/SnapfolioTemplate';
 import PhotoTemplate from './pages/PhotoTemplate';
 import FineArtTemplate from './pages/FineArtTemplate';
 import CinematicWedding from './pages/CinematicWedding';
+import KairoPhotography from './pages/KairoPhotography';
+import DevicePreviewWrapper from './components/DevicePreviewWrapper';
 
 function Header({ cartCount, user, onLogout }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -333,24 +335,27 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
     location.pathname === '/templates/photography/photo-template/index.html' ||
     location.pathname === '/templates/photography/fineart-template' ||
     location.pathname === '/templates/photography/fineart-template/index.html' ||
-    location.pathname.startsWith('/templates/photography/cinematic-wedding');
+    location.pathname.startsWith('/templates/photography/cinematic-wedding') ||
+    location.pathname.startsWith('/templates/photography/kairo-template');
 
   // Full-screen template routes
   if (isTemplateRoute) {
     return (
       <Routes>
-        <Route path="/hotel-template" element={<HotelTemplate />} />
-        <Route path="/templates/photography/wedding-template" element={<WeddingTemplate />} />
-        <Route path="/templates/photography/wedding-template/index.html" element={<WeddingTemplate />} />
-        <Route path="/templates/photography/snapfolio-template" element={<SnapfolioTemplate />} />
-        <Route path="/templates/photography/snapfolio-template/index.html" element={<SnapfolioTemplate />} />
-        <Route path="/templates/photography/photo-template" element={<PhotoTemplate />} />
-        <Route path="/templates/photography/photo-template/index.html" element={<PhotoTemplate />} />
-        <Route path="/templates/photography/fineart-template" element={<FineArtTemplate />} />
-        <Route path="/templates/photography/fineart-template/index.html" element={<FineArtTemplate />} />
-        <Route path="/templates/photography/cinematic-wedding" element={<CinematicWedding />} />
-        <Route path="/templates/photography/cinematic-wedding/index.html" element={<CinematicWedding />} />
-        <Route path="/templates/photography/cinematic-wedding/:subpage" element={<CinematicWedding />} />
+        <Route path="/hotel-template" element={<DevicePreviewWrapper><HotelTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/wedding-template" element={<DevicePreviewWrapper><WeddingTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/wedding-template/index.html" element={<DevicePreviewWrapper><WeddingTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/snapfolio-template" element={<DevicePreviewWrapper><SnapfolioTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/snapfolio-template/index.html" element={<DevicePreviewWrapper><SnapfolioTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/photo-template" element={<DevicePreviewWrapper><PhotoTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/photo-template/index.html" element={<DevicePreviewWrapper><PhotoTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/fineart-template" element={<DevicePreviewWrapper><FineArtTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/fineart-template/index.html" element={<DevicePreviewWrapper><FineArtTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/cinematic-wedding" element={<DevicePreviewWrapper><CinematicWedding /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/cinematic-wedding/index.html" element={<DevicePreviewWrapper><CinematicWedding /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/cinematic-wedding/:subpage" element={<DevicePreviewWrapper><CinematicWedding /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/kairo-template" element={<DevicePreviewWrapper><KairoPhotography /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/kairo-template/index.html" element={<DevicePreviewWrapper><KairoPhotography /></DevicePreviewWrapper>} />
       </Routes>
     );
   }

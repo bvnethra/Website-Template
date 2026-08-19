@@ -30,7 +30,7 @@ export default function FeaturedStories() {
                       <motion.div
                         whileHover={{ scale: 1.04 }}
                         transition={{ duration: 0.8 }}
-                        className="w-full h-full bg-cover bg-center filter grayscale contrast-125 cursor-pointer"
+                        className="w-full h-full bg-cover bg-center grayscale cursor-pointer"
                         style={{ backgroundImage: `url(${story.image})` }}
                       />
 
@@ -51,7 +51,7 @@ export default function FeaturedStories() {
                   </ScrollReveal>
 
                   <ScrollReveal delay={0.2}>
-                    <h3 className="text-3xl md:text-5xl font-serif font-light leading-tight">
+                    <h3 className="text-3xl md:text-5xl font-serif font-light leading-tight text-[#c5a880]">
                       {story.title}
                     </h3>
                   </ScrollReveal>

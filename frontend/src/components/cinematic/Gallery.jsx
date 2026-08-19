@@ -38,7 +38,7 @@ export default function Gallery() {
                     
                     {/* Grayscale-to-Color zoom image */}
                     <div 
-                      className="w-full h-full bg-cover bg-center filter grayscale contrast-125 duration-1000 ease-out group-hover:scale-105 group-hover:grayscale-0 group-hover:contrast-100 transition-all"
+                      className="w-full h-full bg-cover bg-center grayscale duration-1000 ease-out group-hover:scale-105 group-hover:grayscale-0 transition-all"
                       style={{ backgroundImage: `url(${item.image})` }}
                     />
 

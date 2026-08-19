@@ -47,7 +47,7 @@ export default function Footer() {
             {siteConfig.instagram.map((img, idx) => (
               <div key={idx} className="relative overflow-hidden aspect-square border border-white/5 bg-neutral-900 shadow-lg">
                 <div 
-                  className="w-full h-full bg-cover bg-center filter grayscale contrast-125 duration-700 ease-out hover:scale-105 hover:grayscale-0"
+                  className="w-full h-full bg-cover bg-center grayscale duration-700 ease-out hover:scale-105 hover:grayscale-0"
                   style={{ backgroundImage: `url(${img})` }}
                 />
               </div>
@@ -68,7 +68,7 @@ export default function Footer() {
               </span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="text-4xl md:text-6xl font-serif font-light tracking-wide leading-tight max-w-lg">
+              <h2 className="text-4xl md:text-6xl font-serif font-light tracking-wide leading-tight max-w-lg text-[#c5a880]">
                 Let's Tell Your Story.
               </h2>
             </ScrollReveal>

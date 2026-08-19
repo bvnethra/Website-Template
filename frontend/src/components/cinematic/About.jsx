@@ -20,7 +20,7 @@ export default function About() {
 
         {/* Large Headline */}
         <ScrollReveal delay={0.1}>
-          <h2 className="text-4xl md:text-6xl font-serif font-light text-center leading-tight tracking-wide max-w-3xl mb-16 select-none">
+          <h2 className="text-4xl md:text-6xl font-serif font-light text-center leading-tight tracking-wide max-w-3xl mb-16 select-none text-[#c5a880]">
             {siteConfig.about.title}
           </h2>
         </ScrollReveal>

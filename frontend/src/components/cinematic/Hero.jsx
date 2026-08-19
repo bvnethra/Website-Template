@@ -16,11 +16,11 @@ export default function Hero() {
         className="absolute inset-0 w-full h-[120%] -top-[10%]"
       >
         <div 
-          className="w-full h-full bg-cover bg-center filter grayscale contrast-125 opacity-75"
+          className="w-full h-full bg-cover bg-center grayscale opacity-70"
           style={{ backgroundImage: `url(${siteConfig.hero.bgImage})` }}
         />
         {/* Soft Vignette Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/70" />
       </motion.div>
 
       {/* Hero Typography Contents */}
@@ -34,9 +34,9 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center mb-8 bg-black/45 backdrop-blur-sm"
+          className="w-14 h-14 rounded-full border border-[#c5a880]/30 flex items-center justify-center mb-8 bg-black/50 backdrop-blur-sm"
         >
-          <span className="text-xs uppercase tracking-[0.25em] font-sans font-light text-white">
+          <span className="text-xs uppercase tracking-[0.25em] font-sans font-light text-[#c5a880]">
             {siteConfig.monogram}
           </span>
         </motion.div>
@@ -46,7 +46,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-6xl md:text-8xl lg:text-9xl font-serif font-light tracking-wider text-[#f5f4f1] mb-6 select-none"
+          className="text-6xl md:text-8xl lg:text-9xl font-serif font-light tracking-wider text-transparent bg-clip-text bg-gradient-to-b from-[#f5f4f1] via-[#f5f4f1] to-[#c5a880] mb-6 select-none"
         >
           {siteConfig.studioName}
         </motion.h1>

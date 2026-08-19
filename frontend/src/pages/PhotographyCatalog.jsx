@@ -35,6 +35,13 @@ export default function PhotographyCatalog() {
       previewImage: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80',
       tags: ['Premium Serif', 'Wipe Reveals', 'Hover Custom Cursor'],
       description: 'A premium, dynamic React portfolio website for a fine art photography studio. Features Ken Burns hero animations, scroll-triggered wipe reveals, and interactive circular gallery navigations.'
+    },
+    {
+      slug: 'cinematic-wedding',
+      name: 'Eden Rose — Cinematic Luxury Wedding Portfolio',
+      previewImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
+      tags: ['Luxury Monocrom', 'Preloader curtain', 'Staggered Grid'],
+      description: 'A cinematic wedding photography portfolio template in deep black and luxury gold tones. Features intro curtain loaders, route transition reveals, staggered portfolio grids, and boutique inquiry options.'
     }
   ];
 

@@ -19,7 +19,7 @@ export default function HeroContent() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.85,
+        duration: 0.9,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -34,59 +34,35 @@ export default function HeroContent() {
       padding: '0 24px',
       pointerEvents: 'none',
       width: '100%',
-      maxWidth: '850px',
+      maxWidth: '900px',
       boxSizing: 'border-box',
-      marginTop: '-60px'
+      marginTop: '40px'
     }}>
-      {/* Import Poppins Google Font dynamically */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap');
         
-        .gimbal-hero-container {
+        .lume-hero-container {
           font-family: 'Poppins', -apple-system, sans-serif;
         }
         
-        .brand-wordmark {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          margin-bottom: 20px;
-        }
-        
-        .brand-isteady {
-          font-weight: 300;
-          font-size: 1.6rem;
-          letter-spacing: -0.5px;
-          color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .brand-mt3 {
-          font-weight: 800;
-          font-size: 2.2rem;
-          letter-spacing: -1px;
-          color: #ffffff;
-        }
-        
-        .brand-badge {
-          background-color: #e27b3e; /* Signature orange */
-          color: #000000;
-          font-size: 0.65rem;
-          font-weight: 800;
-          padding: 3px 8px;
-          border-radius: 4px;
+        .eyebrow-label {
+          font-weight: 700;
+          font-size: 0.8rem;
+          color: #ff7a52; /* Coral accent */
+          letter-spacing: 4px;
           text-transform: uppercase;
-          letter-spacing: 1px;
-          margin-left: 2px;
-          vertical-align: super;
+          margin-bottom: 24px;
+          display: block;
         }
 
         .gradient-headline {
+          font-family: 'Playfair Display', serif;
           font-weight: 800;
-          font-size: clamp(2rem, 4.8vw, 4.2rem);
+          font-size: clamp(2.2rem, 5.2vw, 4.8rem);
           line-height: 1.15;
-          letter-spacing: -1px;
+          letter-spacing: -0.5px;
           margin: 0 0 24px 0;
-          background: linear-gradient(180deg, #ffffff 30%, #a1a5b0 100%);
+          background: linear-gradient(180deg, #ffffff 40%, #d1d5db 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -96,42 +72,40 @@ export default function HeroContent() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="gimbal-hero-container"
+        className="lume-hero-container"
         style={{
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center'
         }}
       >
-        {/* Logo Wordmark */}
-        <motion.div variants={itemVariants} className="brand-wordmark">
-          <span className="brand-isteady">iSteady</span>
-          <span className="brand-mt3">MT3</span>
-          <span className="brand-badge">Pro</span>
-        </motion.div>
+        {/* Eyebrow Label */}
+        <motion.span variants={itemVariants} className="eyebrow-label">
+          FASHION & EDITORIAL PHOTOGRAPHY
+        </motion.span>
 
         {/* Headline */}
         <motion.h1
           variants={itemVariants}
           className="gradient-headline"
         >
-          AI STABILIZER FOR<br/>MOTION PHOTOGRAPHY
+          CAPTURING LIGHT.<br/>TELLING STORIES.
         </motion.h1>
 
         {/* Subhead Paragraph */}
         <motion.p
           variants={itemVariants}
           style={{
-            fontSize: 'calc(0.85rem + 0.15vw)',
-            color: '#a1a5b0', // Sleek tech gray
-            maxWidth: '520px',
+            fontSize: 'calc(0.9rem + 0.15vw)',
+            color: '#d1d5db',
+            maxWidth: '560px',
             margin: '0 auto',
-            lineHeight: '1.7',
+            lineHeight: '1.75',
             letterSpacing: '0.4px',
             fontWeight: '300'
           }}
         >
-          Uncompromising 3-axis stabilization meets AI tracking, organic focus wheels, and quick-release mounting grids.
+          Editorial and lifestyle photography rooted in natural light and honest emotion. Available for custom assignments worldwide.
         </motion.p>
       </motion.div>
 
@@ -142,7 +116,7 @@ export default function HeroContent() {
         transition={{ delay: 1.6, duration: 1.0 }}
         style={{
           position: 'absolute',
-          bottom: '-140px',
+          bottom: '-120px',
           left: '50%',
           transform: 'translateX(-50%)',
           display: 'flex',
@@ -152,7 +126,7 @@ export default function HeroContent() {
         }}
       >
         <span style={{
-          fontSize: '0.62rem',
+          fontSize: '0.65rem',
           fontWeight: '700',
           letterSpacing: '3px',
           textTransform: 'uppercase',
@@ -186,7 +160,7 @@ export default function HeroContent() {
               left: 0,
               width: '100%',
               height: '50%',
-              backgroundColor: '#ffffff'
+              backgroundColor: '#ff7a52' // Coral accent color
             }}
           />
         </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,10 +18,10 @@ export default function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "#home" },
-    { label: "Features", href: "#about" },
-    { label: "Gallery", href: "#work" },
-    { label: "Modes", href: "#services" },
-    { label: "Order", href: "#contact" }
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "About", href: "#about" },
+    { label: "Services", href: "#services" },
+    { label: "Contact", href: "#contact" }
   ];
 
   return (
@@ -29,37 +30,120 @@ export default function Navbar() {
       top: 0,
       left: 0,
       right: 0,
-      height: '85px',
+      height: '90px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
       padding: '0 40px',
       zIndex: 1000,
       transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-      backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.95)' : 'transparent',
-      borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid transparent',
-      backdropFilter: isScrolled ? 'blur(16px)' : 'none',
+      backgroundColor: isScrolled || menuOpen ? 'rgba(0, 0, 0, 0.98)' : 'transparent',
+      borderBottom: isScrolled || menuOpen ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid transparent',
+      backdropFilter: isScrolled || menuOpen ? 'blur(16px)' : 'none',
       boxSizing: 'border-box'
     }}>
       {/* Brand logo */}
       <a href="#home" style={{
         textDecoration: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '4px',
         color: '#ffffff',
-        fontFamily: "'Poppins', sans-serif"
+        fontFamily: "'Poppins', sans-serif",
+        fontWeight: '800',
+        fontSize: '1.4rem',
+        letterSpacing: '3px'
       }}>
-        <span style={{ fontWeight: '300', fontSize: '1.15rem', letterSpacing: '-0.5px' }}>iSteady</span>
-        <span style={{ fontWeight: '800', fontSize: '1.25rem', color: '#e27b3e' }}>MT3</span>
+        LUME STUDIO
       </a>
 
+      {/* Hamburger menu icon for mobile */}
+      <button 
+        onClick={() => setMenuOpen(!menuOpen)}
+        style={{
+          display: 'none',
+          background: 'none',
+          border: 'none',
+          color: '#ffffff',
+          fontSize: '1.5rem',
+          cursor: 'pointer',
+          outline: 'none'
+        }}
+        className="hamburger-btn"
+      >
+        <span style={{
+          display: 'block',
+          width: '24px',
+          height: '2px',
+          backgroundColor: '#ffffff',
+          marginBottom: '5px',
+          transition: '0.3s',
+          transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none'
+        }} />
+        <span style={{
+          display: 'block',
+          width: '24px',
+          height: '2px',
+          backgroundColor: '#ffffff',
+          marginBottom: '5px',
+          opacity: menuOpen ? 0 : 1,
+          transition: '0.3s'
+        }} />
+        <span style={{
+          display: 'block',
+          width: '24px',
+          height: '2px',
+          backgroundColor: '#ffffff',
+          transition: '0.3s',
+          transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none'
+        }} />
+      </button>
+
       {/* Nav Menu */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
-        <ul style={{
+      <div 
+        className={`nav-menu ${menuOpen ? 'open' : ''}`}
+        style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          gap: '35px' 
+        }}
+      >
+        <style>{`
+          @media (max-width: 768px) {
+            .hamburger-btn {
+              display: block !important;
+            }
+            .nav-menu {
+              position: fixed;
+              top: 90px;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: #000000;
+              flex-direction: column;
+              justify-content: center;
+              gap: 40px !important;
+              padding: 40px;
+              transform: translateY(-100%);
+              opacity: 0;
+              pointer-events: none;
+              transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+              z-index: 999;
+            }
+            .nav-menu.open {
+              transform: translateY(0);
+              opacity: 1;
+              pointer-events: auto;
+            }
+            .nav-links-list {
+              flex-direction: column;
+              align-items: center;
+              gap: 30px !important;
+            }
+          }
+        `}</style>
+        
+        <ul className="nav-links-list" style={{
           display: 'flex',
           listStyle: 'none',
-          gap: '26px',
+          gap: '30px',
           margin: 0,
           padding: 0
         }}>
@@ -67,10 +151,11 @@ export default function Navbar() {
             <li key={link.label}>
               <a 
                 href={link.href} 
+                onClick={() => setMenuOpen(false)}
                 style={{
                   color: '#ffffff',
                   textDecoration: 'none',
-                  fontSize: '0.75rem',
+                  fontSize: '0.78rem',
                   fontWeight: '600',
                   letterSpacing: '2px',
                   textTransform: 'uppercase',
@@ -80,7 +165,7 @@ export default function Navbar() {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.opacity = '1';
-                  e.currentTarget.style.color = '#e27b3e';
+                  e.currentTarget.style.color = '#ff7a52'; // Coral accent
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.opacity = 0.65;
@@ -96,24 +181,25 @@ export default function Navbar() {
         {/* Action Button */}
         <a 
           href="#contact" 
+          onClick={() => setMenuOpen(false)}
           style={{
-            background: 'linear-gradient(135deg, #e27b3e 0%, #ff5e3a 100%)',
-            color: '#000000',
+            background: 'linear-gradient(135deg, #ff7a52 0%, #ff5e3a 100%)', // Coral accent
+            color: '#ffffff',
             textDecoration: 'none',
-            fontSize: '0.72rem',
+            fontSize: '0.75rem',
             fontWeight: '800',
             letterSpacing: '1.5px',
             textTransform: 'uppercase',
-            padding: '10px 22px',
+            padding: '12px 26px',
             borderRadius: '99px',
-            boxShadow: '0 4px 15px rgba(226, 123, 62, 0.25)',
+            boxShadow: '0 4px 15px rgba(255, 122, 82, 0.25)',
             fontFamily: "'Poppins', sans-serif",
             transition: 'all 0.3s'
           }}
           onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-1px)'}
           onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
         >
-          Buy Now
+          Book a Shoot
         </a>
       </div>
     </nav>

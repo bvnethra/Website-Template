@@ -261,23 +261,23 @@ public class DatabaseSeederController {
             templateRepository.save(kairo);
             logs.put("template_kairo", "Created");
 
-            // iSteady Gimbal template
+            // Lume Studio template
             Template isteady = new Template();
-            isteady.setName("iSteady MT3 Pro — AI Stabilizer Portfolio");
+            isteady.setName("Lume Studio — Fashion & Editorial Portfolio");
             isteady.setSlug("isteady-template");
-            isteady.setDescription("A premium product launch page designed for camera gimbals. Features interactive 3D stabilizer rigs in R3F, multi-axis stabilizing sine movements, exploded scroll animations, and tactile specs.");
+            isteady.setDescription("A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.");
             isteady.setCategory(photography);
             isteady.setPrice(0.0);
             isteady.setTemplateType("FREE");
             isteady.setBootstrapVersion("HTML5 / Tailwind CSS");
             isteady.setDemoUrl("/templates/photography/isteady-template/index.html");
             isteady.setDownloadFile("isteady-template.zip");
-            isteady.setPreviewImage("/isteady_cover.png");
+            isteady.setPreviewImage("/lume_cover.png");
             isteady.setVersion("1.0.0");
             isteady.setStatus("PUBLISHED");
             isteady.setPagesCount(1);
             isteady.setDownloadsCount(9500);
-            isteady.setTags(new ArrayList<>(Arrays.asList("AI Stabilizer", "OLED HUD", "Brushed Metal Arm")));
+            isteady.setTags(new ArrayList<>(Arrays.asList("Editorial Fashion", "Moody Spotlight", "Bespoke Lighting")));
             templateRepository.save(isteady);
             logs.put("template_isteady", "Created");
         }

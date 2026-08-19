@@ -130,15 +130,15 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 8,
-    name: 'iSteady MT3 Pro — AI Stabilizer Portfolio',
+    name: 'Lume Studio — Fashion & Editorial Portfolio',
     slug: 'isteady-template',
-    previewImage: '/isteady_cover.png',
+    previewImage: '/lume_cover.png',
     templateType: 'FREE',
     price: 0,
     category: { id: 8, name: 'Photography', slug: 'photography' },
     pagesCount: 1,
     downloadsCount: 9500,
-    description: 'A premium product launch page designed for camera gimbals. Features interactive 3D stabilizer rigs in R3F, multi-axis stabilizing sine movements, exploded scroll animations, and tactile specs.',
+    description: 'A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.',
     bootstrapVersion: 'HTML5 / Tailwind CSS',
     version: '1.0',
     demoUrl: '/templates/photography/isteady-template/index.html'

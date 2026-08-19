@@ -1,10 +1,11 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function ContactSection() {
   return (
     <section id="contact" style={{
       backgroundColor: '#000000',
-      padding: '120px 40px',
+      padding: '140px 40px',
       color: '#ffffff',
       fontFamily: "'Poppins', sans-serif"
     }}>
@@ -12,27 +13,37 @@ export default function ContactSection() {
         maxWidth: '1000px',
         margin: '0 auto',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-        gap: '60px'
+        gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
+        gap: '80px',
+        alignItems: 'center'
       }}>
-        {/* Left Column */}
-        <div>
+        {/* Left Column info */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
           <span style={{
-            color: '#e27b3e',
+            color: '#ff7a52',
             fontSize: '0.75rem',
             fontWeight: '700',
             letterSpacing: '3px',
-            textTransform: 'uppercase'
+            textTransform: 'uppercase',
+            display: 'block',
+            marginBottom: '15px'
           }}>
-            Pre-Order
+            Pre-Booking
           </span>
           <h2 style={{
             fontSize: 'calc(2rem + 1vw)',
             fontWeight: '800',
-            margin: '12px 0 24px 0',
-            letterSpacing: '-1px'
+            lineHeight: '1.2',
+            marginBottom: '30px',
+            letterSpacing: '-1.5px',
+            fontFamily: "'Playfair Display', serif"
           }}>
-            Secure Your iSteady MT3 Pro
+            Let's create something beautiful together.
           </h2>
           <p style={{
             fontSize: '0.95rem',
@@ -41,30 +52,53 @@ export default function ContactSection() {
             marginBottom: '40px',
             fontWeight: '300'
           }}>
-            Orders placed today include the magnetic AI tracking sensor module and custom hard-shell travel case bundle for free.
+            Looking to book an editorial campaign, private headshots, or a creative brand partnership? Leave a brief message and we'll reply with a custom proposal and availability rates.
           </p>
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div>
-              <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', letterSpacing: '1px' }}>Studio Email</span>
-              <p style={{ marginTop: '4px', fontSize: '1rem', fontWeight: '500' }}>sales@isteady-tech.com</p>
+              <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', letterSpacing: '1px' }}>Studio Email</span>
+              <p style={{ marginTop: '4px', fontSize: '1.1rem', fontWeight: '500' }}>hello@lume-studio.com</p>
             </div>
-            <div>
-              <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', letterSpacing: '1px' }}>Helpdesk</span>
-              <p style={{ marginTop: '4px', fontSize: '1rem', fontWeight: '500' }}>support@isteady-tech.com</p>
+            {/* Social Icons */}
+            <div style={{ display: 'flex', gap: '20px', marginTop: '10px' }}>
+              <a href="#" style={{ color: '#ffffff', fontSize: '1.2rem', textDecoration: 'none', transition: 'color 0.2s' }}
+                 onMouseEnter={(e) => e.currentTarget.style.color = '#ff7a52'}
+                 onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+                <i className="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" style={{ color: '#ffffff', fontSize: '1.2rem', textDecoration: 'none', transition: 'color 0.2s' }}
+                 onMouseEnter={(e) => e.currentTarget.style.color = '#ff7a52'}
+                 onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+                <i className="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="#" style={{ color: '#ffffff', fontSize: '1.2rem', textDecoration: 'none', transition: 'color 0.2s' }}
+                 onMouseEnter={(e) => e.currentTarget.style.color = '#ff7a52'}
+                 onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+                <i className="fa-brands fa-pinterest"></i>
+              </a>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Column Form */}
-        <div>
-          <form onSubmit={(e) => { e.preventDefault(); alert('Pre-order received! We will contact you with shipping confirmation details.'); }} style={{
-            background: '#0a0a0c',
-            padding: '40px',
-            borderRadius: '20px',
-            border: '1px solid rgba(255,255,255,0.05)'
-          }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <form 
+            onSubmit={(e) => { e.preventDefault(); alert('Message sent successfully! We will contact you soon.'); }}
+            style={{
+              background: '#0a0a0c',
+              padding: '40px',
+              borderRadius: '20px',
+              border: '1px solid rgba(255,255,255,0.04)'
+            }}
+          >
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '20px' }}>
-              <label style={{ fontSize: '0.75rem', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase' }}>Full Name</label>
+              <label style={{ fontSize: '0.75rem', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase', color: '#ff7a52' }}>Full Name</label>
               <input type="text" required placeholder="Enter name" style={{
                 background: 'rgba(255,255,255,0.02)',
                 border: '1px solid rgba(255,255,255,0.08)',
@@ -72,12 +106,16 @@ export default function ContactSection() {
                 borderRadius: '8px',
                 color: '#ffffff',
                 fontSize: '0.9rem',
-                outline: 'none'
-              }} />
+                outline: 'none',
+                transition: 'border-color 0.2s'
+              }} 
+              onFocus={(e) => e.currentTarget.style.borderColor = '#ff7a52'}
+              onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
+              />
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '20px' }}>
-              <label style={{ fontSize: '0.75rem', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase' }}>Email Address</label>
+              <label style={{ fontSize: '0.75rem', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase', color: '#ff7a52' }}>Email Address</label>
               <input type="email" required placeholder="Enter email address" style={{
                 background: 'rgba(255,255,255,0.02)',
                 border: '1px solid rgba(255,255,255,0.08)',
@@ -85,13 +123,17 @@ export default function ContactSection() {
                 borderRadius: '8px',
                 color: '#ffffff',
                 fontSize: '0.9rem',
-                outline: 'none'
-              }} />
+                outline: 'none',
+                transition: 'border-color 0.2s'
+              }} 
+              onFocus={(e) => e.currentTarget.style.borderColor = '#ff7a52'}
+              onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
+              />
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '24px' }}>
-              <label style={{ fontSize: '0.75rem', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase' }}>Inquiry Details</label>
-              <textarea required rows="3" placeholder="I would like to preorder..." style={{
+              <label style={{ fontSize: '0.75rem', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase', color: '#ff7a52' }}>Project Details</label>
+              <textarea required rows="3" placeholder="Tell us about the dates, style, and scope of work..." style={{
                 background: 'rgba(255,255,255,0.02)',
                 border: '1px solid rgba(255,255,255,0.08)',
                 padding: '14px',
@@ -99,14 +141,18 @@ export default function ContactSection() {
                 color: '#ffffff',
                 fontSize: '0.9rem',
                 outline: 'none',
-                resize: 'none'
-              }}></textarea>
+                resize: 'none',
+                transition: 'border-color 0.2s'
+              }}
+              onFocus={(e) => e.currentTarget.style.borderColor = '#ff7a52'}
+              onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
+              ></textarea>
             </div>
 
             <button type="submit" style={{
               width: '100%',
-              background: '#ffffff',
-              color: '#000000',
+              background: 'linear-gradient(135deg, #ff7a52 0%, #ff5e3a 100%)',
+              color: '#ffffff',
               border: 'none',
               padding: '15px',
               borderRadius: '99px',
@@ -115,15 +161,16 @@ export default function ContactSection() {
               letterSpacing: '1px',
               textTransform: 'uppercase',
               cursor: 'pointer',
+              boxShadow: '0 4px 15px rgba(255, 122, 82, 0.2)',
               transition: 'all 0.3s'
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#e27b3e'; e.currentTarget.style.color = '#000000'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#ffffff'; e.currentTarget.style.color = '#000000'; }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-1px)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
             >
-              Submit Order
+              Send Message
             </button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,25 +1,17 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function AboutSection() {
-  const features = [
-    {
-      title: "Magnetic AI Tracking Module",
-      desc: "No apps required. The intelligent magnetic AI module locks onto subjects instantly, offering gesture-controlled framing and automated composition tracking."
-    },
-    {
-      title: "Physical Focus & Zoom Wheel",
-      desc: "Designed for tactile precision. Dial in organic lens focus pulls or zoom transitions smoothly with the mechanical side control wheel."
-    },
-    {
-      title: "Quick-Release Mounting Grid",
-      desc: "Swap gear in seconds. The universal quick-release base supports instant transitions between mirrorless camera, action cam, and smartphone plates."
-    }
+  const stats = [
+    { value: "150+", label: "Shoots Completed" },
+    { value: "8+", label: "Years Experience" },
+    { value: "40+", label: "Global Clients" }
   ];
 
   return (
     <section id="about" style={{
-      backgroundColor: '#0a0a0c',
-      padding: '120px 40px',
+      backgroundColor: '#0a0a0c', // Dark backdrop
+      padding: '140px 40px',
       color: '#ffffff',
       fontFamily: "'Poppins', sans-serif"
     }}>
@@ -27,14 +19,45 @@ export default function AboutSection() {
         maxWidth: '1200px',
         margin: '0 auto',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
         gap: '80px',
         alignItems: 'center'
       }}>
-        {/* Left Side Feature Showcase */}
-        <div>
+        {/* Left: Photographer Portrait */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            position: 'relative',
+            borderRadius: '20px',
+            overflow: 'hidden',
+            aspectRatio: '3/4',
+            background: '#121316',
+            border: '1px solid rgba(255,255,255,0.03)'
+          }}
+        >
+          <img 
+            src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80" 
+            alt="Lume Photographer Portrait" 
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
+          />
+        </motion.div>
+
+        {/* Right: Bio & Stats */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+        >
           <span style={{
-            color: '#e27b3e',
+            color: '#ff7a52', // Coral accent
             fontSize: '0.75rem',
             fontWeight: '700',
             letterSpacing: '3px',
@@ -42,86 +65,60 @@ export default function AboutSection() {
             display: 'block',
             marginBottom: '15px'
           }}>
-            Technology & Integration
+            Available for assignments worldwide
           </span>
           <h2 style={{
-            fontSize: 'calc(2rem + 1vw)',
+            fontSize: 'calc(2rem + 0.8vw)',
             fontWeight: '800',
-            lineHeight: '1.2',
-            marginBottom: '30px',
-            letterSpacing: '-1px'
+            lineHeight: '1.25',
+            marginBottom: '24px',
+            letterSpacing: '-1px',
+            fontFamily: "'Playfair Display', serif"
           }}>
-            Stabilization Redefined by Smart Design.
+            Hello, I'm Lume. A fashion & lifestyle photographer based in New York.
           </h2>
           <p style={{
-            fontSize: '0.95rem',
+            fontSize: '0.98rem',
             lineHeight: '1.8',
             color: '#a1a5b0',
             marginBottom: '40px',
             fontWeight: '300'
           }}>
-            The iSteady MT3 Pro is engineered to eliminate camera shake across three independent physical motor planes. By combining advanced gyro sensors with intelligent software balancing algorithms, it secures fluid, cinematic output regardless of active terrain.
+            My work explores the intersections of light, raw human emotion, and editorial composition. Rooted in cinematic storytelling, I help individuals, agencies, and international brands capture their vision with custom, bespoke visuals.
           </p>
-          <a href="#services" style={{
-            background: 'transparent',
-            border: '1px solid rgba(255, 255, 255, 0.25)',
-            color: '#ffffff',
-            textDecoration: 'none',
-            padding: '14px 32px',
-            borderRadius: '99px',
-            fontSize: '0.8rem',
-            fontWeight: '600',
-            letterSpacing: '1px',
-            textTransform: 'uppercase',
-            transition: 'all 0.3s'
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.borderColor = '#e27b3e'}
-          onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.25)'}
-          >
-            Explore Shooting Modes
-          </a>
-        </div>
 
-        {/* Right Side Cards */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-          {features.map((feature, idx) => (
-            <div key={idx} style={{
-              background: '#121316',
-              padding: '30px 40px',
-              borderRadius: '16px',
-              border: '1px solid rgba(255, 255, 255, 0.04)',
-              transition: 'transform 0.3s'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
-            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-            >
-              <span style={{
-                color: '#e27b3e',
-                fontSize: '1.5rem',
-                fontWeight: '800',
-                display: 'block',
-                marginBottom: '15px'
-              }}>
-                {`0${idx + 1}`}
-              </span>
-              <h3 style={{
-                fontSize: '1.25rem',
-                fontWeight: '600',
-                marginBottom: '10px'
-              }}>
-                {feature.title}
-              </h3>
-              <p style={{
-                fontSize: '0.9rem',
-                lineHeight: '1.6',
-                color: '#a1a5b0',
-                fontWeight: '300'
-              }}>
-                {feature.desc}
-              </p>
-            </div>
-          ))}
-        </div>
+          {/* Stats counters */}
+          <div style={{
+            display: 'flex',
+            gap: '40px',
+            borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+            paddingTop: '40px'
+          }}>
+            {stats.map((stat, idx) => (
+              <div key={idx}>
+                <span style={{
+                  display: 'block',
+                  fontSize: '2rem',
+                  fontWeight: '800',
+                  color: '#ff7a52', // Coral accent
+                  fontFamily: "'Playfair Display', serif",
+                  marginBottom: '6px'
+                }}>
+                  {stat.value}
+                </span>
+                <span style={{
+                  fontSize: '0.72rem',
+                  color: '#a1a5b0',
+                  fontWeight: '600',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px'
+                }}>
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,56 +1,71 @@
-import React, { useRef } from 'react';
-import ProductBackdrop from './ProductBackdrop';
+import React from 'react';
 import HeroContent from './HeroContent';
 import ParticleField from './ParticleField';
 
 export default function Scene3D() {
-  const containerRef = useRef(null);
-
   return (
-    <section id="home" ref={containerRef} style={{
+    <section id="home" style={{
       width: '100%',
       height: '100vh',
-      background: 'radial-gradient(circle at center, #141518 0%, #000000 75%)', // Dark grey to pure black radial spotlight vignette
       position: 'relative',
       overflow: 'hidden',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      boxSizing: 'border-box'
+      boxSizing: 'border-box',
+      // Full bleed dramatic background portrait image
+      backgroundImage: 'url("/lume_hero.png")',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
     }}>
-      {/* 1. Dust Speck Particles (z-index: 0) */}
-      <ParticleField />
+      {/* Dark overlay gradient to ensure high readability of overlays */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.82) 80%, #000000 100%)',
+        zIndex: 1,
+        pointerEvents: 'none'
+      }} />
 
-      {/* 2. Visual Stabilization Grid Guide Line (Center Screen) */}
+      {/* 1. Ambient warm gold drifting particles (z-index: 2) */}
+      <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 2, pointerEvents: 'none' }}>
+        <ParticleField />
+      </div>
+
+      {/* 2. Thin Status Bar Line (Center Screen, z-index: 3) */}
       <div style={{
         position: 'absolute',
         top: '50%',
         left: '10%',
         right: '10%',
         height: '1px',
-        background: 'linear-gradient(to right, transparent, rgba(160, 255, 255, 0.35) 20%, rgba(160, 255, 255, 0.35) 80%, transparent)',
-        boxShadow: '0 0 8px rgba(160, 255, 255, 0.5)',
-        zIndex: 5,
+        background: 'linear-gradient(to right, transparent, rgba(255, 122, 82, 0.35) 20%, rgba(255, 122, 82, 0.35) 80%, transparent)', // Coral accent line
+        boxShadow: '0 0 8px rgba(255, 122, 82, 0.4)',
+        zIndex: 3,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         fontSize: '10px',
-        color: 'rgba(160, 255, 255, 0.7)',
-        fontFamily: "'Space Mono', monospace",
-        letterSpacing: '1px',
+        color: 'rgba(255, 255, 255, 0.75)',
+        fontFamily: "'Poppins', sans-serif",
+        fontWeight: '600',
+        letterSpacing: '2px',
         padding: '0 20px',
         boxSizing: 'border-box'
       }}>
-        <span>GRID ACTIVE</span>
-        <span>STABILIZER: 100% ONLINE</span>
+        <span>AVAILABLE FOR BOOKINGS</span>
+        <span>BASED IN NEW YORK</span>
       </div>
 
-      {/* 3. Product Photo Backdrop (z-index: 1) */}
-      <ProductBackdrop containerRef={containerRef} />
-
-      {/* 4. Headline Overlay (z-index: 2) */}
-      <HeroContent />
+      {/* 3. Text Overlay content (z-index: 4) */}
+      <div style={{ position: 'relative', zIndex: 4, width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <HeroContent />
+      </div>
     </section>
   );
 }

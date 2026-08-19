@@ -3,141 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iSteady MT3 Pro — AI Stabilizer Portfolio</title>
+  <title>Lume Studio — Fashion & Editorial Photography</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Top Minimal Navbar -->
+  <!-- Fixed Navbar -->
   <header class="navbar">
-    <a href="#" class="logo">iSteady <span class="accent">MT3</span></a>
+    <a href="#home" class="logo">LUME STUDIO</a>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#modes">Modes</a></li>
-      <li><a href="#contact">Order</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="btn-buy">Buy Now</a>
+    <a href="#contact" class="btn-buy">Book a Shoot</a>
   </header>
 
-  <!-- Interactive Hero Spotlight Section -->
-  <section id="home" class="hero">
-    <!-- Back radial glow -->
-    <div class="spotlight"></div>
+  <!-- Hero Spotlight Section -->
+  <section id="home" class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center;">
     <div class="grid-line">
-      <span>GRID ACTIVE</span>
-      <span>STABILIZER: 100% ONLINE</span>
-    </div>
-
-    <!-- Fallback Graphic Center (Static SVG Placeholder representing the Gimbal & Camera assembly) -->
-    <div class="gimbal-gfx">
-      <svg width="220" height="380" viewBox="0 0 220 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Grip Handle -->
-        <rect x="98" y="220" width="24" height="150" rx="6" fill="#1e2025" />
-        <rect x="94" y="240" width="32" height="90" rx="3" fill="#121316" />
-        <!-- Screen -->
-        <rect x="103" y="225" width="14" height="24" rx="2" fill="#000" />
-        <rect x="105" y="227" width="10" height="12" rx="1" fill="#a0ffff" opacity="0.8" />
-        <!-- Motor joints & arms -->
-        <circle cx="110" cy="205" r="16" fill="#42454a" />
-        <path d="M110 190 L110 140 H160 V120" stroke="#42454a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
-        <!-- Status LED -->
-        <circle cx="160" cy="120" r="4" fill="#ff3a1a" />
-        <!-- Camera mount & camera -->
-        <rect x="135" y="70" width="50" height="50" rx="4" fill="#1e2025" />
-        <rect x="145" y="80" width="30" height="30" rx="15" fill="#42454a" />
-        <circle cx="160" cy="95" r="8" fill="#1a1f26" />
-      </svg>
+      <span>AVAILABLE FOR BOOKINGS</span>
+      <span>BASED IN NEW YORK</span>
     </div>
 
     <div class="hero-content">
-      <div class="brand">iSteady <strong>MT3</strong> <span class="badge">Pro</span></div>
-      <h1 class="headline">AI STABILIZER FOR<br>MOTION PHOTOGRAPHY</h1>
-      <p class="subhead">Uncompromising 3-axis stabilization meets AI tracking, organic focus wheels, and quick-release mounting grids.</p>
+      <span class="category" style="color: #ff7a52; letter-spacing: 4px; font-weight: 700; margin-bottom: 20px; display: block;">FASHION & EDITORIAL PHOTOGRAPHY</span>
+      <h1 class="headline" style="font-family: 'Playfair Display', serif; font-size: 4rem;">CAPTURING LIGHT.<br>TELLING STORIES.</h1>
+      <p class="subhead">Editorial and lifestyle photography rooted in natural light and honest emotion. Available for custom assignments worldwide.</p>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section id="features" class="section dark">
-    <div class="container split">
-      <div>
-        <span class="category">Technology</span>
-        <h2>Stabilization Redefined by Smart Design.</h2>
-        <p class="desc">The iSteady MT3 Pro is engineered to eliminate camera shake across three independent physical motor planes. By combining advanced gyro sensors with intelligent software balancing algorithms, it secures fluid, cinematic output regardless of active terrain.</p>
-      </div>
-      <div class="features-list">
-        <div class="card">
-          <span class="card-num">01</span>
-          <h3>Magnetic AI Tracking</h3>
-          <p>No apps required. Gesture-controlled framing locks subjects instantly.</p>
-        </div>
-        <div class="card">
-          <span class="card-num">02</span>
-          <h3>Physical Focus Wheel</h3>
-          <p>Dial in organic focus pulls or zoom transitions smoothly.</p>
-        </div>
-        <div class="card">
-          <span class="card-num">03</span>
-          <h3>Quick-Release Base</h3>
-          <p>Support instant transitions between camera and smartphone mounts.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery Section -->
-  <section id="gallery" class="section">
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="section">
     <div class="container text-center">
-      <span class="category">Creative Gallery</span>
-      <h2>Captured with iSteady.</h2>
+      <span class="category">Selected Work</span>
+      <h2 style="font-family: 'Playfair Display', serif;">Recent Projects</h2>
       <div class="masonry-grid">
-        <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80')"><h4>Active Action Tracking</h4></div>
-        <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80')"><h4>Low Angle Cinematics</h4></div>
-        <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80')"><h4>Vlog Framing Lock</h4></div>
+        <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80')"><h4>Noir Silhouette</h4></div>
+        <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80')"><h4>Golden Hour Bloom</h4></div>
+        <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80')"><h4>Velvet Crimson</h4></div>
       </div>
     </div>
   </section>
 
-  <!-- Shooting Modes Section -->
-  <section id="modes" class="section dark">
+  <!-- About Section -->
+  <section id="about" class="section dark">
+    <div class="container split">
+      <div style="border-radius: 20px; overflow: hidden; aspect-ratio: 3/4;">
+        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80" alt="Photographer Portrait" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div>
+        <span class="category">Available for assignments worldwide</span>
+        <h2 style="font-family: 'Playfair Display', serif;">Hello, I'm Lume. A fashion & lifestyle photographer based in New York.</h2>
+        <p class="desc">My work explores the intersections of light, raw human emotion, and editorial composition. Rooted in cinematic storytelling, I help individuals, agencies, and international brands capture their vision with custom, bespoke visuals.</p>
+        <div style="display: flex; gap: 40px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px;">
+          <div>
+            <strong style="color: #ff7a52; font-family: 'Playfair Display', serif; font-size: 2rem; display:block;">150+</strong>
+            <span style="font-size:0.75rem; text-transform:uppercase; color:#a1a5b0;">Shoots</span>
+          </div>
+          <div>
+            <strong style="color: #ff7a52; font-family: 'Playfair Display', serif; font-size: 2rem; display:block;">8+</strong>
+            <span style="font-size:0.75rem; text-transform:uppercase; color:#a1a5b0;">Years</span>
+          </div>
+          <div>
+            <strong style="color: #ff7a52; font-family: 'Playfair Display', serif; font-size: 2rem; display:block;">40+</strong>
+            <span style="font-size:0.75rem; text-transform:uppercase; color:#a1a5b0;">Clients</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
     <div class="container text-center">
-      <span class="category">Stabilization Modes</span>
-      <h2>Creative Shooting Configurations.</h2>
+      <span class="category">Our Expertise</span>
+      <h2 style="font-family: 'Playfair Display', serif;">Creative Services</h2>
       <div class="modes-grid">
         <div class="mode-card">
-          <span class="num">01</span>
-          <h3>Inception Mode</h3>
-          <p>360-degree infinite barrel roll rotation. Spin the roll axis continuously.</p>
+          <span class="num" style="font-family: 'Playfair Display', serif;">01</span>
+          <h3>Portrait Sessions</h3>
+          <p>Tailored lifestyle, headshot, and fine-art portraits designed to capture raw character.</p>
         </div>
         <div class="mode-card">
-          <span class="num">02</span>
-          <h3>FPV Mode</h3>
-          <p>3-axis locks release to follow handle movement on all coordinates.</p>
+          <span class="num" style="font-family: 'Playfair Display', serif;">02</span>
+          <h3>Editorial & Fashion</h3>
+          <p>High-contrast modeling portfolios, lookbooks, and high-fashion spreads for designer brands.</p>
         </div>
         <div class="mode-card">
-          <span class="num">03</span>
-          <h3>Sport Mode</h3>
-          <p>Instantly boosts motor response times to trace fast-moving action.</p>
+          <span class="num" style="font-family: 'Playfair Display', serif;">03</span>
+          <h3>Brand Campaigns</h3>
+          <p>Commercial product and narrative photography built to establish a distinct, premium visual footprint.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Preorder Form Section -->
-  <section id="contact" class="section">
+  <section id="contact" class="section dark">
     <div class="container split">
       <div>
-        <span class="category">Pre-Order</span>
-        <h2>Secure Your iSteady MT3 Pro</h2>
-        <p class="desc">Orders placed today include the magnetic AI tracking sensor module and custom hard-shell travel case bundle for free.</p>
+        <span class="category">Pre-Booking</span>
+        <h2 style="font-family: 'Playfair Display', serif;">Let's create something beautiful together.</h2>
+        <p class="desc">Looking to book an editorial campaign, private headshots, or a creative brand partnership? Leave a brief message and we'll reply with a custom proposal.</p>
         <div class="contacts">
-          <p><strong>Studio Email:</strong> sales@isteady-tech.com</p>
-          <p><strong>Helpdesk:</strong> support@isteady-tech.com</p>
+          <p><strong>Studio Email:</strong> hello@lume-studio.com</p>
         </div>
       </div>
       <div>
-        <form class="form" onsubmit="event.preventDefault(); alert('Pre-order received! We will contact you soon.');">
+        <form class="form" onsubmit="event.preventDefault(); alert('Message sent! We will contact you soon.');">
           <div class="group">
             <label>Full Name</label>
             <input type="text" required placeholder="Enter name">
@@ -147,10 +124,10 @@
             <input type="email" required placeholder="Enter email address">
           </div>
           <div class="group">
-            <label>Inquiry Details</label>
-            <textarea required rows="3" placeholder="I would like to preorder..."></textarea>
+            <label>Project Details</label>
+            <textarea required rows="3" placeholder="Tell us about the dates, style, and scope of work..."></textarea>
           </div>
-          <button type="submit">Submit Order</button>
+          <button type="submit" style="background: linear-gradient(135deg, #ff7a52 0%, #ff5e3a 100%); color:#fff;">Send Message</button>
         </form>
       </div>
     </div>
@@ -158,8 +135,8 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <span class="footer-logo">iSteady Stabilizer</span>
-    <span class="footer-copy">&copy; 2026 iSteady Tech. All rights reserved.</span>
+    <span class="footer-logo">Lume Studio</span>
+    <span class="footer-copy">&copy; 2026 Lume Studio. All rights reserved.</span>
   </footer>
 </body>
 </html>

@@ -52,10 +52,10 @@ export default function PhotographyCatalog() {
     },
     {
       slug: 'isteady-template',
-      name: 'iSteady MT3 Pro — AI Stabilizer Portfolio',
-      previewImage: '/isteady_cover.png',
-      tags: ['AI Stabilizer', 'OLED HUD', 'Brushed Metal Arm'],
-      description: 'A premium product launch page designed for camera gimbals. Features interactive 3D stabilizer rigs in R3F, multi-axis stabilizing sine movements, exploded scroll animations, and tactile specs.'
+      name: 'Lume Studio — Fashion & Editorial Portfolio',
+      previewImage: '/lume_cover.png',
+      tags: ['Editorial Fashion', 'Moody Spotlight', 'Bespoke Lighting'],
+      description: 'A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.'
     }
   ];
 

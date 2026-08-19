@@ -169,7 +169,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 5,
     downloadsCount: 2850,
     description: 'A sleek, modern e-commerce storefront for fashion and lifestyle brands. Features sidebar navigation, interactive category listings, search filter overlay, and a clean minimalist design.',
-    bootstrapVersion: 'HTML5 / CSS3 / JavaScript',
+    bootstrapVersion: 'React / Java Spring Boot',
     version: '1.0.0',
     demoUrl: '/templates/ecommerce/ecommerce-7/index.html'
   }

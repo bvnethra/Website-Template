@@ -315,7 +315,7 @@ public class DatabaseSeederController {
             shopsphere.setCategory(ecommerceCategory);
             shopsphere.setPrice(0.0);
             shopsphere.setTemplateType("FREE");
-            shopsphere.setBootstrapVersion("HTML5 / CSS3 / JavaScript");
+            shopsphere.setBootstrapVersion("React / Java Spring Boot");
             shopsphere.setDemoUrl("/templates/ecommerce/ecommerce-7/index.html");
             shopsphere.setDownloadFile("shopsphere-fashion.zip");
             shopsphere.setPreviewImage("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80");

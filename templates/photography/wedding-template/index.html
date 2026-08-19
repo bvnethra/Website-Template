@@ -46,7 +46,7 @@
   <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
   <script>
     (function() {
-      const isPlatform = window.location.host === 'localhost:5173' || window.location.host === '127.0.0.1:5173';
+      const isPlatform = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       const isTop = window.self === window.top;
       const urlParams = new URLSearchParams(window.location.search);
       const isIframe = urlParams.get('iframe') === 'true';

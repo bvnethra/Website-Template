@@ -200,6 +200,86 @@ public class DatabaseSeederController {
             wedding.setTags(new ArrayList<>(Arrays.asList("Wedding Theme", "Ivory Background", "Serif Typography")));
             templateRepository.save(wedding);
             logs.put("template_wedding", "Created");
+
+            // Fine Art template (Aura)
+            Template fineart = new Template();
+            fineart.setName("Aura — Premium Fine Art Studio");
+            fineart.setSlug("fineart-template");
+            fineart.setDescription("A premium, dynamic React portfolio website for a fine art photography studio. Features Ken Burns hero animations, scroll-triggered wipe reveals, and interactive circular gallery navigations.");
+            fineart.setCategory(photography);
+            fineart.setPrice(0.0);
+            fineart.setTemplateType("FREE");
+            fineart.setBootstrapVersion("HTML5 / Vanilla CSS");
+            fineart.setDemoUrl("/templates/photography/fineart-template/index.html");
+            fineart.setDownloadFile("fineart-template.zip");
+            fineart.setPreviewImage("/fineart_cover.png");
+            fineart.setVersion("1.0.0");
+            fineart.setStatus("PUBLISHED");
+            fineart.setPagesCount(1);
+            fineart.setDownloadsCount(1500);
+            fineart.setTags(new ArrayList<>(Arrays.asList("Premium Serif", "Wipe Reveals", "Hover Custom Cursor")));
+            templateRepository.save(fineart);
+            logs.put("template_fineart", "Created");
+
+            // Cinematic Wedding template (Eden Rose)
+            Template cinematic = new Template();
+            cinematic.setName("Eden Rose — Cinematic Luxury Wedding Portfolio");
+            cinematic.setSlug("cinematic-wedding");
+            cinematic.setDescription("A cinematic wedding photography portfolio template in deep black and luxury gold tones. Features intro curtain loaders, route transition reveals, staggered portfolio grids, and boutique inquiry options.");
+            cinematic.setCategory(photography);
+            cinematic.setPrice(0.0);
+            cinematic.setTemplateType("FREE");
+            cinematic.setBootstrapVersion("HTML5 / Tailwind CSS");
+            cinematic.setDemoUrl("/templates/photography/cinematic-wedding/index.html");
+            cinematic.setDownloadFile("cinematic-wedding.zip");
+            cinematic.setPreviewImage("/cinematic_cover.png");
+            cinematic.setVersion("1.0.0");
+            cinematic.setStatus("PUBLISHED");
+            cinematic.setPagesCount(1);
+            cinematic.setDownloadsCount(12450);
+            cinematic.setTags(new ArrayList<>(Arrays.asList("Luxury Monocrom", "Preloader curtain", "Staggered Grid")));
+            templateRepository.save(cinematic);
+            logs.put("template_cinematic", "Created");
+
+            // Kairo template
+            Template kairo = new Template();
+            kairo.setName("Kairo — Modern 3D Photography Portfolio");
+            kairo.setSlug("kairo-template");
+            kairo.setDescription("A modern photography portfolio featuring interactive 3D camera lens aperture graphics rendered in React Three Fiber, scroll-linked fade animations, split-layout bio sections, and fullscreen responsive image tiles.");
+            kairo.setCategory(photography);
+            kairo.setPrice(0.0);
+            kairo.setTemplateType("FREE");
+            kairo.setBootstrapVersion("HTML5 / Tailwind CSS");
+            kairo.setDemoUrl("/templates/photography/kairo-template/index.html");
+            kairo.setDownloadFile("kairo-template.zip");
+            kairo.setPreviewImage("/kairo_cover.png");
+            kairo.setVersion("1.0.0");
+            kairo.setStatus("PUBLISHED");
+            kairo.setPagesCount(1);
+            kairo.setDownloadsCount(8200);
+            kairo.setTags(new ArrayList<>(Arrays.asList("3D Scene", "Interactive Parallax", "Luxury Editorial")));
+            templateRepository.save(kairo);
+            logs.put("template_kairo", "Created");
+
+            // Lume Studio template
+            Template isteady = new Template();
+            isteady.setName("Lume Studio — Fashion & Editorial Portfolio");
+            isteady.setSlug("isteady-template");
+            isteady.setDescription("A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.");
+            isteady.setCategory(photography);
+            isteady.setPrice(0.0);
+            isteady.setTemplateType("FREE");
+            isteady.setBootstrapVersion("HTML5 / Tailwind CSS");
+            isteady.setDemoUrl("/templates/photography/isteady-template/index.html");
+            isteady.setDownloadFile("isteady-template.zip");
+            isteady.setPreviewImage("/lume_cover.png");
+            isteady.setVersion("1.0.0");
+            isteady.setStatus("PUBLISHED");
+            isteady.setPagesCount(1);
+            isteady.setDownloadsCount(9500);
+            isteady.setTags(new ArrayList<>(Arrays.asList("Editorial Fashion", "Moody Spotlight", "Bespoke Lighting")));
+            templateRepository.save(isteady);
+            logs.put("template_isteady", "Created");
         }
 
         // 6. Seed Restaurant templates

@@ -24,7 +24,7 @@ const MOCK_CATEGORIES = [
 const MOCK_TEMPLATES = [
   {
     id: 1,
-    name: 'SnapFolio — Dark Minimalist Portfolio',
+    name: 'SnapFolio  -  Dark Minimalist Portfolio',
     slug: 'snapfolio-template',
     previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -39,7 +39,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 2,
-    name: 'Photo — Editorial Photography Studio',
+    name: 'Photo  -  Editorial Photography Studio',
     slug: 'photo-template',
     previewImage: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -47,7 +47,7 @@ const MOCK_TEMPLATES = [
     category: { id: 8, name: 'Photography', slug: 'photography' },
     pagesCount: 1,
     downloadsCount: 8400,
-    description: 'A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.',
+    description: 'A high-end, editorial landing page template for creative photography studios. Features Sphere-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0',
     demoUrl: '/templates/photography/photo-template/index.html'
@@ -112,6 +112,48 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'HTML5 / Vanilla CSS / JS',
     version: '1.0.0',
     demoUrl: '/templates/ecommerce/nexa/index.html'
+  },
+  {
+    id: 7,
+    name: 'Orange 16  -  Coming Soon Template',
+    slug: 'coming-soon-template',
+    previewImage: '/templates/comming-soon/coming-soon-template/orange-cover.jpg',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    pagesCount: 1,
+    downloadsCount: 1200,
+    description: 'A new experience of performance, photography and design is about to arrive. Explore the revolutionary Orange 16 with White and Black Titanium craft, O18 Pro chip, slow-motion video, and exploded engineering architecture.',
+    bootstrapVersion: 'HTML5 / Vanilla CSS',
+    version: '1.0'
+  },
+  {
+    id: 8,
+    name: 'NOVA X1  -  Cinematic Coming Soon Template',
+    slug: 'nova-x1-template',
+    previewImage: '/templates/comming-soon/cm-2/car-cover.jpg',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    pagesCount: 1,
+    downloadsCount: 1850,
+    description: 'A production-quality futuristic automotive showroom template. Explore the NOVA X1 electric SUV with interactive 3D WebGL visuals, scroll-driven camera reveals, dynamic paint customizer, performance analytics, and pre-booking capture.',
+    bootstrapVersion: 'React / Three.js / GSAP',
+    version: '1.0'
+  },
+  {
+    id: 9,
+    name: 'AURA SKY RESIDENCES  -  Premium Cinematic Building Launch Template',
+    slug: 'aura-sky-template',
+    previewImage: '/templates/comming-soon/cm-3/buliding-jpg/ezgif-frame-001.jpg',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    pagesCount: 1,
+    downloadsCount: 950,
+    description: 'Create a modern, premium, cinematic coming soon website for luxury real-estate projects. Features continuous slow-motion building rendering background loops, Lenis smooth scrolling, architectural specification grids, and modular registration capture forms.',
+    bootstrapVersion: 'HTML5 / Tailwind CSS',
+    version: '1.0'
   }
 ];
 

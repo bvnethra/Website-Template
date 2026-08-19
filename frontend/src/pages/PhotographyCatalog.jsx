@@ -10,14 +10,14 @@ export default function PhotographyCatalog() {
   const TEMPLATES = [
     {
       slug: 'snapfolio-template',
-      name: 'SnapFolio — Dark Minimalist Portfolio',
+      name: 'SnapFolio  -  Dark Minimalist Portfolio',
       previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
       tags: ['Dark Theme', 'Masonry Gallery', 'Lightbox Modal'],
       description: 'A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.'
     },
     {
       slug: 'photo-template',
-      name: 'Photo — Editorial Photography Studio',
+      name: 'Photo  -  Editorial Photography Studio',
       previewImage: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80',
       tags: ['Editorial Layout', 'Scroll Pinned Canvas', 'Golden Hour Theme'],
       description: 'A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.'

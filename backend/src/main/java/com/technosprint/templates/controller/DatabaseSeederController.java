@@ -248,6 +248,61 @@ public class DatabaseSeederController {
             logs.put("template_ecommerce", "Created");
         }
 
+        // 8. Seed Coming Soon templates
+        Category commingSoonCategory = catMap.get("comming-soon");
+        if (commingSoonCategory != null) {
+            Template comingSoon = new Template();
+            comingSoon.setName("Orange 16  -  Coming Soon Template");
+            comingSoon.setSlug("coming-soon-template");
+            comingSoon.setDescription("A new experience of performance, photography and design is about to arrive. Explore the revolutionary Orange 16 with White and Black Titanium craft, O18 Pro chip, slow-motion video, and exploded engineering architecture.");
+            comingSoon.setCategory(commingSoonCategory);
+            comingSoon.setPrice(0.0);
+            comingSoon.setTemplateType("FREE");
+            comingSoon.setBootstrapVersion("HTML5 / Vanilla CSS");
+            comingSoon.setDemoUrl("/templates/comming-soon/coming-soon-template/index.html");
+            comingSoon.setPreviewImage("/templates/comming-soon/coming-soon-template/orange-cover.jpg");
+            comingSoon.setVersion("1.0");
+            comingSoon.setStatus("PUBLISHED");
+            comingSoon.setPagesCount(1);
+            comingSoon.setDownloadsCount(1200);
+            comingSoon.setTags(new ArrayList<>(Arrays.asList("Orange 16", "Coming Soon", "Titanium Design")));
+            templateRepository.save(comingSoon);
+
+            Template novaSoon = new Template();
+            novaSoon.setName("NOVA X1  -  Cinematic Coming Soon Template");
+            novaSoon.setSlug("nova-x1-template");
+            novaSoon.setDescription("A production-quality futuristic automotive showroom template. Explore the NOVA X1 electric SUV with interactive 3D WebGL visuals, scroll-driven camera reveals, dynamic paint customizer, performance analytics, and pre-booking capture.");
+            novaSoon.setCategory(commingSoonCategory);
+            novaSoon.setPrice(0.0);
+            novaSoon.setTemplateType("FREE");
+            novaSoon.setBootstrapVersion("React / Three.js / GSAP");
+            novaSoon.setDemoUrl("/templates/comming-soon/cm-2/index.html");
+            novaSoon.setPreviewImage("/templates/comming-soon/cm-2/car-cover.jpg");
+            novaSoon.setVersion("1.0");
+            novaSoon.setStatus("PUBLISHED");
+            novaSoon.setPagesCount(1);
+            novaSoon.setDownloadsCount(1850);
+            novaSoon.setTags(new ArrayList<>(Arrays.asList("3D Showroom", "NOVA MOTORS", "Automotive", "GSAP ScrollTrigger")));
+            templateRepository.save(novaSoon);
+
+            Template auraSoon = new Template();
+            auraSoon.setName("AURA SKY RESIDENCES  -  Premium Cinematic Building Launch Template");
+            auraSoon.setSlug("aura-sky-template");
+            auraSoon.setDescription("Create a modern, premium, cinematic coming soon website for luxury real-estate projects. Features continuous slow-motion building rendering background loops, Lenis smooth scrolling, architectural specification grids, and modular registration capture forms.");
+            auraSoon.setCategory(commingSoonCategory);
+            auraSoon.setPrice(0.0);
+            auraSoon.setTemplateType("FREE");
+            auraSoon.setBootstrapVersion("HTML5 / Tailwind CSS");
+            auraSoon.setDemoUrl("/templates/comming-soon/cm-3/index.html");
+            auraSoon.setPreviewImage("/templates/comming-soon/cm-3/buliding-jpg/ezgif-frame-001.jpg");
+            auraSoon.setVersion("1.0");
+            auraSoon.setStatus("PUBLISHED");
+            auraSoon.setPagesCount(1);
+            auraSoon.setDownloadsCount(950);
+            auraSoon.setTags(new ArrayList<>(Arrays.asList("Real Estate", "Luxury Skyline", "Lenis Smooth Scroll", "Audio Engine")));
+            templateRepository.save(auraSoon);
+        }
+
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);
     }

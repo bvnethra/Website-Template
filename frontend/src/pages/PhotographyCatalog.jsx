@@ -42,30 +42,6 @@ export default function PhotographyCatalog() {
   const handleDownload = async (slug, templateName) => {
     setDownloadingSlug(slug);
 
-    if (slug === 'wedding-template') {
-      try {
-        const response = await fetch(`/templates/photography/${slug}/index.html`);
-        if (!response.ok) throw new Error(`Failed to fetch index.html`);
-        const text = await response.text();
-
-        const blob = new Blob([text], { type: 'text/html' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'index.html';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        showToast(`${templateName} index.html downloaded successfully!`);
-      } catch (err) {
-        console.error(err);
-        showToast(`Failed to download ${templateName}.`, 'error');
-      } finally {
-        setDownloadingSlug('');
-      }
-      return;
-    }
-
     const zip = new JSZip();
     
     const files = [

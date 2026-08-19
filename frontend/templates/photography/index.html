@@ -189,7 +189,7 @@
           <a href="./wedding-template/index.html" target="_blank" class="py-3 px-5 text-center bg-[#262626] hover:bg-[#333333] text-white rounded-xl font-medium border border-white/10 text-xs flex items-center justify-center gap-2 transition-colors">
             Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
           </a>
-          <button id="download-wedding" onclick="downloadSingleFile('wedding-template')" class="py-3 px-5 text-center bg-[#544ee8] hover:bg-[#433cc8] text-white rounded-xl font-medium shadow-md text-xs flex items-center justify-center gap-2 transition-colors">
+          <button id="download-wedding" onclick="downloadTemplate('wedding-template')" class="py-3 px-5 text-center bg-[#544ee8] hover:bg-[#433cc8] text-white rounded-xl font-medium shadow-md text-xs flex items-center justify-center gap-2 transition-colors">
             Download <i class="fa-solid fa-download"></i>
           </button>
         </div>
@@ -255,7 +255,7 @@
         { name: 'script.js', url: `./${slug}/script.js` }
       ];
       
-      const btn = document.getElementById(slug === 'snapfolio-template' ? 'download-snapfolio' : 'download-photo');
+      const btn = document.getElementById(slug === 'snapfolio-template' ? 'download-snapfolio' : slug === 'photo-template' ? 'download-photo' : 'download-wedding');
       const originalText = btn.innerHTML;
       
       btn.disabled = true;
@@ -302,36 +302,6 @@
       } catch (error) {
         console.error('Error preparing zip package:', error);
         showToast('Failed to bundle template files.', true);
-      } finally {
-        btn.disabled = false;
-        btn.innerHTML = originalText;
-      }
-    }
-
-    async function downloadSingleFile(slug) {
-      const btn = document.getElementById('download-wedding');
-      const originalText = btn.innerHTML;
-      
-      btn.disabled = true;
-      btn.innerHTML = `<i class="fa-solid fa-circle-notch animate-spin"></i> Downloading...`;
-      
-      try {
-        const response = await fetch(`./${slug}/index.html`);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const text = await response.text();
-        
-        const blob = new Blob([text], { type: 'text/html' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'index.html';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        showToast('Template HTML downloaded successfully!');
-      } catch (error) {
-        console.error('Error downloading template:', error);
-        showToast('Failed to download template file.', true);
       } finally {
         btn.disabled = false;
         btn.innerHTML = originalText;

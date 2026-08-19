@@ -157,6 +157,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / React Router / Vanilla CSS',
     version: '1.0.0',
     demoUrl: '/templates/ecommerce/ecommerce-2/index.html'
+  },
+  {
+    id: 10,
+    name: 'ShopSphere — Modern Fashion & Lifestyle Store',
+    slug: 'shopsphere-commerce',
+    previewImage: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 5,
+    downloadsCount: 2850,
+    description: 'A sleek, modern e-commerce storefront for fashion and lifestyle brands. Features sidebar navigation, interactive category listings, search filter overlay, and a clean minimalist design.',
+    bootstrapVersion: 'HTML5 / CSS3 / JavaScript',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-7/index.html'
   }
 ];
 

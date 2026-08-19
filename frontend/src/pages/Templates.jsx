@@ -3,116 +3,7 @@ import { useSearchParams, Link } from 'react-router-dom';
 import { api } from '../services/api';
 import { Search, SlidersHorizontal, ExternalLink, Star, Wifi, Waves, UtensilsCrossed, Sparkles } from 'lucide-react';
 
-/* ─── Featured Hotel Template Card ─── */
-function FeaturedHotelCard() {
-  return (
-    <div id="featured-hotel-template-card" style={{
-      background: 'linear-gradient(135deg, #0B132B 0%, #1C2541 60%, #0d1e3d 100%)',
-      borderRadius: 20,
-      overflow: 'hidden',
-      marginBottom: 36,
-      border: '1px solid rgba(224, 169, 109, 0.25)',
-      boxShadow: '0 20px 60px rgba(0,0,0,0.2)',
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
-      minHeight: 340,
-      position: 'relative',
-    }}>
-      {/* Left: Content */}
-      <div style={{ padding: '44px 48px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 0, position: 'relative', zIndex: 2 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-          <span style={{
-            fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase',
-            background: 'rgba(224,169,109,0.15)', border: '1px solid rgba(224,169,109,0.3)',
-            color: '#E0A96D', padding: '4px 12px', borderRadius: 3
-          }}>✦ Featured Template</span>
-          <span style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', background: 'var(--primary-color)', color: 'white', padding: '4px 10px', borderRadius: 3 }}>PREMIUM</span>
-        </div>
 
-        <h2 style={{
-          fontFamily: "'Cormorant Garamond', Georgia, serif",
-          fontWeight: 300, fontSize: '2.1rem', lineHeight: 1.15,
-          color: '#F7F3ED', marginBottom: 10, letterSpacing: '-0.01em'
-        }}>
-          Aura Resort & Spa<br />
-          <em style={{ fontStyle: 'italic', color: '#E0A96D' }}>Hotel Template</em>
-        </h2>
-
-        <p style={{ fontSize: '0.86rem', color: '#9CA3AF', lineHeight: 1.7, marginBottom: 24, maxWidth: 340 }}>
-          A high-end, full-featured luxury hotel website with dark/light theme toggle, booking bar, room cards, spa section, gallery lightbox, and animated reviews.
-        </p>
-
-        {/* Features */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 28 }}>
-          {['10 Sections', 'Dark & Light Mode', 'Gallery Lightbox', 'Live Countdown', 'Scroll Reveal', 'Fully Responsive'].map(f => (
-            <span key={f} style={{
-              fontSize: '0.7rem', fontWeight: 600, color: '#9CA3AF',
-              background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)',
-              padding: '4px 10px', borderRadius: 4, letterSpacing: '0.04em'
-            }}>{f}</span>
-          ))}
-        </div>
-
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <Link
-            id="featured-hotel-live-preview"
-            to="/hotel-template"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              background: '#E0A96D', color: '#0B132B',
-              fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.06em',
-              padding: '12px 24px', borderRadius: 4, textTransform: 'uppercase',
-              transition: 'all 0.3s', boxShadow: '0 6px 20px rgba(224,169,109,0.3)'
-            }}
-          >
-            <ExternalLink size={14} /> Live Preview
-          </Link>
-          <Link
-            id="featured-hotel-info-btn"
-            to="/templates/aura-resort"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              background: 'transparent', color: '#F7F3ED',
-              border: '1px solid rgba(255,255,255,0.2)',
-              fontWeight: 500, fontSize: '0.82rem',
-              padding: '12px 24px', borderRadius: 4,
-              transition: 'all 0.3s',
-              letterSpacing: '0.04em'
-            }}
-          >
-            View Details
-          </Link>
-        </div>
-      </div>
-
-      {/* Right: Preview image */}
-      <div style={{ position: 'relative', overflow: 'hidden' }}>
-        <img
-          src="/hotel_template_preview.jpg"
-          alt="Aura Resort Hotel Template Preview"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: 0.9 }}
-        />
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(90deg, #0B132B 0%, transparent 30%)'
-        }} />
-        {/* Rating badge */}
-        <div style={{
-          position: 'absolute', top: 20, right: 20,
-          background: 'rgba(11,19,43,0.85)', border: '1px solid rgba(224,169,109,0.3)',
-          borderRadius: 8, padding: '10px 14px', backdropFilter: 'blur(10px)'
-        }}>
-          <div style={{ display: 'flex', gap: 3, marginBottom: 3 }}>
-            {[1,2,3,4,5].map(i => <Star key={i} size={11} fill="#E0A96D" color="#E0A96D" />)}
-          </div>
-          <div style={{ fontSize: '0.72rem', color: '#E0A96D', fontWeight: 600 }}>Premium Quality</div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function Templates() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -398,10 +289,7 @@ export default function Templates() {
           </div>
         )}
 
-        {/* Featured Hotel Template — shown when hotel category is selected or no category filter */}
-        {(selectedCategory === 'hotel' || selectedCategory === 'all') && !searchQuery && (
-          <FeaturedHotelCard />
-        )}
+
 
         {/* Grid */}
         {sortedTemplates.length > 0 ? (

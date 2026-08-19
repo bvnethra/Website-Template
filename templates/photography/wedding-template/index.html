@@ -69,6 +69,7 @@
           body.style.overflow = 'hidden';
           body.style.backgroundColor = '#f1f5f9';
           
+          // Build Top Bar
           const topBar = document.createElement('div');
           topBar.id = 'technosprint-preview-header';
           topBar.style.height = '64px';
@@ -84,6 +85,7 @@
           topBar.style.position = 'relative';
           topBar.style.boxSizing = 'border-box';
           
+          // Left side logo
           const logoDiv = document.createElement('div');
           logoDiv.innerHTML = `
             <a href="/templates" style="display: flex; align-items: center; text-decoration: none;">
@@ -92,11 +94,20 @@
           `;
           topBar.appendChild(logoDiv);
           
-          const centerDiv = document.createElement('div');
-          centerDiv.style.display = 'flex';
-          centerDiv.style.alignItems = 'center';
-          centerDiv.style.gap = '8px';
-          centerDiv.innerHTML = `
+          // Center Template Name
+          const titleDiv = document.createElement('div');
+          titleDiv.style.fontWeight = '600';
+          titleDiv.style.fontSize = '0.9rem';
+          titleDiv.style.color = '#334155';
+          titleDiv.innerText = `< ${document.title || 'Template Preview'} >`;
+          topBar.appendChild(titleDiv);
+          
+          // Right view switcher buttons
+          const rightDiv = document.createElement('div');
+          rightDiv.style.display = 'flex';
+          rightDiv.style.alignItems = 'center';
+          rightDiv.style.gap = '8px';
+          rightDiv.innerHTML = `
             <button id="view-desktop" style="
               background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;
               padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
@@ -125,36 +136,10 @@
               Mobile
             </button>
           `;
-          topBar.appendChild(centerDiv);
-          
-          const rightDiv = document.createElement('div');
-          const pathParts = window.location.pathname.split('/');
-          const templateSlug = pathParts[pathParts.length - 2] || 'wedding-template';
-          
-          rightDiv.innerHTML = `
-            <a id="download-btn-header" href="/templates/${templateSlug}?action=download" style="
-              background: #0066ff;
-              color: #ffffff;
-              text-decoration: none;
-              font-size: 0.85rem;
-              font-weight: 600;
-              padding: 10px 20px;
-              border-radius: 99px;
-              box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
-              transition: all 0.2s ease-in-out;
-              display: flex;
-              align-items: center;
-              gap: 8px;
-              letter-spacing: 0.5px;
-              box-sizing: border-box;
-            ">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              Download Template
-            </a>
-          `;
           topBar.appendChild(rightDiv);
           body.appendChild(topBar);
           
+          // Create Iframe Container
           const iframeContainer = document.createElement('div');
           iframeContainer.style.flex = '1';
           iframeContainer.style.display = 'flex';
@@ -179,10 +164,10 @@
           iframeContainer.appendChild(iframe);
           body.appendChild(iframeContainer);
           
+          // Interactivity
           const btnDesktop = body.querySelector('#view-desktop');
           const btnTablet = body.querySelector('#view-tablet');
           const btnMobile = body.querySelector('#view-mobile');
-          const downloadBtn = body.querySelector('#download-btn-header');
           
           let activeMode = 'desktop';
           
@@ -202,6 +187,8 @@
               btnDesktop.style.fontWeight = '600';
               iframe.style.width = '100%';
               iframe.style.height = '100%';
+              iframe.style.borderRadius = '12px';
+              iframe.style.border = 'none';
             } else if (mode === 'tablet') {
               btnTablet.style.background = '#eff6ff';
               btnTablet.style.color = '#1e40af';
@@ -210,6 +197,8 @@
               iframe.style.width = '768px';
               iframe.style.height = '1024px';
               iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '24px';
+              iframe.style.border = '12px solid #0f172a';
             } else if (mode === 'mobile') {
               btnMobile.style.background = '#eff6ff';
               btnMobile.style.color = '#1e40af';
@@ -218,6 +207,8 @@
               iframe.style.width = '375px';
               iframe.style.height = '667px';
               iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '32px';
+              iframe.style.border = '14px solid #0f172a';
             }
           }
           
@@ -244,15 +235,6 @@
                 item.btn.style.borderColor = '#e2e8f0';
               }
             });
-          });
-          
-          downloadBtn.addEventListener('mouseenter', () => {
-            downloadBtn.style.background = '#0256d6';
-            downloadBtn.style.boxShadow = '0 6px 16px rgba(0, 102, 255, 0.3)';
-          });
-          downloadBtn.addEventListener('mouseleave', () => {
-            downloadBtn.style.background = '#0066ff';
-            downloadBtn.style.boxShadow = '0 4px 12px rgba(0, 102, 255, 0.15)';
           });
           
           document.documentElement.style.visibility = 'visible';

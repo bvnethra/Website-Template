@@ -279,8 +279,6 @@ export default function TemplateDetails({ addToCart, cart }) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 30 }}>
               <a
                 href={template.demoUrl}
-                target="_blank"
-                rel="noreferrer"
                 className="btn btn-primary"
                 style={{ width: '100%', padding: '12px 0', justifyContent: 'center' }}
               >

@@ -290,6 +290,26 @@ public class DatabaseSeederController {
             templateRepository.save(aurelia);
             logs.put("template_aurelia", "Created");
 
+            // Seed ShopSphere template
+            Template shopsphere = new Template();
+            shopsphere.setName("ShopSphere — Modern Fashion & Lifestyle Store");
+            shopsphere.setSlug("shopsphere-commerce");
+            shopsphere.setDescription("A sleek, modern e-commerce storefront for fashion and lifestyle brands. Features sidebar navigation, interactive category listings, search filter overlay, and a clean minimalist design.");
+            shopsphere.setCategory(ecommerceCategory);
+            shopsphere.setPrice(0.0);
+            shopsphere.setTemplateType("FREE");
+            shopsphere.setBootstrapVersion("HTML5 / CSS3 / JavaScript");
+            shopsphere.setDemoUrl("/templates/ecommerce/ecommerce-7/index.html");
+            shopsphere.setDownloadFile("shopsphere-fashion.zip");
+            shopsphere.setPreviewImage("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80");
+            shopsphere.setVersion("1.0.0");
+            shopsphere.setStatus("PUBLISHED");
+            shopsphere.setPagesCount(5);
+            shopsphere.setDownloadsCount(2850);
+            shopsphere.setTags(new ArrayList<>(Arrays.asList("Fashion Store", "Minimalist Layout", "HTML5 CSS3", "Interactive sidebar")));
+            templateRepository.save(shopsphere);
+            logs.put("template_shopsphere", "Created");
+
             // Seed ToyVerse template
             Template toyverse = new Template();
             toyverse.setName("ToyVerse — Interactive Toy & Hobby Store");
@@ -310,7 +330,25 @@ public class DatabaseSeederController {
             templateRepository.save(toyverse);
             logs.put("template_toyverse", "Created");
 
-
+            // Seed NOVA template
+            Template nova = new Template();
+            nova.setName("NOVA — Futuristic Device & Ecosystem Store");
+            nova.setSlug("nova-store");
+            nova.setDescription("A futuristic and clean electronic product storefront dedicated to premium devices and smart ecosystem components. Features automated command search overlays, compare modals, interactive specifications, and cart drawers.");
+            nova.setCategory(ecommerceCategory);
+            nova.setPrice(0.0);
+            nova.setTemplateType("FREE");
+            nova.setBootstrapVersion("React / Lucide Icons / Vanilla CSS");
+            nova.setDemoUrl("/templates/ecommerce/ecommerce-3/index.html");
+            nova.setDownloadFile("nova-store.zip");
+            nova.setPreviewImage("/templates/ecommerce/ecommerce-3/images/nova_x1_front.webp");
+            nova.setVersion("1.0.0");
+            nova.setStatus("PUBLISHED");
+            nova.setPagesCount(4);
+            nova.setDownloadsCount(4100);
+            nova.setTags(new ArrayList<>(Arrays.asList("Futuristic Store", "Ecosystem Shop", "Lucide Icons", "Command Search", "Compare Modal")));
+            templateRepository.save(nova);
+            logs.put("template_nova", "Created");
         }
 
         // 8. Seed Coming Soon templates

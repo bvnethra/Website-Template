@@ -143,6 +143,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / React Router / Vanilla CSS',
     version: '1.0.0',
     demoUrl: '/templates/ecommerce/ecommerce-2/index.html'
+  },
+  {
+    id: 10,
+    name: 'ToyVerse — Interactive Toy & Hobby Store',
+    slug: 'toy-store',
+    previewImage: 'https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 8,
+    downloadsCount: 3200,
+    description: 'A vibrant and interactive online storefront designed for modern toy stores and hobby shops. Features a custom 3D flying toy canvas, whimsical category lists, responsive cart drawer, and interactive tracking.',
+    bootstrapVersion: 'React / TypeScript / GSAP',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-7/index.html'
   }
 ];
 

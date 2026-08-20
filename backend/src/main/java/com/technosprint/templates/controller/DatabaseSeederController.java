@@ -290,6 +290,26 @@ public class DatabaseSeederController {
             templateRepository.save(aurelia);
             logs.put("template_aurelia", "Created");
 
+            // Seed ToyVerse template
+            Template toyverse = new Template();
+            toyverse.setName("ToyVerse — Interactive Toy & Hobby Store");
+            toyverse.setSlug("toy-store");
+            toyverse.setDescription("A vibrant and interactive online storefront designed for modern toy stores and hobby shops. Features a custom 3D flying toy canvas, whimsical category lists, responsive cart drawer, and interactive tracking.");
+            toyverse.setCategory(ecommerceCategory);
+            toyverse.setPrice(0.0);
+            toyverse.setTemplateType("FREE");
+            toyverse.setBootstrapVersion("React / TypeScript / GSAP");
+            toyverse.setDemoUrl("/templates/ecommerce/ecommerce-7/index.html");
+            toyverse.setDownloadFile("toyverse-hobby.zip");
+            toyverse.setPreviewImage("https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=800&q=80");
+            toyverse.setVersion("1.0.0");
+            toyverse.setStatus("PUBLISHED");
+            toyverse.setPagesCount(8);
+            toyverse.setDownloadsCount(3200);
+            toyverse.setTags(new ArrayList<>(Arrays.asList("Toy Store", "GSAP Animations", "3D Whimsical Layout", "Hobby Shop")));
+            templateRepository.save(toyverse);
+            logs.put("template_toyverse", "Created");
+
 
         }
 

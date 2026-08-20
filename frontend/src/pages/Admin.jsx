@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 export default function Admin() {
-  const [activeTab, setActiveTab] = useState('modern-university'); // 'modern-university', 'college', 'myschool'
+  const [activeTab, setActiveTab] = useState('modern-university'); // 'modern-university', 'college', 'myschool', 'studypro'
   const [inquiries, setInquiries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -21,6 +21,11 @@ export default function Admin() {
     { id: 1, parentName: 'Charles Babbage', childName: 'Edward Babbage', email: 'babbage@difference.com', targetGrade: 'Grade 3', message: 'Inquiring about math acceleration seats.', submissionDate: '2026-08-19T10:14:00.000' }
   ];
 
+  const seedStudyPro = [
+    { id: 1, studentEmail: 'shannon@information.edu', promotionCode: 'STUDY40', signupDate: '2026-08-20T11:15:00.000' },
+    { id: 2, studentEmail: 'neumann@computer.edu', promotionCode: 'STUDY40', signupDate: '2026-08-19T16:30:00.000' }
+  ];
+
   useEffect(() => {
     fetchData();
   }, [activeTab]);
@@ -34,6 +39,8 @@ export default function Admin() {
       url = 'http://localhost:8080/api/college/applications';
     } else if (activeTab === 'myschool') {
       url = 'http://localhost:8080/api/myschool/inquiries';
+    } else if (activeTab === 'studypro') {
+      url = 'http://localhost:8080/api/studypro/signups';
     }
 
     try {
@@ -41,7 +48,7 @@ export default function Admin() {
       if (response.ok) {
         const data = await response.json();
         // Sort newest first
-        const sorted = data.sort((a, b) => new Date(b.submissionDate) - new Date(a.submissionDate));
+        const sorted = data.sort((a, b) => new Date(b.submissionDate || b.signupDate) - new Date(a.submissionDate || a.signupDate));
         setInquiries(sorted);
       } else {
         throw new Error('Server offline');
@@ -52,8 +59,10 @@ export default function Admin() {
         setInquiries(seedModernUniversity);
       } else if (activeTab === 'college') {
         setInquiries(seedCollege);
-      } else {
+      } else if (activeTab === 'myschool') {
         setInquiries(seedMySchool);
+      } else {
+        setInquiries(seedStudyPro);
       }
     } finally {
       setLoading(false);
@@ -73,11 +82,14 @@ export default function Admin() {
                item.email.toLowerCase().includes(term) ||
                item.trackingId.toLowerCase().includes(term) ||
                item.intendedMajor.toLowerCase().includes(term);
-      } else {
+      } else if (activeTab === 'myschool') {
         return item.parentName.toLowerCase().includes(term) ||
                item.childName.toLowerCase().includes(term) ||
                item.email.toLowerCase().includes(term) ||
                item.targetGrade.toLowerCase().includes(term);
+      } else {
+        return item.studentEmail.toLowerCase().includes(term) ||
+               item.promotionCode.toLowerCase().includes(term);
       }
     });
   };
@@ -96,11 +108,12 @@ export default function Admin() {
           <a href="/" style={{ padding: '8px 16px', background: '#f1f5f9', border: '1px solid #e2e8f0', borderRadius: '8px', color: '#334155', fontWeight: 600, textDecoration: 'none', fontSize: '0.85rem' }}>Back to University</a>
           <a href="/college" style={{ padding: '8px 16px', background: '#f1f5f9', border: '1px solid #e2e8f0', borderRadius: '8px', color: '#334155', fontWeight: 600, textDecoration: 'none', fontSize: '0.85rem' }}>College Portal</a>
           <a href="/myschool" style={{ padding: '8px 16px', background: '#f1f5f9', border: '1px solid #e2e8f0', borderRadius: '8px', color: '#334155', fontWeight: 600, textDecoration: 'none', fontSize: '0.85rem' }}>MySchool Portal</a>
+          <a href="/education-1" style={{ padding: '8px 16px', background: '#f1f5f9', border: '1px solid #e2e8f0', borderRadius: '8px', color: '#334155', fontWeight: 600, textDecoration: 'none', fontSize: '0.85rem' }}>StudyPro Portal</a>
         </div>
       </div>
 
       {/* Tabs */}
-      <div style={{ display: 'flex', borderBottom: '2px solid #e2e8f0', marginBottom: 30, gap: 10 }}>
+      <div style={{ display: 'flex', borderBottom: '2px solid #e2e8f0', marginBottom: 30, gap: 10, flexWrap: 'wrap' }}>
         <button 
           onClick={() => setActiveTab('modern-university')}
           style={{
@@ -145,6 +158,21 @@ export default function Admin() {
           }}
         >
           MySchool Inquiries
+        </button>
+        <button 
+          onClick={() => setActiveTab('studypro')}
+          style={{
+            padding: '12px 24px',
+            border: 'none',
+            background: 'none',
+            fontSize: '0.95rem',
+            fontWeight: 700,
+            cursor: 'pointer',
+            borderBottom: activeTab === 'studypro' ? '3px solid #00c853' : 'none',
+            color: activeTab === 'studypro' ? '#00c853' : '#64748b'
+          }}
+        >
+          StudyPro Signups
         </button>
       </div>
 
@@ -220,6 +248,13 @@ export default function Admin() {
                     <th style={{ padding: '16px 20px' }}>Date</th>
                   </>
                 )}
+                {activeTab === 'studypro' && (
+                  <>
+                    <th style={{ padding: '16px 20px' }}>Student Email Address</th>
+                    <th style={{ padding: '16px 20px' }}>Promotion Applied</th>
+                    <th style={{ padding: '16px 20px' }}>Signup Date</th>
+                  </>
+                )}
               </tr>
             </thead>
             <tbody>
@@ -251,6 +286,13 @@ export default function Admin() {
                       <td style={{ padding: '16px 20px', fontWeight: 700, color: '#ca8a04' }}>{item.targetGrade}</td>
                       <td style={{ padding: '16px 20px' }}>{item.message}</td>
                       <td style={{ padding: '16px 20px', color: '#64748b' }}>{new Date(item.submissionDate).toLocaleString()}</td>
+                    </>
+                  )}
+                  {activeTab === 'studypro' && (
+                    <>
+                      <td style={{ padding: '16px 20px', fontWeight: 600 }}>{item.studentEmail}</td>
+                      <td style={{ padding: '16px 20px', fontWeight: 700, color: '#00c853' }}>{item.promotionCode}</td>
+                      <td style={{ padding: '16px 20px', color: '#64748b' }}>{new Date(item.signupDate).toLocaleString()}</td>
                     </>
                   )}
                 </tr>

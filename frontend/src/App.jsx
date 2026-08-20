@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import CollegePortal from './pages/CollegePortal';
 import MySchoolPortal from './pages/MySchoolPortal';
 import Admin from './pages/Admin';
+import Education1Portal from './pages/Education1Portal';
 
 function MainApp() {
   return (
@@ -13,6 +14,7 @@ function MainApp() {
           <Route path="/" element={<Home />} />
           <Route path="/college" element={<CollegePortal />} />
           <Route path="/myschool" element={<MySchoolPortal />} />
+          <Route path="/education-1" element={<Education1Portal />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
       </main>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useStylesheet from '../../../frontend/src/services/useStylesheet';
+import useStylesheet from '../services/useStylesheet';
 
 export default function Education1Portal() {
   useStylesheet('/templates/education/education-1/style.css');

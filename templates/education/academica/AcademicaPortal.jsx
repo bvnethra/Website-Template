@@ -1,5 +1,5 @@
 import React from 'react';
-import useStylesheet from '../services/useStylesheet';
+import useStylesheet from '../../../frontend/src/services/useStylesheet';
 
 export default function AcademicaPortal() {
   useStylesheet('/templates/education/academica/style.css');

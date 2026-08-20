@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import useStylesheet from '../services/useStylesheet';
+import useStylesheet from '../../../frontend/src/services/useStylesheet';
 
 export default function Home() {
   useStylesheet('/templates/education/modern-university/style.css');

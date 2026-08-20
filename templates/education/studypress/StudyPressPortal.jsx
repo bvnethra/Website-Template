@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useStylesheet from '../services/useStylesheet';
+import useStylesheet from '../../../frontend/src/services/useStylesheet';
 
 export default function StudyPressPortal() {
   useStylesheet('/templates/education/studypress/style.css');

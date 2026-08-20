@@ -40,6 +40,7 @@ public class WebSecurityConfig {
                 .requestMatchers("/api/admissions/**").permitAll()
                 .requestMatchers("/api/college/**").permitAll()
                 .requestMatchers("/api/myschool/**").permitAll()
+                .requestMatchers("/api/studypro/**").permitAll()
                 .requestMatchers("/api/templates/**").permitAll()
                 .requestMatchers("/api/categories/**").permitAll()
                 .requestMatchers("/api/seed/**").permitAll()

@@ -181,9 +181,22 @@ const MOCK_TEMPLATES = [
     pagesCount: 10,
     downloadsCount: 3820,
     description: 'A minimalist, structured e-commerce storefront for organic fashion and lifestyle labels. Features smooth scroll reveals, custom cursors, floating filter panels, and color/size cart controls.',
-    bootstrapVersion: 'React / TypeScript / Vanilla CSS',
-    version: '1.0.0',
     demoUrl: '/templates/ecommerce/ecommerce-5/index.html'
+  },
+  {
+    id: 15,
+    name: 'Ember House — Artisan Dining & Gathering Space',
+    slug: 'ember-house',
+    previewImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 8,
+    downloadsCount: 2950,
+    description: 'An elegant, full-featured artisan restaurant and gathering venue template. Features fine dining menu displays, inline reservation requests, slideshow lookbooks, team/chef highlights, and clean typography.',
+    bootstrapVersion: 'React / Tailwind CSS / Motion',
+    version: '1.0.0',
+    demoUrl: '/templates/restaurant/restaurant-1/index.html'
   }
 ];
 

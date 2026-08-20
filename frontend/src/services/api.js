@@ -157,7 +157,7 @@ const MOCK_TEMPLATES = [
     description: 'A vibrant and interactive online storefront designed for modern toy stores and hobby shops. Features a custom 3D flying toy canvas, whimsical category lists, responsive cart drawer, and interactive tracking.',
     bootstrapVersion: 'React / TypeScript / GSAP',
     version: '1.0.0',
-    demoUrl: '/templates/ecommerce/ecommerce-8/index.html'
+    demoUrl: '/templates/ecommerce/ecommerce-7/index.html'
   }
 ];
 

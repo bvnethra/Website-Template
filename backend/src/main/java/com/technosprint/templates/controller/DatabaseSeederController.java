@@ -299,7 +299,7 @@ public class DatabaseSeederController {
             toyverse.setPrice(0.0);
             toyverse.setTemplateType("FREE");
             toyverse.setBootstrapVersion("React / TypeScript / GSAP");
-            toyverse.setDemoUrl("/templates/ecommerce/ecommerce-8/index.html");
+            toyverse.setDemoUrl("/templates/ecommerce/ecommerce-7/index.html");
             toyverse.setDownloadFile("toyverse-hobby.zip");
             toyverse.setPreviewImage("https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=800&q=80");
             toyverse.setVersion("1.0.0");

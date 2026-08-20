@@ -170,9 +170,22 @@ const MOCK_TEMPLATES = [
     pagesCount: 8,
     downloadsCount: 3200,
     description: 'A vibrant and interactive online storefront designed for modern toy stores and hobby shops. Features a custom 3D flying toy canvas, whimsical category lists, responsive cart drawer, and interactive tracking.',
-    bootstrapVersion: 'React / TypeScript / GSAP',
-    version: '1.0.0',
     demoUrl: '/templates/ecommerce/ecommerce-8/index.html'
+  },
+  {
+    id: 12,
+    name: 'NOVA — Futuristic Device & Ecosystem Store',
+    slug: 'nova-store',
+    previewImage: '/templates/ecommerce/ecommerce-3/images/nova_x1_front.webp',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 4,
+    downloadsCount: 4100,
+    description: 'A futuristic and clean electronic product storefront dedicated to premium devices and smart ecosystem components. Features automated command search overlays, compare modals, interactive specifications, and cart drawers.',
+    bootstrapVersion: 'React / Lucide Icons / Vanilla CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-3/index.html'
   }
 ];
 

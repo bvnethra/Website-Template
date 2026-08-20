@@ -330,7 +330,25 @@ public class DatabaseSeederController {
             templateRepository.save(toyverse);
             logs.put("template_toyverse", "Created");
 
-
+            // Seed NOVA template
+            Template nova = new Template();
+            nova.setName("NOVA — Futuristic Device & Ecosystem Store");
+            nova.setSlug("nova-store");
+            nova.setDescription("A futuristic and clean electronic product storefront dedicated to premium devices and smart ecosystem components. Features automated command search overlays, compare modals, interactive specifications, and cart drawers.");
+            nova.setCategory(ecommerceCategory);
+            nova.setPrice(0.0);
+            nova.setTemplateType("FREE");
+            nova.setBootstrapVersion("React / Lucide Icons / Vanilla CSS");
+            nova.setDemoUrl("/templates/ecommerce/ecommerce-3/index.html");
+            nova.setDownloadFile("nova-store.zip");
+            nova.setPreviewImage("/templates/ecommerce/ecommerce-3/images/nova_x1_front.webp");
+            nova.setVersion("1.0.0");
+            nova.setStatus("PUBLISHED");
+            nova.setPagesCount(4);
+            nova.setDownloadsCount(4100);
+            nova.setTags(new ArrayList<>(Arrays.asList("Futuristic Store", "Ecosystem Shop", "Lucide Icons", "Command Search", "Compare Modal")));
+            templateRepository.save(nova);
+            logs.put("template_nova", "Created");
         }
 
         // 8. Seed Coming Soon templates

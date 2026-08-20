@@ -121,7 +121,7 @@ export const ProductDetails: React.FC = () => {
           {/* Interactive floating elements */}
           <div className="showcase-toy-wrapper">
             {toyState === 'idle' && product.image.endsWith('.jpg') ? (
-              <img src={product.image} alt={product.name} className="pedestal-toy-img" />
+              <img src={product.image.startsWith('/') ? `${import.meta.env.BASE_URL}${product.image.substring(1)}` : product.image} alt={product.name} className="pedestal-toy-img" />
             ) : (
               <ToyRenderer type={product.animationType} state={toyState} />
             )}

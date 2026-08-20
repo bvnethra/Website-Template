@@ -331,6 +331,26 @@ public class DatabaseSeederController {
             nova.setTags(new ArrayList<>(Arrays.asList("Futuristic Store", "Ecosystem Shop", "Lucide Icons", "Command Search", "Compare Modal")));
             templateRepository.save(nova);
             logs.put("template_nova", "Created");
+
+            // Seed Orvana template
+            Template orvana = new Template();
+            orvana.setName("Orvana — Premium Design & Lifestyle Concept Store");
+            orvana.setSlug("orvana-store");
+            orvana.setDescription("A cinematic and immersive e-commerce storefront for lifestyle and fashion concept brands. Features rich animations, cinematic video hero headers, product quick view modals, interactive sorting, and detailed item configuration options.");
+            orvana.setCategory(ecommerceCategory);
+            orvana.setPrice(0.0);
+            orvana.setTemplateType("FREE");
+            orvana.setBootstrapVersion("React / Framer Motion / TypeScript");
+            orvana.setDemoUrl("/templates/ecommerce/ecommerce-4/index.html");
+            orvana.setDownloadFile("orvana-store.zip");
+            orvana.setPreviewImage("https://images.unsplash.com/photo-1441984969733-d4df530a7731?auto=format&fit=crop&w=800&q=80");
+            orvana.setVersion("1.0.0");
+            orvana.setStatus("PUBLISHED");
+            orvana.setPagesCount(14);
+            orvana.setDownloadsCount(5120);
+            orvana.setTags(new ArrayList<>(Arrays.asList("Immersive Concept Store", "Lifestyle Shop", "Framer Motion", "Mega Menu", "Interactive Sorting")));
+            templateRepository.save(orvana);
+            logs.put("template_orvana", "Created");
         }
 
         // 8. Seed Coming Soon templates

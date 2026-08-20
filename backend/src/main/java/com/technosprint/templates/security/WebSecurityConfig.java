@@ -38,6 +38,8 @@ public class WebSecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/admissions/**").permitAll()
+                .requestMatchers("/api/college/**").permitAll()
+                .requestMatchers("/api/myschool/**").permitAll()
                 .requestMatchers("/api/templates/**").permitAll()
                 .requestMatchers("/api/categories/**").permitAll()
                 .requestMatchers("/api/seed/**").permitAll()

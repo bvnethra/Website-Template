@@ -183,7 +183,7 @@ export const HeroSection: React.FC = () => {
             {/* Model Background Image subtle preview */}
             <div className="absolute inset-0 opacity-20 pointer-events-none">
               <Image
-                src="/images/hero-model.png"
+                src="/templates/ecommerce/ecommerce-1/images/hero-model.png"
                 alt="Soft Glow Beauty Model"
                 fill
                 className="object-cover"

@@ -200,86 +200,6 @@ public class DatabaseSeederController {
             wedding.setTags(new ArrayList<>(Arrays.asList("Wedding Theme", "Ivory Background", "Serif Typography")));
             templateRepository.save(wedding);
             logs.put("template_wedding", "Created");
-
-            // Fine Art template (Aura)
-            Template fineart = new Template();
-            fineart.setName("Aura — Premium Fine Art Studio");
-            fineart.setSlug("fineart-template");
-            fineart.setDescription("A premium, dynamic React portfolio website for a fine art photography studio. Features Ken Burns hero animations, scroll-triggered wipe reveals, and interactive circular gallery navigations.");
-            fineart.setCategory(photography);
-            fineart.setPrice(0.0);
-            fineart.setTemplateType("FREE");
-            fineart.setBootstrapVersion("HTML5 / Vanilla CSS");
-            fineart.setDemoUrl("/templates/photography/fineart-template/index.html");
-            fineart.setDownloadFile("fineart-template.zip");
-            fineart.setPreviewImage("/fineart_cover.png");
-            fineart.setVersion("1.0.0");
-            fineart.setStatus("PUBLISHED");
-            fineart.setPagesCount(1);
-            fineart.setDownloadsCount(1500);
-            fineart.setTags(new ArrayList<>(Arrays.asList("Premium Serif", "Wipe Reveals", "Hover Custom Cursor")));
-            templateRepository.save(fineart);
-            logs.put("template_fineart", "Created");
-
-            // Cinematic Wedding template (Eden Rose)
-            Template cinematic = new Template();
-            cinematic.setName("Eden Rose — Cinematic Luxury Wedding Portfolio");
-            cinematic.setSlug("cinematic-wedding");
-            cinematic.setDescription("A cinematic wedding photography portfolio template in deep black and luxury gold tones. Features intro curtain loaders, route transition reveals, staggered portfolio grids, and boutique inquiry options.");
-            cinematic.setCategory(photography);
-            cinematic.setPrice(0.0);
-            cinematic.setTemplateType("FREE");
-            cinematic.setBootstrapVersion("HTML5 / Tailwind CSS");
-            cinematic.setDemoUrl("/templates/photography/cinematic-wedding/index.html");
-            cinematic.setDownloadFile("cinematic-wedding.zip");
-            cinematic.setPreviewImage("/cinematic_cover.png");
-            cinematic.setVersion("1.0.0");
-            cinematic.setStatus("PUBLISHED");
-            cinematic.setPagesCount(1);
-            cinematic.setDownloadsCount(12450);
-            cinematic.setTags(new ArrayList<>(Arrays.asList("Luxury Monocrom", "Preloader curtain", "Staggered Grid")));
-            templateRepository.save(cinematic);
-            logs.put("template_cinematic", "Created");
-
-            // Kairo template
-            Template kairo = new Template();
-            kairo.setName("Kairo — Modern 3D Photography Portfolio");
-            kairo.setSlug("kairo-template");
-            kairo.setDescription("A modern photography portfolio featuring interactive 3D camera lens aperture graphics rendered in React Three Fiber, scroll-linked fade animations, split-layout bio sections, and fullscreen responsive image tiles.");
-            kairo.setCategory(photography);
-            kairo.setPrice(0.0);
-            kairo.setTemplateType("FREE");
-            kairo.setBootstrapVersion("HTML5 / Tailwind CSS");
-            kairo.setDemoUrl("/templates/photography/kairo-template/index.html");
-            kairo.setDownloadFile("kairo-template.zip");
-            kairo.setPreviewImage("/kairo_cover.png");
-            kairo.setVersion("1.0.0");
-            kairo.setStatus("PUBLISHED");
-            kairo.setPagesCount(1);
-            kairo.setDownloadsCount(8200);
-            kairo.setTags(new ArrayList<>(Arrays.asList("3D Scene", "Interactive Parallax", "Luxury Editorial")));
-            templateRepository.save(kairo);
-            logs.put("template_kairo", "Created");
-
-            // Lume Studio template
-            Template isteady = new Template();
-            isteady.setName("Lume Studio — Fashion & Editorial Portfolio");
-            isteady.setSlug("isteady-template");
-            isteady.setDescription("A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.");
-            isteady.setCategory(photography);
-            isteady.setPrice(0.0);
-            isteady.setTemplateType("FREE");
-            isteady.setBootstrapVersion("HTML5 / Tailwind CSS");
-            isteady.setDemoUrl("/templates/photography/isteady-template/index.html");
-            isteady.setDownloadFile("isteady-template.zip");
-            isteady.setPreviewImage("/lume_cover.png");
-            isteady.setVersion("1.0.0");
-            isteady.setStatus("PUBLISHED");
-            isteady.setPagesCount(1);
-            isteady.setDownloadsCount(9500);
-            isteady.setTags(new ArrayList<>(Arrays.asList("Editorial Fashion", "Moody Spotlight", "Bespoke Lighting")));
-            templateRepository.save(isteady);
-            logs.put("template_isteady", "Created");
         }
 
         // 6. Seed Restaurant templates
@@ -326,6 +246,175 @@ public class DatabaseSeederController {
             ecommerce.setTags(new ArrayList<>(Arrays.asList("Retail Shop", "Product Catalog", "Cart Logic", "Inventory Dashboard")));
             templateRepository.save(ecommerce);
             logs.put("template_ecommerce", "Created");
+
+            // Seed Soft Glow template
+            Template softGlow = new Template();
+            softGlow.setName("Soft Glow — Clean Beauty & Skin-First Hydration");
+            softGlow.setSlug("soft-glow");
+            softGlow.setDescription("A high-end Next.js beauty and skincare storefront featuring dewy-gloss styles, peptide bundle builders, marquee notification bars, interactive review boards, and smooth scroll animations.");
+            softGlow.setCategory(ecommerceCategory);
+            softGlow.setPrice(0.0);
+            softGlow.setTemplateType("FREE");
+            softGlow.setBootstrapVersion("Next.js / React / Tailwind CSS");
+            softGlow.setDemoUrl("/templates/ecommerce/ecommerce-1/index.html");
+            softGlow.setDownloadFile("soft-glow-beauty.zip");
+            softGlow.setPreviewImage("https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80");
+            softGlow.setVersion("1.0.0");
+            softGlow.setStatus("PUBLISHED");
+            softGlow.setPagesCount(3);
+            softGlow.setDownloadsCount(2450);
+            softGlow.setTags(new ArrayList<>(Arrays.asList("Skincare", "Beauty Shop", "Next.js Store", "Tailwind CSS")));
+            templateRepository.save(softGlow);
+            logs.put("template_softglow", "Created");
+
+            // Seed AURA template
+            Template aura = new Template();
+            aura.setName("AURA — Premium Acoustic & Luxury Archive");
+            aura.setSlug("aura-commerce");
+            aura.setDescription("An editorial, dark-themed e-commerce experience dedicated to premium acoustics, luxury timepieces, and structural apparel. Built with interactive cart drawers, wishlist triggers, and gold gradient finishes.");
+            aura.setCategory(ecommerceCategory);
+            aura.setPrice(0.0);
+            aura.setTemplateType("FREE");
+            aura.setBootstrapVersion("React / React Router / CSS Modules");
+            aura.setDemoUrl("/templates/ecommerce/ecommerce-6/index.html");
+            aura.setDownloadFile("aura-acoustic.zip");
+            aura.setPreviewImage("https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80");
+            aura.setVersion("1.0.0");
+            aura.setStatus("PUBLISHED");
+            aura.setPagesCount(8);
+            aura.setDownloadsCount(3100);
+            aura.setTags(new ArrayList<>(Arrays.asList("Luxury Archive", "Premium Acoustics", "React Store", "Wishlist System")));
+            templateRepository.save(aura);
+            logs.put("template_aura", "Created");
+
+            // Seed AURELIA template
+            Template aurelia = new Template();
+            aurelia.setName("AURELIA — Luxury Jewelry & Emerald Archive");
+            aurelia.setSlug("aurelia-commerce");
+            aurelia.setDescription("A premium, dark emerald & gold themed e-commerce template for high-end luxury jewelry, diamonds, and bridal collections. Styled with custom drawers, search overlay, and elegant product filters.");
+            aurelia.setCategory(ecommerceCategory);
+            aurelia.setPrice(0.0);
+            aurelia.setTemplateType("FREE");
+            aurelia.setBootstrapVersion("React / React Router / Vanilla CSS");
+            aurelia.setDemoUrl("/templates/ecommerce/ecommerce-2/index.html");
+            aurelia.setDownloadFile("aurelia-jewelry.zip");
+            aurelia.setPreviewImage("https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80");
+            aurelia.setVersion("1.0.0");
+            aurelia.setStatus("PUBLISHED");
+            aurelia.setPagesCount(9);
+            aurelia.setDownloadsCount(1420);
+            aurelia.setTags(new ArrayList<>(Arrays.asList("Jewelry Store", "Emerald Collection", "React Store", "Luxury Premium")));
+            templateRepository.save(aurelia);
+            logs.put("template_aurelia", "Created");
+
+            // Seed ShopSphere template
+            Template shopsphere = new Template();
+            shopsphere.setName("ShopSphere — Modern Fashion & Lifestyle Store");
+            shopsphere.setSlug("shopsphere-commerce");
+            shopsphere.setDescription("A sleek, modern e-commerce storefront for fashion and lifestyle brands. Features sidebar navigation, interactive category listings, search filter overlay, and a clean minimalist design.");
+            shopsphere.setCategory(ecommerceCategory);
+            shopsphere.setPrice(0.0);
+            shopsphere.setTemplateType("FREE");
+            shopsphere.setBootstrapVersion("React / Java Spring Boot");
+            shopsphere.setDemoUrl("/templates/ecommerce/ecommerce-7/index.html");
+            shopsphere.setDownloadFile("shopsphere-fashion.zip");
+            shopsphere.setPreviewImage("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80");
+            shopsphere.setVersion("1.0.0");
+            shopsphere.setStatus("PUBLISHED");
+            shopsphere.setPagesCount(5);
+            shopsphere.setDownloadsCount(2850);
+            shopsphere.setTags(new ArrayList<>(Arrays.asList("Fashion Store", "Minimalist Layout", "HTML5 CSS3", "Interactive sidebar")));
+            templateRepository.save(shopsphere);
+            logs.put("template_shopsphere", "Created");
+        }
+
+        // 8. Seed Coming Soon templates
+        Category commingSoonCategory = catMap.get("comming-soon");
+        if (commingSoonCategory != null) {
+            Template comingSoon = new Template();
+            comingSoon.setName("Orange 16  -  Coming Soon Template");
+            comingSoon.setSlug("coming-soon-template");
+            comingSoon.setDescription("A new experience of performance, photography and design is about to arrive. Explore the revolutionary Orange 16 with White and Black Titanium craft, O18 Pro chip, slow-motion video, and exploded engineering architecture.");
+            comingSoon.setCategory(commingSoonCategory);
+            comingSoon.setPrice(0.0);
+            comingSoon.setTemplateType("FREE");
+            comingSoon.setBootstrapVersion("HTML5 / Vanilla CSS");
+            comingSoon.setDemoUrl("/templates/comming-soon/coming-soon-template/index.html");
+            comingSoon.setPreviewImage("/templates/comming-soon/coming-soon-template/orange-cover.jpg");
+            comingSoon.setVersion("1.0");
+            comingSoon.setStatus("PUBLISHED");
+            comingSoon.setPagesCount(1);
+            comingSoon.setDownloadsCount(1200);
+            comingSoon.setTags(new ArrayList<>(Arrays.asList("Orange 16", "Coming Soon", "Titanium Design")));
+            templateRepository.save(comingSoon);
+
+            Template novaSoon = new Template();
+            novaSoon.setName("NOVA X1  -  Cinematic Coming Soon Template");
+            novaSoon.setSlug("nova-x1-template");
+            novaSoon.setDescription("A production-quality futuristic automotive showroom template. Explore the NOVA X1 electric SUV with interactive 3D WebGL visuals, scroll-driven camera reveals, dynamic paint customizer, performance analytics, and pre-booking capture.");
+            novaSoon.setCategory(commingSoonCategory);
+            novaSoon.setPrice(0.0);
+            novaSoon.setTemplateType("FREE");
+            novaSoon.setBootstrapVersion("React / Three.js / GSAP");
+            novaSoon.setDemoUrl("/templates/comming-soon/cm-2/index.html");
+            novaSoon.setPreviewImage("/templates/comming-soon/cm-2/car-cover.jpg");
+            novaSoon.setVersion("1.0");
+            novaSoon.setStatus("PUBLISHED");
+            novaSoon.setPagesCount(1);
+            novaSoon.setDownloadsCount(1850);
+            novaSoon.setTags(new ArrayList<>(Arrays.asList("3D Showroom", "NOVA MOTORS", "Automotive", "GSAP ScrollTrigger")));
+            templateRepository.save(novaSoon);
+
+            Template auraSoon = new Template();
+            auraSoon.setName("AURA SKY RESIDENCES  -  Premium Cinematic Building Launch Template");
+            auraSoon.setSlug("aura-sky-template");
+            auraSoon.setDescription("Create a modern, premium, cinematic coming soon website for luxury real-estate projects. Features continuous slow-motion building rendering background loops, Lenis smooth scrolling, architectural specification grids, and modular registration capture forms.");
+            auraSoon.setCategory(commingSoonCategory);
+            auraSoon.setPrice(0.0);
+            auraSoon.setTemplateType("FREE");
+            auraSoon.setBootstrapVersion("HTML5 / Tailwind CSS");
+            auraSoon.setDemoUrl("/templates/comming-soon/cm-3/index.html");
+            auraSoon.setPreviewImage("/templates/comming-soon/cm-3/buliding-jpg/ezgif-frame-001.jpg");
+            auraSoon.setVersion("1.0");
+            auraSoon.setStatus("PUBLISHED");
+            auraSoon.setPagesCount(1);
+            auraSoon.setDownloadsCount(950);
+            auraSoon.setTags(new ArrayList<>(Arrays.asList("Real Estate", "Luxury Skyline", "Lenis Smooth Scroll", "Audio Engine")));
+            templateRepository.save(auraSoon);
+
+            Template botanicalSoon = new Template();
+            botanicalSoon.setName("BOTANICAL STUDIES  -  Heritage Folio Book Launch Template");
+            botanicalSoon.setSlug("botanical-studies-template");
+            botanicalSoon.setDescription("An exquisite collector’s edition book coming soon website template. Features interactive 9-frame video background engine, live millisecond-precision countdown timer, Linnean author showcase, antiquarian Web Audio synthesizer, botanical plate inspector modal, and responsive laptop/tab/phone preview.");
+            botanicalSoon.setCategory(commingSoonCategory);
+            botanicalSoon.setPrice(0.0);
+            botanicalSoon.setTemplateType("FREE");
+            botanicalSoon.setBootstrapVersion("HTML5 / Tailwind / Vanilla JS");
+            botanicalSoon.setDemoUrl("/templates/comming-soon/cm-4/index.html");
+            botanicalSoon.setPreviewImage("/templates/comming-soon/cm-4/botanical-cover.jpg");
+            botanicalSoon.setVersion("1.0");
+            botanicalSoon.setStatus("PUBLISHED");
+            botanicalSoon.setPagesCount(1);
+            botanicalSoon.setDownloadsCount(1420);
+            botanicalSoon.setTags(new ArrayList<>(Arrays.asList("Book Launch", "Heritage Folio", "Live Countdown", "Video Background", "Audio Synthesizer")));
+            templateRepository.save(botanicalSoon);
+
+            Template watchSoon = new Template();
+            watchSoon.setName("AURELIA CHRONOS  -  18K Luxury Golden Watch Launch Template");
+            watchSoon.setSlug("aurelia-chronos-template");
+            watchSoon.setDescription("A luxurious 18k solid gold watch launch template. Features weightless floating antigravity 3D physics, interactive 360-degree studio orbit rotation, fluted crown and sunburst guilloché macro lens inspectors, 28,800 vph mechanical escapement audio synthesizer, and VIP allocation reservation capture.");
+            watchSoon.setCategory(commingSoonCategory);
+            watchSoon.setPrice(0.0);
+            watchSoon.setTemplateType("FREE");
+            watchSoon.setBootstrapVersion("HTML5 / Tailwind CSS / Vanilla JS");
+            watchSoon.setDemoUrl("/templates/comming-soon/cm-5/index.html");
+            watchSoon.setPreviewImage("/templates/comming-soon/cm-5/watch-hero.jpg");
+            watchSoon.setVersion("1.0");
+            watchSoon.setStatus("PUBLISHED");
+            watchSoon.setPagesCount(1);
+            watchSoon.setDownloadsCount(1680);
+            watchSoon.setTags(new ArrayList<>(Arrays.asList("Golden Watch", "Antigravity 3D", "Haute Horlogerie", "360 Orbit", "Live Countdown")));
+            templateRepository.save(watchSoon);
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

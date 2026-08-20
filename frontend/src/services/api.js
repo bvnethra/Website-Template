@@ -24,7 +24,7 @@ const MOCK_CATEGORIES = [
 const MOCK_TEMPLATES = [
   {
     id: 1,
-    name: 'SnapFolio — Dark Minimalist Portfolio',
+    name: 'SnapFolio  -  Dark Minimalist Portfolio',
     slug: 'snapfolio-template',
     previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -39,7 +39,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 2,
-    name: 'Photo — Editorial Photography Studio',
+    name: 'Photo  -  Editorial Photography Studio',
     slug: 'photo-template',
     previewImage: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -47,7 +47,7 @@ const MOCK_TEMPLATES = [
     category: { id: 8, name: 'Photography', slug: 'photography' },
     pagesCount: 1,
     downloadsCount: 8400,
-    description: 'A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.',
+    description: 'A high-end, editorial landing page template for creative photography studios. Features Sphere-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0',
     demoUrl: '/templates/photography/photo-template/index.html'
@@ -85,66 +85,6 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 5,
-    name: 'Aura — Premium Fine Art Studio',
-    slug: 'fineart-template',
-    previewImage: '/fineart_cover.png',
-    templateType: 'FREE',
-    price: 0,
-    category: { id: 8, name: 'Photography', slug: 'photography' },
-    pagesCount: 1,
-    downloadsCount: 1500,
-    description: 'A premium, dynamic React portfolio website for a fine art photography studio. Features Ken Burns hero animations, scroll-triggered wipe reveals, and interactive circular gallery navigations.',
-    bootstrapVersion: 'HTML5 / Vanilla CSS',
-    version: '1.0',
-    demoUrl: '/templates/photography/fineart-template/index.html'
-  },
-  {
-    id: 6,
-    name: 'Eden Rose — Cinematic Luxury Wedding Portfolio',
-    slug: 'cinematic-wedding',
-    previewImage: '/cinematic_cover.png',
-    templateType: 'FREE',
-    price: 0,
-    category: { id: 8, name: 'Photography', slug: 'photography' },
-    pagesCount: 1,
-    downloadsCount: 12450,
-    description: 'A cinematic wedding photography portfolio template in deep black and luxury gold tones. Features intro curtain loaders, route transition reveals, staggered portfolio grids, and boutique inquiry options.',
-    bootstrapVersion: 'HTML5 / Tailwind CSS',
-    version: '1.0',
-    demoUrl: '/templates/photography/cinematic-wedding/index.html'
-  },
-  {
-    id: 7,
-    name: 'Kairo — Modern 3D Photography Portfolio',
-    slug: 'kairo-template',
-    previewImage: '/kairo_cover.png',
-    templateType: 'FREE',
-    price: 0,
-    category: { id: 8, name: 'Photography', slug: 'photography' },
-    pagesCount: 1,
-    downloadsCount: 8200,
-    description: 'A modern photography portfolio featuring interactive 3D camera lens aperture graphics rendered in React Three Fiber, scroll-linked fade animations, split-layout bio sections, and fullscreen responsive image tiles.',
-    bootstrapVersion: 'HTML5 / Tailwind CSS',
-    version: '1.0',
-    demoUrl: '/templates/photography/kairo-template/index.html'
-  },
-  {
-    id: 8,
-    name: 'Lume Studio — Fashion & Editorial Portfolio',
-    slug: 'isteady-template',
-    previewImage: '/lume_cover.png',
-    templateType: 'FREE',
-    price: 0,
-    category: { id: 8, name: 'Photography', slug: 'photography' },
-    pagesCount: 1,
-    downloadsCount: 9500,
-    description: 'A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.',
-    bootstrapVersion: 'HTML5 / Tailwind CSS',
-    version: '1.0',
-    demoUrl: '/templates/photography/isteady-template/index.html'
-  },
-  {
-    id: 9,
     name: 'Ember & Olive — Artisan Seasonal Restaurant',
     slug: 'ember-and-olive',
     previewImage: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
@@ -159,7 +99,7 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/restaurant/ember-and-olive/index.html'
   },
   {
-    id: 10,
+    id: 6,
     name: 'Nexa Commerce — High-End Ecommerce Platform',
     slug: 'nexa-commerce',
     previewImage: 'https://images.unsplash.com/photo-1472851294608-062f824d296e?auto=format&fit=crop&w=800&q=80',
@@ -172,8 +112,69 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'HTML5 / Vanilla CSS / JS',
     version: '1.0.0',
     demoUrl: '/templates/ecommerce/nexa/index.html'
+  },
+  {
+    id: 7,
+    name: 'Soft Glow — Clean Beauty & Skin-First Hydration',
+    slug: 'soft-glow',
+    previewImage: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 3,
+    downloadsCount: 2450,
+    description: 'A high-end Next.js beauty and skincare storefront featuring dewy-gloss styles, peptide bundle builders, marquee notification bars, interactive review boards, and smooth scroll animations.',
+    bootstrapVersion: 'Next.js / React / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-1/index.html'
+  },
+  {
+    id: 8,
+    name: 'AURA — Premium Acoustic & Luxury Archive',
+    slug: 'aura-commerce',
+    previewImage: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 8,
+    downloadsCount: 3100,
+    description: 'An editorial, dark-themed e-commerce experience dedicated to premium acoustics, luxury timepieces, and structural apparel. Built with interactive cart drawers, wishlist triggers, and gold gradient finishes.',
+    bootstrapVersion: 'React / React Router / CSS Modules',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-6/index.html'
+  },
+  {
+    id: 9,
+    name: 'AURELIA — Luxury Jewelry & Emerald Archive',
+    slug: 'aurelia-commerce',
+    previewImage: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 9,
+    downloadsCount: 1420,
+    description: 'A premium, dark emerald & gold themed e-commerce template for high-end luxury jewelry, diamonds, and bridal collections. Styled with custom drawers, search overlay, and elegant product filters.',
+    bootstrapVersion: 'React / React Router / Vanilla CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-2/index.html'
+  },
+  {
+    id: 10,
+    name: 'ShopSphere — Modern Fashion & Lifestyle Store',
+    slug: 'shopsphere-commerce',
+    previewImage: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 5,
+    downloadsCount: 2850,
+    description: 'A sleek, modern e-commerce storefront for fashion and lifestyle brands. Features sidebar navigation, interactive category listings, search filter overlay, and a clean minimalist design.',
+    bootstrapVersion: 'React / Java Spring Boot',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-7/index.html'
   }
 ];
+
 
 const getHeaders = () => {
   const headers = {

@@ -79,7 +79,7 @@ export const BrandStory: React.FC = () => {
             {/* Polaroid Photo Window */}
             <div className="relative h-80 w-full overflow-hidden rounded-xl bg-stone-100">
               <Image
-                src="/images/polaroid-studio.png"
+                src="/templates/ecommerce/ecommerce-1/images/polaroid-studio.png"
                 alt="Formulation Studio Lifestyle Polaroid"
                 fill
                 className="object-cover"

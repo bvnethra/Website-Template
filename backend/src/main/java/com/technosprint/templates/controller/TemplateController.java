@@ -59,7 +59,11 @@ public class TemplateController {
         if (search != null && !search.trim().isEmpty()) {
             templates = templateRepository.searchTemplates(search);
         } else if (category != null && !category.trim().isEmpty()) {
-            templates = templateRepository.findByCategorySlugAndStatus(category, "PUBLISHED");
+            String categorySlug = category.trim().toLowerCase();
+            if (categorySlug.equals("coming-soon") || categorySlug.equals("coming_soon") || categorySlug.equals("comming_soon") || categorySlug.equals("comming-soon")) {
+                categorySlug = "comming-soon";
+            }
+            templates = templateRepository.findByCategorySlugAndStatus(categorySlug, "PUBLISHED");
         } else {
             templates = templateRepository.findByStatus("PUBLISHED");
         }

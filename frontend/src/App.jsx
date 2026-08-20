@@ -11,6 +11,11 @@ import Admin from './pages/Admin';
 import Auth from './pages/Auth';
 import HotelTemplate from './pages/HotelTemplate';
 import PhotographyCatalog from './pages/PhotographyCatalog';
+import ComingSoonOrange16 from './pages/coming-soon/ComingSoonOrange16';
+import ComingSoonNovaX1 from './pages/coming-soon/ComingSoonNovaX1';
+import ComingSoonAuraSky from './pages/coming-soon/ComingSoonAuraSky';
+import ComingSoonBotanicalStudies from './pages/coming-soon/ComingSoonBotanicalStudies';
+import ComingSoonAureliaChronos from './pages/coming-soon/ComingSoonAureliaChronos';
 
 function Header({ cartCount, user, onLogout }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -318,13 +323,25 @@ function Footer() {
 
 function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLogin, handleLogout }) {
   const location = useLocation();
-  const isHotelTemplate = location.pathname === '/hotel-template';
+  const isStandaloneTemplate = location.pathname === '/hotel-template' ||
+    location.pathname.startsWith('/templates/preview/cm-') ||
+    location.pathname.startsWith('/coming-soon/cm-');
 
-  // Hotel template renders full-screen with its own nav/footer
-  if (isHotelTemplate) {
+  // Standalone full-screen templates render with their own immersive nav & UI
+  if (isStandaloneTemplate) {
     return (
       <Routes>
         <Route path="/hotel-template" element={<HotelTemplate />} />
+        <Route path="/templates/preview/cm-1" element={<ComingSoonOrange16 />} />
+        <Route path="/coming-soon/cm-1" element={<ComingSoonOrange16 />} />
+        <Route path="/templates/preview/cm-2" element={<ComingSoonNovaX1 />} />
+        <Route path="/coming-soon/cm-2" element={<ComingSoonNovaX1 />} />
+        <Route path="/templates/preview/cm-3" element={<ComingSoonAuraSky />} />
+        <Route path="/coming-soon/cm-3" element={<ComingSoonAuraSky />} />
+        <Route path="/templates/preview/cm-4" element={<ComingSoonBotanicalStudies />} />
+        <Route path="/coming-soon/cm-4" element={<ComingSoonBotanicalStudies />} />
+        <Route path="/templates/preview/cm-5" element={<ComingSoonAureliaChronos />} />
+        <Route path="/coming-soon/cm-5" element={<ComingSoonAureliaChronos />} />
       </Routes>
     );
   }

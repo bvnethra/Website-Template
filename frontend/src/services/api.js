@@ -24,7 +24,7 @@ const MOCK_CATEGORIES = [
 const MOCK_TEMPLATES = [
   {
     id: 1,
-    name: 'SnapFolio — Dark Minimalist Portfolio',
+    name: 'SnapFolio  -  Dark Minimalist Portfolio',
     slug: 'snapfolio-template',
     previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -39,7 +39,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 2,
-    name: 'Photo — Editorial Photography Studio',
+    name: 'Photo  -  Editorial Photography Studio',
     slug: 'photo-template',
     previewImage: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -47,7 +47,7 @@ const MOCK_TEMPLATES = [
     category: { id: 8, name: 'Photography', slug: 'photography' },
     pagesCount: 1,
     downloadsCount: 8400,
-    description: 'A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.',
+    description: 'A high-end, editorial landing page template for creative photography studios. Features Sphere-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0',
     demoUrl: '/templates/photography/photo-template/index.html'

@@ -19,6 +19,11 @@ import CinematicWedding from './pages/CinematicWedding';
 import KairoPhotography from './pages/KairoPhotography';
 import ISteadyGimbal from './pages/ISteadyGimbal';
 import DevicePreviewWrapper from './components/DevicePreviewWrapper';
+import ComingSoonOrange16 from './pages/coming-soon/ComingSoonOrange16';
+import ComingSoonNovaX1 from './pages/coming-soon/ComingSoonNovaX1';
+import ComingSoonAuraSky from './pages/coming-soon/ComingSoonAuraSky';
+import ComingSoonBotanicalStudies from './pages/coming-soon/ComingSoonBotanicalStudies';
+import ComingSoonAureliaChronos from './pages/coming-soon/ComingSoonAureliaChronos';
 
 function Header({ cartCount, user, onLogout }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -106,209 +111,264 @@ function Header({ cartCount, user, onLogout }) {
               <Link to="/templates?category=restaurant" className="dropdown-link">› Restaurant</Link>
               <Link to="/templates?category=ecommerce" className="dropdown-link">› Ecommerce</Link>
             </div>
-            <div className="dropdown-column">
-              <Link to="/templates?category=buisness" className="dropdown-link">› Buisness</Link>
-              <Link to="/templates?category=onepage" className="dropdown-link">› onepage</Link>
-              <Link to="/templates?category=landing-page" className="dropdown-link">› landing page</Link>
-              <Link to="/templates?category=cooperate" className="dropdown-link">› cooperate</Link>
-              <Link to="/templates?category=agency" className="dropdown-link">› agency</Link>
-              <Link to="/templates?category=portfolio" className="dropdown-link">› portfolio</Link>
-            </div>
           </div>
         </div>
-        <Link to="/templates?type=PREMIUM" style={{
+        <Link to="/builder" style={{
           fontSize: '0.9rem',
           fontWeight: 600,
-          color: 'var(--text-muted)',
+          color: location.pathname === '/builder' ? 'var(--primary-color)' : 'var(--text-muted)',
+          borderBottom: location.pathname === '/builder' ? '2px solid var(--primary-color)' : 'none',
           padding: '6px 0'
         }}>
-          Premium
+          Builder
         </Link>
         <Link to="/dashboard" style={{
           fontSize: '0.9rem',
           fontWeight: 600,
           color: location.pathname === '/dashboard' ? 'var(--primary-color)' : 'var(--text-muted)',
+          borderBottom: location.pathname === '/dashboard' ? '2px solid var(--primary-color)' : 'none',
           padding: '6px 0'
         }}>
-          Support
+          Dashboard
         </Link>
-        <a href="#footer" onClick={(e) => { e.preventDefault(); document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' }); }} style={{
-          fontSize: '0.9rem',
-          fontWeight: 600,
-          color: 'var(--text-muted)',
-          padding: '6px 0'
-        }}>
-          Contact
-        </a>
+      </nav>
 
-        {/* Action icons */}
-        <Link to="/dashboard?tab=favorites" style={{ color: 'var(--text-muted)' }}>
-          <Heart size={20} />
+      <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <Link to="/dashboard" style={{ position: 'relative', display: 'flex', alignItems: 'center', color: 'var(--text-main)' }}>
+          <ShoppingCart size={22} />
+          {cartCount > 0 && (
+            <span style={{
+              position: 'absolute',
+              top: -8,
+              right: -10,
+              background: 'var(--primary-color)',
+              color: '#fff',
+              fontSize: '0.75rem',
+              fontWeight: 700,
+              width: 18,
+              height: 18,
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: '2px solid #fff'
+            }}>
+              {cartCount}
+            </span>
+          )}
         </Link>
-        <div style={{ color: 'var(--text-muted)', cursor: 'pointer', position: 'relative' }}>
-          <Bell size={20} />
-          <span style={{
-            position: 'absolute',
-            top: -2,
-            right: -2,
-            background: '#ff3b30',
-            width: 6,
-            height: 6,
-            borderRadius: '50%'
-          }} />
-        </div>
-
-
 
         {user ? (
           <div style={{ position: 'relative' }}>
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
               style={{
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 8,
-                padding: 0
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: '4px 8px',
+                borderRadius: '8px',
+                color: 'var(--text-main)',
+                fontWeight: 600,
+                fontSize: '0.9rem'
               }}
             >
               <div style={{
-                width: 34,
-                height: 34,
+                width: 32,
+                height: 32,
                 borderRadius: '50%',
-                background: 'var(--primary-gradient)',
-                color: 'white',
+                background: 'var(--primary-color)',
+                color: '#fff',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontWeight: 'bold',
-                fontSize: '0.9rem'
+                fontWeight: 700
               }}>
                 {user.name.charAt(0).toUpperCase()}
               </div>
+              <span>{user.name.split(' ')[0]}</span>
             </button>
+
             {dropdownOpen && (
-              <div className="glass-panel" style={{
+              <div style={{
                 position: 'absolute',
-                right: 0,
                 top: '100%',
-                marginTop: 10,
-                width: 200,
-                padding: '8px 0',
+                right: 0,
+                marginTop: 8,
+                width: 220,
+                background: '#fff',
                 borderRadius: '12px',
-                background: 'white',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
+                boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+                border: '1px solid #e2e8f0',
+                padding: '8px 0',
+                zIndex: 100
               }}>
-                <Link to="/dashboard" onClick={() => setDropdownOpen(false)} style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 10,
-                  padding: '10px 16px',
-                  fontSize: '0.85rem',
-                  color: 'var(--text-main)'
-                }}>
-                  <UserIcon size={16} /> My Dashboard
-                </Link>
-                {user.role === 'ROLE_ADMIN' && (
-                  <Link to="/admin" onClick={() => setDropdownOpen(false)} style={{
+                <div style={{ padding: '8px 16px', borderBottom: '1px solid #e2e8f0', marginBottom: 4 }}>
+                  <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-main)' }}>{user.name}</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{user.email}</div>
+                  <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--primary-color)', marginTop: 4 }}>
+                    Role: {user.role}
+                  </div>
+                </div>
+
+                <Link
+                  to="/dashboard"
+                  onClick={() => setDropdownOpen(false)}
+                  style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: 10,
                     padding: '10px 16px',
                     fontSize: '0.85rem',
-                    color: 'var(--text-main)'
-                  }}>
-                    <Settings size={16} /> Admin Console
+                    color: 'var(--text-main)',
+                    textDecoration: 'none'
+                  }}
+                >
+                  <Layout size={16} /> My Dashboard
+                </Link>
+
+                {user.role === 'ADMIN' && (
+                  <Link
+                    to="/admin"
+                    onClick={() => setDropdownOpen(false)}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 10,
+                      padding: '10px 16px',
+                      fontSize: '0.85rem',
+                      color: 'var(--text-main)',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    <Settings size={16} /> Admin Panel
                   </Link>
                 )}
-                <div style={{ height: '1px', background: '#f1f5f9', margin: '4px 0' }} />
-                <button onClick={() => { setDropdownOpen(false); onLogout(); }} style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 10,
-                  width: '100%',
-                  background: 'none',
-                  border: 'none',
-                  padding: '10px 16px',
-                  fontSize: '0.85rem',
-                  textAlign: 'left',
-                  color: '#ef4444',
-                  cursor: 'pointer'
-                }}>
-                  <LogOut size={16} /> Log Out
+
+                <button
+                  onClick={() => {
+                    setDropdownOpen(false);
+                    onLogout();
+                  }}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 10,
+                    padding: '10px 16px',
+                    fontSize: '0.85rem',
+                    color: '#ef4444',
+                    background: 'none',
+                    border: 'none',
+                    width: '100%',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    borderTop: '1px solid #e2e8f0',
+                    marginTop: 4
+                  }}
+                >
+                  <LogOut size={16} /> Sign Out
                 </button>
               </div>
             )}
           </div>
         ) : (
-          <Link to="/auth" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
-            Sign In
-          </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <Link to="/auth" style={{
+              fontSize: '0.85rem',
+              fontWeight: 600,
+              color: 'var(--text-main)',
+              textDecoration: 'none',
+              padding: '8px 14px'
+            }}>
+              Sign In
+            </Link>
+            <Link to="/auth" style={{
+              fontSize: '0.85rem',
+              fontWeight: 600,
+              background: 'var(--primary-color)',
+              color: '#fff',
+              textDecoration: 'none',
+              padding: '8px 18px',
+              borderRadius: '8px',
+              boxShadow: '0 2px 8px rgba(37, 99, 235, 0.2)'
+            }}>
+              Get Started
+            </Link>
+          </div>
         )}
-      </nav>
+      </div>
     </header>
   );
 }
 
 function Footer() {
   return (
-    <footer id="footer" style={{
-      background: 'var(--secondary-color)',
-      color: 'white',
-      padding: '60px 40px 30px 40px',
-      marginTop: 80,
-      borderTopLeftRadius: '30px',
-      borderTopRightRadius: '30px'
+    <footer style={{
+      background: '#0f172a',
+      color: '#cbd5e1',
+      padding: '60px 40px 30px',
+      marginTop: 'auto',
+      borderTop: '1px solid #1e293b'
     }}>
       <div style={{
-        maxWidth: 1200,
+        maxWidth: 1300,
         margin: '0 auto',
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
         gap: 40,
-        marginBottom: 50
+        marginBottom: 60
       }}>
         <div>
-          <img src="/logo.jpg" alt="TechnoSprint Templates" style={{ height: 35, marginBottom: 20, filter: 'brightness(0) invert(1)', borderRadius: '4px' }} />
-          <p style={{ color: '#94a3b8', fontSize: '0.85rem', lineHeight: '1.6' }}>
-            175+ premium HTML, CSS, React, and Bootstrap templates crafted for modern developers, agencies, and online creators.
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
+            <img src="/logo.jpg" alt="Logo" style={{ height: '35px', borderRadius: '4px' }} />
+          </div>
+          <p style={{ fontSize: '0.85rem', color: '#94a3b8', lineHeight: 1.6, marginBottom: 20 }}>
+            Professional website template marketplace. Modern, responsive, and easy to deploy templates for developers and businesses.
           </p>
         </div>
+
         <div>
-          <h4 style={{ color: 'white', marginBottom: 20, fontSize: '1rem' }}>Browse</h4>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.85rem' }}>
-            <li><Link to="/templates" style={{ color: '#cbd5e1' }}>All Templates</Link></li>
-            <li><Link to="/templates?type=FREE" style={{ color: '#cbd5e1' }}>Free Templates</Link></li>
-            <li><Link to="/templates?type=PREMIUM" style={{ color: '#cbd5e1' }}>Premium Templates</Link></li>
-            <li><Link to="/builder" style={{ color: '#cbd5e1' }}>Online Customizer</Link></li>
+          <h4 style={{ color: '#fff', fontSize: '0.95rem', fontWeight: 600, marginBottom: 16 }}>Template Categories</h4>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.85rem' }}>
+            <li><Link to="/templates?category=admin" style={{ color: '#94a3b8' }}>Admin & Dashboards</Link></li>
+            <li><Link to="/templates?category=medical" style={{ color: '#94a3b8' }}>Medical & Health</Link></li>
+            <li><Link to="/templates?category=block-magazine" style={{ color: '#94a3b8' }}>Block magazine</Link></li>
+            <li><Link to="/templates?category=comming-soon" style={{ color: '#94a3b8' }}>Comming soon</Link></li>
+            <li><Link to="/templates?category=travels" style={{ color: '#94a3b8' }}>Travel & Tourism</Link></li>
+            <li><Link to="/templates?category=hotel" style={{ color: '#94a3b8' }}>Hotel & Lodging</Link></li>
           </ul>
         </div>
+
         <div>
-          <h4 style={{ color: 'white', marginBottom: 20, fontSize: '1rem' }}>Support & Service</h4>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.85rem' }}>
-            <li><a href="#" style={{ color: '#cbd5e1' }}>Documentation</a></li>
-            <li><a href="#" style={{ color: '#cbd5e1' }}>Template Licensing</a></li>
-            <li><a href="#" style={{ color: '#cbd5e1' }}>Contact Helpdesk</a></li>
-            <li><a href="#" style={{ color: '#cbd5e1' }}>Refund Policy</a></li>
+          <h4 style={{ color: '#fff', fontSize: '0.95rem', fontWeight: 600, marginBottom: 16 }}>More Categories</h4>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.85rem' }}>
+            <li><Link to="/templates?category=events" style={{ color: '#94a3b8' }}>Events & Conferences</Link></li>
+            <li><Link to="/templates/photography" style={{ color: '#94a3b8' }}>Photography Portfolio</Link></li>
+            <li><Link to="/templates?category=construction" style={{ color: '#94a3b8' }}>Construction & Real Estate</Link></li>
+            <li><Link to="/templates?category=education" style={{ color: '#94a3b8' }}>Education & LMS</Link></li>
+            <li><Link to="/templates?category=restaurant" style={{ color: '#94a3b8' }}>Restaurant & Food</Link></li>
+            <li><Link to="/templates?category=ecommerce" style={{ color: '#94a3b8' }}>Ecommerce & Retail</Link></li>
           </ul>
         </div>
+
         <div>
-          <h4 style={{ color: 'white', marginBottom: 20, fontSize: '1rem' }}>Company</h4>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.85rem' }}>
-            <li><a href="#" style={{ color: '#cbd5e1' }}>About Us</a></li>
-            <li><a href="#" style={{ color: '#cbd5e1' }}>Careers</a></li>
-            <li><a href="#" style={{ color: '#cbd5e1' }}>Terms of Service</a></li>
-            <li><a href="#" style={{ color: '#cbd5e1' }}>Privacy Policy</a></li>
+          <h4 style={{ color: '#fff', fontSize: '0.95rem', fontWeight: 600, marginBottom: 16 }}>Platform</h4>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.85rem' }}>
+            <li><Link to="/builder" style={{ color: '#94a3b8' }}>Template Builder</Link></li>
+            <li><Link to="/dashboard" style={{ color: '#94a3b8' }}>User Dashboard</Link></li>
+            <li><Link to="/auth" style={{ color: '#94a3b8' }}>Create Account</Link></li>
           </ul>
         </div>
       </div>
+
       <div style={{
-        maxWidth: 1200,
+        maxWidth: 1300,
         margin: '0 auto',
         paddingTop: 30,
-        borderTop: '1px solid rgba(255,255,255,0.1)',
+        borderTop: '1px solid #1e293b',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'between',
@@ -338,7 +398,9 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
     location.pathname === '/templates/photography/fineart-template/index.html' ||
     location.pathname.startsWith('/templates/photography/cinematic-wedding') ||
     location.pathname.startsWith('/templates/photography/kairo-template') ||
-    location.pathname.startsWith('/templates/photography/isteady-template');
+    location.pathname.startsWith('/templates/photography/isteady-template') ||
+    location.pathname.startsWith('/templates/preview/cm-') ||
+    location.pathname.startsWith('/coming-soon/cm-');
 
   // Full-screen template routes
   if (isTemplateRoute) {
@@ -360,6 +422,17 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
         <Route path="/templates/photography/kairo-template/index.html" element={<DevicePreviewWrapper><KairoPhotography /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/isteady-template" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/isteady-template/index.html" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
+        {/* Coming Soon Templates CM-1 to CM-5 */}
+        <Route path="/templates/preview/cm-1" element={<ComingSoonOrange16 />} />
+        <Route path="/coming-soon/cm-1" element={<ComingSoonOrange16 />} />
+        <Route path="/templates/preview/cm-2" element={<ComingSoonNovaX1 />} />
+        <Route path="/coming-soon/cm-2" element={<ComingSoonNovaX1 />} />
+        <Route path="/templates/preview/cm-3" element={<ComingSoonAuraSky />} />
+        <Route path="/coming-soon/cm-3" element={<ComingSoonAuraSky />} />
+        <Route path="/templates/preview/cm-4" element={<ComingSoonBotanicalStudies />} />
+        <Route path="/coming-soon/cm-4" element={<ComingSoonBotanicalStudies />} />
+        <Route path="/templates/preview/cm-5" element={<ComingSoonAureliaChronos />} />
+        <Route path="/coming-soon/cm-5" element={<ComingSoonAureliaChronos />} />
       </Routes>
     );
   }

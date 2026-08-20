@@ -18,6 +18,7 @@ db-data/
 target/
 backend/target/
 .mvn/
+.maven/
 *.class
 .factorypath
 

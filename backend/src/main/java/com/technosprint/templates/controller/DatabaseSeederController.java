@@ -228,24 +228,7 @@ public class DatabaseSeederController {
         // 7. Seed Ecommerce templates
         Category ecommerceCategory = catMap.get("ecommerce");
         if (ecommerceCategory != null) {
-            Template ecommerce = new Template();
-            ecommerce.setName("Nexa Commerce — High-End Ecommerce Platform");
-            ecommerce.setSlug("nexa-commerce");
-            ecommerce.setDescription("A modern, full-featured retail platform featuring dynamic product catalogs, a fully-featured customer cart, responsive checkouts, and a comprehensive admin inventory management dashboard.");
-            ecommerce.setCategory(ecommerceCategory);
-            ecommerce.setPrice(0.0);
-            ecommerce.setTemplateType("FREE");
-            ecommerce.setBootstrapVersion("HTML5 / Vanilla CSS / JS");
-            ecommerce.setDemoUrl("/templates/ecommerce/nexa/index.html");
-            ecommerce.setDownloadFile("nexa-commerce.zip");
-            ecommerce.setPreviewImage("https://images.unsplash.com/photo-1472851294608-062f824d296e?auto=format&fit=crop&w=800&q=80");
-            ecommerce.setVersion("1.0.0");
-            ecommerce.setStatus("PUBLISHED");
-            ecommerce.setPagesCount(12);
-            ecommerce.setDownloadsCount(11000);
-            ecommerce.setTags(new ArrayList<>(Arrays.asList("Retail Shop", "Product Catalog", "Cart Logic", "Inventory Dashboard")));
-            templateRepository.save(ecommerce);
-            logs.put("template_ecommerce", "Created");
+
 
             // Seed Soft Glow template
             Template softGlow = new Template();
@@ -307,27 +290,117 @@ public class DatabaseSeederController {
             templateRepository.save(aurelia);
             logs.put("template_aurelia", "Created");
 
-            // Seed ShopSphere template
-            Template shopsphere = new Template();
-            shopsphere.setName("ShopSphere — Modern Fashion & Lifestyle Store");
-            shopsphere.setSlug("shopsphere-commerce");
-            shopsphere.setDescription("A sleek, modern e-commerce storefront for fashion and lifestyle brands. Features sidebar navigation, interactive category listings, search filter overlay, and a clean minimalist design.");
-            shopsphere.setCategory(ecommerceCategory);
-            shopsphere.setPrice(0.0);
-            shopsphere.setTemplateType("FREE");
-            shopsphere.setBootstrapVersion("React / Java Spring Boot");
-            shopsphere.setDemoUrl("/templates/ecommerce/ecommerce-7/index.html");
-            shopsphere.setDownloadFile("shopsphere-fashion.zip");
-            shopsphere.setPreviewImage("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80");
-            shopsphere.setVersion("1.0.0");
-            shopsphere.setStatus("PUBLISHED");
-            shopsphere.setPagesCount(5);
-            shopsphere.setDownloadsCount(2850);
-            shopsphere.setTags(new ArrayList<>(Arrays.asList("Fashion Store", "Minimalist Layout", "HTML5 CSS3", "Interactive sidebar")));
-            templateRepository.save(shopsphere);
-            logs.put("template_shopsphere", "Created");
+            // Seed ToyVerse template
+            Template toyverse = new Template();
+            toyverse.setName("ToyVerse — Interactive Toy & Hobby Store");
+            toyverse.setSlug("toy-store");
+            toyverse.setDescription("A vibrant and interactive online storefront designed for modern toy stores and hobby shops. Features a custom 3D flying toy canvas, whimsical category lists, responsive cart drawer, and interactive tracking.");
+            toyverse.setCategory(ecommerceCategory);
+            toyverse.setPrice(0.0);
+            toyverse.setTemplateType("FREE");
+            toyverse.setBootstrapVersion("React / TypeScript / GSAP");
+            toyverse.setDemoUrl("/templates/ecommerce/ecommerce-8/index.html");
+            toyverse.setDownloadFile("toyverse-hobby.zip");
+            toyverse.setPreviewImage("https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=800&q=80");
+            toyverse.setVersion("1.0.0");
+            toyverse.setStatus("PUBLISHED");
+            toyverse.setPagesCount(8);
+            toyverse.setDownloadsCount(3200);
+            toyverse.setTags(new ArrayList<>(Arrays.asList("Toy Store", "GSAP Animations", "3D Whimsical Layout", "Hobby Shop")));
+            templateRepository.save(toyverse);
+            logs.put("template_toyverse", "Created");
+
+
         }
 
+        // 8. Seed Coming Soon templates
+        Category commingSoonCategory = catMap.get("comming-soon");
+        if (commingSoonCategory != null) {
+            Template comingSoon = new Template();
+            comingSoon.setName("Orange 16  -  Coming Soon Template");
+            comingSoon.setSlug("coming-soon-template");
+            comingSoon.setDescription("A new experience of performance, photography and design is about to arrive. Explore the revolutionary Orange 16 with White and Black Titanium craft, O18 Pro chip, slow-motion video, and exploded engineering architecture.");
+            comingSoon.setCategory(commingSoonCategory);
+            comingSoon.setPrice(0.0);
+            comingSoon.setTemplateType("FREE");
+            comingSoon.setBootstrapVersion("HTML5 / Vanilla CSS");
+            comingSoon.setDemoUrl("/templates/comming-soon/coming-soon-template/index.html");
+            comingSoon.setPreviewImage("/templates/comming-soon/coming-soon-template/orange-cover.jpg");
+            comingSoon.setVersion("1.0");
+            comingSoon.setStatus("PUBLISHED");
+            comingSoon.setPagesCount(1);
+            comingSoon.setDownloadsCount(1200);
+            comingSoon.setTags(new ArrayList<>(Arrays.asList("Orange 16", "Coming Soon", "Titanium Design")));
+            templateRepository.save(comingSoon);
+
+            Template novaSoon = new Template();
+            novaSoon.setName("NOVA X1  -  Cinematic Coming Soon Template");
+            novaSoon.setSlug("nova-x1-template");
+            novaSoon.setDescription("A production-quality futuristic automotive showroom template. Explore the NOVA X1 electric SUV with interactive 3D WebGL visuals, scroll-driven camera reveals, dynamic paint customizer, performance analytics, and pre-booking capture.");
+            novaSoon.setCategory(commingSoonCategory);
+            novaSoon.setPrice(0.0);
+            novaSoon.setTemplateType("FREE");
+            novaSoon.setBootstrapVersion("React / Three.js / GSAP");
+            novaSoon.setDemoUrl("/templates/comming-soon/cm-2/index.html");
+            novaSoon.setPreviewImage("/templates/comming-soon/cm-2/car-cover.jpg");
+            novaSoon.setVersion("1.0");
+            novaSoon.setStatus("PUBLISHED");
+            novaSoon.setPagesCount(1);
+            novaSoon.setDownloadsCount(1850);
+            novaSoon.setTags(new ArrayList<>(Arrays.asList("3D Showroom", "NOVA MOTORS", "Automotive", "GSAP ScrollTrigger")));
+            templateRepository.save(novaSoon);
+
+            Template auraSoon = new Template();
+            auraSoon.setName("AURA SKY RESIDENCES  -  Premium Cinematic Building Launch Template");
+            auraSoon.setSlug("aura-sky-template");
+            auraSoon.setDescription("Create a modern, premium, cinematic coming soon website for luxury real-estate projects. Features continuous slow-motion building rendering background loops, Lenis smooth scrolling, architectural specification grids, and modular registration capture forms.");
+            auraSoon.setCategory(commingSoonCategory);
+            auraSoon.setPrice(0.0);
+            auraSoon.setTemplateType("FREE");
+            auraSoon.setBootstrapVersion("HTML5 / Tailwind CSS");
+            auraSoon.setDemoUrl("/templates/comming-soon/cm-3/index.html");
+            auraSoon.setPreviewImage("/templates/comming-soon/cm-3/buliding-jpg/ezgif-frame-001.jpg");
+            auraSoon.setVersion("1.0");
+            auraSoon.setStatus("PUBLISHED");
+            auraSoon.setPagesCount(1);
+            auraSoon.setDownloadsCount(950);
+            auraSoon.setTags(new ArrayList<>(Arrays.asList("Real Estate", "Luxury Skyline", "Lenis Smooth Scroll", "Audio Engine")));
+            templateRepository.save(auraSoon);
+
+            Template botanicalSoon = new Template();
+            botanicalSoon.setName("BOTANICAL STUDIES  -  Heritage Folio Book Launch Template");
+            botanicalSoon.setSlug("botanical-studies-template");
+            botanicalSoon.setDescription("An exquisite collector’s edition book coming soon website template. Features interactive 9-frame video background engine, live millisecond-precision countdown timer, Linnean author showcase, antiquarian Web Audio synthesizer, botanical plate inspector modal, and responsive laptop/tab/phone preview.");
+            botanicalSoon.setCategory(commingSoonCategory);
+            botanicalSoon.setPrice(0.0);
+            botanicalSoon.setTemplateType("FREE");
+            botanicalSoon.setBootstrapVersion("HTML5 / Tailwind / Vanilla JS");
+            botanicalSoon.setDemoUrl("/templates/comming-soon/cm-4/index.html");
+            botanicalSoon.setPreviewImage("/templates/comming-soon/cm-4/botanical-cover.jpg");
+            botanicalSoon.setVersion("1.0");
+            botanicalSoon.setStatus("PUBLISHED");
+            botanicalSoon.setPagesCount(1);
+            botanicalSoon.setDownloadsCount(1420);
+            botanicalSoon.setTags(new ArrayList<>(Arrays.asList("Book Launch", "Heritage Folio", "Live Countdown", "Video Background", "Audio Synthesizer")));
+            templateRepository.save(botanicalSoon);
+
+            Template watchSoon = new Template();
+            watchSoon.setName("AURELIA CHRONOS  -  18K Luxury Golden Watch Launch Template");
+            watchSoon.setSlug("aurelia-chronos-template");
+            watchSoon.setDescription("A luxurious 18k solid gold watch launch template. Features weightless floating antigravity 3D physics, interactive 360-degree studio orbit rotation, fluted crown and sunburst guilloché macro lens inspectors, 28,800 vph mechanical escapement audio synthesizer, and VIP allocation reservation capture.");
+            watchSoon.setCategory(commingSoonCategory);
+            watchSoon.setPrice(0.0);
+            watchSoon.setTemplateType("FREE");
+            watchSoon.setBootstrapVersion("HTML5 / Tailwind CSS / Vanilla JS");
+            watchSoon.setDemoUrl("/templates/comming-soon/cm-5/index.html");
+            watchSoon.setPreviewImage("/templates/comming-soon/cm-5/watch-hero.jpg");
+            watchSoon.setVersion("1.0");
+            watchSoon.setStatus("PUBLISHED");
+            watchSoon.setPagesCount(1);
+            watchSoon.setDownloadsCount(1680);
+            watchSoon.setTags(new ArrayList<>(Arrays.asList("Golden Watch", "Antigravity 3D", "Haute Horlogerie", "360 Orbit", "Live Countdown")));
+            templateRepository.save(watchSoon);
+        }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);

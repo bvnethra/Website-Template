@@ -18,6 +18,7 @@ db-data/
 target/
 backend/target/
 .mvn/
+.maven/
 *.class
 .factorypath
 
@@ -38,4 +39,6 @@ backend/target/
 .gemini/
 .agents/
 bin/
-
+**/out/
+**/dist/
+**/node_modules/

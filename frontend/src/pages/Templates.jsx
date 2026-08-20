@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { api } from '../services/api';
-import { Search, SlidersHorizontal, ExternalLink, Star, Wifi, Waves, UtensilsCrossed, Sparkles } from 'lucide-react';
-
-
+import { Search, SlidersHorizontal } from 'lucide-react';
 
 export default function Templates() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -289,24 +287,17 @@ export default function Templates() {
           </div>
         )}
 
-
-
-        {/* Grid */}
+        {/* Vertical Stack of Large Horizontal Cards */}
         {sortedTemplates.length > 0 ? (
           <div style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '36px',
-            width: '100%',
-            marginTop: '30px'
+            gap: 40,
+            maxWidth: '1000px',
+            margin: '0 auto'
           }}>
             {sortedTemplates.map(template => {
-              const tags = [
-                template.category.name,
-                template.bootstrapVersion,
-                template.templateType === 'FREE' ? 'Free License' : 'Premium License'
-              ].filter(Boolean);
-
+              const isSpecialCard = true;
               return (
                 <div
                   key={template.id}
@@ -333,7 +324,7 @@ export default function Templates() {
                     e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.03)';
                   }}
                 >
-                  {/* Left Column: Responsive Multi-Device CSS Mockup */}
+                  {/* Left Section: Responsive Multi-Device CSS Mockup */}
                   <div style={{
                     position: 'relative',
                     width: '100%',
@@ -362,7 +353,23 @@ export default function Templates() {
                       transform: 'translateX(-8%)',
                       boxSizing: 'border-box'
                     }}>
-                      <img src={template.previewImage} alt="Desktop Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80'; }} />
+                      <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative' }}>
+                        <img 
+                          src={template.previewImage} 
+                          alt={`${template.name} Desktop Preview`} 
+                          style={{ 
+                            width: '100%', 
+                            height: '112%', 
+                            objectFit: 'cover', 
+                            objectPosition: 'top',
+                            marginTop: '-12%' 
+                          }} 
+                          onError={(e) => {
+                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
+                          }}
+                        />
+                      </div>
+                      {/* Keyboard Base thin border */}
                       <div style={{
                         position: 'absolute',
                         bottom: 0,
@@ -373,7 +380,7 @@ export default function Templates() {
                       }} />
                     </div>
 
-                    {/* 2. Tablet Mockup Frame */}
+                    {/* 2. Tablet Mockup Frame (overlaid on the right side) */}
                     <div style={{
                       position: 'absolute',
                       right: '18%',
@@ -388,6 +395,7 @@ export default function Templates() {
                       zIndex: 2,
                       boxSizing: 'border-box'
                     }}>
+                      {/* Camera sensor dot */}
                       <div style={{
                         position: 'absolute',
                         top: '3px',
@@ -399,10 +407,25 @@ export default function Templates() {
                         background: '#334155',
                         zIndex: 10
                       }} />
-                      <img src={template.previewImage} alt="Tablet Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80'; }} />
+                      <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+                        <img 
+                          src={template.previewImage} 
+                          alt={`${template.name} Tablet Preview`} 
+                          style={{ 
+                            width: '100%', 
+                            height: '112%', 
+                            objectFit: 'cover', 
+                            objectPosition: 'top',
+                            marginTop: '-12%' 
+                          }} 
+                          onError={(e) => {
+                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
+                          }}
+                        />
+                      </div>
                     </div>
 
-                    {/* 3. Mobile Mockup Frame */}
+                    {/* 3. Mobile Mockup Frame (overlaid in front) */}
                     <div style={{
                       position: 'absolute',
                       right: '6%',
@@ -417,6 +440,7 @@ export default function Templates() {
                       zIndex: 3,
                       boxSizing: 'border-box'
                     }}>
+                      {/* Speaker pill notch */}
                       <div style={{
                         position: 'absolute',
                         top: '2px',
@@ -428,52 +452,83 @@ export default function Templates() {
                         background: '#1e293b',
                         zIndex: 10
                       }} />
-                      <img src={template.previewImage} alt="Mobile Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80'; }} />
+                      <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+                        <img 
+                          src={template.previewImage} 
+                          alt={`${template.name} Mobile Preview`} 
+                          style={{ 
+                            width: '100%', 
+                            height: '112%', 
+                            objectFit: 'cover', 
+                            objectPosition: 'top',
+                            marginTop: '-12%' 
+                          }} 
+                          onError={(e) => {
+                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
 
-                  {/* Right Column: Title, Metadata, Description & Pill Buttons */}
+                  {/* Right Section: Information & Action */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-                    {/* Badges / Tags */}
+                    
+                    {/* 1. Small feature/category badges at the top */}
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                      {tags.map((tag) => (
-                        <span key={tag} style={{
-                          padding: '4px 10px',
-                          borderRadius: '99px',
-                          backgroundColor: '#eff6ff',
-                          color: '#1d4ed8',
-                          fontSize: '10px',
-                          fontWeight: '700',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.5px'
-                        }}>{tag}</span>
-                      ))}
+                      <span style={{
+                        padding: '4px 10px',
+                        borderRadius: '99px',
+                        backgroundColor: '#eff6ff',
+                        color: '#1d4ed8',
+                        fontSize: '10px',
+                        fontWeight: '700',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px'
+                      }}>
+                        {template.category.name}
+                      </span>
+                      <span style={{
+                        padding: '4px 10px',
+                        borderRadius: '99px',
+                        backgroundColor: template.templateType === 'FREE' ? 'rgba(34, 197, 94, 0.08)' : 'rgba(234, 179, 8, 0.08)',
+                        color: template.templateType === 'FREE' ? '#22c55e' : '#ca8a04',
+                        fontSize: '10px',
+                        fontWeight: '700',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px'
+                      }}>
+                        {template.templateType === 'FREE' ? 'Free' : 'Premium'}
+                      </span>
                     </div>
 
-                    {/* Typography */}
+                    {/* 2. Template Name & details link */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                       <h3 style={{
                         fontSize: '1.6rem',
                         fontWeight: '800',
                         color: '#0f172a',
                         margin: 0,
+                        fontFamily: 'var(--font-title)',
                         lineHeight: '1.25'
                       }}>
-                        <a 
-                          href={template.demoUrl} 
+                        <Link 
+                          to={`/templates/${template.slug}`} 
                           style={{ color: '#0f172a', transition: 'color 0.2s', textDecoration: 'none' }}
                           onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
                           onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
                         >
                           {template.name}
-                        </a>
+                        </Link>
                       </h3>
                       
+                      {/* Updated metadata */}
                       <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#64748b' }}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style={{ verticalAlign: 'middle' }}><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <i className="fa-regular fa-clock" style={{ fontSize: '0.85rem' }}></i>
                         <span>Updated recently</span>
                       </div>
 
+                      {/* 4. Short Description of the Template */}
                       <p style={{
                         fontSize: '0.88rem',
                         color: '#64748b',
@@ -485,16 +540,18 @@ export default function Templates() {
                       </p>
                     </div>
 
-                    {/* Action Buttons */}
+                    {/* 5. Live Demo Button */}
                     <div style={{ marginTop: '10px' }}>
-                      <a 
-                        href={template.demoUrl} 
+                      <a
+                        href={template.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         style={{
-                          display: 'inline-flex',
+                          display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           gap: '6px',
-                          padding: '12px 28px',
+                          padding: '12px 24px',
                           backgroundColor: '#1e40af',
                           color: 'white',
                           borderRadius: '99px',
@@ -513,10 +570,10 @@ export default function Templates() {
                           e.currentTarget.style.backgroundColor = '#1e40af';
                         }}
                       >
-                        Live Demo
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
                       </a>
                     </div>
+
                   </div>
                 </div>
               );

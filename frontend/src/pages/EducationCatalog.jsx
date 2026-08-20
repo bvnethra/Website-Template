@@ -44,27 +44,6 @@ export default function EducationCatalog() {
       previewImage: collegeTemplateImg,
       tags: ['Green Utility Bar', 'Stacked Promo Card', 'Featured Clusters', 'Vibrant Layout'],
       description: 'A replica of the StudyPro education layout featuring a green header bar, centralized branding row, transparent banner slider, and floating course promotion widgets.'
-    },
-    {
-      slug: 'studypress',
-      name: 'StudyPress — Campus Gallery Showcase',
-      previewImage: studypressImg,
-      tags: ['Three-Tier Header', '30-Image Gallery', 'Fullscreen Lightbox', 'Dynamic Filter'],
-      description: 'A campus portfolio showcase template featuring a dynamic category photo gallery of 30 landmark images with a built-in fullscreen lightbox carousel.'
-    },
-    {
-      slug: 'academica',
-      name: 'Academica — E-Learning Portal',
-      previewImage: onlineLearningImg,
-      tags: ['Academics', 'React Component', 'E-Learning'],
-      description: 'A React-only portal component configured for e-learning platforms and academic syllabus trackers.'
-    },
-    {
-      slug: 'learner',
-      name: 'Learner — Student Learning Hub',
-      previewImage: mentorEducationImg,
-      tags: ['Learners', 'React Component', 'Mentorship'],
-      description: 'A React-only student learning portal designed for peer-to-peer mentorship and curriculum directories.'
     }
   ];
 

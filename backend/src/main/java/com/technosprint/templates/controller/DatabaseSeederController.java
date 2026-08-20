@@ -263,6 +263,26 @@ public class DatabaseSeederController {
             lumiere.setTags(new ArrayList<>(Arrays.asList("Immersive Concept", "Floating Dish Hover", "Tailwind CSS", "Motion Animations", "Custom Reservation Modal")));
             templateRepository.save(lumiere);
             logs.put("template_lumiere", "Created");
+
+            // Seed Ember House Noire React template
+            Template emberHouseNoire = new Template();
+            emberHouseNoire.setName("Ember House Noire — Contemporary Garden Restaurant");
+            emberHouseNoire.setSlug("ember-house-noire");
+            emberHouseNoire.setDescription("A contemporary garden restaurant template styled in dark editorial aesthetics. Features botanical garden themes, interactive curatorial grids, testimonial slide bars, custom cursors, and reservation capture forms.");
+            emberHouseNoire.setCategory(restaurantCategory);
+            emberHouseNoire.setPrice(0.0);
+            emberHouseNoire.setTemplateType("FREE");
+            emberHouseNoire.setBootstrapVersion("React / CSS Modules / Vite");
+            emberHouseNoire.setDemoUrl("/templates/restaurant/restaurant-4/index.html");
+            emberHouseNoire.setDownloadFile("ember-house-noire.zip");
+            emberHouseNoire.setPreviewImage("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80");
+            emberHouseNoire.setVersion("1.0.0");
+            emberHouseNoire.setStatus("PUBLISHED");
+            emberHouseNoire.setPagesCount(1);
+            emberHouseNoire.setDownloadsCount(1450);
+            emberHouseNoire.setTags(new ArrayList<>(Arrays.asList("Garden Restaurant", "Dark Editorial", "React Components", "Curatorial Grid", "Custom Cursor")));
+            templateRepository.save(emberHouseNoire);
+            logs.put("template_ember_house_noire", "Created");
         }
 
         // 7. Seed Ecommerce templates

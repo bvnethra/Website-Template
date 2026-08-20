@@ -290,6 +290,26 @@ public class DatabaseSeederController {
             templateRepository.save(aurelia);
             logs.put("template_aurelia", "Created");
 
+            // Seed ShopSphere template
+            Template shopsphere = new Template();
+            shopsphere.setName("ShopSphere — Modern Fashion & Lifestyle Store");
+            shopsphere.setSlug("shopsphere-commerce");
+            shopsphere.setDescription("A sleek, modern e-commerce storefront for fashion and lifestyle brands. Features sidebar navigation, interactive category listings, search filter overlay, and a clean minimalist design.");
+            shopsphere.setCategory(ecommerceCategory);
+            shopsphere.setPrice(0.0);
+            shopsphere.setTemplateType("FREE");
+            shopsphere.setBootstrapVersion("HTML5 / CSS3 / JavaScript");
+            shopsphere.setDemoUrl("/templates/ecommerce/ecommerce-7/index.html");
+            shopsphere.setDownloadFile("shopsphere-fashion.zip");
+            shopsphere.setPreviewImage("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80");
+            shopsphere.setVersion("1.0.0");
+            shopsphere.setStatus("PUBLISHED");
+            shopsphere.setPagesCount(5);
+            shopsphere.setDownloadsCount(2850);
+            shopsphere.setTags(new ArrayList<>(Arrays.asList("Fashion Store", "Minimalist Layout", "HTML5 CSS3", "Interactive sidebar")));
+            templateRepository.save(shopsphere);
+            logs.put("template_shopsphere", "Created");
+
             // Seed ToyVerse template
             Template toyverse = new Template();
             toyverse.setName("ToyVerse — Interactive Toy & Hobby Store");
@@ -299,7 +319,7 @@ public class DatabaseSeederController {
             toyverse.setPrice(0.0);
             toyverse.setTemplateType("FREE");
             toyverse.setBootstrapVersion("React / TypeScript / GSAP");
-            toyverse.setDemoUrl("/templates/ecommerce/ecommerce-7/index.html");
+            toyverse.setDemoUrl("/templates/ecommerce/ecommerce-8/index.html");
             toyverse.setDownloadFile("toyverse-hobby.zip");
             toyverse.setPreviewImage("https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=800&q=80");
             toyverse.setVersion("1.0.0");

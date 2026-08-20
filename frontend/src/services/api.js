@@ -146,6 +146,21 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 10,
+    name: 'ShopSphere — Modern Fashion & Lifestyle Store',
+    slug: 'shopsphere-commerce',
+    previewImage: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 5,
+    downloadsCount: 2850,
+    description: 'A sleek, modern e-commerce storefront for fashion and lifestyle brands. Features sidebar navigation, interactive category listings, search filter overlay, and a clean minimalist design.',
+    bootstrapVersion: 'HTML5 / CSS3 / JavaScript',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-7/index.html'
+  },
+  {
+    id: 11,
     name: 'ToyVerse — Interactive Toy & Hobby Store',
     slug: 'toy-store',
     previewImage: 'https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=800&q=80',
@@ -157,7 +172,7 @@ const MOCK_TEMPLATES = [
     description: 'A vibrant and interactive online storefront designed for modern toy stores and hobby shops. Features a custom 3D flying toy canvas, whimsical category lists, responsive cart drawer, and interactive tracking.',
     bootstrapVersion: 'React / TypeScript / GSAP',
     version: '1.0.0',
-    demoUrl: '/templates/ecommerce/ecommerce-7/index.html'
+    demoUrl: '/templates/ecommerce/ecommerce-8/index.html'
   }
 ];
 

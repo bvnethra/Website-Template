@@ -83,21 +83,7 @@ const MOCK_TEMPLATES = [
     downloadFile: 'qure-nexa-medical.zip',
     version: '1.0'
   },
-  {
-    id: 5,
-    name: 'Ember & Olive — Artisan Seasonal Restaurant',
-    slug: 'ember-and-olive',
-    previewImage: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
-    templateType: 'FREE',
-    price: 0,
-    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
-    pagesCount: 6,
-    downloadsCount: 9500,
-    description: 'An elegant, full-featured artisan restaurant template featuring wood-fired dining menus, reservation bars, chef profiles, interactive events pages, and responsive design.',
-    bootstrapVersion: 'HTML5 / Bootstrap 5',
-    version: '1.0.0',
-    demoUrl: '/templates/restaurant/ember-and-olive/index.html'
-  },
+
 
   {
     id: 7,

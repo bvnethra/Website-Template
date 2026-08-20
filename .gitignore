@@ -46,3 +46,8 @@ bin/
 # Never commit ShopSphere ecommerce-7 files
 templates/ecommerce/ecommerce-7/
 frontend/public/templates/ecommerce/ecommerce-7/
+
+# Never commit Restaurant templates
+templates/restaurant-1/
+templates/restaurant/
+frontend/public/templates/restaurant/

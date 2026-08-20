@@ -202,28 +202,7 @@ public class DatabaseSeederController {
             logs.put("template_wedding", "Created");
         }
 
-        // 6. Seed Restaurant templates
-        Category restaurantCategory = catMap.get("restaurant");
-        if (restaurantCategory != null) {
-            Template restaurant = new Template();
-            restaurant.setName("Ember & Olive — Artisan Seasonal Restaurant");
-            restaurant.setSlug("ember-and-olive");
-            restaurant.setDescription("An elegant, full-featured artisan restaurant template featuring wood-fired dining menus, reservation bars, chef profiles, interactive events pages, and responsive design.");
-            restaurant.setCategory(restaurantCategory);
-            restaurant.setPrice(0.0);
-            restaurant.setTemplateType("FREE");
-            restaurant.setBootstrapVersion("HTML5 / Bootstrap 5");
-            restaurant.setDemoUrl("/templates/restaurant/ember-and-olive/index.html");
-            restaurant.setDownloadFile("ember-and-olive-restaurant.zip");
-            restaurant.setPreviewImage("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80");
-            restaurant.setVersion("1.0.0");
-            restaurant.setStatus("PUBLISHED");
-            restaurant.setPagesCount(6);
-            restaurant.setDownloadsCount(9500);
-            restaurant.setTags(new ArrayList<>(Arrays.asList("Wood-Fired", "Artisan Dining", "Reservation Micro UI", "Responsive Menu")));
-            templateRepository.save(restaurant);
-            logs.put("template_restaurant", "Created");
-        }
+
 
         // 7. Seed Ecommerce templates
         Category ecommerceCategory = catMap.get("ecommerce");

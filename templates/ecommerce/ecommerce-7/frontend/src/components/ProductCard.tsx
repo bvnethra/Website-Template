@@ -90,7 +90,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
       {/* Toy Animation Arena */}
       <div className="card-toy-container">
         {toyState === 'idle' && product.image.endsWith('.jpg') ? (
-          <img src={product.image} alt={product.name} className="card-toy-img" />
+          <img src={product.image.startsWith('/') ? `${import.meta.env.BASE_URL}${product.image.substring(1)}` : product.image} alt={product.name} className="card-toy-img" />
         ) : (
           <ToyRenderer type={product.animationType} state={toyState} />
         )}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToyCartProvider } from './context/ToyCartContext';
 import { CustomCursor } from './components/CustomCursor';
 import { Header } from './components/Header';

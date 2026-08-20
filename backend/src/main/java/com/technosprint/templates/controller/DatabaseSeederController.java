@@ -243,6 +243,26 @@ public class DatabaseSeederController {
             emberOliveReact.setTags(new ArrayList<>(Arrays.asList("Artisan Dining", "Signature Dish Modals", "Tailwind CSS", "Motion Animations", "Lightbox Gallery")));
             templateRepository.save(emberOliveReact);
             logs.put("template_ember_olive_react", "Created");
+
+            // Seed Lumière React template
+            Template lumiere = new Template();
+            lumiere.setName("Lumière — Modern Culinary Concept Store");
+            lumiere.setSlug("lumiere-restaurant");
+            lumiere.setDescription("An immersive and cinematic restaurant concept showcase template. Features custom dynamic cursors, interactive floating dish hover cards, smooth scroll reveals, custom reservation modals, and structured storytelling panels.");
+            lumiere.setCategory(restaurantCategory);
+            lumiere.setPrice(0.0);
+            lumiere.setTemplateType("FREE");
+            lumiere.setBootstrapVersion("React / Tailwind CSS / Motion");
+            lumiere.setDemoUrl("/templates/restaurant/restaurant-3/index.html");
+            lumiere.setDownloadFile("lumiere-restaurant.zip");
+            lumiere.setPreviewImage("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80");
+            lumiere.setVersion("1.0.0");
+            lumiere.setStatus("PUBLISHED");
+            lumiere.setPagesCount(1);
+            lumiere.setDownloadsCount(1840);
+            lumiere.setTags(new ArrayList<>(Arrays.asList("Immersive Concept", "Floating Dish Hover", "Tailwind CSS", "Motion Animations", "Custom Reservation Modal")));
+            templateRepository.save(lumiere);
+            logs.put("template_lumiere", "Created");
         }
 
         // 7. Seed Ecommerce templates

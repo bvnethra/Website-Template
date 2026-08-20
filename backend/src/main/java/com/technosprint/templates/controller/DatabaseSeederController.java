@@ -202,7 +202,28 @@ public class DatabaseSeederController {
             logs.put("template_wedding", "Created");
         }
 
-
+        // 6. Seed Restaurant templates
+        Category restaurantCategory = catMap.get("restaurant");
+        if (restaurantCategory != null) {
+            Template restaurant = new Template();
+            restaurant.setName("Ember House — Artisan Dining & Gathering Space");
+            restaurant.setSlug("ember-house");
+            restaurant.setDescription("An elegant, full-featured artisan restaurant and gathering venue template. Features fine dining menu displays, inline reservation requests, slideshow lookbooks, team/chef highlights, and clean typography.");
+            restaurant.setCategory(restaurantCategory);
+            restaurant.setPrice(0.0);
+            restaurant.setTemplateType("FREE");
+            restaurant.setBootstrapVersion("React / Tailwind CSS / Motion");
+            restaurant.setDemoUrl("/templates/restaurant/restaurant-1/index.html");
+            restaurant.setDownloadFile("ember-house-restaurant.zip");
+            restaurant.setPreviewImage("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80");
+            restaurant.setVersion("1.0.0");
+            restaurant.setStatus("PUBLISHED");
+            restaurant.setPagesCount(8);
+            restaurant.setDownloadsCount(2950);
+            restaurant.setTags(new ArrayList<>(Arrays.asList("Fine Dining", "Artisan Kitchen", "Tailwind CSS", "Motion Animations", "Inline Reservation")));
+            templateRepository.save(restaurant);
+            logs.put("template_restaurant", "Created");
+        }
 
         // 7. Seed Ecommerce templates
         Category ecommerceCategory = catMap.get("ecommerce");

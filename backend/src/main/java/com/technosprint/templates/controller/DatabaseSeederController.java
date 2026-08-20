@@ -351,6 +351,26 @@ public class DatabaseSeederController {
             orvana.setTags(new ArrayList<>(Arrays.asList("Immersive Concept Store", "Lifestyle Shop", "Framer Motion", "Mega Menu", "Interactive Sorting")));
             templateRepository.save(orvana);
             logs.put("template_orvana", "Created");
+
+            // Seed AUREL template
+            Template aurel = new Template();
+            aurel.setName("AUREL — Minimalist Fashion & Lifestyle Store");
+            aurel.setSlug("aurel-store");
+            aurel.setDescription("A minimalist, structured e-commerce storefront for organic fashion and lifestyle labels. Features smooth scroll reveals, custom cursors, floating filter panels, and color/size cart controls.");
+            aurel.setCategory(ecommerceCategory);
+            aurel.setPrice(0.0);
+            aurel.setTemplateType("FREE");
+            aurel.setBootstrapVersion("React / TypeScript / Vanilla CSS");
+            aurel.setDemoUrl("/templates/ecommerce/ecommerce-5/index.html");
+            aurel.setDownloadFile("aurel-store.zip");
+            aurel.setPreviewImage("https://images.unsplash.com/photo-1598554747436-c9293d6a588f?q=80&w=800&auto=format&fit=crop");
+            aurel.setVersion("1.0.0");
+            aurel.setStatus("PUBLISHED");
+            aurel.setPagesCount(10);
+            aurel.setDownloadsCount(3820);
+            aurel.setTags(new ArrayList<>(Arrays.asList("Minimalist Fashion", "Structured Design", "Custom Cursors", "Scroll Reveals", "Color Size Selectors")));
+            templateRepository.save(aurel);
+            logs.put("template_aurel", "Created");
         }
 
         // 8. Seed Coming Soon templates

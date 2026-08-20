@@ -169,9 +169,22 @@ const MOCK_TEMPLATES = [
     pagesCount: 4,
     downloadsCount: 4100,
     description: 'A futuristic and clean electronic product storefront dedicated to premium devices and smart ecosystem components. Features automated command search overlays, compare modals, interactive specifications, and cart drawers.',
-    bootstrapVersion: 'React / Lucide Icons / Vanilla CSS',
-    version: '1.0.0',
     demoUrl: '/templates/ecommerce/ecommerce-3/index.html'
+  },
+  {
+    id: 13,
+    name: 'Orvana — Premium Design & Lifestyle Concept Store',
+    slug: 'orvana-store',
+    previewImage: 'https://images.unsplash.com/photo-1441984969733-d4df530a7731?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 14,
+    downloadsCount: 5120,
+    description: 'A cinematic and immersive e-commerce storefront for lifestyle and fashion concept brands. Features rich animations, cinematic video hero headers, product quick view modals, interactive sorting, and detailed item configuration options.',
+    bootstrapVersion: 'React / Framer Motion / TypeScript',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-4/index.html'
   }
 ];
 

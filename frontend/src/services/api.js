@@ -98,21 +98,7 @@ const MOCK_TEMPLATES = [
     version: '1.0.0',
     demoUrl: '/templates/restaurant/ember-and-olive/index.html'
   },
-  {
-    id: 6,
-    name: 'Nexa Commerce — High-End Ecommerce Platform',
-    slug: 'nexa-commerce',
-    previewImage: 'https://images.unsplash.com/photo-1472851294608-062f824d296e?auto=format&fit=crop&w=800&q=80',
-    templateType: 'FREE',
-    price: 0,
-    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
-    pagesCount: 12,
-    downloadsCount: 11000,
-    description: 'A modern, full-featured retail platform featuring dynamic product catalogs, a fully-featured customer cart, responsive checkouts, and a comprehensive admin inventory management dashboard.',
-    bootstrapVersion: 'HTML5 / Vanilla CSS / JS',
-    version: '1.0.0',
-    demoUrl: '/templates/ecommerce/nexa/index.html'
-  },
+
   {
     id: 7,
     name: 'Soft Glow — Clean Beauty & Skin-First Hydration',
@@ -157,21 +143,6 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / React Router / Vanilla CSS',
     version: '1.0.0',
     demoUrl: '/templates/ecommerce/ecommerce-2/index.html'
-  },
-  {
-    id: 10,
-    name: 'ShopSphere — Modern Fashion & Lifestyle Store',
-    slug: 'shopsphere-commerce',
-    previewImage: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80',
-    templateType: 'FREE',
-    price: 0,
-    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
-    pagesCount: 5,
-    downloadsCount: 2850,
-    description: 'A sleek, modern e-commerce storefront for fashion and lifestyle brands. Features sidebar navigation, interactive category listings, search filter overlay, and a clean minimalist design.',
-    bootstrapVersion: 'React / Java Spring Boot',
-    version: '1.0.0',
-    demoUrl: '/templates/ecommerce/ecommerce-7/index.html'
   }
 ];
 

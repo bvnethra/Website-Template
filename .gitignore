@@ -39,4 +39,6 @@ backend/target/
 .gemini/
 .agents/
 bin/
-
+**/out/
+**/dist/
+**/node_modules/

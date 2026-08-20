@@ -8,6 +8,7 @@ import Education1Portal from './pages/Education1Portal';
 import StudyPressPortal from './pages/StudyPressPortal';
 import AcademicaPortal from './pages/AcademicaPortal';
 import LearnerPortal from './pages/LearnerPortal';
+import EducationCatalog from './pages/EducationCatalog';
 
 function MainApp() {
   return (
@@ -21,6 +22,7 @@ function MainApp() {
           <Route path="/studypress" element={<StudyPressPortal />} />
           <Route path="/academica" element={<AcademicaPortal />} />
           <Route path="/learner" element={<LearnerPortal />} />
+          <Route path="/templates/education" element={<EducationCatalog />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
       </main>

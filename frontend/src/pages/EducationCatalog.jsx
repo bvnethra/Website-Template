@@ -18,13 +18,6 @@ export default function EducationCatalog() {
 
   const TEMPLATES = [
     {
-      slug: 'college',
-      name: 'College — Higher Education Hub',
-      previewImage: collegeTemplateImg,
-      tags: ['College Portal', 'Burgundy Banner', 'Stats Counter', 'Course Finder'],
-      description: 'An authoritative higher education layout featuring a prominent burgundy hero banner, statistics animations, student testimonial carousels, and searchable course cards.'
-    },
-    {
       slug: 'modern-university',
       name: 'Modern University — Classic Campus Template',
       previewImage: modernUniversityImg,
@@ -32,11 +25,46 @@ export default function EducationCatalog() {
       description: 'A classic higher-education template inspired by traditional university architectures. Features a spacious hero image slider, transparent header, dual pill-shaped call-to-action buttons, and a clean layout without copyright constraints.'
     },
     {
+      slug: 'college',
+      name: 'College — Higher Education Hub',
+      previewImage: collegeTemplateImg,
+      tags: ['College Portal', 'Burgundy Banner', 'Stats Counter', 'Course Finder'],
+      description: 'An authoritative higher education layout featuring a prominent burgundy hero banner, statistics animations, student testimonial carousels, and searchable course cards.'
+    },
+    {
+      slug: 'myschool',
+      name: 'MySchool — Nurturing Minds, Building Tomorrow',
+      previewImage: myschoolImg,
+      tags: ['Primary Education', 'Badges Showcase', 'Parent Inquiries'],
+      description: 'A warm, friendly primary school template featuring clean circular grid elements, program detail cards, and integrated parent admission query forms.'
+    },
+    {
+      slug: 'education-1',
+      name: 'StudyPro — Education & Courses Replica',
+      previewImage: collegeTemplateImg,
+      tags: ['Green Utility Bar', 'Stacked Promo Card', 'Featured Clusters', 'Vibrant Layout'],
+      description: 'A replica of the StudyPro education layout featuring a green header bar, centralized branding row, transparent banner slider, and floating course promotion widgets.'
+    },
+    {
       slug: 'studypress',
-      name: 'StudyPress — Education & Courses Hub',
+      name: 'StudyPress — Campus Gallery Showcase',
       previewImage: studypressImg,
-      tags: ['Three-Tier Header', 'Course Catalog', 'Faculty Spotlight', 'Admissions Portal'],
-      description: 'A premium education template featuring a three-tier header layout, interactive course catalog with checkout options, a full faculty directory, and multi-step admissions forms.'
+      tags: ['Three-Tier Header', '30-Image Gallery', 'Fullscreen Lightbox', 'Dynamic Filter'],
+      description: 'A campus portfolio showcase template featuring a dynamic category photo gallery of 30 landmark images with a built-in fullscreen lightbox carousel.'
+    },
+    {
+      slug: 'academica',
+      name: 'Academica — E-Learning Portal',
+      previewImage: onlineLearningImg,
+      tags: ['Academics', 'React Component', 'E-Learning'],
+      description: 'A React-only portal component configured for e-learning platforms and academic syllabus trackers.'
+    },
+    {
+      slug: 'learner',
+      name: 'Learner — Student Learning Hub',
+      previewImage: mentorEducationImg,
+      tags: ['Learners', 'React Component', 'Mentorship'],
+      description: 'A React-only student learning portal designed for peer-to-peer mentorship and curriculum directories.'
     }
   ];
 
@@ -85,7 +113,7 @@ export default function EducationCatalog() {
   };
 
   return (
-    <div style={{ animation: 'fadeIn 0.5s ease-out', padding: '30px 0', minHeight: '60vh', position: 'relative' }}>
+    <div style={{ animation: 'fadeIn 0.5s ease-out', padding: '30px 24px', minHeight: '60vh', position: 'relative', maxWidth: '1200px', margin: '0 auto', fontFamily: 'sans-serif' }}>
       
       {/* Toast Notification */}
       {toastMessage && (
@@ -108,15 +136,11 @@ export default function EducationCatalog() {
           animation: 'fadeIn 0.3s ease-out'
         }}>
           {toastType === 'error' ? (
-            <svg style={{ width: '20px', height: '20px', color: '#fca5a5', flexShrink: 0 }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-            </svg>
+            <span style={{ color: '#ef4444', fontSize: '1.25rem' }}>⚠️</span>
           ) : (
-            <svg style={{ width: '20px', height: '20px', color: '#4ade80', flexShrink: 0 }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
+            <span style={{ color: '#10b981', fontSize: '1.25rem' }}>✅</span>
           )}
-          <div style={{ fontSize: '0.85rem', fontWeight: '600' }}>{toastMessage}</div>
+          <span style={{ fontSize: '0.9rem', fontWeight: 500 }}>{toastMessage}</span>
         </div>
       )}
 
@@ -128,8 +152,8 @@ export default function EducationCatalog() {
           gap: '6px',
           padding: '4px 12px',
           borderRadius: '99px',
-          backgroundColor: 'rgba(84, 78, 232, 0.08)',
-          color: '#544ee8',
+          backgroundColor: 'rgba(16, 185, 129, 0.08)',
+          color: '#10b981',
           fontSize: '0.75rem',
           fontWeight: 700,
           textTransform: 'uppercase',
@@ -138,105 +162,73 @@ export default function EducationCatalog() {
         }}>
           🎓 Category: Education Templates
         </div>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: 8, letterSpacing: '-0.5px' }}>Education Templates</h1>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>Discover isolated, production-ready, beautiful education layouts designed for universities, online academies, training hubs, primary schools, and colleges.</p>
+        <h1 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: 8, letterSpacing: '-0.5px', color: '#0f172a' }}>Education Templates Catalog</h1>
+        <p style={{ color: '#64748b', fontSize: '0.95rem' }}>Discover isolated, production-ready, beautiful education layouts designed for universities, online academies, training hubs, primary schools, and colleges.</p>
       </div>
 
       {/* Catalog Grid */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
         gap: '30px',
         marginTop: '30px'
       }}>
         
         {TEMPLATES.map((tpl) => (
           <div key={tpl.slug} style={{
-            backgroundColor: '#1e1e1e',
-            border: '1px solid rgba(255,255,255,0.08)',
+            backgroundColor: '#fff',
+            border: '1px solid #e2e8f0',
             borderRadius: '24px',
             padding: '24px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
             transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
+            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
             maxWidth: '420px',
             width: '100%',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(84, 78, 232, 0.3)';
-            e.currentTarget.style.boxShadow = '0 20px 40px -10px rgba(84, 78, 232, 0.15)';
+            e.currentTarget.style.borderColor = '#10b981';
+            e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(16, 185, 129, 0.1)';
             e.currentTarget.style.transform = 'translateY(-4px)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
-            e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.05)';
+            e.currentTarget.style.borderColor = '#e2e8f0';
+            e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.05)';
             e.currentTarget.style.transform = 'translateY(0)';
           }}
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               
               {/* Image Preview Wrapper */}
-              <a 
-                href={`/templates/education/${tpl.slug}/index.html`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                style={{
-                  position: 'relative',
-                  display: 'block',
-                  width: '100%',
-                  height: '270px',
-                  borderRadius: '18px',
-                  overflow: 'hidden',
-                  backgroundColor: '#121212',
-                  border: '1px solid rgba(255,255,255,0.05)'
-                }}
-                onMouseEnter={() => setHoveredCardSlug(tpl.slug)}
-                onMouseLeave={() => setHoveredCardSlug(null)}
-              >
+              <div style={{
+                position: 'relative',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                aspectRatio: '16/10',
+                backgroundColor: '#f1f5f9'
+              }}>
                 <img 
                   src={tpl.previewImage} 
                   alt={tpl.name} 
                   style={{
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover',
-                    transform: hoveredCardSlug === tpl.slug ? 'scale(1.03)' : 'scale(1)',
-                    transition: 'transform 0.4s ease'
+                    objectFit: 'cover'
                   }}
                 />
-                <div style={{
-                  position: 'absolute',
-                  inset: 0,
-                  backgroundColor: 'rgba(0,0,0,0.45)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  opacity: hoveredCardSlug === tpl.slug ? 1 : 0,
-                  transition: 'opacity 0.3s ease'
-                }}
-                >
-                  <span style={{
-                    padding: '8px 16px',
-                    backgroundColor: 'white',
-                    color: 'black',
-                    borderRadius: '8px',
-                    fontSize: '0.75rem',
-                    fontWeight: 'bold',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
-                  }}>Live Preview ↗</span>
-                </div>
-              </a>
+              </div>
 
-              {/* Badges / Tags */}
+              {/* Tags Grid */}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {tpl.tags.map((tag) => (
-                  <span key={tag} style={{
-                    padding: '4px 10px',
-                    borderRadius: '99px',
-                    backgroundColor: '#2a2744',
-                    color: '#a5b4fc',
+                {tpl.tags.map((tag, idx) => (
+                  <span key={idx} style={{
+                    backgroundColor: '#f8fafc',
+                    border: '1px solid #e2e8f0',
+                    color: '#64748b',
+                    padding: '4px 8px',
+                    borderRadius: '8px',
                     fontSize: '10px',
                     fontWeight: '700',
                     textTransform: 'uppercase',
@@ -250,23 +242,21 @@ export default function EducationCatalog() {
                 <h3 style={{
                   fontSize: '1.25rem',
                   fontWeight: '800',
-                  color: 'white',
+                  color: '#0f172a',
                   margin: 0
                 }}>
-                  <a 
-                    href={`/templates/education/${tpl.slug}/index.html`} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    style={{ color: 'white', transition: 'color 0.2s', textDecoration: 'none' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = '#a5b4fc'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+                  <Link 
+                    to={tpl.slug === 'modern-university' ? '/' : `/${tpl.slug}`}
+                    style={{ color: '#0f172a', transition: 'color 0.2s', textDecoration: 'none' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#10b981'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
                   >
                     {tpl.name}
-                  </a>
+                  </Link>
                 </h3>
                 <p style={{
                   fontSize: '0.85rem',
-                  color: '#94a3b8',
+                  color: '#64748b',
                   lineHeight: '1.6',
                   margin: 0
                 }}>
@@ -283,31 +273,28 @@ export default function EducationCatalog() {
               gap: '12px',
               margin: '24px 0 0 0'
             }}>
-              <a 
-                href={`/templates/education/${tpl.slug}/index.html`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <Link 
+                to={tpl.slug === 'modern-university' ? '/' : `/${tpl.slug}`}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '6px',
                   padding: '12px 16px',
-                  backgroundColor: '#262626',
+                  backgroundColor: '#0f172a',
                   color: 'white',
                   borderRadius: '12px',
                   fontWeight: '600',
                   fontSize: '0.8rem',
-                  border: '1px solid rgba(255,255,255,0.1)',
                   cursor: 'pointer',
                   transition: 'background-color 0.2s',
                   textDecoration: 'none'
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#333333'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#262626'}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1e293b'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0f172a'}
               >
                 Live Demo ↗
-              </a>
+              </Link>
               
               <button 
                 onClick={() => handleDownload(tpl.slug, tpl.name)}
@@ -318,31 +305,24 @@ export default function EducationCatalog() {
                   justifyContent: 'center',
                   gap: '6px',
                   padding: '12px 16px',
-                  backgroundColor: '#544ee8',
-                  color: 'white',
+                  backgroundColor: '#f1f5f9',
+                  color: '#0f172a',
                   borderRadius: '12px',
                   fontWeight: '600',
                   fontSize: '0.8rem',
-                  border: 'none',
-                  boxShadow: '0 4px 12px rgba(84, 78, 232, 0.2)',
+                  border: '1px solid #cbd5e1',
                   cursor: 'pointer',
-                  transition: 'background-color 0.2s',
-                  opacity: downloadingSlug ? 0.6 : 1
+                  transition: 'background-color 0.2s'
                 }}
-                onMouseEnter={(e) => { if(!downloadingSlug) e.currentTarget.style.backgroundColor = '#433cc8'; }}
-                onMouseLeave={(e) => { if(!downloadingSlug) e.currentTarget.style.backgroundColor = '#544ee8'; }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#e2e8f0'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#f1f5f9'}
               >
-                {downloadingSlug === tpl.slug ? (
-                  <>Zipping...</>
-                ) : (
-                  <>Download ↓</>
-                )}
+                {downloadingSlug === tpl.slug ? 'Bundling...' : 'Download Code'}
               </button>
             </div>
 
           </div>
         ))}
-
       </div>
     </div>
   );

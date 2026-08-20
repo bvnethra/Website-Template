@@ -281,28 +281,99 @@
       }, 4000);
     }
 
+    const TEMPLATE_FILES = {
+      'snapfolio-template': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css'
+      ],
+      'photo-template': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css'
+      ],
+      'wedding-template': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css'
+      ],
+      'fineart-template': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css',
+        'src/components/CollectionCircle.jsx',
+        'src/components/CollectionsGrid.jsx',
+        'src/components/FeatureBlock.jsx',
+        'src/components/Footer.jsx',
+        'src/components/Hero.jsx',
+        'src/components/Navbar.jsx',
+        'src/components/Newsletter.jsx',
+        'src/data/config.js'
+      ],
+      'cinematic-wedding': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css',
+        'src/components/About.jsx',
+        'src/components/FeaturedStories.jsx',
+        'src/components/Footer.jsx',
+        'src/components/Gallery.jsx',
+        'src/components/Hero.jsx',
+        'src/components/Navbar.jsx',
+        'src/components/ScrollReveal.jsx',
+        'src/components/Services.jsx',
+        'src/components/Testimonials.jsx',
+        'src/data/config.js'
+      ],
+      'kairo-template': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css',
+        'src/components/AboutSection.jsx',
+        'src/components/CameraModel.jsx',
+        'src/components/ContactSection.jsx',
+        'src/components/Footer.jsx',
+        'src/components/Hero3DScene.jsx',
+        'src/components/HeroContent.jsx',
+        'src/components/HeroGrid.jsx',
+        'src/components/Navbar.jsx',
+        'src/components/ParticleField.jsx',
+        'src/components/Scene3D.jsx',
+        'src/components/ServicesSection.jsx'
+      ],
+      'isteady-template': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css',
+        'src/components/AboutSection.jsx',
+        'src/components/ContactSection.jsx',
+        'src/components/Footer.jsx',
+        'src/components/HeroContent.jsx',
+        'src/components/Navbar.jsx',
+        'src/components/ParticleField.jsx',
+        'src/components/PortfolioGrid.jsx',
+        'src/components/Scene3D.jsx',
+        'src/components/ServicesSection.jsx',
+        'src/components/Testimonials.jsx'
+      ]
+    };
+
     // Client-side ZIP Bundler and Downloader
     async function downloadTemplate(slug) {
       const zip = new JSZip();
+      const filesToDownload = TEMPLATE_FILES[slug] || [];
       
-      const files = [
-        { name: 'index.html', url: `./${slug}/index.html` },
-        { name: 'style.css', url: `./${slug}/style.css` },
-        { name: 'script.js', url: `./${slug}/script.js` }
-      ];
-      
-      const btn = document.getElementById(slug === 'snapfolio-template' ? 'download-snapfolio' : slug === 'photo-template' ? 'download-photo' : 'download-wedding');
+      const btnId = slug === 'cinematic-wedding' ? 'download-cinematic' :
+                    slug === 'isteady-template' ? 'download-isteady' :
+                    slug === 'kairo-template' ? 'download-kairo' :
+                    slug === 'fineart-template' ? 'download-fineart' :
+                    'download-' + slug.replace('-template', '');
+      const btn = document.getElementById(btnId) || document.activeElement;
       const originalText = btn.innerHTML;
       
       btn.disabled = true;
       btn.innerHTML = `<i class="fa-solid fa-circle-notch animate-spin"></i> Zipping...`;
       
       try {
-        for (const file of files) {
-          const response = await fetch(file.url);
-          if (!response.ok) throw new Error(`HTTP error! status: ${response.status} when fetching ${file.name}`);
+        for (const filePath of filesToDownload) {
+          const fileUrl = `./${slug}/${filePath}`;
+          const response = await fetch(fileUrl);
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status} when fetching ${filePath}`);
           const text = await response.text();
-          zip.file(file.name, text);
+          zip.file(filePath, text);
         }
         
         // Fetch and add frames sequence binary files for the photo-template

@@ -67,24 +67,90 @@ export default function PhotographyCatalog() {
     }, 4000);
   };
 
+  const TEMPLATE_FILES = {
+    'snapfolio-template': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css'
+    ],
+    'photo-template': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css'
+    ],
+    'wedding-template': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css'
+    ],
+    'fineart-template': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/CollectionCircle.jsx',
+      'src/components/CollectionsGrid.jsx',
+      'src/components/FeatureBlock.jsx',
+      'src/components/Footer.jsx',
+      'src/components/Hero.jsx',
+      'src/components/Navbar.jsx',
+      'src/components/Newsletter.jsx',
+      'src/data/config.js'
+    ],
+    'cinematic-wedding': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/About.jsx',
+      'src/components/FeaturedStories.jsx',
+      'src/components/Footer.jsx',
+      'src/components/Gallery.jsx',
+      'src/components/Hero.jsx',
+      'src/components/Navbar.jsx',
+      'src/components/ScrollReveal.jsx',
+      'src/components/Services.jsx',
+      'src/components/Testimonials.jsx',
+      'src/data/config.js'
+    ],
+    'kairo-template': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/AboutSection.jsx',
+      'src/components/CameraModel.jsx',
+      'src/components/ContactSection.jsx',
+      'src/components/Footer.jsx',
+      'src/components/Hero3DScene.jsx',
+      'src/components/HeroContent.jsx',
+      'src/components/HeroGrid.jsx',
+      'src/components/Navbar.jsx',
+      'src/components/ParticleField.jsx',
+      'src/components/Scene3D.jsx',
+      'src/components/ServicesSection.jsx'
+    ],
+    'isteady-template': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/AboutSection.jsx',
+      'src/components/ContactSection.jsx',
+      'src/components/Footer.jsx',
+      'src/components/HeroContent.jsx',
+      'src/components/Navbar.jsx',
+      'src/components/ParticleField.jsx',
+      'src/components/PortfolioGrid.jsx',
+      'src/components/Scene3D.jsx',
+      'src/components/ServicesSection.jsx',
+      'src/components/Testimonials.jsx'
+    ]
+  };
+
   const handleDownload = async (slug, templateName) => {
     setDownloadingSlug(slug);
 
     const zip = new JSZip();
-    
-    const files = [
-      { name: 'index.html', url: `/templates/photography/${slug}/index.html` },
-      { name: 'style.css', url: `/templates/photography/${slug}/style.css` },
-      { name: 'script.js', url: `/templates/photography/${slug}/script.js` }
-    ];
+    const filesToDownload = TEMPLATE_FILES[slug] || [];
 
     try {
-      // 1. Fetch text files (HTML, CSS, JS)
-      for (const file of files) {
-        const response = await fetch(file.url);
-        if (!response.ok) throw new Error(`Failed to fetch ${file.name}`);
+      // 1. Fetch React project files
+      for (const filePath of filesToDownload) {
+        const fileUrl = `/templates/photography/${slug}/${filePath}`;
+        const response = await fetch(fileUrl);
+        if (!response.ok) throw new Error(`Failed to fetch ${filePath}`);
         const text = await response.text();
-        zip.file(file.name, text);
+        zip.file(filePath, text);
       }
       
       // 2. Fetch and add frames sequence binary files for the photo-template

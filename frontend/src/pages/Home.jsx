@@ -105,27 +105,34 @@ export default function Home({ addToCart, cart }) {
         <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
           <div style={{
             position: 'absolute',
-            top: -40,
-            left: -40,
-            width: 320,
-            height: 320,
-            background: 'radial-gradient(circle, rgba(0, 102, 255, 0.12) 0%, rgba(255,255,255,0) 70%)',
-            zIndex: -1
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '450px',
+            height: '450px',
+            background: 'radial-gradient(circle, rgba(0, 102, 255, 0.15) 0%, rgba(255,255,255,0) 70%)',
+            zIndex: -1,
+            filter: 'blur(20px)'
           }}></div>
           
           <div style={{
             width: '100%',
             maxWidth: '460px',
             background: 'white',
-            borderRadius: '24px',
-            boxShadow: '0 25px 50px -12px rgba(15, 23, 42, 0.12)',
+            borderRadius: '20px',
+            boxShadow: '0 20px 40px rgba(0, 102, 255, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)',
             border: '1px solid #f1f5f9',
             overflow: 'hidden',
-            transform: 'perspective(1000px) rotateY(-8deg) rotateX(4deg)',
             transition: 'var(--transition)'
           }}
-          onMouseEnter={(e) => e.currentTarget.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)'}
-          onMouseLeave={(e) => e.currentTarget.style.transform = 'perspective(1000px) rotateY(-8deg) rotateX(4deg)'}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-6px)';
+            e.currentTarget.style.boxShadow = '0 30px 60px rgba(0, 102, 255, 0.15), 0 4px 10px rgba(0, 0, 0, 0.05)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 102, 255, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)';
+          }}
           >
             <div style={{ background: '#0f172a', padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 6 }}>
               <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#ef4444' }}></span>

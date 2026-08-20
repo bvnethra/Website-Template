@@ -42,3 +42,7 @@ bin/
 **/out/
 **/dist/
 **/node_modules/
+
+# Never commit ShopSphere ecommerce-7 files
+templates/ecommerce/ecommerce-7/
+frontend/public/templates/ecommerce/ecommerce-7/

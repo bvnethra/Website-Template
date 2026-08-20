@@ -49,5 +49,5 @@ frontend/public/templates/ecommerce/ecommerce-7/
 
 # Never commit Restaurant templates
 templates/restaurant-1/
-templates/restaurant/
-frontend/public/templates/restaurant/
+templates/restaurant/ember-and-olive/
+frontend/public/templates/restaurant/ember-and-olive/

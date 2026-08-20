@@ -246,9 +246,22 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1200,
     description: 'An premium, unconventional, and moody restaurant template featuring custom ambient audio lounge music, live fireplace hearth sections, dynamic parallax scroll effects, menu showcases, and reservation builders.',
+    demoUrl: '/templates/restaurant/restaurant-5/index.html'
+  },
+  {
+    id: 20,
+    name: 'Skillora — Online Education & Learning Platform',
+    slug: 'skillora-education',
+    previewImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 10, name: 'Education', slug: 'education' },
+    pagesCount: 8,
+    downloadsCount: 3900,
+    description: 'A modern, gorgeous online learning platform with university programs, certified courses, industry mentorship, and dynamic bento animations.',
     bootstrapVersion: 'React / TypeScript / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/restaurant/restaurant-5/index.html'
+    demoUrl: '/templates/education/education-1/index.html'
   }
 ];
 

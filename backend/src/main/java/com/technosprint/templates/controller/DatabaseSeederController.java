@@ -540,6 +540,30 @@ public class DatabaseSeederController {
             watchSoon.setDownloadsCount(1680);
             watchSoon.setTags(new ArrayList<>(Arrays.asList("Golden Watch", "Antigravity 3D", "Haute Horlogerie", "360 Orbit", "Live Countdown")));
             templateRepository.save(watchSoon);
+            logs.put("template_watch_soon", "Created");
+        }
+
+        // 9. Seed Education templates
+        Category educationCategory = catMap.get("education");
+        if (educationCategory != null) {
+            Template skillora = new Template();
+            skillora.setName("Skillora — Online Education & Learning Platform");
+            skillora.setSlug("skillora-education");
+            skillora.setDescription("Skillora is a modern education platform offering practical courses, university programs, industry mentorship, and career certifications.");
+            skillora.setCategory(educationCategory);
+            skillora.setPrice(0.0);
+            skillora.setTemplateType("FREE");
+            skillora.setBootstrapVersion("React / TypeScript / Tailwind CSS");
+            skillora.setDemoUrl("/templates/education/education-1/index.html");
+            skillora.setDownloadFile("skillora-education.zip");
+            skillora.setPreviewImage("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80");
+            skillora.setVersion("1.0.0");
+            skillora.setStatus("PUBLISHED");
+            skillora.setPagesCount(8);
+            skillora.setDownloadsCount(3900);
+            skillora.setTags(new ArrayList<>(Arrays.asList("E-Learning", "Online Courses", "University Programs", "React TypeScript", "Bento Grid")));
+            templateRepository.save(skillora);
+            logs.put("template_skillora", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

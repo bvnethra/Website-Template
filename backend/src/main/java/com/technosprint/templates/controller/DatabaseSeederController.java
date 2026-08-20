@@ -223,6 +223,26 @@ public class DatabaseSeederController {
             restaurant.setTags(new ArrayList<>(Arrays.asList("Fine Dining", "Artisan Kitchen", "Tailwind CSS", "Motion Animations", "Inline Reservation")));
             templateRepository.save(restaurant);
             logs.put("template_restaurant", "Created");
+
+            // Seed Ember & Olive React template
+            Template emberOliveReact = new Template();
+            emberOliveReact.setName("Ember & Olive — Artisan Seasonal Restaurant");
+            emberOliveReact.setSlug("ember-and-olive-react");
+            emberOliveReact.setDescription("An elegant, premium React-refactored restaurant template featuring signature dish modals, scroll progress cursors, reservation sections, event highlights, and a gorgeous lightbox gallery.");
+            emberOliveReact.setCategory(restaurantCategory);
+            emberOliveReact.setPrice(0.0);
+            emberOliveReact.setTemplateType("FREE");
+            emberOliveReact.setBootstrapVersion("React / Tailwind CSS / Motion");
+            emberOliveReact.setDemoUrl("/templates/restaurant/restaurant-2/index.html");
+            emberOliveReact.setDownloadFile("ember-and-olive-restaurant-react.zip");
+            emberOliveReact.setPreviewImage("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80");
+            emberOliveReact.setVersion("1.0.0");
+            emberOliveReact.setStatus("PUBLISHED");
+            emberOliveReact.setPagesCount(6);
+            emberOliveReact.setDownloadsCount(9500);
+            emberOliveReact.setTags(new ArrayList<>(Arrays.asList("Artisan Dining", "Signature Dish Modals", "Tailwind CSS", "Motion Animations", "Lightbox Gallery")));
+            templateRepository.save(emberOliveReact);
+            logs.put("template_ember_olive_react", "Created");
         }
 
         // 7. Seed Ecommerce templates

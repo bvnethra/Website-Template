@@ -1,15 +1,19 @@
 /* ==========================================================================
-   StudyPro Template Scoped CSS Stylesheet (education-1)
+   StudyPro Template Scoped CSS Stylesheet (education-1) - Premium Theme
    ========================================================================== */
 
 :root {
-  --study-green: #00c853;
-  --study-navy: #182238;
-  --study-light-gray: #f8fafc;
-  --study-text-dark: #334155;
+  --study-green: #10b981;          /* Emerald Green */
+  --study-green-hover: #059669;    /* Deeper Emerald */
+  --study-navy: #0f172a;           /* Dark Slate Navy */
+  --study-navy-light: #1e293b;     /* Medium Slate */
+  --study-light-gray: #f8fafc;     /* Soft Off-White */
+  --study-text-dark: #1e293b;
   --study-text-light: #64748b;
   --study-white: #ffffff;
-  --study-font: 'Plus Jakarta Sans', sans-serif;
+  --study-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --study-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+  --study-shadow-hover: 0 20px 40px -15px rgba(16, 185, 129, 0.15);
 }
 
 .studypro-root {
@@ -31,9 +35,10 @@
 .study-top-bar {
   background-color: var(--study-green);
   color: var(--study-white);
-  padding: 10px 0;
+  padding: 12px 0;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .study-top-container {
@@ -42,7 +47,7 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 .study-top-left {
@@ -60,18 +65,21 @@
 .study-top-link {
   color: var(--study-white);
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .study-top-link:hover {
-  opacity: 0.85;
+  color: var(--study-navy);
 }
 
 /* 2. Brand Row Header */
 .study-brand-row {
   background-color: var(--study-white);
-  padding: 20px 0;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 24px 0;
+  border-bottom: 1px solid #f1f5f9;
 }
 
 .study-brand-container {
@@ -80,17 +88,17 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 .study-info-block {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .study-info-icon {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--study-green);
 }
 
@@ -99,13 +107,14 @@
   font-size: 0.75rem;
   color: var(--study-text-light);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
 }
 
 .study-info-text p {
-  margin: 2px 0 0 0;
+  margin: 4px 0 0 0;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--study-navy);
 }
 
@@ -113,6 +122,11 @@
 .study-logo-block {
   text-align: center;
   text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.study-logo-block:hover {
+  transform: scale(1.02);
 }
 
 .study-logo-title-row {
@@ -124,10 +138,10 @@
 
 .study-logo-title-row h2 {
   margin: 0;
-  font-size: 2.2rem;
-  font-weight: 800;
+  font-size: 2.4rem;
+  font-weight: 900;
   color: var(--study-navy);
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
 }
 
 .study-logo-title-row h2 span {
@@ -135,17 +149,18 @@
 }
 
 .study-logo-sub {
-  margin: 2px 0 0 0;
-  font-size: 0.7rem;
+  margin: 4px 0 0 0;
+  font-size: 0.75rem;
   color: var(--study-text-light);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
+  letter-spacing: 2.5px;
+  font-weight: 700;
 }
 
 /* 3. Navigation Header Bar */
 .study-nav-bar {
   background-color: var(--study-navy);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .study-nav-container {
@@ -166,10 +181,10 @@
 
 .study-nav-item a {
   display: block;
-  padding: 22px 28px;
+  padding: 24px 30px;
   color: var(--study-white);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
   transition: background-color 0.2s, color 0.2s;
 }
@@ -183,14 +198,14 @@
 .study-nav-right {
   display: flex;
   align-items: center;
-  padding-right: 20px;
+  padding-right: 24px;
 }
 
 .study-search-trigger {
   background: none;
   border: none;
   color: var(--study-white);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   cursor: pointer;
   padding: 10px;
   transition: color 0.2s;
@@ -206,7 +221,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 140px 0 200px 0;
+  padding: 160px 0 240px 0;
   color: var(--study-white);
 }
 
@@ -217,7 +232,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(24,34,56,0.85) 0%, rgba(24,34,56,0.65) 100%);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.65) 100%);
   z-index: 1;
 }
 
@@ -226,18 +241,19 @@
   z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 .study-hero-content {
-  max-width: 650px;
+  max-width: 700px;
 }
 
 .study-hero-content h1 {
-  font-size: 3.8rem;
-  font-weight: 800;
-  line-height: 1.15;
-  margin: 0 0 20px 0;
+  font-size: 4.2rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 24px 0;
+  letter-spacing: -1px;
 }
 
 .study-hero-content h1 span {
@@ -245,10 +261,10 @@
 }
 
 .study-hero-content p {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0 0 35px 0;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: rgba(241, 245, 249, 0.95);
+  margin: 0 0 40px 0;
 }
 
 .study-hero-actions {
@@ -257,13 +273,15 @@
 }
 
 .study-btn {
-  display: inline-block;
-  padding: 14px 32px;
-  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 36px;
+  border-radius: 6px;
   font-weight: 700;
   text-decoration: none;
   font-size: 0.95rem;
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   border: none;
 }
@@ -271,28 +289,32 @@
 .study-btn-green {
   background-color: var(--study-green);
   color: var(--study-white);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
 }
 
 .study-btn-green:hover {
-  background-color: #00a844;
+  background-color: var(--study-green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
 }
 
 .study-btn-outline {
-  background-color: rgba(24,34,56,0.4);
+  background-color: rgba(255, 255, 255, 0.1);
   color: var(--study-white);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
 }
 
 .study-btn-outline:hover {
   border-color: var(--study-white);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 /* 5. Floating Stacked Cards */
 .study-cards-section {
   position: relative;
-  margin-top: -120px;
-  z-index: 5;
+  margin-top: -140px;
+  z-index: 10;
   padding-bottom: 80px;
 }
 
@@ -302,54 +324,56 @@
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 .study-info-card {
-  border-radius: 12px;
-  padding: 40px 30px;
+  border-radius: 16px;
+  padding: 45px 35px;
   color: var(--study-white);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  box-shadow: var(--study-shadow);
 }
 
 .study-info-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(24, 34, 56, 0.15);
+  transform: translateY(-10px);
+  box-shadow: var(--study-shadow-hover);
 }
 
 .study-card-navy {
-  background-color: var(--study-navy);
+  background-color: var(--study-navy-light);
   border-bottom: 6px solid var(--study-green);
 }
 
 .study-card-icon {
-  width: 70px;
-  height: 70px;
+  width: 76px;
+  height: 76px;
   background-color: var(--study-green);
   color: var(--study-white);
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  margin-bottom: 25px;
+  font-size: 2.2rem;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
 }
 
 .study-info-card h3 {
-  margin: 0 0 15px 0;
-  font-size: 1.35rem;
-  font-weight: 700;
+  margin: 0 0 16px 0;
+  font-size: 1.4rem;
+  font-weight: 800;
 }
 
 .study-info-card p {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: rgba(255,255,255,0.8);
+  color: rgba(241, 245, 249, 0.85);
 }
 
 /* Image Card 2 (Promo) */
@@ -357,13 +381,13 @@
   position: relative;
   background-size: cover;
   background-position: center;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 30px;
+  padding: 45px 35px;
   text-align: center;
   color: var(--study-white);
 }
@@ -375,7 +399,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 200, 83, 0.85); /* Green Overlay */
+  background: rgba(16, 185, 129, 0.9); /* Emerald Overlay */
   z-index: 1;
 }
 
@@ -386,58 +410,72 @@
 }
 
 .study-promo-content span {
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .study-promo-content h2 {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   font-weight: 900;
-  margin: 10px 0;
+  margin: 12px 0;
+  letter-spacing: -1px;
 }
 
 .study-promo-input {
   width: 100%;
-  padding: 12px 20px;
+  padding: 14px 22px;
   border-radius: 99px;
   border: none;
   outline: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+  color: var(--study-navy);
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .study-promo-btn {
   width: 100%;
-  padding: 12px 20px;
+  padding: 14px 22px;
   border-radius: 99px;
   border: none;
   background-color: var(--study-navy);
   color: var(--study-white);
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
 }
 
 .study-promo-btn:hover {
-  opacity: 0.9;
+  background-color: #020617;
+  transform: translateY(-1px);
 }
 
 /* Responsive Rules */
 @media (max-width: 992px) {
   .study-cards-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 24px;
   }
   .study-cards-section {
-    margin-top: -80px;
+    margin-top: -100px;
   }
   .study-hero-content h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
   }
   .study-brand-container {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+  }
+  .study-nav-container {
+    padding: 0 20px;
+  }
+  .study-nav-item a {
+    padding: 18px 20px;
   }
 }

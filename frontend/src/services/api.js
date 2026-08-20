@@ -220,9 +220,22 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1840,
     description: 'An immersive and cinematic restaurant concept showcase template. Features custom dynamic cursors, interactive floating dish hover cards, smooth scroll reveals, custom reservation modals, and structured storytelling panels.',
-    bootstrapVersion: 'React / Tailwind CSS / Motion',
-    version: '1.0.0',
     demoUrl: '/templates/restaurant/restaurant-3/index.html'
+  },
+  {
+    id: 18,
+    name: 'Ember House Noire — Contemporary Garden Restaurant',
+    slug: 'ember-house-noire',
+    previewImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 1,
+    downloadsCount: 1450,
+    description: 'A contemporary garden restaurant template styled in dark editorial aesthetics. Features botanical garden themes, interactive curatorial grids, testimonial slide bars, custom cursors, and reservation capture forms.',
+    bootstrapVersion: 'React / CSS Modules / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/restaurant/restaurant-4/index.html'
   }
 ];
 

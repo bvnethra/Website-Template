@@ -283,6 +283,26 @@ public class DatabaseSeederController {
             emberHouseNoire.setTags(new ArrayList<>(Arrays.asList("Garden Restaurant", "Dark Editorial", "React Components", "Curatorial Grid", "Custom Cursor")));
             templateRepository.save(emberHouseNoire);
             logs.put("template_ember_house_noire", "Created");
+
+            // Seed NOIRE React template
+            Template noire = new Template();
+            noire.setName("NOIRE — Nocturnal Garden Bar & Grill");
+            noire.setSlug("noire-restaurant");
+            noire.setDescription("An premium, unconventional, and moody restaurant template featuring custom ambient audio lounge music, live fireplace hearth sections, dynamic parallax scroll effects, menu showcases, and reservation builders.");
+            noire.setCategory(restaurantCategory);
+            noire.setPrice(0.0);
+            noire.setTemplateType("FREE");
+            noire.setBootstrapVersion("React / TypeScript / Tailwind CSS");
+            noire.setDemoUrl("/templates/restaurant/restaurant-5/index.html");
+            noire.setDownloadFile("noire-restaurant.zip");
+            noire.setPreviewImage("https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80");
+            noire.setVersion("1.0.0");
+            noire.setStatus("PUBLISHED");
+            noire.setPagesCount(1);
+            noire.setDownloadsCount(1200);
+            noire.setTags(new ArrayList<>(Arrays.asList("Nocturnal Bar", "Ambient Audio", "React TypeScript", "Tailwind CSS v4", "Live Fire Hearth")));
+            templateRepository.save(noire);
+            logs.put("template_noire", "Created");
         }
 
         // 7. Seed Ecommerce templates

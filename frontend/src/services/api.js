@@ -233,9 +233,22 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1450,
     description: 'A contemporary garden restaurant template styled in dark editorial aesthetics. Features botanical garden themes, interactive curatorial grids, testimonial slide bars, custom cursors, and reservation capture forms.',
-    bootstrapVersion: 'React / CSS Modules / Vite',
-    version: '1.0.0',
     demoUrl: '/templates/restaurant/restaurant-4/index.html'
+  },
+  {
+    id: 19,
+    name: 'NOIRE — Nocturnal Garden Bar & Grill',
+    slug: 'noire-restaurant',
+    previewImage: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 1,
+    downloadsCount: 1200,
+    description: 'An premium, unconventional, and moody restaurant template featuring custom ambient audio lounge music, live fireplace hearth sections, dynamic parallax scroll effects, menu showcases, and reservation builders.',
+    bootstrapVersion: 'React / TypeScript / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/restaurant/restaurant-5/index.html'
   }
 ];
 

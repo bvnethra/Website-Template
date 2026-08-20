@@ -194,9 +194,22 @@ const MOCK_TEMPLATES = [
     pagesCount: 8,
     downloadsCount: 2950,
     description: 'An elegant, full-featured artisan restaurant and gathering venue template. Features fine dining menu displays, inline reservation requests, slideshow lookbooks, team/chef highlights, and clean typography.',
+    demoUrl: '/templates/restaurant/restaurant-1/index.html'
+  },
+  {
+    id: 16,
+    name: 'Ember & Olive — Artisan Seasonal Restaurant',
+    slug: 'ember-and-olive-react',
+    previewImage: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 6,
+    downloadsCount: 9500,
+    description: 'An elegant, premium React-refactored restaurant template featuring signature dish modals, scroll progress cursors, reservation sections, event highlights, and a gorgeous lightbox gallery.',
     bootstrapVersion: 'React / Tailwind CSS / Motion',
     version: '1.0.0',
-    demoUrl: '/templates/restaurant/restaurant-1/index.html'
+    demoUrl: '/templates/restaurant/restaurant-2/index.html'
   }
 ];
 

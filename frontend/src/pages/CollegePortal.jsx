@@ -197,10 +197,9 @@ export default function CollegePortal() {
         </div>
       </nav>
 
-      {/* 4. Library Slider Hero */}
       <section 
         className="press-hero-section"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1920&q=80')` }}
+        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80')` }}
       >
         <div className="press-hero-container">
           <div className="press-hero-content">

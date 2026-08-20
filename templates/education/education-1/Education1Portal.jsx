@@ -238,6 +238,30 @@ export default function Education1Portal() {
                 <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.6 }}>Deep-dive into cellular pathways, disease mechanisms, and structural bioinformatics.</p>
               </div>
             </div>
+            <div style={{ backgroundColor: '#fff', borderRadius: 12, border: '1px solid #e2e8f0', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80" alt="Robotics" style={{ width: '100%', height: 200, objectFit: 'cover' }} />
+              <div style={{ padding: 25 }}>
+                <span style={{ color: '#00c853', fontWeight: 700, fontSize: '0.8rem' }}>ENGINEERING</span>
+                <h3 style={{ fontSize: '1.2rem', color: '#182238', margin: '10px 0' }}>Robotics & Autonomous Control Systems</h3>
+                <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.6 }}>Study sensor telemetry, kinematic path calculations, mechanical actuators, and feedback loops.</p>
+              </div>
+            </div>
+            <div style={{ backgroundColor: '#fff', borderRadius: 12, border: '1px solid #e2e8f0', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="Relations" style={{ width: '100%', height: 200, objectFit: 'cover' }} />
+              <div style={{ padding: 25 }}>
+                <span style={{ color: '#00c853', fontWeight: 700, fontSize: '0.8rem' }}>HUMANITIES</span>
+                <h3 style={{ fontSize: '1.2rem', color: '#182238', margin: '10px 0' }}>International Relations & Public Policy</h3>
+                <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.6 }}>Explore geopolitical alliances, global trade negotiations, treaty structures, and legislation.</p>
+              </div>
+            </div>
+            <div style={{ backgroundColor: '#fff', borderRadius: 12, border: '1px solid #e2e8f0', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=600&q=80" alt="Design" style={{ width: '100%', height: 200, objectFit: 'cover' }} />
+              <div style={{ padding: 25 }}>
+                <span style={{ color: '#00c853', fontWeight: 700, fontSize: '0.8rem' }}>ARTS & DESIGN</span>
+                <h3 style={{ fontSize: '1.2rem', color: '#182238', margin: '10px 0' }}>Digital Media & Interactive UI/UX Design</h3>
+                <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.6 }}>Master screen-based wireframing, high-fidelity layouts, micro-animations, and visual branding.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

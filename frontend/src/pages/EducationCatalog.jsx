@@ -18,27 +18,6 @@ export default function EducationCatalog() {
 
   const TEMPLATES = [
     {
-      slug: 'academica',
-      name: 'Academica — Online Course Hub',
-      previewImage: onlineLearningImg,
-      tags: ['E-Learning', 'Lavender Accents', 'Interactive Grid', 'Search Filter'],
-      description: 'A clean, modern online course directory styled with vibrant lavender accents. Features a clean search box, dynamic category filtering, interactive course highlights, and card zoom animations.'
-    },
-    {
-      slug: 'learner',
-      name: 'Learner — Online Courses & Education',
-      previewImage: mentorEducationImg,
-      tags: ['Teal Theme', 'Minimalist', 'Student Showcase', 'Responsive'],
-      description: 'A stunning e-learning portal designed with fresh teal colors and clean grids. Includes course tags, clean typography, hover highlights, and fluid navigation.'
-    },
-    {
-      slug: 'myschool',
-      name: 'MySchool — Primary School Portal',
-      previewImage: myschoolImg,
-      tags: ['School Site', 'Warm Colors', 'Inquiry Form', 'Interactive Modal'],
-      description: 'A welcoming primary school homepage template utilizing a friendly warm yellow/amber design. Built with interactive curriculum curriculum cards, a parent inquiry form with instant validation, and clean layouts.'
-    },
-    {
       slug: 'college',
       name: 'College — Higher Education Hub',
       previewImage: collegeTemplateImg,

@@ -246,6 +246,86 @@ public class DatabaseSeederController {
             ecommerce.setTags(new ArrayList<>(Arrays.asList("Retail Shop", "Product Catalog", "Cart Logic", "Inventory Dashboard")));
             templateRepository.save(ecommerce);
             logs.put("template_ecommerce", "Created");
+
+            // Seed Soft Glow template
+            Template softGlow = new Template();
+            softGlow.setName("Soft Glow — Clean Beauty & Skin-First Hydration");
+            softGlow.setSlug("soft-glow");
+            softGlow.setDescription("A high-end Next.js beauty and skincare storefront featuring dewy-gloss styles, peptide bundle builders, marquee notification bars, interactive review boards, and smooth scroll animations.");
+            softGlow.setCategory(ecommerceCategory);
+            softGlow.setPrice(0.0);
+            softGlow.setTemplateType("FREE");
+            softGlow.setBootstrapVersion("Next.js / React / Tailwind CSS");
+            softGlow.setDemoUrl("/templates/ecommerce/ecommerce-1/index.html");
+            softGlow.setDownloadFile("soft-glow-beauty.zip");
+            softGlow.setPreviewImage("https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80");
+            softGlow.setVersion("1.0.0");
+            softGlow.setStatus("PUBLISHED");
+            softGlow.setPagesCount(3);
+            softGlow.setDownloadsCount(2450);
+            softGlow.setTags(new ArrayList<>(Arrays.asList("Skincare", "Beauty Shop", "Next.js Store", "Tailwind CSS")));
+            templateRepository.save(softGlow);
+            logs.put("template_softglow", "Created");
+
+            // Seed AURA template
+            Template aura = new Template();
+            aura.setName("AURA — Premium Acoustic & Luxury Archive");
+            aura.setSlug("aura-commerce");
+            aura.setDescription("An editorial, dark-themed e-commerce experience dedicated to premium acoustics, luxury timepieces, and structural apparel. Built with interactive cart drawers, wishlist triggers, and gold gradient finishes.");
+            aura.setCategory(ecommerceCategory);
+            aura.setPrice(0.0);
+            aura.setTemplateType("FREE");
+            aura.setBootstrapVersion("React / React Router / CSS Modules");
+            aura.setDemoUrl("/templates/ecommerce/ecommerce-6/index.html");
+            aura.setDownloadFile("aura-acoustic.zip");
+            aura.setPreviewImage("https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80");
+            aura.setVersion("1.0.0");
+            aura.setStatus("PUBLISHED");
+            aura.setPagesCount(8);
+            aura.setDownloadsCount(3100);
+            aura.setTags(new ArrayList<>(Arrays.asList("Luxury Archive", "Premium Acoustics", "React Store", "Wishlist System")));
+            templateRepository.save(aura);
+            logs.put("template_aura", "Created");
+
+            // Seed AURELIA template
+            Template aurelia = new Template();
+            aurelia.setName("AURELIA — Luxury Jewelry & Emerald Archive");
+            aurelia.setSlug("aurelia-commerce");
+            aurelia.setDescription("A premium, dark emerald & gold themed e-commerce template for high-end luxury jewelry, diamonds, and bridal collections. Styled with custom drawers, search overlay, and elegant product filters.");
+            aurelia.setCategory(ecommerceCategory);
+            aurelia.setPrice(0.0);
+            aurelia.setTemplateType("FREE");
+            aurelia.setBootstrapVersion("React / React Router / Vanilla CSS");
+            aurelia.setDemoUrl("/templates/ecommerce/ecommerce-2/index.html");
+            aurelia.setDownloadFile("aurelia-jewelry.zip");
+            aurelia.setPreviewImage("https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80");
+            aurelia.setVersion("1.0.0");
+            aurelia.setStatus("PUBLISHED");
+            aurelia.setPagesCount(9);
+            aurelia.setDownloadsCount(1420);
+            aurelia.setTags(new ArrayList<>(Arrays.asList("Jewelry Store", "Emerald Collection", "React Store", "Luxury Premium")));
+            templateRepository.save(aurelia);
+            logs.put("template_aurelia", "Created");
+
+            // Seed ShopSphere template
+            Template shopsphere = new Template();
+            shopsphere.setName("ShopSphere — Modern Fashion & Lifestyle Store");
+            shopsphere.setSlug("shopsphere-commerce");
+            shopsphere.setDescription("A sleek, modern e-commerce storefront for fashion and lifestyle brands. Features sidebar navigation, interactive category listings, search filter overlay, and a clean minimalist design.");
+            shopsphere.setCategory(ecommerceCategory);
+            shopsphere.setPrice(0.0);
+            shopsphere.setTemplateType("FREE");
+            shopsphere.setBootstrapVersion("React / Java Spring Boot");
+            shopsphere.setDemoUrl("/templates/ecommerce/ecommerce-7/index.html");
+            shopsphere.setDownloadFile("shopsphere-fashion.zip");
+            shopsphere.setPreviewImage("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80");
+            shopsphere.setVersion("1.0.0");
+            shopsphere.setStatus("PUBLISHED");
+            shopsphere.setPagesCount(5);
+            shopsphere.setDownloadsCount(2850);
+            shopsphere.setTags(new ArrayList<>(Arrays.asList("Fashion Store", "Minimalist Layout", "HTML5 CSS3", "Interactive sidebar")));
+            templateRepository.save(shopsphere);
+            logs.put("template_shopsphere", "Created");
         }
 
         // 8. Seed Coming Soon templates

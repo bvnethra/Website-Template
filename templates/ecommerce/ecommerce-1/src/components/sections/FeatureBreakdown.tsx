@@ -15,7 +15,7 @@ export const FeatureBreakdown: React.FC = () => {
       {/* Textured Silk Fluid Background Image Overlay */}
       <div className="absolute inset-0 z-0 opacity-20 mix-blend-overlay">
         <Image
-          src="/images/silk-texture.png"
+          src="/templates/ecommerce/ecommerce-1/images/silk-texture.png"
           alt="Silk Cream Fluid Texture"
           fill
           className="object-cover"
@@ -164,7 +164,7 @@ export const FeatureBreakdown: React.FC = () => {
                 {/* Background Texture Card Frame */}
                 <div className="absolute inset-x-8 inset-y-4 rounded-2xl bg-stone-900/80 border border-stone-800 overflow-hidden shadow-inner opacity-70">
                   <Image
-                    src="/images/raspberry-macro.png"
+                    src="/templates/ecommerce/ecommerce-1/images/raspberry-macro.png"
                     alt="Botanical Lip Lipid Texture Macro Photography"
                     fill
                     className="object-cover opacity-30 mix-blend-luminosity"
@@ -180,7 +180,7 @@ export const FeatureBreakdown: React.FC = () => {
                   className="relative h-[320px] sm:h-[380px] w-full max-w-lg z-10 flex items-center justify-center"
                 >
                   <Image
-                    src="/images/benefits-product.png"
+                    src="/templates/ecommerce/ecommerce-1/images/benefits-product.png"
                     alt="Overnight Lip Mask Benefits Studio Product Photography"
                     fill
                     className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)]"

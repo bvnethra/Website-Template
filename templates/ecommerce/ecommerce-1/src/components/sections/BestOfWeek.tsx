@@ -105,7 +105,7 @@ export const BestOfWeek: React.FC = () => {
               className="relative h-80 sm:h-96 w-full"
             >
               <Image
-                src="/images/weekly-highlight-product.png"
+                src="/templates/ecommerce/ecommerce-1/images/weekly-highlight-product.png"
                 alt="Rose Lip Oil Product Photography"
                 fill
                 className="object-contain drop-shadow-xl transition-transform duration-700 hover:scale-105"

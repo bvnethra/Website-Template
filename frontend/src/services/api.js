@@ -182,9 +182,22 @@ const MOCK_TEMPLATES = [
     pagesCount: 14,
     downloadsCount: 5120,
     description: 'A cinematic and immersive e-commerce storefront for lifestyle and fashion concept brands. Features rich animations, cinematic video hero headers, product quick view modals, interactive sorting, and detailed item configuration options.',
-    bootstrapVersion: 'React / Framer Motion / TypeScript',
-    version: '1.0.0',
     demoUrl: '/templates/ecommerce/ecommerce-4/index.html'
+  },
+  {
+    id: 14,
+    name: 'AUREL — Minimalist Fashion & Lifestyle Store',
+    slug: 'aurel-store',
+    previewImage: 'https://images.unsplash.com/photo-1598554747436-c9293d6a588f?q=80&w=800&auto=format&fit=crop',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 10,
+    downloadsCount: 3820,
+    description: 'A minimalist, structured e-commerce storefront for organic fashion and lifestyle labels. Features smooth scroll reveals, custom cursors, floating filter panels, and color/size cart controls.',
+    bootstrapVersion: 'React / TypeScript / Vanilla CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-5/index.html'
   }
 ];
 

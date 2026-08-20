@@ -19,6 +19,11 @@ import CinematicWedding from './pages/CinematicWedding';
 import KairoPhotography from './pages/KairoPhotography';
 import ISteadyGimbal from './pages/ISteadyGimbal';
 import DevicePreviewWrapper from './components/DevicePreviewWrapper';
+import ComingSoonOrange16 from './pages/coming-soon/ComingSoonOrange16';
+import ComingSoonNovaX1 from './pages/coming-soon/ComingSoonNovaX1';
+import ComingSoonAuraSky from './pages/coming-soon/ComingSoonAuraSky';
+import ComingSoonBotanicalStudies from './pages/coming-soon/ComingSoonBotanicalStudies';
+import ComingSoonAureliaChronos from './pages/coming-soon/ComingSoonAureliaChronos';
 
 function Header({ cartCount, user, onLogout }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -50,8 +55,8 @@ function Header({ cartCount, user, onLogout }) {
       boxShadow: '0 2px 10px rgba(0, 0, 0, 0.02)'
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 40 }}>
-        <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/logo.png" alt="TechnoSprint Templates Logo" style={{ height: '32px' }} />
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <img src="/logo.jpg" alt="TechnoSprint Templates Logo" style={{ height: '35px', borderRadius: '4px' }} />
         </Link>
 
         {/* Global Search Bar */}
@@ -106,62 +111,52 @@ function Header({ cartCount, user, onLogout }) {
               <Link to="/templates?category=restaurant" className="dropdown-link">› Restaurant</Link>
               <Link to="/templates?category=ecommerce" className="dropdown-link">› Ecommerce</Link>
             </div>
-            <div className="dropdown-column">
-              <Link to="/templates?category=buisness" className="dropdown-link">› Buisness</Link>
-              <Link to="/templates?category=onepage" className="dropdown-link">› onepage</Link>
-              <Link to="/templates?category=landing-page" className="dropdown-link">› landing page</Link>
-              <Link to="/templates?category=cooperate" className="dropdown-link">› cooperate</Link>
-              <Link to="/templates?category=agency" className="dropdown-link">› agency</Link>
-              <Link to="/templates?category=portfolio" className="dropdown-link">› portfolio</Link>
-            </div>
           </div>
         </div>
-        <Link to="/templates" style={{
+        <Link to="/builder" style={{
           fontSize: '0.9rem',
           fontWeight: 600,
-          color: 'var(--text-muted)',
+          color: location.pathname === '/builder' ? 'var(--primary-color)' : 'var(--text-muted)',
+          borderBottom: location.pathname === '/builder' ? '2px solid var(--primary-color)' : 'none',
           padding: '6px 0'
         }}>
-          Premium
+          Builder
         </Link>
-        <Link to="/templates" style={{
+        <Link to="/dashboard" style={{
           fontSize: '0.9rem',
           fontWeight: 600,
-          color: 'var(--text-muted)',
+          color: location.pathname === '/dashboard' ? 'var(--primary-color)' : 'var(--text-muted)',
+          borderBottom: location.pathname === '/dashboard' ? '2px solid var(--primary-color)' : 'none',
           padding: '6px 0'
         }}>
-          Support
-        </Link>
-        <Link to="/templates" style={{
-          fontSize: '0.9rem',
-          fontWeight: 600,
-          color: 'var(--text-muted)',
-          padding: '6px 0'
-        }}>
-          Contact
+          Dashboard
         </Link>
       </nav>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-        {/* Wishlist Heart Icon */}
-        <Link to="/dashboard" style={{ display: 'flex', alignItems: 'center', color: '#64748b', transition: 'var(--transition)' }} title="Wishlist">
-          <Heart size={20} />
+        <Link to="/dashboard" style={{ position: 'relative', display: 'flex', alignItems: 'center', color: 'var(--text-main)' }}>
+          <ShoppingCart size={22} />
+          {cartCount > 0 && (
+            <span style={{
+              position: 'absolute',
+              top: -8,
+              right: -10,
+              background: 'var(--primary-color)',
+              color: '#fff',
+              fontSize: '0.75rem',
+              fontWeight: 700,
+              width: 18,
+              height: 18,
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: '2px solid #fff'
+            }}>
+              {cartCount}
+            </span>
+          )}
         </Link>
-
-        {/* Notification Bell Icon */}
-        <div style={{ position: 'relative', display: 'flex', alignItems: 'center', color: '#64748b', cursor: 'pointer', transition: 'var(--transition)' }} title="Notifications">
-          <Bell size={20} />
-          <span style={{
-            position: 'absolute',
-            top: -2,
-            right: -2,
-            background: '#ef4444',
-            width: 8,
-            height: 8,
-            borderRadius: '50%',
-            border: '1.5px solid #fff'
-          }}></span>
-        </div>
 
         {user ? (
           <div style={{ position: 'relative' }}>
@@ -403,7 +398,9 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
     location.pathname === '/templates/photography/fineart-template/index.html' ||
     location.pathname.startsWith('/templates/photography/cinematic-wedding') ||
     location.pathname.startsWith('/templates/photography/kairo-template') ||
-    location.pathname.startsWith('/templates/photography/isteady-template');
+    location.pathname.startsWith('/templates/photography/isteady-template') ||
+    location.pathname.startsWith('/templates/preview/cm-') ||
+    location.pathname.startsWith('/coming-soon/cm-');
 
   // Full-screen template routes
   if (isTemplateRoute) {
@@ -425,7 +422,17 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
         <Route path="/templates/photography/kairo-template/index.html" element={<DevicePreviewWrapper><KairoPhotography /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/isteady-template" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/isteady-template/index.html" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
-
+        {/* Coming Soon Templates CM-1 to CM-5 */}
+        <Route path="/templates/preview/cm-1" element={<ComingSoonOrange16 />} />
+        <Route path="/coming-soon/cm-1" element={<ComingSoonOrange16 />} />
+        <Route path="/templates/preview/cm-2" element={<ComingSoonNovaX1 />} />
+        <Route path="/coming-soon/cm-2" element={<ComingSoonNovaX1 />} />
+        <Route path="/templates/preview/cm-3" element={<ComingSoonAuraSky />} />
+        <Route path="/coming-soon/cm-3" element={<ComingSoonAuraSky />} />
+        <Route path="/templates/preview/cm-4" element={<ComingSoonBotanicalStudies />} />
+        <Route path="/coming-soon/cm-4" element={<ComingSoonBotanicalStudies />} />
+        <Route path="/templates/preview/cm-5" element={<ComingSoonAureliaChronos />} />
+        <Route path="/coming-soon/cm-5" element={<ComingSoonAureliaChronos />} />
       </Routes>
     );
   }

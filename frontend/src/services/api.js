@@ -124,6 +124,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1200,
     description: 'A new experience of performance, photography and design is about to arrive. Explore the revolutionary Orange 16 with White and Black Titanium craft, O18 Pro chip, slow-motion video, and exploded engineering architecture.',
+    demoUrl: '/templates/comming-soon/coming-soon-template/index.html',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0'
   },
@@ -132,6 +133,7 @@ const MOCK_TEMPLATES = [
     name: 'NOVA X1  -  Cinematic Coming Soon Template',
     slug: 'nova-x1-template',
     previewImage: '/templates/comming-soon/cm-2/car-cover.jpg',
+    demoUrl: '/templates/comming-soon/cm-2/index.html',
     templateType: 'FREE',
     price: 0,
     category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
@@ -146,6 +148,7 @@ const MOCK_TEMPLATES = [
     name: 'AURA SKY RESIDENCES  -  Premium Cinematic Building Launch Template',
     slug: 'aura-sky-template',
     previewImage: '/templates/comming-soon/cm-3/buliding-jpg/ezgif-frame-001.jpg',
+    demoUrl: '/templates/comming-soon/cm-3/index.html',
     templateType: 'FREE',
     price: 0,
     category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
@@ -153,6 +156,36 @@ const MOCK_TEMPLATES = [
     downloadsCount: 950,
     description: 'Create a modern, premium, cinematic coming soon website for luxury real-estate projects. Features continuous slow-motion building rendering background loops, Lenis smooth scrolling, architectural specification grids, and modular registration capture forms.',
     bootstrapVersion: 'HTML5 / Tailwind CSS',
+    version: '1.0'
+  },
+  {
+    id: 10,
+    name: 'BOTANICAL STUDIES  -  Heritage Folio Book Launch Template',
+    slug: 'botanical-studies-template',
+    previewImage: '/templates/comming-soon/cm-4/botanical-cover.jpg',
+    demoUrl: '/templates/comming-soon/cm-4/index.html',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    pagesCount: 1,
+    downloadsCount: 1420,
+    description: 'An exquisite collector’s edition book coming soon website template. Features interactive 9-frame video background engine, live millisecond-precision countdown timer, Linnean author showcase, antiquarian Web Audio synthesizer, botanical plate inspector modal, and responsive laptop/tab/phone preview.',
+    bootstrapVersion: 'HTML5 / Tailwind / Vanilla JS',
+    version: '1.0'
+  },
+  {
+    id: 11,
+    name: 'AURELIA CHRONOS  -  18K Luxury Golden Watch Launch Template',
+    slug: 'aurelia-chronos-template',
+    previewImage: '/templates/comming-soon/cm-5/watch-hero.jpg',
+    demoUrl: '/templates/comming-soon/cm-5/index.html',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    pagesCount: 1,
+    downloadsCount: 1680,
+    description: 'A luxurious 18k solid gold watch launch template. Features weightless floating antigravity 3D physics, interactive 360-degree studio orbit rotation, fluted crown and sunburst guilloché macro lens inspectors, 28,800 vph mechanical escapement audio synthesizer, and VIP allocation reservation capture.',
+    bootstrapVersion: 'HTML5 / Tailwind CSS / Vanilla JS',
     version: '1.0'
   }
 ];

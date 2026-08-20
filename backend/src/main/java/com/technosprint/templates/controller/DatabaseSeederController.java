@@ -301,6 +301,40 @@ public class DatabaseSeederController {
             auraSoon.setDownloadsCount(950);
             auraSoon.setTags(new ArrayList<>(Arrays.asList("Real Estate", "Luxury Skyline", "Lenis Smooth Scroll", "Audio Engine")));
             templateRepository.save(auraSoon);
+
+            Template botanicalSoon = new Template();
+            botanicalSoon.setName("BOTANICAL STUDIES  -  Heritage Folio Book Launch Template");
+            botanicalSoon.setSlug("botanical-studies-template");
+            botanicalSoon.setDescription("An exquisite collector’s edition book coming soon website template. Features interactive 9-frame video background engine, live millisecond-precision countdown timer, Linnean author showcase, antiquarian Web Audio synthesizer, botanical plate inspector modal, and responsive laptop/tab/phone preview.");
+            botanicalSoon.setCategory(commingSoonCategory);
+            botanicalSoon.setPrice(0.0);
+            botanicalSoon.setTemplateType("FREE");
+            botanicalSoon.setBootstrapVersion("HTML5 / Tailwind / Vanilla JS");
+            botanicalSoon.setDemoUrl("/templates/comming-soon/cm-4/index.html");
+            botanicalSoon.setPreviewImage("/templates/comming-soon/cm-4/botanical-cover.jpg");
+            botanicalSoon.setVersion("1.0");
+            botanicalSoon.setStatus("PUBLISHED");
+            botanicalSoon.setPagesCount(1);
+            botanicalSoon.setDownloadsCount(1420);
+            botanicalSoon.setTags(new ArrayList<>(Arrays.asList("Book Launch", "Heritage Folio", "Live Countdown", "Video Background", "Audio Synthesizer")));
+            templateRepository.save(botanicalSoon);
+
+            Template watchSoon = new Template();
+            watchSoon.setName("AURELIA CHRONOS  -  18K Luxury Golden Watch Launch Template");
+            watchSoon.setSlug("aurelia-chronos-template");
+            watchSoon.setDescription("A luxurious 18k solid gold watch launch template. Features weightless floating antigravity 3D physics, interactive 360-degree studio orbit rotation, fluted crown and sunburst guilloché macro lens inspectors, 28,800 vph mechanical escapement audio synthesizer, and VIP allocation reservation capture.");
+            watchSoon.setCategory(commingSoonCategory);
+            watchSoon.setPrice(0.0);
+            watchSoon.setTemplateType("FREE");
+            watchSoon.setBootstrapVersion("HTML5 / Tailwind CSS / Vanilla JS");
+            watchSoon.setDemoUrl("/templates/comming-soon/cm-5/index.html");
+            watchSoon.setPreviewImage("/templates/comming-soon/cm-5/watch-hero.jpg");
+            watchSoon.setVersion("1.0");
+            watchSoon.setStatus("PUBLISHED");
+            watchSoon.setPagesCount(1);
+            watchSoon.setDownloadsCount(1680);
+            watchSoon.setTags(new ArrayList<>(Arrays.asList("Golden Watch", "Antigravity 3D", "Haute Horlogerie", "360 Orbit", "Live Countdown")));
+            templateRepository.save(watchSoon);
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

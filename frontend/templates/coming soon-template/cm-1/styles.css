@@ -172,6 +172,7 @@ h6 {
 .editorial-text {
     background: linear-gradient(135deg, #0f0f14 0%, #334155 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 

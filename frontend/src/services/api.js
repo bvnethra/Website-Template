@@ -207,9 +207,22 @@ const MOCK_TEMPLATES = [
     pagesCount: 6,
     downloadsCount: 9500,
     description: 'An elegant, premium React-refactored restaurant template featuring signature dish modals, scroll progress cursors, reservation sections, event highlights, and a gorgeous lightbox gallery.',
+    demoUrl: '/templates/restaurant/restaurant-2/index.html'
+  },
+  {
+    id: 17,
+    name: 'Lumière — Modern Culinary Concept Store',
+    slug: 'lumiere-restaurant',
+    previewImage: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 1,
+    downloadsCount: 1840,
+    description: 'An immersive and cinematic restaurant concept showcase template. Features custom dynamic cursors, interactive floating dish hover cards, smooth scroll reveals, custom reservation modals, and structured storytelling panels.',
     bootstrapVersion: 'React / Tailwind CSS / Motion',
     version: '1.0.0',
-    demoUrl: '/templates/restaurant/restaurant-2/index.html'
+    demoUrl: '/templates/restaurant/restaurant-3/index.html'
   }
 ];
 

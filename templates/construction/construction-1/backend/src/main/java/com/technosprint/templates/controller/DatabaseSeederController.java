@@ -687,49 +687,6 @@ public class DatabaseSeederController {
             ironAscent.setTags(new ArrayList<>(Arrays.asList("Fitness Event", "Gym Portal", "Workout Schedule", "Trainer Profiles", "Tailwind")));
             templateRepository.save(ironAscent);
             logs.put("template_ironascent_event", "Created");
-
-            // Seed AquaVexa (Events-5)
-            Template aquavexa = new Template();
-            aquavexa.setName("AQUAVEXA AUTO SPA — Premium Car Wash & Detailing Studio");
-            aquavexa.setSlug("aquavexa-autospa");
-            aquavexa.setDescription("A premium automotive wash, detailing, and paint studio platform. Features services grids, pricing cards, equipment showcases, paint studios, booking panels, and a reactive dark mode design.");
-            aquavexa.setCategory(eventsCategory);
-            aquavexa.setPrice(0.0);
-            aquavexa.setTemplateType("FREE");
-            aquavexa.setBootstrapVersion("React / Tailwind CSS / Vite");
-            aquavexa.setDemoUrl("/templates/events/events-5/index.html");
-            aquavexa.setDownloadFile("");
-            aquavexa.setPreviewImage("https://images.unsplash.com/photo-1520340356584-f9917d1eed69?auto=format&fit=crop&w=800&q=80");
-            aquavexa.setVersion("1.0.0");
-            aquavexa.setStatus("PUBLISHED");
-            aquavexa.setPagesCount(12);
-            aquavexa.setDownloadsCount(2100);
-            aquavexa.setTags(new ArrayList<>(Arrays.asList("Car Wash", "Auto Detailing", "Booking Studio", "Paint Studio", "React")));
-            templateRepository.save(aquavexa);
-            logs.put("template_aquavexa_autospa", "Created");
-        }
-
-        // 11. Seed Construction templates
-        Category constructionCategory = catMap.get("construction");
-        if (constructionCategory != null) {
-            Template advConstruction = new Template();
-            advConstruction.setName("Advanced Construction — Heavy Civil Engineering & Crane Infrastructure");
-            advConstruction.setSlug("advanced-construction");
-            advConstruction.setDescription("A premium commercial construction and heavy engineering landing page. Features customized pricing cost-estimators, milestone trackers, service portfolios, and a full dark mode design system.");
-            advConstruction.setCategory(constructionCategory);
-            advConstruction.setPrice(0.0);
-            advConstruction.setTemplateType("FREE");
-            advConstruction.setBootstrapVersion("React / Outfit / Plus Jakarta Sans");
-            advConstruction.setDemoUrl("/templates/construction/construction-1/index.html");
-            advConstruction.setDownloadFile("");
-            advConstruction.setPreviewImage("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80");
-            advConstruction.setVersion("1.0.0");
-            advConstruction.setStatus("PUBLISHED");
-            advConstruction.setPagesCount(8);
-            advConstruction.setDownloadsCount(3400);
-            advConstruction.setTags(new ArrayList<>(Arrays.asList("Civil Engineering", "Construction Estimator", "Heavy Infrastructure", "React", "Dark Mode")));
-            templateRepository.save(advConstruction);
-            logs.put("template_advanced_construction", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

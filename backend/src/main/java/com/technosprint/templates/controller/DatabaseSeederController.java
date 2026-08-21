@@ -260,6 +260,86 @@ public class DatabaseSeederController {
             aetherStudio.setTags(new ArrayList<>(Arrays.asList("Fine Art", "Editorial Photography", "Earthy Theme", "Tailwind CSS", "Motion")));
             templateRepository.save(aetherStudio);
             logs.put("template_aetherstudio_photography", "Created");
+
+            // Seed Eden Rose (cinematic-wedding)
+            Template edenRose = new Template();
+            edenRose.setName("Eden Rose — Cinematic Luxury Wedding Portfolio");
+            edenRose.setSlug("cinematic-wedding");
+            edenRose.setDescription("A high-end cinematic wedding photography portfolio template with immersive slideshows, custom transitions, and smooth galleries.");
+            edenRose.setCategory(photography);
+            edenRose.setPrice(0.0);
+            edenRose.setTemplateType("FREE");
+            edenRose.setBootstrapVersion("HTML5 / Vanilla CSS");
+            edenRose.setDemoUrl("/templates/photography/cinematic-wedding/index.html");
+            edenRose.setDownloadFile("");
+            edenRose.setPreviewImage("/cinematic_cover.png");
+            edenRose.setVersion("1.0.0");
+            edenRose.setStatus("PUBLISHED");
+            edenRose.setPagesCount(1);
+            edenRose.setDownloadsCount(1320);
+            edenRose.setTags(new ArrayList<>(Arrays.asList("Wedding Portfolio", "Cinematic", "Vanilla CSS", "HTML5")));
+            templateRepository.save(edenRose);
+            logs.put("template_edenrose_photography", "Created");
+
+            // Seed Aura (fineart-template)
+            Template auraArt = new Template();
+            auraArt.setName("AURA — Premium Fine Art Studio");
+            auraArt.setSlug("fineart-template");
+            auraArt.setDescription("A premium fine art and editorial studio portfolio featuring elegant dark-theme aesthetics, grid catalogs, and custom zoom-in lightboxes.");
+            auraArt.setCategory(photography);
+            auraArt.setPrice(0.0);
+            auraArt.setTemplateType("FREE");
+            auraArt.setBootstrapVersion("HTML5 / Vanilla CSS");
+            auraArt.setDemoUrl("/templates/photography/fineart-template/index.html");
+            auraArt.setDownloadFile("");
+            auraArt.setPreviewImage("/fineart_cover.png");
+            auraArt.setVersion("1.0.0");
+            auraArt.setStatus("PUBLISHED");
+            auraArt.setPagesCount(1);
+            auraArt.setDownloadsCount(1430);
+            auraArt.setTags(new ArrayList<>(Arrays.asList("Fine Art", "Studio", "Dark Theme", "Grid Catalog")));
+            templateRepository.save(auraArt);
+            logs.put("template_aura_photography", "Created");
+
+            // Seed Lume Studio (isteady-template)
+            Template lumeStudio = new Template();
+            lumeStudio.setName("Lume Studio — Fashion & Editorial Portfolio");
+            lumeStudio.setSlug("isteady-template");
+            lumeStudio.setDescription("A fashion-focused editorial photography portfolio with clean minimalist grids, typography layouts, and interactive sliders.");
+            lumeStudio.setCategory(photography);
+            lumeStudio.setPrice(0.0);
+            lumeStudio.setTemplateType("FREE");
+            lumeStudio.setBootstrapVersion("HTML5 / Vanilla CSS");
+            lumeStudio.setDemoUrl("/templates/photography/isteady-template/index.html");
+            lumeStudio.setDownloadFile("");
+            lumeStudio.setPreviewImage("/lume_cover.png");
+            lumeStudio.setVersion("1.0.0");
+            lumeStudio.setStatus("PUBLISHED");
+            lumeStudio.setPagesCount(1);
+            lumeStudio.setDownloadsCount(1510);
+            lumeStudio.setTags(new ArrayList<>(Arrays.asList("Fashion", "Editorial", "Minimalist Grid", "Vanilla CSS")));
+            templateRepository.save(lumeStudio);
+            logs.put("template_lumestudio_photography", "Created");
+
+            // Seed Kairo (kairo-template)
+            Template kairoPhoto = new Template();
+            kairoPhoto.setName("Kairo — Modern 3D Photography Portfolio");
+            kairoPhoto.setSlug("kairo-template");
+            kairoPhoto.setDescription("A modern, interactive photography portfolio featuring advanced 3D orbital interactions, custom cursor shaders, and horizontal scroll grids.");
+            kairoPhoto.setCategory(photography);
+            kairoPhoto.setPrice(0.0);
+            kairoPhoto.setTemplateType("FREE");
+            kairoPhoto.setBootstrapVersion("HTML5 / Three.js / Vanilla JS");
+            kairoPhoto.setDemoUrl("/templates/photography/kairo-template/index.html");
+            kairoPhoto.setDownloadFile("");
+            kairoPhoto.setPreviewImage("/kairo_cover.png");
+            kairoPhoto.setVersion("1.0.0");
+            kairoPhoto.setStatus("PUBLISHED");
+            kairoPhoto.setPagesCount(1);
+            kairoPhoto.setDownloadsCount(1820);
+            kairoPhoto.setTags(new ArrayList<>(Arrays.asList("3D Space", "Three.js", "Modern Shaders", "Interactive")));
+            templateRepository.save(kairoPhoto);
+            logs.put("template_kairo_photography", "Created");
         }
 
         // 6. Seed Restaurant templates

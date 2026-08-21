@@ -532,6 +532,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Configurator',
     version: '1.0.0',
     demoUrl: '/templates/construction/construction-5/index.html'
+  },
+  {
+    id: 119,
+    name: 'Arcstone Architects — Luxury Residential Design',
+    slug: 'arcstone-architects',
+    previewImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 9, name: 'Construction', slug: 'construction' },
+    pagesCount: 1,
+    downloadsCount: 1650,
+    description: 'A luxury residential and commercial architecture studio landing page. Features scroll-bound video transformations, custom lightboxes, bento portfolios, and RESTful project server.',
+    bootstrapVersion: 'React / Vanilla CSS / Scroll Video',
+    version: '1.0.0',
+    demoUrl: '/templates/construction/construction-6/index.html'
   }
 ];
 

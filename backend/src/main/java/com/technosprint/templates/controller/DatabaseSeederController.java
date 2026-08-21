@@ -932,6 +932,26 @@ public class DatabaseSeederController {
             swissVillas.setTags(new ArrayList<>(Arrays.asList("Lakefront Villas", "Configurator", "Swiss Design", "React", "Water Reflect")));
             templateRepository.save(swissVillas);
             logs.put("template_swiss_construction", "Created");
+
+            // Seed Arcstone Architects (construction-6)
+            Template arcstoneConst = new Template();
+            arcstoneConst.setName("Arcstone Architects — Luxury Residential Design");
+            arcstoneConst.setSlug("arcstone-architects");
+            arcstoneConst.setDescription("A luxury residential and commercial architecture studio landing page. Features scroll-bound video transformations, custom lightboxes, bento portfolios, and RESTful project server.");
+            arcstoneConst.setCategory(constructionCategory);
+            arcstoneConst.setPrice(0.0);
+            arcstoneConst.setTemplateType("FREE");
+            arcstoneConst.setBootstrapVersion("React / Vanilla CSS / Scroll Video");
+            arcstoneConst.setDemoUrl("/templates/construction/construction-6/index.html");
+            arcstoneConst.setDownloadFile("");
+            arcstoneConst.setPreviewImage("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80");
+            arcstoneConst.setVersion("1.0.0");
+            arcstoneConst.setStatus("PUBLISHED");
+            arcstoneConst.setPagesCount(1);
+            arcstoneConst.setDownloadsCount(1650);
+            arcstoneConst.setTags(new ArrayList<>(Arrays.asList("Arcstone Design", "Scroll Video", "Architecture", "React", "Vanilla CSS")));
+            templateRepository.save(arcstoneConst);
+            logs.put("template_arcstone_construction", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

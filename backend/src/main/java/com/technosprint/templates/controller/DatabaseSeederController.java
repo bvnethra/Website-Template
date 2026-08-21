@@ -606,6 +606,29 @@ public class DatabaseSeederController {
             logs.put("template_skillora", "Created");
         }
 
+        // 10. Seed Events templates
+        Category eventsCategory = catMap.get("events");
+        if (eventsCategory != null) {
+            Template eventora = new Template();
+            eventora.setName("Eventora — Premier Tech & Leadership Summit Launch Platform");
+            eventora.setSlug("eventora-event");
+            eventora.setDescription("A premium tech and leadership event launching platform. Features dynamic schedules, speaker registries, digital ticket cards, countdown timers, and reservation capture modals.");
+            eventora.setCategory(eventsCategory);
+            eventora.setPrice(0.0);
+            eventora.setTemplateType("FREE");
+            eventora.setBootstrapVersion("React / Tailwind / Plus Jakarta Sans");
+            eventora.setDemoUrl("/templates/events/education-1/index.html");
+            eventora.setDownloadFile("");
+            eventora.setPreviewImage("https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80");
+            eventora.setVersion("1.0.0");
+            eventora.setStatus("PUBLISHED");
+            eventora.setPagesCount(12);
+            eventora.setDownloadsCount(3200);
+            eventora.setTags(new ArrayList<>(Arrays.asList("Event Platform", "Speakers Registry", "Schedule Drawer", "Digital Ticket", "Countdown")));
+            templateRepository.save(eventora);
+            logs.put("template_eventora", "Created");
+        }
+
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);
     }

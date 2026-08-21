@@ -427,6 +427,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Motion',
     version: '1.0.0',
     demoUrl: '/templates/photography/photography-10/index.html'
+  },
+  {
+    id: 112,
+    name: 'BuildHub Constructions — Premier Architecture & 3D BIM',
+    slug: 'buildhub-construction',
+    previewImage: 'https://images.unsplash.com/photo-1503387762-592dec58ef4e?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 9, name: 'Construction', slug: 'construction' },
+    pagesCount: 12,
+    downloadsCount: 2900,
+    description: 'A premium React architectural and construction design studio template. Features an interactive 3D digital twin BIM model preview, cost calculators, structural project showcases, and a responsive theme toggle.',
+    bootstrapVersion: 'React / Three.js / Lucide',
+    version: '1.0.0',
+    demoUrl: '/templates/construction/construction-2/index.html'
   }
 ];
 

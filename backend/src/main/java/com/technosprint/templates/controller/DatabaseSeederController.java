@@ -790,6 +790,26 @@ public class DatabaseSeederController {
             advConstruction.setTags(new ArrayList<>(Arrays.asList("Civil Engineering", "Construction Estimator", "Heavy Infrastructure", "React", "Dark Mode")));
             templateRepository.save(advConstruction);
             logs.put("template_advanced_construction", "Created");
+
+            // Seed BuildHub Constructions (construction-2)
+            Template buildhubConst = new Template();
+            buildhubConst.setName("BuildHub Constructions — Premier Architecture & 3D BIM");
+            buildhubConst.setSlug("buildhub-construction");
+            buildhubConst.setDescription("A premium React architectural and construction design studio template. Features an interactive 3D digital twin BIM model preview, cost calculators, structural project showcases, and a responsive theme toggle.");
+            buildhubConst.setCategory(constructionCategory);
+            buildhubConst.setPrice(0.0);
+            buildhubConst.setTemplateType("FREE");
+            buildhubConst.setBootstrapVersion("React / Three.js / Lucide");
+            buildhubConst.setDemoUrl("/templates/construction/construction-2/index.html");
+            buildhubConst.setDownloadFile("");
+            buildhubConst.setPreviewImage("https://images.unsplash.com/photo-1503387762-592dec58ef4e?auto=format&fit=crop&w=800&q=80");
+            buildhubConst.setVersion("1.0.0");
+            buildhubConst.setStatus("PUBLISHED");
+            buildhubConst.setPagesCount(12);
+            buildhubConst.setDownloadsCount(2900);
+            buildhubConst.setTags(new ArrayList<>(Arrays.asList("3D BIM Model", "Three.js", "Architecture", "Construction Estimator", "React")));
+            templateRepository.save(buildhubConst);
+            logs.put("template_buildhub_construction", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

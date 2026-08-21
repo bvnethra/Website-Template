@@ -56,6 +56,13 @@ export default function PhotographyCatalog() {
       previewImage: '/lume_cover.png',
       tags: ['Editorial Fashion', 'Moody Spotlight', 'Bespoke Lighting'],
       description: 'A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.'
+    },
+    {
+      slug: 'sage-wedding',
+      name: 'Sage & Shutter — Fine Art & Editorial Wedding Photography',
+      previewImage: '/sage_cover.jpg',
+      tags: ['Earthy Accents', 'Desaturated Warmth', 'Editorial Typography'],
+      description: 'A premium React wedding photography template featuring earthy organic tones, desaturated aesthetics, elegant serif headings, and fluid portfolio grids.'
     }
   ];
 
@@ -134,6 +141,10 @@ export default function PhotographyCatalog() {
       'src/components/Scene3D.jsx',
       'src/components/ServicesSection.jsx',
       'src/components/Testimonials.jsx'
+    ],
+    'sage-wedding': [
+      'package.json', 'vite.config.js', 'index.html', 'metadata.json',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css'
     ]
   };
 

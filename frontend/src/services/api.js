@@ -68,6 +68,21 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/photography/wedding-template/index.html'
   },
   {
+    id: 108,
+    name: 'Sage & Shutter — Fine Art & Editorial Wedding Photography',
+    slug: 'sage-wedding',
+    previewImage: '/sage_cover.jpg',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 8, name: 'Photography', slug: 'photography' },
+    pagesCount: 1,
+    downloadsCount: 950,
+    description: 'A premium React wedding photography template featuring earthy organic tones, desaturated aesthetics, elegant serif headings, and fluid portfolio grids.',
+    bootstrapVersion: 'React 19 / Tailwind CSS / Vite',
+    version: '1.0',
+    demoUrl: '/templates/photography/sage-wedding/index.html'
+  },
+  {
     id: 4,
     name: 'Qure Nexa — Advanced Medical & Healthcare Platform',
     slug: 'qure-nexa',

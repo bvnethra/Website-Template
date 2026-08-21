@@ -1,186 +1,232 @@
-# AURA — Enterprise E-Commerce Platform
+# Ember & Olive — Commercial Restaurant Website Template
 
-A production-ready, full-stack enterprise e-commerce platform built with a decoupled architecture containing a Spring Boot REST backend and two dedicated React Client SPAs: a Customer Portal and an Admin Portal.
-
----
-
-## 🏗️ Architecture Design & Tech Stack
-
-```mermaid
-graph TD
-    subgraph Client Portals
-        Cust[Customer Portal - Port 3000]
-        Admin[Admin Portal - Port 3001]
-    end
-
-    subgraph Service Layer
-        API[Spring Boot REST API - Port 8080]
-        Swagger[Swagger UI - Port 8080/swagger-ui]
-    end
-
-    subgraph Database Layer
-        DB[(MySQL Database - Port 3306)]
-    end
-
-    Cust <-->|REST + JWT Auth| API
-    Admin <-->|REST + JWT Auth| API
-    API <-->|Spring Data JPA| DB
-```
-
-### Technical Specifications
-- **Customer Portal**: React 19, React Router, Redux Toolkit (RTK), Axios, Tailwind CSS, Framer Motion, React Hook Form.
-- **Admin Portal**: React 19, React Router, RTK, Axios, Tailwind CSS, Chart.js.
-- **Backend API**: Spring Boot 3.4, Spring Security, JWT stateless authentication, Spring Data JPA, Hibernate, Maven, Swagger/OpenAPI.
-- **Database**: MySQL 8.0, DBeaver compatible.
-- **Containerization**: Docker Compose.
+> **"Seasonal Food. Shared Moments."**
+> A contemporary, production-ready, original commercial restaurant website template built with HTML5, CSS3, Bootstrap 5.3+, Vanilla JavaScript, and Google Fonts.
 
 ---
 
-## 📁 Repository Structure
+## 1. Overview & Features
+
+* **Original Brand Identity**: Fully original typography, bespoke color palette, and asymmetric layout.
+* **Multi-Page Architecture**:
+  * `index.html`: Complete immersive showcase with hero, story, signature dishes, menu preview, chef profile, events, testimonials, gallery, table reservations, and location.
+  * `about.html`: Heritage story, culinary philosophy, local farm partnerships, executive team, and zero-waste sustainability ethos.
+  * `menu.html`: Comprehensive seasonal menu with live keyword search, dietary filter (Vegetarian, Gluten-Free, Chef Signatures), tasting menu showcase, and print-ready trigger.
+  * `events.html`: Private dining suites (The Olive Cellar, Hearth Counter, Terrace Pergola), celebration packages, and interactive event inquiry form.
+  * `gallery.html`: High-resolution filterable masonry gallery with interactive lightbox modal (prev/next, counter, and keyboard navigation).
+  * `contact.html`: Concierge contact info, service hours, valet & parking guidelines, FAQ accordion, interactive message form, and embedded map.
+* **Interactive Engine (`assets/js/main.js`)**:
+  * Sticky dynamic header with backdrop blur and scroll shrink
+  * Live category filtering and search for menu dishes
+  * Asymmetric signature dish modal spotlight
+  * Smooth testimonial carousel with autoplay, touch swipe, and navigation dots
+  * Gallery lightbox with image counter and Arrow/Escape keyboard navigation
+  * Animated counter for restaurant milestones using `IntersectionObserver`
+  * Frontend table reservation validation and toast confirmation
+  * Interactive contact and event inquiry forms
+* **Clean Code**: Zero frameworks required. Fully customizable CSS custom properties.
+
+---
+
+## 2. Folder & File Structure
 
 ```
-.
-├── admin-portal/             # React Admin dashboard portal
-│   ├── src/                  # Charts & Management views
-│   └── Dockerfile            # Container configuration
+ember-olive/
 │
-├── customer-portal/          # React Customer store portal
-│   ├── src/                  # Catalogue & Checkout views
-│   └── Dockerfile            # Container configuration
+├── index.html            # Main landing page
+├── about.html            # Story, culinary philosophy & team
+├── menu.html             # Categorized menu with search & diet filter
+├── events.html           # Private dining suites & packages
+├── gallery.html          # Filterable photo gallery with lightbox
+├── contact.html          # Contact details, hours, map & FAQs
 │
-├── backend/                  # Spring Boot Maven API
-│   ├── src/main/java/        # Security configs & feature packages
-│   └── Dockerfile            # Container configuration
+├── assets/
+│   ├── css/
+│   │   └── style.css     # Design tokens, responsive rules & animations
+│   │
+│   ├── js/
+│   │   └── main.js       # Vanilla JS engine & template configuration
+│   │
+│   └── images/           # Image assets directory
 │
-├── database/                 # SQL schemas and seed data
-│   ├── schema.sql            # Table definitions (23 tables)
-│   └── seed.sql              # Audits, products & admin users seed
-│
-├── docker/                   # Docker deployment configurations
-│   └── docker-compose.yml    # Combined environment compose
-│
-├── docs/                     # OpenAPI specs & documentations
-│   └── api-spec.md           # API endpoints map
-│
-└── postman/                  # Postman collections
-    └── collection.json       # Test runner queries JSON
+├── README.md             # Commercial documentation
+└── LICENSE.txt           # License file
 ```
 
 ---
 
-## 🔒 Relational Database Design (23 Tables)
+## 3. How to Change the Logo
 
-The database schema is fully normalized and optimized for high-volume transactions:
+In all HTML files, locate the `.brand-logo` block in the `<header>`:
 
-```mermaid
-erDiagram
-    USERS ||--o{ ADDRESSES : "has"
-    USERS ||--o{ ORDERS : "places"
-    USERS ||--oO WISHLIST : "likes"
-    USERS ||--oO REVIEWS : "writes"
-    USERS ||--o| CART : "owns"
-    USERS }o--o{ ROLES : "holds"
-    
-    CATEGORIES ||--o{ PRODUCTS : "contains"
-    BRANDS ||--o{ PRODUCTS : "manufactures"
-    PRODUCTS ||--o{ PRODUCT_IMAGES : "visualizes"
-    PRODUCTS ||--o{ PRODUCT_VARIANTS : "defines"
-    PRODUCTS ||--o{ CART_ITEMS : "in"
-    PRODUCTS ||--o{ ORDER_ITEMS : "in"
-    PRODUCTS ||--o{ WISHLIST : "in"
-    PRODUCTS ||--o{ REVIEWS : "in"
-    PRODUCTS ||--o{ INVENTORY : "stocked in"
-    PRODUCT_VARIANTS ||--o{ INVENTORY : "variants stock"
-    
-    CART ||--o{ CART_ITEMS : "contains"
-    CART_ITEMS }o--|| PRODUCT_VARIANTS : "references"
-    
-    ORDERS ||--o{ ORDER_ITEMS : "contains"
-    ORDERS ||--o| PAYMENTS : "billed"
-    ORDERS ||--o| SHIPMENTS : "dispatched"
-    ORDERS }o--|| ADDRESSES : "ships to"
-    ORDERS }o--|| ADDRESSES : "bills to"
-    ORDERS }o--|| COUPONS : "applies"
-    ORDER_ITEMS }o--|| PRODUCT_VARIANTS : "references"
-    
-    COUPONS ||--o{ COUPON_USAGE : "tracks usage"
-    COUPONS ||--o{ ORDERS : "discounts"
-    USERS ||--o{ COUPON_USAGE : "redeems"
-    ORDERS ||--o{ COUPON_USAGE : "applies to"
-    
-    AUDIT_LOGS }o--|| USERS : "tracks"
-    NOTIFICATIONS }o--|| USERS : "alerts"
+```html
+<a href="index.html" class="brand-logo" id="brandLogo">
+  <span class="brand-logo-text">YOUR <span>&</span> RESTAURANT</span>
+  <span class="brand-subtext">Est. 2024 · Modern Dining</span>
+</a>
 ```
 
-- **DDL definitions**: Standard keys, indexes, cascades, and check rating checks (`chk_review_rating_limit`) are declared in [schema.sql](database/schema.sql).
-- **Default Seeding**: Populate categories, products, inventory, coupons, and roles (`ROLE_USER`, `ROLE_ADMIN`) using [seed.sql](database/seed.sql).
+You can also replace it with an image tag:
+```html
+<a href="index.html" class="brand-logo">
+  <img src="assets/images/logo.png" alt="Restaurant Logo" height="40">
+</a>
+```
 
 ---
 
-## 🌿 Git Branching Strategy & Workflow
+## 4. How to Change Colors
 
-We employ a strict Gitflow-based branch strategy to support team collaboration:
+Open `assets/css/style.css`. All colors are defined in the `:root` pseudo-class:
 
-### Branch Roles
-- `main`: Production release branch. Only merged from `develop` after QA sign-off.
-- `develop`: Integration branch where all feature branches are combined.
-- `feature/*`: Modular branches used to develop specific functionalities.
+```css
+:root {
+  --color-primary: #20211D;        /* Primary dark tone (Obsidian charcoal) */
+  --color-secondary: #EFE8DC;      /* Secondary bone/linen */
+  --color-accent: #B27645;         /* Terracotta / Ember accent */
+  --color-accent-hover: #965F33;   /* Accent hover state */
+  --color-text: #292824;           /* Body copy text */
+  --color-muted: #756F66;          /* Subtitle and stone text */
+  --color-surface: #F9F6F0;        /* Main background */
+  --color-surface-subtle: #F4EFE6; /* Muted background */
+}
+```
 
-### Commits Convention
-We follow the conventional commits standard:
-- `feat: <description>` (e.g. `feat: add order tracking endpoint`)
-- `fix: <description>` (e.g. `fix: resolve jwt expiration parsing error`)
-- `chore: <description>` (e.g. `chore: configure swagger properties`)
-
-### Collaboration Workflow
-1. **Checkout Feature**: Branch off `develop` to implement code (`git checkout -b feature/cart`).
-2. **Commit Changes**: Use clear, descriptive commits.
-3. **Pull Request (PR)**: Push your feature branch and open a PR targeting `develop`.
-4. **Merge Integration**: After code review and green builds, merge into `develop`.
+Simply replace these hex values with your brand's color palette.
 
 ---
 
-## ⚡ Setup & Execution
+## 5. How to Change Fonts
 
-### Option A: Running with Docker (Recommended)
-You can launch the entire ecosystem (portals, API, and MySQL) with a single command:
+Fonts are imported via Google Fonts in the `<head>` of each HTML file:
 
-```bash
-cd docker
-docker-compose up --build
+```html
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 ```
-- **Customer Portal**: [http://localhost:3000](http://localhost:3000)
-- **Admin Portal**: [http://localhost:3001](http://localhost:3001)
-- **Backend Swagger UI**: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+
+To update font families, modify `--font-heading` and `--font-body` in `assets/css/style.css`:
+
+```css
+:root {
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+```
 
 ---
 
-### Option B: Running Locally
+## 6. How to Replace Images
 
-#### 1. Database Setup
-Create database schema:
-```sql
-CREATE DATABASE IF NOT EXISTS shopsphere_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-```
-Import `database/schema.sql` and `database/seed.sql` inside **DBeaver** or your SQL shell.
+1. Place your food, interior, and chef photography into `assets/images/`.
+2. In the HTML files, replace the `src` attribute of the `<img>` tags or the `data-full-img` attribute for lightbox items:
 
-#### 2. Start Backend
-```bash
-cd backend
-mvn clean spring-boot:run
-```
-The server binds to port **8080**.
+```html
+<!-- Example Menu Item -->
+<img src="assets/images/my-dish.jpg" alt="Dish Name" class="menu-item-img">
 
-#### 3. Start Frontends
-For Customer Portal:
-```bash
-cd customer-portal
-npm install
-npm run dev -- --port 3000
+<!-- Example Gallery Item -->
+<div class="gallery-item" data-full-img="assets/images/gallery-high-res.jpg">
+  <img src="assets/images/gallery-thumb.jpg" alt="Dining Room" class="gallery-img">
+</div>
 ```
-For Admin Portal:
-```bash
-cd admin-portal
-npm install
-npm run dev -- --port 3001
+
+---
+
+## 7. How to Edit Menu Items
+
+Menu cards in `index.html` and `menu.html` use simple data attributes:
+
+```html
+<div class="col-md-6 col-lg-4 menu-item-wrapper" data-category="seafood" data-dietary="gluten-free signature">
+  <div class="menu-item-card">
+    <div class="menu-item-image-wrap">
+      <img src="assets/images/prawns.jpg" alt="Dish Name" class="menu-item-img">
+      <span class="menu-item-badge badge-signature">Chef Signature</span>
+    </div>
+    <div class="menu-item-header">
+      <h3 class="menu-item-title">Wood-Fired Wild Prawns</h3>
+      <span class="menu-item-price">₹620</span>
+    </div>
+    <p class="menu-item-desc">Garlic butter emulsion, burnt lemon, fresh herbs.</p>
+    <div class="dietary-tags">
+      <span class="diet-tag">Gluten-Free</span>
+    </div>
+    <p class="menu-item-ingredients">Key ingredients description here.</p>
+  </div>
+</div>
 ```
+
+* `data-category`: matches the filter button `data-filter` (`starters`, `mains`, `seafood`, `vegetarian`, `desserts`, `drinks`).
+* `data-dietary`: keywords used by the search & dietary dropdown (`vegetarian`, `gluten-free`, `signature`).
+
+---
+
+## 8. How to Edit Events & Packages
+
+Open `events.html` or `index.html` and locate `.event-card` or `.package-card`. Update the pricing, title, and inclusion list items directly in HTML.
+
+---
+
+## 9. How to Edit Testimonials
+
+In `index.html`, locate `#testimonials`. Duplicate or update any `.testimonial-slide`:
+
+```html
+<div class="testimonial-slide">
+  <div class="testimonial-card-editorial">
+    <div class="testimonial-stars">★★★★★</div>
+    <p class="testimonial-quote-text">"Your customer quote goes here."</p>
+    <div class="testimonial-author-name">Guest Name</div>
+    <div class="testimonial-author-meta">City or Title</div>
+  </div>
+</div>
+```
+
+---
+
+## 10. How to Edit Contact Details
+
+1. Update the HTML contact cards in `contact.html` and `index.html`.
+2. Update the centralized configuration in `assets/js/main.js`:
+
+```javascript
+const TEMPLATE_CONFIG = {
+  brand: {
+    name: 'EMBER & OLIVE',
+    phone: '+91 98765 43210',
+    email: 'hello@emberandolive.example',
+    address: '28 Garden Avenue, Chennai, Tamil Nadu',
+  },
+  hours: {
+    weekday: 'Monday – Thursday: 11:00 AM – 10:00 PM',
+    weekend: 'Friday – Sunday: 11:00 AM – 11:30 PM',
+  }
+};
+```
+
+---
+
+## 11. How to Edit Social Media Links
+
+Search for `.footer-social-links` or `.team-social-links` in any HTML file and replace the `href` with your real social media profiles.
+
+---
+
+## 12. Customizing Bootstrap
+
+The template uses standard Bootstrap 5.3 utilities and grid (`container-xl`, `row`, `col-*`, `d-flex`, `accordion`, `modal`, `offcanvas`). All custom aesthetic layers sit in `assets/css/style.css` without modifying the core Bootstrap vendor code.
+
+---
+
+## 13. Deploying the Template
+
+This template is standard static HTML5/CSS/JS. It can be hosted on any web server, CDN, or platform:
+* **Cloudflare Pages / Vercel / Netlify / GitHub Pages**: Deploy directly by pushing the folder.
+* **Apache / Nginx**: Place all files into your `www` or `html` document root.
+* **Node / Vite**: Run `npm run build` or `npm run dev`.
+
+---
+
+## License
+
+MIT License. Free to use for commercial and personal restaurant websites. See `LICENSE.txt` for details.

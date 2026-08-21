@@ -627,6 +627,26 @@ public class DatabaseSeederController {
             eventora.setTags(new ArrayList<>(Arrays.asList("Event Platform", "Speakers Registry", "Schedule Drawer", "Digital Ticket", "Countdown")));
             templateRepository.save(eventora);
             logs.put("template_eventora", "Created");
+
+            // Seed CyberNexus (Events-2)
+            Template cybernexus = new Template();
+            cybernexus.setName("CYBERNEXUS — Global Technology & Intelligence Summit");
+            cybernexus.setSlug("cybernexus-event");
+            cybernexus.setDescription("A premium, high-tech event landing page for technology and AI conferences. Features interactive scroll spies, customized cursor indicators, schedule registries, and ticket reservation forms.");
+            cybernexus.setCategory(eventsCategory);
+            cybernexus.setPrice(0.0);
+            cybernexus.setTemplateType("FREE");
+            cybernexus.setBootstrapVersion("React / Vanilla CSS / Vite");
+            cybernexus.setDemoUrl("/templates/events/events-2/index.html");
+            cybernexus.setDownloadFile("");
+            cybernexus.setPreviewImage("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80");
+            cybernexus.setVersion("1.0.0");
+            cybernexus.setStatus("PUBLISHED");
+            cybernexus.setPagesCount(8);
+            cybernexus.setDownloadsCount(2800);
+            cybernexus.setTags(new ArrayList<>(Arrays.asList("Technology Summit", "AI Conference", "Scroll Spy", "Dark Theme", "Registration Form")));
+            templateRepository.save(cybernexus);
+            logs.put("template_cybernexus_event", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

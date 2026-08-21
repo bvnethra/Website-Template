@@ -457,6 +457,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Three.js / Glassmorphism',
     version: '1.0.0',
     demoUrl: '/templates/construction/construction-3/index.html'
+  },
+  {
+    id: 114,
+    name: 'Eduvora — Online Learning Platform',
+    slug: 'eduvora-education',
+    previewImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 7, name: 'Events', slug: 'events' },
+    pagesCount: 15,
+    downloadsCount: 2750,
+    description: 'Comprehensive academic learning platform and stateful Student Portal with examination registrations, hall tickets, marksheets, photocopy and revaluation hubs, security audit logs, and dual-role authentication.',
+    bootstrapVersion: 'React / Tailwind CSS / Router',
+    version: '1.0.0',
+    demoUrl: '/templates/events/education-2/index.html'
   }
 ];
 

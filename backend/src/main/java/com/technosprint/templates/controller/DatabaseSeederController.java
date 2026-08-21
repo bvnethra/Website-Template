@@ -688,6 +688,26 @@ public class DatabaseSeederController {
             templateRepository.save(eventora);
             logs.put("template_eventora", "Created");
 
+            // Seed Eduvora (Education-2)
+            Template eduvora = new Template();
+            eduvora.setName("Eduvora — Online Learning Platform");
+            eduvora.setSlug("eduvora-education");
+            eduvora.setDescription("Comprehensive academic learning platform and stateful Student Portal with examination registrations, hall tickets, marksheets, photocopy and revaluation hubs, security audit logs, and dual-role authentication.");
+            eduvora.setCategory(eventsCategory);
+            eduvora.setPrice(0.0);
+            eduvora.setTemplateType("FREE");
+            eduvora.setBootstrapVersion("React / Tailwind CSS / Router");
+            eduvora.setDemoUrl("/templates/events/education-2/index.html");
+            eduvora.setDownloadFile("");
+            eduvora.setPreviewImage("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80");
+            eduvora.setVersion("1.0.0");
+            eduvora.setStatus("PUBLISHED");
+            eduvora.setPagesCount(15);
+            eduvora.setDownloadsCount(2750);
+            eduvora.setTags(new ArrayList<>(Arrays.asList("Education Portal", "Student Dashboard", "Exam Registration", "Tailwind CSS", "React")));
+            templateRepository.save(eduvora);
+            logs.put("template_eduvora", "Created");
+
             // Seed CyberNexus (Events-2)
             Template cybernexus = new Template();
             cybernexus.setName("CYBERNEXUS — Global Technology & Intelligence Summit");

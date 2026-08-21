@@ -502,6 +502,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Router',
     version: '1.0.0',
     demoUrl: '/templates/education/education-4/index.html'
+  },
+  {
+    id: 117,
+    name: 'Knack Design Build — Bespoke Architecture',
+    slug: 'knack-design-build',
+    previewImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 9, name: 'Construction', slug: 'construction' },
+    pagesCount: 1,
+    downloadsCount: 1200,
+    description: 'A luxury architecture and bespoke general contracting landing page. Features dynamic villa portfolios, 3D BIM integration methodology showcases, on-time milestone stats, and custom consultation request flow.',
+    bootstrapVersion: 'React / Tailwind CSS / Ambient',
+    version: '1.0.0',
+    demoUrl: '/templates/construction/construction-4/index.html'
   }
 ];
 

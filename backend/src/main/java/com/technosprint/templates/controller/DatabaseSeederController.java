@@ -892,6 +892,26 @@ public class DatabaseSeederController {
             futurixConst.setTags(new ArrayList<>(Arrays.asList("3D Telemetry", "Three.js", "BIM Technology", "React", "Glassmorphism")));
             templateRepository.save(futurixConst);
             logs.put("template_futurix_construction", "Created");
+
+            // Seed Knack Design Build (construction-4)
+            Template knackConst = new Template();
+            knackConst.setName("Knack Design Build — Bespoke Architecture");
+            knackConst.setSlug("knack-design-build");
+            knackConst.setDescription("A luxury architecture and bespoke general contracting landing page. Features dynamic villa portfolios, 3D BIM integration methodology showcases, on-time milestone stats, and custom consultation request flow.");
+            knackConst.setCategory(constructionCategory);
+            knackConst.setPrice(0.0);
+            knackConst.setTemplateType("FREE");
+            knackConst.setBootstrapVersion("React / Tailwind CSS / Ambient");
+            knackConst.setDemoUrl("/templates/construction/construction-4/index.html");
+            knackConst.setDownloadFile("");
+            knackConst.setPreviewImage("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80");
+            knackConst.setVersion("1.0.0");
+            knackConst.setStatus("PUBLISHED");
+            knackConst.setPagesCount(1);
+            knackConst.setDownloadsCount(1200);
+            knackConst.setTags(new ArrayList<>(Arrays.asList("Luxury Architecture", "Contracting", "Vite", "React", "Milestones")));
+            templateRepository.save(knackConst);
+            logs.put("template_knack_construction", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

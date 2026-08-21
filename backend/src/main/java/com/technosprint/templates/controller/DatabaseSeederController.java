@@ -912,6 +912,26 @@ public class DatabaseSeederController {
             knackConst.setTags(new ArrayList<>(Arrays.asList("Luxury Architecture", "Contracting", "Vite", "React", "Milestones")));
             templateRepository.save(knackConst);
             logs.put("template_knack_construction", "Created");
+
+            // Seed Bespoke Lakefront Villas (construction-5)
+            Template swissVillas = new Template();
+            swissVillas.setName("Bespoke Lakefront Villas — Swiss Design Studio");
+            swissVillas.setSlug("swiss-lakefront-villas");
+            swissVillas.setDescription("A luxury lakefront residential and bespoke architectural configurator landing page. Features interactive 3D style customizer, geo-coordinates villa catalog, and RESTful configurator server.");
+            swissVillas.setCategory(constructionCategory);
+            swissVillas.setPrice(0.0);
+            swissVillas.setTemplateType("FREE");
+            swissVillas.setBootstrapVersion("React / Tailwind CSS / Configurator");
+            swissVillas.setDemoUrl("/templates/construction/construction-5/index.html");
+            swissVillas.setDownloadFile("");
+            swissVillas.setPreviewImage("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80");
+            swissVillas.setVersion("1.0.0");
+            swissVillas.setStatus("PUBLISHED");
+            swissVillas.setPagesCount(1);
+            swissVillas.setDownloadsCount(1380);
+            swissVillas.setTags(new ArrayList<>(Arrays.asList("Lakefront Villas", "Configurator", "Swiss Design", "React", "Water Reflect")));
+            templateRepository.save(swissVillas);
+            logs.put("template_swiss_construction", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

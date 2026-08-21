@@ -517,6 +517,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Ambient',
     version: '1.0.0',
     demoUrl: '/templates/construction/construction-4/index.html'
+  },
+  {
+    id: 118,
+    name: 'Bespoke Lakefront Villas — Swiss Design Studio',
+    slug: 'swiss-lakefront-villas',
+    previewImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 9, name: 'Construction', slug: 'construction' },
+    pagesCount: 1,
+    downloadsCount: 1380,
+    description: 'A luxury lakefront residential and bespoke architectural configurator landing page. Features interactive 3D style customizer, geo-coordinates villa catalog, and RESTful configurator server.',
+    bootstrapVersion: 'React / Tailwind CSS / Configurator',
+    version: '1.0.0',
+    demoUrl: '/templates/construction/construction-5/index.html'
   }
 ];
 

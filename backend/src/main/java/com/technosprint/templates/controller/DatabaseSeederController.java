@@ -664,6 +664,26 @@ public class DatabaseSeederController {
             auraHavenResorts.setTags(new ArrayList<>(Arrays.asList("Resort", "Luxury Hotel", "Boutique", "Reservation", "Editorial Slider")));
             templateRepository.save(auraHavenResorts);
             logs.put("template_aurahaven_hotel", "Created");
+
+            // Seed Aethelred Resort (hotel-2)
+            Template aethelredResort = new Template();
+            aethelredResort.setName("Aethelred Resort — Luxury Hotel & Lodging");
+            aethelredResort.setSlug("aethelred-resort");
+            aethelredResort.setDescription("Aethelred Resort is an original luxury hotel and resort website template featuring booking bar, room showcase, amenities list, dining highlights, testimonials, and gallery.");
+            aethelredResort.setCategory(hotelCategory);
+            aethelredResort.setPrice(0.0);
+            aethelredResort.setTemplateType("FREE");
+            aethelredResort.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            aethelredResort.setDemoUrl("/templates/hotel/hotel-2/index.html");
+            aethelredResort.setDownloadFile("");
+            aethelredResort.setPreviewImage("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80");
+            aethelredResort.setVersion("1.0.0");
+            aethelredResort.setStatus("PUBLISHED");
+            aethelredResort.setPagesCount(1);
+            aethelredResort.setDownloadsCount(1900);
+            aethelredResort.setTags(new ArrayList<>(Arrays.asList("Hotel", "Luxury Resort", "Lodging", "Booking", "Gallery")));
+            templateRepository.save(aethelredResort);
+            logs.put("template_aethelred_hotel", "Created");
         }
 
         // 9. Seed Education templates

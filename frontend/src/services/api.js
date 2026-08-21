@@ -562,6 +562,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     version: '1.0.0',
     demoUrl: '/templates/hotel/hotel-1/index.html'
+  },
+  {
+    id: 121,
+    name: 'Aethelred Resort — Luxury Hotel & Lodging',
+    slug: 'aethelred-resort',
+    previewImage: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 6, name: 'Hotel', slug: 'hotel' },
+    pagesCount: 1,
+    downloadsCount: 1900,
+    description: 'Aethelred Resort is an original luxury hotel and resort website template featuring booking bar, room showcase, amenities list, dining highlights, testimonials, and gallery.',
+    bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
+    version: '1.0.0',
+    demoUrl: '/templates/hotel/hotel-2/index.html'
   }
 ];
 

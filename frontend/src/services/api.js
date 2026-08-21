@@ -397,6 +397,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Motion',
     version: '1.0.0',
     demoUrl: '/templates/photography/photography-8/index.html'
+  },
+  {
+    id: 110,
+    name: 'Blush Lens — Fine Art Wedding Photography',
+    slug: 'blush-lens-photography',
+    previewImage: '/wedding_cover.png',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 8, name: 'Photography', slug: 'photography' },
+    pagesCount: 1,
+    downloadsCount: 1850,
+    description: 'A premium React wedding photography template featuring romantic blush and warm ivory tones, editorial serif typography, interactive booking forms, and dynamic parallax portfolio galleries.',
+    bootstrapVersion: 'React / Tailwind CSS / Motion',
+    version: '1.0.0',
+    demoUrl: '/templates/photography/photography-9/index.html'
   }
 ];
 

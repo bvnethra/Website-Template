@@ -220,6 +220,26 @@ public class DatabaseSeederController {
             sageShutter.setTags(new ArrayList<>(Arrays.asList("Fine Art", "Wedding Photography", "Earthy Filters", "Tailwind CSS", "Motion")));
             templateRepository.save(sageShutter);
             logs.put("template_sageshutter_photography", "Created");
+
+            // Seed Blush Lens (Photography-9)
+            Template blushLens = new Template();
+            blushLens.setName("Blush Lens — Fine Art Wedding Photography");
+            blushLens.setSlug("blush-lens-photography");
+            blushLens.setDescription("A premium React wedding photography template featuring romantic blush and warm ivory tones, editorial serif typography, interactive booking forms, and dynamic parallax portfolio galleries.");
+            blushLens.setCategory(photography);
+            blushLens.setPrice(0.0);
+            blushLens.setTemplateType("FREE");
+            blushLens.setBootstrapVersion("React / Tailwind CSS / Motion");
+            blushLens.setDemoUrl("/templates/photography/photography-9/index.html");
+            blushLens.setDownloadFile("");
+            blushLens.setPreviewImage("/wedding_cover.png");
+            blushLens.setVersion("1.0.0");
+            blushLens.setStatus("PUBLISHED");
+            blushLens.setPagesCount(1);
+            blushLens.setDownloadsCount(1850);
+            blushLens.setTags(new ArrayList<>(Arrays.asList("Fine Art", "Wedding Photography", "Blush Tones", "Tailwind CSS", "Motion")));
+            templateRepository.save(blushLens);
+            logs.put("template_blushlens_photography", "Created");
         }
 
         // 6. Seed Restaurant templates

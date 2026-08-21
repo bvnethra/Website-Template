@@ -412,6 +412,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Motion',
     version: '1.0.0',
     demoUrl: '/templates/photography/photography-9/index.html'
+  },
+  {
+    id: 111,
+    name: 'Aether Studio — Fine Art Editorial Photography',
+    slug: 'aether-studio-photography',
+    previewImage: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 8, name: 'Photography', slug: 'photography' },
+    pagesCount: 1,
+    downloadsCount: 1480,
+    description: 'A high-end, editorial photography showcase template. Features custom slide overlays, parallax grid systems, desaturated earthy image styling, and elegant typewriter layout design.',
+    bootstrapVersion: 'React / Tailwind CSS / Motion',
+    version: '1.0.0',
+    demoUrl: '/templates/photography/photography-10/index.html'
   }
 ];
 

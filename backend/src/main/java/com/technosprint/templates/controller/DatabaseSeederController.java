@@ -240,6 +240,26 @@ public class DatabaseSeederController {
             blushLens.setTags(new ArrayList<>(Arrays.asList("Fine Art", "Wedding Photography", "Blush Tones", "Tailwind CSS", "Motion")));
             templateRepository.save(blushLens);
             logs.put("template_blushlens_photography", "Created");
+
+            // Seed Aether Studio (Photography-10)
+            Template aetherStudio = new Template();
+            aetherStudio.setName("Aether Studio — Fine Art Editorial Photography");
+            aetherStudio.setSlug("aether-studio-photography");
+            aetherStudio.setDescription("A high-end, editorial photography showcase template. Features custom slide overlays, parallax grid systems, desaturated earthy image styling, and elegant typewriter layout design.");
+            aetherStudio.setCategory(photography);
+            aetherStudio.setPrice(0.0);
+            aetherStudio.setTemplateType("FREE");
+            aetherStudio.setBootstrapVersion("React / Tailwind CSS / Motion");
+            aetherStudio.setDemoUrl("/templates/photography/photography-10/index.html");
+            aetherStudio.setDownloadFile("");
+            aetherStudio.setPreviewImage("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80");
+            aetherStudio.setVersion("1.0.0");
+            aetherStudio.setStatus("PUBLISHED");
+            aetherStudio.setPagesCount(1);
+            aetherStudio.setDownloadsCount(1480);
+            aetherStudio.setTags(new ArrayList<>(Arrays.asList("Fine Art", "Editorial Photography", "Earthy Theme", "Tailwind CSS", "Motion")));
+            templateRepository.save(aetherStudio);
+            logs.put("template_aetherstudio_photography", "Created");
         }
 
         // 6. Seed Restaurant templates

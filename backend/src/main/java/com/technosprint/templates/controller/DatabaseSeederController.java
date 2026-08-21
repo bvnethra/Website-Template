@@ -481,7 +481,7 @@ public class DatabaseSeederController {
             ecomHub.setPrice(0.0);
             ecomHub.setTemplateType("FREE");
             ecomHub.setBootstrapVersion("React / Tailwind / Spring Boot");
-            ecomHub.setDemoUrl("/templates/ecommerce/ecommerce-10/frontend/index.html");
+            ecomHub.setDemoUrl("/templates/ecommerce/ecommerce-10/index.html");
             ecomHub.setDownloadFile("");
             ecomHub.setPreviewImage("https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=800&q=80");
             ecomHub.setVersion("1.0.0");

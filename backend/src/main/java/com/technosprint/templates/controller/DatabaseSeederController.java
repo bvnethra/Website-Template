@@ -643,6 +643,29 @@ public class DatabaseSeederController {
             logs.put("template_watch_soon", "Created");
         }
 
+        // Seed Hotel templates
+        Category hotelCategory = catMap.get("hotel");
+        if (hotelCategory != null) {
+            Template auraHavenResorts = new Template();
+            auraHavenResorts.setName("Aura Haven Resorts — Luxury Sanctuary Resort");
+            auraHavenResorts.setSlug("aura-haven-resorts");
+            auraHavenResorts.setDescription("A luxury boutique sanctuary resort landing page. Features responsive editorial slideshows, immersive accommodation galleries, interactive basalt thermal spa sections, and fine dining reservation flow.");
+            auraHavenResorts.setCategory(hotelCategory);
+            auraHavenResorts.setPrice(0.0);
+            auraHavenResorts.setTemplateType("FREE");
+            auraHavenResorts.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            auraHavenResorts.setDemoUrl("/templates/hotel/hotel-1/index.html");
+            auraHavenResorts.setDownloadFile("");
+            auraHavenResorts.setPreviewImage("https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80");
+            auraHavenResorts.setVersion("1.0.0");
+            auraHavenResorts.setStatus("PUBLISHED");
+            auraHavenResorts.setPagesCount(1);
+            auraHavenResorts.setDownloadsCount(1850);
+            auraHavenResorts.setTags(new ArrayList<>(Arrays.asList("Resort", "Luxury Hotel", "Boutique", "Reservation", "Editorial Slider")));
+            templateRepository.save(auraHavenResorts);
+            logs.put("template_aurahaven_hotel", "Created");
+        }
+
         // 9. Seed Education templates
         Category educationCategory = catMap.get("education");
         if (educationCategory != null) {

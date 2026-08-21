@@ -547,6 +547,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Vanilla CSS / Scroll Video',
     version: '1.0.0',
     demoUrl: '/templates/construction/construction-6/index.html'
+  },
+  {
+    id: 120,
+    name: 'Aura Haven Resorts — Luxury Sanctuary Resort',
+    slug: 'aura-haven-resorts',
+    previewImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 6, name: 'Hotel', slug: 'hotel' },
+    pagesCount: 1,
+    downloadsCount: 1850,
+    description: 'A luxury boutique sanctuary resort landing page. Features responsive editorial slideshows, immersive accommodation galleries, interactive basalt thermal spa sections, and fine dining reservation flow.',
+    bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
+    version: '1.0.0',
+    demoUrl: '/templates/hotel/hotel-1/index.html'
   }
 ];
 

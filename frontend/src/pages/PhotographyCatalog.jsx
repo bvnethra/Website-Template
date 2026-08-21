@@ -56,6 +56,13 @@ export default function PhotographyCatalog() {
       previewImage: '/lume_cover.png',
       tags: ['Editorial Fashion', 'Moody Spotlight', 'Bespoke Lighting'],
       description: 'A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.'
+    },
+    {
+      slug: 'aether-photography',
+      name: 'Aether Studio — Fine Art Editorial Photography',
+      previewImage: '/aether_cover.png',
+      tags: ['Earthy tones', 'Responsive Grid', 'Candid Silhouette', 'Editorial'],
+      description: 'A premium, modern visual playground documenting raw emotion, refined geometries, and wild romance through a minimal, editorial perspective.'
     }
   ];
 
@@ -134,6 +141,10 @@ export default function PhotographyCatalog() {
       'src/components/Scene3D.jsx',
       'src/components/ServicesSection.jsx',
       'src/components/Testimonials.jsx'
+    ],
+    'aether-photography': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css'
     ]
   };
 

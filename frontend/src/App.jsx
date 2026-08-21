@@ -18,6 +18,7 @@ import FineArtTemplate from './pages/FineArtTemplate';
 import CinematicWedding from './pages/CinematicWedding';
 import KairoPhotography from './pages/KairoPhotography';
 import ISteadyGimbal from './pages/ISteadyGimbal';
+import AetherPhotography from './pages/AetherPhotography';
 import DevicePreviewWrapper from './components/DevicePreviewWrapper';
 
 function Header({ cartCount, user, onLogout }) {
@@ -403,7 +404,8 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
     location.pathname === '/templates/photography/fineart-template/index.html' ||
     location.pathname.startsWith('/templates/photography/cinematic-wedding') ||
     location.pathname.startsWith('/templates/photography/kairo-template') ||
-    location.pathname.startsWith('/templates/photography/isteady-template');
+    location.pathname.startsWith('/templates/photography/isteady-template') ||
+    location.pathname.startsWith('/templates/photography/aether-photography');
 
   // Full-screen template routes
   if (isTemplateRoute) {
@@ -425,6 +427,8 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
         <Route path="/templates/photography/kairo-template/index.html" element={<DevicePreviewWrapper><KairoPhotography /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/isteady-template" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/isteady-template/index.html" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/aether-photography" element={<DevicePreviewWrapper><AetherPhotography /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/aether-photography/index.html" element={<DevicePreviewWrapper><AetherPhotography /></DevicePreviewWrapper>} />
 
       </Routes>
     );

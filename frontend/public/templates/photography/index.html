@@ -103,7 +103,50 @@
           <a href="./snapfolio-template/index.html" target="_blank" class="py-3 px-5 text-center bg-[#262626] hover:bg-[#333333] text-white rounded-xl font-medium border border-white/10 text-xs flex items-center justify-center gap-2 transition-colors">
             Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
           </a>
-          <button id="download-btn" onclick="downloadTemplate()" class="py-3 px-5 text-center bg-[#544ee8] hover:bg-[#433cc8] text-white rounded-xl font-medium shadow-md text-xs flex items-center justify-center gap-2 transition-colors">
+          <button id="download-snapfolio" onclick="downloadTemplate('snapfolio-template')" class="py-3 px-5 text-center bg-[#544ee8] hover:bg-[#433cc8] text-white rounded-xl font-medium shadow-md text-xs flex items-center justify-center gap-2 transition-colors">
+            Download <i class="fa-solid fa-download"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card: Aether Studio Showcase -->
+      <div class="bg-[#1e1e1e] border border-white/10 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-white/20 hover:shadow-2xl hover:shadow-indigo-500/5">
+        <div class="space-y-5">
+          <!-- Thumbnail cover wrapper with live demo hover preview link -->
+          <a href="./aether-photography/index.html" target="_blank" class="block relative group overflow-hidden rounded-2xl bg-zinc-900 border border-white/5 aspect-[16/10]">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Aether Studio Cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span class="px-5 py-2.5 rounded-xl bg-white text-zinc-955 text-xs font-bold shadow-lg flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                Live Preview <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </span>
+            </div>
+          </a>
+
+          <!-- Details -->
+          <div class="space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 rounded-full bg-[#2a2744] text-indigo-300 text-[10px] font-semibold uppercase tracking-wider">Earthy Tones</span>
+              <span class="px-2.5 py-1 rounded-full bg-[#2a2744] text-indigo-300 text-[10px] font-semibold uppercase tracking-wider">Responsive Grid</span>
+              <span class="px-2.5 py-1 rounded-full bg-[#2a2744] text-indigo-300 text-[10px] font-semibold uppercase tracking-wider">Editorial</span>
+            </div>
+            
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-white hover:text-indigo-400 transition-colors">
+                <a href="./aether-photography/index.html" target="_blank">Aether Studio — Fine Art Editorial Photography</a>
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                A premium, modern visual playground documenting raw emotion, refined geometries, and wild romance through a minimal, editorial perspective.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Triggers -->
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <a href="./aether-photography/index.html" target="_blank" class="py-3 px-5 text-center bg-[#262626] hover:bg-[#333333] text-white rounded-xl font-medium border border-white/10 text-xs flex items-center justify-center gap-2 transition-colors">
+            Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </a>
+          <button id="download-aether" onclick="downloadTemplate('aether-photography')" class="py-3 px-5 text-center bg-[#544ee8] hover:bg-[#433cc8] text-white rounded-xl font-medium shadow-md text-xs flex items-center justify-center gap-2 transition-colors">
             Download <i class="fa-solid fa-download"></i>
           </button>
         </div>
@@ -226,6 +269,10 @@
         'src/components/Scene3D.jsx',
         'src/components/ServicesSection.jsx',
         'src/components/Testimonials.jsx'
+      ],
+      'aether-photography': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css'
       ]
     };
 

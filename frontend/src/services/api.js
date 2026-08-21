@@ -442,6 +442,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Three.js / Lucide',
     version: '1.0.0',
     demoUrl: '/templates/construction/construction-2/index.html'
+  },
+  {
+    id: 113,
+    name: 'Futurix Constructions — 3D BIM Technology',
+    slug: 'futurix-constructions',
+    previewImage: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 9, name: 'Construction', slug: 'construction' },
+    pagesCount: 1,
+    downloadsCount: 1750,
+    description: 'Next-generation commercial construction and BIM engineering landing page with real-time 3D telemetry, parametric cost estimator, live statistics, and Java Spring Boot REST backend.',
+    bootstrapVersion: 'React / Three.js / Glassmorphism',
+    version: '1.0.0',
+    demoUrl: '/templates/construction/construction-3/index.html'
   }
 ];
 

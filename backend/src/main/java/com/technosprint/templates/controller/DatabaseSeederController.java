@@ -810,6 +810,26 @@ public class DatabaseSeederController {
             buildhubConst.setTags(new ArrayList<>(Arrays.asList("3D BIM Model", "Three.js", "Architecture", "Construction Estimator", "React")));
             templateRepository.save(buildhubConst);
             logs.put("template_buildhub_construction", "Created");
+
+            // Seed Futurix Constructions (construction-3)
+            Template futurixConst = new Template();
+            futurixConst.setName("Futurix Constructions — 3D BIM Technology");
+            futurixConst.setSlug("futurix-constructions");
+            futurixConst.setDescription("Next-generation commercial construction and BIM engineering landing page with real-time 3D telemetry, parametric cost estimator, live statistics, and Java Spring Boot REST backend.");
+            futurixConst.setCategory(constructionCategory);
+            futurixConst.setPrice(0.0);
+            futurixConst.setTemplateType("FREE");
+            futurixConst.setBootstrapVersion("React / Three.js / Glassmorphism");
+            futurixConst.setDemoUrl("/templates/construction/construction-3/index.html");
+            futurixConst.setDownloadFile("");
+            futurixConst.setPreviewImage("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80");
+            futurixConst.setVersion("1.0.0");
+            futurixConst.setStatus("PUBLISHED");
+            futurixConst.setPagesCount(1);
+            futurixConst.setDownloadsCount(1750);
+            futurixConst.setTags(new ArrayList<>(Arrays.asList("3D Telemetry", "Three.js", "BIM Technology", "React", "Glassmorphism")));
+            templateRepository.save(futurixConst);
+            logs.put("template_futurix_construction", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

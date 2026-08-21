@@ -704,6 +704,26 @@ public class DatabaseSeederController {
             eduvora2.setTags(new ArrayList<>(Arrays.asList("Education Portal", "Student Dashboard", "Exam Registration", "Tailwind CSS", "React")));
             templateRepository.save(eduvora2);
             logs.put("template_eduvora2", "Created");
+
+            // Seed Eduvora III (Education-4)
+            Template eduvora3 = new Template();
+            eduvora3.setName("Eduvora III — Online Learning Platform");
+            eduvora3.setSlug("eduvora-education-iii");
+            eduvora3.setDescription("Comprehensive academic learning platform and stateful Student Portal with examination registrations, hall tickets, marksheets, photocopy and revaluation hubs, security audit logs, and dual-role authentication.");
+            eduvora3.setCategory(educationCategory);
+            eduvora3.setPrice(0.0);
+            eduvora3.setTemplateType("FREE");
+            eduvora3.setBootstrapVersion("React / Tailwind CSS / Router");
+            eduvora3.setDemoUrl("/templates/education/education-4/index.html");
+            eduvora3.setDownloadFile("");
+            eduvora3.setPreviewImage("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80");
+            eduvora3.setVersion("1.0.0");
+            eduvora3.setStatus("PUBLISHED");
+            eduvora3.setPagesCount(15);
+            eduvora3.setDownloadsCount(1890);
+            eduvora3.setTags(new ArrayList<>(Arrays.asList("Education Portal", "Student Dashboard", "Exam Registration", "Tailwind CSS", "React")));
+            templateRepository.save(eduvora3);
+            logs.put("template_eduvora3", "Created");
         }
 
         // 10. Seed Events templates

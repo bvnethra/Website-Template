@@ -451,6 +451,46 @@ public class DatabaseSeederController {
             aurel.setTags(new ArrayList<>(Arrays.asList("Minimalist Fashion", "Structured Design", "Custom Cursors", "Scroll Reveals", "Color Size Selectors")));
             templateRepository.save(aurel);
             logs.put("template_aurel", "Created");
+
+            // Seed Nexa (Ecommerce-9)
+            Template nexaEcom = new Template();
+            nexaEcom.setName("NEXA — Premium Multi-Vendor E-Commerce Portal");
+            nexaEcom.setSlug("nexa-ecom-portal");
+            nexaEcom.setDescription("A premium, production-ready multi-vendor e-commerce portal template. Features robust product listings, interactive cart drawers, a full-featured admin management portal, and dockerized backend configurations.");
+            nexaEcom.setCategory(ecommerceCategory);
+            nexaEcom.setPrice(0.0);
+            nexaEcom.setTemplateType("FREE");
+            nexaEcom.setBootstrapVersion("React / Tailwind CSS / Express");
+            nexaEcom.setDemoUrl("/templates/ecommerce/ecommerce-9/index.html");
+            nexaEcom.setDownloadFile("");
+            nexaEcom.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
+            nexaEcom.setVersion("1.0.0");
+            nexaEcom.setStatus("PUBLISHED");
+            nexaEcom.setPagesCount(22);
+            nexaEcom.setDownloadsCount(4500);
+            nexaEcom.setTags(new ArrayList<>(Arrays.asList("Multi-Vendor", "Admin Portal", "React", "Express", "Tailwind CSS")));
+            templateRepository.save(nexaEcom);
+            logs.put("template_nexa_ecom", "Created");
+
+            // Seed E-Commerce Hub (Ecommerce-10)
+            Template ecomHub = new Template();
+            ecomHub.setName("E-Commerce Hub — Modern Kids & Family Fashion Store");
+            ecomHub.setSlug("ecom-hub-fashion");
+            ecomHub.setDescription("A modern, responsive e-commerce storefront dedicated to family fashion and kids wear. Features animated custom cursors, product quick-view modals, search overlays, a wishlist manager, and a Spring Boot backend.");
+            ecomHub.setCategory(ecommerceCategory);
+            ecomHub.setPrice(0.0);
+            ecomHub.setTemplateType("FREE");
+            ecomHub.setBootstrapVersion("React / Tailwind / Spring Boot");
+            ecomHub.setDemoUrl("/templates/ecommerce/ecommerce-10/frontend/index.html");
+            ecomHub.setDownloadFile("");
+            ecomHub.setPreviewImage("https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=800&q=80");
+            ecomHub.setVersion("1.0.0");
+            ecomHub.setStatus("PUBLISHED");
+            ecomHub.setPagesCount(18);
+            ecomHub.setDownloadsCount(3600);
+            ecomHub.setTags(new ArrayList<>(Arrays.asList("Kids Fashion", "Family Wear", "Animated Cursor", "Spring Boot")));
+            templateRepository.save(ecomHub);
+            logs.put("template_ecom_hub", "Created");
         }
 
         // 8. Seed Coming Soon templates

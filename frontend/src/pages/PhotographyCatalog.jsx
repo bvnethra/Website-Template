@@ -450,8 +450,6 @@ export default function PhotographyCatalog() {
                 }}>
                   <a 
                     href={`/templates/photography/${tpl.slug}`} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
                     style={{ color: '#0f172a', transition: 'color 0.2s' }}
                     onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
                     onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
@@ -483,8 +481,6 @@ export default function PhotographyCatalog() {
               }}>
                 <a 
                   href={`/templates/photography/${tpl.slug}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer"  
                   style={{
                     display: 'flex',
                     alignItems: 'center',

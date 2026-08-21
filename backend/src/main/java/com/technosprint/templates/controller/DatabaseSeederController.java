@@ -667,6 +667,26 @@ public class DatabaseSeederController {
             vertex.setTags(new ArrayList<>(Arrays.asList("Robotics", "Quantum Tech", "Particle BG", "Light Dark Theme", "Vite")));
             templateRepository.save(vertex);
             logs.put("template_vertex_event", "Created");
+
+            // Seed Iron Ascent (Events-4)
+            Template ironAscent = new Template();
+            ironAscent.setName("VORTEX FORGE FITNESS — IRON ASCENT 2026");
+            ironAscent.setSlug("iron-ascent-event");
+            ironAscent.setDescription("A premium athletic and fitness challenge event launching template. Features trainer portfolios, class schedules, program cards, equipment showcases, pricing tables, and registration capture.");
+            ironAscent.setCategory(eventsCategory);
+            ironAscent.setPrice(0.0);
+            ironAscent.setTemplateType("FREE");
+            ironAscent.setBootstrapVersion("React / Tailwind / Montserrat");
+            ironAscent.setDemoUrl("/templates/events/events-4/index.html");
+            ironAscent.setDownloadFile("");
+            ironAscent.setPreviewImage("https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80");
+            ironAscent.setVersion("1.0.0");
+            ironAscent.setStatus("PUBLISHED");
+            ironAscent.setPagesCount(15);
+            ironAscent.setDownloadsCount(2700);
+            ironAscent.setTags(new ArrayList<>(Arrays.asList("Fitness Event", "Gym Portal", "Workout Schedule", "Trainer Profiles", "Tailwind")));
+            templateRepository.save(ironAscent);
+            logs.put("template_ironascent_event", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

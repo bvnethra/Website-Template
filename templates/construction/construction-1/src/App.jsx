@@ -9,7 +9,7 @@ import CostEstimator from './components/CostEstimator';
 import Footer from './components/Footer';
 
 function TemplateView() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     if (darkMode) {

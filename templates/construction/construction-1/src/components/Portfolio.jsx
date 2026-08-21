@@ -53,6 +53,7 @@ export default function Portfolio() {
           <div>
             <div className="section-badge">FEATURED LANDMARKS</div>
             <h2 className="section-title">ENGINEERED TO PERFECTION</h2>
+            <div className="heading-orange-bar"></div>
           </div>
 
           <div className="portfolio-filters">
@@ -101,7 +102,7 @@ export default function Portfolio() {
                 <h3 className="portfolio-title">{project.title}</h3>
                 <div className="portfolio-tags">
                   {project.tags.map((tag, idx) => (
-                    <span key={idx} className="tag">{tag}</span>
+                    <span key={idx} className="tag-chip">{tag}</span>
                   ))}
                 </div>
               </div>

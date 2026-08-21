@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import CraneSimulation from './CraneSimulation';
 
 export default function Hero() {
   const videoRef = useRef(null);
@@ -20,10 +19,11 @@ export default function Hero() {
 
   return (
     <section className="hero-section" id="hero">
-      {/* Background Video */}
+      {/* Background Video & Overlays */}
       <div className="hero-video-wrapper">
         <video
           ref={videoRef}
+          className="hero-video"
           id="heroVideo"
           autoPlay
           loop
@@ -38,9 +38,6 @@ export default function Hero() {
         <div className="hero-grid-overlay"></div>
       </div>
 
-      {/* Live Crane Canvas Physics Simulation */}
-      <CraneSimulation />
-
       {/* Hero Foreground Content */}
       <div className="container hero-container">
         <div className="hero-content">
@@ -51,7 +48,7 @@ export default function Hero() {
           <h1 className="hero-title-main">
             MASTERING SCALE <br />
             WITH HEAVY <br />
-            MACHINERY
+            <span className="text-orange">MACHINERY</span>
           </h1>
 
           <p className="hero-description">
@@ -64,8 +61,16 @@ export default function Hero() {
               <span className="arrow">→</span>
             </a>
             <a href="#services" className="btn-ghost-white">
-              <span>RUN LOAD STRESS TEST</span>
+              <span>EXPLORE CAPABILITIES</span>
             </a>
+          </div>
+
+          <div className="hero-telemetry-badge">
+            <span className="telemetry-dot"></span>
+            <div className="telemetry-info">
+              <strong>FLEET STATUS: ACTIVE MOBILIZATION</strong>
+              <span>OSHA 100% Zero Incident Rate • ENR Top 20 Civil Contractor</span>
+            </div>
           </div>
         </div>
       </div>

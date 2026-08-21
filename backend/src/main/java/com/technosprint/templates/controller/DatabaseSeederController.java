@@ -532,8 +532,8 @@ public class DatabaseSeederController {
             watchSoon.setPrice(0.0);
             watchSoon.setTemplateType("FREE");
             watchSoon.setBootstrapVersion("HTML5 / Tailwind CSS / Vanilla JS");
-            watchSoon.setDemoUrl("/templates/ecommerce/comingsoon-5/index.html");
-            watchSoon.setPreviewImage("/templates/ecommerce/comingsoon-5/watch-hero.jpg");
+            watchSoon.setDemoUrl("/templates/comming-soon/cm-5/index.html");
+            watchSoon.setPreviewImage("/templates/comming-soon/cm-5/watch-hero.jpg");
             watchSoon.setVersion("1.0");
             watchSoon.setStatus("PUBLISHED");
             watchSoon.setPagesCount(1);

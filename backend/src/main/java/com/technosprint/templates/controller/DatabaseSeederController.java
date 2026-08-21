@@ -687,6 +687,26 @@ public class DatabaseSeederController {
             ironAscent.setTags(new ArrayList<>(Arrays.asList("Fitness Event", "Gym Portal", "Workout Schedule", "Trainer Profiles", "Tailwind")));
             templateRepository.save(ironAscent);
             logs.put("template_ironascent_event", "Created");
+
+            // Seed AquaVexa (Events-5)
+            Template aquavexa = new Template();
+            aquavexa.setName("AQUAVEXA AUTO SPA — Premium Car Wash & Detailing Studio");
+            aquavexa.setSlug("aquavexa-autospa");
+            aquavexa.setDescription("A premium automotive wash, detailing, and paint studio platform. Features services grids, pricing cards, equipment showcases, paint studios, booking panels, and a reactive dark mode design.");
+            aquavexa.setCategory(eventsCategory);
+            aquavexa.setPrice(0.0);
+            aquavexa.setTemplateType("FREE");
+            aquavexa.setBootstrapVersion("React / Tailwind CSS / Vite");
+            aquavexa.setDemoUrl("/templates/events/events-5/index.html");
+            aquavexa.setDownloadFile("");
+            aquavexa.setPreviewImage("https://images.unsplash.com/photo-1520340356584-f9917d1eed69?auto=format&fit=crop&w=800&q=80");
+            aquavexa.setVersion("1.0.0");
+            aquavexa.setStatus("PUBLISHED");
+            aquavexa.setPagesCount(12);
+            aquavexa.setDownloadsCount(2100);
+            aquavexa.setTags(new ArrayList<>(Arrays.asList("Car Wash", "Auto Detailing", "Booking Studio", "Paint Studio", "React")));
+            templateRepository.save(aquavexa);
+            logs.put("template_aquavexa_autospa", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

@@ -68,6 +68,21 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/photography/wedding-template/index.html'
   },
   {
+    id: 109,
+    name: 'Blush Lens — Fine Art Wedding Photography',
+    slug: 'blush-wedding',
+    previewImage: '/wedding_cover.png',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 8, name: 'Photography', slug: 'photography' },
+    pagesCount: 1,
+    downloadsCount: 1420,
+    description: 'A premium React wedding photography template featuring romantic blush and warm ivory tones, editorial serif typography, interactive booking forms, and dynamic parallax portfolio galleries.',
+    bootstrapVersion: 'React 19 / Tailwind CSS / Vite',
+    version: '1.0',
+    demoUrl: '/templates/photography/blush-wedding/index.html'
+  },
+  {
     id: 4,
     name: 'Qure Nexa — Advanced Medical & Healthcare Platform',
     slug: 'qure-nexa',

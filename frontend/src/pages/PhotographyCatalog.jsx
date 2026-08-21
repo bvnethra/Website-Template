@@ -56,6 +56,13 @@ export default function PhotographyCatalog() {
       previewImage: '/lume_cover.png',
       tags: ['Editorial Fashion', 'Moody Spotlight', 'Bespoke Lighting'],
       description: 'A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.'
+    },
+    {
+      slug: 'blush-wedding',
+      name: 'Blush Lens — Fine Art Wedding Photography',
+      previewImage: '/wedding_cover.png',
+      tags: ['Boutique Romance', 'Blush Tones', 'Interactive Booking'],
+      description: 'A premium React wedding photography template featuring romantic blush and warm ivory tones, editorial serif typography, interactive booking forms, and dynamic parallax portfolio galleries.'
     }
   ];
 
@@ -134,6 +141,10 @@ export default function PhotographyCatalog() {
       'src/components/Scene3D.jsx',
       'src/components/ServicesSection.jsx',
       'src/components/Testimonials.jsx'
+    ],
+    'blush-wedding': [
+      'package.json', 'vite.config.js', 'index.html', 'metadata.json',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css'
     ]
   };
 

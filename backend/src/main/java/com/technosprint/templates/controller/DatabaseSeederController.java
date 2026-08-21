@@ -452,25 +452,25 @@ public class DatabaseSeederController {
             templateRepository.save(aurel);
             logs.put("template_aurel", "Created");
 
-            // Seed Nexa (Ecommerce-9)
-            Template nexaEcom = new Template();
-            nexaEcom.setName("NEXA — Premium Multi-Vendor E-Commerce Portal");
-            nexaEcom.setSlug("nexa-ecom-portal");
-            nexaEcom.setDescription("A premium, production-ready multi-vendor e-commerce portal template. Features robust product listings, interactive cart drawers, a full-featured admin management portal, and dockerized backend configurations.");
-            nexaEcom.setCategory(ecommerceCategory);
-            nexaEcom.setPrice(0.0);
-            nexaEcom.setTemplateType("FREE");
-            nexaEcom.setBootstrapVersion("React / Tailwind CSS / Express");
-            nexaEcom.setDemoUrl("/templates/ecommerce/ecommerce-9/index.html");
-            nexaEcom.setDownloadFile("");
-            nexaEcom.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
-            nexaEcom.setVersion("1.0.0");
-            nexaEcom.setStatus("PUBLISHED");
-            nexaEcom.setPagesCount(22);
-            nexaEcom.setDownloadsCount(4500);
-            nexaEcom.setTags(new ArrayList<>(Arrays.asList("Multi-Vendor", "Admin Portal", "React", "Express", "Tailwind CSS")));
-            templateRepository.save(nexaEcom);
-            logs.put("template_nexa_ecom", "Created");
+            // Seed BLUECORE (Ecommerce-9)
+            Template bluecoreEcom = new Template();
+            bluecoreEcom.setName("BLUECORE — Futuristic Device & Electronics Showroom");
+            bluecoreEcom.setSlug("bluecore-showroom");
+            bluecoreEcom.setDescription("A high-end, futuristic e-commerce showroom for devices and electronics. Features holographic UI styling, detailed product catalogs across 8 categories, interactive specification panels, and a sleek dark theme.");
+            bluecoreEcom.setCategory(ecommerceCategory);
+            bluecoreEcom.setPrice(0.0);
+            bluecoreEcom.setTemplateType("FREE");
+            bluecoreEcom.setBootstrapVersion("React / Framer Motion / Vanilla CSS");
+            bluecoreEcom.setDemoUrl("/templates/ecommerce/ecommerce-9/index.html");
+            bluecoreEcom.setDownloadFile("");
+            bluecoreEcom.setPreviewImage("https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80");
+            bluecoreEcom.setVersion("1.0.0");
+            bluecoreEcom.setStatus("PUBLISHED");
+            bluecoreEcom.setPagesCount(12);
+            bluecoreEcom.setDownloadsCount(4500);
+            bluecoreEcom.setTags(new ArrayList<>(Arrays.asList("Futuristic UI", "Electronics Showroom", "React", "Framer Motion", "Dark Theme")));
+            templateRepository.save(bluecoreEcom);
+            logs.put("template_bluecore_ecom", "Created");
 
             // Seed E-Commerce Hub (Ecommerce-10)
             Template ecomHub = new Template();

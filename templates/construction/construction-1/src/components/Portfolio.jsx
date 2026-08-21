@@ -7,7 +7,7 @@ const projects = [
     title: 'Apex Tower 1,200T Tandem Lift',
     location: 'Metropolis Downtown, NY',
     stat: '1,200 Tonnes Lifted',
-    image: 'assets/images/crane-sunset-hero.jpg',
+    image: '/assets/images/crane-sunset-hero.jpg',
     tags: ['Lattice Boom', 'Dual Crane Tandem', 'Structural Steel']
   },
   {
@@ -16,7 +16,7 @@ const projects = [
     title: 'Pacific Suspension Bridge Piling',
     location: 'Harbor Gateway, CA',
     stat: '85m Subterranean Depth',
-    image: 'assets/images/service-masonry.jpg',
+    image: '/assets/images/service-masonry.jpg',
     tags: ['Deep Caissons', 'Secant Wall', 'High-Early Concrete']
   },
   {
@@ -25,7 +25,7 @@ const projects = [
     title: 'Horizon Center Skyscraper Framing',
     location: 'Financial District, TX',
     stat: '64 Stories / 280m',
-    image: 'assets/images/service-planning.jpg',
+    image: '/assets/images/service-planning.jpg',
     tags: ['Skyscraper', 'Curtain Wall', 'BIM Clash Free']
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     title: 'Coastal Offshore Wind Turbine Rigging',
     location: 'Atlantic Energy Zone',
     stat: '14MW Turbines',
-    image: 'assets/images/service-craft.jpg',
+    image: '/assets/images/service-craft.jpg',
     tags: ['Offshore Rigging', 'Heavy Barges', 'Clean Power']
   }
 ];

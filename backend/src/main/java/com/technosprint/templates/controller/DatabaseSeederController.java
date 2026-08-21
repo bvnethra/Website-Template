@@ -200,6 +200,26 @@ public class DatabaseSeederController {
             wedding.setTags(new ArrayList<>(Arrays.asList("Wedding Theme", "Ivory Background", "Serif Typography")));
             templateRepository.save(wedding);
             logs.put("template_wedding", "Created");
+
+            // Seed Sage & Shutter (Photography-8)
+            Template sageShutter = new Template();
+            sageShutter.setName("Sage & Shutter — Fine Art Wedding Photography");
+            sageShutter.setSlug("sage-shutter-photography");
+            sageShutter.setDescription("An elegant, high-end fine art wedding photography showcase template. Features delicate earthy desaturated filters, parallax image carousels, custom cursor indicators, and responsive testimonial sliders.");
+            sageShutter.setCategory(photography);
+            sageShutter.setPrice(0.0);
+            sageShutter.setTemplateType("FREE");
+            sageShutter.setBootstrapVersion("React / Tailwind CSS / Motion");
+            sageShutter.setDemoUrl("/templates/photography/photography-8/index.html");
+            sageShutter.setDownloadFile("");
+            sageShutter.setPreviewImage("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80");
+            sageShutter.setVersion("1.0.0");
+            sageShutter.setStatus("PUBLISHED");
+            sageShutter.setPagesCount(1);
+            sageShutter.setDownloadsCount(2300);
+            sageShutter.setTags(new ArrayList<>(Arrays.asList("Fine Art", "Wedding Photography", "Earthy Filters", "Tailwind CSS", "Motion")));
+            templateRepository.save(sageShutter);
+            logs.put("template_sageshutter_photography", "Created");
         }
 
         // 6. Seed Restaurant templates

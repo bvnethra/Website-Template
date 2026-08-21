@@ -577,6 +577,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     version: '1.0.0',
     demoUrl: '/templates/hotel/hotel-2/index.html'
+  },
+  {
+    id: 122,
+    name: 'Aurelia Velvet Obsidian Resort — Ultra-Luxury Sanctuary',
+    slug: 'aurelia-velvet-obsidian-resort',
+    previewImage: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 6, name: 'Hotel', slug: 'hotel' },
+    pagesCount: 1,
+    downloadsCount: 1750,
+    description: 'A private refuge offering luxury architectural pods crafted from volcanic stone, glass canopies, and polished teakwood.',
+    bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
+    version: '1.0.0',
+    demoUrl: '/templates/hotel/hotel-3/index.html'
   }
 ];
 

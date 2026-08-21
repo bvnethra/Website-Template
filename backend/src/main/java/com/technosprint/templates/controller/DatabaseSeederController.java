@@ -684,6 +684,26 @@ public class DatabaseSeederController {
             aethelredResort.setTags(new ArrayList<>(Arrays.asList("Hotel", "Luxury Resort", "Lodging", "Booking", "Gallery")));
             templateRepository.save(aethelredResort);
             logs.put("template_aethelred_hotel", "Created");
+
+            // Seed Aurelia Velvet Obsidian Resort (hotel-3)
+            Template aureliaResort = new Template();
+            aureliaResort.setName("Aurelia Velvet Obsidian Resort — Ultra-Luxury Sanctuary");
+            aureliaResort.setSlug("aurelia-velvet-obsidian-resort");
+            aureliaResort.setDescription("A private refuge offering luxury architectural pods crafted from volcanic stone, glass canopies, and polished teakwood.");
+            aureliaResort.setCategory(hotelCategory);
+            aureliaResort.setPrice(0.0);
+            aureliaResort.setTemplateType("FREE");
+            aureliaResort.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            aureliaResort.setDemoUrl("/templates/hotel/hotel-3/index.html");
+            aureliaResort.setDownloadFile("");
+            aureliaResort.setPreviewImage("https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80");
+            aureliaResort.setVersion("1.0.0");
+            aureliaResort.setStatus("PUBLISHED");
+            aureliaResort.setPagesCount(1);
+            aureliaResort.setDownloadsCount(1750);
+            aureliaResort.setTags(new ArrayList<>(Arrays.asList("Hotel", "Ultra-Luxury", "Sanctuary", "Volcanic Stone", "Teakwood")));
+            templateRepository.save(aureliaResort);
+            logs.put("template_aurelia_hotel", "Created");
         }
 
         // 9. Seed Education templates

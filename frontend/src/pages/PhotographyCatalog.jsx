@@ -11,16 +11,51 @@ export default function PhotographyCatalog() {
     {
       slug: 'snapfolio-template',
       name: 'SnapFolio — Dark Minimalist Portfolio',
-      previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
+      previewImage: '/snapfolio_cover.png',
       tags: ['Dark Theme', 'Masonry Gallery', 'Lightbox Modal'],
       description: 'A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.'
     },
     {
       slug: 'photo-template',
       name: 'Photo — Editorial Photography Studio',
-      previewImage: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80',
+      previewImage: '/photo_cover.png',
       tags: ['Editorial Layout', 'Scroll Pinned Canvas', 'Golden Hour Theme'],
       description: 'A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.'
+    },
+    {
+      slug: 'wedding-template',
+      name: 'Lumière — High-End Wedding & Event Photography',
+      previewImage: '/wedding_cover.png',
+      tags: ['Minimalist Editorial', 'Split Layout Navbar', 'Floating Contact Buttons'],
+      description: 'A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.'
+    },
+    {
+      slug: 'fineart-template',
+      name: 'Aura — Premium Fine Art Studio',
+      previewImage: '/fineart_cover.png',
+      tags: ['Premium Serif', 'Wipe Reveals', 'Hover Custom Cursor'],
+      description: 'A premium, dynamic React portfolio website for a fine art photography studio. Features Ken Burns hero animations, scroll-triggered wipe reveals, and interactive circular gallery navigations.'
+    },
+    {
+      slug: 'cinematic-wedding',
+      name: 'Eden Rose — Cinematic Luxury Wedding Portfolio',
+      previewImage: '/cinematic_cover.png',
+      tags: ['Luxury Monocrom', 'Preloader curtain', 'Staggered Grid'],
+      description: 'A cinematic wedding photography portfolio template in deep black and luxury gold tones. Features intro curtain loaders, route transition reveals, staggered portfolio grids, and boutique inquiry options.'
+    },
+    {
+      slug: 'kairo-template',
+      name: 'Kairo — Modern 3D Photography Portfolio',
+      previewImage: '/kairo_cover.png',
+      tags: ['3D Scene', 'Interactive Parallax', 'Luxury Editorial'],
+      description: 'A modern photography portfolio featuring interactive 3D camera lens aperture graphics rendered in React Three Fiber, scroll-linked fade animations, split-layout bio sections, and fullscreen responsive image tiles.'
+    },
+    {
+      slug: 'isteady-template',
+      name: 'Lume Studio — Fashion & Editorial Portfolio',
+      previewImage: '/lume_cover.png',
+      tags: ['Editorial Fashion', 'Moody Spotlight', 'Bespoke Lighting'],
+      description: 'A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.'
     }
   ];
 
@@ -32,23 +67,90 @@ export default function PhotographyCatalog() {
     }, 4000);
   };
 
+  const TEMPLATE_FILES = {
+    'snapfolio-template': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css'
+    ],
+    'photo-template': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css'
+    ],
+    'wedding-template': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css'
+    ],
+    'fineart-template': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/CollectionCircle.jsx',
+      'src/components/CollectionsGrid.jsx',
+      'src/components/FeatureBlock.jsx',
+      'src/components/Footer.jsx',
+      'src/components/Hero.jsx',
+      'src/components/Navbar.jsx',
+      'src/components/Newsletter.jsx',
+      'src/data/config.js'
+    ],
+    'cinematic-wedding': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/About.jsx',
+      'src/components/FeaturedStories.jsx',
+      'src/components/Footer.jsx',
+      'src/components/Gallery.jsx',
+      'src/components/Hero.jsx',
+      'src/components/Navbar.jsx',
+      'src/components/ScrollReveal.jsx',
+      'src/components/Services.jsx',
+      'src/components/Testimonials.jsx',
+      'src/data/config.js'
+    ],
+    'kairo-template': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/AboutSection.jsx',
+      'src/components/CameraModel.jsx',
+      'src/components/ContactSection.jsx',
+      'src/components/Footer.jsx',
+      'src/components/Hero3DScene.jsx',
+      'src/components/HeroContent.jsx',
+      'src/components/HeroGrid.jsx',
+      'src/components/Navbar.jsx',
+      'src/components/ParticleField.jsx',
+      'src/components/Scene3D.jsx',
+      'src/components/ServicesSection.jsx'
+    ],
+    'isteady-template': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/AboutSection.jsx',
+      'src/components/ContactSection.jsx',
+      'src/components/Footer.jsx',
+      'src/components/HeroContent.jsx',
+      'src/components/Navbar.jsx',
+      'src/components/ParticleField.jsx',
+      'src/components/PortfolioGrid.jsx',
+      'src/components/Scene3D.jsx',
+      'src/components/ServicesSection.jsx',
+      'src/components/Testimonials.jsx'
+    ]
+  };
+
   const handleDownload = async (slug, templateName) => {
     setDownloadingSlug(slug);
+
     const zip = new JSZip();
-    
-    const files = [
-      { name: 'index.html', url: `/templates/photography/${slug}/index.html` },
-      { name: 'style.css', url: `/templates/photography/${slug}/style.css` },
-      { name: 'script.js', url: `/templates/photography/${slug}/script.js` }
-    ];
+    const filesToDownload = TEMPLATE_FILES[slug] || [];
 
     try {
-      // 1. Fetch text files (HTML, CSS, JS)
-      for (const file of files) {
-        const response = await fetch(file.url);
-        if (!response.ok) throw new Error(`Failed to fetch ${file.name}`);
+      // 1. Fetch React project files
+      for (const filePath of filesToDownload) {
+        const fileUrl = `/templates/photography/${slug}/${filePath}`;
+        const response = await fetch(fileUrl);
+        if (!response.ok) throw new Error(`Failed to fetch ${filePath}`);
         const text = await response.text();
-        zip.file(file.name, text);
+        zip.file(filePath, text);
       }
       
       // 2. Fetch and add frames sequence binary files for the photo-template
@@ -148,74 +250,186 @@ export default function PhotographyCatalog() {
 
       {/* Catalog Grid */}
       <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-        gap: '30px',
-        marginTop: '30px'
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '36px',
+        marginTop: '30px',
+        width: '100%'
       }}>
         
         {TEMPLATES.map((tpl) => (
           <div key={tpl.slug} style={{
-            backgroundColor: '#1e1e1e',
-            border: '1px solid rgba(255,255,255,0.08)',
+            backgroundColor: '#ffffff',
+            border: '1px solid #e2e8f0',
             borderRadius: '24px',
-            padding: '24px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
-            maxWidth: '420px',
+            padding: '32px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+            gap: '36px',
+            alignItems: 'center',
+            boxShadow: '0 4px 20px rgba(15, 23, 42, 0.03)',
             width: '100%',
+            transition: 'all 0.3s ease-in-out',
+            boxSizing: 'border-box'
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(84, 78, 232, 0.3)';
-            e.currentTarget.style.boxShadow = '0 20px 40px -10px rgba(84, 78, 232, 0.15)';
-            e.currentTarget.style.transform = 'translateY(-4px)';
+            e.currentTarget.style.borderColor = 'rgba(84, 78, 232, 0.2)';
+            e.currentTarget.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.06)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
-            e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.05)';
-            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.borderColor = '#e2e8f0';
+            e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.03)';
           }}
           >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              
-              {/* Image Preview Wrapper */}
-              <a 
-                href={`/templates/photography/${tpl.slug}/index.html`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                style={{
-                  position: 'relative',
-                  display: 'block',
-                  width: '100%',
-                  aspectRatio: '16/10',
-                  borderRadius: '16px',
-                  overflow: 'hidden',
-                  backgroundColor: '#121212',
-                  border: '1px solid rgba(255,255,255,0.05)'
-                }}
-              >
-                <img 
-                  src={tpl.previewImage} 
-                  alt={tpl.name} 
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
-                  }}
-                />
-              </a>
+            {/* Left Column: Responsive Multi-Device CSS Mockup */}
+            <div style={{
+              position: 'relative',
+              width: '100%',
+              aspectRatio: '16/11',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: '#f8fafc',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              border: '1px solid #f1f5f9',
+              boxSizing: 'border-box',
+              padding: '24px'
+            }}>
+              {/* 1. Laptop Mockup Frame */}
+              <div style={{
+                position: 'relative',
+                width: '72%',
+                aspectRatio: '16/10',
+                background: '#0f172a',
+                borderRadius: '8px 8px 0 0',
+                border: '4px solid #1e293b',
+                boxShadow: '0 15px 35px rgba(0,0,0,0.12)',
+                overflow: 'hidden',
+                zIndex: 1,
+                transform: 'translateX(-8%)',
+                boxSizing: 'border-box'
+              }}>
+                <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative' }}>
+                  <img 
+                    src={tpl.previewImage} 
+                    alt={`${tpl.name} Desktop Preview`} 
+                    style={{ 
+                      width: '100%', 
+                      height: '112%', 
+                      objectFit: 'cover', 
+                      objectPosition: 'top',
+                      marginTop: '-12%' 
+                    }} 
+                  />
+                </div>
+                {/* Keyboard Base thin border */}
+                <div style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: '3px',
+                  background: '#64748b'
+                }} />
+              </div>
 
+              {/* 2. Tablet Mockup Frame (overlaid on the right side) */}
+              <div style={{
+                position: 'absolute',
+                right: '18%',
+                bottom: '18%',
+                width: '24%',
+                aspectRatio: '3/4',
+                background: '#0f172a',
+                border: '4px solid #0f172a',
+                borderRadius: '10px',
+                boxShadow: '0 15px 25px rgba(0,0,0,0.18)',
+                overflow: 'hidden',
+                zIndex: 2,
+                boxSizing: 'border-box'
+              }}>
+                {/* Camera sensor dot */}
+                <div style={{
+                  position: 'absolute',
+                  top: '3px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '4px',
+                  height: '4px',
+                  borderRadius: '50%',
+                  background: '#334155',
+                  zIndex: 10
+                }} />
+                <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+                  <img 
+                    src={tpl.previewImage} 
+                    alt={`${tpl.name} Tablet Preview`} 
+                    style={{ 
+                      width: '100%', 
+                      height: '112%', 
+                      objectFit: 'cover', 
+                      objectPosition: 'top',
+                      marginTop: '-12%' 
+                    }} 
+                  />
+                </div>
+              </div>
+
+              {/* 3. Mobile Mockup Frame (overlaid in front) */}
+              <div style={{
+                position: 'absolute',
+                right: '6%',
+                bottom: '12%',
+                width: '15%',
+                aspectRatio: '9/19',
+                background: '#090d16',
+                border: '3px solid #090d16',
+                borderRadius: '12px',
+                boxShadow: '0 15px 30px rgba(0,0,0,0.22)',
+                overflow: 'hidden',
+                zIndex: 3,
+                boxSizing: 'border-box'
+              }}>
+                {/* Speaker pill notch */}
+                <div style={{
+                  position: 'absolute',
+                  top: '2px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '18px',
+                  height: '3px',
+                  borderRadius: '99px',
+                  background: '#1e293b',
+                  zIndex: 10
+                }} />
+                <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+                  <img 
+                    src={tpl.previewImage} 
+                    alt={`${tpl.name} Mobile Preview`} 
+                    style={{ 
+                      width: '100%', 
+                      height: '112%', 
+                      objectFit: 'cover', 
+                      objectPosition: 'top',
+                      marginTop: '-12%' 
+                    }} 
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Title, Metadata, Description & Pill Buttons */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+              
               {/* Badges / Tags */}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {tpl.tags.map((tag) => (
                   <span key={tag} style={{
                     padding: '4px 10px',
                     borderRadius: '99px',
-                    backgroundColor: '#2a2744',
-                    color: '#a5b4fc',
+                    backgroundColor: '#eff6ff',
+                    color: '#1d4ed8',
                     fontSize: '10px',
                     fontWeight: '700',
                     textTransform: 'uppercase',
@@ -227,97 +441,78 @@ export default function PhotographyCatalog() {
               {/* Typography */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <h3 style={{
-                  fontSize: '1.25rem',
+                  fontSize: '1.6rem',
                   fontWeight: '800',
-                  color: 'white',
+                  color: '#0f172a',
                   margin: 0,
-                  fontFamily: 'var(--font-title)'
+                  fontFamily: 'var(--font-title)',
+                  lineHeight: '1.25'
                 }}>
                   <a 
-                    href={`/templates/photography/${tpl.slug}/index.html`} 
+                    href={`/templates/photography/${tpl.slug}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    style={{ color: 'white', transition: 'color 0.2s' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = '#a5b4fc'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+                    style={{ color: '#0f172a', transition: 'color 0.2s' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
                   >
                     {tpl.name}
                   </a>
                 </h3>
+                
+                {/* Updated metadata */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#64748b' }}>
+                  <i className="fa-regular fa-clock" style={{ fontSize: '0.85rem' }}></i>
+                  <span>Updated recently</span>
+                </div>
+
                 <p style={{
-                  fontSize: '0.85rem',
-                  color: '#94a3b8',
-                  lineHeight: '1.6',
-                  margin: 0
+                  fontSize: '0.88rem',
+                  color: '#64748b',
+                  lineHeight: '1.7',
+                  margin: '6px 0 0 0',
+                  fontWeight: 400
                 }}>
                   {tpl.description}
                 </p>
               </div>
 
-            </div>
+              {/* Action Buttons */}
+              <div style={{
+                marginTop: '10px'
+              }}>
+                <a 
+                  href={`/templates/photography/${tpl.slug}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"  
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '6px',
+                    padding: '12px 24px',
+                    backgroundColor: '#1e40af',
+                    color: 'white',
+                    borderRadius: '99px',
+                    border: 'none',
+                    fontWeight: '600',
+                    fontSize: '0.85rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    textDecoration: 'none',
+                    boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#1d4ed8';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#1e40af';
+                  }}
+                >
+                  Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
+                </a>
+              </div>
 
-            {/* Action Buttons */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '12px',
-              margin: '24px 0 0 0'
-            }}>
-              <a 
-                href={`/templates/photography/${tpl.slug}/index.html`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '6px',
-                  padding: '12px 16px',
-                  backgroundColor: '#262626',
-                  color: 'white',
-                  borderRadius: '12px',
-                  fontWeight: '600',
-                  fontSize: '0.8rem',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  cursor: 'pointer',
-                  transition: 'background-color 0.2s',
-                  textDecoration: 'none'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#333333'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#262626'}
-              >
-                Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
-              </a>
-              
-              <button 
-                onClick={() => handleDownload(tpl.slug, tpl.name)}
-                disabled={!!downloadingSlug}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '6px',
-                  padding: '12px 16px',
-                  backgroundColor: '#544ee8',
-                  color: 'white',
-                  borderRadius: '12px',
-                  fontWeight: '600',
-                  fontSize: '0.8rem',
-                  border: 'none',
-                  boxShadow: '0 4px 12px rgba(84, 78, 232, 0.2)',
-                  cursor: 'pointer',
-                  transition: 'background-color 0.2s',
-                  opacity: downloadingSlug ? 0.6 : 1
-                }}
-                onMouseEnter={(e) => { if(!downloadingSlug) e.currentTarget.style.backgroundColor = '#433cc8'; }}
-                onMouseLeave={(e) => { if(!downloadingSlug) e.currentTarget.style.backgroundColor = '#544ee8'; }}
-              >
-                {downloadingSlug === tpl.slug ? (
-                  <>Zipping <i className="fa-solid fa-circle-notch animate-spin"></i></>
-                ) : (
-                  <>Download <i className="fa-solid fa-download"></i></>
-                )}
-              </button>
             </div>
 
           </div>

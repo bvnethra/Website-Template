@@ -1,3 +1,12 @@
+# Node packages and build outputs
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+build/
+dist/
+coverage/
+
 # Databases and large assets
 db-data/
 *.db
@@ -5,20 +14,20 @@ db-data/
 *.zip
 *.tar.gz
 
-# Frontend Node packages and build outputs
-node_modules/
-frontend/node_modules/
-frontend/dist/
-frontend/build/
-
 # Backend Spring Boot compilation outputs and tools
 target/
 backend/target/
 .mvn/
+.maven/
 *.class
 .factorypath
 
-# IDE configurations
+# Environment files
+.env*
+!.env.example
+
+# IDE & OS configurations
+.DS_Store
 .idea/
 .vscode/
 *.iml
@@ -30,3 +39,15 @@ backend/target/
 .gemini/
 .agents/
 bin/
+**/out/
+**/dist/
+**/node_modules/
+
+# Never commit ShopSphere ecommerce-7 files
+templates/ecommerce/ecommerce-7/
+frontend/public/templates/ecommerce/ecommerce-7/
+
+# Never commit Restaurant templates
+templates/restaurant-1/
+templates/restaurant/ember-and-olive/
+frontend/public/templates/restaurant/ember-and-olive/

@@ -287,87 +287,297 @@ export default function Templates() {
           </div>
         )}
 
-        {/* Grid */}
+        {/* Vertical Stack of Large Horizontal Cards */}
         {sortedTemplates.length > 0 ? (
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))',
-            gap: 24
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 40,
+            maxWidth: '1000px',
+            margin: '0 auto'
           }}>
-            {sortedTemplates.map(template => (
-              <div
-                key={template.id}
-                className="glass-panel"
-                style={{
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: '100%',
-                  background: 'white'
-                }}
-              >
-                <div style={{ position: 'relative', height: 180, overflow: 'hidden', background: '#f1f5f9' }}>
-                  <img
-                    src={template.previewImage}
-                    alt={template.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    onError={(e) => {
-                      e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80';
-                    }}
-                  />
-                  <span style={{
-                    position: 'absolute',
-                    top: 12,
-                    right: 12,
-                    padding: '3px 10px',
-                    borderRadius: '99px',
-                    fontSize: '0.7rem',
-                    fontWeight: 700,
-                    background: template.templateType === 'FREE' ? '#22c55e' : 'var(--primary-color)',
-                    color: 'white'
+            {sortedTemplates.map(template => {
+              const isSpecialCard = true;
+              return (
+                <div
+                  key={template.id}
+                  style={{
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #e2e8f0',
+                    borderRadius: '24px',
+                    padding: '32px',
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+                    gap: '36px',
+                    alignItems: 'center',
+                    boxShadow: '0 4px 20px rgba(15, 23, 42, 0.03)',
+                    width: '100%',
+                    transition: 'all 0.3s ease-in-out',
+                    boxSizing: 'border-box'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(84, 78, 232, 0.2)';
+                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.06)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#e2e8f0';
+                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.03)';
+                  }}
+                >
+                  {/* Left Section: Responsive Multi-Device CSS Mockup */}
+                  <div style={{
+                    position: 'relative',
+                    width: '100%',
+                    aspectRatio: '16/11',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: '#f8fafc',
+                    borderRadius: '16px',
+                    overflow: 'hidden',
+                    border: '1px solid #f1f5f9',
+                    boxSizing: 'border-box',
+                    padding: '24px'
                   }}>
-                    {template.templateType === 'FREE' ? 'Free' : `$${template.price.toFixed(2)}`}
-                  </span>
-                </div>
+                    {/* 1. Laptop Mockup Frame */}
+                    <div style={{
+                      position: 'relative',
+                      width: '72%',
+                      aspectRatio: '16/10',
+                      background: '#0f172a',
+                      borderRadius: '8px 8px 0 0',
+                      border: '4px solid #1e293b',
+                      boxShadow: '0 15px 35px rgba(0,0,0,0.12)',
+                      overflow: 'hidden',
+                      zIndex: 1,
+                      transform: 'translateX(-8%)',
+                      boxSizing: 'border-box'
+                    }}>
+                      <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative' }}>
+                        <img 
+                          src={template.previewImage} 
+                          alt={`${template.name} Desktop Preview`} 
+                          style={{ 
+                            width: '100%', 
+                            height: '112%', 
+                            objectFit: 'cover', 
+                            objectPosition: 'top',
+                            marginTop: '-12%' 
+                          }} 
+                          onError={(e) => {
+                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
+                          }}
+                        />
+                      </div>
+                      {/* Keyboard Base thin border */}
+                      <div style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        height: '3px',
+                        background: '#64748b'
+                      }} />
+                    </div>
 
-                <div style={{ padding: 18, display: 'flex', flexDirection: 'column', flex: 1 }}>
-                  <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--primary-color)', textTransform: 'uppercase', marginBottom: 4 }}>
-                    {template.category.name}
-                  </span>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: 6 }}>
-                    <Link to={`/templates/${template.slug}`} style={{ color: 'var(--secondary-color)' }}>
-                      {template.name}
-                    </Link>
-                  </h3>
-                  <p style={{
-                    color: 'var(--text-muted)',
-                    fontSize: '0.8rem',
-                    flex: 1,
-                    marginBottom: 15,
-                    display: '-webkit-box',
-                    WebkitLineClamp: 2,
-                    WebkitBoxOrient: 'vertical',
-                    overflow: 'hidden'
-                  }}>
-                    {template.description}
-                  </p>
+                    {/* 2. Tablet Mockup Frame (overlaid on the right side) */}
+                    <div style={{
+                      position: 'absolute',
+                      right: '18%',
+                      bottom: '18%',
+                      width: '24%',
+                      aspectRatio: '3/4',
+                      background: '#0f172a',
+                      border: '4px solid #0f172a',
+                      borderRadius: '10px',
+                      boxShadow: '0 15px 25px rgba(0,0,0,0.18)',
+                      overflow: 'hidden',
+                      zIndex: 2,
+                      boxSizing: 'border-box'
+                    }}>
+                      {/* Camera sensor dot */}
+                      <div style={{
+                        position: 'absolute',
+                        top: '3px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: '4px',
+                        height: '4px',
+                        borderRadius: '50%',
+                        background: '#334155',
+                        zIndex: 10
+                      }} />
+                      <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+                        <img 
+                          src={template.previewImage} 
+                          alt={`${template.name} Tablet Preview`} 
+                          style={{ 
+                            width: '100%', 
+                            height: '112%', 
+                            objectFit: 'cover', 
+                            objectPosition: 'top',
+                            marginTop: '-12%' 
+                          }} 
+                          onError={(e) => {
+                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
+                          }}
+                        />
+                      </div>
+                    </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: '#94a3b8', marginBottom: 12 }}>
-                    <span>{template.pagesCount} Pages</span>
-                    <span>{(template.downloadsCount / 1000).toFixed(1)}k DLs</span>
+                    {/* 3. Mobile Mockup Frame (overlaid in front) */}
+                    <div style={{
+                      position: 'absolute',
+                      right: '6%',
+                      bottom: '12%',
+                      width: '15%',
+                      aspectRatio: '9/19',
+                      background: '#090d16',
+                      border: '3px solid #090d16',
+                      borderRadius: '12px',
+                      boxShadow: '0 15px 30px rgba(0,0,0,0.22)',
+                      overflow: 'hidden',
+                      zIndex: 3,
+                      boxSizing: 'border-box'
+                    }}>
+                      {/* Speaker pill notch */}
+                      <div style={{
+                        position: 'absolute',
+                        top: '2px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: '18px',
+                        height: '3px',
+                        borderRadius: '99px',
+                        background: '#1e293b',
+                        zIndex: 10
+                      }} />
+                      <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+                        <img 
+                          src={template.previewImage} 
+                          alt={`${template.name} Mobile Preview`} 
+                          style={{ 
+                            width: '100%', 
+                            height: '112%', 
+                            objectFit: 'cover', 
+                            objectPosition: 'top',
+                            marginTop: '-12%' 
+                          }} 
+                          onError={(e) => {
+                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
+                          }}
+                        />
+                      </div>
+                    </div>
                   </div>
 
-                  <Link
-                    to={`/templates/${template.slug}`}
-                    className="btn btn-secondary"
-                    style={{ width: '100%', padding: '8px 0', fontSize: '0.8rem', borderRadius: 8 }}
-                  >
-                    View Details
-                  </Link>
+                  {/* Right Section: Information & Action */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                    
+                    {/* 1. Small feature/category badges at the top */}
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                      <span style={{
+                        padding: '4px 10px',
+                        borderRadius: '99px',
+                        backgroundColor: '#eff6ff',
+                        color: '#1d4ed8',
+                        fontSize: '10px',
+                        fontWeight: '700',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px'
+                      }}>
+                        {template.category.name}
+                      </span>
+                      <span style={{
+                        padding: '4px 10px',
+                        borderRadius: '99px',
+                        backgroundColor: template.templateType === 'FREE' ? 'rgba(34, 197, 94, 0.08)' : 'rgba(234, 179, 8, 0.08)',
+                        color: template.templateType === 'FREE' ? '#22c55e' : '#ca8a04',
+                        fontSize: '10px',
+                        fontWeight: '700',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px'
+                      }}>
+                        {template.templateType === 'FREE' ? 'Free' : 'Premium'}
+                      </span>
+                    </div>
+
+                    {/* 2. Template Name & details link */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <h3 style={{
+                        fontSize: '1.6rem',
+                        fontWeight: '800',
+                        color: '#0f172a',
+                        margin: 0,
+                        fontFamily: 'var(--font-title)',
+                        lineHeight: '1.25'
+                      }}>
+                        <Link 
+                          to={`/templates/${template.slug}`} 
+                          style={{ color: '#0f172a', transition: 'color 0.2s', textDecoration: 'none' }}
+                          onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
+                          onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
+                        >
+                          {template.name}
+                        </Link>
+                      </h3>
+                      
+                      {/* Updated metadata */}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#64748b' }}>
+                        <i className="fa-regular fa-clock" style={{ fontSize: '0.85rem' }}></i>
+                        <span>Updated recently</span>
+                      </div>
+
+                      {/* 4. Short Description of the Template */}
+                      <p style={{
+                        fontSize: '0.88rem',
+                        color: '#64748b',
+                        lineHeight: '1.7',
+                        margin: '6px 0 0 0',
+                        fontWeight: 400
+                      }}>
+                        {template.description}
+                      </p>
+                    </div>
+
+                    {/* 5. Live Demo Button */}
+                    <div style={{ marginTop: '10px' }}>
+                      <a
+                        href={template.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: '6px',
+                          padding: '12px 24px',
+                          backgroundColor: '#1e40af',
+                          color: 'white',
+                          borderRadius: '99px',
+                          border: 'none',
+                          fontWeight: '600',
+                          fontSize: '0.85rem',
+                          cursor: 'pointer',
+                          transition: 'all 0.2s',
+                          textDecoration: 'none',
+                          boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = '#1d4ed8';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = '#1e40af';
+                        }}
+                      >
+                        Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
+                      </a>
+                    </div>
+
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         ) : (
           <div style={{

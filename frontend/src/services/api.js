@@ -24,7 +24,7 @@ const MOCK_CATEGORIES = [
 const MOCK_TEMPLATES = [
   {
     id: 1,
-    name: 'SnapFolio — Dark Minimalist Portfolio',
+    name: 'SnapFolio  -  Dark Minimalist Portfolio',
     slug: 'snapfolio-template',
     previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -34,11 +34,12 @@ const MOCK_TEMPLATES = [
     downloadsCount: 15000,
     description: 'A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.',
     bootstrapVersion: 'HTML5 / Tailwind CSS',
-    version: '1.0'
+    version: '1.0',
+    demoUrl: '/templates/photography/snapfolio-template/index.html'
   },
   {
     id: 2,
-    name: 'Photo — Editorial Photography Studio',
+    name: 'Photo  -  Editorial Photography Studio',
     slug: 'photo-template',
     previewImage: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -46,11 +47,224 @@ const MOCK_TEMPLATES = [
     category: { id: 8, name: 'Photography', slug: 'photography' },
     pagesCount: 1,
     downloadsCount: 8400,
-    description: 'A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.',
+    description: 'A high-end, editorial landing page template for creative photography studios. Features Sphere-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
+    version: '1.0',
+    demoUrl: '/templates/photography/photo-template/index.html'
+  },
+  {
+    id: 3,
+    name: 'Lumière — High-End Wedding & Event Photography',
+    slug: 'wedding-template',
+    previewImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 8, name: 'Photography', slug: 'photography' },
+    pagesCount: 1,
+    downloadsCount: 1200,
+    description: 'A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.',
+    bootstrapVersion: 'HTML5 / Tailwind CSS',
+    version: '1.0',
+    demoUrl: '/templates/photography/wedding-template/index.html'
+  },
+  {
+    id: 4,
+    name: 'Qure Nexa — Advanced Medical & Healthcare Platform',
+    slug: 'qure-nexa',
+    previewImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 2, name: 'Medical', slug: 'medical' },
+    pagesCount: 12,
+    downloadsCount: 12400,
+    description: 'A modern healthcare and hospital management platform featuring multi-role portals for Patients, Doctors, and Admins, doctor directory, intelligent slot booking, and clinical workflows.',
+    bootstrapVersion: 'React 19 / Tailwind CSS / Vite',
+    demoUrl: '/templates/medical/qure-nexa/index.html',
+    downloadFile: 'qure-nexa-medical.zip',
     version: '1.0'
+  },
+
+
+  {
+    id: 7,
+    name: 'Soft Glow — Clean Beauty & Skin-First Hydration',
+    slug: 'soft-glow',
+    previewImage: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 3,
+    downloadsCount: 2450,
+    description: 'A high-end Next.js beauty and skincare storefront featuring dewy-gloss styles, peptide bundle builders, marquee notification bars, interactive review boards, and smooth scroll animations.',
+    bootstrapVersion: 'Next.js / React / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-1/index.html'
+  },
+  {
+    id: 8,
+    name: 'AURA — Premium Acoustic & Luxury Archive',
+    slug: 'aura-commerce',
+    previewImage: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 8,
+    downloadsCount: 3100,
+    description: 'An editorial, dark-themed e-commerce experience dedicated to premium acoustics, luxury timepieces, and structural apparel. Built with interactive cart drawers, wishlist triggers, and gold gradient finishes.',
+    bootstrapVersion: 'React / React Router / CSS Modules',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-6/index.html'
+  },
+  {
+    id: 9,
+    name: 'AURELIA — Luxury Jewelry & Emerald Archive',
+    slug: 'aurelia-commerce',
+    previewImage: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 9,
+    downloadsCount: 1420,
+    description: 'A premium, dark emerald & gold themed e-commerce template for high-end luxury jewelry, diamonds, and bridal collections. Styled with custom drawers, search overlay, and elegant product filters.',
+    bootstrapVersion: 'React / React Router / Vanilla CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-2/index.html'
+  },
+
+  {
+    id: 11,
+    name: 'ToyVerse — Interactive Toy & Hobby Store',
+    slug: 'toy-store',
+    previewImage: 'https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 8,
+    downloadsCount: 3200,
+    description: 'A vibrant and interactive online storefront designed for modern toy stores and hobby shops. Features a custom 3D flying toy canvas, whimsical category lists, responsive cart drawer, and interactive tracking.',
+    demoUrl: '/templates/ecommerce/ecommerce-8/index.html'
+  },
+  {
+    id: 12,
+    name: 'NOVA — Futuristic Device & Ecosystem Store',
+    slug: 'nova-store',
+    previewImage: '/templates/ecommerce/ecommerce-3/images/nova_x1_front.webp',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 4,
+    downloadsCount: 4100,
+    description: 'A futuristic and clean electronic product storefront dedicated to premium devices and smart ecosystem components. Features automated command search overlays, compare modals, interactive specifications, and cart drawers.',
+    demoUrl: '/templates/ecommerce/ecommerce-3/index.html'
+  },
+  {
+    id: 13,
+    name: 'Orvana — Premium Design & Lifestyle Concept Store',
+    slug: 'orvana-store',
+    previewImage: 'https://images.unsplash.com/photo-1441984969733-d4df530a7731?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 14,
+    downloadsCount: 5120,
+    description: 'A cinematic and immersive e-commerce storefront for lifestyle and fashion concept brands. Features rich animations, cinematic video hero headers, product quick view modals, interactive sorting, and detailed item configuration options.',
+    demoUrl: '/templates/ecommerce/ecommerce-4/index.html'
+  },
+  {
+    id: 14,
+    name: 'AUREL — Minimalist Fashion & Lifestyle Store',
+    slug: 'aurel-store',
+    previewImage: 'https://images.unsplash.com/photo-1598554747436-c9293d6a588f?q=80&w=800&auto=format&fit=crop',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 10,
+    downloadsCount: 3820,
+    description: 'A minimalist, structured e-commerce storefront for organic fashion and lifestyle labels. Features smooth scroll reveals, custom cursors, floating filter panels, and color/size cart controls.',
+    demoUrl: '/templates/ecommerce/ecommerce-5/index.html'
+  },
+  {
+    id: 15,
+    name: 'Ember House — Artisan Dining & Gathering Space',
+    slug: 'ember-house',
+    previewImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 8,
+    downloadsCount: 2950,
+    description: 'An elegant, full-featured artisan restaurant and gathering venue template. Features fine dining menu displays, inline reservation requests, slideshow lookbooks, team/chef highlights, and clean typography.',
+    demoUrl: '/templates/restaurant/restaurant-1/index.html'
+  },
+  {
+    id: 16,
+    name: 'Ember & Olive — Artisan Seasonal Restaurant',
+    slug: 'ember-and-olive-react',
+    previewImage: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 6,
+    downloadsCount: 9500,
+    description: 'An elegant, premium React-refactored restaurant template featuring signature dish modals, scroll progress cursors, reservation sections, event highlights, and a gorgeous lightbox gallery.',
+    demoUrl: '/templates/restaurant/restaurant-2/index.html'
+  },
+  {
+    id: 17,
+    name: 'Lumière — Modern Culinary Concept Store',
+    slug: 'lumiere-restaurant',
+    previewImage: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 1,
+    downloadsCount: 1840,
+    description: 'An immersive and cinematic restaurant concept showcase template. Features custom dynamic cursors, interactive floating dish hover cards, smooth scroll reveals, custom reservation modals, and structured storytelling panels.',
+    demoUrl: '/templates/restaurant/restaurant-3/index.html'
+  },
+  {
+    id: 18,
+    name: 'Ember House Noire — Contemporary Garden Restaurant',
+    slug: 'ember-house-noire',
+    previewImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 1,
+    downloadsCount: 1450,
+    description: 'A contemporary garden restaurant template styled in dark editorial aesthetics. Features botanical garden themes, interactive curatorial grids, testimonial slide bars, custom cursors, and reservation capture forms.',
+    demoUrl: '/templates/restaurant/restaurant-4/index.html'
+  },
+  {
+    id: 19,
+    name: 'NOIRE — Nocturnal Garden Bar & Grill',
+    slug: 'noire-restaurant',
+    previewImage: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 1,
+    downloadsCount: 1200,
+    description: 'An premium, unconventional, and moody restaurant template featuring custom ambient audio lounge music, live fireplace hearth sections, dynamic parallax scroll effects, menu showcases, and reservation builders.',
+    demoUrl: '/templates/restaurant/restaurant-5/index.html'
+  },
+  {
+    id: 20,
+    name: 'Skillora — Online Education & Learning Platform',
+    slug: 'skillora-education',
+    previewImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 10, name: 'Education', slug: 'education' },
+    pagesCount: 8,
+    downloadsCount: 3900,
+    description: 'A modern, gorgeous online learning platform with university programs, certified courses, industry mentorship, and dynamic bento animations.',
+    bootstrapVersion: 'React / TypeScript / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/education/education-1/index.html'
   }
 ];
+
 
 const getHeaders = () => {
   const headers = {
@@ -100,6 +314,12 @@ export const api = {
       return data;
     } catch (err) {
       console.warn("Auth failed, using mock auth:", err);
+      if (email === 'admin@technosprint.com' && password === 'adminpassword') {
+        const mockUser = { id: 99, name: 'Admin User', email: 'admin@technosprint.com', role: 'ROLE_ADMIN' };
+        localStorage.setItem('ts_token', 'mock-jwt-token');
+        localStorage.setItem('ts_user', JSON.stringify(mockUser));
+        return mockUser;
+      }
       if (email === 'admin@admin.com') {
         const dummyAdmin = { token: 'mock-token', id: 99, name: 'Admin User', email: 'admin@admin.com', role: 'ROLE_ADMIN' };
         localStorage.setItem('ts_token', dummyAdmin.token);
@@ -149,7 +369,26 @@ export const api = {
       const res = await fetch(`${BASE_URL}/templates?${query.toString()}`, {
         headers: getHeaders(),
       });
-      return await handleResponse(res);
+      const data = await handleResponse(res);
+      if (Array.isArray(data) && data.length > 0) {
+        return data;
+      }
+      let filtered = [...MOCK_TEMPLATES];
+      if (params.category && params.category !== 'all') {
+        filtered = filtered.filter(t => t.category.slug === params.category);
+      }
+      if (params.type && params.type !== 'all') {
+        filtered = filtered.filter(t => t.templateType === params.type);
+      }
+      if (params.search) {
+        const queryStr = params.search.toLowerCase();
+        filtered = filtered.filter(t => 
+          t.name.toLowerCase().includes(queryStr) || 
+          t.description.toLowerCase().includes(queryStr) ||
+          t.category.name.toLowerCase().includes(queryStr)
+        );
+      }
+      return filtered;
     } catch (err) {
       console.warn("API templates fetch failed, utilizing mock fallback:", err);
       let filtered = [...MOCK_TEMPLATES];
@@ -164,7 +403,7 @@ export const api = {
         filtered = filtered.filter(t => 
           t.name.toLowerCase().includes(queryStr) || 
           t.description.toLowerCase().includes(queryStr) ||
-          t.category.name.toLowerCase().includes(queryStr)
+          (t.category && t.category.name && t.category.name.toLowerCase().includes(queryStr))
         );
       }
       return filtered;
@@ -196,29 +435,44 @@ export const api = {
   },
 
   async createTemplate(dto) {
-    const res = await fetch(`${BASE_URL}/templates`, {
-      method: 'POST',
-      headers: getHeaders(),
-      body: JSON.stringify(dto),
-    });
-    return handleResponse(res);
+    try {
+      const res = await fetch(`${BASE_URL}/templates`, {
+        method: 'POST',
+        headers: getHeaders(),
+        body: JSON.stringify(dto),
+      });
+      return await handleResponse(res);
+    } catch (err) {
+      console.error("Failed to create template:", err);
+      throw err;
+    }
   },
 
   async updateTemplate(id, dto) {
-    const res = await fetch(`${BASE_URL}/templates/${id}`, {
-      method: 'PUT',
-      headers: getHeaders(),
-      body: JSON.stringify(dto),
-    });
-    return handleResponse(res);
+    try {
+      const res = await fetch(`${BASE_URL}/templates/${id}`, {
+        method: 'PUT',
+        headers: getHeaders(),
+        body: JSON.stringify(dto),
+      });
+      return await handleResponse(res);
+    } catch (err) {
+      console.error("Failed to update template:", err);
+      throw err;
+    }
   },
 
   async deleteTemplate(id) {
-    const res = await fetch(`${BASE_URL}/templates/${id}`, {
-      method: 'DELETE',
-      headers: getHeaders(),
-    });
-    return handleResponse(res);
+    try {
+      const res = await fetch(`${BASE_URL}/templates/${id}`, {
+        method: 'DELETE',
+        headers: getHeaders(),
+      });
+      return await handleResponse(res);
+    } catch (err) {
+      console.error("Failed to delete template:", err);
+      throw err;
+    }
   },
 
   // Categories

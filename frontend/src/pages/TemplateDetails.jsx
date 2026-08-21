@@ -277,32 +277,10 @@ export default function TemplateDetails({ addToCart, cart }) {
 
             {/* Actions */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 30 }}>
-              {template.templateType === 'FREE' ? (
-                <button
-                  onClick={() => handleFreeDownload(template.id)}
-                  disabled={downloading}
-                  className="btn btn-primary"
-                  style={{ width: '100%', padding: '12px 0' }}
-                >
-                  <Download size={18} /> {downloading ? 'Preparing Archive...' : 'Free Download'}
-                </button>
-              ) : (
-                <button
-                  onClick={() => addToCart(template)}
-                  disabled={isAdded}
-                  className="btn btn-primary"
-                  style={{ width: '100%', padding: '12px 0' }}
-                >
-                  <ShoppingCart size={18} /> {isAdded ? 'Added to Cart' : `Buy Template ($${template.price})`}
-                </button>
-              )}
-
               <a
                 href={template.demoUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-secondary"
-                style={{ width: '100%', padding: '12px 0' }}
+                className="btn btn-primary"
+                style={{ width: '100%', padding: '12px 0', justifyContent: 'center' }}
               >
                 <Globe size={18} /> Live Interactive Demo <ExternalLink size={14} />
               </a>
@@ -330,26 +308,9 @@ export default function TemplateDetails({ addToCart, cart }) {
                 <span style={{ fontWeight: 600 }}>{template.pagesCount} Pages</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ color: 'var(--text-muted)' }}>Downloads Log</span>
-                <span style={{ fontWeight: 600 }}>{template.downloadsCount} total</span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <span style={{ color: 'var(--text-muted)' }}>Version</span>
                 <span style={{ fontWeight: 600 }}>v{template.version}</span>
               </div>
-            </div>
-
-            {/* Security assurance */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 8,
-              marginTop: 25,
-              fontSize: '0.75rem',
-              color: '#10b981',
-              fontWeight: 600
-            }}>
-              <ShieldCheck size={16} /> Secure token validation download link.
             </div>
           </div>
         </div>

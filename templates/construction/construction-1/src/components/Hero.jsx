@@ -29,10 +29,10 @@ export default function Hero() {
           loop
           muted
           playsInline
-          poster="/assets/images/crane-sunset-hero.jpg"
+          poster="./assets/images/crane-sunset-hero.jpg"
         >
-          <source src="/assets/videos/crane-working.webm" type="video/webm" />
-          <source src="/assets/videos/crane-working.mp4" type="video/mp4" />
+          <source src="./assets/videos/crane-working.webm" type="video/webm" />
+          <source src="./assets/videos/crane-working.mp4" type="video/mp4" />
         </video>
         <div className="hero-overlay-gradient"></div>
         <div className="hero-grid-overlay"></div>

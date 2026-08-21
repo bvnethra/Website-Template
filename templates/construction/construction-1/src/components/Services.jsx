@@ -6,7 +6,7 @@ const servicesData = [
     category: 'HEAVY CRANE OPERATIONS & LIFT LOGISTICS',
     title: '1,200T Lattice & Tower Crane Infrastructure',
     description: 'Turnkey tower crane mobilization, 3D CAD lift simulation, wind-load stability modeling, and high-altitude structural steel rigging.',
-    image: '/assets/images/service-craft.jpg',
+    image: './assets/images/service-craft.jpg',
     features: [
       '3D Rigging & Vector Lift Calculations',
       'Wind Speed Monitoring Telemetry',
@@ -20,7 +20,7 @@ const servicesData = [
     category: 'CIVIL & FOUNDATION ENGINEERING',
     title: 'Deep Sub-Structure Shoring & Concrete Piles',
     description: 'Subterranean seismic foundation piling, secant pile walls, high-strength pre-stressed concrete pours, and bridge pier caissons.',
-    image: '/assets/images/service-masonry.jpg',
+    image: './assets/images/service-masonry.jpg',
     features: [
       '10,000 PSI High-Early Concrete',
       'Secant & Tangent Piling Solutions',
@@ -34,7 +34,7 @@ const servicesData = [
     category: 'TURNKEY COMMERCIAL LANDMARKS',
     title: 'High-Rise Structural Framing & Glass Enclosures',
     description: 'Accelerated structural steel erection, unitized glass curtain wall installation, and MEP BIM clash detection for high-rise commercial megastructures.',
-    image: '/assets/images/service-planning.jpg',
+    image: './assets/images/service-planning.jpg',
     features: [
       'BIM Level 5D Parametric Integration',
       'Unitized Curtain Wall Rigging',

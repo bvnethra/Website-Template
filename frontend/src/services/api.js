@@ -592,6 +592,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     version: '1.0.0',
     demoUrl: '/templates/hotel/hotel-3/index.html'
+  },
+  {
+    id: 123,
+    name: 'Solitude Haven — Luxury Forest Sanctuary',
+    slug: 'solitude-haven',
+    previewImage: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 6, name: 'Hotel', slug: 'hotel' },
+    pagesCount: 1,
+    downloadsCount: 1490,
+    description: 'An elegant, full-featured luxury forest sanctuary and wellness retreat template. Features bento-style accommodation cards, immersive experience sections, smooth scroll indicates, and responsive layouts.',
+    bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
+    version: '1.0.0',
+    demoUrl: '/templates/hotel/hotel-4/index.html'
   }
 ];
 

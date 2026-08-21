@@ -704,6 +704,26 @@ public class DatabaseSeederController {
             aureliaResort.setTags(new ArrayList<>(Arrays.asList("Hotel", "Ultra-Luxury", "Sanctuary", "Volcanic Stone", "Teakwood")));
             templateRepository.save(aureliaResort);
             logs.put("template_aurelia_hotel", "Created");
+
+            // Seed Solitude Haven (hotel-4)
+            Template solitudeHaven = new Template();
+            solitudeHaven.setName("Solitude Haven — Luxury Forest Sanctuary");
+            solitudeHaven.setSlug("solitude-haven");
+            solitudeHaven.setDescription("An elegant, full-featured luxury forest sanctuary and wellness retreat template. Features bento-style accommodation cards, immersive experience sections, smooth scroll indicates, and responsive layouts.");
+            solitudeHaven.setCategory(hotelCategory);
+            solitudeHaven.setPrice(0.0);
+            solitudeHaven.setTemplateType("FREE");
+            solitudeHaven.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            solitudeHaven.setDemoUrl("/templates/hotel/hotel-4/index.html");
+            solitudeHaven.setDownloadFile("");
+            solitudeHaven.setPreviewImage("https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80");
+            solitudeHaven.setVersion("1.0.0");
+            solitudeHaven.setStatus("PUBLISHED");
+            solitudeHaven.setPagesCount(1);
+            solitudeHaven.setDownloadsCount(1490);
+            solitudeHaven.setTags(new ArrayList<>(Arrays.asList("Hotel", "Forest Sanctuary", "Wellness", "Bento Cards", "Scroll Indicator")));
+            templateRepository.save(solitudeHaven);
+            logs.put("template_solitude_hotel", "Created");
         }
 
         // 9. Seed Education templates

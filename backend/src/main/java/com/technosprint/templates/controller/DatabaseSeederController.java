@@ -647,6 +647,26 @@ public class DatabaseSeederController {
             cybernexus.setTags(new ArrayList<>(Arrays.asList("Technology Summit", "AI Conference", "Scroll Spy", "Dark Theme", "Registration Form")));
             templateRepository.save(cybernexus);
             logs.put("template_cybernexus_event", "Created");
+
+            // Seed Vertex (Events-3)
+            Template vertex = new Template();
+            vertex.setName("VERTEX — Robotics & Quantum Tech Summit");
+            vertex.setSlug("vertex-event");
+            vertex.setDescription("A premium, light/dark responsive robotics and quantum technology event template. Features quantum style grid animations, particle canvas backgrounds, dynamic tracks, speaker panels, and a sleek modern dark mode design.");
+            vertex.setCategory(eventsCategory);
+            vertex.setPrice(0.0);
+            vertex.setTemplateType("FREE");
+            vertex.setBootstrapVersion("React / Space Grotesk / Vite");
+            vertex.setDemoUrl("/templates/events/events-3/index.html");
+            vertex.setDownloadFile("");
+            vertex.setPreviewImage("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80");
+            vertex.setVersion("1.0.0");
+            vertex.setStatus("PUBLISHED");
+            vertex.setPagesCount(10);
+            vertex.setDownloadsCount(2900);
+            vertex.setTags(new ArrayList<>(Arrays.asList("Robotics", "Quantum Tech", "Particle BG", "Light Dark Theme", "Vite")));
+            templateRepository.save(vertex);
+            logs.put("template_vertex_event", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

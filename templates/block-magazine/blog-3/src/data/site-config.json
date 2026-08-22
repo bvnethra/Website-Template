@@ -3,7 +3,7 @@
   "tagline": "Understand the technology shaping tomorrow.",
   "hero": {
     "frameCount": 300,
-    "framePath": "/frames/ezgif-frame-",
+    "framePath": "./frames/ezgif-frame-",
     "frameExtension": "jpg",
     "zeroPadding": 3
   },

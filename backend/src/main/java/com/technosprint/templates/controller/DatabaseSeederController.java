@@ -545,6 +545,29 @@ public class DatabaseSeederController {
             logs.put("template_southern_ember", "Created");
         }
 
+        // Seed Travels templates
+        Category travelsCategory = catMap.get("travels");
+        if (travelsCategory != null) {
+            Template travelverse = new Template();
+            travelverse.setName("Travelverse — Interactive Travel & Trip Planner");
+            travelverse.setSlug("travelverse");
+            travelverse.setDescription("A premium, interactive React travel platform featuring dynamic page transitions, an interactive cyber world map, a custom trip builder, hotel booking cards, and stunning visual layouts.");
+            travelverse.setCategory(travelsCategory);
+            travelverse.setPrice(0.0);
+            travelverse.setTemplateType("FREE");
+            travelverse.setBootstrapVersion("React / JavaScript / Tailwind CSS");
+            travelverse.setDemoUrl("/templates/travels/travel-1/index.html");
+            travelverse.setDownloadFile("");
+            travelverse.setPreviewImage("https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80");
+            travelverse.setVersion("1.0.0");
+            travelverse.setStatus("PUBLISHED");
+            travelverse.setPagesCount(1);
+            travelverse.setDownloadsCount(1850);
+            travelverse.setTags(new ArrayList<>(Arrays.asList("Interactive Map", "GSAP", "Framer Motion", "Trip Planner", "Booking")));
+            templateRepository.save(travelverse);
+            logs.put("template_travelverse", "Created");
+        }
+
         // 7. Seed Ecommerce templates
         Category ecommerceCategory = catMap.get("ecommerce");
         if (ecommerceCategory != null) {

@@ -374,6 +374,19 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/restaurant/restaurant-10/index.html'
   },
   {
+    id: 133,
+    name: 'Travelverse — Interactive Travel & Trip Planner',
+    slug: 'travelverse',
+    previewImage: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 5, name: 'Travels', slug: 'travels' },
+    pagesCount: 1,
+    downloadsCount: 1850,
+    description: 'A premium, interactive React travel platform featuring dynamic page transitions, an interactive cyber world map, a custom trip builder, hotel booking cards, and stunning visual layouts.',
+    demoUrl: '/templates/travels/travel-1/index.html'
+  },
+  {
     id: 20,
     name: 'Skillora — Online Education & Learning Platform',
     slug: 'skillora-education',

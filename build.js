@@ -11,19 +11,19 @@ try {
   console.log('Building frontend...');
   execSync('npm run build', { cwd: path.resolve('frontend'), stdio: 'inherit' });
 
-  // 3. Copy frontend/dist to root dist
-  console.log('Copying build files to root dist...');
   const src = path.resolve('frontend/dist');
   const dest = path.resolve('dist');
 
+  // 3. Copy index.html to templates/index.html in frontend/dist first
+  console.log('Copying index.html to templates/index.html in frontend/dist...');
+  fs.cpSync(path.join(src, 'index.html'), path.join(src, 'templates/index.html'));
+
+  // 4. Copy frontend/dist to root dist
+  console.log('Copying build files to root dist...');
   if (fs.existsSync(dest)) {
     fs.rmSync(dest, { recursive: true, force: true });
   }
   fs.cpSync(src, dest, { recursive: true });
-
-  // 4. Copy index.html to templates/index.html
-  console.log('Copying index.html to templates/index.html...');
-  fs.cpSync(path.join(dest, 'index.html'), path.join(dest, 'templates/index.html'));
 
   console.log('Build completed successfully!');
 } catch (error) {

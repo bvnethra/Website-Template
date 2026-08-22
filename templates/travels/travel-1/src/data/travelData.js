@@ -165,7 +165,7 @@ export const MOCK_TOURS = [
     duration: "8 Days",
     price: 2200.0,
     rating: 4.8,
-    highlights: ["Eiffel Tower visit", "London Eye flight", "Eurostar train journey", "Seine River cruise"],
+    activities: ["Eiffel Tower visit", "London Eye flight", "Eurostar train journey", "Seine River cruise"],
     travelMode: "Train",
     image: "https://images.unsplash.com/photo-1486299267070-83823f5448dd?auto=format&fit=crop&w=800&q=80"
   },
@@ -176,7 +176,7 @@ export const MOCK_TOURS = [
     duration: "6 Days",
     price: 950.0,
     rating: 4.7,
-    highlights: ["Surfing at Kuta beach", "Swaying on Bali swing", "Visiting Ubud temples", "Volcano trekking"],
+    activities: ["Surfing at Kuta beach", "Swaying on Bali swing", "Visiting Ubud temples", "Volcano trekking"],
     travelMode: "Car",
     image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80"
   },
@@ -187,7 +187,7 @@ export const MOCK_TOURS = [
     duration: "9 Days",
     price: 2700.0,
     rating: 4.9,
-    highlights: ["Skiing in Zermatt", "Cable car to Jungfrau", "Lake Geneva boat tour", "Swiss chocolate making"],
+    activities: ["Skiing in Zermatt", "Cable car to Jungfrau", "Lake Geneva boat tour", "Swiss chocolate making"],
     travelMode: "Aeroplane",
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
   },
@@ -198,7 +198,7 @@ export const MOCK_TOURS = [
     duration: "5 Days",
     price: 1600.0,
     rating: 4.8,
-    highlights: ["Burj Khalifa VIP entry", "Helicopter sky tour", "Yacht party dinner", "Premium desert safari"],
+    activities: ["Burj Khalifa VIP entry", "Helicopter sky tour", "Yacht party dinner", "Premium desert safari"],
     travelMode: "Ship",
     image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80"
   },
@@ -209,7 +209,7 @@ export const MOCK_TOURS = [
     duration: "7 Days",
     price: 1950.0,
     rating: 4.9,
-    highlights: ["Bullet train ride", "Sushi masterclass", "TeamLab digital art entry", "Mt. Fuji hot spring"],
+    activities: ["Bullet train ride", "Sushi masterclass", "TeamLab digital art entry", "Mt. Fuji hot spring"],
     travelMode: "Train",
     image: "https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format&fit=crop&w=800&q=80"
   },
@@ -220,7 +220,7 @@ export const MOCK_TOURS = [
     duration: "6 Days",
     price: 750.0,
     rating: 4.8,
-    highlights: ["Private Houseboat overnight", "Munnar tea estate tour", "Kathakali dance performance"],
+    activities: ["Private Houseboat overnight", "Munnar tea estate tour", "Kathakali dance performance"],
     travelMode: "Car",
     image: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=800&q=80"
   },
@@ -231,7 +231,7 @@ export const MOCK_TOURS = [
     duration: "7 Days",
     price: 850.0,
     rating: 4.7,
-    highlights: ["Jaipur Amber Fort elephant ride", "Udaipur boat cruise", "Jaisalmer camel desert safari"],
+    activities: ["Jaipur Amber Fort elephant ride", "Udaipur boat cruise", "Jaisalmer camel desert safari"],
     travelMode: "Car",
     image: "https://images.unsplash.com/photo-1477587458883-471a5cd08bc4?auto=format&fit=crop&w=800&q=80"
   },
@@ -242,7 +242,7 @@ export const MOCK_TOURS = [
     duration: "6 Days",
     price: 2100.0,
     rating: 4.9,
-    highlights: ["Sunset dolphin cruise", "Private candlelit beach dinner", "Snorkeling with sea turtles"],
+    activities: ["Sunset dolphin cruise", "Private candlelit beach dinner", "Snorkeling with sea turtles"],
     travelMode: "Ship",
     image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80"
   }

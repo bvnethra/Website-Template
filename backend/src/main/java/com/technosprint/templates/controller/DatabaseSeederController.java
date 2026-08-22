@@ -1772,6 +1772,50 @@ public class DatabaseSeederController {
             logs.put("template_education_10", "Created");
         }
 
+        // Seed Coming Soon templates (comming-soon)
+        Category commingSoonCategoryNew = catMap.get("comming-soon");
+        if (commingSoonCategoryNew != null) {
+            // comingsoon-6
+            Template soon6 = new Template();
+            soon6.setName("Aura Pro X1 — Next-Gen 3D Device Launch Hub");
+            soon6.setSlug("aura-pro-x1");
+            soon6.setDescription("A beautiful 3D interactive hardware and smartphone coming soon launch platform. Features a responsive 3D interactive model previewer, countdown launch timer, product specifications tray, and subscription capture form.");
+            soon6.setCategory(commingSoonCategoryNew);
+            soon6.setPrice(0.0);
+            soon6.setTemplateType("FREE");
+            soon6.setBootstrapVersion("React / Three.js / Tailwind CSS / Vite");
+            soon6.setDemoUrl("/templates/comming-soon/comingsoon-6/index.html");
+            soon6.setDownloadFile("");
+            soon6.setPreviewImage("https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=800&q=80");
+            soon6.setVersion("1.0.0");
+            soon6.setStatus("PUBLISHED");
+            soon6.setPagesCount(1);
+            soon6.setDownloadsCount(2450);
+            soon6.setTags(new ArrayList<>(Arrays.asList("Three.js", "Device Launch", "Countdown", "Specs Tray", "Vite")));
+            templateRepository.save(soon6);
+            logs.put("template_comingsoon_6", "Created");
+
+            // comingsoon-7
+            Template soon7 = new Template();
+            soon7.setName("AeroStride — Premium Sportswear Store Pre-launch Showcase");
+            soon7.setSlug("aerostride-prelaunch");
+            soon7.setDescription("A stunning sportswear and footwear launch teaser landing page. Features digital interactive shoe galleries, pre-launch countdown, interactive specs drawer, customer review sliders, and product pre-order capture forms.");
+            soon7.setCategory(commingSoonCategoryNew);
+            soon7.setPrice(0.0);
+            soon7.setTemplateType("FREE");
+            soon7.setBootstrapVersion("React / Tailwind CSS / Vite");
+            soon7.setDemoUrl("/templates/comming-soon/comingsoon-7/index.html");
+            soon7.setDownloadFile("");
+            soon7.setPreviewImage("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80");
+            soon7.setVersion("1.0.0");
+            soon7.setStatus("PUBLISHED");
+            soon7.setPagesCount(1);
+            soon7.setDownloadsCount(1980);
+            soon7.setTags(new ArrayList<>(Arrays.asList("Sportswear", "Pre-launch", "Countdown", "Reviews Slider", "Vite")));
+            templateRepository.save(soon7);
+            logs.put("template_comingsoon_7", "Created");
+        }
+
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);
     }

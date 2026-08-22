@@ -1211,6 +1211,36 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
     demoUrl: '/templates/events/events-10/index.html'
+  },
+  {
+    id: 180,
+    name: 'Aura Pro X1 — Next-Gen 3D Device Launch Hub',
+    slug: 'aura-pro-x1',
+    previewImage: 'https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    pagesCount: 1,
+    downloadsCount: 2450,
+    description: 'A beautiful 3D interactive hardware and smartphone coming soon launch platform. Features a responsive 3D interactive model previewer, countdown launch timer, product specifications tray, and subscription capture form.',
+    bootstrapVersion: 'React / Three.js / Tailwind CSS / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/comming-soon/comingsoon-6/index.html'
+  },
+  {
+    id: 181,
+    name: 'AeroStride — Premium Sportswear Store Pre-launch Showcase',
+    slug: 'aerostride-prelaunch',
+    previewImage: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    pagesCount: 1,
+    downloadsCount: 1980,
+    description: 'A stunning sportswear and footwear launch teaser landing page. Features digital interactive shoe galleries, pre-launch countdown, interactive specs drawer, customer review sliders, and product pre-order capture forms.',
+    bootstrapVersion: 'React / Tailwind CSS / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/comming-soon/comingsoon-7/index.html'
   }
 ];
 

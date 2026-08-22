@@ -23,6 +23,21 @@ const MOCK_CATEGORIES = [
 
 const MOCK_TEMPLATES = [
   {
+    id: 145,
+    name: 'Ananthara Heritage Hotel — Luxury Mewari Palace Hotel',
+    slug: 'ananthara-heritage-hotel',
+    previewImage: '/templates/hotel/hotel-8/images/1_hero_overview.jpg',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 6, name: 'Hotel', slug: 'hotel' },
+    pagesCount: 1,
+    downloadsCount: 1200,
+    description: 'Experience royal Mewari heritage and sovereignty at Ananthara Heritage Hotel in Udaipur. Features luxurious palace suites, Ayurvedic wellness spa, traditional fine dining, immersive experiences, and a full booking system.',
+    bootstrapVersion: 'React / CSS3 / Vanilla JS',
+    version: '1.0.0',
+    demoUrl: '/templates/hotel/hotel-8/index.html'
+  },
+  {
     id: 126,
     name: 'Aurelia Haven — Luxury Resort & Sanctuary',
     slug: 'aurelia-haven',

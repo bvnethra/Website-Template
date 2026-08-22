@@ -508,6 +508,106 @@ public class DatabaseSeederController {
             blog3.setTags(new ArrayList<>(Arrays.asList("AI Tech", "Interactive Charts", "Fluid animations")));
             templateRepository.save(blog3);
             logs.put("template_blog_3", "Created");
+
+            // blog-4
+            Template blog4 = new Template();
+            blog4.setName("Storiva — Digital Storytelling & Lifestyle Journal");
+            blog4.setSlug("storiva-lifestyle");
+            blog4.setDescription("A beautiful lifestyle, blogging, and digital storytelling platform. Features rich article layouts, bookmark contexts, 3D card interactions, category grids, and subscription modals.");
+            blog4.setCategory(blockMagazineCategory);
+            blog4.setPrice(0.0);
+            blog4.setTemplateType("FREE");
+            blog4.setBootstrapVersion("React / Tailwind CSS / Motion");
+            blog4.setDemoUrl("/templates/block-magazine/blog-4/index.html");
+            blog4.setDownloadFile("");
+            blog4.setPreviewImage("https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80");
+            blog4.setVersion("1.0.0");
+            blog4.setStatus("PUBLISHED");
+            blog4.setPagesCount(12);
+            blog4.setDownloadsCount(3100);
+            blog4.setTags(new ArrayList<>(Arrays.asList("Lifestyle", "Lifestyle Journal", "Blogging", "3D Cards", "Framer Motion")));
+            templateRepository.save(blog4);
+            logs.put("template_blog_4", "Created");
+
+            // blog-5
+            Template blog5 = new Template();
+            blog5.setName("Z-MAG — Spatial Fashion & Architecture Monograph");
+            blog5.setSlug("zmag-spatial");
+            blog5.setDescription("Next-generation spatial editorial portfolio. Features 3D coverflow stacks, logo canvas renders, reading progress monitors, saved drawers, and full-screen overlay menus.");
+            blog5.setCategory(blockMagazineCategory);
+            blog5.setPrice(0.0);
+            blog5.setTemplateType("FREE");
+            blog5.setBootstrapVersion("React / Three.js / Tailwind CSS / Vite");
+            blog5.setDemoUrl("/templates/block-magazine/blog-5/index.html");
+            blog5.setDownloadFile("");
+            blog5.setPreviewImage("https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80");
+            blog5.setVersion("1.0.0");
+            blog5.setStatus("PUBLISHED");
+            blog5.setPagesCount(15);
+            blog5.setDownloadsCount(2900);
+            blog5.setTags(new ArrayList<>(Arrays.asList("Spatial Editorial", "Three.js", "Coverflow Stack", "Progress Monitors", "Saved Drawer")));
+            templateRepository.save(blog5);
+            logs.put("template_blog_5", "Created");
+
+            // blog-6
+            Template blog6 = new Template();
+            blog6.setName("Design Mag — High-End Architecture & Design Dispatches");
+            blog6.setSlug("designmag-dispatches");
+            blog6.setDescription("An editorial design and architecture portfolio platform. Features cinematic parallax galleries, tactile bento grids, key takeaways blocks, mega menus, and an immersive dark mode.");
+            blog6.setCategory(blockMagazineCategory);
+            blog6.setPrice(0.0);
+            blog6.setTemplateType("FREE");
+            blog6.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
+            blog6.setDemoUrl("/templates/block-magazine/blog-6/index.html");
+            blog6.setDownloadFile("");
+            blog6.setPreviewImage("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80");
+            blog6.setVersion("1.0.0");
+            blog6.setStatus("PUBLISHED");
+            blog6.setPagesCount(8);
+            blog6.setDownloadsCount(2200);
+            blog6.setTags(new ArrayList<>(Arrays.asList("Architecture", "Tactile Bento Grid", "Mega Menu", "Dark Mode", "Framer Motion")));
+            templateRepository.save(blog6);
+            logs.put("template_blog_6", "Created");
+
+            // blog-7
+            Template blog7 = new Template();
+            blog7.setName("The Blog Observer — Modern Editorial & Opinion Hub");
+            blog7.setSlug("blog-observer");
+            blog7.setDescription("A premium opinion, journalism, and news publishing hub. Features category spread grids, audio player bars, breaks tickers, opinion rails, bookmark drawers, and velocity carousels.");
+            blog7.setCategory(blockMagazineCategory);
+            blog7.setPrice(0.0);
+            blog7.setTemplateType("FREE");
+            blog7.setBootstrapVersion("React / SCSS / Tailwind CSS / Vite");
+            blog7.setDemoUrl("/templates/block-magazine/blog-7/index.html");
+            blog7.setDownloadFile("");
+            blog7.setPreviewImage("https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80");
+            blog7.setVersion("1.0.0");
+            blog7.setStatus("PUBLISHED");
+            blog7.setPagesCount(14);
+            blog7.setDownloadsCount(3800);
+            blog7.setTags(new ArrayList<>(Arrays.asList("Journalism", "Opinion Rail", "Audio Player", "Bookmark Drawer", "Velocity Carousel")));
+            templateRepository.save(blog7);
+            logs.put("template_blog_7", "Created");
+
+            // blog-8
+            Template blog8 = new Template();
+            blog8.setName("Xtra — Dopamine Maximalist Fashion & Culture Journal");
+            blog8.setSlug("xtra-fashion");
+            blog8.setDescription("A high-energy maximalist fashion, art, and dopamine culture journal. Features asymmetrical bento feeds, kinetic ribbon overlays, velocity text carousels, full-screen menus, and page transitions.");
+            blog8.setCategory(blockMagazineCategory);
+            blog8.setPrice(0.0);
+            blog8.setTemplateType("FREE");
+            blog8.setBootstrapVersion("React / Framer Motion / Tailwind / Vite");
+            blog8.setDemoUrl("/templates/block-magazine/blog-8/index.html");
+            blog8.setDownloadFile("");
+            blog8.setPreviewImage("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80");
+            blog8.setVersion("1.0.0");
+            blog8.setStatus("PUBLISHED");
+            blog8.setPagesCount(10);
+            blog8.setDownloadsCount(1750);
+            blog8.setTags(new ArrayList<>(Arrays.asList("Maximalist", "Fashion Journal", "Dopamine Culture", "FullScreen Menu", "Velocity Text")));
+            templateRepository.save(blog8);
+            logs.put("template_blog_8", "Created");
         }
 
         // 6. Seed Restaurant templates

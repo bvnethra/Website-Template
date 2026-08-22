@@ -180,6 +180,66 @@ public class DatabaseSeederController {
             qureNexa.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "hospital", "doctor", "patient-portal", "clinic")));
             templateRepository.save(qureNexa);
             logs.put("qureNexaTemplate", "Seeded Qure Nexa under Medical category");
+
+            // Seed Medicio Healthcare (medical-2)
+            Template medicio = new Template();
+            medicio.setName("Medicio Healthcare — Advanced Medical Center Platform");
+            medicio.setSlug("medicio-healthcare");
+            medicio.setDescription("A customized, comprehensive healthcare web platform with interactive appointment booking, doctor directory, department catalog, service scopes, and patient portal.");
+            medicio.setCategory(medicalCategory);
+            medicio.setPrice(0.0);
+            medicio.setTemplateType("FREE");
+            medicio.setBootstrapVersion("React / Tailwind CSS / Vite");
+            medicio.setDemoUrl("/templates/medical/medical-2/index.html");
+            medicio.setDownloadFile("medicio-healthcare.zip");
+            medicio.setPreviewImage("https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80");
+            medicio.setVersion("1.0");
+            medicio.setStatus("PUBLISHED");
+            medicio.setPagesCount(1);
+            medicio.setDownloadsCount(1200);
+            medicio.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "appointment", "doctor", "clinic")));
+            templateRepository.save(medicio);
+            logs.put("template_medicio_healthcare", "Created");
+
+            // Seed Aurevia Health (medical-3)
+            Template aurevia = new Template();
+            aurevia.setName("Aurevia Health — Premium Healthcare Technology Platform");
+            aurevia.setSlug("aurevia-health");
+            aurevia.setDescription("Premium healthcare technology platform for discovering specialists, clinical departments, intelligent appointment booking, and comprehensive patient-doctor ecosystems.");
+            aurevia.setCategory(medicalCategory);
+            aurevia.setPrice(0.0);
+            aurevia.setTemplateType("FREE");
+            aurevia.setBootstrapVersion("React / Tailwind CSS / Vite");
+            aurevia.setDemoUrl("/templates/medical/medical-3/index.html");
+            aurevia.setDownloadFile("aurevia-health.zip");
+            aurevia.setPreviewImage("https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=800&q=80");
+            aurevia.setVersion("1.0");
+            aurevia.setStatus("PUBLISHED");
+            aurevia.setPagesCount(1);
+            aurevia.setDownloadsCount(1850);
+            aurevia.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "appointment", "doctor", "specialist")));
+            templateRepository.save(aurevia);
+            logs.put("template_aurevia_health", "Created");
+
+            // Seed Veylora Health (medical-4)
+            Template veylora = new Template();
+            veylora.setName("Veylora Health — Multi-Speciality Hospital Platform");
+            veylora.setSlug("veylora-health");
+            veylora.setDescription("Comprehensive healthcare platform featuring specialized medical departments, verified doctor profiles, instant appointment booking, and patient health tools.");
+            veylora.setCategory(medicalCategory);
+            veylora.setPrice(0.0);
+            veylora.setTemplateType("FREE");
+            veylora.setBootstrapVersion("React / Tailwind CSS / Vite");
+            veylora.setDemoUrl("/templates/medical/medical-4/index.html");
+            veylora.setDownloadFile("veylora-health.zip");
+            veylora.setPreviewImage("https://images.unsplash.com/photo-1586773860418-d37222d8fce2?auto=format&fit=crop&w=800&q=80");
+            veylora.setVersion("1.0");
+            veylora.setStatus("PUBLISHED");
+            veylora.setPagesCount(1);
+            veylora.setDownloadsCount(2100);
+            veylora.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "hospital", "doctor", "speciality")));
+            templateRepository.save(veylora);
+            logs.put("template_veylora_health", "Created");
         }
 
         // 5. Seed Photography templates

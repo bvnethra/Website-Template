@@ -958,21 +958,6 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/comming-soon/cm-5/index.html'
   },
   {
-    id: 151,
-    name: 'Eduvora — Elite Learning & Mentorship Portal',
-    slug: 'eduvora-learning-portal',
-    previewImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80',
-    templateType: 'FREE',
-    price: 0,
-    category: { id: 10, name: 'Education', slug: 'education' },
-    pagesCount: 1,
-    downloadsCount: 2500,
-    description: 'Elite academic learning platform featuring advanced courses, student progress monitors, expert instructors, booking schedules, and structured learning paths.',
-    bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
-    version: '1.0.0',
-    demoUrl: '/templates/education/education-1/index.html'
-  },
-  {
     id: 152,
     name: 'Smart Academy — School & Class Management Portal',
     slug: 'smart-academy-portal',
@@ -1031,21 +1016,6 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     version: '1.0.0',
     demoUrl: '/templates/education/education-5/index.html'
-  },
-  {
-    id: 156,
-    name: 'Skillora — Online Education & Learning Platform',
-    slug: 'skillora-education-platform',
-    previewImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80',
-    templateType: 'FREE',
-    price: 0,
-    category: { id: 10, name: 'Education', slug: 'education' },
-    pagesCount: 8,
-    downloadsCount: 3900,
-    description: 'Online course discovery and student command center featuring academic course trackers, live certification cards, study paths, and student portfolio management.',
-    bootstrapVersion: 'React / TypeScript / Tailwind CSS',
-    version: '1.0.0',
-    demoUrl: '/templates/education/education-6/index.html'
   },
   {
     id: 157,

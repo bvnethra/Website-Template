@@ -1431,26 +1431,6 @@ public class DatabaseSeederController {
         // Seed Education templates (1 to 10)
         educationCategory = catMap.get("education");
         if (educationCategory != null) {
-            // education-1
-            Template edu1 = new Template();
-            edu1.setName("Eduvora — Elite Learning & Mentorship Portal");
-            edu1.setSlug("eduvora-learning-portal");
-            edu1.setDescription("Elite academic learning platform featuring advanced courses, student progress monitors, expert instructors, booking schedules, and structured learning paths.");
-            edu1.setCategory(educationCategory);
-            edu1.setPrice(0.0);
-            edu1.setTemplateType("FREE");
-            edu1.setBootstrapVersion("React 19 / Vite / Tailwind CSS");
-            edu1.setDemoUrl("/templates/education/education-1/index.html");
-            edu1.setDownloadFile("");
-            edu1.setPreviewImage("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80");
-            edu1.setVersion("1.0.0");
-            edu1.setStatus("PUBLISHED");
-            edu1.setPagesCount(1);
-            edu1.setDownloadsCount(2500);
-            edu1.setTags(new ArrayList<>(Arrays.asList("E-Learning", "Online Courses", "Mentorship", "React", "Tailwind")));
-            templateRepository.save(edu1);
-            logs.put("template_education_1", "Created");
-
             // education-2
             Template edu2 = new Template();
             edu2.setName("Smart Academy — School & Class Management Portal");
@@ -1530,26 +1510,6 @@ public class DatabaseSeederController {
             edu5.setTags(new ArrayList<>(Arrays.asList("Preschool", "Daycare", "Kindergarten", "React", "Tailwind")));
             templateRepository.save(edu5);
             logs.put("template_education_5", "Created");
-
-            // education-6
-            Template edu6 = new Template();
-            edu6.setName("Skillora — Online Education & Learning Platform");
-            edu6.setSlug("skillora-education-platform");
-            edu6.setDescription("Online course discovery and student command center featuring academic course trackers, live certification cards, study paths, and student portfolio management.");
-            edu6.setCategory(educationCategory);
-            edu6.setPrice(0.0);
-            edu6.setTemplateType("FREE");
-            edu6.setBootstrapVersion("React / TypeScript / Tailwind CSS");
-            edu6.setDemoUrl("/templates/education/education-6/index.html");
-            edu6.setDownloadFile("");
-            edu6.setPreviewImage("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80");
-            edu6.setVersion("1.0.0");
-            edu6.setStatus("PUBLISHED");
-            edu6.setPagesCount(8);
-            edu6.setDownloadsCount(3900);
-            edu6.setTags(new ArrayList<>(Arrays.asList("E-Learning", "Courses", "Certificates", "React", "Tailwind")));
-            templateRepository.save(edu6);
-            logs.put("template_education_6", "Created");
 
             // education-7
             Template edu7 = new Template();

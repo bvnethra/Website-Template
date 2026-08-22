@@ -200,6 +200,146 @@ public class DatabaseSeederController {
             wedding.setTags(new ArrayList<>(Arrays.asList("Wedding Theme", "Ivory Background", "Serif Typography")));
             templateRepository.save(wedding);
             logs.put("template_wedding", "Created");
+
+            // Seed Sage & Shutter (Photography-8)
+            Template sageShutter = new Template();
+            sageShutter.setName("Sage & Shutter — Fine Art Wedding Photography");
+            sageShutter.setSlug("sage-shutter-photography");
+            sageShutter.setDescription("An elegant, high-end fine art wedding photography showcase template. Features delicate earthy desaturated filters, parallax image carousels, custom cursor indicators, and responsive testimonial sliders.");
+            sageShutter.setCategory(photography);
+            sageShutter.setPrice(0.0);
+            sageShutter.setTemplateType("FREE");
+            sageShutter.setBootstrapVersion("React / Tailwind CSS / Motion");
+            sageShutter.setDemoUrl("/templates/photography/photography-8/index.html");
+            sageShutter.setDownloadFile("");
+            sageShutter.setPreviewImage("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80");
+            sageShutter.setVersion("1.0.0");
+            sageShutter.setStatus("PUBLISHED");
+            sageShutter.setPagesCount(1);
+            sageShutter.setDownloadsCount(2300);
+            sageShutter.setTags(new ArrayList<>(Arrays.asList("Fine Art", "Wedding Photography", "Earthy Filters", "Tailwind CSS", "Motion")));
+            templateRepository.save(sageShutter);
+            logs.put("template_sageshutter_photography", "Created");
+
+            // Seed Blush Lens (Photography-9)
+            Template blushLens = new Template();
+            blushLens.setName("Blush Lens — Fine Art Wedding Photography");
+            blushLens.setSlug("blush-lens-photography");
+            blushLens.setDescription("A premium React wedding photography template featuring romantic blush and warm ivory tones, editorial serif typography, interactive booking forms, and dynamic parallax portfolio galleries.");
+            blushLens.setCategory(photography);
+            blushLens.setPrice(0.0);
+            blushLens.setTemplateType("FREE");
+            blushLens.setBootstrapVersion("React / Tailwind CSS / Motion");
+            blushLens.setDemoUrl("/templates/photography/photography-9/index.html");
+            blushLens.setDownloadFile("");
+            blushLens.setPreviewImage("/wedding_cover.png");
+            blushLens.setVersion("1.0.0");
+            blushLens.setStatus("PUBLISHED");
+            blushLens.setPagesCount(1);
+            blushLens.setDownloadsCount(1850);
+            blushLens.setTags(new ArrayList<>(Arrays.asList("Fine Art", "Wedding Photography", "Blush Tones", "Tailwind CSS", "Motion")));
+            templateRepository.save(blushLens);
+            logs.put("template_blushlens_photography", "Created");
+
+            // Seed Aether Studio (Photography-10)
+            Template aetherStudio = new Template();
+            aetherStudio.setName("Aether Studio — Fine Art Editorial Photography");
+            aetherStudio.setSlug("aether-studio-photography");
+            aetherStudio.setDescription("A high-end, editorial photography showcase template. Features custom slide overlays, parallax grid systems, desaturated earthy image styling, and elegant typewriter layout design.");
+            aetherStudio.setCategory(photography);
+            aetherStudio.setPrice(0.0);
+            aetherStudio.setTemplateType("FREE");
+            aetherStudio.setBootstrapVersion("React / Tailwind CSS / Motion");
+            aetherStudio.setDemoUrl("/templates/photography/photography-10/index.html");
+            aetherStudio.setDownloadFile("");
+            aetherStudio.setPreviewImage("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80");
+            aetherStudio.setVersion("1.0.0");
+            aetherStudio.setStatus("PUBLISHED");
+            aetherStudio.setPagesCount(1);
+            aetherStudio.setDownloadsCount(1480);
+            aetherStudio.setTags(new ArrayList<>(Arrays.asList("Fine Art", "Editorial Photography", "Earthy Theme", "Tailwind CSS", "Motion")));
+            templateRepository.save(aetherStudio);
+            logs.put("template_aetherstudio_photography", "Created");
+
+            // Seed Eden Rose (cinematic-wedding)
+            Template edenRose = new Template();
+            edenRose.setName("Eden Rose — Cinematic Luxury Wedding Portfolio");
+            edenRose.setSlug("cinematic-wedding");
+            edenRose.setDescription("A high-end cinematic wedding photography portfolio template with immersive slideshows, custom transitions, and smooth galleries.");
+            edenRose.setCategory(photography);
+            edenRose.setPrice(0.0);
+            edenRose.setTemplateType("FREE");
+            edenRose.setBootstrapVersion("HTML5 / Vanilla CSS");
+            edenRose.setDemoUrl("/templates/photography/cinematic-wedding/index.html");
+            edenRose.setDownloadFile("");
+            edenRose.setPreviewImage("/cinematic_cover.png");
+            edenRose.setVersion("1.0.0");
+            edenRose.setStatus("PUBLISHED");
+            edenRose.setPagesCount(1);
+            edenRose.setDownloadsCount(1320);
+            edenRose.setTags(new ArrayList<>(Arrays.asList("Wedding Portfolio", "Cinematic", "Vanilla CSS", "HTML5")));
+            templateRepository.save(edenRose);
+            logs.put("template_edenrose_photography", "Created");
+
+            // Seed Aura (fineart-template)
+            Template auraArt = new Template();
+            auraArt.setName("AURA — Premium Fine Art Studio");
+            auraArt.setSlug("fineart-template");
+            auraArt.setDescription("A premium fine art and editorial studio portfolio featuring elegant dark-theme aesthetics, grid catalogs, and custom zoom-in lightboxes.");
+            auraArt.setCategory(photography);
+            auraArt.setPrice(0.0);
+            auraArt.setTemplateType("FREE");
+            auraArt.setBootstrapVersion("HTML5 / Vanilla CSS");
+            auraArt.setDemoUrl("/templates/photography/fineart-template/index.html");
+            auraArt.setDownloadFile("");
+            auraArt.setPreviewImage("/fineart_cover.png");
+            auraArt.setVersion("1.0.0");
+            auraArt.setStatus("PUBLISHED");
+            auraArt.setPagesCount(1);
+            auraArt.setDownloadsCount(1430);
+            auraArt.setTags(new ArrayList<>(Arrays.asList("Fine Art", "Studio", "Dark Theme", "Grid Catalog")));
+            templateRepository.save(auraArt);
+            logs.put("template_aura_photography", "Created");
+
+            // Seed Lume Studio (isteady-template)
+            Template lumeStudio = new Template();
+            lumeStudio.setName("Lume Studio — Fashion & Editorial Portfolio");
+            lumeStudio.setSlug("isteady-template");
+            lumeStudio.setDescription("A fashion-focused editorial photography portfolio with clean minimalist grids, typography layouts, and interactive sliders.");
+            lumeStudio.setCategory(photography);
+            lumeStudio.setPrice(0.0);
+            lumeStudio.setTemplateType("FREE");
+            lumeStudio.setBootstrapVersion("HTML5 / Vanilla CSS");
+            lumeStudio.setDemoUrl("/templates/photography/isteady-template/index.html");
+            lumeStudio.setDownloadFile("");
+            lumeStudio.setPreviewImage("/lume_cover.png");
+            lumeStudio.setVersion("1.0.0");
+            lumeStudio.setStatus("PUBLISHED");
+            lumeStudio.setPagesCount(1);
+            lumeStudio.setDownloadsCount(1510);
+            lumeStudio.setTags(new ArrayList<>(Arrays.asList("Fashion", "Editorial", "Minimalist Grid", "Vanilla CSS")));
+            templateRepository.save(lumeStudio);
+            logs.put("template_lumestudio_photography", "Created");
+
+            // Seed Kairo (kairo-template)
+            Template kairoPhoto = new Template();
+            kairoPhoto.setName("Kairo — Modern 3D Photography Portfolio");
+            kairoPhoto.setSlug("kairo-template");
+            kairoPhoto.setDescription("A modern, interactive photography portfolio featuring advanced 3D orbital interactions, custom cursor shaders, and horizontal scroll grids.");
+            kairoPhoto.setCategory(photography);
+            kairoPhoto.setPrice(0.0);
+            kairoPhoto.setTemplateType("FREE");
+            kairoPhoto.setBootstrapVersion("HTML5 / Three.js / Vanilla JS");
+            kairoPhoto.setDemoUrl("/templates/photography/kairo-template/index.html");
+            kairoPhoto.setDownloadFile("");
+            kairoPhoto.setPreviewImage("/kairo_cover.png");
+            kairoPhoto.setVersion("1.0.0");
+            kairoPhoto.setStatus("PUBLISHED");
+            kairoPhoto.setPagesCount(1);
+            kairoPhoto.setDownloadsCount(1820);
+            kairoPhoto.setTags(new ArrayList<>(Arrays.asList("3D Space", "Three.js", "Modern Shaders", "Interactive")));
+            templateRepository.save(kairoPhoto);
+            logs.put("template_kairo_photography", "Created");
         }
 
         // 6. Seed Restaurant templates
@@ -451,6 +591,46 @@ public class DatabaseSeederController {
             aurel.setTags(new ArrayList<>(Arrays.asList("Minimalist Fashion", "Structured Design", "Custom Cursors", "Scroll Reveals", "Color Size Selectors")));
             templateRepository.save(aurel);
             logs.put("template_aurel", "Created");
+
+            // Seed BLUECORE (Ecommerce-9)
+            Template bluecoreEcom = new Template();
+            bluecoreEcom.setName("BLUECORE — Futuristic Device & Electronics Showroom");
+            bluecoreEcom.setSlug("bluecore-showroom");
+            bluecoreEcom.setDescription("A high-end, futuristic e-commerce showroom for devices and electronics. Features holographic UI styling, detailed product catalogs across 8 categories, interactive specification panels, and a sleek dark theme.");
+            bluecoreEcom.setCategory(ecommerceCategory);
+            bluecoreEcom.setPrice(0.0);
+            bluecoreEcom.setTemplateType("FREE");
+            bluecoreEcom.setBootstrapVersion("React / Framer Motion / Vanilla CSS");
+            bluecoreEcom.setDemoUrl("/templates/ecommerce/ecommerce-9/index.html");
+            bluecoreEcom.setDownloadFile("");
+            bluecoreEcom.setPreviewImage("https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80");
+            bluecoreEcom.setVersion("1.0.0");
+            bluecoreEcom.setStatus("PUBLISHED");
+            bluecoreEcom.setPagesCount(12);
+            bluecoreEcom.setDownloadsCount(4500);
+            bluecoreEcom.setTags(new ArrayList<>(Arrays.asList("Futuristic UI", "Electronics Showroom", "React", "Framer Motion", "Dark Theme")));
+            templateRepository.save(bluecoreEcom);
+            logs.put("template_bluecore_ecom", "Created");
+
+            // Seed E-Commerce Hub (Ecommerce-10)
+            Template ecomHub = new Template();
+            ecomHub.setName("E-Commerce Hub — Modern Kids & Family Fashion Store");
+            ecomHub.setSlug("ecom-hub-fashion");
+            ecomHub.setDescription("A modern, responsive e-commerce storefront dedicated to family fashion and kids wear. Features animated custom cursors, product quick-view modals, search overlays, a wishlist manager, and a Spring Boot backend.");
+            ecomHub.setCategory(ecommerceCategory);
+            ecomHub.setPrice(0.0);
+            ecomHub.setTemplateType("FREE");
+            ecomHub.setBootstrapVersion("React / Tailwind / Spring Boot");
+            ecomHub.setDemoUrl("/templates/ecommerce/ecommerce-10/index.html");
+            ecomHub.setDownloadFile("");
+            ecomHub.setPreviewImage("https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=800&q=80");
+            ecomHub.setVersion("1.0.0");
+            ecomHub.setStatus("PUBLISHED");
+            ecomHub.setPagesCount(18);
+            ecomHub.setDownloadsCount(3600);
+            ecomHub.setTags(new ArrayList<>(Arrays.asList("Kids Fashion", "Family Wear", "Animated Cursor", "Spring Boot")));
+            templateRepository.save(ecomHub);
+            logs.put("template_ecom_hub", "Created");
         }
 
         // 8. Seed Coming Soon templates
@@ -543,6 +723,89 @@ public class DatabaseSeederController {
             logs.put("template_watch_soon", "Created");
         }
 
+        // Seed Hotel templates
+        Category hotelCategory = catMap.get("hotel");
+        if (hotelCategory != null) {
+            Template auraHavenResorts = new Template();
+            auraHavenResorts.setName("Aura Haven Resorts — Luxury Sanctuary Resort");
+            auraHavenResorts.setSlug("aura-haven-resorts");
+            auraHavenResorts.setDescription("A luxury boutique sanctuary resort landing page. Features responsive editorial slideshows, immersive accommodation galleries, interactive basalt thermal spa sections, and fine dining reservation flow.");
+            auraHavenResorts.setCategory(hotelCategory);
+            auraHavenResorts.setPrice(0.0);
+            auraHavenResorts.setTemplateType("FREE");
+            auraHavenResorts.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            auraHavenResorts.setDemoUrl("/templates/hotel/hotel-1/index.html");
+            auraHavenResorts.setDownloadFile("");
+            auraHavenResorts.setPreviewImage("https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80");
+            auraHavenResorts.setVersion("1.0.0");
+            auraHavenResorts.setStatus("PUBLISHED");
+            auraHavenResorts.setPagesCount(1);
+            auraHavenResorts.setDownloadsCount(1850);
+            auraHavenResorts.setTags(new ArrayList<>(Arrays.asList("Resort", "Luxury Hotel", "Boutique", "Reservation", "Editorial Slider")));
+            templateRepository.save(auraHavenResorts);
+            logs.put("template_aurahaven_hotel", "Created");
+
+            // Seed Aethelred Resort (hotel-2)
+            Template aethelredResort = new Template();
+            aethelredResort.setName("Aethelred Resort — Luxury Hotel & Lodging");
+            aethelredResort.setSlug("aethelred-resort");
+            aethelredResort.setDescription("Aethelred Resort is an original luxury hotel and resort website template featuring booking bar, room showcase, amenities list, dining highlights, testimonials, and gallery.");
+            aethelredResort.setCategory(hotelCategory);
+            aethelredResort.setPrice(0.0);
+            aethelredResort.setTemplateType("FREE");
+            aethelredResort.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            aethelredResort.setDemoUrl("/templates/hotel/hotel-2/index.html");
+            aethelredResort.setDownloadFile("");
+            aethelredResort.setPreviewImage("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80");
+            aethelredResort.setVersion("1.0.0");
+            aethelredResort.setStatus("PUBLISHED");
+            aethelredResort.setPagesCount(1);
+            aethelredResort.setDownloadsCount(1900);
+            aethelredResort.setTags(new ArrayList<>(Arrays.asList("Hotel", "Luxury Resort", "Lodging", "Booking", "Gallery")));
+            templateRepository.save(aethelredResort);
+            logs.put("template_aethelred_hotel", "Created");
+
+            // Seed Aurelia Velvet Obsidian Resort (hotel-3)
+            Template aureliaResort = new Template();
+            aureliaResort.setName("Aurelia Velvet Obsidian Resort — Ultra-Luxury Sanctuary");
+            aureliaResort.setSlug("aurelia-velvet-obsidian-resort");
+            aureliaResort.setDescription("A private refuge offering luxury architectural pods crafted from volcanic stone, glass canopies, and polished teakwood.");
+            aureliaResort.setCategory(hotelCategory);
+            aureliaResort.setPrice(0.0);
+            aureliaResort.setTemplateType("FREE");
+            aureliaResort.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            aureliaResort.setDemoUrl("/templates/hotel/hotel-3/index.html");
+            aureliaResort.setDownloadFile("");
+            aureliaResort.setPreviewImage("https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80");
+            aureliaResort.setVersion("1.0.0");
+            aureliaResort.setStatus("PUBLISHED");
+            aureliaResort.setPagesCount(1);
+            aureliaResort.setDownloadsCount(1750);
+            aureliaResort.setTags(new ArrayList<>(Arrays.asList("Hotel", "Ultra-Luxury", "Sanctuary", "Volcanic Stone", "Teakwood")));
+            templateRepository.save(aureliaResort);
+            logs.put("template_aurelia_hotel", "Created");
+
+            // Seed Solitude Haven (hotel-4)
+            Template solitudeHaven = new Template();
+            solitudeHaven.setName("Solitude Haven — Luxury Forest Sanctuary");
+            solitudeHaven.setSlug("solitude-haven");
+            solitudeHaven.setDescription("An elegant, full-featured luxury forest sanctuary and wellness retreat template. Features bento-style accommodation cards, immersive experience sections, smooth scroll indicates, and responsive layouts.");
+            solitudeHaven.setCategory(hotelCategory);
+            solitudeHaven.setPrice(0.0);
+            solitudeHaven.setTemplateType("FREE");
+            solitudeHaven.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            solitudeHaven.setDemoUrl("/templates/hotel/hotel-4/index.html");
+            solitudeHaven.setDownloadFile("");
+            solitudeHaven.setPreviewImage("https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80");
+            solitudeHaven.setVersion("1.0.0");
+            solitudeHaven.setStatus("PUBLISHED");
+            solitudeHaven.setPagesCount(1);
+            solitudeHaven.setDownloadsCount(1490);
+            solitudeHaven.setTags(new ArrayList<>(Arrays.asList("Hotel", "Forest Sanctuary", "Wellness", "Bento Cards", "Scroll Indicator")));
+            templateRepository.save(solitudeHaven);
+            logs.put("template_solitude_hotel", "Created");
+        }
+
         // 9. Seed Education templates
         Category educationCategory = catMap.get("education");
         if (educationCategory != null) {
@@ -564,6 +827,294 @@ public class DatabaseSeederController {
             skillora.setTags(new ArrayList<>(Arrays.asList("E-Learning", "Online Courses", "University Programs", "React TypeScript", "Bento Grid")));
             templateRepository.save(skillora);
             logs.put("template_skillora", "Created");
+
+            // Seed Eduvora (Education-2)
+            Template eduvora = new Template();
+            eduvora.setName("Eduvora — Online Learning Platform");
+            eduvora.setSlug("eduvora-education");
+            eduvora.setDescription("Comprehensive academic learning platform and stateful Student Portal with examination registrations, hall tickets, marksheets, photocopy and revaluation hubs, security audit logs, and dual-role authentication.");
+            eduvora.setCategory(educationCategory);
+            eduvora.setPrice(0.0);
+            eduvora.setTemplateType("FREE");
+            eduvora.setBootstrapVersion("React / Tailwind CSS / Router");
+            eduvora.setDemoUrl("/templates/education/education-2/index.html");
+            eduvora.setDownloadFile("");
+            eduvora.setPreviewImage("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80");
+            eduvora.setVersion("1.0.0");
+            eduvora.setStatus("PUBLISHED");
+            eduvora.setPagesCount(15);
+            eduvora.setDownloadsCount(2750);
+            eduvora.setTags(new ArrayList<>(Arrays.asList("Education Portal", "Student Dashboard", "Exam Registration", "Tailwind CSS", "React")));
+            templateRepository.save(eduvora);
+            logs.put("template_eduvora", "Created");
+
+            // Seed Eduvora II (Education-3)
+            Template eduvora2 = new Template();
+            eduvora2.setName("Eduvora II — Online Learning Platform");
+            eduvora2.setSlug("eduvora-education-ii");
+            eduvora2.setDescription("Comprehensive academic learning platform and stateful Student Portal with examination registrations, hall tickets, marksheets, photocopy and revaluation hubs, security audit logs, and dual-role authentication.");
+            eduvora2.setCategory(educationCategory);
+            eduvora2.setPrice(0.0);
+            eduvora2.setTemplateType("FREE");
+            eduvora2.setBootstrapVersion("React / Tailwind CSS / Router");
+            eduvora2.setDemoUrl("/templates/education/education-3/index.html");
+            eduvora2.setDownloadFile("");
+            eduvora2.setPreviewImage("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80");
+            eduvora2.setVersion("1.0.0");
+            eduvora2.setStatus("PUBLISHED");
+            eduvora2.setPagesCount(15);
+            eduvora2.setDownloadsCount(2100);
+            eduvora2.setTags(new ArrayList<>(Arrays.asList("Education Portal", "Student Dashboard", "Exam Registration", "Tailwind CSS", "React")));
+            templateRepository.save(eduvora2);
+            logs.put("template_eduvora2", "Created");
+
+            // Seed Eduvora III (Education-4)
+            Template eduvora3 = new Template();
+            eduvora3.setName("Eduvora III — Online Learning Platform");
+            eduvora3.setSlug("eduvora-education-iii");
+            eduvora3.setDescription("Comprehensive academic learning platform and stateful Student Portal with examination registrations, hall tickets, marksheets, photocopy and revaluation hubs, security audit logs, and dual-role authentication.");
+            eduvora3.setCategory(educationCategory);
+            eduvora3.setPrice(0.0);
+            eduvora3.setTemplateType("FREE");
+            eduvora3.setBootstrapVersion("React / Tailwind CSS / Router");
+            eduvora3.setDemoUrl("/templates/education/education-4/index.html");
+            eduvora3.setDownloadFile("");
+            eduvora3.setPreviewImage("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80");
+            eduvora3.setVersion("1.0.0");
+            eduvora3.setStatus("PUBLISHED");
+            eduvora3.setPagesCount(15);
+            eduvora3.setDownloadsCount(1890);
+            eduvora3.setTags(new ArrayList<>(Arrays.asList("Education Portal", "Student Dashboard", "Exam Registration", "Tailwind CSS", "React")));
+            templateRepository.save(eduvora3);
+            logs.put("template_eduvora3", "Created");
+        }
+
+        // 10. Seed Events templates
+        Category eventsCategory = catMap.get("events");
+        if (eventsCategory != null) {
+            Template eventora = new Template();
+            eventora.setName("Eventora — Premier Tech & Leadership Summit Launch Platform");
+            eventora.setSlug("eventora-event");
+            eventora.setDescription("A premium tech and leadership event launching platform. Features dynamic schedules, speaker registries, digital ticket cards, countdown timers, and reservation capture modals.");
+            eventora.setCategory(eventsCategory);
+            eventora.setPrice(0.0);
+            eventora.setTemplateType("FREE");
+            eventora.setBootstrapVersion("React / Tailwind / Plus Jakarta Sans");
+            eventora.setDemoUrl("/templates/events/education-1/index.html");
+            eventora.setDownloadFile("");
+            eventora.setPreviewImage("https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80");
+            eventora.setVersion("1.0.0");
+            eventora.setStatus("PUBLISHED");
+            eventora.setPagesCount(12);
+            eventora.setDownloadsCount(3200);
+            eventora.setTags(new ArrayList<>(Arrays.asList("Event Platform", "Speakers Registry", "Schedule Drawer", "Digital Ticket", "Countdown")));
+            templateRepository.save(eventora);
+            logs.put("template_eventora", "Created");
+
+
+
+            // Seed CyberNexus (Events-2)
+            Template cybernexus = new Template();
+            cybernexus.setName("CYBERNEXUS — Global Technology & Intelligence Summit");
+            cybernexus.setSlug("cybernexus-event");
+            cybernexus.setDescription("A premium, high-tech event landing page for technology and AI conferences. Features interactive scroll spies, customized cursor indicators, schedule registries, and ticket reservation forms.");
+            cybernexus.setCategory(eventsCategory);
+            cybernexus.setPrice(0.0);
+            cybernexus.setTemplateType("FREE");
+            cybernexus.setBootstrapVersion("React / Vanilla CSS / Vite");
+            cybernexus.setDemoUrl("/templates/events/events-2/index.html");
+            cybernexus.setDownloadFile("");
+            cybernexus.setPreviewImage("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80");
+            cybernexus.setVersion("1.0.0");
+            cybernexus.setStatus("PUBLISHED");
+            cybernexus.setPagesCount(8);
+            cybernexus.setDownloadsCount(2800);
+            cybernexus.setTags(new ArrayList<>(Arrays.asList("Technology Summit", "AI Conference", "Scroll Spy", "Dark Theme", "Registration Form")));
+            templateRepository.save(cybernexus);
+            logs.put("template_cybernexus_event", "Created");
+
+            // Seed Vertex (Events-3)
+            Template vertex = new Template();
+            vertex.setName("VERTEX — Robotics & Quantum Tech Summit");
+            vertex.setSlug("vertex-event");
+            vertex.setDescription("A premium, light/dark responsive robotics and quantum technology event template. Features quantum style grid animations, particle canvas backgrounds, dynamic tracks, speaker panels, and a sleek modern dark mode design.");
+            vertex.setCategory(eventsCategory);
+            vertex.setPrice(0.0);
+            vertex.setTemplateType("FREE");
+            vertex.setBootstrapVersion("React / Space Grotesk / Vite");
+            vertex.setDemoUrl("/templates/events/events-3/index.html");
+            vertex.setDownloadFile("");
+            vertex.setPreviewImage("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80");
+            vertex.setVersion("1.0.0");
+            vertex.setStatus("PUBLISHED");
+            vertex.setPagesCount(10);
+            vertex.setDownloadsCount(2900);
+            vertex.setTags(new ArrayList<>(Arrays.asList("Robotics", "Quantum Tech", "Particle BG", "Light Dark Theme", "Vite")));
+            templateRepository.save(vertex);
+            logs.put("template_vertex_event", "Created");
+
+            // Seed Iron Ascent (Events-4)
+            Template ironAscent = new Template();
+            ironAscent.setName("VORTEX FORGE FITNESS — IRON ASCENT 2026");
+            ironAscent.setSlug("iron-ascent-event");
+            ironAscent.setDescription("A premium athletic and fitness challenge event launching template. Features trainer portfolios, class schedules, program cards, equipment showcases, pricing tables, and registration capture.");
+            ironAscent.setCategory(eventsCategory);
+            ironAscent.setPrice(0.0);
+            ironAscent.setTemplateType("FREE");
+            ironAscent.setBootstrapVersion("React / Tailwind / Montserrat");
+            ironAscent.setDemoUrl("/templates/events/events-4/index.html");
+            ironAscent.setDownloadFile("");
+            ironAscent.setPreviewImage("https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80");
+            ironAscent.setVersion("1.0.0");
+            ironAscent.setStatus("PUBLISHED");
+            ironAscent.setPagesCount(15);
+            ironAscent.setDownloadsCount(2700);
+            ironAscent.setTags(new ArrayList<>(Arrays.asList("Fitness Event", "Gym Portal", "Workout Schedule", "Trainer Profiles", "Tailwind")));
+            templateRepository.save(ironAscent);
+            logs.put("template_ironascent_event", "Created");
+
+            // Seed AquaVexa (Events-5)
+            Template aquavexa = new Template();
+            aquavexa.setName("AQUAVEXA AUTO SPA — Premium Car Wash & Detailing Studio");
+            aquavexa.setSlug("aquavexa-autospa");
+            aquavexa.setDescription("A premium automotive wash, detailing, and paint studio platform. Features services grids, pricing cards, equipment showcases, paint studios, booking panels, and a reactive dark mode design.");
+            aquavexa.setCategory(eventsCategory);
+            aquavexa.setPrice(0.0);
+            aquavexa.setTemplateType("FREE");
+            aquavexa.setBootstrapVersion("React / Tailwind CSS / Vite");
+            aquavexa.setDemoUrl("/templates/events/events-5/index.html");
+            aquavexa.setDownloadFile("");
+            aquavexa.setPreviewImage("https://images.unsplash.com/photo-1520340356584-f9917d1eed69?auto=format&fit=crop&w=800&q=80");
+            aquavexa.setVersion("1.0.0");
+            aquavexa.setStatus("PUBLISHED");
+            aquavexa.setPagesCount(12);
+            aquavexa.setDownloadsCount(2100);
+            aquavexa.setTags(new ArrayList<>(Arrays.asList("Car Wash", "Auto Detailing", "Booking Studio", "Paint Studio", "React")));
+            templateRepository.save(aquavexa);
+            logs.put("template_aquavexa_autospa", "Created");
+        }
+
+        // 11. Seed Construction templates
+        Category constructionCategory = catMap.get("construction");
+        if (constructionCategory != null) {
+            Template advConstruction = new Template();
+            advConstruction.setName("Advanced Construction — Heavy Civil Engineering & Crane Infrastructure");
+            advConstruction.setSlug("advanced-construction");
+            advConstruction.setDescription("A premium commercial construction and heavy engineering landing page. Features customized pricing cost-estimators, milestone trackers, service portfolios, and a full dark mode design system.");
+            advConstruction.setCategory(constructionCategory);
+            advConstruction.setPrice(0.0);
+            advConstruction.setTemplateType("FREE");
+            advConstruction.setBootstrapVersion("React / Outfit / Plus Jakarta Sans");
+            advConstruction.setDemoUrl("/templates/construction/construction-1/index.html");
+            advConstruction.setDownloadFile("");
+            advConstruction.setPreviewImage("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80");
+            advConstruction.setVersion("1.0.0");
+            advConstruction.setStatus("PUBLISHED");
+            advConstruction.setPagesCount(8);
+            advConstruction.setDownloadsCount(3400);
+            advConstruction.setTags(new ArrayList<>(Arrays.asList("Civil Engineering", "Construction Estimator", "Heavy Infrastructure", "React", "Dark Mode")));
+            templateRepository.save(advConstruction);
+            logs.put("template_advanced_construction", "Created");
+
+            // Seed BuildHub Constructions (construction-2)
+            Template buildhubConst = new Template();
+            buildhubConst.setName("BuildHub Constructions — Premier Architecture & 3D BIM");
+            buildhubConst.setSlug("buildhub-construction");
+            buildhubConst.setDescription("A premium React architectural and construction design studio template. Features an interactive 3D digital twin BIM model preview, cost calculators, structural project showcases, and a responsive theme toggle.");
+            buildhubConst.setCategory(constructionCategory);
+            buildhubConst.setPrice(0.0);
+            buildhubConst.setTemplateType("FREE");
+            buildhubConst.setBootstrapVersion("React / Three.js / Lucide");
+            buildhubConst.setDemoUrl("/templates/construction/construction-2/index.html");
+            buildhubConst.setDownloadFile("");
+            buildhubConst.setPreviewImage("https://images.unsplash.com/photo-1503387762-592dec58ef4e?auto=format&fit=crop&w=800&q=80");
+            buildhubConst.setVersion("1.0.0");
+            buildhubConst.setStatus("PUBLISHED");
+            buildhubConst.setPagesCount(12);
+            buildhubConst.setDownloadsCount(2900);
+            buildhubConst.setTags(new ArrayList<>(Arrays.asList("3D BIM Model", "Three.js", "Architecture", "Construction Estimator", "React")));
+            templateRepository.save(buildhubConst);
+            logs.put("template_buildhub_construction", "Created");
+
+            // Seed Futurix Constructions (construction-3)
+            Template futurixConst = new Template();
+            futurixConst.setName("Futurix Constructions — 3D BIM Technology");
+            futurixConst.setSlug("futurix-constructions");
+            futurixConst.setDescription("Next-generation commercial construction and BIM engineering landing page with real-time 3D telemetry, parametric cost estimator, live statistics, and Java Spring Boot REST backend.");
+            futurixConst.setCategory(constructionCategory);
+            futurixConst.setPrice(0.0);
+            futurixConst.setTemplateType("FREE");
+            futurixConst.setBootstrapVersion("React / Three.js / Glassmorphism");
+            futurixConst.setDemoUrl("/templates/construction/construction-3/index.html");
+            futurixConst.setDownloadFile("");
+            futurixConst.setPreviewImage("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80");
+            futurixConst.setVersion("1.0.0");
+            futurixConst.setStatus("PUBLISHED");
+            futurixConst.setPagesCount(1);
+            futurixConst.setDownloadsCount(1750);
+            futurixConst.setTags(new ArrayList<>(Arrays.asList("3D Telemetry", "Three.js", "BIM Technology", "React", "Glassmorphism")));
+            templateRepository.save(futurixConst);
+            logs.put("template_futurix_construction", "Created");
+
+            // Seed Knack Design Build (construction-4)
+            Template knackConst = new Template();
+            knackConst.setName("Knack Design Build — Bespoke Architecture");
+            knackConst.setSlug("knack-design-build");
+            knackConst.setDescription("A luxury architecture and bespoke general contracting landing page. Features dynamic villa portfolios, 3D BIM integration methodology showcases, on-time milestone stats, and custom consultation request flow.");
+            knackConst.setCategory(constructionCategory);
+            knackConst.setPrice(0.0);
+            knackConst.setTemplateType("FREE");
+            knackConst.setBootstrapVersion("React / Tailwind CSS / Ambient");
+            knackConst.setDemoUrl("/templates/construction/construction-4/index.html");
+            knackConst.setDownloadFile("");
+            knackConst.setPreviewImage("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80");
+            knackConst.setVersion("1.0.0");
+            knackConst.setStatus("PUBLISHED");
+            knackConst.setPagesCount(1);
+            knackConst.setDownloadsCount(1200);
+            knackConst.setTags(new ArrayList<>(Arrays.asList("Luxury Architecture", "Contracting", "Vite", "React", "Milestones")));
+            templateRepository.save(knackConst);
+            logs.put("template_knack_construction", "Created");
+
+            // Seed Bespoke Lakefront Villas (construction-5)
+            Template swissVillas = new Template();
+            swissVillas.setName("Bespoke Lakefront Villas — Swiss Design Studio");
+            swissVillas.setSlug("swiss-lakefront-villas");
+            swissVillas.setDescription("A luxury lakefront residential and bespoke architectural configurator landing page. Features interactive 3D style customizer, geo-coordinates villa catalog, and RESTful configurator server.");
+            swissVillas.setCategory(constructionCategory);
+            swissVillas.setPrice(0.0);
+            swissVillas.setTemplateType("FREE");
+            swissVillas.setBootstrapVersion("React / Tailwind CSS / Configurator");
+            swissVillas.setDemoUrl("/templates/construction/construction-5/index.html");
+            swissVillas.setDownloadFile("");
+            swissVillas.setPreviewImage("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80");
+            swissVillas.setVersion("1.0.0");
+            swissVillas.setStatus("PUBLISHED");
+            swissVillas.setPagesCount(1);
+            swissVillas.setDownloadsCount(1380);
+            swissVillas.setTags(new ArrayList<>(Arrays.asList("Lakefront Villas", "Configurator", "Swiss Design", "React", "Water Reflect")));
+            templateRepository.save(swissVillas);
+            logs.put("template_swiss_construction", "Created");
+
+            // Seed Arcstone Architects (construction-6)
+            Template arcstoneConst = new Template();
+            arcstoneConst.setName("Arcstone Architects — Luxury Residential Design");
+            arcstoneConst.setSlug("arcstone-architects");
+            arcstoneConst.setDescription("A luxury residential and commercial architecture studio landing page. Features scroll-bound video transformations, custom lightboxes, bento portfolios, and RESTful project server.");
+            arcstoneConst.setCategory(constructionCategory);
+            arcstoneConst.setPrice(0.0);
+            arcstoneConst.setTemplateType("FREE");
+            arcstoneConst.setBootstrapVersion("React / Vanilla CSS / Scroll Video");
+            arcstoneConst.setDemoUrl("/templates/construction/construction-6/index.html");
+            arcstoneConst.setDownloadFile("");
+            arcstoneConst.setPreviewImage("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80");
+            arcstoneConst.setVersion("1.0.0");
+            arcstoneConst.setStatus("PUBLISHED");
+            arcstoneConst.setPagesCount(1);
+            arcstoneConst.setDownloadsCount(1650);
+            arcstoneConst.setTags(new ArrayList<>(Arrays.asList("Arcstone Design", "Scroll Video", "Architecture", "React", "Vanilla CSS")));
+            templateRepository.save(arcstoneConst);
+            logs.put("template_arcstone_construction", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

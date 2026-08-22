@@ -544,8 +544,6 @@ export default function Templates() {
                     <div style={{ marginTop: '10px' }}>
                       <a
                         href={template.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         style={{
                           display: 'flex',
                           alignItems: 'center',

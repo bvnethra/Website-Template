@@ -1541,6 +1541,21 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
     demoUrl: '/templates/ecommerce/ecommerce-7/index.html'
+  },
+  {
+    id: 202,
+    name: 'Arctic Frost — Editorial Command Center',
+    slug: 'arctic-frost-admin',
+    previewImage: 'https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 1, name: 'Admin', slug: 'admin' },
+    pagesCount: 1,
+    downloadsCount: 1420,
+    description: 'An intelligent science magazine super admin dashboard and editorial observatory with ice-and-paper aesthetics, live newsroom signals, story velocity analytics, and interactive publishing workflows.',
+    bootstrapVersion: 'React 19 / TypeScript / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/admin/admin-3/index.html'
   }
 ];
 

@@ -157,6 +157,26 @@ public class DatabaseSeederController {
             admin2.setTags(new ArrayList<>(Arrays.asList("Editorial", "Command Palette", "Bento Grid")));
             templateRepository.save(admin2);
             logs.put("template_admin_2", "Created");
+
+            // admin-3
+            Template admin3 = new Template();
+            admin3.setName("Arctic Frost — Editorial Command Center");
+            admin3.setSlug("arctic-frost-admin");
+            admin3.setDescription("An intelligent science magazine super admin dashboard and editorial observatory with ice-and-paper aesthetics, live newsroom signals, story velocity analytics, and interactive publishing workflows.");
+            admin3.setCategory(adminCategory);
+            admin3.setPrice(0.0);
+            admin3.setTemplateType("FREE");
+            admin3.setBootstrapVersion("React 19 / TypeScript / Tailwind CSS");
+            admin3.setDemoUrl("/templates/admin/admin-3/index.html");
+            admin3.setDownloadFile("arctic-frost-admin.zip");
+            admin3.setPreviewImage("https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=800&q=80");
+            admin3.setVersion("1.0.0");
+            admin3.setStatus("PUBLISHED");
+            admin3.setPagesCount(1);
+            admin3.setDownloadsCount(1420);
+            admin3.setTags(new ArrayList<>(Arrays.asList("Editorial", "Command Center", "Obsidian")));
+            templateRepository.save(admin3);
+            logs.put("template_admin_3", "Created");
         }
 
         // 4. Seed Qure Nexa template under Medical category

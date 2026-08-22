@@ -1426,6 +1426,86 @@ public class DatabaseSeederController {
             arcstoneConst.setTags(new ArrayList<>(Arrays.asList("Arcstone Design", "Scroll Video", "Architecture", "React", "Vanilla CSS")));
             templateRepository.save(arcstoneConst);
             logs.put("template_arcstone_construction", "Created");
+
+            // Seed Aurelius Renovations (construction-7)
+            Template aureliusRen = new Template();
+            aureliusRen.setName("Aurelius — High-End Historical Renovation & Heritage Atelier");
+            aureliusRen.setSlug("aurelius-renovation");
+            aureliusRen.setDescription("A premium, high-end renovation and heritage contracting atelier template. Features interactive restoration comparisons, craft galleries, masonry portfolios, and consultation booking.");
+            aureliusRen.setCategory(constructionCategory);
+            aureliusRen.setPrice(0.0);
+            aureliusRen.setTemplateType("FREE");
+            aureliusRen.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            aureliusRen.setDemoUrl("/templates/construction/construction-7/index.html");
+            aureliusRen.setDownloadFile("");
+            aureliusRen.setPreviewImage("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80");
+            aureliusRen.setVersion("1.0.0");
+            aureliusRen.setStatus("PUBLISHED");
+            aureliusRen.setPagesCount(1);
+            aureliusRen.setDownloadsCount(1600);
+            aureliusRen.setTags(new ArrayList<>(Arrays.asList("Historical Renovation", "Heritage", "Static HTML", "Atelier")));
+            templateRepository.save(aureliusRen);
+            logs.put("template_aurelius_construction", "Created");
+
+            // Seed BuildX Biophilic (construction-8)
+            Template buildxBio = new Template();
+            buildxBio.setName("BuildX — Sustainable Biophilic Architecture & Living Facades");
+            buildxBio.setSlug("buildx-biophilic");
+            buildxBio.setDescription("A sustainable architecture landing page featuring living biophilic facade simulators, aerodynamic estimators, telemetry HUDs, and biophilic design specification cards.");
+            buildxBio.setCategory(constructionCategory);
+            buildxBio.setPrice(0.0);
+            buildxBio.setTemplateType("FREE");
+            buildxBio.setBootstrapVersion("React / Tailwind CSS / Vite");
+            buildxBio.setDemoUrl("/templates/construction/construction-8/index.html");
+            buildxBio.setDownloadFile("");
+            buildxBio.setPreviewImage("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80");
+            buildxBio.setVersion("1.0.0");
+            buildxBio.setStatus("PUBLISHED");
+            buildxBio.setPagesCount(1);
+            buildxBio.setDownloadsCount(1980);
+            buildxBio.setTags(new ArrayList<>(Arrays.asList("Biophilic", "Facades", "Vite", "React", "Green Architecture")));
+            templateRepository.save(buildxBio);
+            logs.put("template_buildx_construction", "Created");
+
+            // Seed Chronos Brutalist (construction-9)
+            Template chronosBrut = new Template();
+            chronosBrut.setName("Chronos — Monolithic Brutalist Architecture & Concrete Engineering");
+            chronosBrut.setSlug("chronos-brutalist");
+            chronosBrut.setDescription("A brutalist architectural and engineering showcase template. Features custom brutalist typography, concrete telemetry estimation simulators, weather atmosphere dashboards, and live HUD trackers.");
+            chronosBrut.setCategory(constructionCategory);
+            chronosBrut.setPrice(0.0);
+            chronosBrut.setTemplateType("FREE");
+            chronosBrut.setBootstrapVersion("React / Tailwind CSS / Vite");
+            chronosBrut.setDemoUrl("/templates/construction/construction-9/index.html");
+            chronosBrut.setDownloadFile("");
+            chronosBrut.setPreviewImage("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80");
+            chronosBrut.setVersion("1.0.0");
+            chronosBrut.setStatus("PUBLISHED");
+            chronosBrut.setPagesCount(1);
+            chronosBrut.setDownloadsCount(2200);
+            chronosBrut.setTags(new ArrayList<>(Arrays.asList("Brutalist", "Concrete", "Vite", "React", "Monolithic")));
+            templateRepository.save(chronosBrut);
+            logs.put("template_chronos_construction", "Created");
+
+            // Seed Aerovision Skyrise (construction-10)
+            Template aerovisionSky = new Template();
+            aerovisionSky.setName("Aerovision — Kinetic Skyrise & Aerodynamic Architecture");
+            aerovisionSky.setSlug("aerovision-skyrise");
+            aerovisionSky.setDescription("Next-generation aerodynamic skyrise portal. Features biophilic 3D kinetic facade simulators, aerodynamic estimators, machinery fleet telemetry hubs, and wind tunnel streamlined overlays.");
+            aerovisionSky.setCategory(constructionCategory);
+            aerovisionSky.setPrice(0.0);
+            aerovisionSky.setTemplateType("FREE");
+            aerovisionSky.setBootstrapVersion("React / Tailwind CSS / Vite");
+            aerovisionSky.setDemoUrl("/templates/construction/construction-10/index.html");
+            aerovisionSky.setDownloadFile("");
+            aerovisionSky.setPreviewImage("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80");
+            aerovisionSky.setVersion("1.0.0");
+            aerovisionSky.setStatus("PUBLISHED");
+            aerovisionSky.setPagesCount(1);
+            aerovisionSky.setDownloadsCount(3100);
+            aerovisionSky.setTags(new ArrayList<>(Arrays.asList("Supertall", "Kinetic Facade", "Vite", "React", "Wind Tunnel")));
+            templateRepository.save(aerovisionSky);
+            logs.put("template_aerovision_construction", "Created");
         }
 
         // Seed Education templates (1 to 10)

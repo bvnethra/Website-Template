@@ -1076,6 +1076,66 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     version: '1.0.0',
     demoUrl: '/templates/education/education-10/index.html'
+  },
+  {
+    id: 171,
+    name: 'Aurelius — High-End Historical Renovation & Heritage Atelier',
+    slug: 'aurelius-renovation',
+    previewImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 9, name: 'Construction', slug: 'construction' },
+    pagesCount: 1,
+    downloadsCount: 1600,
+    description: 'A premium, high-end renovation and heritage contracting atelier template. Features interactive restoration comparisons, craft galleries, masonry portfolios, and consultation booking.',
+    bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
+    version: '1.0.0',
+    demoUrl: '/templates/construction/construction-7/index.html'
+  },
+  {
+    id: 172,
+    name: 'BuildX — Sustainable Biophilic Architecture & Living Facades',
+    slug: 'buildx-biophilic',
+    previewImage: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 9, name: 'Construction', slug: 'construction' },
+    pagesCount: 1,
+    downloadsCount: 1980,
+    description: 'A sustainable architecture landing page featuring living biophilic facade simulators, aerodynamic estimators, telemetry HUDs, and biophilic design specification cards.',
+    bootstrapVersion: 'React / Tailwind CSS / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/construction/construction-8/index.html'
+  },
+  {
+    id: 173,
+    name: 'Chronos — Monolithic Brutalist Architecture & Concrete Engineering',
+    slug: 'chronos-brutalist',
+    previewImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 9, name: 'Construction', slug: 'construction' },
+    pagesCount: 1,
+    downloadsCount: 2200,
+    description: 'A brutalist architectural and engineering showcase template. Features custom brutalist typography, concrete telemetry estimation simulators, weather atmosphere dashboards, and live HUD trackers.',
+    bootstrapVersion: 'React / Tailwind CSS / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/construction/construction-9/index.html'
+  },
+  {
+    id: 174,
+    name: 'Aerovision — Kinetic Skyrise & Aerodynamic Architecture',
+    slug: 'aerovision-skyrise',
+    previewImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 9, name: 'Construction', slug: 'construction' },
+    pagesCount: 1,
+    downloadsCount: 3100,
+    description: 'Next-generation aerodynamic skyrise portal. Features biophilic 3D kinetic facade simulators, aerodynamic estimators, machinery fleet telemetry hubs, and wind tunnel streamlined overlays.',
+    bootstrapVersion: 'React / Tailwind CSS / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/construction/construction-10/index.html'
   }
 ];
 

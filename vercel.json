@@ -3,7 +3,7 @@
   "trailingSlash": true,
   "rewrites": [
     {
-      "source": "/((?!templates/|assets/|favicon.ico|.*\\.js|.*\\.css|.*\\.png|.*\\.jpg|.*\\.gif|.*\\.svg|.*\\.json).*)",
+      "source": "/((?!templates/(admin|block-magazine|comming-soon|construction|ecommerce|education|events|hotel|medical|photography|restaurant|travels)/|assets/|favicon.ico|.*\\.js|.*\\.css|.*\\.png|.*\\.jpg|.*\\.gif|.*\\.svg|.*\\.json).*)",
       "destination": "/index.html"
     }
   ]

@@ -40,7 +40,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <Router>
+    <Router basename="/templates/events/events-6">
       {loading && <Preloader onComplete={() => setLoading(false)} />}
 
       <div style={{ position: 'relative', minHeight: '100vh', backgroundColor: '#050505', color: '#FFFFFF' }}>

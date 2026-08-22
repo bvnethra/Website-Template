@@ -10,7 +10,7 @@ import './styles/responsive.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/templates/events/events-8">
       <App />
     </BrowserRouter>
   </React.StrictMode>,

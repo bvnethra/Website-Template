@@ -58,7 +58,7 @@ const ScrollToTop = () => {
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/templates/events/events-10">
       <ScrollToTop />
       <div className="page-wrapper">
         <CustomCursor />

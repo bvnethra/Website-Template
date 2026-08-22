@@ -33,7 +33,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/templates/events/events-7">
       <ScrollToTop />
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-midnight)' }}>
         <AnnouncementBar />

@@ -52,7 +52,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/templates/events/events-9">
       <ScrollToTop />
       
       {/* Global Interactive Overlay Components */}

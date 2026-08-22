@@ -1428,6 +1428,210 @@ public class DatabaseSeederController {
             logs.put("template_arcstone_construction", "Created");
         }
 
+        // Seed Education templates (1 to 10)
+        educationCategory = catMap.get("education");
+        if (educationCategory != null) {
+            // education-1
+            Template edu1 = new Template();
+            edu1.setName("Eduvora — Elite Learning & Mentorship Portal");
+            edu1.setSlug("eduvora-learning-portal");
+            edu1.setDescription("Elite academic learning platform featuring advanced courses, student progress monitors, expert instructors, booking schedules, and structured learning paths.");
+            edu1.setCategory(educationCategory);
+            edu1.setPrice(0.0);
+            edu1.setTemplateType("FREE");
+            edu1.setBootstrapVersion("React 19 / Vite / Tailwind CSS");
+            edu1.setDemoUrl("/templates/education/education-1/index.html");
+            edu1.setDownloadFile("");
+            edu1.setPreviewImage("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80");
+            edu1.setVersion("1.0.0");
+            edu1.setStatus("PUBLISHED");
+            edu1.setPagesCount(1);
+            edu1.setDownloadsCount(2500);
+            edu1.setTags(new ArrayList<>(Arrays.asList("E-Learning", "Online Courses", "Mentorship", "React", "Tailwind")));
+            templateRepository.save(edu1);
+            logs.put("template_education_1", "Created");
+
+            // education-2
+            Template edu2 = new Template();
+            edu2.setName("Smart Academy — School & Class Management Portal");
+            edu2.setSlug("smart-academy-portal");
+            edu2.setDescription("School and class management portal designed for stateful student workflows, including class directories, homework modules, study grids, and progress monitors.");
+            edu2.setCategory(educationCategory);
+            edu2.setPrice(0.0);
+            edu2.setTemplateType("FREE");
+            edu2.setBootstrapVersion("React 19 / Vite / Tailwind CSS");
+            edu2.setDemoUrl("/templates/education/education-2/index.html");
+            edu2.setDownloadFile("");
+            edu2.setPreviewImage("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80");
+            edu2.setVersion("1.0.0");
+            edu2.setStatus("PUBLISHED");
+            edu2.setPagesCount(1);
+            edu2.setDownloadsCount(2100);
+            edu2.setTags(new ArrayList<>(Arrays.asList("Academy", "Class Management", "Student Profile", "React", "Tailwind")));
+            templateRepository.save(edu2);
+            logs.put("template_education_2", "Created");
+
+            // education-3
+            Template edu3 = new Template();
+            edu3.setName("LearnUp — Modern E-Learning & Course Platform");
+            edu3.setSlug("learnup-courses-platform");
+            edu3.setDescription("A modern learning and course catalogue platform with interactive study paths, mentor bookers, FAQ grids, and dynamic bento layout lists.");
+            edu3.setCategory(educationCategory);
+            edu3.setPrice(0.0);
+            edu3.setTemplateType("FREE");
+            edu3.setBootstrapVersion("React 19 / Vite / Tailwind CSS");
+            edu3.setDemoUrl("/templates/education/education-3/index.html");
+            edu3.setDownloadFile("");
+            edu3.setPreviewImage("https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80");
+            edu3.setVersion("1.0.0");
+            edu3.setStatus("PUBLISHED");
+            edu3.setPagesCount(1);
+            edu3.setDownloadsCount(1850);
+            edu3.setTags(new ArrayList<>(Arrays.asList("Courses", "E-Learning", "Study Tracks", "React", "Tailwind")));
+            templateRepository.save(edu3);
+            logs.put("template_education_3", "Created");
+
+            // education-4
+            Template edu4 = new Template();
+            edu4.setName("University of Excellence — Academic Portal & Admissions");
+            edu4.setSlug("university-excellence-portal");
+            edu4.setDescription("Complete academic university portal featuring admission enrollment workflows, fee calculators, campus event registries, and library dashboards.");
+            edu4.setCategory(educationCategory);
+            edu4.setPrice(0.0);
+            edu4.setTemplateType("FREE");
+            edu4.setBootstrapVersion("React 19 / Vite / Tailwind CSS");
+            edu4.setDemoUrl("/templates/education/education-4/index.html");
+            edu4.setDownloadFile("");
+            edu4.setPreviewImage("https://images.unsplash.com/photo-1541178735483-a7bbd74c9e59?auto=format&fit=crop&w=800&q=80");
+            edu4.setVersion("1.0.0");
+            edu4.setStatus("PUBLISHED");
+            edu4.setPagesCount(1);
+            edu4.setDownloadsCount(2900);
+            edu4.setTags(new ArrayList<>(Arrays.asList("University", "Admissions", "Campus life", "React", "Tailwind")));
+            templateRepository.save(edu4);
+            logs.put("template_education_4", "Created");
+
+            // education-5
+            Template edu5 = new Template();
+            edu5.setName("KidsZone — Creative Preschool & Kindergarten Template");
+            edu5.setSlug("kidszone-preschool-template");
+            edu5.setDescription("A colorful, engaging preschool, daycare, and kindergarten dashboard featuring activity cards, teacher catalogs, fee structures, and enrollment captures.");
+            edu5.setCategory(educationCategory);
+            edu5.setPrice(0.0);
+            edu5.setTemplateType("FREE");
+            edu5.setBootstrapVersion("React 19 / Vite / Tailwind CSS");
+            edu5.setDemoUrl("/templates/education/education-5/index.html");
+            edu5.setDownloadFile("");
+            edu5.setPreviewImage("https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80");
+            edu5.setVersion("1.0.0");
+            edu5.setStatus("PUBLISHED");
+            edu5.setPagesCount(1);
+            edu5.setDownloadsCount(1560);
+            edu5.setTags(new ArrayList<>(Arrays.asList("Preschool", "Daycare", "Kindergarten", "React", "Tailwind")));
+            templateRepository.save(edu5);
+            logs.put("template_education_5", "Created");
+
+            // education-6
+            Template edu6 = new Template();
+            edu6.setName("Skillora — Online Education & Learning Platform");
+            edu6.setSlug("skillora-education-platform");
+            edu6.setDescription("Online course discovery and student command center featuring academic course trackers, live certification cards, study paths, and student portfolio management.");
+            edu6.setCategory(educationCategory);
+            edu6.setPrice(0.0);
+            edu6.setTemplateType("FREE");
+            edu6.setBootstrapVersion("React / TypeScript / Tailwind CSS");
+            edu6.setDemoUrl("/templates/education/education-6/index.html");
+            edu6.setDownloadFile("");
+            edu6.setPreviewImage("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80");
+            edu6.setVersion("1.0.0");
+            edu6.setStatus("PUBLISHED");
+            edu6.setPagesCount(8);
+            edu6.setDownloadsCount(3900);
+            edu6.setTags(new ArrayList<>(Arrays.asList("E-Learning", "Courses", "Certificates", "React", "Tailwind")));
+            templateRepository.save(edu6);
+            logs.put("template_education_6", "Created");
+
+            // education-7
+            Template edu7 = new Template();
+            edu7.setName("CollegePortal — Admissions & Academic Booking Platform");
+            edu7.setSlug("college-admissions-portal");
+            edu7.setDescription("Comprehensive academic learning platform with stateful Student Portal, examination registrations, hall tickets, marksheets, security audit logs, and dual-role authentication.");
+            edu7.setCategory(educationCategory);
+            edu7.setPrice(0.0);
+            edu7.setTemplateType("FREE");
+            edu7.setBootstrapVersion("React / Vanilla CSS / Vite");
+            edu7.setDemoUrl("/templates/education/education-7/index.html");
+            edu7.setDownloadFile("");
+            edu7.setPreviewImage("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80");
+            edu7.setVersion("1.0.0");
+            edu7.setStatus("PUBLISHED");
+            edu7.setPagesCount(15);
+            edu7.setDownloadsCount(2750);
+            edu7.setTags(new ArrayList<>(Arrays.asList("College", "Admissions", "Student Portal", "React", "Vite")));
+            templateRepository.save(edu7);
+            logs.put("template_education_7", "Created");
+
+            // education-8
+            Template edu8 = new Template();
+            edu8.setName("MySchool — Parent Inquiry & K-12 School Portal");
+            edu8.setSlug("myschool-parent-portal");
+            edu8.setDescription("K-12 school portal featuring parent inquiry panels, progress logs, fee configurators, class curriculum schedules, and event boards.");
+            edu8.setCategory(educationCategory);
+            edu8.setPrice(0.0);
+            edu8.setTemplateType("FREE");
+            edu8.setBootstrapVersion("HTML5 / Vanilla CSS / JS");
+            edu8.setDemoUrl("/templates/education/education-8/index.html");
+            edu8.setDownloadFile("");
+            edu8.setPreviewImage("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80");
+            edu8.setVersion("1.0.0");
+            edu8.setStatus("PUBLISHED");
+            edu8.setPagesCount(12);
+            edu8.setDownloadsCount(2100);
+            edu8.setTags(new ArrayList<>(Arrays.asList("School", "Parents", "Curriculum", "Static HTML", "CSS")));
+            templateRepository.save(edu8);
+            logs.put("template_education_8", "Created");
+
+            // education-9
+            Template edu9 = new Template();
+            edu9.setName("Modern University — Premium Academic & Research Hub");
+            edu9.setSlug("modern-university-hub");
+            edu9.setDescription("A premium modern university portal with interactive research timelines, department directories, and full admission customizer panels.");
+            edu9.setCategory(educationCategory);
+            edu9.setPrice(0.0);
+            edu9.setTemplateType("FREE");
+            edu9.setBootstrapVersion("HTML5 / Tailwind CSS / Vanilla JS");
+            edu9.setDemoUrl("/templates/education/education-9/index.html");
+            edu9.setDownloadFile("");
+            edu9.setPreviewImage("https://images.unsplash.com/photo-1541178735483-a7bbd74c9e59?auto=format&fit=crop&w=800&q=80");
+            edu9.setVersion("1.0.0");
+            edu9.setStatus("PUBLISHED");
+            edu9.setPagesCount(1);
+            edu9.setDownloadsCount(1890);
+            edu9.setTags(new ArrayList<>(Arrays.asList("University", "Research", "Academics", "Static HTML", "Tailwind")));
+            templateRepository.save(edu9);
+            logs.put("template_education_9", "Created");
+
+            // education-10
+            Template edu10 = new Template();
+            edu10.setName("EduNexus — Next-Gen Student Portal & Campus Management");
+            edu10.setSlug("edunexus-student-portal");
+            edu10.setDescription("Next-generation academic dashboard and campus administration hub. Features slot booking customizers, department catalogues, and advanced student registries.");
+            edu10.setCategory(educationCategory);
+            edu10.setPrice(0.0);
+            edu10.setTemplateType("FREE");
+            edu10.setBootstrapVersion("React 19 / Vite / Tailwind CSS");
+            edu10.setDemoUrl("/templates/education/education-10/index.html");
+            edu10.setDownloadFile("");
+            edu10.setPreviewImage("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80");
+            edu10.setVersion("1.0.0");
+            edu10.setStatus("PUBLISHED");
+            edu10.setPagesCount(1);
+            edu10.setDownloadsCount(3200);
+            edu10.setTags(new ArrayList<>(Arrays.asList("Student Portal", "Campus", "Management", "React", "Tailwind")));
+            templateRepository.save(edu10);
+            logs.put("template_education_10", "Created");
+        }
+
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);
     }

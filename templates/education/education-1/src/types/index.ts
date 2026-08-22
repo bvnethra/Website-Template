@@ -95,3 +95,16 @@ export interface GeneratedPlan {
     actionItems: string[];
   }[];
 }
+
+export interface StudentProfile {
+  studentId: string;
+  name: string;
+  email: string;
+  passwordHint: string;
+  program: string;
+  avatar: string;
+  enrolledCoursesCount: number;
+  completedHours: number;
+  currentStreakDays: number;
+  badge: string;
+}

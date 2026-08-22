@@ -9,6 +9,7 @@ import {
   Star,
   CheckCircle2,
   TrendingUp,
+  GraduationCap,
 } from 'lucide-react';
 import { BeamsBackground } from './reactbits/BeamsBackground';
 import { GradientText } from './reactbits/GradientText';
@@ -80,15 +81,18 @@ export const EduHero: React.FC<EduHeroProps> = ({
               </button>
             </div>
 
-            {/* Quick Proof Pills */}
-            <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-slate-600 font-medium">
+            {/* Quick Proof Pills + Sample Student ID shortcut */}
+            <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-5 text-xs text-slate-600 font-medium">
+              <button
+                onClick={() => onOpenAuth('login')}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100/80 border border-indigo-200 text-indigo-700 font-bold rounded-xl transition-colors cursor-pointer text-xs"
+              >
+                <GraduationCap className="w-4 h-4 text-indigo-600" />
+                <span>Sample Student ID: <span className="font-mono">SKL-2026-8891</span></span>
+              </button>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 <span>Zero fluff, real code</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span>1:1 Faculty mentorship</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />

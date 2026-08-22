@@ -675,3 +675,53 @@ export const RESOURCES_DATA: ResourceItem[] = [
   },
 ];
 
+export const SAMPLE_STUDENTS: {
+  studentId: string;
+  name: string;
+  email: string;
+  passwordHint: string;
+  program: string;
+  avatar: string;
+  enrolledCoursesCount: number;
+  completedHours: number;
+  currentStreakDays: number;
+  badge: string;
+}[] = [
+  {
+    studentId: 'SKL-2026-8891',
+    name: 'Maya Lin',
+    email: 'maya.lin@skillora.edu',
+    passwordHint: 'student123',
+    program: 'Full-Stack AI Engineering',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+    enrolledCoursesCount: 5,
+    completedHours: 38,
+    currentStreakDays: 14,
+    badge: 'Honor Scholar',
+  },
+  {
+    studentId: 'SKL-2026-4412',
+    name: 'Alex Chen',
+    email: 'alex.chen@skillora.edu',
+    passwordHint: 'student123',
+    program: 'Data Science & High-Throughput Analytics',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+    enrolledCoursesCount: 4,
+    completedHours: 26,
+    currentStreakDays: 9,
+    badge: "Dean's List",
+  },
+  {
+    studentId: 'SKL-2026-1055',
+    name: 'Sarah Jenkins',
+    email: 'sarah.j@skillora.edu',
+    passwordHint: 'student123',
+    program: 'UI/UX & Modern Design Systems',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+    enrolledCoursesCount: 6,
+    completedHours: 45,
+    currentStreakDays: 21,
+    badge: 'Top Contributor',
+  },
+];
+

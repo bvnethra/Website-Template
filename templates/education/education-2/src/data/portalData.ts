@@ -1,631 +1,814 @@
-export interface StudentProfileData {
-  studentId: string;
-  name: string;
-  avatar: string;
-  email: string;
-  phone: string;
-  emergencyContact: string;
-  address: string;
-  bloodGroup: string;
-  program: string;
-  department: string;
-  semester: number;
-  batch: string;
-  academicAdvisor: string;
-  enrollmentDate: string;
-  cgpa: number;
-  creditsEarned: number;
-  totalCredits: number;
-  attendancePercentage: number;
-  category: string;
-  status: 'Active Regular' | 'Probation' | 'Alumni';
-  quota: string;
-}
+import {
+  UserProfile,
+  SemesterResult,
+  ExamSubject,
+  HallTicketData,
+  NoticeItem,
+  PhotocopyRequest,
+  RevaluationRecord,
+  ReviewRecord,
+  SupportTicket,
+  LoginSession
+} from '../types';
 
-export interface NoticeItem {
-  id: string;
-  title: string;
-  category: 'Examinations' | 'Academic' | 'Fees' | 'Results' | 'General';
-  date: string;
-  isUrgent: boolean;
-  referenceNo: string;
-  description: string;
-  pdfFileSize: string;
-  author: string;
-}
-
-export interface SubjectRegistration {
-  code: string;
-  title: string;
-  credits: number;
-  type: 'Theory' | 'Practical' | 'Elective' | 'Arrear';
-  fee: number;
-  examDate: string;
-  session: 'Morning (09:30 AM - 12:30 PM)' | 'Afternoon (02:00 PM - 05:00 PM)';
-  selected: boolean;
-  internalMarks: number;
-  maxInternal: number;
-}
-
-export interface HallTicketData {
-  hallTicketNumber: string;
-  studentId: string;
-  studentName: string;
-  examCenter: string;
-  centerCode: string;
-  seatNumber: string;
-  semester: string;
-  academicYear: string;
-  controllerOfExams: string;
-  issueDate: string;
-  timetable: {
-    subjectCode: string;
-    subjectName: string;
-    date: string;
-    day: string;
-    time: string;
-    hallNo: string;
-    invigilatorSign: boolean;
-  }[];
-  instructions: string[];
-}
-
-export interface SemesterMarksheet {
-  semester: number;
-  semesterName: string;
-  examMonthYear: string;
-  resultDate: string;
-  status: 'PASS' | 'FAIL' | 'WITHHELD';
-  sgpa: number;
-  cgpaCumulative: number;
-  totalCredits: number;
-  subjects: {
-    code: string;
-    name: string;
-    credits: number;
-    internalMarks: number;
-    externalMarks: number;
-    totalMarks: number;
-    maxMarks: number;
-    grade: 'O' | 'A+' | 'A' | 'B+' | 'B' | 'C' | 'RA' | 'AB';
-    gradePoint: number;
-    result: 'PASS' | 'FAIL';
-  }[];
-}
-
-export interface PhotocopyRequest {
-  id: string;
-  subjectCode: string;
-  subjectName: string;
-  semester: number;
-  appliedDate: string;
-  feePaid: number;
-  status: 'Submitted' | 'In Processing' | 'Ready to View' | 'Expired';
-  evaluatorRemarks: string;
-  watermarkedPdfUrl?: string;
-  totalPages: number;
-  marksObtained: number;
-}
-
-export interface RevaluationRecord {
-  id: string;
-  subjectCode: string;
-  subjectName: string;
-  semester: number;
-  appliedDate: string;
-  originalMarks: number;
-  originalGrade: string;
-  revisedMarks?: number;
-  revisedGrade?: string;
-  markDifference?: number;
-  status: 'Under Evaluation' | 'Completed' | 'No Change' | 'Grade Upgraded';
-  fee: number;
-  resolvedDate?: string;
-  remarks: string;
-}
-
-export interface ReviewRecord {
-  id: string;
-  subjectCode: string;
-  subjectName: string;
-  semester: number;
-  appliedDate: string;
-  boardChair: string;
-  status: 'Committee Assigned' | 'Under Review' | 'Board Decision Finalized';
-  initialOutcome: string;
-  finalDecision: string;
-  remarks: string;
-}
-
-export interface GrievanceTicket {
-  id: string;
-  category: 'Examination' | 'Hall Ticket' | 'Evaluation' | 'Fee & Payment' | 'Portal Bug';
-  subject: string;
-  description: string;
-  priority: 'Low' | 'Medium' | 'High' | 'Urgent';
-  status: 'Open' | 'In Progress' | 'Resolved' | 'Closed';
-  createdAt: string;
-  updatedAt: string;
-  assignedOfficer: string;
-  responses: {
-    sender: 'student' | 'officer';
-    senderName: string;
-    message: string;
-    timestamp: string;
-  }[];
-}
-
-export interface LoginAuditSession {
-  id: string;
-  ipAddress: string;
-  device: string;
-  browser: string;
-  location: string;
-  timestamp: string;
-  isCurrent: boolean;
-  status: 'Active' | 'Logged Out';
-}
-
-// Initial Mock Datasets
-export const initialStudentProfile: StudentProfileData = {
+export const mockStudentUser: UserProfile = {
   studentId: 'EDV2026CS104',
-  name: 'Aarav Sharma',
-  avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80',
-  email: 'aarav.sharma@student.eduvora.edu',
-  phone: '+91 98450 12894',
-  emergencyContact: '+91 94432 89011 (Parent)',
-  address: 'Block 4, Flat 302, Green Valley Enclave, Innovation Way, Tech City - 600113',
-  bloodGroup: 'O+ Positive',
-  program: 'Bachelor of Technology (B.Tech - Honors)',
-  department: 'Computer Science & Artificial Intelligence',
+  registrationNumber: 'REG-2023-CS-0842',
+  fullName: 'Alex Rivera',
+  email: 'a.rivera@student.eduvora.edu',
+  personalEmail: 'alex.rivera.dev@gmail.com',
+  phone: '+1 (617) 492-8172',
+  emergencyContact: '+1 (617) 492-9900',
+  guardianName: 'Dr. Jonathan & Clara Rivera',
+  guardianPhone: '+1 (617) 555-8812',
+  department: 'Department of Computer Science & Engineering',
+  program: 'B.Tech in Artificial Intelligence & Data Science',
+  degree: 'Bachelor of Technology (Honors)',
   semester: 6,
-  batch: '2023 - 2027',
-  academicAdvisor: 'Prof. Dr. Arvind Krishnamurthy (Dean of Academic Affairs)',
-  enrollmentDate: 'August 12, 2023',
-  cgpa: 8.92,
-  creditsEarned: 134,
-  totalCredits: 160,
-  attendancePercentage: 92.4,
-  category: 'General / Merit',
-  status: 'Active Regular',
-  quota: 'State Level Entrance Rank #142',
+  batch: '2023–2027',
+  section: 'CS-A',
+  advisorName: 'Dr. Evelyn Vance (Senior Chair & Professor)',
+  advisorEmail: 'e.vance@eduvora.edu',
+  mentorName: 'Dr. Evelyn Vance (Senior Chair & Professor)',
+  admissionYear: '2023',
+  dob: '14 May 2004',
+  cgpa: 8.94,
+  totalCredits: 138,
+  admissionCategory: 'Merit',
+  bloodGroup: 'O+ Positive',
+  address: 'Suite 402, North Hall Residence, 100 Eduvora Way, Boston, MA 02115',
+  avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+  role: 'student',
+  enrolledCourses: [
+    { code: 'CS601', name: 'Distributed Systems & Cloud Computing', instructor: 'Prof. Alistair Thorne', credits: 4 },
+    { code: 'CS602', name: 'Generative AI & Large Language Architectures', instructor: 'Dr. Evelyn Vance', credits: 4 },
+    { code: 'CS603', name: 'Advanced Cryptography & Quantum Security', instructor: 'Dr. Marcus Althaus', credits: 3 },
+    { code: 'CS604E', name: 'Autonomous Robotics & Sensor Fusion', instructor: 'Prof. Sarah Jenkins', credits: 3 },
+    { code: 'CS607L', name: 'Cloud & AI Systems Practical Laboratory', instructor: 'Prof. Alistair Thorne', credits: 2 },
+    { code: 'CS608P', name: 'Capstone Research Phase I Defense', instructor: 'Dr. Evelyn Vance', credits: 3 },
+  ],
 };
 
-export const initialNotices: NoticeItem[] = [
+export const mockFacultyUser: UserProfile = {
+  studentId: 'FAC2026CS01',
+  registrationNumber: 'FAC-EMP-0142',
+  fullName: 'Dr. Evelyn Vance',
+  email: 'e.vance@eduvora.edu',
+  personalEmail: 'evelyn.vance.phd@gmail.com',
+  phone: '+1 (617) 555-0199',
+  emergencyContact: '+1 (617) 555-0100',
+  guardianName: 'Academic Affairs Council',
+  guardianPhone: '+1 (617) 555-0100',
+  department: 'Department of Computer Science & Engineering',
+  program: 'Artificial Intelligence & Distributed Systems',
+  degree: 'Ph.D. in Distributed Machine Learning (MIT)',
+  semester: 6,
+  batch: 'Faculty 2026',
+  section: 'Department Chair',
+  advisorName: 'Dean of Engineering',
+  advisorEmail: 'dean.eng@eduvora.edu',
+  mentorName: 'Dean of Academic Evaluations',
+  admissionYear: '2018',
+  dob: '02 Nov 1984',
+  cgpa: 10.0,
+  totalCredits: 360,
+  admissionCategory: 'Institutional Scholar',
+  bloodGroup: 'A+ Positive',
+  address: 'Faculty Tower 4B, Eduvora Academic Enclave, Boston, MA 02115',
+  avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
+  role: 'faculty',
+  facultyDesignation: 'Professor & Dean of Academic Evaluations',
+  enrolledCourses: [
+    { code: 'CS602', name: 'Generative AI & Large Language Architectures', instructor: 'Dr. Evelyn Vance', credits: 4 },
+  ],
+};
+
+export const mockNotices: NoticeItem[] = [
   {
-    id: 'NOT-2026-089',
-    title: 'Final Examination Schedule & Hall Ticket Issuance for Semester 6 (Spring 2026)',
+    id: 'NOT-2026-081',
+    title: 'End-Semester Theory & Practical Examination Schedule — Spring 2026',
     category: 'Examinations',
-    date: 'August 18, 2026',
+    date: 'Aug 18, 2026',
     isUrgent: true,
-    referenceNo: 'EDV/COE/2026/08-089',
-    description: 'End Semester Theory & Practical examinations commence from Sept 10, 2026. Students must clear library dues and complete subject exam registration before Aug 30, 2026.',
-    pdfFileSize: '1.4 MB',
-    author: 'Office of Controller of Examinations'
-  },
-  {
-    id: 'NOT-2026-084',
-    title: 'Publication of Semester 5 Revaluation & Review Challenge Valuation Results',
-    category: 'Results',
-    date: 'August 12, 2026',
-    isUrgent: false,
-    referenceNo: 'EDV/COE/2026/08-084',
-    description: 'Updated provisional marksheets for students who applied for Revaluation & Review in June 2026 have been synchronized in the Student Portal.',
-    pdfFileSize: '820 KB',
-    author: 'Evaluation Board Registry'
+    isNew: true,
+    issuedBy: 'Controller of Examinations (COE)',
+    content:
+      'The University Examination Board has finalized the timetable for Semester 6 Regular and Arrear examinations commencing from September 10, 2026. Hall tickets with designated examination centres, hall allocations, and invigilation codes are now downloadable via the portal.',
+    attachmentName: 'Eduvora_EndSem_Exam_Schedule_2026.pdf',
+    attachmentSize: '2.4 MB',
   },
   {
     id: 'NOT-2026-079',
-    title: 'Standard Operating Procedures for Answer Book Photocopy Procurement',
+    title: 'Revaluation & Evaluated Answer Sheet Photocopy Windows Announced',
     category: 'Examinations',
-    date: 'August 05, 2026',
+    date: 'Aug 14, 2026',
     isUrgent: false,
-    referenceNo: 'EDV/EXAM/2026/08-079',
-    description: 'Guidelines on obtaining digital watermarked copies of evaluated answer books, fee payment details, and revaluation eligibility rules.',
-    pdfFileSize: '2.1 MB',
-    author: 'Academic Council'
+    isNew: true,
+    issuedBy: 'Evaluation Registry Desk',
+    content:
+      'Students intending to apply for Photocopy of evaluated answer scripts for Semester 5 examinations may submit requests online before August 28, 2026. The Revaluation application portal will remain active until September 04, 2026.',
+    attachmentName: 'Revaluation_Guidelines_Statute.pdf',
+    attachmentSize: '840 KB',
   },
   {
-    id: 'NOT-2026-072',
-    title: 'Semester Registration Fee Payment & Examination Application Portal Extension',
+    id: 'NOT-2026-074',
+    title: 'Online Examination Fee Payment & Late Penalty Waiver Notification',
     category: 'Fees',
-    date: 'July 29, 2026',
-    isUrgent: false,
-    referenceNo: 'EDV/FIN/2026/07-072',
-    description: 'Online examination registration fee deadline extended till Aug 30, 2026 with no late penal fee.',
-    pdfFileSize: '650 KB',
-    author: 'Finance & Accounts Bureau'
+    date: 'Aug 10, 2026',
+    isUrgent: true,
+    isNew: false,
+    issuedBy: 'University Bursar & Finance Desk',
+    content:
+      'All undergraduate candidates must complete examination subject registration and fee remittance by August 30, 2026. Payments processed via the student portal integrated payment gateway generate instantaneous digital fee receipts.',
+    attachmentName: 'Fee_Structure_Annexure_B.pdf',
+    attachmentSize: '1.1 MB',
   },
   {
     id: 'NOT-2026-068',
-    title: 'Academic Calendar Revision: Mid-Term Assessments & Technical Symposium Dates',
+    title: 'Academic Council Circular: Interdisciplinary Elective Credit Guidelines',
     category: 'Academic',
-    date: 'July 15, 2026',
+    date: 'Aug 04, 2026',
     isUrgent: false,
-    referenceNo: 'EDV/ACAD/2026/07-068',
-    description: 'Schedule for intra-university project demonstrations, capstone review milestones, and industrial internships.',
-    pdfFileSize: '950 KB',
-    author: 'Dean of Student Affairs'
-  }
+    isNew: false,
+    issuedBy: 'Dean of Academic Curricula',
+    content:
+      'Students enrolled in Honors B.Tech tracks are eligible to audit up to 6 additional MOOC/NPTEL credits subject to prior approval from their designated Faculty Advisor.',
+    attachmentName: 'Curriculum_Regulation_R23.pdf',
+    attachmentSize: '3.6 MB',
+  },
+  {
+    id: 'NOT-2026-060',
+    title: 'Grievance Redressal Committee & Special Accommodations Protocol',
+    category: 'Circulars',
+    date: 'Jul 28, 2026',
+    isUrgent: false,
+    isNew: false,
+    issuedBy: 'Office of the Student Ombudsman',
+    content:
+      'Candidates requiring special seating arrangements, scribe facilities, or medical considerations must lodge an institutional grievance ticket at least 14 days prior to commencement.',
+    attachmentName: 'Special_Accommodations_Form.pdf',
+    attachmentSize: '490 KB',
+  },
 ];
 
-export const initialAvailableSubjects: SubjectRegistration[] = [
+export const mockExamSubjects: ExamSubject[] = [
   {
     code: 'CS601',
-    title: 'Deep Learning & Neural Network Architectures',
+    name: 'Distributed Systems & Cloud Computing',
+    semester: 6,
     credits: 4,
     type: 'Theory',
     fee: 450,
     examDate: '10 Sep 2026',
-    session: 'Morning (09:30 AM - 12:30 PM)',
-    selected: true,
-    internalMarks: 38,
-    maxInternal: 40
+    session: 'FN (09:30 AM - 12:30 PM)',
+    hallNumber: 'Turing Hall T-204',
+    deskNumber: 'Desk #42',
+    isRegistered: true,
   },
   {
     code: 'CS602',
-    title: 'Distributed Cloud Systems & Microservices',
+    name: 'Generative AI & Large Language Architectures',
+    semester: 6,
     credits: 4,
     type: 'Theory',
     fee: 450,
     examDate: '14 Sep 2026',
-    session: 'Morning (09:30 AM - 12:30 PM)',
-    selected: true,
-    internalMarks: 36,
-    maxInternal: 40
+    session: 'FN (09:30 AM - 12:30 PM)',
+    hallNumber: 'Turing Hall T-204',
+    deskNumber: 'Desk #42',
+    isRegistered: true,
   },
   {
     code: 'CS603',
-    title: 'Information Security, Cryptography & Blockchain',
+    name: 'Advanced Cryptography & Quantum Security',
+    semester: 6,
     credits: 3,
     type: 'Theory',
     fee: 450,
-    examDate: '18 Sep 2026',
-    session: 'Afternoon (02:00 PM - 05:00 PM)',
-    selected: true,
-    internalMarks: 37,
-    maxInternal: 40
+    examDate: '17 Sep 2026',
+    session: 'FN (09:30 AM - 12:30 PM)',
+    hallNumber: 'Shannon Tower S-108',
+    deskNumber: 'Desk #18',
+    isRegistered: true,
   },
   {
-    code: 'CS604',
-    title: 'Natural Language Processing & LLM Fine-Tuning (Elective)',
+    code: 'CS604E',
+    name: 'Autonomous Robotics & Sensor Fusion (Elective III)',
+    semester: 6,
     credits: 3,
     type: 'Elective',
     fee: 450,
-    examDate: '22 Sep 2026',
-    session: 'Morning (09:30 AM - 12:30 PM)',
-    selected: true,
-    internalMarks: 39,
-    maxInternal: 40
+    examDate: '21 Sep 2026',
+    session: 'AN (02:00 PM - 05:00 PM)',
+    hallNumber: 'Tesla Enclave E-301',
+    deskNumber: 'Desk #09',
+    isRegistered: true,
   },
   {
-    code: 'CS605P',
-    title: 'Autonomous AI Agents Laboratory & Capstone Demo',
+    code: 'CS607L',
+    name: 'Cloud & AI Systems Practical Laboratory',
+    semester: 6,
     credits: 2,
     type: 'Practical',
     fee: 600,
-    examDate: '26 Sep 2026',
-    session: 'Morning (09:30 AM - 12:30 PM)',
-    selected: true,
-    internalMarks: 58,
-    maxInternal: 60
+    examDate: '24 Sep 2026',
+    session: 'FN (09:30 AM - 12:30 PM)',
+    hallNumber: 'AI Supercomputing Lab 3',
+    deskNumber: 'Workstation #14',
+    isRegistered: true,
   },
   {
-    code: 'CS606P',
-    title: 'Cloud DevOps & Container Orchestration Lab',
-    credits: 2,
+    code: 'CS608P',
+    name: 'Capstone Research Phase I Defense & Viva',
+    semester: 6,
+    credits: 3,
     type: 'Practical',
     fee: 600,
     examDate: '28 Sep 2026',
-    session: 'Afternoon (02:00 PM - 05:00 PM)',
-    selected: true,
-    internalMarks: 56,
-    maxInternal: 60
-  }
+    session: 'AN (02:00 PM - 05:00 PM)',
+    hallNumber: 'Seminar Hall B',
+    deskNumber: 'Panel A',
+    isRegistered: true,
+  },
+  {
+    code: 'MA401',
+    name: 'Discrete Optimization & Graph Algorithms (Arrear/Backlog)',
+    semester: 4,
+    credits: 3,
+    type: 'Backlog',
+    fee: 550,
+    examDate: '02 Oct 2026',
+    session: 'AN (02:00 PM - 05:00 PM)',
+    hallNumber: 'Ramanujan Hall R-102',
+    deskNumber: 'Desk #31',
+    isRegistered: false,
+  },
 ];
 
-export const initialHallTicket: HallTicketData = {
-  hallTicketNumber: 'HT-2026-SEM6-104882',
+export const mockHallTicket: HallTicketData = {
+  admitCardNumber: 'EDV-HT-2026-098842',
   studentId: 'EDV2026CS104',
-  studentName: 'Aarav Sharma',
-  examCenter: 'Eduvora Main Campus - Sir C.V. Raman Examination Block (Block C)',
-  centerCode: 'EDV-CTR-01',
-  seatNumber: 'DESK-C3-14',
-  semester: 'Semester 6 (Final End-Term)',
-  academicYear: '2025-2026',
-  controllerOfExams: 'Dr. R. Sundaresan, M.Tech, Ph.D.',
+  studentName: 'Alex Rivera',
+  registrationNumber: 'REG-2023-CS-0842',
+  degree: 'Bachelor of Technology (Honors)',
+  department: 'Computer Science & Artificial Intelligence',
+  semester: 6,
+  academicYear: '2025–2026 (Even Semester)',
+  examinationCentre: 'Eduvora Main Academic Complex, North Campus, Hall Blocks A & T',
+  centreCode: 'EDV-CAMBRIDGE-01',
   issueDate: 'August 19, 2026',
-  timetable: [
-    {
-      subjectCode: 'CS601',
-      subjectName: 'Deep Learning & Neural Network Architectures',
-      date: '10-09-2026',
-      day: 'Thursday',
-      time: '09:30 AM - 12:30 PM',
-      hallNo: 'Hall C-302',
-      invigilatorSign: true,
-    },
-    {
-      subjectCode: 'CS602',
-      subjectName: 'Distributed Cloud Systems & Microservices',
-      date: '14-09-2026',
-      day: 'Monday',
-      time: '09:30 AM - 12:30 PM',
-      hallNo: 'Hall C-302',
-      invigilatorSign: true,
-    },
-    {
-      subjectCode: 'CS603',
-      subjectName: 'Information Security, Cryptography & Blockchain',
-      date: '18-09-2026',
-      day: 'Friday',
-      time: '02:00 PM - 05:00 PM',
-      hallNo: 'Hall C-304',
-      invigilatorSign: true,
-    },
-    {
-      subjectCode: 'CS604',
-      subjectName: 'Natural Language Processing & LLM Fine-Tuning',
-      date: '22-09-2026',
-      day: 'Tuesday',
-      time: '09:30 AM - 12:30 PM',
-      hallNo: 'Hall C-302',
-      invigilatorSign: true,
-    },
-    {
-      subjectCode: 'CS605P',
-      subjectName: 'Autonomous AI Agents Laboratory & Capstone Demo',
-      date: '26-09-2026',
-      day: 'Saturday',
-      time: '09:30 AM - 12:30 PM',
-      hallNo: 'AI Lab Complex 2',
-      invigilatorSign: true,
-    },
-    {
-      subjectCode: 'CS606P',
-      subjectName: 'Cloud DevOps & Container Orchestration Lab',
-      date: '28-09-2026',
-      day: 'Monday',
-      time: '02:00 PM - 05:00 PM',
-      hallNo: 'DevOps Server Lab',
-      invigilatorSign: true,
-    }
-  ],
-  instructions: [
-    'Candidates must report to the examination hall at least 30 minutes before the scheduled commencement.',
-    'Strictly produce this original Hall Ticket along with valid Eduvora University Student ID card.',
-    'Mobile phones, programmable calculators, smart watches, and digital storage media are strictly prohibited.',
-    'No candidate will be allowed to leave the examination hall during the first 60 minutes of the examination.',
-    'Tampering with the barcode or invigilator signature will result in immediate disqualification.'
-  ]
+  controllerOfExams: 'Dr. Aris Thorne, Ph.D.',
+  barcodeValue: '*EDV2026CS104S6*',
+  qrPayload: 'VERIFIED_EDUVORA_AUTHENTIC_HALLTICKET:ID=EDV2026CS104:SEM=6:REG=REG-2023-CS-0842:TIMESTAMP=20260819',
+  examSubjects: mockExamSubjects.filter((s) => s.isRegistered),
 };
 
-export const sampleSemestersMarks: SemesterMarksheet[] = [
+export const mockSemesterResults: SemesterResult[] = [
   {
     semester: 5,
-    semesterName: 'Semester 5 (Fall 2025)',
-    examMonthYear: 'December 2025',
-    resultDate: 'January 24, 2026',
-    status: 'PASS',
-    sgpa: 9.14,
-    cgpaCumulative: 8.92,
-    totalCredits: 22,
-    subjects: [
-      { code: 'CS501', name: 'Design and Analysis of Algorithms', credits: 4, internalMarks: 38, externalMarks: 56, totalMarks: 94, maxMarks: 100, grade: 'O', gradePoint: 10, result: 'PASS' },
-      { code: 'CS502', name: 'Artificial Intelligence & Search Logic', credits: 4, internalMarks: 37, externalMarks: 52, totalMarks: 89, maxMarks: 100, grade: 'A+', gradePoint: 9, result: 'PASS' },
-      { code: 'CS503', name: 'Database Engineering & High-Scale SQL', credits: 4, internalMarks: 39, externalMarks: 54, totalMarks: 93, maxMarks: 100, grade: 'O', gradePoint: 10, result: 'PASS' },
-      { code: 'CS504', name: 'Computer Networks & Socket Protocol', credits: 3, internalMarks: 35, externalMarks: 48, totalMarks: 83, maxMarks: 100, grade: 'A', gradePoint: 8, result: 'PASS' },
-      { code: 'CS505P', name: 'Algorithms & AI Sandbox Lab', credits: 2, internalMarks: 58, externalMarks: 38, totalMarks: 96, maxMarks: 100, grade: 'O', gradePoint: 10, result: 'PASS' },
-      { code: 'CS506P', name: 'Full-Stack Database Application Lab', credits: 2, internalMarks: 57, externalMarks: 36, totalMarks: 93, maxMarks: 100, grade: 'O', gradePoint: 10, result: 'PASS' },
-      { code: 'HS507', name: 'Engineering Economics & Tech Ethics', credits: 3, internalMarks: 36, externalMarks: 49, totalMarks: 85, maxMarks: 100, grade: 'A+', gradePoint: 9, result: 'PASS' },
-    ]
+    academicYear: '2025–2026 (Odd Semester)',
+    monthYear: 'December 2025',
+    sgpa: 9.12,
+    cgpa: 8.94,
+    totalCreditsEarned: 24,
+    totalCreditsRegistered: 24,
+    status: 'PASSED',
+    publishedDate: 'January 22, 2026',
+    courses: [
+      {
+        courseCode: 'CS501',
+        courseName: 'Deep Learning & Neural Network Architectures',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 38,
+        externalMarks: 54,
+        totalMarks: 92,
+        grade: 'O',
+        gradePoint: 10,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS502',
+        courseName: 'High-Performance Database Kernels',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 36,
+        externalMarks: 49,
+        totalMarks: 85,
+        grade: 'A+',
+        gradePoint: 9,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS503',
+        courseName: 'Compiler Design & Intermediate Representations',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 34,
+        externalMarks: 42,
+        totalMarks: 76,
+        grade: 'A',
+        gradePoint: 8,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS504E',
+        courseName: 'Computer Vision & 3D Spatial Geometry',
+        category: 'Elective',
+        credits: 3,
+        internalMarks: 39,
+        externalMarks: 55,
+        totalMarks: 94,
+        grade: 'O',
+        gradePoint: 10,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS505E',
+        courseName: 'Cybersecurity Penetration Testing & Defense',
+        category: 'Elective',
+        credits: 3,
+        internalMarks: 35,
+        externalMarks: 48,
+        totalMarks: 83,
+        grade: 'A+',
+        gradePoint: 9,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS507L',
+        courseName: 'Deep Learning Systems Laboratory',
+        category: 'Laboratory',
+        credits: 2,
+        internalMarks: 48,
+        externalMarks: 48,
+        totalMarks: 96,
+        grade: 'O',
+        gradePoint: 10,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS508L',
+        courseName: 'Database Engine & Storage Lab',
+        category: 'Laboratory',
+        credits: 2,
+        internalMarks: 46,
+        externalMarks: 45,
+        totalMarks: 91,
+        grade: 'O',
+        gradePoint: 10,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'SS501',
+        courseName: 'Technical Writing, Ethics & Executive Presence',
+        category: 'Core',
+        credits: 2,
+        internalMarks: 44,
+        externalMarks: 44,
+        totalMarks: 88,
+        grade: 'A+',
+        gradePoint: 9,
+        resultStatus: 'PASS',
+      },
+    ],
   },
   {
     semester: 4,
-    semesterName: 'Semester 4 (Spring 2025)',
-    examMonthYear: 'May 2025',
-    resultDate: 'June 28, 2025',
-    status: 'PASS',
-    sgpa: 8.86,
-    cgpaCumulative: 8.85,
-    totalCredits: 23,
-    subjects: [
-      { code: 'CS401', name: 'Operating Systems & Kernel Internals', credits: 4, internalMarks: 36, externalMarks: 50, totalMarks: 86, maxMarks: 100, grade: 'A+', gradePoint: 9, result: 'PASS' },
-      { code: 'CS402', name: 'Software Engineering & Agile Architectures', credits: 3, internalMarks: 38, externalMarks: 52, totalMarks: 90, maxMarks: 100, grade: 'O', gradePoint: 10, result: 'PASS' },
-      { code: 'CS403', name: 'Theory of Computation & Automata', credits: 4, internalMarks: 34, externalMarks: 46, totalMarks: 80, maxMarks: 100, grade: 'A', gradePoint: 8, result: 'PASS' },
-      { code: 'MA404', name: 'Probability, Statistics & Stochastic Process', credits: 4, internalMarks: 37, externalMarks: 50, totalMarks: 87, maxMarks: 100, grade: 'A+', gradePoint: 9, result: 'PASS' },
-      { code: 'CS405P', name: 'Operating Systems & Shell Lab', credits: 2, internalMarks: 56, externalMarks: 36, totalMarks: 92, maxMarks: 100, grade: 'O', gradePoint: 10, result: 'PASS' },
-      { code: 'CS406P', name: 'Microprocessor & Embedded Systems Lab', credits: 2, internalMarks: 54, externalMarks: 34, totalMarks: 88, maxMarks: 100, grade: 'A+', gradePoint: 9, result: 'PASS' },
-    ]
+    academicYear: '2024–2025 (Even Semester)',
+    monthYear: 'May 2025',
+    sgpa: 8.82,
+    cgpa: 8.89,
+    totalCreditsEarned: 23,
+    totalCreditsRegistered: 23,
+    status: 'PASSED',
+    publishedDate: 'June 18, 2025',
+    courses: [
+      {
+        courseCode: 'CS401',
+        courseName: 'Operating System Internals & Kernel Design',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 36,
+        externalMarks: 48,
+        totalMarks: 84,
+        grade: 'A+',
+        gradePoint: 9,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS402',
+        courseName: 'Theory of Computation & Automata',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 32,
+        externalMarks: 46,
+        totalMarks: 78,
+        grade: 'A',
+        gradePoint: 8,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS403',
+        courseName: 'Design & Analysis of Parallel Algorithms',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 37,
+        externalMarks: 53,
+        totalMarks: 90,
+        grade: 'O',
+        gradePoint: 10,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS404E',
+        courseName: 'Data Visualization & Statistical Modeling',
+        category: 'Elective',
+        credits: 3,
+        internalMarks: 38,
+        externalMarks: 50,
+        totalMarks: 88,
+        grade: 'A+',
+        gradePoint: 9,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS407L',
+        courseName: 'Operating Systems System Call Lab',
+        category: 'Laboratory',
+        credits: 2,
+        internalMarks: 45,
+        externalMarks: 47,
+        totalMarks: 92,
+        grade: 'O',
+        gradePoint: 10,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS408L',
+        courseName: 'Parallel Computing & CUDA Lab',
+        category: 'Laboratory',
+        credits: 2,
+        internalMarks: 47,
+        externalMarks: 49,
+        totalMarks: 96,
+        grade: 'O',
+        gradePoint: 10,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'MA401',
+        courseName: 'Probability, Random Processes & Queueing Theory',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 31,
+        externalMarks: 43,
+        totalMarks: 74,
+        grade: 'B+',
+        gradePoint: 7,
+        resultStatus: 'PASS',
+      },
+    ],
   },
   {
     semester: 3,
-    semesterName: 'Semester 3 (Fall 2024)',
-    examMonthYear: 'December 2024',
-    resultDate: 'January 18, 2025',
-    status: 'PASS',
+    academicYear: '2024–2025 (Odd Semester)',
+    monthYear: 'December 2024',
+    sgpa: 9.04,
+    cgpa: 8.92,
+    totalCreditsEarned: 24,
+    totalCreditsRegistered: 24,
+    status: 'PASSED',
+    publishedDate: 'January 19, 2025',
+    courses: [
+      {
+        courseCode: 'CS301',
+        courseName: 'Advanced Data Structures & Abstract Types',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 39,
+        externalMarks: 56,
+        totalMarks: 95,
+        grade: 'O',
+        gradePoint: 10,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS302',
+        courseName: 'Computer Organization & RISC-V Architecture',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 36,
+        externalMarks: 50,
+        totalMarks: 86,
+        grade: 'A+',
+        gradePoint: 9,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS303',
+        courseName: 'Object-Oriented Software Engineering',
+        category: 'Core',
+        credits: 3,
+        internalMarks: 37,
+        externalMarks: 51,
+        totalMarks: 88,
+        grade: 'A+',
+        gradePoint: 9,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'MA301',
+        courseName: 'Linear Algebra & Numerical Matrix Methods',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 35,
+        externalMarks: 49,
+        totalMarks: 84,
+        grade: 'A+',
+        gradePoint: 9,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'CS307L',
+        courseName: 'Data Structures & Algorithms Laboratory',
+        category: 'Laboratory',
+        credits: 2,
+        internalMarks: 49,
+        externalMarks: 50,
+        totalMarks: 99,
+        grade: 'O',
+        gradePoint: 10,
+        resultStatus: 'PASS',
+      },
+    ],
+  },
+  {
+    semester: 2,
+    academicYear: '2023–2024 (Even Semester)',
+    monthYear: 'May 2024',
     sgpa: 8.78,
-    cgpaCumulative: 8.84,
-    totalCredits: 22,
-    subjects: [
-      { code: 'CS301', name: 'Data Structures & OOP with C++', credits: 4, internalMarks: 38, externalMarks: 51, totalMarks: 89, maxMarks: 100, grade: 'A+', gradePoint: 9, result: 'PASS' },
-      { code: 'CS302', name: 'Digital Logic & Computer Organization', credits: 4, internalMarks: 36, externalMarks: 47, totalMarks: 83, maxMarks: 100, grade: 'A', gradePoint: 8, result: 'PASS' },
-      { code: 'MA303', name: 'Discrete Mathematics & Graph Theory', credits: 4, internalMarks: 37, externalMarks: 53, totalMarks: 90, maxMarks: 100, grade: 'O', gradePoint: 10, result: 'PASS' },
-      { code: 'CS304', name: 'Object Oriented Programming with Java', credits: 3, internalMarks: 39, externalMarks: 53, totalMarks: 92, maxMarks: 100, grade: 'O', gradePoint: 10, result: 'PASS' },
-      { code: 'CS305P', name: 'Data Structures Laboratory', credits: 2, internalMarks: 57, externalMarks: 37, totalMarks: 94, maxMarks: 100, grade: 'O', gradePoint: 10, result: 'PASS' },
-    ]
-  }
-];
-
-export const initialPhotocopies: PhotocopyRequest[] = [
-  {
-    id: 'PC-2026-041',
-    subjectCode: 'CS504',
-    subjectName: 'Computer Networks & Socket Protocol',
-    semester: 5,
-    appliedDate: '15 Feb 2026',
-    feePaid: 350,
-    status: 'Ready to View',
-    evaluatorRemarks: 'Script verified. All 5 descriptive sections evaluated with rubric sheet attached.',
-    totalPages: 24,
-    marksObtained: 83
+    cgpa: 8.86,
+    totalCreditsEarned: 22,
+    totalCreditsRegistered: 22,
+    status: 'PASSED',
+    publishedDate: 'June 20, 2024',
+    courses: [
+      {
+        courseCode: 'CS201',
+        courseName: 'Programming in C++ & Modern Paradigms',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 37,
+        externalMarks: 51,
+        totalMarks: 88,
+        grade: 'A+',
+        gradePoint: 9,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'PH201',
+        courseName: 'Physics for Quantum Information Science',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 33,
+        externalMarks: 45,
+        totalMarks: 78,
+        grade: 'A',
+        gradePoint: 8,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'MA201',
+        courseName: 'Multivariate Calculus & Vector Fields',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 36,
+        externalMarks: 48,
+        totalMarks: 84,
+        grade: 'A+',
+        gradePoint: 9,
+        resultStatus: 'PASS',
+      },
+    ],
   },
   {
-    id: 'PC-2026-039',
-    subjectCode: 'CS403',
-    subjectName: 'Theory of Computation & Automata',
-    semester: 4,
-    appliedDate: '10 Jul 2025',
-    feePaid: 350,
-    status: 'Ready to View',
-    evaluatorRemarks: 'Archived script digitized with official university watermark.',
-    totalPages: 20,
-    marksObtained: 80
-  }
+    semester: 1,
+    academicYear: '2023–2024 (Odd Semester)',
+    monthYear: 'December 2023',
+    sgpa: 8.95,
+    cgpa: 8.95,
+    totalCreditsEarned: 22,
+    totalCreditsRegistered: 22,
+    status: 'PASSED',
+    publishedDate: 'January 25, 2024',
+    courses: [
+      {
+        courseCode: 'CS101',
+        courseName: 'Computational Thinking & Python Systems',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 40,
+        externalMarks: 58,
+        totalMarks: 98,
+        grade: 'O',
+        gradePoint: 10,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'MA101',
+        courseName: 'Calculus, Differential Equations & Series',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 36,
+        externalMarks: 50,
+        totalMarks: 86,
+        grade: 'A+',
+        gradePoint: 9,
+        resultStatus: 'PASS',
+      },
+      {
+        courseCode: 'EE101',
+        courseName: 'Basic Electrical & Electronics Engineering',
+        category: 'Core',
+        credits: 4,
+        internalMarks: 34,
+        externalMarks: 46,
+        totalMarks: 80,
+        grade: 'A',
+        gradePoint: 8,
+        resultStatus: 'PASS',
+      },
+    ],
+  },
 ];
 
-export const initialRevaluations: RevaluationRecord[] = [
+export const mockPhotocopies: PhotocopyRequest[] = [
   {
-    id: 'REV-2026-102',
-    subjectCode: 'CS504',
-    subjectName: 'Computer Networks & Socket Protocol',
-    semester: 5,
-    appliedDate: '20 Feb 2026',
-    originalMarks: 83,
-    originalGrade: 'A',
-    revisedMarks: 88,
-    revisedGrade: 'A+',
-    markDifference: 5,
-    status: 'Grade Upgraded',
-    fee: 650,
-    resolvedDate: '12 Mar 2026',
-    remarks: 'Re-evaluation of Q4(b) protocol handshake awarded +5 marks due to missed rubric benchmark.'
+    id: 'PC-2026-904',
+    subjectCode: 'CS503',
+    subjectName: 'Compiler Design & Intermediate Representations',
+    appliedDate: '12 Jan 2026',
+    feePaid: 300,
+    status: 'Available to Download',
+    downloadUrl: '#',
+    trackingRef: 'TRK-EDV-994208',
   },
   {
-    id: 'REV-2026-088',
-    subjectCode: 'CS403',
-    subjectName: 'Theory of Computation & Automata',
-    semester: 4,
-    appliedDate: '18 Jul 2025',
-    originalMarks: 80,
-    originalGrade: 'A',
-    revisedMarks: 80,
-    revisedGrade: 'A',
-    markDifference: 0,
-    status: 'No Change',
-    fee: 650,
-    resolvedDate: '05 Aug 2025',
-    remarks: 'Evaluation was accurate and verified by senior review board.'
-  }
+    id: 'PC-2026-908',
+    subjectCode: 'CS502',
+    subjectName: 'High-Performance Database Kernels',
+    appliedDate: '16 Feb 2026',
+    feePaid: 300,
+    status: 'Digitizing',
+    trackingRef: 'TRK-EDV-994312',
+  },
 ];
 
-export const initialReviews: ReviewRecord[] = [
+export const mockRevaluations: RevaluationRecord[] = [
   {
-    id: 'BR-2026-014',
-    subjectCode: 'CS504',
-    subjectName: 'Computer Networks & Socket Protocol',
-    semester: 5,
-    appliedDate: '15 Mar 2026',
-    boardChair: 'Prof. Dr. Elizabeth Vance (Controller of Quality)',
-    status: 'Board Decision Finalized',
-    initialOutcome: 'Revaluation concluded +5 mark increase.',
-    finalDecision: 'Board Challenge upheld. Final Grade fixed at A+ (88/100). Credit points updated in central academic registry.',
-    remarks: 'Resolution passed in Academic Council Review Session #44.'
-  }
+    id: 'REV-2026-042',
+    subjectCode: 'CS503',
+    subjectName: 'Compiler Design & Intermediate Representations',
+    originalExternal: 42,
+    originalTotal: 76,
+    originalGrade: 'A (8.0)',
+    revisedExternal: 48,
+    revisedTotal: 82,
+    revisedGrade: 'A+ (9.0)',
+    status: 'Marks Upgraded',
+    appliedDate: '24 Jan 2026',
+    resolvedDate: '10 Feb 2026',
+    remarks: 'Evaluation review in Section C Code Optimization answered correctly (+6 External Marks credited). Grade upgraded to A+.',
+    feePaid: 650,
+  },
+  {
+    id: 'REV-2026-055',
+    subjectCode: 'MA401',
+    subjectName: 'Probability, Random Processes & Queueing Theory',
+    originalExternal: 43,
+    originalTotal: 74,
+    originalGrade: 'B+ (7.0)',
+    status: 'Under Evaluation',
+    appliedDate: '18 Aug 2026',
+    remarks: 'Answer booklet submitted to independent Senior Evaluator Board. Results will be published within 10 working days.',
+    feePaid: 650,
+  },
 ];
 
-export const initialGrievances: GrievanceTicket[] = [
+export const mockReviews: ReviewRecord[] = [
   {
-    id: 'GRV-2026-092',
-    category: 'Examination',
-    subject: 'Request for Clashing Exam Session Adjustment in Elective Papers',
-    description: 'My selected elective CS604 and practical demonstration CS605 were initially scheduled closely. Seeking confirmation on hall allocation.',
+    id: 'BR-2026-012',
+    subjectCode: 'MA401',
+    subjectName: 'Probability, Random Processes & Queueing Theory',
+    appliedDate: '19 Aug 2026',
+    boardChair: 'Prof. Marcus Althaus (Senior Mathematics Chair)',
+    status: 'Hearing Scheduled',
+    scheduledDate: '29 Aug 2026 at 11:00 AM EST (Senate Conference Room 3)',
+    finalVerdict: 'Pending final tripartite committee deliberation.',
+    feePaid: 1200,
+  },
+  {
+    id: 'BR-2025-007',
+    subjectCode: 'CS302',
+    subjectName: 'Computer Organization & RISC-V Architecture',
+    appliedDate: '14 Feb 2025',
+    boardChair: 'Dr. Alistair Finch (Computer Architecture Board)',
+    status: 'Grade Revised',
+    scheduledDate: '22 Feb 2025',
+    finalVerdict: 'Unanimous verdict: Pipeline hazard calculation evaluated affirmatively. 4 Additional marks confirmed. SGPA updated.',
+    feePaid: 1200,
+  },
+];
+
+export const mockSupportTickets: SupportTicket[] = [
+  {
+    id: 'TCK-2026-8812',
+    category: 'Hall Ticket Correction',
+    subject: 'Request name spelling alignment with Government ID / Passport',
+    priority: 'Medium',
+    status: 'Resolved',
+    createdDate: '16 Aug 2026',
+    lastUpdated: '18 Aug 2026',
+    messages: [
+      {
+        sender: 'Student',
+        senderName: 'Alex Rivera',
+        text: 'Greetings. My Hall ticket generated with middle initial omitted. Please confirm if that matches official university database.',
+        timestamp: '16 Aug 2026, 10:14 AM',
+      },
+      {
+        sender: 'Exam Cell',
+        senderName: 'COE Verification Team',
+        text: 'Hello Alex, your registry record has been updated with full legal name (Alex Jordan Rivera) and fresh hall ticket PDF reflects this.',
+        timestamp: '18 Aug 2026, 03:30 PM',
+      },
+    ],
+  },
+  {
+    id: 'TCK-2026-8890',
+    category: 'Exam Discrepancy',
+    subject: 'Elective III Subject Code Mapping Verification',
     priority: 'High',
-    status: 'Resolved',
-    createdAt: '18 Aug 2026, 11:20 AM',
-    updatedAt: '19 Aug 2026, 03:45 PM',
-    assignedOfficer: 'Officer K. Rajesh (Examination Support Desk)',
-    responses: [
+    status: 'In Review',
+    createdDate: '20 Aug 2026',
+    lastUpdated: '21 Aug 2026',
+    messages: [
       {
-        sender: 'student',
-        senderName: 'Aarav Sharma',
-        message: 'Hello, please confirm if the practical session CS605P reporting time has a 30-min buffer from the elective room.',
-        timestamp: '18 Aug 2026, 11:20 AM'
+        sender: 'Student',
+        senderName: 'Alex Rivera',
+        text: 'I have registered for CS604E Autonomous Robotics, but my portal displays session AN instead of morning. Kindly verify schedule.',
+        timestamp: '20 Aug 2026, 02:45 PM',
       },
       {
-        sender: 'officer',
-        senderName: 'Officer K. Rajesh',
-        message: 'Dear Student, your practical slot is scheduled with a 90-minute staggered buffer in AI Lab Complex 2. You may proceed normally.',
-        timestamp: '19 Aug 2026, 03:45 PM'
-      }
-    ]
+        sender: 'Support Staff',
+        senderName: 'Academic Section Officer',
+        text: 'We are reviewing the slot timetable with Department HOD. We will update your ticket by tomorrow morning.',
+        timestamp: '21 Aug 2026, 09:15 AM',
+      },
+    ],
   },
-  {
-    id: 'GRV-2026-081',
-    category: 'Evaluation',
-    subject: 'Clarification on SGPA calculation in Semester 5 Provisional Marksheet',
-    description: 'Seeking breakdown verification on grade weights for 4-credit vs 3-credit subjects.',
-    priority: 'Low',
-    status: 'Resolved',
-    createdAt: '28 Jan 2026, 10:15 AM',
-    updatedAt: '30 Jan 2026, 02:00 PM',
-    assignedOfficer: 'Registry Data Officer',
-    responses: [
-      {
-        sender: 'student',
-        senderName: 'Aarav Sharma',
-        message: 'Kindly clarify the rounding off threshold for the SGPA calculation.',
-        timestamp: '28 Jan 2026, 10:15 AM'
-      },
-      {
-        sender: 'officer',
-        senderName: 'Registry Data Officer',
-        message: 'The SGPA is truncated at two decimal points according to Eduvora University 2023 Academic Regulations.',
-        timestamp: '30 Jan 2026, 02:00 PM'
-      }
-    ]
-  }
 ];
 
-export const initialLoginSessions: LoginAuditSession[] = [
+export const mockLoginSessions: LoginSession[] = [
   {
-    id: 'sess-current',
-    ipAddress: '103.24.188.92 (Current Session)',
-    device: 'Apple MacBook Pro (macOS 15.4)',
-    browser: 'Google Chrome v128.0 (Encrypted TLS 1.3)',
-    location: 'Chennai / Bangalore, India',
-    timestamp: 'August 21, 2026 at 10:05 AM',
+    id: 'SES-001',
+    ipAddress: '198.51.100.42 (Eduvora Campus Fiber Gateway)',
+    device: 'Apple MacBook Pro 16"',
+    browser: 'Chrome 128.0 (macOS Sequoia)',
+    location: 'Boston, Massachusetts, USA',
+    timestamp: '21 Aug 2026, 09:56 AM',
     isCurrent: true,
-    status: 'Active'
+    status: 'Active',
   },
   {
-    id: 'sess-2',
-    ipAddress: '157.48.91.12',
-    device: 'Apple iPhone 16 Pro (iOS 19.1)',
-    browser: 'Mobile Safari v19.0',
-    location: 'Chennai, India',
-    timestamp: 'August 20, 2026 at 08:30 PM',
+    id: 'SES-002',
+    ipAddress: '172.56.21.90 (T-Mobile 5G Network)',
+    device: 'Apple iPhone 15 Pro Max',
+    browser: 'Mobile Safari 17.5',
+    location: 'Cambridge, Massachusetts, USA',
+    timestamp: '20 Aug 2026, 08:30 PM',
     isCurrent: false,
-    status: 'Active'
+    status: 'Active',
   },
   {
-    id: 'sess-3',
-    ipAddress: '103.24.188.92',
-    device: 'Dell XPS 15 (Windows 11)',
-    browser: 'Microsoft Edge v127.0',
-    location: 'University Campus WiFi (EDV-Secure-5G)',
-    timestamp: 'August 18, 2026 at 02:15 PM',
+    id: 'SES-003',
+    ipAddress: '198.51.100.12 (Turing AI Lab Workstation #08)',
+    device: 'Dell Precision 7920 Workstation',
+    browser: 'Firefox Developer Edition (Ubuntu 24.04)',
+    location: 'Eduvora North Campus Lab',
+    timestamp: '19 Aug 2026, 02:15 PM',
     isCurrent: false,
-    status: 'Logged Out'
+    status: 'Logged Out',
   },
   {
-    id: 'sess-4',
-    ipAddress: '182.72.10.44',
-    device: 'iPad Air 5th Gen (iPadOS 19)',
-    browser: 'Mobile Safari v19.0',
-    location: 'Bangalore, India',
-    timestamp: 'August 14, 2026 at 11:40 AM',
+    id: 'SES-004',
+    ipAddress: '73.180.44.110 (Residential Broadband)',
+    device: 'Apple iPad Pro 12.9" M2',
+    browser: 'Safari Mobile (iPadOS 17)',
+    location: 'Brookline, Massachusetts, USA',
+    timestamp: '15 Aug 2026, 06:44 PM',
     isCurrent: false,
-    status: 'Logged Out'
-  }
+    status: 'Logged Out',
+  },
 ];

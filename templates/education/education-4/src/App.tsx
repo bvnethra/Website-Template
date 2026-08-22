@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ProtectedRoute } from './components/auth/ProtectedRoute';
 import { LoginPage } from './components/auth/LoginPage';
@@ -20,7 +20,7 @@ import { SecurityLoginHistory } from './components/portal/SecurityLoginHistory';
 export default function App() {
   return (
     <AuthProvider>
-      <Router>
+      <BrowserRouter basename="/templates/education/education-4">
         <Routes>
           {/* Public Landing Page */}
           <Route path="/" element={<LandingView />} />
@@ -54,7 +54,7 @@ export default function App() {
           {/* Fallback to Home */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </AuthProvider>
   );
 }

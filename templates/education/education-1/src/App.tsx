@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PageId, Course } from './types';
+import { PageId, Course, StudentProfile } from './types';
 import { EduNavbar } from './components/EduNavbar';
 import { EduFooter } from './components/EduFooter';
 import { AuthModal } from './components/AuthModal';
@@ -22,11 +22,11 @@ export default function App() {
   const [courseDetailOpen, setCourseDetailOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Modals
+  // Modals & Student Auth
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'login' | 'register'>('login');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [userName, setUserName] = useState<string | null>(null);
+  const [currentStudent, setCurrentStudent] = useState<StudentProfile | null>(null);
 
   // Scroll to top on navigation
   useEffect(() => {
@@ -52,13 +52,34 @@ export default function App() {
     setCurrentPage('courses');
   };
 
+  const handleAuthSuccess = (student: StudentProfile | string) => {
+    if (typeof student === 'object') {
+      setCurrentStudent(student);
+    } else {
+      setCurrentStudent({
+        studentId: 'SKL-2026-8891',
+        name: student,
+        email: `${student.toLowerCase().replace(/\s+/g, '.')}@skillora.edu`,
+        passwordHint: 'student123',
+        program: 'Full-Stack AI Engineering',
+        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+        enrolledCoursesCount: 5,
+        completedHours: 38,
+        currentStreakDays: 14,
+        badge: 'Honor Scholar',
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-slate-900 font-sans selection:bg-indigo-600 selection:text-white">
-      {/* 1. Pill Navigation matching Eduvora light design system */}
+      {/* 1. Pill Navigation matching Skillora light design system */}
       <EduNavbar
         currentPage={currentPage}
+        currentStudent={currentStudent}
         onNavigate={handleNavigate}
         onOpenAuth={handleOpenAuth}
+        onLogout={() => setCurrentStudent(null)}
         onOpenSearch={() => setIsSearchOpen(true)}
       />
 
@@ -98,7 +119,13 @@ export default function App() {
           <CreatePlanPage onNavigate={handleNavigate} />
         )}
         {currentPage === 'track-progress' && (
-          <TrackProgressPage onNavigate={handleNavigate} />
+          <TrackProgressPage
+            currentStudent={currentStudent}
+            onNavigate={handleNavigate}
+            onOpenAuth={handleOpenAuth}
+            onLoginStudent={handleAuthSuccess}
+            onLogout={() => setCurrentStudent(null)}
+          />
         )}
       </main>
 
@@ -113,7 +140,7 @@ export default function App() {
         isOpen={isAuthOpen}
         initialMode={authMode}
         onClose={() => setIsAuthOpen(false)}
-        onSuccess={(name) => setUserName(name)}
+        onSuccess={handleAuthSuccess}
       />
 
       <GlobalSearchModal

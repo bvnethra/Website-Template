@@ -139,7 +139,7 @@ export const EduFooter: React.FC<EduFooterProps> = ({ onNavigate, onOpenAuth }) 
                   onClick={() => onNavigate('track-progress')}
                   className="text-slate-600 hover:text-indigo-600 transition-colors cursor-pointer py-1 block text-left"
                 >
-                  Student Analytics
+                  Student Portal (Sign In)
                 </button>
               </li>
             </ul>

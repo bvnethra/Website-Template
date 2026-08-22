@@ -121,7 +121,7 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
               </div>
               <div className="flex items-center gap-1 text-indigo-700 font-semibold font-mono">
                 <Award className="w-4 h-4 text-indigo-600" />
-                <span>Eduvora Verified Certificate</span>
+                <span>Skillora Verified Certificate</span>
               </div>
             </div>
           </div>

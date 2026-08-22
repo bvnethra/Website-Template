@@ -1,4 +1,6 @@
-/* Fine Art Photography Studio Template Styles */
+
+
+@import "tailwindcss";
 
 .fineart-body {
   background-color: #0a0a0a;

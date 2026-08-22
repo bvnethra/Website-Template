@@ -1,4 +1,6 @@
-/* Photo Photography Studio Template Styles */
+
+@import "tailwindcss";
+
 :root {
   --photo-bg-primary: #0a0a0a;
   --photo-bg-secondary: #121212;

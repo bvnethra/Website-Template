@@ -115,6 +115,50 @@ public class DatabaseSeederController {
             logs.put("category_" + data[1], "Created");
         }
 
+        // Seed Admin templates
+        Category adminCategory = catMap.get("admin");
+        if (adminCategory != null) {
+            // admin-1
+            Template admin1 = new Template();
+            admin1.setName("TS Admin — Enterprise Command Center");
+            admin1.setSlug("ts-admin");
+            admin1.setDescription("A comprehensive corporate and analytics administrative platform featuring sales intelligence, GPU computing, conversion tracking, chat dashboard, and settings panel.");
+            admin1.setCategory(adminCategory);
+            admin1.setPrice(0.0);
+            admin1.setTemplateType("FREE");
+            admin1.setBootstrapVersion("React 19 / Vite / Tailwind CSS");
+            admin1.setDemoUrl("/templates/admin/admin-1/index.html");
+            admin1.setDownloadFile("ts-admin.zip");
+            admin1.setPreviewImage("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80");
+            admin1.setVersion("1.0.0");
+            admin1.setStatus("PUBLISHED");
+            admin1.setPagesCount(1);
+            admin1.setDownloadsCount(1450);
+            admin1.setTags(new ArrayList<>(Arrays.asList("Corporate", "GPU Monitor", "Chat App")));
+            templateRepository.save(admin1);
+            logs.put("template_admin_1", "Created");
+
+            // admin-2
+            Template admin2 = new Template();
+            admin2.setName("Elemental — Editorial Command Center");
+            admin2.setSlug("elemental-admin");
+            admin2.setDescription("A beautiful editorial command operating system and science archive built using custom React state views, featuring editorial pipeline, task manager, media library, and workspace options.");
+            admin2.setCategory(adminCategory);
+            admin2.setPrice(0.0);
+            admin2.setTemplateType("FREE");
+            admin2.setBootstrapVersion("React 19 / TypeScript / Tailwind CSS");
+            admin2.setDemoUrl("/templates/admin/admin-2/index.html");
+            admin2.setDownloadFile("elemental-admin.zip");
+            admin2.setPreviewImage("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80");
+            admin2.setVersion("1.0.0");
+            admin2.setStatus("PUBLISHED");
+            admin2.setPagesCount(1);
+            admin2.setDownloadsCount(1890);
+            admin2.setTags(new ArrayList<>(Arrays.asList("Editorial", "Command Palette", "Bento Grid")));
+            templateRepository.save(admin2);
+            logs.put("template_admin_2", "Created");
+        }
+
         // 4. Seed Qure Nexa template under Medical category
         Category medicalCategory = catMap.get("medical");
         if (medicalCategory != null) {

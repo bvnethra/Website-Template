@@ -745,6 +745,36 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     version: '1.0.0',
     demoUrl: '/templates/hotel/hotel-4/index.html'
+  },
+  {
+    id: 134,
+    name: 'TS Admin — Enterprise Command Center',
+    slug: 'ts-admin',
+    previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 1, name: 'Admin', slug: 'admin' },
+    pagesCount: 1,
+    downloadsCount: 1450,
+    description: 'A comprehensive corporate and analytics administrative platform featuring sales intelligence, GPU computing, conversion tracking, chat dashboard, and settings panel.',
+    bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/admin/admin-1/index.html'
+  },
+  {
+    id: 135,
+    name: 'Elemental — Editorial Command Center',
+    slug: 'elemental-admin',
+    previewImage: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 1, name: 'Admin', slug: 'admin' },
+    pagesCount: 1,
+    downloadsCount: 1890,
+    description: 'A beautiful editorial command operating system and science archive built using custom React state views, featuring editorial pipeline, task manager, media library, and workspace options.',
+    bootstrapVersion: 'React 19 / TypeScript / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/admin/admin-2/index.html'
   }
 ];
 

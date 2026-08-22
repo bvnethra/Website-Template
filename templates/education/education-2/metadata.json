@@ -1,6 +1,6 @@
 {
-  "name": "Eduvora - Online Learning Platform",
-  "description": "Comprehensive academic learning platform and stateful Student Portal with examination registrations, hall tickets, marksheets, photocopy and revaluation hubs, security audit logs, and dual-role authentication.",
+  "name": "Eduvora University",
+  "description": "Comprehensive Student Portal & Academic Examination Authentication System for Eduvora University featuring examination registration, hall ticket generator, grade sheets, revaluation/review tracking, circular notices, and security audits.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

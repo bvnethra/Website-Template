@@ -1303,6 +1303,106 @@ public class DatabaseSeederController {
             aquavexa.setTags(new ArrayList<>(Arrays.asList("Car Wash", "Auto Detailing", "Booking Studio", "Paint Studio", "React")));
             templateRepository.save(aquavexa);
             logs.put("template_aquavexa_autospa", "Created");
+
+            // Seed Innovate SF (Events-6)
+            Template innovateSf = new Template();
+            innovateSf.setName("Innovate SF — Global Tech Summit & Startup Launchpad");
+            innovateSf.setSlug("innovate-sf");
+            innovateSf.setDescription("A premium tech and leadership event launching platform. Features dynamic schedules, speaker registries, digital ticket cards, countdown timers, and reservation capture modals.");
+            innovateSf.setCategory(eventsCategory);
+            innovateSf.setPrice(0.0);
+            innovateSf.setTemplateType("FREE");
+            innovateSf.setBootstrapVersion("React / Tailwind / Plus Jakarta Sans");
+            innovateSf.setDemoUrl("/templates/events/events-6/index.html");
+            innovateSf.setDownloadFile("");
+            innovateSf.setPreviewImage("https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80");
+            innovateSf.setVersion("1.0.0");
+            innovateSf.setStatus("PUBLISHED");
+            innovateSf.setPagesCount(12);
+            innovateSf.setDownloadsCount(3200);
+            innovateSf.setTags(new ArrayList<>(Arrays.asList("Event Platform", "Speakers Registry", "Schedule Drawer", "Digital Ticket", "Countdown")));
+            templateRepository.save(innovateSf);
+            logs.put("template_innovatesf", "Created");
+
+            // Seed Quantum Sphere (Events-7)
+            Template quantumSphere = new Template();
+            quantumSphere.setName("Quantum Sphere — Physics & Deep Tech Colloquium");
+            quantumSphere.setSlug("quantum-sphere");
+            quantumSphere.setDescription("A premium, high-tech event landing page for technology and AI conferences. Features interactive scroll spies, customized cursor indicators, schedule registries, and ticket reservation forms.");
+            quantumSphere.setCategory(eventsCategory);
+            quantumSphere.setPrice(0.0);
+            quantumSphere.setTemplateType("FREE");
+            quantumSphere.setBootstrapVersion("React / Vanilla CSS / Vite");
+            quantumSphere.setDemoUrl("/templates/events/events-7/index.html");
+            quantumSphere.setDownloadFile("");
+            quantumSphere.setPreviewImage("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80");
+            quantumSphere.setVersion("1.0.0");
+            quantumSphere.setStatus("PUBLISHED");
+            quantumSphere.setPagesCount(8);
+            quantumSphere.setDownloadsCount(2800);
+            quantumSphere.setTags(new ArrayList<>(Arrays.asList("Technology Summit", "AI Conference", "Scroll Spy", "Dark Theme", "Registration Form")));
+            templateRepository.save(quantumSphere);
+            logs.put("template_quantumsphere", "Created");
+
+            // Seed Aero Ascent (Events-8)
+            Template aeroAscent = new Template();
+            aeroAscent.setName("Aero Ascent — Vertical Flight & Drone Expo");
+            aeroAscent.setSlug("aero-ascent");
+            aeroAscent.setDescription("A premium, light/dark responsive robotics and quantum technology event template. Features quantum style grid animations, particle canvas backgrounds, dynamic tracks, speaker panels, and a sleek modern dark mode design.");
+            aeroAscent.setCategory(eventsCategory);
+            aeroAscent.setPrice(0.0);
+            aeroAscent.setTemplateType("FREE");
+            aeroAscent.setBootstrapVersion("React / Space Grotesk / Vite");
+            aeroAscent.setDemoUrl("/templates/events/events-8/index.html");
+            aeroAscent.setDownloadFile("");
+            aeroAscent.setPreviewImage("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80");
+            aeroAscent.setVersion("1.0.0");
+            aeroAscent.setStatus("PUBLISHED");
+            aeroAscent.setPagesCount(10);
+            aeroAscent.setDownloadsCount(2900);
+            aeroAscent.setTags(new ArrayList<>(Arrays.asList("Robotics", "Quantum Tech", "Particle BG", "Light Dark Theme", "Vite")));
+            templateRepository.save(aeroAscent);
+            logs.put("template_aeroascent", "Created");
+
+            // Seed Apex Fit (Events-9)
+            Template apexFit = new Template();
+            apexFit.setName("Apex Fit — Global Hybrid Functional Fitness Showcase");
+            apexFit.setSlug("apex-fit");
+            apexFit.setDescription("A premium athletic and fitness challenge event launching template. Features trainer portfolios, class schedules, program cards, equipment showcases, pricing tables, and registration capture.");
+            apexFit.setCategory(eventsCategory);
+            apexFit.setPrice(0.0);
+            apexFit.setTemplateType("FREE");
+            apexFit.setBootstrapVersion("React / Tailwind / Montserrat");
+            apexFit.setDemoUrl("/templates/events/events-9/index.html");
+            apexFit.setDownloadFile("");
+            apexFit.setPreviewImage("https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80");
+            apexFit.setVersion("1.0.0");
+            apexFit.setStatus("PUBLISHED");
+            apexFit.setPagesCount(15);
+            apexFit.setDownloadsCount(2700);
+            apexFit.setTags(new ArrayList<>(Arrays.asList("Fitness Event", "Gym Portal", "Workout Schedule", "Trainer Profiles", "Tailwind")));
+            templateRepository.save(apexFit);
+            logs.put("template_apexfit", "Created");
+
+            // Seed Hydro Shine (Events-10)
+            Template hydroShine = new Template();
+            hydroShine.setName("Hydro Shine — Premier Car Detailing & Wash Studio Platform");
+            hydroShine.setSlug("hydro-shine");
+            hydroShine.setDescription("A premium automotive wash, detailing, and paint studio platform. Features services grids, pricing cards, equipment showcases, paint studios, booking panels, and a reactive dark mode design.");
+            hydroShine.setCategory(eventsCategory);
+            hydroShine.setPrice(0.0);
+            hydroShine.setTemplateType("FREE");
+            hydroShine.setBootstrapVersion("React / Tailwind CSS / Vite");
+            hydroShine.setDemoUrl("/templates/events/events-10/index.html");
+            hydroShine.setDownloadFile("");
+            hydroShine.setPreviewImage("https://images.unsplash.com/photo-1520340356584-f9917d1eed69?auto=format&fit=crop&w=800&q=80");
+            hydroShine.setVersion("1.0.0");
+            hydroShine.setStatus("PUBLISHED");
+            hydroShine.setPagesCount(12);
+            hydroShine.setDownloadsCount(2100);
+            hydroShine.setTags(new ArrayList<>(Arrays.asList("Car Wash", "Auto Detailing", "Booking Studio", "Paint Studio", "React")));
+            templateRepository.save(hydroShine);
+            logs.put("template_hydroshine", "Created");
         }
 
         // 11. Seed Construction templates

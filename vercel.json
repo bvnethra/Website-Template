@@ -1,4 +1,10 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/((?!templates/|assets/|favicon.ico|.*\\.js|.*\\.css|.*\\.png|.*\\.jpg|.*\\.gif|.*\\.svg|.*\\.json).*)",
+      "destination": "/index.html"
+    }
+  ]
 }

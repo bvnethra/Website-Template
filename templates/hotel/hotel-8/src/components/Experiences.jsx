@@ -11,7 +11,7 @@ export default function Experiences() {
       tagline: 'Soft sunlight, breakfast, yoga, peaceful gardens',
       title: 'Sunrise Serenity',
       desc: 'Wake up to the soft rays of morning sun streaming through sandstone arches. Participate in a peaceful yoga session on the lake-facing pavilion, followed by a fresh traditional breakfast of local flatbreads and hot masala chai in our verdant courtyard gardens.',
-      image: '/images/5_the_view.jpg',
+      image: 'images/5_the_view.jpg',
       icon: <Sunrise size={18} />,
       bgColor: 'rgba(255, 230, 150, 0.04)',
       accentColor: '#D9B589'
@@ -21,7 +21,7 @@ export default function Experiences() {
       tagline: 'Brighter sunlight, swimming pool, spa, and local culture',
       title: 'Midday Rejuvenation',
       desc: 'As the sun rises high and bright, take a refreshing dip in our deep teal-green courtyard pool. Indulge in an Ayurveda wellness massage inside our sandstone spa chambers, or explore Udaipur\'s rich local crafts and historic alleys with a personal hotel guide.',
-      image: '/images/7_wellbeing_spa.jpg',
+      image: 'images/7_wellbeing_spa.jpg',
       icon: <Sun size={18} />,
       bgColor: 'rgba(255, 200, 100, 0.06)',
       accentColor: '#F0A500'
@@ -31,7 +31,7 @@ export default function Experiences() {
       tagline: 'Warm sunset light, courtyard tea, and cultural experiences',
       title: 'Sunset Splendor',
       desc: 'Experience the magical transition as Udaipur is bathed in warm golden light. Gather in the central courtyard for traditional high tea (Masala cutting chai and snacks), accompanied by soft live Rajasthani folk music and classical sitar performances.',
-      image: '/images/8_courtyard_pool.jpg',
+      image: 'images/8_courtyard_pool.jpg',
       icon: <Sunset size={18} />,
       bgColor: 'rgba(224, 90, 23, 0.12)',
       accentColor: '#E05A17'
@@ -41,7 +41,7 @@ export default function Experiences() {
       tagline: 'Rooftop dinner, lantern-lit courtyard, and stargazing',
       title: 'Midnight Enchantment',
       desc: 'Under a clear night sky and crescent moon, watch the palace lanterns illuminate one-by-one. Conclude your day with an elegant candle-lit dinner on our sprawling rooftop terrace, looking out onto Udaipur\'s glowing domes and distant dark hills.',
-      image: '/images/9_evening_experience.jpg',
+      image: 'images/9_evening_experience.jpg',
       icon: <Moon size={18} />,
       bgColor: 'rgba(10, 9, 20, 0.6)',
       accentColor: '#C29B4F'

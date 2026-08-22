@@ -63,7 +63,7 @@ export default function Experience() {
           {/* Right Column: Image */}
           <div style={{ position: 'relative', borderRadius: '4px', overflow: 'hidden', boxShadow: 'var(--shadow-premium)' }}>
             <img 
-              src="/images/6_fine_dining.jpg" 
+              src="images/6_fine_dining.jpg" 
               alt="Ananthara Fine Dining Restaurant" 
               style={{
                 width: '100%',
@@ -103,7 +103,7 @@ export default function Experience() {
           {/* Left Column: Image */}
           <div style={{ position: 'relative', borderRadius: '4px', overflow: 'hidden', boxShadow: 'var(--shadow-premium)' }} className="exp-img">
             <img 
-              src="/images/7_wellbeing_spa.jpg" 
+              src="images/7_wellbeing_spa.jpg" 
               alt="Ananthara Wellbeing Spa" 
               style={{
                 width: '100%',

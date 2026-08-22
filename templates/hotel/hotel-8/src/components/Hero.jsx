@@ -32,7 +32,7 @@ export default function Hero({ onBookClick }) {
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundImage: 'url("/images/1_hero_overview.jpg")',
+          backgroundImage: 'url("images/1_hero_overview.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           zIndex: 1,

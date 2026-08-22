@@ -63,7 +63,7 @@ export default function FineDining() {
           {/* Right Column: Image with steam particles overlay */}
           <div style={{ position: 'relative', borderRadius: '4px', overflow: 'hidden', boxShadow: 'var(--shadow-premium)' }}>
             <img 
-              src="/images/6_fine_dining.jpg" 
+              src="images/6_fine_dining.jpg" 
               alt="Ananthara Fine Dining Thali Platter" 
               style={{
                 width: '100%',

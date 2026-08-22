@@ -16,15 +16,15 @@ export default function Gallery() {
   ];
 
   const items = [
-    { id: 1, category: 'architecture', image: '/images/1_hero_overview.jpg', title: 'Palace Facade' },
-    { id: 2, category: 'architecture', image: '/images/2_hotel_entrance.jpg', title: 'Grand Archways' },
-    { id: 3, category: 'architecture', image: '/images/3_the_lobby.jpg', title: 'Lobby Dome' },
-    { id: 4, category: 'rooms', image: '/images/4_palace_suite.jpg', title: 'Chamber Detail' },
-    { id: 5, category: 'rooms', image: '/images/5_the_view.jpg', title: 'Window Jharokha' },
-    { id: 6, category: 'dining', image: '/images/6_fine_dining.jpg', title: 'Thali Table' },
-    { id: 7, category: 'wellness', image: '/images/7_wellbeing_spa.jpg', title: ' Ayurvedic Bath' },
-    { id: 8, category: 'pool', image: '/images/8_courtyard_pool.jpg', title: 'Reflecting Pool' },
-    { id: 9, category: 'events', image: '/images/9_evening_experience.jpg', title: 'Rooftop Terrace' }
+    { id: 1, category: 'architecture', image: 'images/1_hero_overview.jpg', title: 'Palace Facade' },
+    { id: 2, category: 'architecture', image: 'images/2_hotel_entrance.jpg', title: 'Grand Archways' },
+    { id: 3, category: 'architecture', image: 'images/3_the_lobby.jpg', title: 'Lobby Dome' },
+    { id: 4, category: 'rooms', image: 'images/4_palace_suite.jpg', title: 'Chamber Detail' },
+    { id: 5, category: 'rooms', image: 'images/5_the_view.jpg', title: 'Window Jharokha' },
+    { id: 6, category: 'dining', image: 'images/6_fine_dining.jpg', title: 'Thali Table' },
+    { id: 7, category: 'wellness', image: 'images/7_wellbeing_spa.jpg', title: ' Ayurvedic Bath' },
+    { id: 8, category: 'pool', image: 'images/8_courtyard_pool.jpg', title: 'Reflecting Pool' },
+    { id: 9, category: 'events', image: 'images/9_evening_experience.jpg', title: 'Rooftop Terrace' }
   ];
 
   const filteredItems = activeCategory === 'all' 

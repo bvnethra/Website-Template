@@ -7,28 +7,28 @@ export default function GridDetails() {
       title: 'Traditional Urli Platter',
       tag: 'FRESH FLOWERS & CANDLES',
       description: 'Hand-beaten dark metal bowls (urlis) filled with vibrant orange marigold petals, white jasmine buds, and floating beeswax candles, welcoming guests with sweet, calming aromas.',
-      image: '/images/lobby_offering_detail.jpg',
+      image: 'images/lobby_offering_detail.jpg',
       icon: <Sparkles size={16} />
     },
     {
       title: 'Antique Teak & Brass',
       tag: 'HANDCRAFTED DOORS',
       description: 'Grand entrance double doors made of seasoned dark teak wood, adorned with polished brass filigree, heavy studs, and majestic lion-head handles crafted by Mewar smiths.',
-      image: '/images/2_hotel_entrance.jpg',
+      image: 'images/2_hotel_entrance.jpg',
       icon: <Compass size={16} />
     },
     {
       title: 'Hammered Thali Service',
       tag: 'ROYAL EPICUREAN',
       description: 'Gastronomic specialties served in hand-hammered heavy brass platters (thalis) and bowls, preserving the traditional Mewari presentation of saffron rice, fresh naans, and rich curries.',
-      image: '/images/6_fine_dining.jpg',
+      image: 'images/6_fine_dining.jpg',
       icon: <Shield size={16} />
     },
     {
       title: 'The Brass Diya Flame',
       tag: 'WARM EVENING GLOW',
       description: 'Polished brass oil lamps (diyas) placed along sandstone walkways and pool steps, their small flames dancing gently in the evening breeze, reflecting heritage warmth.',
-      image: '/images/8_courtyard_pool.jpg',
+      image: 'images/8_courtyard_pool.jpg',
       icon: <Flame size={16} />
     }
   ];

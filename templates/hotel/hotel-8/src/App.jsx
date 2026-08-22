@@ -67,7 +67,7 @@ export default function App() {
               left: 0,
               width: '100%',
               height: '100%',
-              backgroundImage: 'url("/images/2_hotel_entrance.jpg")',
+              backgroundImage: 'url("images/2_hotel_entrance.jpg")',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               zIndex: 1
@@ -83,7 +83,7 @@ export default function App() {
               width: '9.1%',
               height: '60%',
               backgroundColor: '#32180F',
-              backgroundImage: 'url("/images/2_hotel_entrance.jpg")',
+              backgroundImage: 'url("images/2_hotel_entrance.jpg")',
               backgroundSize: '1100% 167%',
               backgroundPosition: '45.1% 67%',
               borderRight: '1px solid rgba(194, 155, 79, 0.4)',
@@ -98,7 +98,7 @@ export default function App() {
               width: '9.1%',
               height: '60%',
               backgroundColor: '#32180F',
-              backgroundImage: 'url("/images/2_hotel_entrance.jpg")',
+              backgroundImage: 'url("images/2_hotel_entrance.jpg")',
               backgroundSize: '1100% 167%',
               backgroundPosition: '55.1% 67%',
               borderLeft: '1px solid rgba(194, 155, 79, 0.4)',
@@ -108,7 +108,7 @@ export default function App() {
 
           {/* Symmetrical Arch Frame Overlay */}
           <img 
-            src="/images/2_hotel_entrance.jpg" 
+            src="images/2_hotel_entrance.jpg" 
             alt="Entrance Arch"
             style={{
               position: 'absolute',
@@ -201,7 +201,7 @@ export default function App() {
               left: 0,
               width: '100%',
               height: '100%',
-              backgroundImage: 'url("/images/2_hotel_entrance.jpg")',
+              backgroundImage: 'url("images/2_hotel_entrance.jpg")',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               transform: keycardStep === 4 ? 'scale(1.25)' : 'scale(1.0)',
@@ -213,7 +213,7 @@ export default function App() {
 
           {/* Lobby preview image shown behind the doors */}
           <img 
-            src="/images/3_the_lobby.jpg" 
+            src="images/3_the_lobby.jpg" 
             alt="Lobby Reveal"
             style={{
               position: 'absolute',
@@ -250,7 +250,7 @@ export default function App() {
               width: '9.1%',
               height: '60%',
               backgroundColor: '#32180F',
-              backgroundImage: 'url("/images/2_hotel_entrance.jpg")',
+              backgroundImage: 'url("images/2_hotel_entrance.jpg")',
               backgroundSize: '1100% 167%',
               backgroundPosition: '45.1% 67%',
               borderRight: '1px solid rgba(194, 155, 79, 0.4)',
@@ -270,7 +270,7 @@ export default function App() {
               width: '9.1%',
               height: '60%',
               backgroundColor: '#32180F',
-              backgroundImage: 'url("/images/2_hotel_entrance.jpg")',
+              backgroundImage: 'url("images/2_hotel_entrance.jpg")',
               backgroundSize: '1100% 167%',
               backgroundPosition: '55.1% 67%',
               borderLeft: '1px solid rgba(194, 155, 79, 0.4)',
@@ -285,7 +285,7 @@ export default function App() {
 
           {/* Sandstone Arch Frame */}
           <img 
-            src="/images/2_hotel_entrance.jpg" 
+            src="images/2_hotel_entrance.jpg" 
             alt="Entrance Frame"
             style={{
               position: 'absolute',
@@ -448,7 +448,7 @@ export default function App() {
                 left: 0,
                 width: '100%',
                 height: '100%',
-                backgroundImage: 'url("/images/9_evening_experience.jpg")',
+                backgroundImage: 'url("images/9_evening_experience.jpg")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 opacity: 0.45,

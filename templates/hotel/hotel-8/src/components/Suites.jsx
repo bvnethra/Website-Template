@@ -61,7 +61,7 @@ export default function Suites() {
                 
                 {/* Underneath: The Room or View Image */}
                 <img 
-                  src={viewMode === 'suite' ? '/images/4_palace_suite.jpg' : '/images/5_the_view.jpg'} 
+                  src={viewMode === 'suite' ? 'images/4_palace_suite.jpg' : 'images/5_the_view.jpg'} 
                   alt={viewMode === 'suite' ? 'Ananthara Palace Suite Interior' : 'Ananthara Palace Suite Bay Window View'} 
                   style={{
                     width: '100%',

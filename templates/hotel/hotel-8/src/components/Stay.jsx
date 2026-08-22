@@ -11,7 +11,7 @@ export default function Stay({ onBookClick }) {
       price: '₹18,000',
       guests: '2 Adults',
       bed: 'King Size',
-      image: '/images/4_palace_suite.jpg', // using suite for fallback
+      image: 'images/4_palace_suite.jpg', // using suite for fallback
       description: 'Elegant heritage room showcasing hand-finished stone walls, traditional carved tables, and antique metal sconces.',
       amenities: ['Complimentary Wi-Fi', 'Fruit Platter', 'Organic Toiletries', '24/7 Room Service'],
       details: 'Our Heritage Deluxe Room captures the cozy romance of ancient Rajasthani quarters. It features authentic stone blocks, a plush king bed with embroidered cotton sheets, custom carved work desks, and tall arched windows overlooking the lush courtyard palms.'
@@ -22,7 +22,7 @@ export default function Stay({ onBookClick }) {
       price: '₹26,000',
       guests: '2 Adults, 1 Child',
       bed: 'Imperial King',
-      image: '/images/8_courtyard_pool.jpg', // using courtyard view
+      image: 'images/8_courtyard_pool.jpg', // using courtyard view
       description: 'Spacious suite overlooking the central water lily pond and the sandstone columns of the inner courtyard.',
       amenities: ['Private Balcony', 'Ayurvedic Pillow Menu', 'Teak Wood Armchairs', 'Butler Service'],
       details: 'The Courtyard Suite is positioned along the inner pathways of the palace. Guests enjoy private seating on the balcony overlooking the teal-green swimming pool, a lavish master bath with natural stone fittings, and personalized hosting service.'
@@ -33,7 +33,7 @@ export default function Stay({ onBookClick }) {
       price: '₹35,000',
       guests: '3 Adults',
       bed: 'Royal Canopy King',
-      image: '/images/4_palace_suite.jpg',
+      image: 'images/4_palace_suite.jpg',
       description: 'Grand palace suite with high dome ceilings, elaborate miniature frescoes, and private jharokha bay window seats.',
       amenities: ['24/7 Butler Escort', 'Private Jharokha Window', 'Welcoming Platter', 'Airport Limousine'],
       details: 'Embodying the highest standard of Mewari luxury, the Royal Suite features a majestic canopy four-poster bed, original hand-painted miniature paintings, and a grand jharokha window with silk gold curtains looking out onto distant misty hills.'
@@ -44,7 +44,7 @@ export default function Stay({ onBookClick }) {
       price: '₹42,000',
       guests: '4 Adults',
       bed: 'Two King Beds',
-      image: '/images/3_the_lobby.jpg', // using lobby for fallback
+      image: 'images/3_the_lobby.jpg', // using lobby for fallback
       description: 'Expansive interconnected multi-room suite designed for family groups seeking traditional palace living.',
       amenities: ['Interconnected Rooms', 'Walk-in Closets', 'Exclusive Dining Area', 'Personal Concierge'],
       details: 'The Family Suite offers two grand interconnected master bedrooms, each with private en-suite baths. Finished in dark teak wood and rich silk textiles, it includes a central dining table and spacious seating lounges for group comfort.'

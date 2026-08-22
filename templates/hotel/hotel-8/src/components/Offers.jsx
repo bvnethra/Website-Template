@@ -10,42 +10,42 @@ export default function Offers() {
       desc: 'Recharge your spirit with a curated weekend stay. Includes traditional welcome, daily breakfast at The Jharokha, and guided walking tour.',
       benefit: '15% Off Room Booking',
       validity: 'Valid Friday - Sunday stays',
-      image: '/images/1_hero_overview.jpg'
+      image: 'images/1_hero_overview.jpg'
     },
     {
       title: 'Honeymoon Experience',
       desc: 'Celebrate love in a private palace canopy. Includes champagne upon arrival, private balcony dinner, and couple Abhyanga spa massage.',
       benefit: 'Complimentary Dinner & Spa Treatment',
       validity: 'Requires minimum 3 nights stay',
-      image: '/images/9_evening_experience.jpg'
+      image: 'images/9_evening_experience.jpg'
     },
     {
       title: 'Heritage Stay Package',
       desc: 'Delve deep into Mewari history. Includes private boat tour on Lake Pichola, museum passes, and royal thali dinner experience.',
       benefit: 'Includes City Sightseeing & Dinings',
       validity: 'Available year-round stays',
-      image: '/images/2_hotel_entrance.jpg'
+      image: 'images/2_hotel_entrance.jpg'
     },
     {
       title: 'Spa & Wellness Retreat',
       desc: 'Restore your inner balance. Includes Ayurvedic consultation, daily yoga classes, customizable spa massage, and organic herbal teas.',
       benefit: 'Includes 2 Daily Ayurvedic Treatments',
       validity: 'Minimum 2 nights stay required',
-      image: '/images/7_wellbeing_spa.jpg'
+      image: 'images/7_wellbeing_spa.jpg'
     },
     {
       title: 'Family Getaway Special',
       desc: 'Create family memories in our interconnected suites. Includes child activities, cooking masterclass with chefs, and laundry inclusions.',
       benefit: 'Kids Stay & Dine Complimentary',
       validity: 'Valid for Family Suite category',
-      image: '/images/3_the_lobby.jpg'
+      image: 'images/3_the_lobby.jpg'
     },
     {
       title: 'Early Bird Privilege',
       desc: 'Book your heritage holiday in advance and secure exclusive privileges and premium suite allocations.',
       benefit: '25% Off Advance Reservations',
       validity: 'Book 30 days prior to arrival',
-      image: '/images/4_palace_suite.jpg'
+      image: 'images/4_palace_suite.jpg'
     }
   ];
 

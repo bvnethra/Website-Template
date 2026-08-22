@@ -86,7 +86,7 @@ export default function Overview() {
           {/* Image Block (Lobby view showing details of where camera settled) */}
           <div style={{ position: 'relative', borderRadius: '4px', overflow: 'hidden', boxShadow: 'var(--shadow-premium)' }}>
             <img 
-              src="/images/3_the_lobby.jpg" 
+              src="images/3_the_lobby.jpg" 
               alt="Ananthara Grand Lobby Interior" 
               style={{
                 width: '100%',

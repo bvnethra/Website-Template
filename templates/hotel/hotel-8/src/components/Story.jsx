@@ -11,7 +11,7 @@ export default function Story() {
       subtitle: 'A Sacred Threshold of Marigolds & Jasmine',
       description: 'As you step through the hand-carved sandstone archways, you are greeted by the timeless scent of fresh marigold garlands and white jasmine. Our double teak doors, heavy with polished brass lion-head handles, open slowly to transition you from the outside world into a sanctuary of peaceful luxury.',
       highlight: 'Symmetrical Rajasthani architectural archway featuring hand-crafted metal lanterns and daily marigold draping ceremonies.',
-      image: '/images/2_hotel_entrance.jpg',
+      image: 'images/2_hotel_entrance.jpg',
       alt: 'Ananthara Heritage Hotel Symmetrical Entrance'
     },
     lobby: {
@@ -19,7 +19,7 @@ export default function Story() {
       subtitle: 'Where Heritage Architecture Meets Soft Candlelight',
       description: 'The central lobby, capped by a magnificent traditional dome, is bathed in the warm amber glow of hanging metal lanterns and a multi-tiered brass and crystal chandelier. Handcrafted dark wood armchairs upholstered in rich silk textiles frame the path towards the reception desk, where large brass bowls (urlis) float fresh marigolds and glowing candles.',
       highlight: 'Textured stone walls displaying authentic Mewari miniature paintings and polished marble floors leading under sandstone arches.',
-      image: '/images/3_the_lobby.jpg',
+      image: 'images/3_the_lobby.jpg',
       alt: 'Ananthara Heritage Hotel Grand Lobby'
     }
   };
@@ -151,7 +151,7 @@ export default function Story() {
                 >
                   {/* Background: Lobby Reveal */}
                   <img 
-                    src="/images/3_the_lobby.jpg" 
+                    src="images/3_the_lobby.jpg" 
                     alt="Revealed Lobby"
                     style={{
                       position: 'absolute',
@@ -180,7 +180,7 @@ export default function Story() {
 
                   {/* Symmetrical Entrance Arch Frame (Masking the doorway) */}
                   <img 
-                    src="/images/2_hotel_entrance.jpg" 
+                    src="images/2_hotel_entrance.jpg" 
                     alt="Entrance Frame"
                     style={{
                       position: 'absolute',
@@ -204,7 +204,7 @@ export default function Story() {
                       width: '9.1%',
                       height: '60%',
                       backgroundColor: '#32180F',
-                      backgroundImage: 'url("/images/2_hotel_entrance.jpg")',
+                      backgroundImage: 'url("images/2_hotel_entrance.jpg")',
                       backgroundSize: '1100% 167%', // scaling image to crop the left door
                       backgroundPosition: '45.1% 67%',
                       borderRight: '1px solid rgba(194, 155, 79, 0.4)',
@@ -225,7 +225,7 @@ export default function Story() {
                       width: '9.1%',
                       height: '60%',
                       backgroundColor: '#32180F',
-                      backgroundImage: 'url("/images/2_hotel_entrance.jpg")',
+                      backgroundImage: 'url("images/2_hotel_entrance.jpg")',
                       backgroundSize: '1100% 167%', // scaling image to crop the right door
                       backgroundPosition: '55.1% 67%',
                       borderLeft: '1px solid rgba(194, 155, 79, 0.4)',
@@ -266,7 +266,7 @@ export default function Story() {
                 /* Static Lobby Showcase */
                 <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
                   <img 
-                    src="/images/3_the_lobby.jpg" 
+                    src="images/3_the_lobby.jpg" 
                     alt="Ananthara Lobby" 
                     style={{ 
                       width: '100%', 

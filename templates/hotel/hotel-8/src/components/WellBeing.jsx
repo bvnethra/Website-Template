@@ -38,7 +38,7 @@ export default function WellBeing() {
           {/* Left Column: Image */}
           <div style={{ position: 'relative', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)', border: '1px solid rgba(194, 155, 79, 0.2)' }}>
             <img 
-              src="/images/7_wellbeing_spa.jpg" 
+              src="images/7_wellbeing_spa.jpg" 
               alt="Ananthara Wellbeing Spa Suite" 
               style={{
                 width: '100%',

@@ -887,6 +887,25 @@ public class DatabaseSeederController {
             eduvora3.setTags(new ArrayList<>(Arrays.asList("Education Portal", "Student Dashboard", "Exam Registration", "Tailwind CSS", "React")));
             templateRepository.save(eduvora3);
             logs.put("template_eduvora3", "Created");
+
+            Template learnora = new Template();
+            learnora.setName("Learnora — Premium White-Label University Template");
+            learnora.setSlug("learnora-education-v");
+            learnora.setDescription("A premium, production-ready, white-label commercial university website template featuring multi-department course catalogs, interactive admissions portal, research centers, faculty directory, student life, event booking, and customization tools.");
+            learnora.setCategory(educationCategory);
+            learnora.setPrice(0.0);
+            learnora.setTemplateType("FREE");
+            learnora.setBootstrapVersion("React / TypeScript / Tailwind CSS / Framer Motion");
+            learnora.setDemoUrl("/templates/education/education-5/index.html");
+            learnora.setDownloadFile("");
+            learnora.setPreviewImage("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80");
+            learnora.setVersion("1.0.0");
+            learnora.setStatus("PUBLISHED");
+            learnora.setPagesCount(12);
+            learnora.setDownloadsCount(1000);
+            learnora.setTags(new ArrayList<>(Arrays.asList("University Portal", "Course Catalog", "Admissions Portal", "Tailwind CSS", "React", "Framer Motion")));
+            templateRepository.save(learnora);
+            logs.put("template_learnora", "Created");
         }
 
         // 10. Seed Events templates

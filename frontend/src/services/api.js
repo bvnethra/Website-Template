@@ -564,6 +564,21 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/education/education-4/index.html'
   },
   {
+    id: 124,
+    name: 'Learnora — Premium White-Label University Template',
+    slug: 'learnora-education-v',
+    previewImage: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 10, name: 'Education', slug: 'education' },
+    pagesCount: 12,
+    downloadsCount: 1000,
+    description: 'A premium, production-ready, white-label commercial university website template featuring multi-department course catalogs, interactive admissions portal, research centers, faculty directory, student life, event booking, and customization tools.',
+    bootstrapVersion: 'React / TypeScript / Tailwind CSS / Framer Motion',
+    version: '1.0.0',
+    demoUrl: '/templates/education/education-5/index.html'
+  },
+  {
     id: 117,
     name: 'Knack Design Build — Bespoke Architecture',
     slug: 'knack-design-build',

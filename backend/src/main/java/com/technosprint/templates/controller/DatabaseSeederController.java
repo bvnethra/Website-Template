@@ -443,6 +443,26 @@ public class DatabaseSeederController {
             noire.setTags(new ArrayList<>(Arrays.asList("Nocturnal Bar", "Ambient Audio", "React TypeScript", "Tailwind CSS v4", "Live Fire Hearth")));
             templateRepository.save(noire);
             logs.put("template_noire", "Created");
+
+            // Seed Konkan Coast (restaurant-6)
+            Template konkanCoast = new Template();
+            konkanCoast.setName("Konkan Coast — Coastal Cuisine & Modern Table");
+            konkanCoast.setSlug("konkan-coast");
+            konkanCoast.setDescription("An elegant, premium React-refactored restaurant template featuring custom ambient audio lounge music, live fireplace hearth sections, dynamic parallax scroll effects, menu showcases, and reservation builders.");
+            konkanCoast.setCategory(restaurantCategory);
+            konkanCoast.setPrice(0.0);
+            konkanCoast.setTemplateType("FREE");
+            konkanCoast.setBootstrapVersion("React / TypeScript / Tailwind CSS");
+            konkanCoast.setDemoUrl("/templates/restaurant/restaurant-6/index.html");
+            konkanCoast.setDownloadFile("");
+            konkanCoast.setPreviewImage("/templates/restaurant/restaurant-6/assets/images/hero.jpg");
+            konkanCoast.setVersion("1.0.0");
+            konkanCoast.setStatus("PUBLISHED");
+            konkanCoast.setPagesCount(1);
+            konkanCoast.setDownloadsCount(1650);
+            konkanCoast.setTags(new ArrayList<>(Arrays.asList("Coastal Cuisine", "Ambient Audio", "React TypeScript", "Tailwind CSS", "Modern Table")));
+            templateRepository.save(konkanCoast);
+            logs.put("template_konkan_coast", "Created");
         }
 
         // 7. Seed Ecommerce templates

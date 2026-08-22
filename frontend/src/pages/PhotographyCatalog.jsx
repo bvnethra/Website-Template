@@ -56,6 +56,30 @@ export default function PhotographyCatalog() {
       previewImage: '/lume_cover.png',
       tags: ['Editorial Fashion', 'Moody Spotlight', 'Bespoke Lighting'],
       description: 'A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.'
+    },
+    {
+      slug: 'sage-shutter-photography',
+      name: 'Sage & Shutter — Fine Art Wedding Photography',
+      previewImage: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80',
+      demoUrl: '/templates/photography/photography-8/index.html',
+      tags: ['Fine Art', 'Wedding Photography', 'Earthy Filters', 'Tailwind CSS', 'Motion'],
+      description: 'An elegant, high-end fine art wedding photography showcase template. Features delicate earthy desaturated filters, parallax image carousels, custom cursor indicators, and responsive testimonial sliders.'
+    },
+    {
+      slug: 'blush-lens-photography',
+      name: 'Blush Lens — Fine Art Wedding Photography',
+      previewImage: '/wedding_cover.png',
+      demoUrl: '/templates/photography/photography-9/index.html',
+      tags: ['Fine Art', 'Wedding Photography', 'Blush Tones', 'Tailwind CSS', 'Motion'],
+      description: 'A premium React wedding photography template featuring romantic blush and warm ivory tones, editorial serif typography, interactive booking forms, and dynamic parallax portfolio galleries.'
+    },
+    {
+      slug: 'aether-studio-photography',
+      name: 'Aether Studio — Fine Art Editorial Photography',
+      previewImage: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80',
+      demoUrl: '/templates/photography/photography-10/index.html',
+      tags: ['Fine Art', 'Editorial Photography', 'Earthy Theme', 'Tailwind CSS', 'Motion'],
+      description: 'A high-end, editorial photography showcase template. Features custom slide overlays, parallax grid systems, desaturated earthy image styling, and elegant typewriter layout design.'
     }
   ];
 
@@ -134,6 +158,18 @@ export default function PhotographyCatalog() {
       'src/components/Scene3D.jsx',
       'src/components/ServicesSection.jsx',
       'src/components/Testimonials.jsx'
+    ],
+    'sage-shutter-photography': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css'
+    ],
+    'blush-lens-photography': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css'
+    ],
+    'aether-studio-photography': [
+      'package.json', 'vite.config.js', 'index.html',
+      'src/main.jsx', 'src/App.jsx', 'src/index.css'
     ]
   };
 
@@ -143,10 +179,18 @@ export default function PhotographyCatalog() {
     const zip = new JSZip();
     const filesToDownload = TEMPLATE_FILES[slug] || [];
 
+    // Map slug to directory folder name if they differ
+    const folderMapping = {
+      'sage-shutter-photography': 'photography-8',
+      'blush-lens-photography': 'photography-9',
+      'aether-studio-photography': 'photography-10'
+    };
+    const folderName = folderMapping[slug] || slug;
+
     try {
       // 1. Fetch React project files
       for (const filePath of filesToDownload) {
-        const fileUrl = `/templates/photography/${slug}/${filePath}`;
+        const fileUrl = `/templates/photography/${folderName}/${filePath}`;
         const response = await fetch(fileUrl);
         if (!response.ok) throw new Error(`Failed to fetch ${filePath}`);
         const text = await response.text();
@@ -449,7 +493,7 @@ export default function PhotographyCatalog() {
                   lineHeight: '1.25'
                 }}>
                   <a 
-                    href={`/templates/photography/${tpl.slug}`} 
+                    href={tpl.demoUrl || `/templates/photography/${tpl.slug}`} 
                     style={{ color: '#0f172a', transition: 'color 0.2s' }}
                     onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
                     onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
@@ -480,7 +524,7 @@ export default function PhotographyCatalog() {
                 marginTop: '10px'
               }}>
                 <a 
-                  href={`/templates/photography/${tpl.slug}`} 
+                  href={tpl.demoUrl || `/templates/photography/${tpl.slug}`} 
                   style={{
                     display: 'flex',
                     alignItems: 'center',

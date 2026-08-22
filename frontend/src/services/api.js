@@ -309,6 +309,19 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/restaurant/restaurant-5/index.html'
   },
   {
+    id: 128,
+    name: 'Konkan Coast — Coastal Cuisine & Modern Table',
+    slug: 'konkan-coast',
+    previewImage: '/templates/restaurant/restaurant-6/assets/images/hero.jpg',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 1,
+    downloadsCount: 1650,
+    description: 'An elegant, premium React-refactored restaurant template featuring custom ambient audio lounge music, live fireplace hearth sections, dynamic parallax scroll effects, menu showcases, and reservation builders.',
+    demoUrl: '/templates/restaurant/restaurant-6/index.html'
+  },
+  {
     id: 20,
     name: 'Skillora — Online Education & Learning Platform',
     slug: 'skillora-education',

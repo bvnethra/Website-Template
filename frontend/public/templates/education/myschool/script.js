@@ -1,6 +1,56 @@
 // MySchool Template JavaScript
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Admission Inquiry Form Submission Validation
+  
+  // 1. Hero Image Slider functionality
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.prev-arrow');
+  const nextBtn = document.querySelector('.next-arrow');
+  let currentSlide = 0;
+  let slideInterval;
+
+  function showSlide(index) {
+    if (slides.length === 0) return;
+    slides.forEach(slide => slide.classList.remove('active'));
+    currentSlide = (index + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  if (slides.length > 0) {
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetInterval();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetInterval();
+      });
+    }
+
+    // Auto rotate slides every 5 seconds
+    function startInterval() {
+      slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function resetInterval() {
+      clearInterval(slideInterval);
+      startInterval();
+    }
+
+    startInterval();
+  }
+
+  // 2. Admission Inquiry Form Submission Validation
   const form = document.getElementById('inquiry-form');
   const successMsg = document.getElementById('form-success');
 
@@ -27,12 +77,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Interactive Feature Card Alert
-  const featureCards = document.querySelectorAll('.feature-card');
-  featureCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const featureTitle = card.querySelector('h3').innerText;
-      alert(`Read details about our "${featureTitle}" programs!`);
+  // 3. Smooth scroll navigation for template preview anchors
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+
+        // Set active class on nav links
+        document.querySelectorAll('.nav-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        const parentNavItem = this.closest('.nav-item');
+        if (parentNavItem) {
+          parentNavItem.classList.add('active');
+        }
+      }
     });
   });
 });

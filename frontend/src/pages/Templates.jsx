@@ -1,26 +1,222 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useParams, useSearchParams, Link, useNavigate } from 'react-router-dom';
 import { api } from '../services/api';
 import { Search, SlidersHorizontal } from 'lucide-react';
 
+const categoryThemes = {
+  travels: {
+    accent: '#0284c7',
+    background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
+    cardBorder: 'rgba(2, 132, 199, 0.18)',
+    cardHoverBorder: 'rgba(2, 132, 199, 0.45)',
+    badgeColor: '#0284c7',
+    badgeBg: '#f0f9ff'
+  },
+  ecommerce: {
+    accent: '#ec4899',
+    background: 'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)',
+    cardBorder: 'rgba(236, 72, 153, 0.18)',
+    cardHoverBorder: 'rgba(236, 72, 153, 0.45)',
+    badgeColor: '#ec4899',
+    badgeBg: '#fdf2f8'
+  },
+  medical: {
+    accent: '#0d9488',
+    background: 'linear-gradient(135deg, #f0fdf4 0%, #ccfbf1 100%)',
+    cardBorder: 'rgba(13, 148, 136, 0.18)',
+    cardHoverBorder: 'rgba(13, 148, 136, 0.45)',
+    badgeColor: '#0d9488',
+    badgeBg: '#f0fdf4'
+  },
+  photography: {
+    accent: '#8b5cf6',
+    background: 'linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)',
+    cardBorder: 'rgba(139, 92, 246, 0.18)',
+    cardHoverBorder: 'rgba(139, 92, 246, 0.45)',
+    badgeColor: '#8b5cf6',
+    badgeBg: '#faf5ff'
+  },
+  hotel: {
+    accent: '#d97706',
+    background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
+    cardBorder: 'rgba(217, 119, 6, 0.18)',
+    cardHoverBorder: 'rgba(217, 119, 6, 0.45)',
+    badgeColor: '#d97706',
+    badgeBg: '#fffbeb'
+  },
+  default: {
+    accent: '#0066ff',
+    background: '#f8fafc',
+    cardBorder: '#e2e8f0',
+    cardHoverBorder: 'rgba(0, 102, 255, 0.35)',
+    badgeColor: '#1d4ed8',
+    badgeBg: '#eff6ff'
+  }
+};
+
+const renderCategoryAnimation = (categorySlug) => {
+  if (categorySlug === 'travels') {
+    return (
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        pointerEvents: 'none',
+        zIndex: 10,
+        overflow: 'hidden'
+      }}>
+        {/* Airplane drift */}
+        <div style={{
+          position: 'absolute',
+          top: '20px',
+          left: '-50px',
+          animation: 'planeCruise 8s linear infinite',
+          fontSize: '24px'
+        }}>✈️</div>
+        {/* Cloud drift */}
+        <div style={{
+          position: 'absolute',
+          top: '60px',
+          left: '110%',
+          animation: 'cloudDrift 14s linear infinite',
+          opacity: 0.35,
+          fontSize: '32px'
+        }}>☁️</div>
+        <div style={{
+          position: 'absolute',
+          bottom: '20px',
+          left: '110%',
+          animation: 'cloudDrift 19s linear infinite',
+          animationDelay: '-5s',
+          opacity: 0.25,
+          fontSize: '24px'
+        }}>☁️</div>
+      </div>
+    );
+  }
+  if (categorySlug === 'ecommerce') {
+    return (
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        pointerEvents: 'none',
+        zIndex: 10,
+        overflow: 'hidden'
+      }}>
+        {/* Floating shopping cart */}
+        <div style={{
+          position: 'absolute',
+          bottom: '15px',
+          left: '-40px',
+          animation: 'cartSlide 6s ease-in-out infinite',
+          fontSize: '22px'
+        }}>🛒</div>
+        {/* Sparkly discounts */}
+        <div style={{
+          position: 'absolute',
+          top: '15px',
+          right: '15px',
+          animation: 'sparkleRotate 3s linear infinite',
+          fontSize: '20px'
+        }}>🏷️</div>
+      </div>
+    );
+  }
+  if (categorySlug === 'medical') {
+    return (
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        pointerEvents: 'none',
+        zIndex: 10,
+        overflow: 'hidden'
+      }}>
+        {/* Pulsing heart */}
+        <div style={{
+          position: 'absolute',
+          top: '15px',
+          left: '15px',
+          animation: 'pulseScale 2s ease-in-out infinite',
+          fontSize: '24px'
+        }}>❤️</div>
+        {/* Healthcare cross */}
+        <div style={{
+          position: 'absolute',
+          bottom: '15px',
+          right: '15px',
+          animation: 'pulseScale 2s ease-in-out infinite',
+          animationDelay: '1s',
+          fontSize: '22px'
+        }}>🏥</div>
+      </div>
+    );
+  }
+  if (categorySlug === 'photography') {
+    return (
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        pointerEvents: 'none',
+        zIndex: 10,
+        overflow: 'hidden'
+      }}>
+        {/* Rotating aperture */}
+        <div style={{
+          position: 'absolute',
+          top: '15px',
+          right: '15px',
+          animation: 'rotateAperture 4s linear infinite',
+          fontSize: '22px'
+        }}>📷</div>
+        {/* Flash bulb glow */}
+        <div style={{
+          position: 'absolute',
+          top: '30%',
+          left: '20%',
+          width: '60px',
+          height: '60px',
+          background: 'rgba(139, 92, 246, 0.08)',
+          borderRadius: '50%',
+          filter: 'blur(8px)',
+          animation: 'flashGlow 4s infinite'
+        }} />
+      </div>
+    );
+  }
+  return null;
+};
+
 export default function Templates() {
+  const { categorySlug } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [templates, setTemplates] = useState([]);
   const [categories, setCategories] = useState([]);
   const [showFilterPanel, setShowFilterPanel] = useState(false);
   
   // States for filters
   const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
-  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'all');
+  const [selectedCategory, setSelectedCategory] = useState(categorySlug || searchParams.get('category') || 'all');
   const [selectedType, setSelectedType] = useState(searchParams.get('type') || 'all');
   const [sortBy, setSortBy] = useState('popular');
 
   useEffect(() => {
-    // Sync state if search params change
+    // Sync state if search params or route params change
     setSearchQuery(searchParams.get('search') || '');
-    setSelectedCategory(searchParams.get('category') || 'all');
+    setSelectedCategory(categorySlug || searchParams.get('category') || 'all');
     setSelectedType(searchParams.get('type') || 'all');
-  }, [searchParams]);
+  }, [searchParams, categorySlug]);
 
   useEffect(() => {
     // Fetch categories
@@ -52,13 +248,11 @@ export default function Templates() {
 
   const handleCategorySelect = (slug) => {
     setSelectedCategory(slug);
-    const params = new URLSearchParams(searchParams);
     if (slug !== 'all') {
-      params.set('category', slug);
+      navigate(`/templates/${slug}`);
     } else {
-      params.delete('category');
+      navigate(`/templates`);
     }
-    setSearchParams(params);
   };
 
   const handleTypeSelect = (type) => {
@@ -297,13 +491,14 @@ export default function Templates() {
             margin: '0 auto'
           }}>
             {sortedTemplates.map(template => {
-              const isSpecialCard = true;
+              const categorySlug = template.category.slug;
+              const theme = categoryThemes[categorySlug] || categoryThemes.default;
               return (
                 <div
                   key={template.id}
                   style={{
                     backgroundColor: '#ffffff',
-                    border: '1px solid #e2e8f0',
+                    border: `1px solid ${theme.cardBorder}`,
                     borderRadius: '24px',
                     padding: '32px',
                     display: 'grid',
@@ -316,11 +511,11 @@ export default function Templates() {
                     boxSizing: 'border-box'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(84, 78, 232, 0.2)';
+                    e.currentTarget.style.borderColor = theme.cardHoverBorder;
                     e.currentTarget.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.06)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#e2e8f0';
+                    e.currentTarget.style.borderColor = theme.cardBorder;
                     e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.03)';
                   }}
                 >
@@ -332,13 +527,16 @@ export default function Templates() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    background: '#f8fafc',
+                    background: theme.background,
                     borderRadius: '16px',
                     overflow: 'hidden',
                     border: '1px solid #f1f5f9',
                     boxSizing: 'border-box',
                     padding: '24px'
                   }}>
+                    {/* Category-specific animation overlay */}
+                    {renderCategoryAnimation(categorySlug)}
+
                     {/* 1. Laptop Mockup Frame */}
                     <div style={{
                       position: 'relative',
@@ -479,8 +677,8 @@ export default function Templates() {
                       <span style={{
                         padding: '4px 10px',
                         borderRadius: '99px',
-                        backgroundColor: '#eff6ff',
-                        color: '#1d4ed8',
+                        backgroundColor: theme.badgeBg,
+                        color: theme.badgeColor,
                         fontSize: '10px',
                         fontWeight: '700',
                         textTransform: 'uppercase',
@@ -515,7 +713,7 @@ export default function Templates() {
                         <Link 
                           to={`/templates/${template.slug}`} 
                           style={{ color: '#0f172a', transition: 'color 0.2s', textDecoration: 'none' }}
-                          onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
+                          onMouseEnter={(e) => e.currentTarget.style.color = theme.accent}
                           onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
                         >
                           {template.name}
@@ -526,6 +724,30 @@ export default function Templates() {
                       <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#64748b' }}>
                         <i className="fa-regular fa-clock" style={{ fontSize: '0.85rem' }}></i>
                         <span>Updated recently</span>
+                      </div>
+
+                      {/* Display Technologies, Page Count and Features */}
+                      <div style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: '15px',
+                        alignItems: 'center',
+                        marginTop: '6px',
+                        padding: '8px 0',
+                        borderTop: '1px solid #f1f5f9',
+                        borderBottom: '1px solid #f1f5f9'
+                      }}>
+                        <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
+                          <strong>Pages:</strong> {template.pagesCount || 1}
+                        </div>
+                        <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
+                        <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
+                          <strong>Stack:</strong> {template.bootstrapVersion}
+                        </div>
+                        <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
+                        <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
+                          <strong>Downloads:</strong> {template.downloadsCount}
+                        </div>
                       </div>
 
                       {/* 4. Short Description of the Template */}
@@ -550,7 +772,7 @@ export default function Templates() {
                           justifyContent: 'center',
                           gap: '6px',
                           padding: '12px 24px',
-                          backgroundColor: '#1e40af',
+                          backgroundColor: theme.accent,
                           color: 'white',
                           borderRadius: '99px',
                           border: 'none',
@@ -559,13 +781,13 @@ export default function Templates() {
                           cursor: 'pointer',
                           transition: 'all 0.2s',
                           textDecoration: 'none',
-                          boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)'
+                          boxShadow: `0 4px 12px ${theme.accent}40`
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = '#1d4ed8';
+                          e.currentTarget.style.filter = 'brightness(1.15)';
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = '#1e40af';
+                          e.currentTarget.style.filter = 'none';
                         }}
                       >
                         Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>

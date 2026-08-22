@@ -19,6 +19,7 @@ import CinematicWedding from './pages/CinematicWedding';
 import KairoPhotography from './pages/KairoPhotography';
 import ISteadyGimbal from './pages/ISteadyGimbal';
 import DevicePreviewWrapper from './components/DevicePreviewWrapper';
+import MegaMenu from './components/MegaMenu';
 
 function Header({ cartCount, user, onLogout }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -89,32 +90,7 @@ function Header({ cartCount, user, onLogout }) {
           }}>
             Templates <span style={{ fontSize: '0.75rem' }}>▼</span>
           </Link>
-          <div className="templates-dropdown">
-            <div className="dropdown-column">
-              <Link to="/templates?category=admin" className="dropdown-link">› Admin</Link>
-              <Link to="/templates?category=medical" className="dropdown-link">› Medical</Link>
-              <Link to="/templates?category=block-magazine" className="dropdown-link">› Block magazine</Link>
-              <Link to="/templates?category=comming-soon" className="dropdown-link">› Comming soon</Link>
-              <Link to="/templates?category=travels" className="dropdown-link">› Travels</Link>
-              <Link to="/templates?category=hotel" className="dropdown-link">› Hotel</Link>
-            </div>
-            <div className="dropdown-column">
-              <Link to="/templates?category=events" className="dropdown-link">› Events</Link>
-              <Link to="/templates/photography" className="dropdown-link">› Photography</Link>
-              <Link to="/templates?category=construction" className="dropdown-link">› Construction</Link>
-              <Link to="/templates?category=education" className="dropdown-link">› Education</Link>
-              <Link to="/templates?category=restaurant" className="dropdown-link">› Restaurant</Link>
-              <Link to="/templates?category=ecommerce" className="dropdown-link">› Ecommerce</Link>
-            </div>
-            <div className="dropdown-column">
-              <Link to="/templates?category=buisness" className="dropdown-link">› Buisness</Link>
-              <Link to="/templates?category=onepage" className="dropdown-link">› onepage</Link>
-              <Link to="/templates?category=landing-page" className="dropdown-link">› landing page</Link>
-              <Link to="/templates?category=cooperate" className="dropdown-link">› cooperate</Link>
-              <Link to="/templates?category=agency" className="dropdown-link">› agency</Link>
-              <Link to="/templates?category=portfolio" className="dropdown-link">› portfolio</Link>
-            </div>
-          </div>
+          <MegaMenu />
         </div>
         <Link to="/templates" style={{
           fontSize: '0.9rem',
@@ -438,6 +414,7 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
         <Routes>
           <Route path="/" element={<Home addToCart={addToCart} cart={cart} />} />
           <Route path="/templates" element={<Templates />} />
+          <Route path="/templates/:categorySlug" element={<Templates />} />
           <Route path="/templates/photography" element={<PhotographyCatalog />} />
           <Route path="/templates/:slug" element={<TemplateDetails addToCart={addToCart} cart={cart} />} />
           <Route path="/dashboard" element={<Dashboard user={user} cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} />} />

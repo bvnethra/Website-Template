@@ -94,6 +94,18 @@ public class TemplateController {
         return templates;
     }
 
+    @GetMapping("/category/{category}")
+    public List<Template> getTemplatesByCategory(@PathVariable String category) {
+        String categorySlug = category.trim().toLowerCase();
+        if (categorySlug.equals("coming-soon") || categorySlug.equals("coming_soon") || categorySlug.equals("comming_soon") || categorySlug.equals("comming-soon")) {
+            categorySlug = "comming-soon";
+        }
+        final String finalSlug = categorySlug;
+        return templateRepository.findByStatus("PUBLISHED").stream()
+                .filter(t -> t.getCategory() != null && t.getCategory().getSlug().equalsIgnoreCase(finalSlug))
+                .collect(Collectors.toList());
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<?> getTemplateById(@PathVariable Long id) {
         Template template = templateRepository.findById(id).orElse(null);

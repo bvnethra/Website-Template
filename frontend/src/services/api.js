@@ -1689,6 +1689,22 @@ export const api = {
     }
   },
 
+  async getTemplatesByCategory(category) {
+    try {
+      const res = await fetch(`${BASE_URL}/templates/category/${category}`, {
+        headers: getHeaders(),
+      });
+      const data = await handleResponse(res);
+      if (Array.isArray(data) && data.length > 0) {
+        return data;
+      }
+      return MOCK_TEMPLATES.filter(t => t.category.slug === category);
+    } catch (err) {
+      console.warn("API templates by category fetch failed, utilizing mock fallback:", err);
+      return MOCK_TEMPLATES.filter(t => t.category.slug === category);
+    }
+  },
+
   async getTemplateById(id) {
     try {
       const res = await fetch(`${BASE_URL}/templates/${id}`, {

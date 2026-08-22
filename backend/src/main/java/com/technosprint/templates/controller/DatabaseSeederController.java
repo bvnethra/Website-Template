@@ -463,6 +463,86 @@ public class DatabaseSeederController {
             konkanCoast.setTags(new ArrayList<>(Arrays.asList("Coastal Cuisine", "Ambient Audio", "React TypeScript", "Tailwind CSS", "Modern Table")));
             templateRepository.save(konkanCoast);
             logs.put("template_konkan_coast", "Created");
+
+            // Seed Masala Atelier (restaurant-7)
+            Template masalaAtelier = new Template();
+            masalaAtelier.setName("Masala Atelier — Modern Indian Fusion");
+            masalaAtelier.setSlug("masala-atelier");
+            masalaAtelier.setDescription("A contemporary chic Indian fusion culinary studio in Mumbai. Asymmetric layouts, truffle paneer tikka, saffron cheesecake, and modern craft mocktails.");
+            masalaAtelier.setCategory(restaurantCategory);
+            masalaAtelier.setPrice(0.0);
+            masalaAtelier.setTemplateType("FREE");
+            masalaAtelier.setBootstrapVersion("React / JavaScript / Tailwind CSS");
+            masalaAtelier.setDemoUrl("/templates/restaurant/restaurant-7/index.html");
+            masalaAtelier.setDownloadFile("");
+            masalaAtelier.setPreviewImage("https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80");
+            masalaAtelier.setVersion("1.0.0");
+            masalaAtelier.setStatus("PUBLISHED");
+            masalaAtelier.setPagesCount(1);
+            masalaAtelier.setDownloadsCount(1950);
+            masalaAtelier.setTags(new ArrayList<>(Arrays.asList("Fusion", "Mumbai", "Minimalist", "Editorial")));
+            templateRepository.save(masalaAtelier);
+            logs.put("template_masala_atelier", "Created");
+
+            // Seed Rang Mahal (restaurant-8)
+            Template rangMahal = new Template();
+            rangMahal.setName("Rang Mahal — Traditional Rajasthani");
+            rangMahal.setSlug("rang-mahal");
+            rangMahal.setDescription("A luxury Rajasthani heritage restaurant from Jaipur. Maroon-gold archways, traditional Dal Baati Churma dishes, and premium royal dining layouts.");
+            rangMahal.setCategory(restaurantCategory);
+            rangMahal.setPrice(0.0);
+            rangMahal.setTemplateType("FREE");
+            rangMahal.setBootstrapVersion("React / JavaScript / Tailwind CSS");
+            rangMahal.setDemoUrl("/templates/restaurant/restaurant-8/index.html");
+            rangMahal.setDownloadFile("");
+            rangMahal.setPreviewImage("https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=800&q=80");
+            rangMahal.setVersion("1.0.0");
+            rangMahal.setStatus("PUBLISHED");
+            rangMahal.setPagesCount(1);
+            rangMahal.setDownloadsCount(2200);
+            rangMahal.setTags(new ArrayList<>(Arrays.asList("Rajasthani", "Jaipur", "Heritage", "Traditional")));
+            templateRepository.save(rangMahal);
+            logs.put("template_rang_mahal", "Created");
+
+            // Seed The Royal Tandoor (restaurant-9)
+            Template royalTandoor = new Template();
+            royalTandoor.setName("The Royal Tandoor — Luxury North Indian");
+            royalTandoor.setSlug("the-royal-tandoor");
+            royalTandoor.setDescription("A high-end regal Mughlai dining experience located in New Delhi. Sophisticated gold-burgundy color palettes, buttery rich dal makhani, and premium tandoor grills.");
+            royalTandoor.setCategory(restaurantCategory);
+            royalTandoor.setPrice(0.0);
+            royalTandoor.setTemplateType("FREE");
+            royalTandoor.setBootstrapVersion("React / JavaScript / Tailwind CSS");
+            royalTandoor.setDemoUrl("/templates/restaurant/restaurant-9/index.html");
+            royalTandoor.setDownloadFile("");
+            royalTandoor.setPreviewImage("https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80");
+            royalTandoor.setVersion("1.0.0");
+            royalTandoor.setStatus("PUBLISHED");
+            royalTandoor.setPagesCount(1);
+            royalTandoor.setDownloadsCount(2800);
+            royalTandoor.setTags(new ArrayList<>(Arrays.asList("Mughlai", "Tandoori", "Delhi", "Luxury")));
+            templateRepository.save(royalTandoor);
+            logs.put("template_royal_tandoor", "Created");
+
+            // Seed Southern Ember (restaurant-10)
+            Template southernEmber = new Template();
+            southernEmber.setName("Southern Ember — Modern South Indian");
+            southernEmber.setSlug("southern-ember");
+            southernEmber.setDescription("A premium modern South Indian culinary experience from Chennai. Features a golden ghee roast Dosa showcase, claypot idlis, filter coffee, and warm terracotta design accents.");
+            southernEmber.setCategory(restaurantCategory);
+            southernEmber.setPrice(0.0);
+            southernEmber.setTemplateType("FREE");
+            southernEmber.setBootstrapVersion("React / JavaScript / Tailwind CSS");
+            southernEmber.setDemoUrl("/templates/restaurant/restaurant-10/index.html");
+            southernEmber.setDownloadFile("");
+            southernEmber.setPreviewImage("https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80");
+            southernEmber.setVersion("1.0.0");
+            southernEmber.setStatus("PUBLISHED");
+            southernEmber.setPagesCount(1);
+            southernEmber.setDownloadsCount(3100);
+            southernEmber.setTags(new ArrayList<>(Arrays.asList("South Indian", "Traditional", "Bengaluru", "Vegetarian")));
+            templateRepository.save(southernEmber);
+            logs.put("template_southern_ember", "Created");
         }
 
         // 7. Seed Ecommerce templates

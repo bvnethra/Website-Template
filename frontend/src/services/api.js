@@ -322,6 +322,58 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/restaurant/restaurant-6/index.html'
   },
   {
+    id: 129,
+    name: 'Masala Atelier — Modern Indian Fusion',
+    slug: 'masala-atelier',
+    previewImage: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 1,
+    downloadsCount: 1950,
+    description: 'A contemporary chic Indian fusion culinary studio in Mumbai. Asymmetric layouts, truffle paneer tikka, saffron cheesecake, and modern craft mocktails.',
+    demoUrl: '/templates/restaurant/restaurant-7/index.html'
+  },
+  {
+    id: 130,
+    name: 'Rang Mahal — Traditional Rajasthani',
+    slug: 'rang-mahal',
+    previewImage: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 1,
+    downloadsCount: 2200,
+    description: 'A luxury Rajasthani heritage restaurant from Jaipur. Maroon-gold archways, traditional Dal Baati Churma dishes, and premium royal dining layouts.',
+    demoUrl: '/templates/restaurant/restaurant-8/index.html'
+  },
+  {
+    id: 131,
+    name: 'The Royal Tandoor — Luxury North Indian',
+    slug: 'the-royal-tandoor',
+    previewImage: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 1,
+    downloadsCount: 2800,
+    description: 'A high-end regal Mughlai dining experience located in New Delhi. Sophisticated gold-burgundy color palettes, buttery rich dal makhani, and premium tandoor grills.',
+    demoUrl: '/templates/restaurant/restaurant-9/index.html'
+  },
+  {
+    id: 132,
+    name: 'Southern Ember — Modern South Indian',
+    slug: 'southern-ember',
+    previewImage: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 11, name: 'Restaurant', slug: 'restaurant' },
+    pagesCount: 1,
+    downloadsCount: 3100,
+    description: 'A premium modern South Indian culinary experience from Chennai. Features a golden ghee roast Dosa showcase, claypot idlis, filter coffee, and warm terracotta design accents.',
+    demoUrl: '/templates/restaurant/restaurant-10/index.html'
+  },
+  {
     id: 20,
     name: 'Skillora — Online Education & Learning Platform',
     slug: 'skillora-education',

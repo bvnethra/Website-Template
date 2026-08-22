@@ -23,6 +23,21 @@ const MOCK_CATEGORIES = [
 
 const MOCK_TEMPLATES = [
   {
+    id: 126,
+    name: 'Aurelia Haven — Luxury Resort & Sanctuary',
+    slug: 'aurelia-haven',
+    previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 6, name: 'Hotel', slug: 'hotel' },
+    pagesCount: 11,
+    downloadsCount: 1400,
+    description: 'A complete premium luxury resort and hotel sanctuary template featuring clifftop parallax headers, interactive booking widgets, responsive room selectors, masonry filtering galleries with lightboxes, count-up statistics, and custom mixology menus.',
+    bootstrapVersion: 'React / Tailwind CSS / Motion',
+    version: '1.0.0',
+    demoUrl: '/templates/hotel/hotel-5/index.html'
+  },
+  {
     id: 1,
     name: 'SnapFolio  -  Dark Minimalist Portfolio',
     slug: 'snapfolio-template',

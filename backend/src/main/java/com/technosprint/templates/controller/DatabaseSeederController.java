@@ -804,6 +804,26 @@ public class DatabaseSeederController {
             solitudeHaven.setTags(new ArrayList<>(Arrays.asList("Hotel", "Forest Sanctuary", "Wellness", "Bento Cards", "Scroll Indicator")));
             templateRepository.save(solitudeHaven);
             logs.put("template_solitude_hotel", "Created");
+
+            // Seed Aurelia Haven (hotel-5)
+            Template aureliaHaven = new Template();
+            aureliaHaven.setName("Aurelia Haven — Luxury Resort & Sanctuary");
+            aureliaHaven.setSlug("aurelia-haven");
+            aureliaHaven.setDescription("A complete premium luxury resort and hotel sanctuary template featuring clifftop parallax headers, interactive booking widgets, responsive room selectors, masonry filtering galleries with lightboxes, count-up statistics, and custom mixology menus.");
+            aureliaHaven.setCategory(hotelCategory);
+            aureliaHaven.setPrice(0.0);
+            aureliaHaven.setTemplateType("FREE");
+            aureliaHaven.setBootstrapVersion("React / Tailwind CSS / Motion");
+            aureliaHaven.setDemoUrl("/templates/hotel/hotel-5/index.html");
+            aureliaHaven.setDownloadFile("");
+            aureliaHaven.setPreviewImage("https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80");
+            aureliaHaven.setVersion("1.0.0");
+            aureliaHaven.setStatus("PUBLISHED");
+            aureliaHaven.setPagesCount(11);
+            aureliaHaven.setDownloadsCount(1400);
+            aureliaHaven.setTags(new ArrayList<>(Arrays.asList("Hotel", "Luxury Resort", "Sanctuary", "React", "Tailwind CSS", "Framer Motion")));
+            templateRepository.save(aureliaHaven);
+            logs.put("template_aurelia_haven_hotel", "Created");
         }
 
         // 9. Seed Education templates

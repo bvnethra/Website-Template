@@ -4,11 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Star, MapPin, Compass, Search, Smile } from 'lucide-react';
 import axios from 'axios';
 import EnvironmentAnimator from '../components/animations/EnvironmentAnimator';
+import { MOCK_EXPERIENCES, MOCK_DESTINATIONS } from '../data/travelData';
 
 export default function Experiences() {
   const navigate = useNavigate();
-  const [experiences, setExperiences] = useState([]);
-  const [selectedExp, setSelectedExp] = useState(null);
+  const [experiences, setExperiences] = useState(MOCK_EXPERIENCES);
+  const [selectedExp, setSelectedExp] = useState(MOCK_EXPERIENCES[0]);
   const [matchingDestinations, setMatchingDestinations] = useState([]);
   const [hoveredCard, setHoveredCard] = useState(null);
 
@@ -17,10 +18,14 @@ export default function Experiences() {
       .then(res => {
         setExperiences(res.data);
         if (res.data.length > 0) {
-          setSelectedExp(res.data[0]); // default select the first one
+          setSelectedExp(res.data[0]);
         }
       })
-      .catch(err => console.error("Error loading experiences page", err));
+      .catch(err => {
+        console.error("Error loading experiences page", err);
+        setExperiences(MOCK_EXPERIENCES);
+        setSelectedExp(MOCK_EXPERIENCES[0]);
+      });
   }, []);
 
   // Sync matching destinations from chosen theme
@@ -43,7 +48,22 @@ export default function Experiences() {
         });
         setMatchingDestinations(matches);
       })
-      .catch(err => console.error(err));
+      .catch(err => {
+        console.error("Error syncing matching destinations", err);
+        const key = selectedExp.name.toLowerCase();
+        const matches = MOCK_DESTINATIONS.filter(d => {
+          const desc = d.description.toLowerCase();
+          const name = d.name.toLowerCase();
+          const atts = d.attractions.map(a => a.toLowerCase()).join(' ');
+          return desc.includes(key) || name.includes(key) || atts.includes(key) ||
+                 (key === 'adventure' && d.name === 'Switzerland') ||
+                 (key === 'beach' && (d.name === 'Maldives' || d.name === 'Goa' || d.name === 'Bali')) ||
+                 (key === 'mountains' && d.name === 'Switzerland') ||
+                 (key === 'culture' && (d.name === 'Rajasthan' || d.name === 'London' || d.name === 'Tokyo')) ||
+                 (key === 'luxury' && (d.name === 'Dubai' || d.name === 'Paris'));
+        });
+        setMatchingDestinations(matches);
+      });
   }, [selectedExp]);
 
   return (

@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Star, Clock, MapPin, Compass, Tag, ArrowRight } from 'lucide-react';
 import axios from 'axios';
+import { MOCK_TOURS } from '../data/travelData';
 
 export default function Tours() {
   const navigate = useNavigate();
-  const [tours, setTours] = useState([]);
+  const [tours, setTours] = useState(MOCK_TOURS);
   const [selectedMode, setSelectedMode] = useState('All');
 
   useEffect(() => {

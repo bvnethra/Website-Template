@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Plane, Car, Train, Ship, Compass, Star, MapPin, Sparkles, Send } from 'lucide-react';
 import axios from 'axios';
+import { MOCK_DESTINATIONS, MOCK_TOURS, MOCK_EXPERIENCES } from '../data/travelData';
 import WorldMap from '../components/WorldMap';
 import EnvironmentAnimator from '../components/animations/EnvironmentAnimator';
 import { 
@@ -12,9 +13,9 @@ import {
 
 export default function Home() {
   const navigate = useNavigate();
-  const [destinations, setDestinations] = useState([]);
-  const [tours, setTours] = useState([]);
-  const [experiences, setExperiences] = useState([]);
+  const [destinations, setDestinations] = useState(MOCK_DESTINATIONS.slice(0, 4));
+  const [tours, setTours] = useState(MOCK_TOURS.slice(0, 4));
+  const [experiences, setExperiences] = useState(MOCK_EXPERIENCES.slice(0, 4));
   const [selectedTransport, setSelectedTransport] = useState('Plane');
   const [hoveredExperience, setHoveredExperience] = useState(null);
 

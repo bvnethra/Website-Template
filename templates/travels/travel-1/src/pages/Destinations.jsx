@@ -3,13 +3,14 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Search, Star, Compass, Filter, ArrowRight } from 'lucide-react';
 import axios from 'axios';
+import { MOCK_DESTINATIONS } from '../data/travelData';
 
 export default function Destinations() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const searchQueryParam = searchParams.get('search') || '';
 
-  const [destinations, setDestinations] = useState([]);
+  const [destinations, setDestinations] = useState(MOCK_DESTINATIONS);
   const [filterCountry, setFilterCountry] = useState('All');
   const [searchQuery, setSearchQuery] = useState(searchQueryParam);
   const [hoveredCard, setHoveredCard] = useState(null);

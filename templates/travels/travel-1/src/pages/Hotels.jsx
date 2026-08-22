@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, MapPin, Compass, Building, Check, ArrowRight } from 'lucide-react';
 import axios from 'axios';
+import { MOCK_HOTELS } from '../data/travelData';
 
 export default function Hotels() {
   const navigate = useNavigate();
-  const [hotels, setHotels] = useState([]);
+  const [hotels, setHotels] = useState(MOCK_HOTELS);
   const [filterLocation, setFilterLocation] = useState('All');
   const [hoveredCard, setHoveredCard] = useState(null);
 

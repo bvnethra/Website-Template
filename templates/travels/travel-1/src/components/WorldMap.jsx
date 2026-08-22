@@ -3,11 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plane, MapPin, Compass, Clock, DollarSign, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { MOCK_DESTINATIONS } from '../data/travelData';
 
 export default function WorldMap() {
   const navigate = useNavigate();
-  const [destinations, setDestinations] = useState([]);
-  const [selectedDest, setSelectedDest] = useState(null);
+  const [destinations, setDestinations] = useState(MOCK_DESTINATIONS);
+  const [selectedDest, setSelectedDest] = useState(MOCK_DESTINATIONS[1]);
   const [origin] = useState({ name: 'Chennai', x: 620, y: 260 }); // map coords in 1000x500 grid
   
   useEffect(() => {

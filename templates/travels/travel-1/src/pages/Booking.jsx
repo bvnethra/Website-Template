@@ -3,6 +3,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Compass, Sparkles, MapPin, Calendar, Users, Plane, ShieldCheck, Check, ArrowRight, ArrowLeft } from 'lucide-react';
 import axios from 'axios';
+import { MOCK_DESTINATIONS } from '../data/travelData';
 
 export default function Booking() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ export default function Booking() {
   const totalSteps = 8;
 
   // Booking Form State
-  const [destinations, setDestinations] = useState([]);
+  const [destinations, setDestinations] = useState(MOCK_DESTINATIONS);
   const [selectedDestId, setSelectedDestId] = useState(destIdParam);
   const [travelDate, setTravelDate] = useState('');
   const [travellerName, setTravellerName] = useState('');
@@ -41,7 +42,13 @@ export default function Booking() {
           setSelectedDestId(res.data[0].id.toString());
         }
       })
-      .catch(err => console.error(err));
+      .catch(err => {
+        console.error("Error loading destinations for booking page", err);
+        setDestinations(MOCK_DESTINATIONS);
+        if (!selectedDestId && MOCK_DESTINATIONS.length > 0) {
+          setSelectedDestId(MOCK_DESTINATIONS[0].id.toString());
+        }
+      });
   }, [selectedDestId]);
 
   const selectedDestination = destinations.find(d => d.id.toString() === selectedDestId);

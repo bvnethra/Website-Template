@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { MapPin, Star, Clock, DollarSign, ArrowLeft, Check, Compass } from 'lucide-react';
 import axios from 'axios';
+import { MOCK_DESTINATIONS } from '../data/travelData';
 
 export default function DestinationDetails() {
   const { id } = useParams();
@@ -17,7 +18,9 @@ export default function DestinationDetails() {
         setLoading(false);
       })
       .catch(err => {
-        console.error(err);
+        console.error("Error loading destination details", err);
+        const fallback = MOCK_DESTINATIONS.find(d => d.id === parseInt(id));
+        setDestination(fallback || null);
         setLoading(false);
       });
   }, [id]);

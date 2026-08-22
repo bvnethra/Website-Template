@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Compass, Clock, MapPin, Star, ArrowLeft, Check, Sparkles, BedDouble } from 'lucide-react';
 import axios from 'axios';
+import { MOCK_HOTELS } from '../data/travelData';
 
 export default function HotelDetails() {
   const { id } = useParams();
@@ -17,7 +18,9 @@ export default function HotelDetails() {
         setLoading(false);
       })
       .catch(err => {
-        console.error(err);
+        console.error("Error loading hotel details", err);
+        const fallback = MOCK_HOTELS.find(h => h.id === parseInt(id));
+        setHotel(fallback || null);
         setLoading(false);
       });
   }, [id]);

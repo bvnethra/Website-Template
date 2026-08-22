@@ -834,6 +834,186 @@ public class DatabaseSeederController {
             travelverse.setTags(new ArrayList<>(Arrays.asList("Interactive Map", "GSAP", "Framer Motion", "Trip Planner", "Booking")));
             templateRepository.save(travelverse);
             logs.put("template_travelverse", "Created");
+
+            // Seed Roamify (travel-2)
+            Template travel2 = new Template();
+            travel2.setName("Roamify — Immersive Travel & Tour Agency Portal");
+            travel2.setSlug("roamify-travels");
+            travel2.setDescription("A beautiful and fully-featured travel booking and tour discovery platform. Features custom-themed cursors, favorite wishlist managers, package filters, and travel guides.");
+            travel2.setCategory(travelsCategory);
+            travel2.setPrice(0.0);
+            travel2.setTemplateType("FREE");
+            travel2.setBootstrapVersion("React / Tailwind CSS / Motion");
+            travel2.setDemoUrl("/templates/travels/travel-2/index.html");
+            travel2.setDownloadFile("");
+            travel2.setPreviewImage("https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80");
+            travel2.setVersion("1.0.0");
+            travel2.setStatus("PUBLISHED");
+            travel2.setPagesCount(15);
+            travel2.setDownloadsCount(3100);
+            travel2.setTags(new ArrayList<>(Arrays.asList("Tour Discovery", "Custom Cursors", "Wishlist Manager", "Vite", "Framer Motion")));
+            templateRepository.save(travel2);
+            logs.put("template_travel_2", "Created");
+
+            // Seed Wayfarer (travel-3)
+            Template travel3 = new Template();
+            travel3.setName("Wayfarer — Immersive Parallax Adventure Guide");
+            travel3.setSlug("wayfarer-adventure");
+            travel3.setDescription("A stunning adventure and wild tourism showcase page. Features smooth scroll-driven parallax layouts, booking forms, testimonials, and category galleries.");
+            travel3.setCategory(travelsCategory);
+            travel3.setPrice(0.0);
+            travel3.setTemplateType("FREE");
+            travel3.setBootstrapVersion("React / Tailwind CSS / Vite");
+            travel3.setDemoUrl("/templates/travels/travel-3/index.html");
+            travel3.setDownloadFile("");
+            travel3.setPreviewImage("https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80");
+            travel3.setVersion("1.0.0");
+            travel3.setStatus("PUBLISHED");
+            travel3.setPagesCount(10);
+            travel3.setDownloadsCount(2450);
+            travel3.setTags(new ArrayList<>(Arrays.asList("Adventure Guide", "Parallax Scroll", "Testimonials", "Travel Showcase", "React")));
+            templateRepository.save(travel3);
+            logs.put("template_travel_3", "Created");
+
+            // Seed Exploria (travel-4)
+            Template travel4 = new Template();
+            travel4.setName("Exploria — Modern Destination & Trekking Agency Hub");
+            travel4.setSlug("exploria-trekking");
+            travel4.setDescription("An elegant destination directory and trekking agency web application. Features package overlays, custom sliders, contact forms, and a responsive booking widget.");
+            travel4.setCategory(travelsCategory);
+            travel4.setPrice(0.0);
+            travel4.setTemplateType("FREE");
+            travel4.setBootstrapVersion("React / Tailwind CSS / Vite");
+            travel4.setDemoUrl("/templates/travels/travel-4/index.html");
+            travel4.setDownloadFile("");
+            travel4.setPreviewImage("https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80");
+            travel4.setVersion("1.0.0");
+            travel4.setStatus("PUBLISHED");
+            travel4.setPagesCount(8);
+            travel4.setDownloadsCount(1980);
+            travel4.setTags(new ArrayList<>(Arrays.asList("Trekking", "Mountain Hiking", "Booking Widget", "Destination Grid", "React")));
+            templateRepository.save(travel4);
+            logs.put("template_travel_4", "Created");
+
+            // Seed Wilderness (travel-5)
+            Template travel5 = new Template();
+            travel5.setName("Wilderness — Animated Outdoor Tourism Portal");
+            travel5.setSlug("wilderness-tourism");
+            travel5.setDescription("A beautiful animated outdoor, national park, and wilderness tourism platform. Features rich SVG animations, stats bands, destination overlays, and testimonial rails.");
+            travel5.setCategory(travelsCategory);
+            travel5.setPrice(0.0);
+            travel5.setTemplateType("FREE");
+            travel5.setBootstrapVersion("React / Framer Motion / Tailwind / Vite");
+            travel5.setDemoUrl("/templates/travels/travel-5/index.html");
+            travel5.setDownloadFile("");
+            travel5.setPreviewImage("https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=800&q=80");
+            travel5.setVersion("1.0.0");
+            travel5.setStatus("PUBLISHED");
+            travel5.setPagesCount(6);
+            travel5.setDownloadsCount(1650);
+            travel5.setTags(new ArrayList<>(Arrays.asList("National Parks", "SVG Animations", "Outdoor Showcase", "Framer Motion", "Vite")));
+            templateRepository.save(travel5);
+            logs.put("template_travel_5", "Created");
+
+            // Seed Nomad (travel-6)
+            Template travel6 = new Template();
+            travel6.setName("Nomad — Interactive Travel Planner & Booking Hub");
+            travel6.setSlug("nomad-planner");
+            travel6.setDescription("A premium interactive travel planning and itinerary creation platform. Features dynamic stats bands, reviews drawers, custom destination galleries, and newsletter CTAs.");
+            travel6.setCategory(travelsCategory);
+            travel6.setPrice(0.0);
+            travel6.setTemplateType("FREE");
+            travel6.setBootstrapVersion("React / Tailwind CSS / Vite");
+            travel6.setDemoUrl("/templates/travels/travel-6/index.html");
+            travel6.setDownloadFile("");
+            travel6.setPreviewImage("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80");
+            travel6.setVersion("1.0.0");
+            travel6.setStatus("PUBLISHED");
+            travel6.setPagesCount(12);
+            travel6.setDownloadsCount(3400);
+            travel6.setTags(new ArrayList<>(Arrays.asList("Travel Planner", "Itinerary Builder", "Dynamic Galleries", "Vite", "React")));
+            templateRepository.save(travel6);
+            logs.put("template_travel_6", "Created");
+
+            // Seed Wanderlust Tales (travel-7)
+            Template travel7 = new Template();
+            travel7.setName("Wanderlust Tales — Elegant Travel & Hiking Blog Platform");
+            travel7.setSlug("wanderlust-tales");
+            travel7.setDescription("A beautiful destination blogging and hiking journal application. Features interactive maps, story lists, review grids, and pre-booking overlays.");
+            travel7.setCategory(travelsCategory);
+            travel7.setPrice(0.0);
+            travel7.setTemplateType("FREE");
+            travel7.setBootstrapVersion("React / Tailwind CSS / Vite");
+            travel7.setDemoUrl("/templates/travels/travel-7/index.html");
+            travel7.setDownloadFile("");
+            travel7.setPreviewImage("https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80");
+            travel7.setVersion("1.0.0");
+            travel7.setStatus("PUBLISHED");
+            travel7.setPagesCount(9);
+            travel7.setDownloadsCount(2200);
+            travel7.setTags(new ArrayList<>(Arrays.asList("Hiking Blog", "Blogging", "Hiking Journal", "Interactive Map", "React")));
+            templateRepository.save(travel7);
+            logs.put("template_travel_7", "Created");
+
+            // Seed Aether (travel-8)
+            Template travel8 = new Template();
+            travel8.setName("Aether — Minimalist Luxury Travel & Resort Agency");
+            travel8.setSlug("aether-resort");
+            travel8.setDescription("A premium luxury travel agency and high-end resort booking platform. Features minimalist layouts, destination galleries, pricing packages, and review carousels.");
+            travel8.setCategory(travelsCategory);
+            travel8.setPrice(0.0);
+            travel8.setTemplateType("FREE");
+            travel8.setBootstrapVersion("React / Tailwind CSS / Vite");
+            travel8.setDemoUrl("/templates/travels/travel-8/index.html");
+            travel8.setDownloadFile("");
+            travel8.setPreviewImage("https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80");
+            travel8.setVersion("1.0.0");
+            travel8.setStatus("PUBLISHED");
+            travel8.setPagesCount(11);
+            travel8.setDownloadsCount(2750);
+            travel8.setTags(new ArrayList<>(Arrays.asList("Luxury Agency", "Minimalist Resort", "Pricing Packages", "Review Carousel", "Vite")));
+            templateRepository.save(travel8);
+            logs.put("template_travel_8", "Created");
+
+            // Seed Exploria Pro (travel-9)
+            Template travel9 = new Template();
+            travel9.setName("Exploria Pro — Premium Hiking & Mountain Guide Showcase");
+            travel9.setSlug("exploria-pro");
+            travel9.setDescription("An advanced trekking, hiking, and mountain guide pre-booking platform. Features immersive background hero sections, interactive gear guides, and customer reviews.");
+            travel9.setCategory(travelsCategory);
+            travel9.setPrice(0.0);
+            travel9.setTemplateType("FREE");
+            travel9.setBootstrapVersion("React / Tailwind CSS / Vite");
+            travel9.setDemoUrl("/templates/travels/travel-9/index.html");
+            travel9.setDownloadFile("");
+            travel9.setPreviewImage("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80");
+            travel9.setVersion("1.0.0");
+            travel9.setStatus("PUBLISHED");
+            travel9.setPagesCount(10);
+            travel9.setDownloadsCount(2100);
+            travel9.setTags(new ArrayList<>(Arrays.asList("Mountain Guide", "Trekking Portal", "Gear Guide", "Reviews Grid", "React")));
+            templateRepository.save(travel9);
+            logs.put("template_travel_9", "Created");
+
+            // Seed Adventure Parallax (travel-10)
+            Template travel10 = new Template();
+            travel10.setName("Adventure Parallax — Immersive Parallax Outdoor Journal");
+            travel10.setSlug("adventure-parallax");
+            travel10.setDescription("Next-generation adventure travel journal. Features dynamic scroll-driven parallax layouts, background environmental loops, booking widgets, and rich animations.");
+            travel10.setCategory(travelsCategory);
+            travel10.setPrice(0.0);
+            travel10.setTemplateType("FREE");
+            travel10.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
+            travel10.setDemoUrl("/templates/travels/travel-10/index.html");
+            travel10.setDownloadFile("");
+            travel10.setPreviewImage("https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=800&q=80");
+            travel10.setVersion("1.0.0");
+            travel10.setStatus("PUBLISHED");
+            travel10.setPagesCount(7);
+            travel10.setDownloadsCount(1890);
+            travel10.setTags(new ArrayList<>(Arrays.asList("Adventure Journal", "Parallax Scroll", "Environmental Loops", "Framer Motion", "Vite")));
+            templateRepository.save(travel10);
+            logs.put("template_travel_10", "Created");
         }
 
         // 7. Seed Ecommerce templates

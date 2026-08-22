@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { AuthProvider } from './context/AuthContext';
 import { ProtectedRoute } from './components/common/ProtectedRoute';
@@ -24,7 +24,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <AuthProvider>
-        <Router>
+        <Router basename="/templates/education/education-2">
           <Routes>
             {/* 1. Main Eduvora University Website (Public Catalog, Admissions, Departments, etc.) */}
             <Route path="/" element={<UniversityWebsite />} />

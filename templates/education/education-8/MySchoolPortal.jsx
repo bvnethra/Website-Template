@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import useStylesheet from '../../../frontend/src/services/useStylesheet';
 
 export default function MySchoolPortal() {
-  useStylesheet('/templates/education/myschool/style.css');
+  useStylesheet('/templates/education/education-8/style.css');
 
   /* ==========================================
      Navigation Tabs state
@@ -428,7 +428,7 @@ export default function MySchoolPortal() {
             <div 
               key={index} 
               className={`slide ${index === currentSlide ? 'active' : ''}`}
-              style={{ backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)), url('/templates/education/myschool/hero-bg.jpg')` }}
+              style={{ backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)), url('/templates/education/education-8/hero-bg.jpg')` }}
             >
               <div className="container hero-container">
                 <div className="hero-content">
@@ -516,7 +516,7 @@ export default function MySchoolPortal() {
             <h2>Empowering Students for a Bright Future</h2>
             <p>We focus on academic excellence, character building, and overall development of every child, ensuring they are well-prepared for tomorrow's challenges.</p>
             <div className="campus-preview-card">
-              <img src="/templates/education/myschool/hero-bg.jpg" alt="School Campus Preview" className="about-campus-img" />
+              <img src="/templates/education/education-8/hero-bg.jpg" alt="School Campus Preview" className="about-campus-img" />
               <div className="preview-overlay">
                 <span className="play-btn"><i className="fa-solid fa-play"></i></span>
                 <span>Virtual Tour</span>

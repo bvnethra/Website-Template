@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useStylesheet from '../../../frontend/src/services/useStylesheet';
 
 export default function CollegePortal() {
-  useStylesheet('/templates/education/college/style.css');
+  useStylesheet('/templates/education/education-7/style.css');
 
   /* ==========================================
      Admissions Enrollment Booking Form

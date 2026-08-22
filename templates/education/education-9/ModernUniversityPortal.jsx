@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import useStylesheet from '../../../frontend/src/services/useStylesheet';
 
 export default function Home() {
-  useStylesheet('/templates/education/modern-university/style.css');
+  useStylesheet('/templates/education/education-9/style.css');
   /* ==========================================
      1. Hero Background Carousel Slider
      ========================================== */
   const backgrounds = [
-    '/templates/education/modern-university/campus.jpg',
+    '/templates/education/education-9/campus.jpg',
     'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80',
     'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80'
   ];

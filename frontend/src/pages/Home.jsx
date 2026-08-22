@@ -3,6 +3,200 @@ import { Link, useNavigate } from 'react-router-dom';
 import { api } from '../services/api';
 import { ArrowRight, Star, ArrowUpRight, Flame, Shield, Zap, Sparkles } from 'lucide-react';
 
+const categoryThemes = {
+  travels: {
+    accent: '#0284c7',
+    background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
+    cardBorder: 'rgba(2, 132, 199, 0.18)',
+    cardHoverBorder: 'rgba(2, 132, 199, 0.45)',
+    badgeColor: '#0284c7',
+    badgeBg: '#f0f9ff'
+  },
+  ecommerce: {
+    accent: '#ec4899',
+    background: 'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)',
+    cardBorder: 'rgba(236, 72, 153, 0.18)',
+    cardHoverBorder: 'rgba(236, 72, 153, 0.45)',
+    badgeColor: '#ec4899',
+    badgeBg: '#fdf2f8'
+  },
+  medical: {
+    accent: '#0d9488',
+    background: 'linear-gradient(135deg, #f0fdf4 0%, #ccfbf1 100%)',
+    cardBorder: 'rgba(13, 148, 136, 0.18)',
+    cardHoverBorder: 'rgba(13, 148, 136, 0.45)',
+    badgeColor: '#0d9488',
+    badgeBg: '#f0fdf4'
+  },
+  photography: {
+    accent: '#8b5cf6',
+    background: 'linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)',
+    cardBorder: 'rgba(139, 92, 246, 0.18)',
+    cardHoverBorder: 'rgba(139, 92, 246, 0.45)',
+    badgeColor: '#8b5cf6',
+    badgeBg: '#faf5ff'
+  },
+  hotel: {
+    accent: '#d97706',
+    background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
+    cardBorder: 'rgba(217, 119, 6, 0.18)',
+    cardHoverBorder: 'rgba(217, 119, 6, 0.45)',
+    badgeColor: '#d97706',
+    badgeBg: '#fffbeb'
+  },
+  default: {
+    accent: '#0066ff',
+    background: '#f8fafc',
+    cardBorder: '#e2e8f0',
+    cardHoverBorder: 'rgba(0, 102, 255, 0.35)',
+    badgeColor: '#1d4ed8',
+    badgeBg: '#eff6ff'
+  }
+};
+
+const renderCategoryAnimation = (categorySlug) => {
+  if (categorySlug === 'travels') {
+    return (
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        pointerEvents: 'none',
+        zIndex: 10,
+        overflow: 'hidden'
+      }}>
+        {/* Airplane drift */}
+        <div style={{
+          position: 'absolute',
+          top: '20px',
+          left: '-50px',
+          animation: 'planeCruise 8s linear infinite',
+          fontSize: '24px'
+        }}>✈️</div>
+        {/* Cloud drift */}
+        <div style={{
+          position: 'absolute',
+          top: '60px',
+          left: '110%',
+          animation: 'cloudDrift 14s linear infinite',
+          opacity: 0.35,
+          fontSize: '32px'
+        }}>☁️</div>
+        <div style={{
+          position: 'absolute',
+          bottom: '20px',
+          left: '110%',
+          animation: 'cloudDrift 19s linear infinite',
+          animationDelay: '-5s',
+          opacity: 0.25,
+          fontSize: '24px'
+        }}>☁️</div>
+      </div>
+    );
+  }
+  if (categorySlug === 'ecommerce') {
+    return (
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        pointerEvents: 'none',
+        zIndex: 10,
+        overflow: 'hidden'
+      }}>
+        {/* Floating shopping cart */}
+        <div style={{
+          position: 'absolute',
+          bottom: '15px',
+          left: '-40px',
+          animation: 'cartSlide 6s ease-in-out infinite',
+          fontSize: '22px'
+        }}>🛒</div>
+        {/* Sparkly discounts */}
+        <div style={{
+          position: 'absolute',
+          top: '15px',
+          right: '15px',
+          animation: 'sparkleRotate 3s linear infinite',
+          fontSize: '20px'
+        }}>🏷️</div>
+      </div>
+    );
+  }
+  if (categorySlug === 'medical') {
+    return (
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        pointerEvents: 'none',
+        zIndex: 10,
+        overflow: 'hidden'
+      }}>
+        {/* Pulsing heart */}
+        <div style={{
+          position: 'absolute',
+          top: '15px',
+          left: '15px',
+          animation: 'pulseScale 2s ease-in-out infinite',
+          fontSize: '24px'
+        }}>❤️</div>
+        {/* Healthcare cross */}
+        <div style={{
+          position: 'absolute',
+          bottom: '15px',
+          right: '15px',
+          animation: 'pulseScale 2s ease-in-out infinite',
+          animationDelay: '1s',
+          fontSize: '22px'
+        }}>🏥</div>
+      </div>
+    );
+  }
+  if (categorySlug === 'photography') {
+    return (
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        pointerEvents: 'none',
+        zIndex: 10,
+        overflow: 'hidden'
+      }}>
+        {/* Rotating aperture */}
+        <div style={{
+          position: 'absolute',
+          top: '15px',
+          right: '15px',
+          animation: 'rotateAperture 4s linear infinite',
+          fontSize: '22px'
+        }}>📷</div>
+        {/* Flash bulb glow */}
+        <div style={{
+          position: 'absolute',
+          top: '30%',
+          left: '20%',
+          width: '60px',
+          height: '60px',
+          background: 'rgba(139, 92, 246, 0.08)',
+          borderRadius: '50%',
+          filter: 'blur(8px)',
+          animation: 'flashGlow 4s infinite'
+        }} />
+      </div>
+    );
+  }
+  return null;
+};
+
 export default function Home({ addToCart, cart }) {
   const [templates, setTemplates] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -234,113 +428,323 @@ export default function Home({ addToCart, cart }) {
         </div>
       </section>
 
-      {/* Templates Grid */}
-      <section style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-        gap: 30,
-        margin: '30px 0 60px 0'
+      {/* Vertical Stack of Large Horizontal Cards */}
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 40,
+        maxWidth: '1000px',
+        margin: '30px auto 60px auto'
       }}>
         {filteredTemplates.map(template => {
-          const isAdded = cart.some(item => item.id === template.id);
+          const categorySlug = template.category.slug;
+          const theme = categoryThemes[categorySlug] || categoryThemes.default;
           return (
             <div
               key={template.id}
-              className="glass-panel"
               style={{
-                borderRadius: '16px',
-                overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%',
-                background: 'white'
+                backgroundColor: '#ffffff',
+                border: `1px solid ${theme.cardBorder}`,
+                borderRadius: '24px',
+                padding: '32px',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+                gap: '36px',
+                alignItems: 'center',
+                boxShadow: '0 4px 20px rgba(15, 23, 42, 0.03)',
+                width: '100%',
+                transition: 'all 0.3s ease-in-out',
+                boxSizing: 'border-box'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = theme.cardHoverBorder;
+                e.currentTarget.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.06)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = theme.cardBorder;
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.03)';
               }}
             >
-              {/* Image Preview Container */}
-              <div style={{ position: 'relative', height: 210, overflow: 'hidden', background: '#f1f5f9' }}>
-                <img
-                  src={template.previewImage}
-                  alt={template.name}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'var(--transition)' }}
-                  className="template-card-img"
-                  onError={(e) => {
-                    e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80';
-                  }}
-                />
-                <span style={{
-                  position: 'absolute',
-                  top: 15,
-                  right: 15,
-                  padding: '4px 12px',
-                  borderRadius: '99px',
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  background: template.templateType === 'FREE' ? '#22c55e' : 'var(--primary-color)',
-                  color: 'white'
+              {/* Left Section: Responsive Multi-Device CSS Mockup */}
+              <div style={{
+                position: 'relative',
+                width: '100%',
+                aspectRatio: '16/11',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: theme.background,
+                borderRadius: '16px',
+                overflow: 'hidden',
+                border: '1px solid #f1f5f9',
+                boxSizing: 'border-box',
+                padding: '24px'
+              }}>
+                {/* Category-specific animation overlay */}
+                {renderCategoryAnimation(categorySlug)}
+
+                {/* 1. Laptop Mockup Frame */}
+                <div style={{
+                  position: 'relative',
+                  width: '72%',
+                  aspectRatio: '16/10',
+                  background: '#0f172a',
+                  borderRadius: '8px 8px 0 0',
+                  border: '4px solid #1e293b',
+                  boxShadow: '0 15px 35px rgba(0,0,0,0.12)',
+                  overflow: 'hidden',
+                  zIndex: 1,
+                  transform: 'translateX(-8%)',
+                  boxSizing: 'border-box'
                 }}>
-                  {template.templateType === 'FREE' ? 'Free' : `$${template.price.toFixed(2)}`}
-                </span>
-                
-                {/* Tech Badge */}
-                <span style={{
+                  <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative' }}>
+                    <img 
+                      src={template.previewImage} 
+                      alt={`${template.name} Desktop Preview`} 
+                      style={{ 
+                        width: '100%', 
+                        height: '112%', 
+                        objectFit: 'cover', 
+                        objectPosition: 'top',
+                        marginTop: '-12%' 
+                      }} 
+                      onError={(e) => {
+                        e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
+                      }}
+                    />
+                  </div>
+                  {/* Keyboard Base thin border */}
+                  <div style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: '3px',
+                    background: '#64748b'
+                  }} />
+                </div>
+
+                {/* 2. Tablet Mockup Frame (overlaid on the right side) */}
+                <div style={{
                   position: 'absolute',
-                  bottom: 12,
-                  left: 15,
-                  padding: '3px 10px',
-                  borderRadius: '4px',
-                  fontSize: '0.7rem',
-                  fontWeight: 600,
-                  background: 'rgba(15, 23, 42, 0.75)',
-                  color: 'white'
+                  right: '18%',
+                  bottom: '18%',
+                  width: '24%',
+                  aspectRatio: '3/4',
+                  background: '#0f172a',
+                  border: '4px solid #0f172a',
+                  borderRadius: '10px',
+                  boxShadow: '0 15px 25px rgba(0,0,0,0.18)',
+                  overflow: 'hidden',
+                  zIndex: 2,
+                  boxSizing: 'border-box'
                 }}>
-                  {template.bootstrapVersion || 'Bootstrap 5'}
-                </span>
+                  {/* Camera sensor dot */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '3px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    width: '4px',
+                    height: '4px',
+                    borderRadius: '50%',
+                    background: '#334155',
+                    zIndex: 10
+                  }} />
+                  <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+                    <img 
+                      src={template.previewImage} 
+                      alt={`${template.name} Tablet Preview`} 
+                      style={{ 
+                        width: '100%', 
+                        height: '112%', 
+                        objectFit: 'cover', 
+                        objectPosition: 'top',
+                        marginTop: '-12%' 
+                      }} 
+                      onError={(e) => {
+                        e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* 3. Mobile Mockup Frame (overlaid in front) */}
+                <div style={{
+                  position: 'absolute',
+                  right: '6%',
+                  bottom: '12%',
+                  width: '15%',
+                  aspectRatio: '9/19',
+                  background: '#090d16',
+                  border: '3px solid #090d16',
+                  borderRadius: '12px',
+                  boxShadow: '0 15px 30px rgba(0,0,0,0.22)',
+                  overflow: 'hidden',
+                  zIndex: 3,
+                  boxSizing: 'border-box'
+                }}>
+                  {/* Speaker pill notch */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '2px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    width: '18px',
+                    height: '3px',
+                    borderRadius: '99px',
+                    background: '#1e293b',
+                    zIndex: 10
+                  }} />
+                  <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+                    <img 
+                      src={template.previewImage} 
+                      alt={`${template.name} Mobile Preview`} 
+                      style={{ 
+                        width: '100%', 
+                        height: '112%', 
+                        objectFit: 'cover', 
+                        objectPosition: 'top',
+                        marginTop: '-12%' 
+                      }} 
+                      onError={(e) => {
+                        e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
+                      }}
+                    />
+                  </div>
+                </div>
               </div>
 
-              {/* Card Body */}
-              <div style={{ padding: 22, display: 'flex', flexDirection: 'column', flex: 1 }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary-color)', textTransform: 'uppercase', marginBottom: 6 }}>
-                  {template.category.name}
-                </span>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: 8 }}>
-                  <Link to={`/templates/${template.slug}`} style={{ color: 'var(--secondary-color)' }}>
-                    {template.name}
-                  </Link>
-                </h3>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', flex: 1, marginBottom: 15, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                  {template.description}
-                </p>
-
-                {/* Info line */}
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  fontSize: '0.8rem',
-                  color: '#94a3b8',
-                  borderTop: '1px solid #f1f5f9',
-                  paddingTop: 15,
-                  marginBottom: 15
-                }}>
-                  <span>{template.pagesCount || 5} Pages</span>
-                  <span>{(template.downloadsCount / 1000).toFixed(1)}k Downloads</span>
-                  <span>v{template.version || '1.0'}</span>
+              {/* Right Section: Information & Action */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                
+                {/* 1. Small feature/category badges at the top */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                  <span style={{
+                    padding: '4px 10px',
+                    borderRadius: '99px',
+                    backgroundColor: theme.badgeBg,
+                    color: theme.badgeColor,
+                    fontSize: '10px',
+                    fontWeight: '700',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px'
+                  }}>
+                    {template.category.name}
+                  </span>
+                  <span style={{
+                    padding: '4px 10px',
+                    borderRadius: '99px',
+                    backgroundColor: template.templateType === 'FREE' ? 'rgba(34, 197, 94, 0.08)' : 'rgba(234, 179, 8, 0.08)',
+                    color: template.templateType === 'FREE' ? '#22c55e' : '#ca8a04',
+                    fontSize: '10px',
+                    fontWeight: '700',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px'
+                  }}>
+                    {template.templateType === 'FREE' ? 'Free' : 'Premium'}
+                  </span>
                 </div>
 
-                {/* Actions */}
-                <div style={{ display: 'flex', gap: 10 }}>
-                  <Link
-                    to={`/templates/${template.slug}`}
-                    className="btn btn-primary"
-                    style={{ flex: 1, padding: '8px 12px', fontSize: '0.8rem', textAlign: 'center', justifyContent: 'center' }}
+                {/* 2. Template Name & details link */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <h3 style={{
+                    fontSize: '1.6rem',
+                    fontWeight: '800',
+                    color: '#0f172a',
+                    margin: 0,
+                    fontFamily: 'var(--font-title)',
+                    lineHeight: '1.25'
+                  }}>
+                    <Link 
+                      to={`/templates/${template.slug}`} 
+                      style={{ color: '#0f172a', transition: 'color 0.2s', textDecoration: 'none' }}
+                      onMouseEnter={(e) => e.currentTarget.style.color = theme.accent}
+                      onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
+                    >
+                      {template.name}
+                    </Link>
+                  </h3>
+                  
+                  {/* Updated metadata */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#64748b' }}>
+                    <i className="fa-regular fa-clock" style={{ fontSize: '0.85rem' }}></i>
+                    <span>Updated recently</span>
+                  </div>
+
+                  {/* Display Technologies, Page Count and Features */}
+                  <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '15px',
+                    alignItems: 'center',
+                    marginTop: '6px',
+                    padding: '8px 0',
+                    borderTop: '1px solid #f1f5f9',
+                    borderBottom: '1px solid #f1f5f9'
+                  }}>
+                    <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
+                      <strong>Pages:</strong> {template.pagesCount || 1}
+                    </div>
+                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
+                    <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
+                      <strong>Stack:</strong> {template.bootstrapVersion}
+                    </div>
+                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
+                    <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
+                      <strong>Downloads:</strong> {template.downloadsCount}
+                    </div>
+                  </div>
+
+                  {/* 4. Short Description of the Template */}
+                  <p style={{
+                    fontSize: '0.88rem',
+                    color: '#64748b',
+                    lineHeight: '1.7',
+                    margin: '6px 0 0 0',
+                    fontWeight: 400
+                  }}>
+                    {template.description}
+                  </p>
+                </div>
+
+                {/* 5. Live Demo Button */}
+                <div style={{ marginTop: '10px' }}>
+                  <a
+                    href={template.demoUrl}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '6px',
+                      padding: '12px 24px',
+                      backgroundColor: theme.accent,
+                      color: 'white',
+                      borderRadius: '99px',
+                      border: 'none',
+                      fontWeight: '600',
+                      fontSize: '0.85rem',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s',
+                      textDecoration: 'none',
+                      boxShadow: `0 4px 12px ${theme.accent}40`
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.filter = 'brightness(1.15)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.filter = 'none';
+                    }}
                   >
-                    View Details
-                  </Link>
+                    Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
+                  </a>
                 </div>
+
               </div>
             </div>
           );
         })}
-      </section>
+      </div>
 
       {/* Feature list / How it works */}
       <section className="glass-panel" style={{ padding: 50, borderRadius: '24px', margin: '80px 0 60px 0', background: 'white' }}>

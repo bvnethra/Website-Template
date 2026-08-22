@@ -35,7 +35,7 @@ function ScrollToTop() {
 
 export function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/templates/medical/medical-4">
       <ScrollToTop />
       <div className="floating-canvas min-h-screen flex flex-col font-sans text-slate-900 selection:bg-blue-600 selection:text-white relative">
         {/* Ambient background decoration */}

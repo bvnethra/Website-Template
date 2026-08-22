@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 // Layout & Animations
@@ -165,7 +165,7 @@ function App() {
   const [appLoading, setAppLoading] = useState(true);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       {appLoading ? (
         <AppLoader onComplete={() => setAppLoading(false)} />
       ) : (
@@ -177,7 +177,7 @@ function App() {
           <Footer />
         </div>
       )}
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

@@ -56,26 +56,38 @@ public class TemplateController {
         
         List<Template> templates;
         
-        if (search != null && !search.trim().isEmpty()) {
-            templates = templateRepository.searchTemplates(search);
-        } else if (category != null && !category.trim().isEmpty()) {
-            String categorySlug = category.trim().toLowerCase();
-            if (categorySlug.equals("coming-soon") || categorySlug.equals("coming_soon") || categorySlug.equals("comming_soon") || categorySlug.equals("comming-soon")) {
-                categorySlug = "comming-soon";
-            }
-            templates = templateRepository.findByCategorySlugAndStatus(categorySlug, "PUBLISHED");
+        // Start with base list of templates
+        if (isAdmin() && category == null && (search == null || search.trim().isEmpty())) {
+            templates = templateRepository.findAll();
         } else {
             templates = templateRepository.findByStatus("PUBLISHED");
         }
 
-        // If admin requests, they might want drafts as well, let's just return published templates for standard queries
-        if (isAdmin() && category == null && (search == null || search.trim().isEmpty())) {
-            templates = templateRepository.findAll();
+        // Apply search keyword filter if provided
+        if (search != null && !search.trim().isEmpty()) {
+            String q = search.trim().toLowerCase();
+            templates = templates.stream()
+                    .filter(t -> (t.getName() != null && t.getName().toLowerCase().contains(q)) || 
+                                 (t.getDescription() != null && t.getDescription().toLowerCase().contains(q)))
+                    .collect(Collectors.toList());
         }
 
-        if (type != null && !type.trim().isEmpty()) {
+        // Apply category filter if provided and not "all"
+        if (category != null && !category.trim().isEmpty() && !category.equalsIgnoreCase("all")) {
+            String categorySlug = category.trim().toLowerCase();
+            if (categorySlug.equals("coming-soon") || categorySlug.equals("coming_soon") || categorySlug.equals("comming_soon") || categorySlug.equals("comming-soon")) {
+                categorySlug = "comming-soon";
+            }
+            final String finalSlug = categorySlug;
             templates = templates.stream()
-                    .filter(t -> t.getTemplateType().equalsIgnoreCase(type))
+                    .filter(t -> t.getCategory() != null && t.getCategory().getSlug().equalsIgnoreCase(finalSlug))
+                    .collect(Collectors.toList());
+        }
+
+        // Apply type (license) filter if provided and not "all"
+        if (type != null && !type.trim().isEmpty() && !type.equalsIgnoreCase("all")) {
+            templates = templates.stream()
+                    .filter(t -> t.getTemplateType() != null && t.getTemplateType().equalsIgnoreCase(type))
                     .collect(Collectors.toList());
         }
 

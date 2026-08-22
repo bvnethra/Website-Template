@@ -387,6 +387,36 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/travels/travel-1/index.html'
   },
   {
+    id: 139,
+    name: 'Roamify — Premium Tours & Travel Agency Website',
+    slug: 'roamify-travel-agency',
+    previewImage: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 5, name: 'Travels', slug: 'travels' },
+    pagesCount: 1,
+    downloadsCount: 1450,
+    description: 'A modern, premium tours & travel agency website built using React and styled with Tailwind CSS. Features rich Framer Motion entrance animations, scroll-triggered staggers, looping floating elements, and a clean responsive header bar.',
+    bootstrapVersion: 'React / Tailwind CSS / Motion',
+    version: '1.0.0',
+    demoUrl: '/templates/travels/travels-2/index.html'
+  },
+  {
+    id: 140,
+    name: 'Wayfarer — Modern Travel & Tours Agency Website',
+    slug: 'wayfarer-travels-tours',
+    previewImage: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 5, name: 'Travels', slug: 'travels' },
+    pagesCount: 1,
+    downloadsCount: 1650,
+    description: 'A modern travel & tours agency website built using React and styled with Tailwind CSS. Features dynamic home booking panels, split plan/track booking forms, count-up numeric stats on scroll, and parallax travel landscape views.',
+    bootstrapVersion: 'React / Tailwind CSS / Motion',
+    version: '1.0.0',
+    demoUrl: '/templates/travels/travels-3/index.html'
+  },
+  {
     id: 20,
     name: 'Skillora — Online Education & Learning Platform',
     slug: 'skillora-education',

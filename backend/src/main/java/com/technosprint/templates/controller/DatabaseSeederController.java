@@ -386,6 +386,70 @@ public class DatabaseSeederController {
             logs.put("template_kairo_photography", "Created");
         }
 
+        // Seed Block Magazine templates
+        Category blockMagazineCategory = catMap.get("block-magazine");
+        if (blockMagazineCategory != null) {
+            // blog-1
+            Template blog1 = new Template();
+            blog1.setName("Chronicle — Typography-First Magazine");
+            blog1.setSlug("chronicle-magazine");
+            blog1.setDescription("A gorgeous, responsive typography-first blog and magazine publishing platform, designed with customizable reading progress bars, trending topic pills, and article bookmarking.");
+            blog1.setCategory(blockMagazineCategory);
+            blog1.setPrice(0.0);
+            blog1.setTemplateType("FREE");
+            blog1.setBootstrapVersion("React 19 / TypeScript / Tailwind CSS");
+            blog1.setDemoUrl("/templates/block-magazine/blog-1/index.html");
+            blog1.setDownloadFile("chronicle-magazine.zip");
+            blog1.setPreviewImage("https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80");
+            blog1.setVersion("1.0.0");
+            blog1.setStatus("PUBLISHED");
+            blog1.setPagesCount(1);
+            blog1.setDownloadsCount(1250);
+            blog1.setTags(new ArrayList<>(Arrays.asList("Typography", "Dark Mode Support", "Bookmarking")));
+            templateRepository.save(blog1);
+            logs.put("template_blog_1", "Created");
+
+            // blog-2
+            Template blog2 = new Template();
+            blog2.setName("Elemental — Stories Behind the Science");
+            blog2.setSlug("elemental-science");
+            blog2.setDescription("A clean, modern science and technology magazine featuring card galleries, layout options, reading time estimation, newsletter box subscription, and dark mode support.");
+            blog2.setCategory(blockMagazineCategory);
+            blog2.setPrice(0.0);
+            blog2.setTemplateType("FREE");
+            blog2.setBootstrapVersion("React 19 / Vite / Tailwind CSS");
+            blog2.setDemoUrl("/templates/block-magazine/blog-2/index.html");
+            blog2.setDownloadFile("elemental-science.zip");
+            blog2.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
+            blog2.setVersion("1.0.0");
+            blog2.setStatus("PUBLISHED");
+            blog2.setPagesCount(1);
+            blog2.setDownloadsCount(1640);
+            blog2.setTags(new ArrayList<>(Arrays.asList("Science", "Reading Estimation", "Newsletter subscription")));
+            templateRepository.save(blog2);
+            logs.put("template_blog_2", "Created");
+
+            // blog-3
+            Template blog3 = new Template();
+            blog3.setName("Future Intelligence — AI & Future Tech Magazine");
+            blog3.setSlug("future-intelligence");
+            blog3.setDescription("An immersive digital magazine layout with rich background visuals, interactive company metrics, tools directory, subscription overlay, and fluid animations.");
+            blog3.setCategory(blockMagazineCategory);
+            blog3.setPrice(0.0);
+            blog3.setTemplateType("FREE");
+            blog3.setBootstrapVersion("React 19 / Vite / Vanilla CSS");
+            blog3.setDemoUrl("/templates/block-magazine/blog-3/index.html");
+            blog3.setDownloadFile("future-intelligence.zip");
+            blog3.setPreviewImage("https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80");
+            blog3.setVersion("1.0.0");
+            blog3.setStatus("PUBLISHED");
+            blog3.setPagesCount(1);
+            blog3.setDownloadsCount(2100);
+            blog3.setTags(new ArrayList<>(Arrays.asList("AI Tech", "Interactive Charts", "Fluid animations")));
+            templateRepository.save(blog3);
+            logs.put("template_blog_3", "Created");
+        }
+
         // 6. Seed Restaurant templates
         Category restaurantCategory = catMap.get("restaurant");
         if (restaurantCategory != null) {

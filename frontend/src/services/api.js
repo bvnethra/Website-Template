@@ -775,6 +775,51 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React 19 / TypeScript / Tailwind CSS',
     version: '1.0.0',
     demoUrl: '/templates/admin/admin-2/index.html'
+  },
+  {
+    id: 136,
+    name: 'Chronicle — Typography-First Magazine',
+    slug: 'chronicle-magazine',
+    previewImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 3, name: 'Block magazine', slug: 'block-magazine' },
+    pagesCount: 1,
+    downloadsCount: 1250,
+    description: 'A gorgeous, responsive typography-first blog and magazine publishing platform, designed with customizable reading progress bars, trending topic pills, and article bookmarking.',
+    bootstrapVersion: 'React 19 / TypeScript / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/block-magazine/blog-1/index.html'
+  },
+  {
+    id: 137,
+    name: 'Elemental — Stories Behind the Science',
+    slug: 'elemental-science',
+    previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 3, name: 'Block magazine', slug: 'block-magazine' },
+    pagesCount: 1,
+    downloadsCount: 1640,
+    description: 'A clean, modern science and technology magazine featuring card galleries, layout options, reading time estimation, newsletter box subscription, and dark mode support.',
+    bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/block-magazine/blog-2/index.html'
+  },
+  {
+    id: 138,
+    name: 'Future Intelligence — AI & Future Tech Magazine',
+    slug: 'future-intelligence',
+    previewImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 3, name: 'Block magazine', slug: 'block-magazine' },
+    pagesCount: 1,
+    downloadsCount: 2100,
+    description: 'An immersive digital magazine layout with rich background visuals, interactive company metrics, tools directory, subscription overlay, and fluid animations.',
+    bootstrapVersion: 'React 19 / Vite / Vanilla CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/block-magazine/blog-3/index.html'
   }
 ];
 

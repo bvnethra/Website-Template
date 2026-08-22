@@ -1,60 +1,93 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { AppProvider } from './context/AppContext';
 import { AuthProvider } from './context/AuthContext';
+import { Header } from './components/common/Header';
+import { Footer } from './components/common/Footer';
+import { ToastContainer } from './components/common/ToastContainer';
+import { CourseDetailDrawer } from './components/common/CourseDetailDrawer';
+import { HomePage } from './pages/HomePage';
+import { CoursesPage } from './pages/CoursesPage';
+import { AdmissionsPage } from './pages/AdmissionsPage';
+import { CampusLifePage } from './pages/CampusLifePage';
+import { AboutPage } from './pages/AboutPage';
+import { ResearchPage } from './pages/ResearchPage';
+import { LoginPage } from './pages/LoginPage';
 import { ProtectedRoute } from './components/auth/ProtectedRoute';
-import { LoginPage } from './components/auth/LoginPage';
-import { LandingView } from './components/LandingView';
-import { PortalLayout } from './components/portal/PortalLayout';
-import { PortalOverview } from './components/portal/PortalOverview';
-import { NoticeBoard } from './components/portal/NoticeBoard';
-import { ExamApplication } from './components/portal/ExamApplication';
-import { HallTicketView } from './components/portal/HallTicketView';
-import { ExamResults } from './components/portal/ExamResults';
-import { PhotocopyHub } from './components/portal/PhotocopyHub';
-import { RevaluationHub } from './components/portal/RevaluationHub';
-import { ReviewHub } from './components/portal/ReviewHub';
-import { StudentProfile } from './components/portal/StudentProfile';
-import { GrievanceSupport } from './components/portal/GrievanceSupport';
-import { SecurityLoginHistory } from './components/portal/SecurityLoginHistory';
+import { StudentPortalLayout } from './components/portal/StudentPortalLayout';
+
+// Scroll to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+// Layout wrapper for public university pages
+const PublicLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <div className="flex flex-col min-h-screen bg-[#FDFBF7] text-[#2D3436] font-sans antialiased selection:bg-[#4A5D4E] selection:text-white">
+      <Header />
+      <main className="flex-1">
+        {children}
+      </main>
+      <Footer />
+      <CourseDetailDrawer />
+    </div>
+  );
+};
 
 export default function App() {
   return (
     <AuthProvider>
-      <Router>
-        <Routes>
-          {/* Public Landing Page */}
-          <Route path="/" element={<LandingView />} />
+      <AppProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            {/* Public Institutional Pages */}
+            <Route path="/" element={<PublicLayout><HomePage /></PublicLayout>} />
+            <Route path="/courses" element={<PublicLayout><CoursesPage /></PublicLayout>} />
+            <Route path="/admissions" element={<PublicLayout><AdmissionsPage /></PublicLayout>} />
+            <Route path="/about" element={<PublicLayout><AboutPage /></PublicLayout>} />
+            <Route path="/research" element={<PublicLayout><ResearchPage /></PublicLayout>} />
+            <Route path="/campus-life" element={<PublicLayout><CampusLifePage /></PublicLayout>} />
 
-          {/* Dedicated Dual-Role Authentication System */}
-          <Route path="/login" element={<LoginPage />} />
+            {/* Authentication Gateway */}
+            <Route path="/login" element={<LoginPage />} />
 
-          {/* Protected University Student & Faculty Portal */}
-          <Route
-            path="/portal"
-            element={
-              <ProtectedRoute>
-                <PortalLayout />
-              </ProtectedRoute>
-            }
-          >
-            <Route index element={<PortalOverview />} />
-            <Route path="overview" element={<PortalOverview />} />
-            <Route path="notices" element={<NoticeBoard />} />
-            <Route path="exam-apply" element={<ExamApplication />} />
-            <Route path="hall-ticket" element={<HallTicketView />} />
-            <Route path="results" element={<ExamResults />} />
-            <Route path="photocopy" element={<PhotocopyHub />} />
-            <Route path="revaluation" element={<RevaluationHub />} />
-            <Route path="review" element={<ReviewHub />} />
-            <Route path="profile" element={<StudentProfile />} />
-            <Route path="support" element={<GrievanceSupport />} />
-            <Route path="security" element={<SecurityLoginHistory />} />
-          </Route>
+            {/* Protected Student Examination Portal Shell */}
+            <Route 
+              path="/portal" 
+              element={
+                <ProtectedRoute>
+                  <StudentPortalLayout initialTab="dashboard" />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/portal/:tab" 
+              element={
+                <ProtectedRoute>
+                  <StudentPortalLayout />
+                </ProtectedRoute>
+              } 
+            />
 
-          {/* Fallback to Home */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </Router>
+            {/* Fallback */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+          <ToastContainer />
+        </BrowserRouter>
+      </AppProvider>
     </AuthProvider>
   );
 }

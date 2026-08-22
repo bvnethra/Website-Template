@@ -850,9 +850,9 @@ public class DatabaseSeederController {
 
             // Seed Eduvora II (Education-3)
             Template eduvora2 = new Template();
-            eduvora2.setName("Eduvora II — Online Learning Platform");
+            eduvora2.setName("Eduvora University Portal & Academics");
             eduvora2.setSlug("eduvora-education-ii");
-            eduvora2.setDescription("Comprehensive academic learning platform and stateful Student Portal with examination registrations, hall tickets, marksheets, photocopy and revaluation hubs, security audit logs, and dual-role authentication.");
+            eduvora2.setDescription("Comprehensive multi-page academic, admissions, about us, research & innovation hub, campus life, and student portal web application for Eduvora University.");
             eduvora2.setCategory(educationCategory);
             eduvora2.setPrice(0.0);
             eduvora2.setTemplateType("FREE");

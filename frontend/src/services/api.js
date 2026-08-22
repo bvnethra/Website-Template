@@ -447,6 +447,21 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/travels/travels-4/index.html'
   },
   {
+    id: 147,
+    name: 'Aether — Premium Luxury Travel & Experiences',
+    slug: 'aether-luxury-travel',
+    previewImage: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 5, name: 'Travels', slug: 'travels' },
+    pagesCount: 1,
+    downloadsCount: 620,
+    description: 'A premium luxury travel & experiences website template built using React and styled with Tailwind CSS. Features slow Ken Burns parallax scroll zoom, multi-layered image showcases, scattered tilted Instagram photo galleries, and testimonial sliders.',
+    bootstrapVersion: 'React / Tailwind CSS / Motion',
+    version: '1.0.0',
+    demoUrl: '/templates/travels/travels-5/index.html'
+  },
+  {
     id: 20,
     name: 'Skillora — Online Education & Learning Platform',
     slug: 'skillora-education',

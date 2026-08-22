@@ -1202,6 +1202,26 @@ public class DatabaseSeederController {
             ecomHub.setTags(new ArrayList<>(Arrays.asList("Kids Fashion", "Family Wear", "Animated Cursor", "Spring Boot")));
             templateRepository.save(ecomHub);
             logs.put("template_ecom_hub", "Created");
+
+            // Seed Maison de L'Éclat (ecommerce-7)
+            Template ecomMaison = new Template();
+            ecomMaison.setName("Maison de L'Éclat — Premium High-Fashion Boutique & E-Commerce Hub");
+            ecomMaison.setSlug("maison-eclat-ecommerce");
+            ecomMaison.setDescription("A premium high-fashion boutique and e-commerce portal. Features custom glassmorphic navigation, product showcase grids, dynamic cart and checkout flows, wishlist managers, and order tracking.");
+            ecomMaison.setCategory(ecommerceCategory);
+            ecomMaison.setPrice(0.0);
+            ecomMaison.setTemplateType("FREE");
+            ecomMaison.setBootstrapVersion("React / Tailwind CSS / Vite");
+            ecomMaison.setDemoUrl("/templates/ecommerce/ecommerce-7/index.html");
+            ecomMaison.setDownloadFile("");
+            ecomMaison.setPreviewImage("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80");
+            ecomMaison.setVersion("1.0.0");
+            ecomMaison.setStatus("PUBLISHED");
+            ecomMaison.setPagesCount(10);
+            ecomMaison.setDownloadsCount(1950);
+            ecomMaison.setTags(new ArrayList<>(Arrays.asList("High Fashion", "Boutique Shop", "Glassmorphic", "Order Tracking", "Vite")));
+            templateRepository.save(ecomMaison);
+            logs.put("template_maison_eclat_ecommerce", "Created");
         }
 
         // 8. Seed Coming Soon templates
@@ -1376,7 +1396,7 @@ public class DatabaseSeederController {
             templateRepository.save(solitudeHaven);
             logs.put("template_solitude_hotel", "Created");
 
-            // Seed Aurelia Haven (hotel-5)
+            // Seed Aurelia Haven (hotel-7)
             Template aureliaHaven = new Template();
             aureliaHaven.setName("Aurelia Haven — Luxury Resort & Sanctuary");
             aureliaHaven.setSlug("aurelia-haven");
@@ -1385,7 +1405,7 @@ public class DatabaseSeederController {
             aureliaHaven.setPrice(0.0);
             aureliaHaven.setTemplateType("FREE");
             aureliaHaven.setBootstrapVersion("React / Tailwind CSS / Motion");
-            aureliaHaven.setDemoUrl("/templates/hotel/hotel-5/index.html");
+            aureliaHaven.setDemoUrl("/templates/hotel/hotel-7/index.html");
             aureliaHaven.setDownloadFile("");
             aureliaHaven.setPreviewImage("https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80");
             aureliaHaven.setVersion("1.0.0");
@@ -1395,6 +1415,106 @@ public class DatabaseSeederController {
             aureliaHaven.setTags(new ArrayList<>(Arrays.asList("Hotel", "Luxury Resort", "Sanctuary", "React", "Tailwind CSS", "Framer Motion")));
             templateRepository.save(aureliaHaven);
             logs.put("template_aurelia_haven_hotel", "Created");
+
+            // Seed Suara Ulu (hotel-5)
+            Template travelSuaraUlu = new Template();
+            travelSuaraUlu.setName("Suara Ulu — Ultra-Luxury Wellness & Spa Resort");
+            travelSuaraUlu.setSlug("suara-ulu-resort");
+            travelSuaraUlu.setDescription("An ultra-luxury coastal sanctuary resort perched on the cliffs of Uluwatu, Bali. Features Italian luxury editorial typography, Obsidian Sanctuary dark mode, top-arched photo frames, interactive booking engine with live bill calculation, Michelin-level dining, and Ayurvedic spa reservations.");
+            travelSuaraUlu.setCategory(hotelCategory);
+            travelSuaraUlu.setPrice(0.0);
+            travelSuaraUlu.setTemplateType("FREE");
+            travelSuaraUlu.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            travelSuaraUlu.setDemoUrl("/templates/hotel/hotel-5/index.html");
+            travelSuaraUlu.setDownloadFile("");
+            travelSuaraUlu.setPreviewImage("https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80");
+            travelSuaraUlu.setVersion("1.0.0");
+            travelSuaraUlu.setStatus("PUBLISHED");
+            travelSuaraUlu.setPagesCount(1);
+            travelSuaraUlu.setDownloadsCount(1450);
+            travelSuaraUlu.setTags(new ArrayList<>(Arrays.asList("Resort", "Uluwatu", "Wellness", "Vanilla JS", "Dark Mode")));
+            templateRepository.save(travelSuaraUlu);
+            logs.put("template_suara_ulu_hotel", "Created");
+
+            // Seed VillaBliss (hotel-6)
+            Template travelVillaBliss = new Template();
+            travelVillaBliss.setName("VillaBliss — Luxury Mediterranean Villa & Exclusive Resort");
+            travelVillaBliss.setSlug("villabliss-luxury-resort");
+            travelVillaBliss.setDescription("An ultra-premium Mediterranean luxury villa and resort template. Features an editorial architectural layout, Spacious and cozy room category showcase, panoramic twilight reviews banner, curated experiences, and real-time interactive booking engine.");
+            travelVillaBliss.setCategory(hotelCategory);
+            travelVillaBliss.setPrice(0.0);
+            travelVillaBliss.setTemplateType("FREE");
+            travelVillaBliss.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            travelVillaBliss.setDemoUrl("/templates/hotel/hotel-6/index.html");
+            travelVillaBliss.setDownloadFile("");
+            travelVillaBliss.setPreviewImage("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80");
+            travelVillaBliss.setVersion("1.0.0");
+            travelVillaBliss.setStatus("PUBLISHED");
+            travelVillaBliss.setPagesCount(1);
+            travelVillaBliss.setDownloadsCount(1550);
+            travelVillaBliss.setTags(new ArrayList<>(Arrays.asList("Mediterranean", "Villa Resort", "Architectural", "Vite", "Vanilla JS")));
+            templateRepository.save(travelVillaBliss);
+            logs.put("template_villabliss_hotel", "Created");
+
+            // Seed Ananthara Heritage Hotel (hotel-8)
+            Template travelAnanthara = new Template();
+            travelAnanthara.setName("Ananthara Heritage Hotel Mewari Palace");
+            travelAnanthara.setSlug("ananthara-heritage-hotel");
+            travelAnanthara.setDescription("Ananthara Heritage Hotel is a ultra-luxury traditional resort situated in the heart of Udaipur. Features interactive card scanning chamber entry, overview slides, fine dining, spa, courtyard pools, and luxury booking overlays.");
+            travelAnanthara.setCategory(hotelCategory);
+            travelAnanthara.setPrice(0.0);
+            travelAnanthara.setTemplateType("FREE");
+            travelAnanthara.setBootstrapVersion("React / Modern CSS / Vite");
+            travelAnanthara.setDemoUrl("/templates/hotel/hotel-8/index.html");
+            travelAnanthara.setDownloadFile("");
+            travelAnanthara.setPreviewImage("https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80");
+            travelAnanthara.setVersion("1.0.0");
+            travelAnanthara.setStatus("PUBLISHED");
+            travelAnanthara.setPagesCount(1);
+            travelAnanthara.setDownloadsCount(1600);
+            travelAnanthara.setTags(new ArrayList<>(Arrays.asList("Traditional Hotel", "Udaipur Palace", "Card Scan", "Modals", "React")));
+            templateRepository.save(travelAnanthara);
+            logs.put("template_ananthara_hotel", "Created");
+
+            // Seed HavenLuxe (hotel-9)
+            Template travelHavenLuxe = new Template();
+            travelHavenLuxe.setName("HavenLuxe Retreat & Sanctuary — Luxury Boutique Resort");
+            travelHavenLuxe.setSlug("havenluxe-retreat");
+            travelHavenLuxe.setDescription("An exclusive sanctuary carved into the coastline, where architecture merges with nature and time slows to a whisper. Features responsive editorial slideshows, immersive accommodation galleries, interactive basalt thermal spa sections, and fine dining reservation flow.");
+            travelHavenLuxe.setCategory(hotelCategory);
+            travelHavenLuxe.setPrice(0.0);
+            travelHavenLuxe.setTemplateType("FREE");
+            travelHavenLuxe.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            travelHavenLuxe.setDemoUrl("/templates/hotel/hotel-9/index.html");
+            travelHavenLuxe.setDownloadFile("");
+            travelHavenLuxe.setPreviewImage("https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80");
+            travelHavenLuxe.setVersion("1.0.0");
+            travelHavenLuxe.setStatus("PUBLISHED");
+            travelHavenLuxe.setPagesCount(1);
+            travelHavenLuxe.setDownloadsCount(1350);
+            travelHavenLuxe.setTags(new ArrayList<>(Arrays.asList("Boutique Resort", "Coastline Sanctuary", "Slideshows", "Thermal Spa", "Vanilla JS")));
+            templateRepository.save(travelHavenLuxe);
+            logs.put("template_havenluxe_hotel", "Created");
+
+            // Seed Aetheria Haven (hotel-10)
+            Template travelAetheria = new Template();
+            travelAetheria.setName("Aetheria Haven Resorts — Weightless Luxury, Timeless Solitude");
+            travelAetheria.setSlug("aetheria-haven-resorts");
+            travelAetheria.setDescription("A luxury boutique sanctuary resort landing page. Features a floating booking widget, interactive guest popup, suite class selector, responsive editorial slideshows, and immersive accommodation galleries.");
+            travelAetheria.setCategory(hotelCategory);
+            travelAetheria.setPrice(0.0);
+            travelAetheria.setTemplateType("FREE");
+            travelAetheria.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            travelAetheria.setDemoUrl("/templates/hotel/hotel-10/index.html");
+            travelAetheria.setDownloadFile("");
+            travelAetheria.setPreviewImage("https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80");
+            travelAetheria.setVersion("1.0.0");
+            travelAetheria.setStatus("PUBLISHED");
+            travelAetheria.setPagesCount(1);
+            travelAetheria.setDownloadsCount(1250);
+            travelAetheria.setTags(new ArrayList<>(Arrays.asList("Boutique Sanctuary", "Suite Selector", "Slideshows", "Floating Widget", "Vanilla JS")));
+            templateRepository.save(travelAetheria);
+            logs.put("template_aetheria_hotel", "Created");
         }
 
         // 9. Seed Education templates

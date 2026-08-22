@@ -35,7 +35,7 @@ const MOCK_TEMPLATES = [
     description: 'A complete premium luxury resort and hotel sanctuary template featuring clifftop parallax headers, interactive booking widgets, responsive room selectors, masonry filtering galleries with lightboxes, count-up statistics, and custom mixology menus.',
     bootstrapVersion: 'React / Tailwind CSS / Motion',
     version: '1.0.0',
-    demoUrl: '/templates/hotel/hotel-5/index.html'
+    demoUrl: '/templates/hotel/hotel-7/index.html'
   },
   {
     id: 1,
@@ -1451,6 +1451,96 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Framer Motion / Vite',
     version: '1.0.0',
     demoUrl: '/templates/travels/travel-10/index.html'
+  },
+  {
+    id: 196,
+    name: 'Suara Ulu — Ultra-Luxury Wellness & Spa Resort',
+    slug: 'suara-ulu-resort',
+    previewImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 6, name: 'Hotel', slug: 'hotel' },
+    pagesCount: 1,
+    downloadsCount: 1450,
+    description: 'An ultra-luxury coastal sanctuary resort perched on the cliffs of Uluwatu, Bali. Features Italian luxury editorial typography, Obsidian Sanctuary dark mode, top-arched photo frames, interactive booking engine with live bill calculation, Michelin-level dining, and Ayurvedic spa reservations.',
+    bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
+    version: '1.0.0',
+    demoUrl: '/templates/hotel/hotel-5/index.html'
+  },
+  {
+    id: 197,
+    name: 'VillaBliss — Luxury Mediterranean Villa & Exclusive Resort',
+    slug: 'villabliss-luxury-resort',
+    previewImage: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 6, name: 'Hotel', slug: 'hotel' },
+    pagesCount: 1,
+    downloadsCount: 1550,
+    description: 'An ultra-premium Mediterranean luxury villa and resort template. Features an editorial architectural layout, Spacious and cozy room category showcase, panoramic twilight reviews banner, curated experiences, and real-time interactive booking engine.',
+    bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
+    version: '1.0.0',
+    demoUrl: '/templates/hotel/hotel-6/index.html'
+  },
+  {
+    id: 198,
+    name: 'Ananthara Heritage Hotel Mewari Palace',
+    slug: 'ananthara-heritage-hotel',
+    previewImage: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 6, name: 'Hotel', slug: 'hotel' },
+    pagesCount: 1,
+    downloadsCount: 1600,
+    description: 'Ananthara Heritage Hotel is a ultra-luxury traditional resort situated in the heart of Udaipur. Features interactive card scanning chamber entry, overview slides, fine dining, spa, courtyard pools, and luxury booking overlays.',
+    bootstrapVersion: 'React / Modern CSS / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/hotel/hotel-8/index.html'
+  },
+  {
+    id: 199,
+    name: 'HavenLuxe Retreat & Sanctuary — Luxury Boutique Resort',
+    slug: 'havenluxe-retreat',
+    previewImage: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 6, name: 'Hotel', slug: 'hotel' },
+    pagesCount: 1,
+    downloadsCount: 1350,
+    description: 'An exclusive sanctuary carved into the coastline, where architecture merges with nature and time slows to a whisper. Features responsive editorial slideshows, immersive accommodation galleries, interactive basalt thermal spa sections, and fine dining reservation flow.',
+    bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
+    version: '1.0.0',
+    demoUrl: '/templates/hotel/hotel-9/index.html'
+  },
+  {
+    id: 200,
+    name: 'Aetheria Haven Resorts — Weightless Luxury, Timeless Solitude',
+    slug: 'aetheria-haven-resorts',
+    previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 6, name: 'Hotel', slug: 'hotel' },
+    pagesCount: 1,
+    downloadsCount: 1250,
+    description: 'A luxury boutique sanctuary resort landing page. Features a floating booking widget, interactive guest popup, suite class selector, responsive editorial slideshows, and immersive accommodation galleries.',
+    bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
+    version: '1.0.0',
+    demoUrl: '/templates/hotel/hotel-10/index.html'
+  },
+  {
+    id: 201,
+    name: 'Maison de L\'Éclat — Premium High-Fashion Boutique & E-Commerce Hub',
+    slug: 'maison-eclat-ecommerce',
+    previewImage: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
+    pagesCount: 10,
+    downloadsCount: 1950,
+    description: 'A premium high-fashion boutique and e-commerce portal. Features custom glassmorphic navigation, product showcase grids, dynamic cart and checkout flows, wishlist managers, and order tracking.',
+    bootstrapVersion: 'React / Tailwind CSS / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/ecommerce/ecommerce-7/index.html'
   }
 ];
 

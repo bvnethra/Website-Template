@@ -2,9 +2,8 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "rewrites": [
-    {
-      "source": "/((?!templates/(admin|block-magazine|comming-soon|construction|ecommerce|education|events|hotel|medical|photography|restaurant|travels)/|assets/|favicon.ico|.*\\.js|.*\\.css|.*\\.png|.*\\.jpg|.*\\.gif|.*\\.svg|.*\\.json).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/templates/:path*", "destination": "/templates/:path*" },
+    { "source": "/assets/:path*", "destination": "/assets/:path*" },
+    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
   ]
 }

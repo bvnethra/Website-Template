@@ -55,15 +55,27 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+const safeStorage = {
+  getItem: (key: string): string | null => {
+    try { return localStorage.getItem(key); } catch (e) { return null; }
+  },
+  setItem: (key: string, value: string): void => {
+    try { localStorage.setItem(key, value); } catch (e) {}
+  },
+  removeItem: (key: string): void => {
+    try { localStorage.removeItem(key); } catch (e) {}
+  }
+};
+
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<ThemePreset>(() => {
-    const saved = localStorage.getItem('edunexa_theme_id');
+    const saved = safeStorage.getItem('edunexa_theme_id');
     const match = themePresets.find((t) => t.id === saved);
     return match || themePresets[0];
   });
 
   const [config, setConfig] = useState<UniversityConfig>(() => {
-    const saved = localStorage.getItem('edunexa_univ_config');
+    const saved = safeStorage.getItem('edunexa_univ_config');
     if (saved) {
       try {
         return JSON.parse(saved);
@@ -95,7 +107,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   // Bookmarks
   const [savedPrograms, setSavedPrograms] = useState<string[]>(() => {
     try {
-      return JSON.parse(localStorage.getItem('edunexa_saved_programs') || '[]');
+      return JSON.parse(safeStorage.getItem('edunexa_saved_programs') || '[]');
     } catch {
       return [];
     }
@@ -103,7 +115,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   const [savedEvents, setSavedEvents] = useState<string[]>(() => {
     try {
-      return JSON.parse(localStorage.getItem('edunexa_saved_events') || '[]');
+      return JSON.parse(safeStorage.getItem('edunexa_saved_events') || '[]');
     } catch {
       return [];
     }
@@ -117,7 +129,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     const target = themePresets.find((t) => t.id === id);
     if (target) {
       setThemeState(target);
-      localStorage.setItem('edunexa_theme_id', target.id);
+      safeStorage.setItem('edunexa_theme_id', target.id);
       addNotification('info', 'Academic Palette Updated', `Applied "${target.name}" style preset.`);
     }
   };
@@ -125,7 +137,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const updateConfig = (updater: Partial<UniversityConfig> | ((prev: UniversityConfig) => UniversityConfig)) => {
     setConfig((prev) => {
       const next = typeof updater === 'function' ? updater(prev) : { ...prev, ...updater };
-      localStorage.setItem('edunexa_univ_config', JSON.stringify(next));
+      safeStorage.setItem('edunexa_univ_config', JSON.stringify(next));
       return next;
     });
   };
@@ -194,7 +206,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     setSavedPrograms((prev) => {
       const exists = prev.includes(id);
       const updated = exists ? prev.filter((p) => p !== id) : [...prev, id];
-      localStorage.setItem('edunexa_saved_programs', JSON.stringify(updated));
+      safeStorage.setItem('edunexa_saved_programs', JSON.stringify(updated));
       addNotification(
         exists ? 'info' : 'success',
         exists ? 'Program Removed' : 'Program Saved to Shortlist',
@@ -208,7 +220,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     setSavedEvents((prev) => {
       const exists = prev.includes(id);
       const updated = exists ? prev.filter((e) => e !== id) : [...prev, id];
-      localStorage.setItem('edunexa_saved_events', JSON.stringify(updated));
+      safeStorage.setItem('edunexa_saved_events', JSON.stringify(updated));
       addNotification(
         exists ? 'info' : 'success',
         exists ? 'Event Removed' : 'Event RSVP Confirmed',

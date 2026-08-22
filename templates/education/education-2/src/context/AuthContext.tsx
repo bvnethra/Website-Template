@@ -92,18 +92,30 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+const safeStorage = {
+  getItem: (key: string): string | null => {
+    try { return localStorage.getItem(key); } catch (e) { return null; }
+  },
+  setItem: (key: string, value: string): void => {
+    try { localStorage.setItem(key, value); } catch (e) {}
+  },
+  removeItem: (key: string): void => {
+    try { localStorage.removeItem(key); } catch (e) {}
+  }
+};
+
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Initialize state with default mock student or localStorage
   const [token, setToken] = useState<string | null>(() => {
-    return localStorage.getItem('eduvora_auth_token') || 'demo_token_edv_2026';
+    return safeStorage.getItem('eduvora_auth_token') || 'demo_token_edv_2026';
   });
 
   const [role, setRole] = useState<UserRole>(() => {
-    return (localStorage.getItem('eduvora_user_role') as UserRole) || 'student';
+    return (safeStorage.getItem('eduvora_user_role') as UserRole) || 'student';
   });
 
   const [currentUser, setCurrentUser] = useState<UserProfile | null>(() => {
-    const saved = localStorage.getItem('eduvora_current_user');
+    const saved = safeStorage.getItem('eduvora_current_user');
     if (saved) {
       try {
         return JSON.parse(saved);
@@ -118,7 +130,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   // Portal Stateful collections
   const [loginHistory, setLoginHistory] = useState<LoginSession[]>(() => {
-    const saved = localStorage.getItem('eduvora_login_history');
+    const saved = safeStorage.getItem('eduvora_login_history');
     return saved ? JSON.parse(saved) : mockLoginSessions;
   });
 
@@ -145,26 +157,26 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Sync to local storage
   useEffect(() => {
     if (token) {
-      localStorage.setItem('eduvora_auth_token', token);
+      safeStorage.setItem('eduvora_auth_token', token);
     } else {
-      localStorage.removeItem('eduvora_auth_token');
+      safeStorage.removeItem('eduvora_auth_token');
     }
   }, [token]);
 
   useEffect(() => {
     if (currentUser) {
-      localStorage.setItem('eduvora_current_user', JSON.stringify(currentUser));
+      safeStorage.setItem('eduvora_current_user', JSON.stringify(currentUser));
     } else {
-      localStorage.removeItem('eduvora_current_user');
+      safeStorage.removeItem('eduvora_current_user');
     }
   }, [currentUser]);
 
   useEffect(() => {
-    localStorage.setItem('eduvora_user_role', role);
+    safeStorage.setItem('eduvora_user_role', role);
   }, [role]);
 
   useEffect(() => {
-    localStorage.setItem('eduvora_login_history', JSON.stringify(loginHistory));
+    safeStorage.setItem('eduvora_login_history', JSON.stringify(loginHistory));
   }, [loginHistory]);
 
   const login = async (id: string, pass: string, selectedRole: UserRole): Promise<{ success: boolean; error?: string }> => {
@@ -263,8 +275,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const logout = () => {
     setToken(null);
     setCurrentUser(null);
-    localStorage.removeItem('eduvora_auth_token');
-    localStorage.removeItem('eduvora_current_user');
+    safeStorage.removeItem('eduvora_auth_token');
+    safeStorage.removeItem('eduvora_current_user');
   };
 
   const terminateSession = (sessionId: string) => {

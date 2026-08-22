@@ -7,7 +7,12 @@ export const CookieConsentBanner: React.FC = () => {
   const { theme } = useTheme();
 
   useEffect(() => {
-    const accepted = localStorage.getItem('edunexa_cookie_accepted');
+    let accepted = null;
+    try {
+      accepted = localStorage.getItem('edunexa_cookie_accepted');
+    } catch (e) {
+      // Ignored
+    }
     if (!accepted) {
       const timer = setTimeout(() => setVisible(true), 1500);
       return () => clearTimeout(timer);
@@ -15,7 +20,11 @@ export const CookieConsentBanner: React.FC = () => {
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('edunexa_cookie_accepted', 'true');
+    try {
+      localStorage.setItem('edunexa_cookie_accepted', 'true');
+    } catch (e) {
+      // Ignored
+    }
     setVisible(false);
   };
 

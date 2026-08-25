@@ -13,7 +13,7 @@ const categories = [
     { name: 'Admin', slug: 'admin', icon: LayoutDashboard },
     { name: 'Medical', slug: 'medical', icon: Activity },
     { name: 'Block magazine', slug: 'block-magazine', icon: BookOpen },
-    { name: 'Comming soon', slug: 'comming-soon', icon: Clock, isSoon: true },
+    { name: 'Comming soon', slug: 'comming-soon', icon: Clock },
     { name: 'Travels', slug: 'travels', icon: Plane },
     { name: 'Hotel', slug: 'hotel', icon: Hotel },
   ],
@@ -29,11 +29,11 @@ const categories = [
   // Column 3
   [
     { name: 'Business', slug: 'buisness', icon: Briefcase }, // mapped to buisness
-    { name: 'onepage', slug: 'onepage', icon: Layers },
-    { name: 'landing page', slug: 'landing-page', icon: Sparkles },
-    { name: 'cooperate', slug: 'cooperate', icon: Building2 },
-    { name: 'agency', slug: 'agency', icon: Workflow },
-    { name: 'portfolio', slug: 'portfolio', icon: FolderOpen },
+    { name: 'One Page', slug: 'onepage', icon: Layers },
+    { name: 'Landing Page', slug: 'landing-page', icon: Sparkles },
+    { name: 'Corporate', slug: 'cooperate', icon: Building2 },
+    { name: 'Agency', slug: 'agency', icon: Workflow },
+    { name: 'Portfolio', slug: 'portfolio', icon: FolderOpen },
   ]
 ];
 

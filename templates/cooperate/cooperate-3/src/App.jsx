@@ -35,7 +35,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/templates/cooperate/cooperate-3">
       <ScrollToTop />
       <div className="app-layout">
         <Navbar />

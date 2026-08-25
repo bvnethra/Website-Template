@@ -1676,6 +1676,51 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
     demoUrl: '/templates/comming-soon/comingsoon-10/index.html'
+  },
+  {
+    id: 1101,
+    name: 'ABC Business — Premium Corporate Systems',
+    slug: 'Business-1',
+    previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 13, name: 'Buisness', slug: 'buisness' },
+    pagesCount: 12,
+    downloadsCount: 2150,
+    description: 'A premium corporate systems and business advisory platform featuring custom page transitions, services showcases, and client inquiry panels.',
+    bootstrapVersion: 'React / Tailwind CSS / Framer Motion / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/buisness/Business-1/index.html'
+  },
+  {
+    id: 1102,
+    name: 'Agency Prime — Creative & Digital Hub',
+    slug: 'Business-2',
+    previewImage: 'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 13, name: 'Buisness', slug: 'buisness' },
+    pagesCount: 10,
+    downloadsCount: 1820,
+    description: 'An elegant digital agency and portfolio template. Features interactive counters, animated page entries, custom project detail overlays, and responsive contact forms.',
+    bootstrapVersion: 'React / Tailwind CSS / Framer Motion / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/buisness/Business-2/index.html'
+  },
+  {
+    id: 1103,
+    name: 'Enterprise Apex — Professional Consulting Platform',
+    slug: 'Business-3',
+    previewImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 13, name: 'Buisness', slug: 'buisness' },
+    pagesCount: 9,
+    downloadsCount: 1670,
+    description: 'A premium corporate consulting and financial advisory template featuring interactive counter animations, project showcase galleries, and structured service modules.',
+    bootstrapVersion: 'React / Tailwind CSS / Framer Motion / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/buisness/Business-3/index.html'
   }
 ];
 

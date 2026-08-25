@@ -2399,6 +2399,69 @@ public class DatabaseSeederController {
             logs.put("template_cooperate_5", "Created");
         }
 
+        Category businessCategory = catMap.get("buisness");
+        if (businessCategory != null) {
+            // Business-1 (ABC Business)
+            Template biz1 = new Template();
+            biz1.setName("ABC Business — Premium Corporate Systems");
+            biz1.setSlug("Business-1");
+            biz1.setDescription("A premium corporate systems and business advisory platform featuring custom page transitions, services showcases, and client inquiry panels.");
+            biz1.setCategory(businessCategory);
+            biz1.setPrice(0.0);
+            biz1.setTemplateType("FREE");
+            biz1.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
+            biz1.setDemoUrl("/templates/buisness/Business-1/index.html");
+            biz1.setDownloadFile("");
+            biz1.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
+            biz1.setVersion("1.0.0");
+            biz1.setStatus("PUBLISHED");
+            biz1.setPagesCount(12);
+            biz1.setDownloadsCount(2150);
+            biz1.setTags(new ArrayList<>(Arrays.asList("Corporate", "Advisory", "Framer Motion", "Vite", "React")));
+            templateRepository.save(biz1);
+            logs.put("template_business_1", "Created");
+
+            // Business-2 (Agency Prime)
+            Template biz2 = new Template();
+            biz2.setName("Agency Prime — Creative & Digital Hub");
+            biz2.setSlug("Business-2");
+            biz2.setDescription("An elegant digital agency and portfolio template. Features interactive counters, animated page entries, custom project detail overlays, and responsive contact forms.");
+            biz2.setCategory(businessCategory);
+            biz2.setPrice(0.0);
+            biz2.setTemplateType("FREE");
+            biz2.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
+            biz2.setDemoUrl("/templates/buisness/Business-2/index.html");
+            biz2.setDownloadFile("");
+            biz2.setPreviewImage("https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80");
+            biz2.setVersion("1.0.0");
+            biz2.setStatus("PUBLISHED");
+            biz2.setPagesCount(10);
+            biz2.setDownloadsCount(1820);
+            biz2.setTags(new ArrayList<>(Arrays.asList("Digital Agency", "Portfolio", "Framer Motion", "Vite", "React")));
+            templateRepository.save(biz2);
+            logs.put("template_business_2", "Created");
+
+            // Business-3 (Enterprise Apex)
+            Template biz3 = new Template();
+            biz3.setName("Enterprise Apex — Professional Consulting Platform");
+            biz3.setSlug("Business-3");
+            biz3.setDescription("A premium corporate consulting and financial advisory template featuring interactive counter animations, project showcase galleries, and structured service modules.");
+            biz3.setCategory(businessCategory);
+            biz3.setPrice(0.0);
+            biz3.setTemplateType("FREE");
+            biz3.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
+            biz3.setDemoUrl("/templates/buisness/Business-3/index.html");
+            biz3.setDownloadFile("");
+            biz3.setPreviewImage("https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80");
+            biz3.setVersion("1.0.0");
+            biz3.setStatus("PUBLISHED");
+            biz3.setPagesCount(9);
+            biz3.setDownloadsCount(1670);
+            biz3.setTags(new ArrayList<>(Arrays.asList("Consulting", "Finance", "Portfolio", "Vite", "React")));
+            templateRepository.save(biz3);
+            logs.put("template_business_3", "Created");
+        }
+
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);
     }

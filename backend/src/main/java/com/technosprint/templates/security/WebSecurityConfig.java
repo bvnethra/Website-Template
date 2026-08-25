@@ -37,8 +37,8 @@ public class WebSecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/api/templates/**").permitAll()
-                .requestMatchers("/api/categories/**").permitAll()
+                .requestMatchers("/api/templates", "/api/templates/**").permitAll()
+                .requestMatchers("/api/categories", "/api/categories/**").permitAll()
                 .requestMatchers("/api/seed/**").permitAll()
                 .requestMatchers("/templates/**").permitAll()
                 .requestMatchers("/error").permitAll()

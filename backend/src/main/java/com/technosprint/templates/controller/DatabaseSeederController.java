@@ -2236,6 +2236,109 @@ public class DatabaseSeederController {
             logs.put("template_comingsoon_7", "Created");
         }
 
+        Category cooperateCategory = catMap.get("cooperate");
+        if (cooperateCategory != null) {
+            // cooperate-1 (Nexora)
+            Template coop1 = new Template();
+            coop1.setName("Nexora — Premium Enterprise Corporate");
+            coop1.setSlug("cooperate-1");
+            coop1.setDescription("A premium enterprise consulting and corporate website featuring 13+ production-ready pages, services bento grids, and career portals.");
+            coop1.setCategory(cooperateCategory);
+            coop1.setPrice(0.0);
+            coop1.setTemplateType("FREE");
+            coop1.setBootstrapVersion("React / Tailwind CSS / Vite / React Router");
+            coop1.setDemoUrl("/templates/cooperate/cooperate-1/index.html");
+            coop1.setDownloadFile("");
+            coop1.setPreviewImage("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80");
+            coop1.setVersion("1.0.0");
+            coop1.setStatus("PUBLISHED");
+            coop1.setPagesCount(13);
+            coop1.setDownloadsCount(1850);
+            coop1.setTags(new ArrayList<>(Arrays.asList("Enterprise", "Consulting", "Bento Grid", "Multi-page", "React")));
+            templateRepository.save(coop1);
+            logs.put("template_cooperate_1", "Created");
+
+            // cooperate-2 (Orion)
+            Template coop2 = new Template();
+            coop2.setName("Orion — Corporate Strategy Showcase");
+            coop2.setSlug("cooperate-2");
+            coop2.setDescription("A clean, executive strategy and consulting template featuring bento portfolio layouts, interactive solution selectors, and case study detail views.");
+            coop2.setCategory(cooperateCategory);
+            coop2.setPrice(0.0);
+            coop2.setTemplateType("FREE");
+            coop2.setBootstrapVersion("React / Tailwind CSS / Vite / React Router");
+            coop2.setDemoUrl("/templates/cooperate/cooperate-2/index.html");
+            coop2.setDownloadFile("");
+            coop2.setPreviewImage("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80");
+            coop2.setVersion("1.0.0");
+            coop2.setStatus("PUBLISHED");
+            coop2.setPagesCount(8);
+            coop2.setDownloadsCount(1420);
+            coop2.setTags(new ArrayList<>(Arrays.asList("Strategy", "Corporate", "Bento Layout", "Vite", "React")));
+            templateRepository.save(coop2);
+            logs.put("template_cooperate_2", "Created");
+
+            // cooperate-3 (Vantage)
+            Template coop3 = new Template();
+            coop3.setName("Vantage — Global Business Transformation");
+            coop3.setSlug("cooperate-3");
+            coop3.setDescription("An elegant corporate consulting and global advisory template featuring capability checklists, transition timelines, and leadership boards.");
+            coop3.setCategory(cooperateCategory);
+            coop3.setPrice(0.0);
+            coop3.setTemplateType("FREE");
+            coop3.setBootstrapVersion("React / Tailwind CSS / Vite / React Router");
+            coop3.setDemoUrl("/templates/cooperate/cooperate-3/index.html");
+            coop3.setDownloadFile("");
+            coop3.setPreviewImage("https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80");
+            coop3.setVersion("1.0.0");
+            coop3.setStatus("PUBLISHED");
+            coop3.setPagesCount(9);
+            coop3.setDownloadsCount(1560);
+            coop3.setTags(new ArrayList<>(Arrays.asList("Consulting", "Advisory", "Timeline", "Vite", "React")));
+            templateRepository.save(coop3);
+            logs.put("template_cooperate_3", "Created");
+
+            // cooperate-4 (Kinesis Global)
+            Template coop4 = new Template();
+            coop4.setName("Kinesis Global — Enterprise AI & Systems");
+            coop4.setSlug("cooperate-4");
+            coop4.setDescription("A high-tech digital systems engineering and corporate AI consultant website featuring dark mode details, dynamic capability stacks, and interactive project brief builders.");
+            coop4.setCategory(cooperateCategory);
+            coop4.setPrice(0.0);
+            coop4.setTemplateType("FREE");
+            coop4.setBootstrapVersion("React / Tailwind CSS / Vite / React Router");
+            coop4.setDemoUrl("/templates/cooperate/cooperate-4/index.html");
+            coop4.setDownloadFile("");
+            coop4.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
+            coop4.setVersion("1.0.0");
+            coop4.setStatus("PUBLISHED");
+            coop4.setPagesCount(12);
+            coop4.setDownloadsCount(1920);
+            coop4.setTags(new ArrayList<>(Arrays.asList("Systems Engineering", "Enterprise AI", "Project Brief", "Vite", "React")));
+            templateRepository.save(coop4);
+            logs.put("template_cooperate_4", "Created");
+
+            // cooperate-5 (Axiom Systems)
+            Template coop5 = new Template();
+            coop5.setName("Axiom Systems — Global Enterprise Technology");
+            coop5.setSlug("cooperate-5");
+            coop5.setDescription("A premium corporate systems integration and partner platform featuring vertical solutions, global offices catalog, and interactive inquiry selectors.");
+            coop5.setCategory(cooperateCategory);
+            coop5.setPrice(0.0);
+            coop5.setTemplateType("FREE");
+            coop5.setBootstrapVersion("React / Tailwind CSS / Vite / React Router");
+            coop5.setDemoUrl("/templates/cooperate/cooperate-5/index.html");
+            coop5.setDownloadFile("");
+            coop5.setPreviewImage("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80");
+            coop5.setVersion("1.0.0");
+            coop5.setStatus("PUBLISHED");
+            coop5.setPagesCount(10);
+            coop5.setDownloadsCount(1740);
+            coop5.setTags(new ArrayList<>(Arrays.asList("Systems Integration", "Technology Partner", "Inquiry", "Vite", "React")));
+            templateRepository.save(coop5);
+            logs.put("template_cooperate_5", "Created");
+        }
+
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);
     }

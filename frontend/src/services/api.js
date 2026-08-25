@@ -1631,6 +1631,51 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Vite / React Router',
     version: '1.0.0',
     demoUrl: '/templates/cooperate/cooperate-5/index.html'
+  },
+  {
+    id: 1008,
+    name: 'HTM 350 DUDE — 3D Interactive Riding Showcase',
+    slug: 'comingsoon-8',
+    previewImage: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    pagesCount: 1,
+    downloadsCount: 2540,
+    description: 'A premium interactive motorcycle showcase and coming soon page. Features a fully controllable 3D motorcycle model canvas, interactive control dock, and reservation modal.',
+    bootstrapVersion: 'React / Three.js / Tailwind CSS / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/comming-soon/comingsoon-8/index.html'
+  },
+  {
+    id: 1009,
+    name: 'Aura — Next-Gen Multipurpose Launchpad',
+    slug: 'comingsoon-9',
+    previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    pagesCount: 1,
+    downloadsCount: 2120,
+    description: 'An elegant multipurpose pre-launch landing page. Features modern typography, countdown timer, responsive visual showcases, and newsletter capture forms.',
+    bootstrapVersion: 'React / Tailwind CSS / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/comming-soon/comingsoon-9/index.html'
+  },
+  {
+    id: 1010,
+    name: 'Studio 10 — Multipurpose Event Coming Soon Teaser',
+    slug: 'comingsoon-10',
+    previewImage: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    pagesCount: 1,
+    downloadsCount: 1890,
+    description: 'A premium multi-design landing page template for events coming soon showcases. Features clean grids, responsive visual transitions, and client contact selectors.',
+    bootstrapVersion: 'React / Tailwind CSS / Vite',
+    version: '1.0.0',
+    demoUrl: '/templates/comming-soon/comingsoon-10/index.html'
   }
 ];
 

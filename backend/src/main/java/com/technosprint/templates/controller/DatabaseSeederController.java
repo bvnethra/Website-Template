@@ -2234,6 +2234,66 @@ public class DatabaseSeederController {
             soon7.setTags(new ArrayList<>(Arrays.asList("Sportswear", "Pre-launch", "Countdown", "Reviews Slider", "Vite")));
             templateRepository.save(soon7);
             logs.put("template_comingsoon_7", "Created");
+
+            // comingsoon-8
+            Template soon8 = new Template();
+            soon8.setName("HTM 350 DUDE — 3D Interactive Riding Showcase");
+            soon8.setSlug("comingsoon-8");
+            soon8.setDescription("A premium interactive motorcycle showcase and coming soon page. Features a fully controllable 3D motorcycle model canvas, interactive control dock, and reservation modal.");
+            soon8.setCategory(commingSoonCategoryNew);
+            soon8.setPrice(0.0);
+            soon8.setTemplateType("FREE");
+            soon8.setBootstrapVersion("React / Three.js / Tailwind CSS / Vite");
+            soon8.setDemoUrl("/templates/comming-soon/comingsoon-8/index.html");
+            soon8.setDownloadFile("");
+            soon8.setPreviewImage("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80");
+            soon8.setVersion("1.0.0");
+            soon8.setStatus("PUBLISHED");
+            soon8.setPagesCount(1);
+            soon8.setDownloadsCount(2540);
+            soon8.setTags(new ArrayList<>(Arrays.asList("Three.js", "Motorcycle", "Interactive 3D", "Vite", "React")));
+            templateRepository.save(soon8);
+            logs.put("template_comingsoon_8", "Created");
+
+            // comingsoon-9
+            Template soon9 = new Template();
+            soon9.setName("Aura — Next-Gen Multipurpose Launchpad");
+            soon9.setSlug("comingsoon-9");
+            soon9.setDescription("An elegant multipurpose pre-launch landing page. Features modern typography, countdown timer, responsive visual showcases, and newsletter capture forms.");
+            soon9.setCategory(commingSoonCategoryNew);
+            soon9.setPrice(0.0);
+            soon9.setTemplateType("FREE");
+            soon9.setBootstrapVersion("React / Tailwind CSS / Vite");
+            soon9.setDemoUrl("/templates/comming-soon/comingsoon-9/index.html");
+            soon9.setDownloadFile("");
+            soon9.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
+            soon9.setVersion("1.0.0");
+            soon9.setStatus("PUBLISHED");
+            soon9.setPagesCount(1);
+            soon9.setDownloadsCount(2120);
+            soon9.setTags(new ArrayList<>(Arrays.asList("Multipurpose", "Launchpad", "Countdown", "Vite", "React")));
+            templateRepository.save(soon9);
+            logs.put("template_comingsoon_9", "Created");
+
+            // comingsoon-10
+            Template soon10 = new Template();
+            soon10.setName("Studio 10 — Multipurpose Event Coming Soon Teaser");
+            soon10.setSlug("comingsoon-10");
+            soon10.setDescription("A premium multi-design landing page template for events coming soon showcases. Features clean grids, responsive visual transitions, and client contact selectors.");
+            soon10.setCategory(commingSoonCategoryNew);
+            soon10.setPrice(0.0);
+            soon10.setTemplateType("FREE");
+            soon10.setBootstrapVersion("React / Tailwind CSS / Vite");
+            soon10.setDemoUrl("/templates/comming-soon/comingsoon-10/index.html");
+            soon10.setDownloadFile("");
+            soon10.setPreviewImage("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80");
+            soon10.setVersion("1.0.0");
+            soon10.setStatus("PUBLISHED");
+            soon10.setPagesCount(1);
+            soon10.setDownloadsCount(1890);
+            soon10.setTags(new ArrayList<>(Arrays.asList("Events", "Studio", "Teaser", "Vite", "React")));
+            templateRepository.save(soon10);
+            logs.put("template_comingsoon_10", "Created");
         }
 
         Category cooperateCategory = catMap.get("cooperate");

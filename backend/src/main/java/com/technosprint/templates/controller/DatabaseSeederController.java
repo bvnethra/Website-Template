@@ -3147,26 +3147,6 @@ public class DatabaseSeederController {
             templateRepository.save(lp3);
             logs.put("template_landing_page_3", "Created");
 
-            // landing-page-4 (Ember & Olive)
-            Template lp4 = new Template();
-            lp4.setName("Ember & Olive — Wood-Fired Restaurant Landing Page");
-            lp4.setSlug("landing-page-4");
-            lp4.setDescription("An elegant wood-fired seasonal restaurant landing page featuring reservation blocks, detailed menus, private events information, and gallery grids.");
-            lp4.setCategory(landingPageCategory);
-            lp4.setPrice(0.0);
-            lp4.setTemplateType("FREE");
-            lp4.setBootstrapVersion("HTML5 / Bootstrap 5 / ES Modules");
-            lp4.setDemoUrl("/templates/landing-page/landing-page-4/index.html");
-            lp4.setDownloadFile("");
-            lp4.setPreviewImage("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80");
-            lp4.setVersion("1.0.0");
-            lp4.setStatus("PUBLISHED");
-            lp4.setPagesCount(6);
-            lp4.setDownloadsCount(1620);
-            lp4.setTags(new ArrayList<>(Arrays.asList("Restaurant", "Reservations", "HTML5", "Bootstrap")));
-            templateRepository.save(lp4);
-            logs.put("template_landing_page_4", "Created");
-
             // landing-page-5 (AuraLanding)
             Template lp5 = new Template();
             lp5.setName("AuraLanding — Interactive Conversion Portal");

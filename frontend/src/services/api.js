@@ -2233,21 +2233,6 @@ const MOCK_TEMPLATES = [
     version: '1.0'
   },
   {
-    id: 9204,
-    name: 'Ember & Olive — Wood-Fired Restaurant Landing Page',
-    slug: 'landing-page-4',
-    previewImage: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
-    templateType: 'FREE',
-    price: 0,
-    category: { id: 15, name: 'landing page', slug: 'landing-page' },
-    pagesCount: 6,
-    downloadsCount: 1620,
-    description: 'An elegant wood-fired seasonal restaurant landing page featuring reservation blocks, detailed menus, private events information, and gallery grids.',
-    bootstrapVersion: 'HTML5 / Bootstrap 5 / ES Modules',
-    demoUrl: '/templates/landing-page/landing-page-4/index.html',
-    version: '1.0'
-  },
-  {
     id: 9205,
     name: 'AuraLanding — Interactive Conversion Portal',
     slug: 'landing-page-5',

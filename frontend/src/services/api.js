@@ -113,7 +113,7 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/photography/fineart-template/index.html'
   },
   {
-    id: 126,
+    id: 145,
     name: 'Lume Studio — Fashion & Editorial Portfolio',
     slug: 'isteady-template',
     previewImage: '/lume_cover.png',

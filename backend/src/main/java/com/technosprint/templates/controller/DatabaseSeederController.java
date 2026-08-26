@@ -2457,6 +2457,106 @@ public class DatabaseSeederController {
             coop5.setTags(new ArrayList<>(Arrays.asList("Systems Integration", "Technology Partner", "Inquiry", "Vite", "React")));
             templateRepository.save(coop5);
             logs.put("template_cooperate_5", "Created");
+
+            // cooperate-6 (Vanguard)
+            Template coop6 = new Template();
+            coop6.setName("Vanguard — Corporate Mobility Solutions");
+            coop6.setSlug("cooperate-6");
+            coop6.setDescription("A premium corporate travel management and executive mobility showcase. Built with React, Tailwind CSS, and React Router, featuring custom consultation modules and route safety logs.");
+            coop6.setCategory(cooperateCategory);
+            coop6.setPrice(0.0);
+            coop6.setTemplateType("FREE");
+            coop6.setBootstrapVersion("React / Tailwind / Vite / TS");
+            coop6.setDemoUrl("/templates/cooperate/cooperate-6/index.html");
+            coop6.setDownloadFile("");
+            coop6.setPreviewImage("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80");
+            coop6.setVersion("1.0.0");
+            coop6.setStatus("PUBLISHED");
+            coop6.setPagesCount(13);
+            coop6.setDownloadsCount(1850);
+            coop6.setTags(new ArrayList<>(Arrays.asList("Corporate Travel", "Mobility", "React", "Tailwind", "TS")));
+            templateRepository.save(coop6);
+            logs.put("template_cooperate_6", "Created");
+
+            // cooperate-7 (Apex Solutions)
+            Template coop7 = new Template();
+            coop7.setName("Apex Solutions — Enterprise Tech Consultant");
+            coop7.setSlug("cooperate-7");
+            coop7.setDescription("A clean and professional corporate solutions and tech consulting landing page. Features a complete set of service outlines, client portfolios, interactive career boards, and legal policies.");
+            coop7.setCategory(cooperateCategory);
+            coop7.setPrice(0.0);
+            coop7.setTemplateType("FREE");
+            coop7.setBootstrapVersion("React / Tailwind / Vite / TS");
+            coop7.setDemoUrl("/templates/cooperate/cooperate-7/index.html");
+            coop7.setDownloadFile("");
+            coop7.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
+            coop7.setVersion("1.0.0");
+            coop7.setStatus("PUBLISHED");
+            coop7.setPagesCount(22);
+            coop7.setDownloadsCount(1650);
+            coop7.setTags(new ArrayList<>(Arrays.asList("Consulting", "Tech Advisory", "Career Board", "React", "Tailwind")));
+            templateRepository.save(coop7);
+            logs.put("template_cooperate_7", "Created");
+
+            // cooperate-8 (Sync Agency)
+            Template coop8 = new Template();
+            coop8.setName("Sync Agency — Strategic Business Advisors");
+            coop8.setSlug("cooperate-8");
+            coop8.setDescription("A modern strategy, branding, and business consulting portfolio. Built with React, Tailwind CSS, and Framer Motion, featuring custom interactive capability highlights and scoping modals.");
+            coop8.setCategory(cooperateCategory);
+            coop8.setPrice(0.0);
+            coop8.setTemplateType("FREE");
+            coop8.setBootstrapVersion("React / Tailwind / Vite / TS");
+            coop8.setDemoUrl("/templates/cooperate/cooperate-8/index.html");
+            coop8.setDownloadFile("");
+            coop8.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
+            coop8.setVersion("1.0.0");
+            coop8.setStatus("PUBLISHED");
+            coop8.setPagesCount(11);
+            coop8.setDownloadsCount(1420);
+            coop8.setTags(new ArrayList<>(Arrays.asList("Advisory", "Branding", "Scoping Modal", "React", "Framer Motion")));
+            templateRepository.save(coop8);
+            logs.put("template_cooperate_8", "Created");
+
+            // cooperate-9 (Finora)
+            Template coop9 = new Template();
+            coop9.setName("Finora — Premium Corporate Finance");
+            coop9.setSlug("cooperate-9");
+            coop9.setDescription("A beautiful financial advisory and corporate strategy portal. Features clean typography, bento performance metrics, and a custom interactive booking system.");
+            coop9.setCategory(cooperateCategory);
+            coop9.setPrice(0.0);
+            coop9.setTemplateType("FREE");
+            coop9.setBootstrapVersion("React / Tailwind / Vite / TS");
+            coop9.setDemoUrl("/templates/cooperate/cooperate-9/index.html");
+            coop9.setDownloadFile("");
+            coop9.setPreviewImage("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80");
+            coop9.setVersion("1.0.0");
+            coop9.setStatus("PUBLISHED");
+            coop9.setPagesCount(1);
+            coop9.setDownloadsCount(1920);
+            coop9.setTags(new ArrayList<>(Arrays.asList("Finance", "Bento Metrics", "Advisory", "React", "Vite")));
+            templateRepository.save(coop9);
+            logs.put("template_cooperate_9", "Created");
+
+            // cooperate-10 (Aurelia Capital)
+            Template coop10 = new Template();
+            coop10.setName("Aurelia Capital — Institutional Asset Management");
+            coop10.setSlug("cooperate-10");
+            coop10.setDescription("An advanced institutional wealth management and investment advisory platform. Features live stock index ribbons, interactive retirement calculators, comparison matrix portals, and detailed client reporting views.");
+            coop10.setCategory(cooperateCategory);
+            coop10.setPrice(0.0);
+            coop10.setTemplateType("FREE");
+            coop10.setBootstrapVersion("React / Tailwind / Vite / TS");
+            coop10.setDemoUrl("/templates/cooperate/cooperate-10/index.html");
+            coop10.setDownloadFile("");
+            coop10.setPreviewImage("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80");
+            coop10.setVersion("1.0.0");
+            coop10.setStatus("PUBLISHED");
+            coop10.setPagesCount(15);
+            coop10.setDownloadsCount(1740);
+            coop10.setTags(new ArrayList<>(Arrays.asList("Asset Management", "Calculators", "Client Portal", "React", "Vite")));
+            templateRepository.save(coop10);
+            logs.put("template_cooperate_10", "Created");
         }
 
         Category businessCategory = catMap.get("buisness");

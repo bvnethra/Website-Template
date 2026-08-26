@@ -958,6 +958,21 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/education/education-4/index.html'
   },
   {
+    id: 161,
+    name: 'HarmonyFlow — Premium Music Education & LMS',
+    slug: 'music-education-portal',
+    previewImage: '/education-11_cover.png',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 10, name: 'Education', slug: 'education' },
+    pagesCount: 5,
+    downloadsCount: 940,
+    description: 'A premium music education and LMS template featuring comprehensive course lists, department breakdowns, conservatory about sections, research libraries, and a controlled audition contact system.',
+    bootstrapVersion: 'React / Vite / Tailwind CSS / Motion',
+    version: '1.0.0',
+    demoUrl: '/templates/education/education-11/index.html'
+  },
+  {
     id: 171,
     name: 'Aurelius — High-End Historical Renovation & Heritage Atelier',
     slug: 'aurelius-renovation',

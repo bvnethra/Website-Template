@@ -2520,6 +2520,106 @@ public class DatabaseSeederController {
             biz3.setTags(new ArrayList<>(Arrays.asList("Consulting", "Finance", "Portfolio", "Vite", "React")));
             templateRepository.save(biz3);
             logs.put("template_business_3", "Created");
+
+            // Business-4 (Aurelis)
+            Template biz4 = new Template();
+            biz4.setName("Aurelis — Premium Business Showcase");
+            biz4.setSlug("Business-4");
+            biz4.setDescription("A premium, modern showcase template for corporate systems, advisory firms, and agencies. Built with React, Tailwind CSS, and Framer Motion, featuring smooth animations and custom page sections.");
+            biz4.setCategory(businessCategory);
+            biz4.setPrice(0.0);
+            biz4.setTemplateType("FREE");
+            biz4.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
+            biz4.setDemoUrl("/templates/buisness/Business-4/index.html");
+            biz4.setDownloadFile("");
+            biz4.setPreviewImage("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80");
+            biz4.setVersion("1.0.0");
+            biz4.setStatus("PUBLISHED");
+            biz4.setPagesCount(1);
+            biz4.setDownloadsCount(1850);
+            biz4.setTags(new ArrayList<>(Arrays.asList("Corporate", "Showcase", "Framer Motion", "Vite", "React")));
+            templateRepository.save(biz4);
+            logs.put("template_business_4", "Created");
+
+            // Business-5 (Lumora Labs)
+            Template biz5 = new Template();
+            biz5.setName("Lumora Labs — Advanced Technology Hub");
+            biz5.setSlug("Business-5");
+            biz5.setDescription("An animated technology startup showcase featuring custom interactive elements, team bios, services slider, and client contact integration.");
+            biz5.setCategory(businessCategory);
+            biz5.setPrice(0.0);
+            biz5.setTemplateType("FREE");
+            biz5.setBootstrapVersion("React / GSAP / Spring Boot");
+            biz5.setDemoUrl("/templates/buisness/Business-5/index.html");
+            biz5.setDownloadFile("");
+            biz5.setPreviewImage("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80");
+            biz5.setVersion("1.0.0");
+            biz5.setStatus("PUBLISHED");
+            biz5.setPagesCount(5);
+            biz5.setDownloadsCount(2100);
+            biz5.setTags(new ArrayList<>(Arrays.asList("Technology", "Agency", "React", "Spring Boot", "GSAP")));
+            templateRepository.save(biz5);
+            logs.put("template_business_5", "Created");
+
+            // Business-6 (Nexora)
+            Template biz6 = new Template();
+            biz6.setName("Nexora — Enterprise Technology Solutions");
+            biz6.setSlug("Business-6");
+            biz6.setDescription("A modern, dark-themed corporate technology platform featuring interactive charts, custom layouts, and a clean minimalist design for enterprise services.");
+            biz6.setCategory(businessCategory);
+            biz6.setPrice(0.0);
+            biz6.setTemplateType("FREE");
+            biz6.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
+            biz6.setDemoUrl("/templates/buisness/Business-6/index.html");
+            biz6.setDownloadFile("");
+            biz6.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
+            biz6.setVersion("1.0.0");
+            biz6.setStatus("PUBLISHED");
+            biz6.setPagesCount(1);
+            biz6.setDownloadsCount(1650);
+            biz6.setTags(new ArrayList<>(Arrays.asList("Enterprise", "Technology", "Framer Motion", "Vite", "React")));
+            templateRepository.save(biz6);
+            logs.put("template_business_6", "Created");
+
+            // Business-7 (Strativa)
+            Template biz7 = new Template();
+            biz7.setName("Strativa — Modern Consulting Platform");
+            biz7.setSlug("Business-7");
+            biz7.setDescription("A clean corporate consulting and strategic advisory platform featuring interactive bento grids, client reviews, capability lists, and dynamic query builders.");
+            biz7.setCategory(businessCategory);
+            biz7.setPrice(0.0);
+            biz7.setTemplateType("FREE");
+            biz7.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
+            biz7.setDemoUrl("/templates/buisness/Business-7/index.html");
+            biz7.setDownloadFile("");
+            biz7.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
+            biz7.setVersion("1.0.0");
+            biz7.setStatus("PUBLISHED");
+            biz7.setPagesCount(1);
+            biz7.setDownloadsCount(1450);
+            biz7.setTags(new ArrayList<>(Arrays.asList("Consulting", "Strategy", "Framer Motion", "Vite", "React")));
+            templateRepository.save(biz7);
+            logs.put("template_business_7", "Created");
+
+            // Business-8 (Vanta Studio)
+            Template biz8 = new Template();
+            biz8.setName("Vanta Studio — Premium Business Showcase");
+            biz8.setSlug("Business-8");
+            biz8.setDescription("A premium, modern showcase template for design collectives, digital-first brands, and agencies. Built with React, Tailwind CSS, and Framer Motion, featuring smooth animations and a dark editorial layout.");
+            biz8.setCategory(businessCategory);
+            biz8.setPrice(0.0);
+            biz8.setTemplateType("FREE");
+            biz8.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
+            biz8.setDemoUrl("/templates/buisness/Business-8/index.html");
+            biz8.setDownloadFile("");
+            biz8.setPreviewImage("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80");
+            biz8.setVersion("1.0.0");
+            biz8.setStatus("PUBLISHED");
+            biz8.setPagesCount(1);
+            biz8.setDownloadsCount(1250);
+            biz8.setTags(new ArrayList<>(Arrays.asList("Agency", "Design", "Showcase", "Vite", "React")));
+            templateRepository.save(biz8);
+            logs.put("template_business_8", "Created");
         }
 
         Category portfolioCategory = catMap.get("portfolio");

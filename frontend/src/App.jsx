@@ -32,6 +32,7 @@ import GradientPortfolio from './pages/GradientPortfolio';
 import EditorialPortfolio from './pages/EditorialPortfolio';
 import PhotographyPortfolio from './pages/PhotographyPortfolio';
 import CreativeMultipagePortfolio from './pages/CreativeMultipagePortfolio';
+import EdTechInteractiveTemplate from './pages/EdTechInteractiveTemplate';
 
 
 function Header({ cartCount, user, onLogout }) {
@@ -383,7 +384,8 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
   const isTemplateRoute = 
     location.pathname === '/hotel-template' ||
     location.pathname.startsWith('/templates/photography/photography-') ||
-    location.pathname.startsWith('/templates/portfolio/portfolio-');
+    location.pathname.startsWith('/templates/portfolio/portfolio-') ||
+    location.pathname.startsWith('/templates/education/education-5');
 
   // Full-screen template routes
   if (isTemplateRoute) {
@@ -425,6 +427,9 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
         <Route path="/templates/portfolio/portfolio-8/index.html" element={<DevicePreviewWrapper><EditorialPortfolio /></DevicePreviewWrapper>} />
         <Route path="/templates/portfolio/portfolio-9/*" element={<DevicePreviewWrapper><PhotographyPortfolio /></DevicePreviewWrapper>} />
         <Route path="/templates/portfolio/portfolio-10/*" element={<DevicePreviewWrapper><CreativeMultipagePortfolio /></DevicePreviewWrapper>} />
+
+        {/* Education templates */}
+        <Route path="/templates/education/education-5/*" element={<DevicePreviewWrapper><EdTechInteractiveTemplate /></DevicePreviewWrapper>} />
       </Routes>
     );
   }

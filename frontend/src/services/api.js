@@ -962,6 +962,21 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/education/education-4/index.html'
   },
   {
+    id: 161,
+    name: 'AuraLearn — Premium Next-Gen Interactive EdTech Platform & Student Portal',
+    slug: 'interactive-edtech-platform',
+    previewImage: '/education-5_cover.png',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 10, name: 'Education', slug: 'education' },
+    pagesCount: 8,
+    downloadsCount: 1420,
+    description: 'A futuristic learning platform featuring an interactive mouse-following learning universe hero, scroll-drawn learning journeys, dynamic filtered explorers, custom cursors, and fully interactive Student, Instructor, and Admin Dashboards.',
+    bootstrapVersion: 'React / Vite / Tailwind CSS / Motion',
+    version: '1.0.0',
+    demoUrl: '/templates/education/education-5/index.html'
+  },
+  {
     id: 171,
     name: 'Aurelius — High-End Historical Renovation & Heritage Atelier',
     slug: 'aurelius-renovation',

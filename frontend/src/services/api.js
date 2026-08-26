@@ -19,7 +19,10 @@ const MOCK_CATEGORIES = [
   { id: 16, name: 'cooperate', slug: 'cooperate' },
   { id: 17, name: 'agency', slug: 'agency' },
   { id: 18, name: 'portfolio', slug: 'portfolio' },
-  { id: 19, name: 'Real Estate', slug: 'real-estate' }
+  { id: 19, name: 'Real Estate', slug: 'real-estate' },
+  { id: 20, name: 'Resume', slug: 'resume' },
+  { id: 21, name: 'Transportation', slug: 'transportation' },
+  { id: 22, name: 'Personal', slug: 'personal' }
 ];
 
 const MOCK_TEMPLATES = [

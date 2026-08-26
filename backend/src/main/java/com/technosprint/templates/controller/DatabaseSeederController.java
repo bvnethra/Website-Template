@@ -105,7 +105,10 @@ public class DatabaseSeederController {
                 {"cooperate", "cooperate", "Enterprise consulting, corporate services, and financial groups."},
                 {"agency", "agency", "Design studios, marketing firms, and creative agencies."},
                 {"portfolio", "portfolio", "Personal resumes, developer bios, and work showcases."},
-                {"Real Estate", "real-estate", "Premium villa listings, property agents, and real estate developer templates."}
+                {"Real Estate", "real-estate", "Premium villa listings, property agents, and real estate developer templates."},
+                {"Resume", "resume", "Sleek professional resumes, CV templates, and personal branding profiles."},
+                {"Transportation", "transportation", "Logistics, courier service, trucking, and passenger transit templates."},
+                {"Personal", "personal", "Personal blogs, lifestyle diaries, and individual landing page templates."}
         };
 
         Map<String, Category> catMap = new HashMap<>();

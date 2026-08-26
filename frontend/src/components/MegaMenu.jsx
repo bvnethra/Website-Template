@@ -4,7 +4,7 @@ import {
   LayoutDashboard, Activity, BookOpen, Clock, Plane, Hotel,
   Calendar, Camera, HardHat, GraduationCap, Utensils, ShoppingBag,
   Briefcase, Layers, Sparkles, Building2, Workflow, FolderOpen,
-  ArrowRight
+  ArrowRight, Home, FileText, Truck, User
 } from 'lucide-react';
 
 const categories = [
@@ -16,6 +16,7 @@ const categories = [
     { name: 'Comming soon', slug: 'comming-soon', icon: Clock },
     { name: 'Travels', slug: 'travels', icon: Plane },
     { name: 'Hotel', slug: 'hotel', icon: Hotel },
+    { name: 'Real Estate', slug: 'real-estate', icon: Home },
   ],
   // Column 2
   [
@@ -25,6 +26,7 @@ const categories = [
     { name: 'Education', slug: 'education', icon: GraduationCap },
     { name: 'Restaurant', slug: 'restaurant', icon: Utensils },
     { name: 'Ecommerce', slug: 'ecommerce', icon: ShoppingBag },
+    { name: 'Resume', slug: 'resume', icon: FileText },
   ],
   // Column 3
   [
@@ -34,6 +36,8 @@ const categories = [
     { name: 'Corporate', slug: 'cooperate', icon: Building2 },
     { name: 'Agency', slug: 'agency', icon: Workflow },
     { name: 'Portfolio', slug: 'portfolio', icon: FolderOpen },
+    { name: 'Transportation', slug: 'transportation', icon: Truck },
+    { name: 'Personal', slug: 'personal', icon: User },
   ]
 ];
 

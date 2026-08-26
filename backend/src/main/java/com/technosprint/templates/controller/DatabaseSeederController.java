@@ -177,6 +177,106 @@ public class DatabaseSeederController {
             admin3.setTags(new ArrayList<>(Arrays.asList("Editorial", "Command Center", "Obsidian")));
             templateRepository.save(admin3);
             logs.put("template_admin_3", "Created");
+
+            // admin-4 (CoreVista)
+            Template admin4 = new Template();
+            admin4.setName("CoreVista — Premium Project Management & ERP");
+            admin4.setSlug("admin-4");
+            admin4.setDescription("A multi-functional enterprise project management and ERP panel. Features 10 main controller modules with 50 sub-pages total, custom client portfolios, and secure authorization screens.");
+            admin4.setCategory(adminCategory);
+            admin4.setPrice(0.0);
+            admin4.setTemplateType("FREE");
+            admin4.setBootstrapVersion("React / Tailwind / Vite / TS");
+            admin4.setDemoUrl("/templates/admin/admin-4/index.html");
+            admin4.setDownloadFile("");
+            admin4.setPreviewImage("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80");
+            admin4.setVersion("1.0.0");
+            admin4.setStatus("PUBLISHED");
+            admin4.setPagesCount(50);
+            admin4.setDownloadsCount(1980);
+            admin4.setTags(new ArrayList<>(Arrays.asList("ERP", "Project Management", "Multi-page", "Vite", "React")));
+            templateRepository.save(admin4);
+            logs.put("template_admin_4", "Created");
+
+            // admin-5 (ApexAdmin)
+            Template admin5 = new Template();
+            admin5.setName("ApexAdmin — Multipurpose Enterprise Command Panel");
+            admin5.setSlug("admin-5");
+            admin5.setDescription("A comprehensive multipurpose administrative control system. Features 7 dashboard view presets, client message boxes, custom user/role directories, and dynamic utility modules.");
+            admin5.setCategory(adminCategory);
+            admin5.setPrice(0.0);
+            admin5.setTemplateType("FREE");
+            admin5.setBootstrapVersion("React / Vite / Tailwind CSS");
+            admin5.setDemoUrl("/templates/admin/admin-5/index.html");
+            admin5.setDownloadFile("");
+            admin5.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
+            admin5.setVersion("1.0.0");
+            admin5.setStatus("PUBLISHED");
+            admin5.setPagesCount(25);
+            admin5.setDownloadsCount(1650);
+            admin5.setTags(new ArrayList<>(Arrays.asList("Admin Dashboard", "Multipurpose", "Widgets", "Vite", "React")));
+            templateRepository.save(admin5);
+            logs.put("template_admin_5", "Created");
+
+            // admin-6 (Horizon)
+            Template admin6 = new Template();
+            admin6.setName("Horizon — Global Operations Command");
+            admin6.setSlug("admin-6");
+            admin6.setDescription("A premium operations command center dashboard. Features dark theme aesthetics, custom authentication routes, live search indices, and dynamic task scoping selectors.");
+            admin6.setCategory(adminCategory);
+            admin6.setPrice(0.0);
+            admin6.setTemplateType("FREE");
+            admin6.setBootstrapVersion("React / Tailwind / Vite / TS");
+            admin6.setDemoUrl("/templates/admin/admin-6/index.html");
+            admin6.setDownloadFile("");
+            admin6.setPreviewImage("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80");
+            admin6.setVersion("1.0.0");
+            admin6.setStatus("PUBLISHED");
+            admin6.setPagesCount(12);
+            admin6.setDownloadsCount(1540);
+            admin6.setTags(new ArrayList<>(Arrays.asList("Command Center", "Operations", "Dark Mode", "React", "TS")));
+            templateRepository.save(admin6);
+            logs.put("template_admin_6", "Created");
+
+            // admin-7 (Elysium)
+            Template admin7 = new Template();
+            admin7.setName("Elysium — Unified Cloud Analytics Engine");
+            admin7.setSlug("admin-7");
+            admin7.setDescription("A clean and professional cloud infrastructure analytics dashboard. Features system telemetry, task queues, HR analytics, and messages views under a state-based layout shell.");
+            admin7.setCategory(adminCategory);
+            admin7.setPrice(0.0);
+            admin7.setTemplateType("FREE");
+            admin7.setBootstrapVersion("React / Tailwind / Vite / TS");
+            admin7.setDemoUrl("/templates/admin/admin-7/index.html");
+            admin7.setDownloadFile("");
+            admin7.setPreviewImage("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80");
+            admin7.setVersion("1.0.0");
+            admin7.setStatus("PUBLISHED");
+            admin7.setPagesCount(18);
+            admin7.setDownloadsCount(1820);
+            admin7.setTags(new ArrayList<>(Arrays.asList("Cloud Infrastructure", "Telemetry", "HR Analytics", "React", "TS")));
+            templateRepository.save(admin7);
+            logs.put("template_admin_7", "Created");
+
+            // admin-8 (Ember)
+            Template admin8 = new Template();
+            admin8.setName("Ember — Premium Financial Operations Ledger");
+            admin8.setSlug("admin-8");
+            admin8.setDescription("An advanced financial ledger and inventory system. Features custom date range filters, transaction exports, dynamic KPIs, and product performance cards.");
+            admin8.setCategory(adminCategory);
+            admin8.setPrice(0.0);
+            admin8.setTemplateType("FREE");
+            admin8.setBootstrapVersion("React / Tailwind / Vite / TS");
+            admin8.setDemoUrl("/templates/admin/admin-8/index.html");
+            admin8.setDownloadFile("");
+            admin8.setPreviewImage("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80");
+            admin8.setVersion("1.0.0");
+            admin8.setStatus("PUBLISHED");
+            admin8.setPagesCount(10);
+            admin8.setDownloadsCount(1460);
+            admin8.setTags(new ArrayList<>(Arrays.asList("Financial Ledger", "Inventory", "KPI Metrics", "React", "TS")));
+            templateRepository.save(admin8);
+            logs.put("template_admin_8", "Created");
         }
 
         // 4. Seed Qure Nexa template under Medical category

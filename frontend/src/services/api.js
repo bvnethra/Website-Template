@@ -2084,15 +2084,15 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9202,
-    name: 'StatusBusy — Lead Capture & App Promotion',
+    name: 'Vanta Studio — Creative Digital Agency',
     slug: 'landing-page-2',
-    previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    previewImage: 'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
     category: { id: 15, name: 'landing page', slug: 'landing-page' },
     pagesCount: 1,
     downloadsCount: 1380,
-    description: 'A modern SaaS and app promotion landing page with clean lead-capture forms, dynamic feature lists, pricing matrices, and clean typography.',
+    description: 'Vanta Studio is an independent creative digital agency that builds brands people remember. We partner with ambitious companies to create premium brand identities, websites, and digital experiences.',
     bootstrapVersion: 'React / Vite / CSS',
     demoUrl: '/templates/landing-page/landing-page-2/index.html',
     version: '1.0'

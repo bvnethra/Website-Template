@@ -2947,23 +2947,23 @@ public class DatabaseSeederController {
             templateRepository.save(lp1);
             logs.put("template_landing_page_1", "Created");
 
-            // landing-page-2 (StatusBusy)
+            // landing-page-2 (VantaStudio)
             Template lp2 = new Template();
-            lp2.setName("StatusBusy — Lead Capture & App Promotion");
+            lp2.setName("Vanta Studio — Creative Digital Agency");
             lp2.setSlug("landing-page-2");
-            lp2.setDescription("A modern SaaS and app promotion landing page with clean lead-capture forms, dynamic feature lists, pricing matrices, and clean typography.");
+            lp2.setDescription("Vanta Studio is an independent creative digital agency that builds brands people remember. We partner with ambitious companies to create premium brand identities, websites, and digital experiences.");
             lp2.setCategory(landingPageCategory);
             lp2.setPrice(0.0);
             lp2.setTemplateType("FREE");
             lp2.setBootstrapVersion("React / Vite / CSS");
             lp2.setDemoUrl("/templates/landing-page/landing-page-2/index.html");
             lp2.setDownloadFile("");
-            lp2.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
+            lp2.setPreviewImage("https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80");
             lp2.setVersion("1.0.0");
             lp2.setStatus("PUBLISHED");
             lp2.setPagesCount(1);
             lp2.setDownloadsCount(1380);
-            lp2.setTags(new ArrayList<>(Arrays.asList("SaaS", "App Promotion", "Lead Capture", "React")));
+            lp2.setTags(new ArrayList<>(Arrays.asList("Agency", "Creative Agency", "Portfolio", "React")));
             templateRepository.save(lp2);
             logs.put("template_landing_page_2", "Created");
 

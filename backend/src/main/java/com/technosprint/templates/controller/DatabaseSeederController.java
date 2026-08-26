@@ -184,13 +184,13 @@ public class DatabaseSeederController {
         if (medicalCategory != null) {
             Template qureNexa = new Template();
             qureNexa.setName("Qure Nexa — Advanced Medical & Healthcare Platform");
-            qureNexa.setSlug("qure-nexa");
+            qureNexa.setSlug("medical-1");
             qureNexa.setDescription("A modern healthcare and hospital management platform featuring multi-role portals for Patients, Doctors, and Admins, doctor directory, intelligent slot booking, and clinical workflows.");
             qureNexa.setCategory(medicalCategory);
             qureNexa.setPrice(0.0);
             qureNexa.setTemplateType("FREE");
             qureNexa.setBootstrapVersion("React 19 / Tailwind CSS / Vite");
-            qureNexa.setDemoUrl("/templates/medical/qure-nexa/index.html");
+            qureNexa.setDemoUrl("/templates/medical/medical-1/index.html");
             qureNexa.setDownloadFile("qure-nexa-medical.zip");
             qureNexa.setPreviewImage("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80");
             qureNexa.setVersion("1.0");
@@ -284,13 +284,13 @@ public class DatabaseSeederController {
             // Seed Medical-7 (ApexHealth)
             Template medical7 = new Template();
             medical7.setName("ApexHealth — Modern Dynamic Medical Platform");
-            medical7.setSlug("medical-7");
+            medical7.setSlug("medical-6");
             medical7.setDescription("Modern Dynamic Medical Platform for Patients, Doctors, and Healthcare Administrators. Real-time slot booking, doctor discovery, and patient portals.");
             medical7.setCategory(medicalCategory);
             medical7.setPrice(0.0);
             medical7.setTemplateType("FREE");
             medical7.setBootstrapVersion("React / Tailwind CSS / Vite");
-            medical7.setDemoUrl("/templates/medical/medical-7/index.html");
+            medical7.setDemoUrl("/templates/medical/medical-6/index.html");
             medical7.setDownloadFile("");
             medical7.setPreviewImage("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80");
             medical7.setVersion("1.0");
@@ -304,13 +304,13 @@ public class DatabaseSeederController {
             // Seed Medical-8 (PulseCare)
             Template medical8 = new Template();
             medical8.setName("PulseCare — Modern Dynamic Healthcare Platform");
-            medical8.setSlug("medical-8");
+            medical8.setSlug("medical-7");
             medical8.setDescription("Discover top doctors, compare availability, book instant appointments, and manage health records securely with PulseCare Healthcare Platform.");
             medical8.setCategory(medicalCategory);
             medical8.setPrice(0.0);
             medical8.setTemplateType("FREE");
             medical8.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
-            medical8.setDemoUrl("/templates/medical/medical-8/index.html");
+            medical8.setDemoUrl("/templates/medical/medical-7/index.html");
             medical8.setDownloadFile("");
             medical8.setPreviewImage("https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80");
             medical8.setVersion("1.0");

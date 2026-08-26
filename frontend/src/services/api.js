@@ -145,7 +145,7 @@ const MOCK_TEMPLATES = [
   {
     id: 4,
     name: 'Qure Nexa — Advanced Medical & Healthcare Platform',
-    slug: 'qure-nexa',
+    slug: 'medical-1',
     previewImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -154,7 +154,7 @@ const MOCK_TEMPLATES = [
     downloadsCount: 12400,
     description: 'A modern healthcare and hospital management platform featuring multi-role portals for Patients, Doctors, and Admins, doctor directory, intelligent slot booking, and clinical workflows.',
     bootstrapVersion: 'React 19 / Tailwind CSS / Vite',
-    demoUrl: '/templates/medical/qure-nexa/index.html',
+    demoUrl: '/templates/medical/medical-1/index.html',
   },
   {
     id: 9002,
@@ -1890,7 +1890,7 @@ const MOCK_TEMPLATES = [
   {
     id: 9007,
     name: 'ApexHealth — Modern Dynamic Medical Platform',
-    slug: 'medical-7',
+    slug: 'medical-6',
     previewImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -1899,13 +1899,13 @@ const MOCK_TEMPLATES = [
     downloadsCount: 1580,
     description: 'Modern Dynamic Medical Platform for Patients, Doctors, and Healthcare Administrators. Real-time slot booking, doctor discovery, and patient portals.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
-    demoUrl: '/templates/medical/medical-7/index.html',
+    demoUrl: '/templates/medical/medical-6/index.html',
     version: '1.0'
   },
   {
     id: 9008,
     name: 'PulseCare — Modern Dynamic Healthcare Platform',
-    slug: 'medical-8',
+    slug: 'medical-7',
     previewImage: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -1914,7 +1914,7 @@ const MOCK_TEMPLATES = [
     downloadsCount: 1750,
     description: 'Discover top doctors, compare availability, book instant appointments, and manage health records securely with PulseCare Healthcare Platform.',
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
-    demoUrl: '/templates/medical/medical-8/index.html',
+    demoUrl: '/templates/medical/medical-7/index.html',
     version: '1.0'
   }
 ];

@@ -2991,25 +2991,7 @@ public class DatabaseSeederController {
             templateRepository.save(lp3);
             logs.put("template_landing_page_3", "Created");
 
-            // landing-page-5 (AuraLanding)
-            Template lp5 = new Template();
-            lp5.setName("AuraLanding — Interactive Conversion Portal");
-            lp5.setSlug("landing-page-5");
-            lp5.setDescription("A high-converting product promo landing page with interactive product display panels, dynamic custom search modals, and clean responsive grids.");
-            lp5.setCategory(landingPageCategory);
-            lp5.setPrice(0.0);
-            lp5.setTemplateType("FREE");
-            lp5.setBootstrapVersion("React / Tailwind / Vite");
-            lp5.setDemoUrl("/templates/landing-page/landing-page-5/index.html");
-            lp5.setDownloadFile("");
-            lp5.setPreviewImage("https://images.unsplash.com/photo-1507633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80");
-            lp5.setVersion("1.0.0");
-            lp5.setStatus("PUBLISHED");
-            lp5.setPagesCount(1);
-            lp5.setDownloadsCount(1470);
-            lp5.setTags(new ArrayList<>(Arrays.asList("Promo Portal", "Custom Search", "React", "Tailwind")));
-            templateRepository.save(lp5);
-            logs.put("template_landing_page_5", "Created");
+
 
             // landing-page-6 (Lunara Press)
             Template lp6 = new Template();

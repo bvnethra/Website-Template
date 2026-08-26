@@ -2116,21 +2116,7 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/landing-page/landing-page-3/index.html',
     version: '1.0'
   },
-  {
-    id: 9205,
-    name: 'AuraLanding — Interactive Conversion Portal',
-    slug: 'landing-page-5',
-    previewImage: 'https://images.unsplash.com/photo-1507633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
-    templateType: 'FREE',
-    price: 0,
-    category: { id: 15, name: 'landing page', slug: 'landing-page' },
-    pagesCount: 1,
-    downloadsCount: 1470,
-    description: 'A high-converting product promo landing page with interactive product display panels, dynamic custom search modals, and clean responsive grids.',
-    bootstrapVersion: 'React / Tailwind / Vite',
-    demoUrl: '/templates/landing-page/landing-page-5/index.html',
-    version: '1.0'
-  },
+
   {
     id: 9206,
     name: 'Lunara Press — Author & Book Landing Page',

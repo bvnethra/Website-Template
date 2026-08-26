@@ -1,6 +1,0 @@
-{
-  "name": "Eduvora University",
-  "description": "Comprehensive Student Portal & Academic Examination Authentication System for Eduvora University featuring examination registration, hall ticket generator, grade sheets, revaluation/review tracking, circular notices, and security audits.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

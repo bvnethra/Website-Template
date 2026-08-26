@@ -40,7 +40,7 @@ const MOCK_TEMPLATES = [
   {
     id: 1,
     name: 'SnapFolio  -  Dark Minimalist Portfolio',
-    slug: 'snapfolio-template',
+    slug: 'photography-1',
     previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -50,12 +50,12 @@ const MOCK_TEMPLATES = [
     description: 'A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.',
     bootstrapVersion: 'HTML5 / Tailwind CSS',
     version: '1.0',
-    demoUrl: '/templates/photography/snapfolio-template/index.html'
+    demoUrl: '/templates/photography/photography-1/index.html'
   },
   {
     id: 2,
     name: 'Photo  -  Editorial Photography Studio',
-    slug: 'photo-template',
+    slug: 'photography-2',
     previewImage: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -65,12 +65,12 @@ const MOCK_TEMPLATES = [
     description: 'A high-end, editorial landing page template for creative photography studios. Features Sphere-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0',
-    demoUrl: '/templates/photography/photo-template/index.html'
+    demoUrl: '/templates/photography/photography-2/index.html'
   },
   {
     id: 3,
     name: 'Lumière — High-End Wedding & Event Photography',
-    slug: 'wedding-template',
+    slug: 'photography-3',
     previewImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -80,12 +80,12 @@ const MOCK_TEMPLATES = [
     description: 'A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.',
     bootstrapVersion: 'HTML5 / Tailwind CSS',
     version: '1.0',
-    demoUrl: '/templates/photography/wedding-template/index.html'
+    demoUrl: '/templates/photography/photography-3/index.html'
   },
   {
     id: 124,
     name: 'Eden Rose — Cinematic Luxury Wedding Portfolio',
-    slug: 'cinematic-wedding',
+    slug: 'photography-4',
     previewImage: '/cinematic_cover.png',
     templateType: 'FREE',
     price: 0,
@@ -95,12 +95,12 @@ const MOCK_TEMPLATES = [
     description: 'A high-end cinematic wedding photography portfolio template with immersive slideshows, custom transitions, and smooth galleries.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0.0',
-    demoUrl: '/templates/photography/cinematic-wedding/index.html'
+    demoUrl: '/templates/photography/photography-4/index.html'
   },
   {
     id: 125,
     name: 'AURA — Premium Fine Art Studio',
-    slug: 'fineart-template',
+    slug: 'photography-5',
     previewImage: '/fineart_cover.png',
     templateType: 'FREE',
     price: 0,
@@ -110,12 +110,12 @@ const MOCK_TEMPLATES = [
     description: 'A premium fine art and editorial studio portfolio featuring elegant dark-theme aesthetics, grid catalogs, and custom zoom-in lightboxes.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0.0',
-    demoUrl: '/templates/photography/fineart-template/index.html'
+    demoUrl: '/templates/photography/photography-5/index.html'
   },
   {
     id: 145,
     name: 'Lume Studio — Fashion & Editorial Portfolio',
-    slug: 'isteady-template',
+    slug: 'photography-7',
     previewImage: '/lume_cover.png',
     templateType: 'FREE',
     price: 0,
@@ -125,12 +125,12 @@ const MOCK_TEMPLATES = [
     description: 'A fashion-focused editorial photography portfolio with clean minimalist grids, typography layouts, and interactive sliders.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0.0',
-    demoUrl: '/templates/photography/isteady-template/index.html'
+    demoUrl: '/templates/photography/photography-7/index.html'
   },
   {
     id: 127,
     name: 'Kairo — Modern 3D Photography Portfolio',
-    slug: 'kairo-template',
+    slug: 'photography-6',
     previewImage: '/kairo_cover.png',
     templateType: 'FREE',
     price: 0,
@@ -140,7 +140,7 @@ const MOCK_TEMPLATES = [
     description: 'A modern, interactive photography portfolio featuring advanced 3D orbital interactions, custom cursor shaders, and horizontal scroll grids.',
     bootstrapVersion: 'HTML5 / Three.js / Vanilla JS',
     version: '1.0.0',
-    demoUrl: '/templates/photography/kairo-template/index.html'
+    demoUrl: '/templates/photography/photography-6/index.html'
   },
   {
     id: 4,
@@ -505,7 +505,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium tech and leadership event launching platform. Features dynamic schedules, speaker registries, digital ticket cards, countdown timers, and reservation capture modals.',
     bootstrapVersion: 'React / Tailwind / Plus Jakarta Sans',
     version: '1.0.0',
-    demoUrl: '/templates/events/education-1/index.html'
+    demoUrl: '/templates/events/events-1/index.html'
   },
   {
     id: 104,

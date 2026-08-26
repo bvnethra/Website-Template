@@ -328,13 +328,13 @@ public class DatabaseSeederController {
             // SnapFolio template
             Template snapfolio = new Template();
             snapfolio.setName("SnapFolio — Dark Minimalist Portfolio");
-            snapfolio.setSlug("snapfolio-template");
+            snapfolio.setSlug("photography-1");
             snapfolio.setDescription("A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.");
             snapfolio.setCategory(photography);
             snapfolio.setPrice(0.0);
             snapfolio.setTemplateType("FREE");
             snapfolio.setBootstrapVersion("HTML5 / Tailwind CSS");
-            snapfolio.setDemoUrl("/templates/photography/snapfolio-template/index.html");
+            snapfolio.setDemoUrl("/templates/photography/photography-1/index.html");
             snapfolio.setDownloadFile("snapfolio-template.zip");
             snapfolio.setPreviewImage("https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80");
             snapfolio.setVersion("1.0.0");
@@ -348,13 +348,13 @@ public class DatabaseSeederController {
             // Photo template
             Template photo = new Template();
             photo.setName("Photo — Editorial Photography Studio");
-            photo.setSlug("photo-template");
+            photo.setSlug("photography-2");
             photo.setDescription("A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.");
             photo.setCategory(photography);
             photo.setPrice(0.0);
             photo.setTemplateType("FREE");
             photo.setBootstrapVersion("HTML5 / Vanilla CSS");
-            photo.setDemoUrl("/templates/photography/photo-template/index.html");
+            photo.setDemoUrl("/templates/photography/photography-2/index.html");
             photo.setDownloadFile("photo-template.zip");
             photo.setPreviewImage("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80");
             photo.setVersion("1.0.0");
@@ -368,13 +368,13 @@ public class DatabaseSeederController {
             // Wedding template (Lumière)
             Template wedding = new Template();
             wedding.setName("Lumière — High-End Wedding & Event Photography");
-            wedding.setSlug("wedding-template");
+            wedding.setSlug("photography-3");
             wedding.setDescription("A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.");
             wedding.setCategory(photography);
             wedding.setPrice(0.0);
             wedding.setTemplateType("FREE");
             wedding.setBootstrapVersion("HTML5 / Tailwind CSS");
-            wedding.setDemoUrl("/templates/photography/wedding-template/index.html");
+            wedding.setDemoUrl("/templates/photography/photography-3/index.html");
             wedding.setDownloadFile("wedding-template.zip");
             wedding.setPreviewImage("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80");
             wedding.setVersion("1.0.0");
@@ -448,13 +448,13 @@ public class DatabaseSeederController {
             // Seed Eden Rose (cinematic-wedding)
             Template edenRose = new Template();
             edenRose.setName("Eden Rose — Cinematic Luxury Wedding Portfolio");
-            edenRose.setSlug("cinematic-wedding");
+            edenRose.setSlug("photography-4");
             edenRose.setDescription("A high-end cinematic wedding photography portfolio template with immersive slideshows, custom transitions, and smooth galleries.");
             edenRose.setCategory(photography);
             edenRose.setPrice(0.0);
             edenRose.setTemplateType("FREE");
             edenRose.setBootstrapVersion("HTML5 / Vanilla CSS");
-            edenRose.setDemoUrl("/templates/photography/cinematic-wedding/index.html");
+            edenRose.setDemoUrl("/templates/photography/photography-4/index.html");
             edenRose.setDownloadFile("");
             edenRose.setPreviewImage("/cinematic_cover.png");
             edenRose.setVersion("1.0.0");
@@ -468,13 +468,13 @@ public class DatabaseSeederController {
             // Seed Aura (fineart-template)
             Template auraArt = new Template();
             auraArt.setName("AURA — Premium Fine Art Studio");
-            auraArt.setSlug("fineart-template");
+            auraArt.setSlug("photography-5");
             auraArt.setDescription("A premium fine art and editorial studio portfolio featuring elegant dark-theme aesthetics, grid catalogs, and custom zoom-in lightboxes.");
             auraArt.setCategory(photography);
             auraArt.setPrice(0.0);
             auraArt.setTemplateType("FREE");
             auraArt.setBootstrapVersion("HTML5 / Vanilla CSS");
-            auraArt.setDemoUrl("/templates/photography/fineart-template/index.html");
+            auraArt.setDemoUrl("/templates/photography/photography-5/index.html");
             auraArt.setDownloadFile("");
             auraArt.setPreviewImage("/fineart_cover.png");
             auraArt.setVersion("1.0.0");
@@ -488,13 +488,13 @@ public class DatabaseSeederController {
             // Seed Lume Studio (isteady-template)
             Template lumeStudio = new Template();
             lumeStudio.setName("Lume Studio — Fashion & Editorial Portfolio");
-            lumeStudio.setSlug("isteady-template");
+            lumeStudio.setSlug("photography-7");
             lumeStudio.setDescription("A fashion-focused editorial photography portfolio with clean minimalist grids, typography layouts, and interactive sliders.");
             lumeStudio.setCategory(photography);
             lumeStudio.setPrice(0.0);
             lumeStudio.setTemplateType("FREE");
             lumeStudio.setBootstrapVersion("HTML5 / Vanilla CSS");
-            lumeStudio.setDemoUrl("/templates/photography/isteady-template/index.html");
+            lumeStudio.setDemoUrl("/templates/photography/photography-7/index.html");
             lumeStudio.setDownloadFile("");
             lumeStudio.setPreviewImage("/lume_cover.png");
             lumeStudio.setVersion("1.0.0");
@@ -508,13 +508,13 @@ public class DatabaseSeederController {
             // Seed Kairo (kairo-template)
             Template kairoPhoto = new Template();
             kairoPhoto.setName("Kairo — Modern 3D Photography Portfolio");
-            kairoPhoto.setSlug("kairo-template");
+            kairoPhoto.setSlug("photography-6");
             kairoPhoto.setDescription("A modern, interactive photography portfolio featuring advanced 3D orbital interactions, custom cursor shaders, and horizontal scroll grids.");
             kairoPhoto.setCategory(photography);
             kairoPhoto.setPrice(0.0);
             kairoPhoto.setTemplateType("FREE");
             kairoPhoto.setBootstrapVersion("HTML5 / Three.js / Vanilla JS");
-            kairoPhoto.setDemoUrl("/templates/photography/kairo-template/index.html");
+            kairoPhoto.setDemoUrl("/templates/photography/photography-6/index.html");
             kairoPhoto.setDownloadFile("");
             kairoPhoto.setPreviewImage("/kairo_cover.png");
             kairoPhoto.setVersion("1.0.0");
@@ -1691,7 +1691,7 @@ public class DatabaseSeederController {
             eventora.setPrice(0.0);
             eventora.setTemplateType("FREE");
             eventora.setBootstrapVersion("React / Tailwind / Plus Jakarta Sans");
-            eventora.setDemoUrl("/templates/events/education-1/index.html");
+            eventora.setDemoUrl("/templates/events/events-1/index.html");
             eventora.setDownloadFile("");
             eventora.setPreviewImage("https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80");
             eventora.setVersion("1.0.0");

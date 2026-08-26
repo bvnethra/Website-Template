@@ -3085,6 +3085,109 @@ public class DatabaseSeederController {
             logs.put("template_portfolio_10", "Created");
         }
 
+        Category landingPageCategory = catMap.get("landing-page");
+        if (landingPageCategory != null) {
+            // landing-page-1 (Booky)
+            Template lp1 = new Template();
+            lp1.setName("Booky — Lead Generation & Authors Platform");
+            lp1.setSlug("landing-page-1");
+            lp1.setDescription("A professional and clean landing page for authors, books, and publications. Features call-to-action buttons, pricing tables, chapter highlights, and reviews.");
+            lp1.setCategory(landingPageCategory);
+            lp1.setPrice(0.0);
+            lp1.setTemplateType("FREE");
+            lp1.setBootstrapVersion("React / Tailwind / Vite");
+            lp1.setDemoUrl("/templates/landing-page/landing-page-1/index.html");
+            lp1.setDownloadFile("");
+            lp1.setPreviewImage("https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80");
+            lp1.setVersion("1.0.0");
+            lp1.setStatus("PUBLISHED");
+            lp1.setPagesCount(1);
+            lp1.setDownloadsCount(1450);
+            lp1.setTags(new ArrayList<>(Arrays.asList("Authors", "Lead Generation", "React", "Vite")));
+            templateRepository.save(lp1);
+            logs.put("template_landing_page_1", "Created");
+
+            // landing-page-2 (StatusBusy)
+            Template lp2 = new Template();
+            lp2.setName("StatusBusy — Lead Capture & App Promotion");
+            lp2.setSlug("landing-page-2");
+            lp2.setDescription("A modern SaaS and app promotion landing page with clean lead-capture forms, dynamic feature lists, pricing matrices, and clean typography.");
+            lp2.setCategory(landingPageCategory);
+            lp2.setPrice(0.0);
+            lp2.setTemplateType("FREE");
+            lp2.setBootstrapVersion("React / Vite / CSS");
+            lp2.setDemoUrl("/templates/landing-page/landing-page-2/index.html");
+            lp2.setDownloadFile("");
+            lp2.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
+            lp2.setVersion("1.0.0");
+            lp2.setStatus("PUBLISHED");
+            lp2.setPagesCount(1);
+            lp2.setDownloadsCount(1380);
+            lp2.setTags(new ArrayList<>(Arrays.asList("SaaS", "App Promotion", "Lead Capture", "React")));
+            templateRepository.save(lp2);
+            logs.put("template_landing_page_2", "Created");
+
+            // landing-page-3 (ExquDrive)
+            Template lp3 = new Template();
+            lp3.setName("ExquDrive — Dynamic Product Landing Page");
+            lp3.setSlug("landing-page-3");
+            lp3.setDescription("An elegant product launch landing page featuring immersive product grids, dynamic feature comparison tables, interactive customer reviews, and contact sections.");
+            lp3.setCategory(landingPageCategory);
+            lp3.setPrice(0.0);
+            lp3.setTemplateType("FREE");
+            lp3.setBootstrapVersion("React / Vite / CSS");
+            lp3.setDemoUrl("/templates/landing-page/landing-page-3/index.html");
+            lp3.setDownloadFile("");
+            lp3.setPreviewImage("https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80");
+            lp3.setVersion("1.0.0");
+            lp3.setStatus("PUBLISHED");
+            lp3.setPagesCount(1);
+            lp3.setDownloadsCount(1510);
+            lp3.setTags(new ArrayList<>(Arrays.asList("Product Launch", "Comparison Table", "Reviews", "React")));
+            templateRepository.save(lp3);
+            logs.put("template_landing_page_3", "Created");
+
+            // landing-page-4 (Ember & Olive)
+            Template lp4 = new Template();
+            lp4.setName("Ember & Olive — Wood-Fired Restaurant Landing Page");
+            lp4.setSlug("landing-page-4");
+            lp4.setDescription("An elegant wood-fired seasonal restaurant landing page featuring reservation blocks, detailed menus, private events information, and gallery grids.");
+            lp4.setCategory(landingPageCategory);
+            lp4.setPrice(0.0);
+            lp4.setTemplateType("FREE");
+            lp4.setBootstrapVersion("HTML5 / Bootstrap 5 / ES Modules");
+            lp4.setDemoUrl("/templates/landing-page/landing-page-4/index.html");
+            lp4.setDownloadFile("");
+            lp4.setPreviewImage("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80");
+            lp4.setVersion("1.0.0");
+            lp4.setStatus("PUBLISHED");
+            lp4.setPagesCount(6);
+            lp4.setDownloadsCount(1620);
+            lp4.setTags(new ArrayList<>(Arrays.asList("Restaurant", "Reservations", "HTML5", "Bootstrap")));
+            templateRepository.save(lp4);
+            logs.put("template_landing_page_4", "Created");
+
+            // landing-page-5 (AuraLanding)
+            Template lp5 = new Template();
+            lp5.setName("AuraLanding — Interactive Conversion Portal");
+            lp5.setSlug("landing-page-5");
+            lp5.setDescription("A high-converting product promo landing page with interactive product display panels, dynamic custom search modals, and clean responsive grids.");
+            lp5.setCategory(landingPageCategory);
+            lp5.setPrice(0.0);
+            lp5.setTemplateType("FREE");
+            lp5.setBootstrapVersion("React / Tailwind / Vite");
+            lp5.setDemoUrl("/templates/landing-page/landing-page-5/index.html");
+            lp5.setDownloadFile("");
+            lp5.setPreviewImage("https://images.unsplash.com/photo-1507633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80");
+            lp5.setVersion("1.0.0");
+            lp5.setStatus("PUBLISHED");
+            lp5.setPagesCount(1);
+            lp5.setDownloadsCount(1470);
+            lp5.setTags(new ArrayList<>(Arrays.asList("Promo Portal", "Custom Search", "React", "Tailwind")));
+            templateRepository.save(lp5);
+            logs.put("template_landing_page_5", "Created");
+        }
+
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);
     }

@@ -260,6 +260,66 @@ public class DatabaseSeederController {
             veylora.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "hospital", "doctor", "speciality")));
             templateRepository.save(veylora);
             logs.put("template_veylora_health", "Created");
+
+            // Seed Medical-5 (Aura Health)
+            Template medical5 = new Template();
+            medical5.setName("Aura Health - Lilac Frost Medical Platform");
+            medical5.setSlug("medical-5");
+            medical5.setDescription("A premium, calm, and modern medical healthcare platform template with Lilac Frost aesthetic, specialist booking, patient portal, medical records, and clinical services.");
+            medical5.setCategory(medicalCategory);
+            medical5.setPrice(0.0);
+            medical5.setTemplateType("FREE");
+            medical5.setBootstrapVersion("React / Tailwind CSS / Vite");
+            medical5.setDemoUrl("/templates/medical/medical-5/index.html");
+            medical5.setDownloadFile("");
+            medical5.setPreviewImage("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80");
+            medical5.setVersion("1.0");
+            medical5.setStatus("PUBLISHED");
+            medical5.setPagesCount(12);
+            medical5.setDownloadsCount(1420);
+            medical5.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "patient-portal", "lilac-frost", "Vite", "React")));
+            templateRepository.save(medical5);
+            logs.put("template_medical_5", "Created");
+
+            // Seed Medical-7 (ApexHealth)
+            Template medical7 = new Template();
+            medical7.setName("ApexHealth — Modern Dynamic Medical Platform");
+            medical7.setSlug("medical-7");
+            medical7.setDescription("Modern Dynamic Medical Platform for Patients, Doctors, and Healthcare Administrators. Real-time slot booking, doctor discovery, and patient portals.");
+            medical7.setCategory(medicalCategory);
+            medical7.setPrice(0.0);
+            medical7.setTemplateType("FREE");
+            medical7.setBootstrapVersion("React / Tailwind CSS / Vite");
+            medical7.setDemoUrl("/templates/medical/medical-7/index.html");
+            medical7.setDownloadFile("");
+            medical7.setPreviewImage("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80");
+            medical7.setVersion("1.0");
+            medical7.setStatus("PUBLISHED");
+            medical7.setPagesCount(1);
+            medical7.setDownloadsCount(1580);
+            medical7.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "booking", "portal", "Vite", "React")));
+            templateRepository.save(medical7);
+            logs.put("template_medical_7", "Created");
+
+            // Seed Medical-8 (PulseCare)
+            Template medical8 = new Template();
+            medical8.setName("PulseCare — Modern Dynamic Healthcare Platform");
+            medical8.setSlug("medical-8");
+            medical8.setDescription("Discover top doctors, compare availability, book instant appointments, and manage health records securely with PulseCare Healthcare Platform.");
+            medical8.setCategory(medicalCategory);
+            medical8.setPrice(0.0);
+            medical8.setTemplateType("FREE");
+            medical8.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
+            medical8.setDemoUrl("/templates/medical/medical-8/index.html");
+            medical8.setDownloadFile("");
+            medical8.setPreviewImage("https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80");
+            medical8.setVersion("1.0");
+            medical8.setStatus("PUBLISHED");
+            medical8.setPagesCount(1);
+            medical8.setDownloadsCount(1750);
+            medical8.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "appointments", "records", "Vanilla JS")));
+            templateRepository.save(medical8);
+            logs.put("template_medical_8", "Created");
         }
 
         // 5. Seed Photography templates

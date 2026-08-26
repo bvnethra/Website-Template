@@ -1871,6 +1871,51 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Vite / Tailwind CSS / Router',
     version: '1.0.0',
     demoUrl: '/templates/portfolio/portfolio-10/index.html'
+  },
+  {
+    id: 9005,
+    name: 'Aura Health - Lilac Frost Medical Platform',
+    slug: 'medical-5',
+    previewImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 2, name: 'Medical', slug: 'medical' },
+    pagesCount: 12,
+    downloadsCount: 1420,
+    description: 'A premium, calm, and modern medical healthcare platform template with Lilac Frost aesthetic, specialist booking, patient portal, medical records, and clinical services.',
+    bootstrapVersion: 'React / Tailwind CSS / Vite',
+    demoUrl: '/templates/medical/medical-5/index.html',
+    version: '1.0'
+  },
+  {
+    id: 9007,
+    name: 'ApexHealth — Modern Dynamic Medical Platform',
+    slug: 'medical-7',
+    previewImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 2, name: 'Medical', slug: 'medical' },
+    pagesCount: 1,
+    downloadsCount: 1580,
+    description: 'Modern Dynamic Medical Platform for Patients, Doctors, and Healthcare Administrators. Real-time slot booking, doctor discovery, and patient portals.',
+    bootstrapVersion: 'React / Tailwind CSS / Vite',
+    demoUrl: '/templates/medical/medical-7/index.html',
+    version: '1.0'
+  },
+  {
+    id: 9008,
+    name: 'PulseCare — Modern Dynamic Healthcare Platform',
+    slug: 'medical-8',
+    previewImage: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 2, name: 'Medical', slug: 'medical' },
+    pagesCount: 1,
+    downloadsCount: 1750,
+    description: 'Discover top doctors, compare availability, book instant appointments, and manage health records securely with PulseCare Healthcare Platform.',
+    bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
+    demoUrl: '/templates/medical/medical-8/index.html',
+    version: '1.0'
   }
 ];
 

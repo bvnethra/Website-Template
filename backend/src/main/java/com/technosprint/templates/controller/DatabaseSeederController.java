@@ -3030,6 +3030,66 @@ public class DatabaseSeederController {
             lp6.setTags(new ArrayList<>(Arrays.asList("Authors", "Flipbook", "React", "Vite")));
             templateRepository.save(lp6);
             logs.put("template_landing_page_6", "Created");
+
+            // landing-page-4 (Flowzen)
+            Template lp4 = new Template();
+            lp4.setName("Flowzen — Premium SaaS Landing Page");
+            lp4.setSlug("landing-page-4");
+            lp4.setDescription("A premium SaaS and product landing page with modern dark mode aesthetic, interactive features list, custom modal overlays, and pricing calculator.");
+            lp4.setCategory(landingPageCategory);
+            lp4.setPrice(0.0);
+            lp4.setTemplateType("FREE");
+            lp4.setBootstrapVersion("React / Tailwind / Vite");
+            lp4.setDemoUrl("/templates/landing-page/landing-page-4/index.html");
+            lp4.setDownloadFile("");
+            lp4.setPreviewImage("https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80");
+            lp4.setVersion("1.0.0");
+            lp4.setStatus("PUBLISHED");
+            lp4.setPagesCount(1);
+            lp4.setDownloadsCount(1420);
+            lp4.setTags(new ArrayList<>(Arrays.asList("SaaS", "Dark Mode", "React", "Tailwind")));
+            templateRepository.save(lp4);
+            logs.put("template_landing_page_4", "Created");
+
+            // landing-page-7 (SaaSify)
+            Template lp7 = new Template();
+            lp7.setName("SaaSify — Next-Gen App Promotion Landing Page");
+            lp7.setSlug("landing-page-7");
+            lp7.setDescription("A premium tech startup landing page featuring rich pricing sliders, interactive product showcases, statistics panels, and testimonials carousel.");
+            lp7.setCategory(landingPageCategory);
+            lp7.setPrice(0.0);
+            lp7.setTemplateType("FREE");
+            lp7.setBootstrapVersion("React / CSS / Vite");
+            lp7.setDemoUrl("/templates/landing-page/landing-page-7/index.html");
+            lp7.setDownloadFile("");
+            lp7.setPreviewImage("https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&w=800&q=80");
+            lp7.setVersion("1.0.0");
+            lp7.setStatus("PUBLISHED");
+            lp7.setPagesCount(1);
+            lp7.setDownloadsCount(1390);
+            lp7.setTags(new ArrayList<>(Arrays.asList("SaaS", "App Promotion", "Vite", "React")));
+            templateRepository.save(lp7);
+            logs.put("template_landing_page_7", "Created");
+
+            // landing-page-8 (Vanta Studio)
+            Template lp8 = new Template();
+            lp8.setName("Vanta Studio — Creative Agency Showcase");
+            lp8.setSlug("landing-page-8");
+            lp8.setDescription("Ultra-premium creative agency showcase and digital portfolio landing page featuring sleek dark design, interactive casework grids, and immersive contact CTA layouts.");
+            lp8.setCategory(landingPageCategory);
+            lp8.setPrice(0.0);
+            lp8.setTemplateType("FREE");
+            lp8.setBootstrapVersion("React / Tailwind / Vite");
+            lp8.setDemoUrl("/templates/landing-page/landing-page-8/index.html");
+            lp8.setDownloadFile("");
+            lp8.setPreviewImage("https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80");
+            lp8.setVersion("1.0.0");
+            lp8.setStatus("PUBLISHED");
+            lp8.setPagesCount(1);
+            lp8.setDownloadsCount(1410);
+            lp8.setTags(new ArrayList<>(Arrays.asList("Agency", "Creative", "Tailwind", "React")));
+            templateRepository.save(lp8);
+            logs.put("template_landing_page_8", "Created");
         }
 
         Category onepageCategory = catMap.get("onepage");

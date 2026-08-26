@@ -21,6 +21,19 @@ import ISteadyGimbal from './pages/ISteadyGimbal';
 import DevicePreviewWrapper from './components/DevicePreviewWrapper';
 import MegaMenu from './components/MegaMenu';
 
+// Portfolio templates
+import ArchitecturePortfolio from './pages/ArchitecturePortfolio';
+import PersonalPortfolio from './pages/PersonalPortfolio';
+import CreativePortfolio from './pages/CreativePortfolio';
+import MinimalPortfolio from './pages/MinimalPortfolio';
+import MultipagePortfolio from './pages/MultipagePortfolio';
+import AgencyPortfolio from './pages/AgencyPortfolio';
+import GradientPortfolio from './pages/GradientPortfolio';
+import EditorialPortfolio from './pages/EditorialPortfolio';
+import PhotographyPortfolio from './pages/PhotographyPortfolio';
+import CreativeMultipagePortfolio from './pages/CreativeMultipagePortfolio';
+
+
 function Header({ cartCount, user, onLogout }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -379,7 +392,8 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
     location.pathname === '/templates/photography/fineart-template/index.html' ||
     location.pathname.startsWith('/templates/photography/cinematic-wedding') ||
     location.pathname.startsWith('/templates/photography/kairo-template') ||
-    location.pathname.startsWith('/templates/photography/isteady-template');
+    location.pathname.startsWith('/templates/photography/isteady-template') ||
+    location.pathname.startsWith('/templates/portfolio/portfolio-');
 
   // Full-screen template routes
   if (isTemplateRoute) {
@@ -402,6 +416,23 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
         <Route path="/templates/photography/isteady-template" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/isteady-template/index.html" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
 
+        {/* Portfolio templates */}
+        <Route path="/templates/portfolio/portfolio-1" element={<DevicePreviewWrapper><ArchitecturePortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-1/index.html" element={<DevicePreviewWrapper><ArchitecturePortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-2" element={<DevicePreviewWrapper><PersonalPortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-2/index.html" element={<DevicePreviewWrapper><PersonalPortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-3" element={<DevicePreviewWrapper><CreativePortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-3/index.html" element={<DevicePreviewWrapper><CreativePortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-4" element={<DevicePreviewWrapper><MinimalPortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-4/index.html" element={<DevicePreviewWrapper><MinimalPortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-5/*" element={<DevicePreviewWrapper><MultipagePortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-6/*" element={<DevicePreviewWrapper><AgencyPortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-7" element={<DevicePreviewWrapper><GradientPortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-7/index.html" element={<DevicePreviewWrapper><GradientPortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-8" element={<DevicePreviewWrapper><EditorialPortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-8/index.html" element={<DevicePreviewWrapper><EditorialPortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-9/*" element={<DevicePreviewWrapper><PhotographyPortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-10/*" element={<DevicePreviewWrapper><CreativeMultipagePortfolio /></DevicePreviewWrapper>} />
       </Routes>
     );
   }

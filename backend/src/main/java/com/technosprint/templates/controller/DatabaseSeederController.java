@@ -2462,6 +2462,209 @@ public class DatabaseSeederController {
             logs.put("template_business_3", "Created");
         }
 
+        Category portfolioCategory = catMap.get("portfolio");
+        if (portfolioCategory != null) {
+            // Portfolio-1 (Architecture)
+            Template port1 = new Template();
+            port1.setName("Aethelgard — Minimalist Architecture Portfolio");
+            port1.setSlug("portfolio-1");
+            port1.setDescription("A minimalist architecture and luxury property design portfolio featuring custom horizontal slide entries, detailed structural specification tables, and interactive project image modal previews.");
+            port1.setCategory(portfolioCategory);
+            port1.setPrice(0.0);
+            port1.setTemplateType("FREE");
+            port1.setBootstrapVersion("React / Vite / Tailwind CSS");
+            port1.setDemoUrl("/templates/portfolio/portfolio-1/index.html");
+            port1.setDownloadFile("");
+            port1.setPreviewImage("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80");
+            port1.setVersion("1.0.0");
+            port1.setStatus("PUBLISHED");
+            port1.setPagesCount(1);
+            port1.setDownloadsCount(1450);
+            port1.setTags(new ArrayList<>(Arrays.asList("Architecture", "Minimalist", "Design", "Vite", "React")));
+            templateRepository.save(port1);
+            logs.put("template_portfolio_1", "Created");
+
+            // Portfolio-2 (Personal)
+            Template port2 = new Template();
+            port2.setName("Aiden Drake — Modern Dark Personal Portfolio");
+            port2.setSlug("portfolio-2");
+            port2.setDescription("A modern, high-contrast dark theme developer and visual designer personal bio page. Features animated skill progress bars, structured project tags, and custom card grids.");
+            port2.setCategory(portfolioCategory);
+            port2.setPrice(0.0);
+            port2.setTemplateType("FREE");
+            port2.setBootstrapVersion("React / Vite / Tailwind CSS");
+            port2.setDemoUrl("/templates/portfolio/portfolio-2/index.html");
+            port2.setDownloadFile("");
+            port2.setPreviewImage("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80");
+            port2.setVersion("1.0.0");
+            port2.setStatus("PUBLISHED");
+            port2.setPagesCount(1);
+            port2.setDownloadsCount(1580);
+            port2.setTags(new ArrayList<>(Arrays.asList("Personal", "Developer Portfolio", "Dark Theme", "Vite", "React")));
+            templateRepository.save(port2);
+            logs.put("template_portfolio_2", "Created");
+
+            // Portfolio-3 (Creative)
+            Template port3 = new Template();
+            port3.setName("Sasha Grey — Bold High-Contrast Creative Portfolio");
+            port3.setSlug("portfolio-3");
+            port3.setDescription("A bold, high-contrast modern portfolio built for designers and creators. Features responsive interactive masonry layout, detailed project image lightbox zooms, and structured work archive pages.");
+            port3.setCategory(portfolioCategory);
+            port3.setPrice(0.0);
+            port3.setTemplateType("FREE");
+            port3.setBootstrapVersion("React / Vite / Tailwind CSS");
+            port3.setDemoUrl("/templates/portfolio/portfolio-3/index.html");
+            port3.setDownloadFile("");
+            port3.setPreviewImage("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80");
+            port3.setVersion("1.0.0");
+            port3.setStatus("PUBLISHED");
+            port3.setPagesCount(1);
+            port3.setDownloadsCount(1720);
+            port3.setTags(new ArrayList<>(Arrays.asList("Creative", "Masonry", "Lightbox", "Vite", "React")));
+            templateRepository.save(port3);
+            logs.put("template_portfolio_3", "Created");
+
+            // Portfolio-4 (Minimal)
+            Template port4 = new Template();
+            port4.setName("Clara Oswald — Airy Minimalist Portfolio");
+            port4.setSlug("portfolio-4");
+            port4.setDescription("An airy, clean minimalist layout with spacious grids and light backgrounds. Perfect for copywriters, writers, and digital consultants.");
+            port4.setCategory(portfolioCategory);
+            port4.setPrice(0.0);
+            port4.setTemplateType("FREE");
+            port4.setBootstrapVersion("React / Vite / Tailwind CSS");
+            port4.setDemoUrl("/templates/portfolio/portfolio-4/index.html");
+            port4.setDownloadFile("");
+            port4.setPreviewImage("https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80");
+            port4.setVersion("1.0.0");
+            port4.setStatus("PUBLISHED");
+            port4.setPagesCount(1);
+            port4.setDownloadsCount(1390);
+            port4.setTags(new ArrayList<>(Arrays.asList("Minimalist", "Spacious", "Clean", "Vite", "React")));
+            templateRepository.save(port4);
+            logs.put("template_portfolio_4", "Created");
+
+            // Portfolio-5 (Multipage)
+            Template port5 = new Template();
+            port5.setName("Evelyn Vance — Routed Multipage Portfolio");
+            port5.setSlug("portfolio-5");
+            port5.setDescription("A fully routed multipage portfolio containing integrated Home, About, Projects, and Contact pages, custom transitions, and smooth global headers.");
+            port5.setCategory(portfolioCategory);
+            port5.setPrice(0.0);
+            port5.setTemplateType("FREE");
+            port5.setBootstrapVersion("React / Vite / Tailwind CSS / Router");
+            port5.setDemoUrl("/templates/portfolio/portfolio-5/index.html");
+            port5.setDownloadFile("");
+            port5.setPreviewImage("https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80");
+            port5.setVersion("1.0.0");
+            port5.setStatus("PUBLISHED");
+            port5.setPagesCount(4);
+            port5.setDownloadsCount(1650);
+            port5.setTags(new ArrayList<>(Arrays.asList("Multipage", "Routing", "Transitions", "Vite", "React")));
+            templateRepository.save(port5);
+            logs.put("template_portfolio_5", "Created");
+
+            // Portfolio-6 (Agency)
+            Template port6 = new Template();
+            port6.setName("Synthetix — Tech-Forward Software Agency");
+            port6.setSlug("portfolio-6");
+            port6.setDescription("A tech-forward, modern multipage digital agency and portfolio template. Features interactive skill bars, animated company grids, custom project card showcases, and responsive newsletter forms.");
+            port6.setCategory(portfolioCategory);
+            port6.setPrice(0.0);
+            port6.setTemplateType("FREE");
+            port6.setBootstrapVersion("React / Vite / Tailwind CSS / Router");
+            port6.setDemoUrl("/templates/portfolio/portfolio-6/index.html");
+            port6.setDownloadFile("");
+            port6.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
+            port6.setVersion("1.0.0");
+            port6.setStatus("PUBLISHED");
+            port6.setPagesCount(4);
+            port6.setDownloadsCount(1890);
+            port6.setTags(new ArrayList<>(Arrays.asList("Software Agency", "Bento Grid", "Newsletter", "Vite", "React")));
+            templateRepository.save(port6);
+            logs.put("template_portfolio_6", "Created");
+
+            // Portfolio-7 (Gradient)
+            Template port7 = new Template();
+            port7.setName("Jared Vance — Warm Gradient Portfolio");
+            port7.setSlug("portfolio-7");
+            port7.setDescription("A beautiful personal showcase featuring warm CSS mesh gradients, elegant editorial serif typography, interactive case study cards, and sleek contact links.");
+            port7.setCategory(portfolioCategory);
+            port7.setPrice(0.0);
+            port7.setTemplateType("FREE");
+            port7.setBootstrapVersion("React / Vite / Tailwind CSS");
+            port7.setDemoUrl("/templates/portfolio/portfolio-7/index.html");
+            port7.setDownloadFile("");
+            port7.setPreviewImage("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80");
+            port7.setVersion("1.0.0");
+            port7.setStatus("PUBLISHED");
+            port7.setPagesCount(1);
+            port7.setDownloadsCount(1520);
+            port7.setTags(new ArrayList<>(Arrays.asList("Gradients", "Mesh Gradient", "Typography", "Vite", "React")));
+            templateRepository.save(port7);
+            logs.put("template_portfolio_7", "Created");
+
+            // Portfolio-8 (Editorial)
+            Template port8 = new Template();
+            port8.setName("Evelyn Oswald — Editorial Operations Portfolio");
+            port8.setSlug("portfolio-8");
+            port8.setDescription("A modern typography-first layout with high-end editorial grids and subtle hover interactions, perfect for project managers and operation leads.");
+            port8.setCategory(portfolioCategory);
+            port8.setPrice(0.0);
+            port8.setTemplateType("FREE");
+            port8.setBootstrapVersion("React / Vite / Tailwind CSS");
+            port8.setDemoUrl("/templates/portfolio/portfolio-8/index.html");
+            port8.setDownloadFile("");
+            port8.setPreviewImage("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80");
+            port8.setVersion("1.0.0");
+            port8.setStatus("PUBLISHED");
+            port8.setPagesCount(1);
+            port8.setDownloadsCount(1410);
+            port8.setTags(new ArrayList<>(Arrays.asList("Editorial", "Typography", "Clean Grid", "Vite", "React")));
+            templateRepository.save(port8);
+            logs.put("template_portfolio_8", "Created");
+
+            // Portfolio-9 (Photography)
+            Template port9 = new Template();
+            port9.setName("Sasha Grey — Monochrome Editorial Photography");
+            port9.setSlug("portfolio-9");
+            port9.setDescription("An elegant black-and-white theme photography portfolio template featuring structured photo galleries, horizontal slider interactions, and styled info pages.");
+            port9.setCategory(portfolioCategory);
+            port9.setPrice(0.0);
+            port9.setTemplateType("FREE");
+            port9.setBootstrapVersion("React / Vite / Tailwind CSS / Router");
+            port9.setDemoUrl("/templates/portfolio/portfolio-9/index.html");
+            port9.setDownloadFile("");
+            port9.setPreviewImage("https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80");
+            port9.setVersion("1.0.0");
+            port9.setStatus("PUBLISHED");
+            port9.setPagesCount(3);
+            port9.setDownloadsCount(1620);
+            port9.setTags(new ArrayList<>(Arrays.asList("Monochrome", "Photography", "Slider", "Vite", "React")));
+            templateRepository.save(port9);
+            logs.put("template_portfolio_9", "Created");
+
+            // Portfolio-10 (Creative Multipage)
+            Template port10 = new Template();
+            port10.setName("Sasha Grey — Creative Multipage Portfolio");
+            port10.setSlug("portfolio-10");
+            port10.setDescription("An premium, clean-cut creative multipage digital agency and portfolio template. Features interactive work grids, detail modals, team showcases, and custom contact forms.");
+            port10.setCategory(portfolioCategory);
+            port10.setPrice(0.0);
+            port10.setTemplateType("FREE");
+            port10.setBootstrapVersion("React / Vite / Tailwind CSS / Router");
+            port10.setDemoUrl("/templates/portfolio/portfolio-10/index.html");
+            port10.setDownloadFile("");
+            port10.setPreviewImage("https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80");
+            port10.setVersion("1.0.0");
+            port10.setStatus("PUBLISHED");
+            port10.setPagesCount(4);
+            port10.setDownloadsCount(1750);
+            port10.setTags(new ArrayList<>(Arrays.asList("Creative Multipage", "Team Showcase", "Modals", "Vite", "React")));
+            templateRepository.save(port10);
+            logs.put("template_portfolio_10", "Created");
+        }
+
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);
     }

@@ -471,7 +471,7 @@ function MainApp() {
   };
 
   return (
-    <Router>
+    <Router basename="/templates/landing-page/landing-page-5">
       <Routes>
         <Route path="/aetheris/*" element={<AetherisApp />} />
         <Route path="/gravitas/*" element={<GravitasApp />} />

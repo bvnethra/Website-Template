@@ -104,7 +104,8 @@ public class DatabaseSeederController {
                 {"landing page", "landing-page", "High-conversion lead forms and app promotion layouts."},
                 {"cooperate", "cooperate", "Enterprise consulting, corporate services, and financial groups."},
                 {"agency", "agency", "Design studios, marketing firms, and creative agencies."},
-                {"portfolio", "portfolio", "Personal resumes, developer bios, and work showcases."}
+                {"portfolio", "portfolio", "Personal resumes, developer bios, and work showcases."},
+                {"Real Estate", "real-estate", "Premium villa listings, property agents, and real estate developer templates."}
         };
 
         Map<String, Category> catMap = new HashMap<>();
@@ -3069,6 +3070,44 @@ public class DatabaseSeederController {
             op2.setTags(new ArrayList<>(Arrays.asList("Storytelling", "Narrative", "Tailwind", "React")));
             templateRepository.save(op2);
             logs.put("template_onepage_2", "Created");
+        }
+
+        // 19. Seed Real Estate templates
+        Category realEstateCategory = catMap.get("real-estate");
+        if (realEstateCategory != null) {
+            String[][] realEstateData = {
+                {"Estate Prime — Signature Real Estate Branding", "estate-prime", "Confidential premium estate listing portal featuring luxury residential showcases, dynamic specifications, and booking tour capture.", "real-estate-1", "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80", "Real Estate, Estate Prime, Luxury Villa, React"},
+                {"Urbanova — Cosmopolitan Property Collection", "urbanova", "A sophisticated urban residential and condominium directory featuring premium neighborhood stats, pricing calculators, and interactive slot bookings.", "real-estate-2", "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80", "Real Estate, Condominium, Urbanova, React"},
+                {"Luxora Estates — Elite Architectural Portfolios", "luxora-estates", "Elite real estate showcase tailored for ultra-high-net-worth acquisitions, featuring full-screen immersive galleries, BIM integration, and private consultation forms.", "real-estate-3", "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80", "Real Estate, Luxora, Architectural, React"},
+                {"Skyline Collective — Metropolitan Penthouse Suites", "skyline-collective", "Premium property list curated for penthouses and sky-high luxury suites, featuring custom height inspectors, wind-load data, and private tour registries.", "real-estate-4", "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80", "Real Estate, Skyline, Penthouse, React"},
+                {"Terra Living — Eco-Friendly Residential Designs", "terra-living", "Sustainably built family houses and residential community layouts, featuring carbon offset stats, solar energy calculators, and garden lot customizers.", "real-estate-5", "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80", "Real Estate, Green Housing, Terra Living, React"},
+                {"MetroHaus — Smart Urban Apartments & Lofts", "metrohaus", "A minimalist loft and modern downtown apartment guide, featuring smart home spec lists, interactive room planners, and neighborhood commute estimators.", "real-estate-6", "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80", "Real Estate, Lofts, Downtown, React"},
+                {"Heritage Homes — Restored Classic Estates", "heritage-homes", "Classic Tudor, Victorian, and mid-century modern historical restoration listings, featuring historical context timelines and materials registers.", "real-estate-7", "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80", "Real Estate, Historical, Heritage, React"},
+                {"Vertex Properties — Industrial & Commercial Spaces", "vertex-properties", "Premium warehouse, office park, and co-working property listings, featuring custom floor space calculators and lease term customizers.", "real-estate-8", "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80", "Real Estate, Commercial, Vertex, React"},
+                {"Haven Realty — Coastal Vacation Homes & Villas", "haven-realty", "Elite waterfront property directory featuring sea-level stats, private beach indices, boat slip availability, and seasonal booking calculators.", "real-estate-9", "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80", "Real Estate, Coastal, Waterfront, React"},
+                {"Monument Estates — Historic Castle & Manor Listings", "monument-estates", "Ultra-luxury castle, château, and private island listings, featuring gatehouse specs, helipad registries, and confidentiality agreements.", "real-estate-10", "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80", "Real Estate, Castles, Ultra Luxury, React"}
+            };
+
+            for (String[] data : realEstateData) {
+                Template t = new Template();
+                t.setName(data[0]);
+                t.setSlug(data[1]);
+                t.setDescription(data[2]);
+                t.setCategory(realEstateCategory);
+                t.setPrice(0.0);
+                t.setTemplateType("FREE");
+                t.setBootstrapVersion("React 19 / Vite / Tailwind CSS");
+                t.setDemoUrl("/templates/real-estate/" + data[3] + "/index.html");
+                t.setDownloadFile("");
+                t.setPreviewImage(data[4]);
+                t.setVersion("1.0.0");
+                t.setStatus("PUBLISHED");
+                t.setPagesCount(1);
+                t.setDownloadsCount(1800);
+                t.setTags(new ArrayList<>(Arrays.asList(data[5].split(", "))));
+                templateRepository.save(t);
+                logs.put("template_" + data[1].replace("-", "_"), "Created");
+            }
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

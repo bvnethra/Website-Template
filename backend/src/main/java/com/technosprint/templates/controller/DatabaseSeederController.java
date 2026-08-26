@@ -788,6 +788,66 @@ public class DatabaseSeederController {
             blog8.setTags(new ArrayList<>(Arrays.asList("Maximalist", "Fashion Journal", "Dopamine Culture", "FullScreen Menu", "Velocity Text")));
             templateRepository.save(blog8);
             logs.put("template_blog_8", "Created");
+
+            // blog-9 (Explorer)
+            Template blog9 = new Template();
+            blog9.setName("Explorer — Interactive Science & Field Notes");
+            blog9.setSlug("blog-9");
+            blog9.setDescription("A beautiful science and adventure storytelling journal. Features halftone reveals, depth carousels, immersive aura backdrops, and interactive article pages.");
+            blog9.setCategory(blockMagazineCategory);
+            blog9.setPrice(0.0);
+            blog9.setTemplateType("FREE");
+            blog9.setBootstrapVersion("React / Vite / CSS");
+            blog9.setDemoUrl("/templates/block-magazine/blog-9/index.html");
+            blog9.setDownloadFile("");
+            blog9.setPreviewImage("https://images.unsplash.com/photo-1507633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80");
+            blog9.setVersion("1.0.0");
+            blog9.setStatus("PUBLISHED");
+            blog9.setPagesCount(12);
+            blog9.setDownloadsCount(1540);
+            blog9.setTags(new ArrayList<>(Arrays.asList("Science Journal", "Halftone Reveal", "Aura Backdrop", "Storytelling", "Vite")));
+            templateRepository.save(blog9);
+            logs.put("template_blog_9", "Created");
+
+            // blog-10 (Horizon Journal)
+            Template blog10 = new Template();
+            blog10.setName("Horizon Journal — Sunset Editorial");
+            blog10.setSlug("blog-10");
+            blog10.setDescription("An elegant editorial template featuring responsive full-screen drawer panels, custom search modals, bookmarks drawer, and sunset boulevard aura backgrounds.");
+            blog10.setCategory(blockMagazineCategory);
+            blog10.setPrice(0.0);
+            blog10.setTemplateType("FREE");
+            blog10.setBootstrapVersion("React / Tailwind / Vite / TS");
+            blog10.setDemoUrl("/templates/block-magazine/blog-10/index.html");
+            blog10.setDownloadFile("");
+            blog10.setPreviewImage("https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80");
+            blog10.setVersion("1.0.0");
+            blog10.setStatus("PUBLISHED");
+            blog10.setPagesCount(10);
+            blog10.setDownloadsCount(1350);
+            blog10.setTags(new ArrayList<>(Arrays.asList("Editorial", "Sunset Aura", "Drawer Panel", "Bookmarks Drawer", "React")));
+            templateRepository.save(blog10);
+            logs.put("template_blog_10", "Created");
+
+            // blog-11 (AgriTech)
+            Template blog11 = new Template();
+            blog11.setName("AgriTech — Cybernetic Smart Farming Journal");
+            blog11.setSlug("blog-11");
+            blog11.setDescription("A high-tech agricultural research and smart farming science magazine. Features timeline explorers, interactive hotspots, bookmark drawers, and custom media grids.");
+            blog11.setCategory(blockMagazineCategory);
+            blog11.setPrice(0.0);
+            blog11.setTemplateType("FREE");
+            blog11.setBootstrapVersion("React / Tailwind / Vite / TS");
+            blog11.setDemoUrl("/templates/block-magazine/blog-11/index.html");
+            blog11.setDownloadFile("");
+            blog11.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
+            blog11.setVersion("1.0.0");
+            blog11.setStatus("PUBLISHED");
+            blog11.setPagesCount(15);
+            blog11.setDownloadsCount(1680);
+            blog11.setTags(new ArrayList<>(Arrays.asList("AgriTech", "Hotspots", "Timeline Explorer", "React", "TS")));
+            templateRepository.save(blog11);
+            logs.put("template_blog_11", "Created");
         }
 
         // 6. Seed Restaurant templates

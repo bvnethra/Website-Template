@@ -177,106 +177,6 @@ public class DatabaseSeederController {
             admin3.setTags(new ArrayList<>(Arrays.asList("Editorial", "Command Center", "Obsidian")));
             templateRepository.save(admin3);
             logs.put("template_admin_3", "Created");
-
-            // admin-4 (CoreVista)
-            Template admin4 = new Template();
-            admin4.setName("CoreVista — Premium Project Management & ERP");
-            admin4.setSlug("admin-4");
-            admin4.setDescription("A multi-functional enterprise project management and ERP panel. Features 10 main controller modules with 50 sub-pages total, custom client portfolios, and secure authorization screens.");
-            admin4.setCategory(adminCategory);
-            admin4.setPrice(0.0);
-            admin4.setTemplateType("FREE");
-            admin4.setBootstrapVersion("React / Tailwind / Vite / TS");
-            admin4.setDemoUrl("/templates/admin/admin-4/index.html");
-            admin4.setDownloadFile("");
-            admin4.setPreviewImage("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80");
-            admin4.setVersion("1.0.0");
-            admin4.setStatus("PUBLISHED");
-            admin4.setPagesCount(50);
-            admin4.setDownloadsCount(1980);
-            admin4.setTags(new ArrayList<>(Arrays.asList("ERP", "Project Management", "Multi-page", "Vite", "React")));
-            templateRepository.save(admin4);
-            logs.put("template_admin_4", "Created");
-
-            // admin-5 (ApexAdmin)
-            Template admin5 = new Template();
-            admin5.setName("ApexAdmin — Multipurpose Enterprise Command Panel");
-            admin5.setSlug("admin-5");
-            admin5.setDescription("A comprehensive multipurpose administrative control system. Features 7 dashboard view presets, client message boxes, custom user/role directories, and dynamic utility modules.");
-            admin5.setCategory(adminCategory);
-            admin5.setPrice(0.0);
-            admin5.setTemplateType("FREE");
-            admin5.setBootstrapVersion("React / Vite / Tailwind CSS");
-            admin5.setDemoUrl("/templates/admin/admin-5/index.html");
-            admin5.setDownloadFile("");
-            admin5.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
-            admin5.setVersion("1.0.0");
-            admin5.setStatus("PUBLISHED");
-            admin5.setPagesCount(25);
-            admin5.setDownloadsCount(1650);
-            admin5.setTags(new ArrayList<>(Arrays.asList("Admin Dashboard", "Multipurpose", "Widgets", "Vite", "React")));
-            templateRepository.save(admin5);
-            logs.put("template_admin_5", "Created");
-
-            // admin-6 (Horizon)
-            Template admin6 = new Template();
-            admin6.setName("Horizon — Global Operations Command");
-            admin6.setSlug("admin-6");
-            admin6.setDescription("A premium operations command center dashboard. Features dark theme aesthetics, custom authentication routes, live search indices, and dynamic task scoping selectors.");
-            admin6.setCategory(adminCategory);
-            admin6.setPrice(0.0);
-            admin6.setTemplateType("FREE");
-            admin6.setBootstrapVersion("React / Tailwind / Vite / TS");
-            admin6.setDemoUrl("/templates/admin/admin-6/index.html");
-            admin6.setDownloadFile("");
-            admin6.setPreviewImage("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80");
-            admin6.setVersion("1.0.0");
-            admin6.setStatus("PUBLISHED");
-            admin6.setPagesCount(12);
-            admin6.setDownloadsCount(1540);
-            admin6.setTags(new ArrayList<>(Arrays.asList("Command Center", "Operations", "Dark Mode", "React", "TS")));
-            templateRepository.save(admin6);
-            logs.put("template_admin_6", "Created");
-
-            // admin-7 (Elysium)
-            Template admin7 = new Template();
-            admin7.setName("Elysium — Unified Cloud Analytics Engine");
-            admin7.setSlug("admin-7");
-            admin7.setDescription("A clean and professional cloud infrastructure analytics dashboard. Features system telemetry, task queues, HR analytics, and messages views under a state-based layout shell.");
-            admin7.setCategory(adminCategory);
-            admin7.setPrice(0.0);
-            admin7.setTemplateType("FREE");
-            admin7.setBootstrapVersion("React / Tailwind / Vite / TS");
-            admin7.setDemoUrl("/templates/admin/admin-7/index.html");
-            admin7.setDownloadFile("");
-            admin7.setPreviewImage("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80");
-            admin7.setVersion("1.0.0");
-            admin7.setStatus("PUBLISHED");
-            admin7.setPagesCount(18);
-            admin7.setDownloadsCount(1820);
-            admin7.setTags(new ArrayList<>(Arrays.asList("Cloud Infrastructure", "Telemetry", "HR Analytics", "React", "TS")));
-            templateRepository.save(admin7);
-            logs.put("template_admin_7", "Created");
-
-            // admin-8 (Ember)
-            Template admin8 = new Template();
-            admin8.setName("Ember — Premium Financial Operations Ledger");
-            admin8.setSlug("admin-8");
-            admin8.setDescription("An advanced financial ledger and inventory system. Features custom date range filters, transaction exports, dynamic KPIs, and product performance cards.");
-            admin8.setCategory(adminCategory);
-            admin8.setPrice(0.0);
-            admin8.setTemplateType("FREE");
-            admin8.setBootstrapVersion("React / Tailwind / Vite / TS");
-            admin8.setDemoUrl("/templates/admin/admin-8/index.html");
-            admin8.setDownloadFile("");
-            admin8.setPreviewImage("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80");
-            admin8.setVersion("1.0.0");
-            admin8.setStatus("PUBLISHED");
-            admin8.setPagesCount(10);
-            admin8.setDownloadsCount(1460);
-            admin8.setTags(new ArrayList<>(Arrays.asList("Financial Ledger", "Inventory", "KPI Metrics", "React", "TS")));
-            templateRepository.save(admin8);
-            logs.put("template_admin_8", "Created");
         }
 
         // 4. Seed Qure Nexa template under Medical category
@@ -284,13 +184,13 @@ public class DatabaseSeederController {
         if (medicalCategory != null) {
             Template qureNexa = new Template();
             qureNexa.setName("Qure Nexa — Advanced Medical & Healthcare Platform");
-            qureNexa.setSlug("medical-1");
+            qureNexa.setSlug("qure-nexa");
             qureNexa.setDescription("A modern healthcare and hospital management platform featuring multi-role portals for Patients, Doctors, and Admins, doctor directory, intelligent slot booking, and clinical workflows.");
             qureNexa.setCategory(medicalCategory);
             qureNexa.setPrice(0.0);
             qureNexa.setTemplateType("FREE");
             qureNexa.setBootstrapVersion("React 19 / Tailwind CSS / Vite");
-            qureNexa.setDemoUrl("/templates/medical/medical-1/index.html");
+            qureNexa.setDemoUrl("/templates/medical/qure-nexa/index.html");
             qureNexa.setDownloadFile("qure-nexa-medical.zip");
             qureNexa.setPreviewImage("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80");
             qureNexa.setVersion("1.0");
@@ -360,66 +260,6 @@ public class DatabaseSeederController {
             veylora.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "hospital", "doctor", "speciality")));
             templateRepository.save(veylora);
             logs.put("template_veylora_health", "Created");
-
-            // Seed Medical-5 (Aura Health)
-            Template medical5 = new Template();
-            medical5.setName("Aura Health - Lilac Frost Medical Platform");
-            medical5.setSlug("medical-5");
-            medical5.setDescription("A premium, calm, and modern medical healthcare platform template with Lilac Frost aesthetic, specialist booking, patient portal, medical records, and clinical services.");
-            medical5.setCategory(medicalCategory);
-            medical5.setPrice(0.0);
-            medical5.setTemplateType("FREE");
-            medical5.setBootstrapVersion("React / Tailwind CSS / Vite");
-            medical5.setDemoUrl("/templates/medical/medical-5/index.html");
-            medical5.setDownloadFile("");
-            medical5.setPreviewImage("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80");
-            medical5.setVersion("1.0");
-            medical5.setStatus("PUBLISHED");
-            medical5.setPagesCount(12);
-            medical5.setDownloadsCount(1420);
-            medical5.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "patient-portal", "lilac-frost", "Vite", "React")));
-            templateRepository.save(medical5);
-            logs.put("template_medical_5", "Created");
-
-            // Seed Medical-7 (ApexHealth)
-            Template medical7 = new Template();
-            medical7.setName("ApexHealth — Modern Dynamic Medical Platform");
-            medical7.setSlug("medical-6");
-            medical7.setDescription("Modern Dynamic Medical Platform for Patients, Doctors, and Healthcare Administrators. Real-time slot booking, doctor discovery, and patient portals.");
-            medical7.setCategory(medicalCategory);
-            medical7.setPrice(0.0);
-            medical7.setTemplateType("FREE");
-            medical7.setBootstrapVersion("React / Tailwind CSS / Vite");
-            medical7.setDemoUrl("/templates/medical/medical-6/index.html");
-            medical7.setDownloadFile("");
-            medical7.setPreviewImage("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80");
-            medical7.setVersion("1.0");
-            medical7.setStatus("PUBLISHED");
-            medical7.setPagesCount(1);
-            medical7.setDownloadsCount(1580);
-            medical7.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "booking", "portal", "Vite", "React")));
-            templateRepository.save(medical7);
-            logs.put("template_medical_7", "Created");
-
-            // Seed Medical-8 (PulseCare)
-            Template medical8 = new Template();
-            medical8.setName("PulseCare — Modern Dynamic Healthcare Platform");
-            medical8.setSlug("medical-7");
-            medical8.setDescription("Discover top doctors, compare availability, book instant appointments, and manage health records securely with PulseCare Healthcare Platform.");
-            medical8.setCategory(medicalCategory);
-            medical8.setPrice(0.0);
-            medical8.setTemplateType("FREE");
-            medical8.setBootstrapVersion("HTML5 / CSS3 / Vanilla JS");
-            medical8.setDemoUrl("/templates/medical/medical-7/index.html");
-            medical8.setDownloadFile("");
-            medical8.setPreviewImage("https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80");
-            medical8.setVersion("1.0");
-            medical8.setStatus("PUBLISHED");
-            medical8.setPagesCount(1);
-            medical8.setDownloadsCount(1750);
-            medical8.setTags(new ArrayList<>(Arrays.asList("medical", "healthcare", "appointments", "records", "Vanilla JS")));
-            templateRepository.save(medical8);
-            logs.put("template_medical_8", "Created");
         }
 
         // 5. Seed Photography templates
@@ -428,13 +268,13 @@ public class DatabaseSeederController {
             // SnapFolio template
             Template snapfolio = new Template();
             snapfolio.setName("SnapFolio — Dark Minimalist Portfolio");
-            snapfolio.setSlug("photography-1");
+            snapfolio.setSlug("snapfolio-template");
             snapfolio.setDescription("A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.");
             snapfolio.setCategory(photography);
             snapfolio.setPrice(0.0);
             snapfolio.setTemplateType("FREE");
             snapfolio.setBootstrapVersion("HTML5 / Tailwind CSS");
-            snapfolio.setDemoUrl("/templates/photography/photography-1/index.html");
+            snapfolio.setDemoUrl("/templates/photography/snapfolio-template/index.html");
             snapfolio.setDownloadFile("snapfolio-template.zip");
             snapfolio.setPreviewImage("https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80");
             snapfolio.setVersion("1.0.0");
@@ -448,13 +288,13 @@ public class DatabaseSeederController {
             // Photo template
             Template photo = new Template();
             photo.setName("Photo — Editorial Photography Studio");
-            photo.setSlug("photography-2");
+            photo.setSlug("photo-template");
             photo.setDescription("A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.");
             photo.setCategory(photography);
             photo.setPrice(0.0);
             photo.setTemplateType("FREE");
             photo.setBootstrapVersion("HTML5 / Vanilla CSS");
-            photo.setDemoUrl("/templates/photography/photography-2/index.html");
+            photo.setDemoUrl("/templates/photography/photo-template/index.html");
             photo.setDownloadFile("photo-template.zip");
             photo.setPreviewImage("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80");
             photo.setVersion("1.0.0");
@@ -468,13 +308,13 @@ public class DatabaseSeederController {
             // Wedding template (Lumière)
             Template wedding = new Template();
             wedding.setName("Lumière — High-End Wedding & Event Photography");
-            wedding.setSlug("photography-3");
+            wedding.setSlug("wedding-template");
             wedding.setDescription("A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.");
             wedding.setCategory(photography);
             wedding.setPrice(0.0);
             wedding.setTemplateType("FREE");
             wedding.setBootstrapVersion("HTML5 / Tailwind CSS");
-            wedding.setDemoUrl("/templates/photography/photography-3/index.html");
+            wedding.setDemoUrl("/templates/photography/wedding-template/index.html");
             wedding.setDownloadFile("wedding-template.zip");
             wedding.setPreviewImage("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80");
             wedding.setVersion("1.0.0");
@@ -548,13 +388,13 @@ public class DatabaseSeederController {
             // Seed Eden Rose (cinematic-wedding)
             Template edenRose = new Template();
             edenRose.setName("Eden Rose — Cinematic Luxury Wedding Portfolio");
-            edenRose.setSlug("photography-4");
+            edenRose.setSlug("cinematic-wedding");
             edenRose.setDescription("A high-end cinematic wedding photography portfolio template with immersive slideshows, custom transitions, and smooth galleries.");
             edenRose.setCategory(photography);
             edenRose.setPrice(0.0);
             edenRose.setTemplateType("FREE");
             edenRose.setBootstrapVersion("HTML5 / Vanilla CSS");
-            edenRose.setDemoUrl("/templates/photography/photography-4/index.html");
+            edenRose.setDemoUrl("/templates/photography/cinematic-wedding/index.html");
             edenRose.setDownloadFile("");
             edenRose.setPreviewImage("/cinematic_cover.png");
             edenRose.setVersion("1.0.0");
@@ -568,13 +408,13 @@ public class DatabaseSeederController {
             // Seed Aura (fineart-template)
             Template auraArt = new Template();
             auraArt.setName("AURA — Premium Fine Art Studio");
-            auraArt.setSlug("photography-5");
+            auraArt.setSlug("fineart-template");
             auraArt.setDescription("A premium fine art and editorial studio portfolio featuring elegant dark-theme aesthetics, grid catalogs, and custom zoom-in lightboxes.");
             auraArt.setCategory(photography);
             auraArt.setPrice(0.0);
             auraArt.setTemplateType("FREE");
             auraArt.setBootstrapVersion("HTML5 / Vanilla CSS");
-            auraArt.setDemoUrl("/templates/photography/photography-5/index.html");
+            auraArt.setDemoUrl("/templates/photography/fineart-template/index.html");
             auraArt.setDownloadFile("");
             auraArt.setPreviewImage("/fineart_cover.png");
             auraArt.setVersion("1.0.0");
@@ -588,13 +428,13 @@ public class DatabaseSeederController {
             // Seed Lume Studio (isteady-template)
             Template lumeStudio = new Template();
             lumeStudio.setName("Lume Studio — Fashion & Editorial Portfolio");
-            lumeStudio.setSlug("photography-7");
+            lumeStudio.setSlug("isteady-template");
             lumeStudio.setDescription("A fashion-focused editorial photography portfolio with clean minimalist grids, typography layouts, and interactive sliders.");
             lumeStudio.setCategory(photography);
             lumeStudio.setPrice(0.0);
             lumeStudio.setTemplateType("FREE");
             lumeStudio.setBootstrapVersion("HTML5 / Vanilla CSS");
-            lumeStudio.setDemoUrl("/templates/photography/photography-7/index.html");
+            lumeStudio.setDemoUrl("/templates/photography/isteady-template/index.html");
             lumeStudio.setDownloadFile("");
             lumeStudio.setPreviewImage("/lume_cover.png");
             lumeStudio.setVersion("1.0.0");
@@ -608,13 +448,13 @@ public class DatabaseSeederController {
             // Seed Kairo (kairo-template)
             Template kairoPhoto = new Template();
             kairoPhoto.setName("Kairo — Modern 3D Photography Portfolio");
-            kairoPhoto.setSlug("photography-6");
+            kairoPhoto.setSlug("kairo-template");
             kairoPhoto.setDescription("A modern, interactive photography portfolio featuring advanced 3D orbital interactions, custom cursor shaders, and horizontal scroll grids.");
             kairoPhoto.setCategory(photography);
             kairoPhoto.setPrice(0.0);
             kairoPhoto.setTemplateType("FREE");
             kairoPhoto.setBootstrapVersion("HTML5 / Three.js / Vanilla JS");
-            kairoPhoto.setDemoUrl("/templates/photography/photography-6/index.html");
+            kairoPhoto.setDemoUrl("/templates/photography/kairo-template/index.html");
             kairoPhoto.setDownloadFile("");
             kairoPhoto.setPreviewImage("/kairo_cover.png");
             kairoPhoto.setVersion("1.0.0");
@@ -788,66 +628,6 @@ public class DatabaseSeederController {
             blog8.setTags(new ArrayList<>(Arrays.asList("Maximalist", "Fashion Journal", "Dopamine Culture", "FullScreen Menu", "Velocity Text")));
             templateRepository.save(blog8);
             logs.put("template_blog_8", "Created");
-
-            // blog-9 (Explorer)
-            Template blog9 = new Template();
-            blog9.setName("Explorer — Interactive Science & Field Notes");
-            blog9.setSlug("blog-9");
-            blog9.setDescription("A beautiful science and adventure storytelling journal. Features halftone reveals, depth carousels, immersive aura backdrops, and interactive article pages.");
-            blog9.setCategory(blockMagazineCategory);
-            blog9.setPrice(0.0);
-            blog9.setTemplateType("FREE");
-            blog9.setBootstrapVersion("React / Vite / CSS");
-            blog9.setDemoUrl("/templates/block-magazine/blog-9/index.html");
-            blog9.setDownloadFile("");
-            blog9.setPreviewImage("https://images.unsplash.com/photo-1507633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80");
-            blog9.setVersion("1.0.0");
-            blog9.setStatus("PUBLISHED");
-            blog9.setPagesCount(12);
-            blog9.setDownloadsCount(1540);
-            blog9.setTags(new ArrayList<>(Arrays.asList("Science Journal", "Halftone Reveal", "Aura Backdrop", "Storytelling", "Vite")));
-            templateRepository.save(blog9);
-            logs.put("template_blog_9", "Created");
-
-            // blog-10 (Horizon Journal)
-            Template blog10 = new Template();
-            blog10.setName("Horizon Journal — Sunset Editorial");
-            blog10.setSlug("blog-10");
-            blog10.setDescription("An elegant editorial template featuring responsive full-screen drawer panels, custom search modals, bookmarks drawer, and sunset boulevard aura backgrounds.");
-            blog10.setCategory(blockMagazineCategory);
-            blog10.setPrice(0.0);
-            blog10.setTemplateType("FREE");
-            blog10.setBootstrapVersion("React / Tailwind / Vite / TS");
-            blog10.setDemoUrl("/templates/block-magazine/blog-10/index.html");
-            blog10.setDownloadFile("");
-            blog10.setPreviewImage("https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80");
-            blog10.setVersion("1.0.0");
-            blog10.setStatus("PUBLISHED");
-            blog10.setPagesCount(10);
-            blog10.setDownloadsCount(1350);
-            blog10.setTags(new ArrayList<>(Arrays.asList("Editorial", "Sunset Aura", "Drawer Panel", "Bookmarks Drawer", "React")));
-            templateRepository.save(blog10);
-            logs.put("template_blog_10", "Created");
-
-            // blog-11 (AgriTech)
-            Template blog11 = new Template();
-            blog11.setName("AgriTech — Cybernetic Smart Farming Journal");
-            blog11.setSlug("blog-11");
-            blog11.setDescription("A high-tech agricultural research and smart farming science magazine. Features timeline explorers, interactive hotspots, bookmark drawers, and custom media grids.");
-            blog11.setCategory(blockMagazineCategory);
-            blog11.setPrice(0.0);
-            blog11.setTemplateType("FREE");
-            blog11.setBootstrapVersion("React / Tailwind / Vite / TS");
-            blog11.setDemoUrl("/templates/block-magazine/blog-11/index.html");
-            blog11.setDownloadFile("");
-            blog11.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
-            blog11.setVersion("1.0.0");
-            blog11.setStatus("PUBLISHED");
-            blog11.setPagesCount(15);
-            blog11.setDownloadsCount(1680);
-            blog11.setTags(new ArrayList<>(Arrays.asList("AgriTech", "Hotspots", "Timeline Explorer", "React", "TS")));
-            templateRepository.save(blog11);
-            logs.put("template_blog_11", "Created");
         }
 
         // 6. Seed Restaurant templates
@@ -1851,7 +1631,7 @@ public class DatabaseSeederController {
             eventora.setPrice(0.0);
             eventora.setTemplateType("FREE");
             eventora.setBootstrapVersion("React / Tailwind / Plus Jakarta Sans");
-            eventora.setDemoUrl("/templates/events/events-1/index.html");
+            eventora.setDemoUrl("/templates/events/education-1/index.html");
             eventora.setDownloadFile("");
             eventora.setPreviewImage("https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80");
             eventora.setVersion("1.0.0");
@@ -2617,106 +2397,6 @@ public class DatabaseSeederController {
             coop5.setTags(new ArrayList<>(Arrays.asList("Systems Integration", "Technology Partner", "Inquiry", "Vite", "React")));
             templateRepository.save(coop5);
             logs.put("template_cooperate_5", "Created");
-
-            // cooperate-6 (Vanguard)
-            Template coop6 = new Template();
-            coop6.setName("Vanguard — Corporate Mobility Solutions");
-            coop6.setSlug("cooperate-6");
-            coop6.setDescription("A premium corporate travel management and executive mobility showcase. Built with React, Tailwind CSS, and React Router, featuring custom consultation modules and route safety logs.");
-            coop6.setCategory(cooperateCategory);
-            coop6.setPrice(0.0);
-            coop6.setTemplateType("FREE");
-            coop6.setBootstrapVersion("React / Tailwind / Vite / TS");
-            coop6.setDemoUrl("/templates/cooperate/cooperate-6/index.html");
-            coop6.setDownloadFile("");
-            coop6.setPreviewImage("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80");
-            coop6.setVersion("1.0.0");
-            coop6.setStatus("PUBLISHED");
-            coop6.setPagesCount(13);
-            coop6.setDownloadsCount(1850);
-            coop6.setTags(new ArrayList<>(Arrays.asList("Corporate Travel", "Mobility", "React", "Tailwind", "TS")));
-            templateRepository.save(coop6);
-            logs.put("template_cooperate_6", "Created");
-
-            // cooperate-7 (Apex Solutions)
-            Template coop7 = new Template();
-            coop7.setName("Apex Solutions — Enterprise Tech Consultant");
-            coop7.setSlug("cooperate-7");
-            coop7.setDescription("A clean and professional corporate solutions and tech consulting landing page. Features a complete set of service outlines, client portfolios, interactive career boards, and legal policies.");
-            coop7.setCategory(cooperateCategory);
-            coop7.setPrice(0.0);
-            coop7.setTemplateType("FREE");
-            coop7.setBootstrapVersion("React / Tailwind / Vite / TS");
-            coop7.setDemoUrl("/templates/cooperate/cooperate-7/index.html");
-            coop7.setDownloadFile("");
-            coop7.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
-            coop7.setVersion("1.0.0");
-            coop7.setStatus("PUBLISHED");
-            coop7.setPagesCount(22);
-            coop7.setDownloadsCount(1650);
-            coop7.setTags(new ArrayList<>(Arrays.asList("Consulting", "Tech Advisory", "Career Board", "React", "Tailwind")));
-            templateRepository.save(coop7);
-            logs.put("template_cooperate_7", "Created");
-
-            // cooperate-8 (Sync Agency)
-            Template coop8 = new Template();
-            coop8.setName("Sync Agency — Strategic Business Advisors");
-            coop8.setSlug("cooperate-8");
-            coop8.setDescription("A modern strategy, branding, and business consulting portfolio. Built with React, Tailwind CSS, and Framer Motion, featuring custom interactive capability highlights and scoping modals.");
-            coop8.setCategory(cooperateCategory);
-            coop8.setPrice(0.0);
-            coop8.setTemplateType("FREE");
-            coop8.setBootstrapVersion("React / Tailwind / Vite / TS");
-            coop8.setDemoUrl("/templates/cooperate/cooperate-8/index.html");
-            coop8.setDownloadFile("");
-            coop8.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
-            coop8.setVersion("1.0.0");
-            coop8.setStatus("PUBLISHED");
-            coop8.setPagesCount(11);
-            coop8.setDownloadsCount(1420);
-            coop8.setTags(new ArrayList<>(Arrays.asList("Advisory", "Branding", "Scoping Modal", "React", "Framer Motion")));
-            templateRepository.save(coop8);
-            logs.put("template_cooperate_8", "Created");
-
-            // cooperate-9 (Finora)
-            Template coop9 = new Template();
-            coop9.setName("Finora — Premium Corporate Finance");
-            coop9.setSlug("cooperate-9");
-            coop9.setDescription("A beautiful financial advisory and corporate strategy portal. Features clean typography, bento performance metrics, and a custom interactive booking system.");
-            coop9.setCategory(cooperateCategory);
-            coop9.setPrice(0.0);
-            coop9.setTemplateType("FREE");
-            coop9.setBootstrapVersion("React / Tailwind / Vite / TS");
-            coop9.setDemoUrl("/templates/cooperate/cooperate-9/index.html");
-            coop9.setDownloadFile("");
-            coop9.setPreviewImage("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80");
-            coop9.setVersion("1.0.0");
-            coop9.setStatus("PUBLISHED");
-            coop9.setPagesCount(1);
-            coop9.setDownloadsCount(1920);
-            coop9.setTags(new ArrayList<>(Arrays.asList("Finance", "Bento Metrics", "Advisory", "React", "Vite")));
-            templateRepository.save(coop9);
-            logs.put("template_cooperate_9", "Created");
-
-            // cooperate-10 (Aurelia Capital)
-            Template coop10 = new Template();
-            coop10.setName("Aurelia Capital — Institutional Asset Management");
-            coop10.setSlug("cooperate-10");
-            coop10.setDescription("An advanced institutional wealth management and investment advisory platform. Features live stock index ribbons, interactive retirement calculators, comparison matrix portals, and detailed client reporting views.");
-            coop10.setCategory(cooperateCategory);
-            coop10.setPrice(0.0);
-            coop10.setTemplateType("FREE");
-            coop10.setBootstrapVersion("React / Tailwind / Vite / TS");
-            coop10.setDemoUrl("/templates/cooperate/cooperate-10/index.html");
-            coop10.setDownloadFile("");
-            coop10.setPreviewImage("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80");
-            coop10.setVersion("1.0.0");
-            coop10.setStatus("PUBLISHED");
-            coop10.setPagesCount(15);
-            coop10.setDownloadsCount(1740);
-            coop10.setTags(new ArrayList<>(Arrays.asList("Asset Management", "Calculators", "Client Portal", "React", "Vite")));
-            templateRepository.save(coop10);
-            logs.put("template_cooperate_10", "Created");
         }
 
         Category businessCategory = catMap.get("buisness");
@@ -2780,475 +2460,6 @@ public class DatabaseSeederController {
             biz3.setTags(new ArrayList<>(Arrays.asList("Consulting", "Finance", "Portfolio", "Vite", "React")));
             templateRepository.save(biz3);
             logs.put("template_business_3", "Created");
-
-            // Business-4 (Aurelis)
-            Template biz4 = new Template();
-            biz4.setName("Aurelis — Premium Business Showcase");
-            biz4.setSlug("Business-4");
-            biz4.setDescription("A premium, modern showcase template for corporate systems, advisory firms, and agencies. Built with React, Tailwind CSS, and Framer Motion, featuring smooth animations and custom page sections.");
-            biz4.setCategory(businessCategory);
-            biz4.setPrice(0.0);
-            biz4.setTemplateType("FREE");
-            biz4.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
-            biz4.setDemoUrl("/templates/buisness/Business-4/index.html");
-            biz4.setDownloadFile("");
-            biz4.setPreviewImage("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80");
-            biz4.setVersion("1.0.0");
-            biz4.setStatus("PUBLISHED");
-            biz4.setPagesCount(1);
-            biz4.setDownloadsCount(1850);
-            biz4.setTags(new ArrayList<>(Arrays.asList("Corporate", "Showcase", "Framer Motion", "Vite", "React")));
-            templateRepository.save(biz4);
-            logs.put("template_business_4", "Created");
-
-            // Business-5 (Lumora Labs)
-            Template biz5 = new Template();
-            biz5.setName("Lumora Labs — Advanced Technology Hub");
-            biz5.setSlug("Business-5");
-            biz5.setDescription("An animated technology startup showcase featuring custom interactive elements, team bios, services slider, and client contact integration.");
-            biz5.setCategory(businessCategory);
-            biz5.setPrice(0.0);
-            biz5.setTemplateType("FREE");
-            biz5.setBootstrapVersion("React / GSAP / Spring Boot");
-            biz5.setDemoUrl("/templates/buisness/Business-5/index.html");
-            biz5.setDownloadFile("");
-            biz5.setPreviewImage("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80");
-            biz5.setVersion("1.0.0");
-            biz5.setStatus("PUBLISHED");
-            biz5.setPagesCount(5);
-            biz5.setDownloadsCount(2100);
-            biz5.setTags(new ArrayList<>(Arrays.asList("Technology", "Agency", "React", "Spring Boot", "GSAP")));
-            templateRepository.save(biz5);
-            logs.put("template_business_5", "Created");
-
-            // Business-6 (Nexora)
-            Template biz6 = new Template();
-            biz6.setName("Nexora — Enterprise Technology Solutions");
-            biz6.setSlug("Business-6");
-            biz6.setDescription("A modern, dark-themed corporate technology platform featuring interactive charts, custom layouts, and a clean minimalist design for enterprise services.");
-            biz6.setCategory(businessCategory);
-            biz6.setPrice(0.0);
-            biz6.setTemplateType("FREE");
-            biz6.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
-            biz6.setDemoUrl("/templates/buisness/Business-6/index.html");
-            biz6.setDownloadFile("");
-            biz6.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
-            biz6.setVersion("1.0.0");
-            biz6.setStatus("PUBLISHED");
-            biz6.setPagesCount(1);
-            biz6.setDownloadsCount(1650);
-            biz6.setTags(new ArrayList<>(Arrays.asList("Enterprise", "Technology", "Framer Motion", "Vite", "React")));
-            templateRepository.save(biz6);
-            logs.put("template_business_6", "Created");
-
-            // Business-7 (Strativa)
-            Template biz7 = new Template();
-            biz7.setName("Strativa — Modern Consulting Platform");
-            biz7.setSlug("Business-7");
-            biz7.setDescription("A clean corporate consulting and strategic advisory platform featuring interactive bento grids, client reviews, capability lists, and dynamic query builders.");
-            biz7.setCategory(businessCategory);
-            biz7.setPrice(0.0);
-            biz7.setTemplateType("FREE");
-            biz7.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
-            biz7.setDemoUrl("/templates/buisness/Business-7/index.html");
-            biz7.setDownloadFile("");
-            biz7.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
-            biz7.setVersion("1.0.0");
-            biz7.setStatus("PUBLISHED");
-            biz7.setPagesCount(1);
-            biz7.setDownloadsCount(1450);
-            biz7.setTags(new ArrayList<>(Arrays.asList("Consulting", "Strategy", "Framer Motion", "Vite", "React")));
-            templateRepository.save(biz7);
-            logs.put("template_business_7", "Created");
-
-            // Business-8 (Vanta Studio)
-            Template biz8 = new Template();
-            biz8.setName("Vanta Studio — Premium Business Showcase");
-            biz8.setSlug("Business-8");
-            biz8.setDescription("A premium, modern showcase template for design collectives, digital-first brands, and agencies. Built with React, Tailwind CSS, and Framer Motion, featuring smooth animations and a dark editorial layout.");
-            biz8.setCategory(businessCategory);
-            biz8.setPrice(0.0);
-            biz8.setTemplateType("FREE");
-            biz8.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
-            biz8.setDemoUrl("/templates/buisness/Business-8/index.html");
-            biz8.setDownloadFile("");
-            biz8.setPreviewImage("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80");
-            biz8.setVersion("1.0.0");
-            biz8.setStatus("PUBLISHED");
-            biz8.setPagesCount(1);
-            biz8.setDownloadsCount(1250);
-            biz8.setTags(new ArrayList<>(Arrays.asList("Agency", "Design", "Showcase", "Vite", "React")));
-            templateRepository.save(biz8);
-            logs.put("template_business_8", "Created");
-        }
-
-        Category portfolioCategory = catMap.get("portfolio");
-        if (portfolioCategory != null) {
-            // Portfolio-1 (Architecture)
-            Template port1 = new Template();
-            port1.setName("Aethelgard — Minimalist Architecture Portfolio");
-            port1.setSlug("portfolio-1");
-            port1.setDescription("A minimalist architecture and luxury property design portfolio featuring custom horizontal slide entries, detailed structural specification tables, and interactive project image modal previews.");
-            port1.setCategory(portfolioCategory);
-            port1.setPrice(0.0);
-            port1.setTemplateType("FREE");
-            port1.setBootstrapVersion("React / Vite / Tailwind CSS");
-            port1.setDemoUrl("/templates/portfolio/portfolio-1/index.html");
-            port1.setDownloadFile("");
-            port1.setPreviewImage("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80");
-            port1.setVersion("1.0.0");
-            port1.setStatus("PUBLISHED");
-            port1.setPagesCount(1);
-            port1.setDownloadsCount(1450);
-            port1.setTags(new ArrayList<>(Arrays.asList("Architecture", "Minimalist", "Design", "Vite", "React")));
-            templateRepository.save(port1);
-            logs.put("template_portfolio_1", "Created");
-
-            // Portfolio-2 (Personal)
-            Template port2 = new Template();
-            port2.setName("Aiden Drake — Modern Dark Personal Portfolio");
-            port2.setSlug("portfolio-2");
-            port2.setDescription("A modern, high-contrast dark theme developer and visual designer personal bio page. Features animated skill progress bars, structured project tags, and custom card grids.");
-            port2.setCategory(portfolioCategory);
-            port2.setPrice(0.0);
-            port2.setTemplateType("FREE");
-            port2.setBootstrapVersion("React / Vite / Tailwind CSS");
-            port2.setDemoUrl("/templates/portfolio/portfolio-2/index.html");
-            port2.setDownloadFile("");
-            port2.setPreviewImage("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80");
-            port2.setVersion("1.0.0");
-            port2.setStatus("PUBLISHED");
-            port2.setPagesCount(1);
-            port2.setDownloadsCount(1580);
-            port2.setTags(new ArrayList<>(Arrays.asList("Personal", "Developer Portfolio", "Dark Theme", "Vite", "React")));
-            templateRepository.save(port2);
-            logs.put("template_portfolio_2", "Created");
-
-            // Portfolio-3 (Creative)
-            Template port3 = new Template();
-            port3.setName("Sasha Grey — Bold High-Contrast Creative Portfolio");
-            port3.setSlug("portfolio-3");
-            port3.setDescription("A bold, high-contrast modern portfolio built for designers and creators. Features responsive interactive masonry layout, detailed project image lightbox zooms, and structured work archive pages.");
-            port3.setCategory(portfolioCategory);
-            port3.setPrice(0.0);
-            port3.setTemplateType("FREE");
-            port3.setBootstrapVersion("React / Vite / Tailwind CSS");
-            port3.setDemoUrl("/templates/portfolio/portfolio-3/index.html");
-            port3.setDownloadFile("");
-            port3.setPreviewImage("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80");
-            port3.setVersion("1.0.0");
-            port3.setStatus("PUBLISHED");
-            port3.setPagesCount(1);
-            port3.setDownloadsCount(1720);
-            port3.setTags(new ArrayList<>(Arrays.asList("Creative", "Masonry", "Lightbox", "Vite", "React")));
-            templateRepository.save(port3);
-            logs.put("template_portfolio_3", "Created");
-
-            // Portfolio-4 (Minimal)
-            Template port4 = new Template();
-            port4.setName("Clara Oswald — Airy Minimalist Portfolio");
-            port4.setSlug("portfolio-4");
-            port4.setDescription("An airy, clean minimalist layout with spacious grids and light backgrounds. Perfect for copywriters, writers, and digital consultants.");
-            port4.setCategory(portfolioCategory);
-            port4.setPrice(0.0);
-            port4.setTemplateType("FREE");
-            port4.setBootstrapVersion("React / Vite / Tailwind CSS");
-            port4.setDemoUrl("/templates/portfolio/portfolio-4/index.html");
-            port4.setDownloadFile("");
-            port4.setPreviewImage("https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80");
-            port4.setVersion("1.0.0");
-            port4.setStatus("PUBLISHED");
-            port4.setPagesCount(1);
-            port4.setDownloadsCount(1390);
-            port4.setTags(new ArrayList<>(Arrays.asList("Minimalist", "Spacious", "Clean", "Vite", "React")));
-            templateRepository.save(port4);
-            logs.put("template_portfolio_4", "Created");
-
-            // Portfolio-5 (Multipage)
-            Template port5 = new Template();
-            port5.setName("Evelyn Vance — Routed Multipage Portfolio");
-            port5.setSlug("portfolio-5");
-            port5.setDescription("A fully routed multipage portfolio containing integrated Home, About, Projects, and Contact pages, custom transitions, and smooth global headers.");
-            port5.setCategory(portfolioCategory);
-            port5.setPrice(0.0);
-            port5.setTemplateType("FREE");
-            port5.setBootstrapVersion("React / Vite / Tailwind CSS / Router");
-            port5.setDemoUrl("/templates/portfolio/portfolio-5/index.html");
-            port5.setDownloadFile("");
-            port5.setPreviewImage("https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80");
-            port5.setVersion("1.0.0");
-            port5.setStatus("PUBLISHED");
-            port5.setPagesCount(4);
-            port5.setDownloadsCount(1650);
-            port5.setTags(new ArrayList<>(Arrays.asList("Multipage", "Routing", "Transitions", "Vite", "React")));
-            templateRepository.save(port5);
-            logs.put("template_portfolio_5", "Created");
-
-            // Portfolio-6 (Agency)
-            Template port6 = new Template();
-            port6.setName("Synthetix — Tech-Forward Software Agency");
-            port6.setSlug("portfolio-6");
-            port6.setDescription("A tech-forward, modern multipage digital agency and portfolio template. Features interactive skill bars, animated company grids, custom project card showcases, and responsive newsletter forms.");
-            port6.setCategory(portfolioCategory);
-            port6.setPrice(0.0);
-            port6.setTemplateType("FREE");
-            port6.setBootstrapVersion("React / Vite / Tailwind CSS / Router");
-            port6.setDemoUrl("/templates/portfolio/portfolio-6/index.html");
-            port6.setDownloadFile("");
-            port6.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
-            port6.setVersion("1.0.0");
-            port6.setStatus("PUBLISHED");
-            port6.setPagesCount(4);
-            port6.setDownloadsCount(1890);
-            port6.setTags(new ArrayList<>(Arrays.asList("Software Agency", "Bento Grid", "Newsletter", "Vite", "React")));
-            templateRepository.save(port6);
-            logs.put("template_portfolio_6", "Created");
-
-            // Portfolio-7 (Gradient)
-            Template port7 = new Template();
-            port7.setName("Jared Vance — Warm Gradient Portfolio");
-            port7.setSlug("portfolio-7");
-            port7.setDescription("A beautiful personal showcase featuring warm CSS mesh gradients, elegant editorial serif typography, interactive case study cards, and sleek contact links.");
-            port7.setCategory(portfolioCategory);
-            port7.setPrice(0.0);
-            port7.setTemplateType("FREE");
-            port7.setBootstrapVersion("React / Vite / Tailwind CSS");
-            port7.setDemoUrl("/templates/portfolio/portfolio-7/index.html");
-            port7.setDownloadFile("");
-            port7.setPreviewImage("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80");
-            port7.setVersion("1.0.0");
-            port7.setStatus("PUBLISHED");
-            port7.setPagesCount(1);
-            port7.setDownloadsCount(1520);
-            port7.setTags(new ArrayList<>(Arrays.asList("Gradients", "Mesh Gradient", "Typography", "Vite", "React")));
-            templateRepository.save(port7);
-            logs.put("template_portfolio_7", "Created");
-
-            // Portfolio-8 (Editorial)
-            Template port8 = new Template();
-            port8.setName("Evelyn Oswald — Editorial Operations Portfolio");
-            port8.setSlug("portfolio-8");
-            port8.setDescription("A modern typography-first layout with high-end editorial grids and subtle hover interactions, perfect for project managers and operation leads.");
-            port8.setCategory(portfolioCategory);
-            port8.setPrice(0.0);
-            port8.setTemplateType("FREE");
-            port8.setBootstrapVersion("React / Vite / Tailwind CSS");
-            port8.setDemoUrl("/templates/portfolio/portfolio-8/index.html");
-            port8.setDownloadFile("");
-            port8.setPreviewImage("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80");
-            port8.setVersion("1.0.0");
-            port8.setStatus("PUBLISHED");
-            port8.setPagesCount(1);
-            port8.setDownloadsCount(1410);
-            port8.setTags(new ArrayList<>(Arrays.asList("Editorial", "Typography", "Clean Grid", "Vite", "React")));
-            templateRepository.save(port8);
-            logs.put("template_portfolio_8", "Created");
-
-            // Portfolio-9 (Photography)
-            Template port9 = new Template();
-            port9.setName("Sasha Grey — Monochrome Editorial Photography");
-            port9.setSlug("portfolio-9");
-            port9.setDescription("An elegant black-and-white theme photography portfolio template featuring structured photo galleries, horizontal slider interactions, and styled info pages.");
-            port9.setCategory(portfolioCategory);
-            port9.setPrice(0.0);
-            port9.setTemplateType("FREE");
-            port9.setBootstrapVersion("React / Vite / Tailwind CSS / Router");
-            port9.setDemoUrl("/templates/portfolio/portfolio-9/index.html");
-            port9.setDownloadFile("");
-            port9.setPreviewImage("https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80");
-            port9.setVersion("1.0.0");
-            port9.setStatus("PUBLISHED");
-            port9.setPagesCount(3);
-            port9.setDownloadsCount(1620);
-            port9.setTags(new ArrayList<>(Arrays.asList("Monochrome", "Photography", "Slider", "Vite", "React")));
-            templateRepository.save(port9);
-            logs.put("template_portfolio_9", "Created");
-
-            // Portfolio-10 (Creative Multipage)
-            Template port10 = new Template();
-            port10.setName("Sasha Grey — Creative Multipage Portfolio");
-            port10.setSlug("portfolio-10");
-            port10.setDescription("An premium, clean-cut creative multipage digital agency and portfolio template. Features interactive work grids, detail modals, team showcases, and custom contact forms.");
-            port10.setCategory(portfolioCategory);
-            port10.setPrice(0.0);
-            port10.setTemplateType("FREE");
-            port10.setBootstrapVersion("React / Vite / Tailwind CSS / Router");
-            port10.setDemoUrl("/templates/portfolio/portfolio-10/index.html");
-            port10.setDownloadFile("");
-            port10.setPreviewImage("https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80");
-            port10.setVersion("1.0.0");
-            port10.setStatus("PUBLISHED");
-            port10.setPagesCount(4);
-            port10.setDownloadsCount(1750);
-            port10.setTags(new ArrayList<>(Arrays.asList("Creative Multipage", "Team Showcase", "Modals", "Vite", "React")));
-            templateRepository.save(port10);
-            logs.put("template_portfolio_10", "Created");
-        }
-
-        Category landingPageCategory = catMap.get("landing-page");
-        if (landingPageCategory != null) {
-            // landing-page-1 (Booky)
-            Template lp1 = new Template();
-            lp1.setName("Booky — Lead Generation & Authors Platform");
-            lp1.setSlug("landing-page-1");
-            lp1.setDescription("A professional and clean landing page for authors, books, and publications. Features call-to-action buttons, pricing tables, chapter highlights, and reviews.");
-            lp1.setCategory(landingPageCategory);
-            lp1.setPrice(0.0);
-            lp1.setTemplateType("FREE");
-            lp1.setBootstrapVersion("React / Tailwind / Vite");
-            lp1.setDemoUrl("/templates/landing-page/landing-page-1/index.html");
-            lp1.setDownloadFile("");
-            lp1.setPreviewImage("https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80");
-            lp1.setVersion("1.0.0");
-            lp1.setStatus("PUBLISHED");
-            lp1.setPagesCount(1);
-            lp1.setDownloadsCount(1450);
-            lp1.setTags(new ArrayList<>(Arrays.asList("Authors", "Lead Generation", "React", "Vite")));
-            templateRepository.save(lp1);
-            logs.put("template_landing_page_1", "Created");
-
-            // landing-page-2 (StatusBusy)
-            Template lp2 = new Template();
-            lp2.setName("StatusBusy — Lead Capture & App Promotion");
-            lp2.setSlug("landing-page-2");
-            lp2.setDescription("A modern SaaS and app promotion landing page with clean lead-capture forms, dynamic feature lists, pricing matrices, and clean typography.");
-            lp2.setCategory(landingPageCategory);
-            lp2.setPrice(0.0);
-            lp2.setTemplateType("FREE");
-            lp2.setBootstrapVersion("React / Vite / CSS");
-            lp2.setDemoUrl("/templates/landing-page/landing-page-2/index.html");
-            lp2.setDownloadFile("");
-            lp2.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
-            lp2.setVersion("1.0.0");
-            lp2.setStatus("PUBLISHED");
-            lp2.setPagesCount(1);
-            lp2.setDownloadsCount(1380);
-            lp2.setTags(new ArrayList<>(Arrays.asList("SaaS", "App Promotion", "Lead Capture", "React")));
-            templateRepository.save(lp2);
-            logs.put("template_landing_page_2", "Created");
-
-            // landing-page-3 (ExquDrive)
-            Template lp3 = new Template();
-            lp3.setName("ExquDrive — Dynamic Product Landing Page");
-            lp3.setSlug("landing-page-3");
-            lp3.setDescription("An elegant product launch landing page featuring immersive product grids, dynamic feature comparison tables, interactive customer reviews, and contact sections.");
-            lp3.setCategory(landingPageCategory);
-            lp3.setPrice(0.0);
-            lp3.setTemplateType("FREE");
-            lp3.setBootstrapVersion("React / Vite / CSS");
-            lp3.setDemoUrl("/templates/landing-page/landing-page-3/index.html");
-            lp3.setDownloadFile("");
-            lp3.setPreviewImage("https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80");
-            lp3.setVersion("1.0.0");
-            lp3.setStatus("PUBLISHED");
-            lp3.setPagesCount(1);
-            lp3.setDownloadsCount(1510);
-            lp3.setTags(new ArrayList<>(Arrays.asList("Product Launch", "Comparison Table", "Reviews", "React")));
-            templateRepository.save(lp3);
-            logs.put("template_landing_page_3", "Created");
-
-            // landing-page-4 (Ember & Olive)
-            Template lp4 = new Template();
-            lp4.setName("Ember & Olive — Wood-Fired Restaurant Landing Page");
-            lp4.setSlug("landing-page-4");
-            lp4.setDescription("An elegant wood-fired seasonal restaurant landing page featuring reservation blocks, detailed menus, private events information, and gallery grids.");
-            lp4.setCategory(landingPageCategory);
-            lp4.setPrice(0.0);
-            lp4.setTemplateType("FREE");
-            lp4.setBootstrapVersion("HTML5 / Bootstrap 5 / ES Modules");
-            lp4.setDemoUrl("/templates/landing-page/landing-page-4/index.html");
-            lp4.setDownloadFile("");
-            lp4.setPreviewImage("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80");
-            lp4.setVersion("1.0.0");
-            lp4.setStatus("PUBLISHED");
-            lp4.setPagesCount(6);
-            lp4.setDownloadsCount(1620);
-            lp4.setTags(new ArrayList<>(Arrays.asList("Restaurant", "Reservations", "HTML5", "Bootstrap")));
-            templateRepository.save(lp4);
-            logs.put("template_landing_page_4", "Created");
-
-            // landing-page-5 (AuraLanding)
-            Template lp5 = new Template();
-            lp5.setName("AuraLanding — Interactive Conversion Portal");
-            lp5.setSlug("landing-page-5");
-            lp5.setDescription("A high-converting product promo landing page with interactive product display panels, dynamic custom search modals, and clean responsive grids.");
-            lp5.setCategory(landingPageCategory);
-            lp5.setPrice(0.0);
-            lp5.setTemplateType("FREE");
-            lp5.setBootstrapVersion("React / Tailwind / Vite");
-            lp5.setDemoUrl("/templates/landing-page/landing-page-5/index.html");
-            lp5.setDownloadFile("");
-            lp5.setPreviewImage("https://images.unsplash.com/photo-1507633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80");
-            lp5.setVersion("1.0.0");
-            lp5.setStatus("PUBLISHED");
-            lp5.setPagesCount(1);
-            lp5.setDownloadsCount(1470);
-            lp5.setTags(new ArrayList<>(Arrays.asList("Promo Portal", "Custom Search", "React", "Tailwind")));
-            templateRepository.save(lp5);
-            logs.put("template_landing_page_5", "Created");
-
-            // landing-page-6 (Lunara Press)
-            Template lp6 = new Template();
-            lp6.setName("Lunara Press — Author & Book Landing Page");
-            lp6.setSlug("landing-page-6");
-            lp6.setDescription("A gorgeous book launch and author promotional landing page featuring a virtual 3D flip-book preview, interactive story timelines, chapters explorer, and reviews.");
-            lp6.setCategory(landingPageCategory);
-            lp6.setPrice(0.0);
-            lp6.setTemplateType("FREE");
-            lp6.setBootstrapVersion("React / Vite / CSS");
-            lp6.setDemoUrl("/templates/landing-page/landing-page-6/index.html");
-            lp6.setDownloadFile("");
-            lp6.setPreviewImage("https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80");
-            lp6.setVersion("1.0.0");
-            lp6.setStatus("PUBLISHED");
-            lp6.setPagesCount(1);
-            lp6.setDownloadsCount(1530);
-            lp6.setTags(new ArrayList<>(Arrays.asList("Authors", "Flipbook", "React", "Vite")));
-            templateRepository.save(lp6);
-            logs.put("template_landing_page_6", "Created");
-        }
-
-        Category onepageCategory = catMap.get("onepage");
-        if (onepageCategory != null) {
-            // onepage-1 (Dharma)
-            Template op1 = new Template();
-            op1.setName("Dharma — Zen & Wellness Onepage Scroll");
-            op1.setSlug("onepage-1");
-            op1.setDescription("A calm, serene Zen meditation and health retreat single-page website. Features smooth scroll navigation, detailed program cards, and interactive schedule boards.");
-            op1.setCategory(onepageCategory);
-            op1.setPrice(0.0);
-            op1.setTemplateType("FREE");
-            op1.setBootstrapVersion("React / Tailwind / Vite");
-            op1.setDemoUrl("/templates/onepage/onepage-1/index.html");
-            op1.setDownloadFile("");
-            op1.setPreviewImage("https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80");
-            op1.setVersion("1.0.0");
-            op1.setStatus("PUBLISHED");
-            op1.setPagesCount(1);
-            op1.setDownloadsCount(1390);
-            op1.setTags(new ArrayList<>(Arrays.asList("Wellness", "Zen", "Single Page", "Vite")));
-            templateRepository.save(op1);
-            logs.put("template_onepage_1", "Created");
-
-            // onepage-2 (Echoes)
-            Template op2 = new Template();
-            op2.setName("Echoes — Modern Narrative Onepage Portal");
-            op2.setSlug("onepage-2");
-            op2.setDescription("A minimalist horizontal scrolling storytelling landing page featuring high-definition custom video banners, bento grids, and responsive contact overlays.");
-            op2.setCategory(onepageCategory);
-            op2.setPrice(0.0);
-            op2.setTemplateType("FREE");
-            op2.setBootstrapVersion("React / Tailwind / Vite / TS");
-            op2.setDemoUrl("/templates/onepage/onepage-2/index.html");
-            op2.setDownloadFile("");
-            op2.setPreviewImage("https://images.unsplash.com/photo-1542204172-e7052809f852?auto=format&fit=crop&w=800&q=80");
-            op2.setVersion("1.0.0");
-            op2.setStatus("PUBLISHED");
-            op2.setPagesCount(1);
-            op2.setDownloadsCount(1420);
-            op2.setTags(new ArrayList<>(Arrays.asList("Storytelling", "Narrative", "Tailwind", "React")));
-            templateRepository.save(op2);
-            logs.put("template_onepage_2", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

@@ -2,7 +2,8 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "rewrites": [
-    { "source": "/templates/:category/:template/:path*", "destination": "/templates/:category/:template/:path*" },
+    { "source": "/templates/:category/:template", "destination": "/templates/:category/:template/index.html" },
+    { "source": "/templates/:category/:template/(.*)", "destination": "/templates/:category/:template/index.html" },
     { "source": "/assets/:path*", "destination": "/assets/:path*" },
     { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
   ]

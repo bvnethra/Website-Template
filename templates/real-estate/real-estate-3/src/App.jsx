@@ -14,7 +14,7 @@ import MonumentEstates from "./pages/MonumentEstates/MonumentEstates";
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/templates/real-estate/real-estate-3">
       <ScrollToTop />
       <Routes>
         {/* Main Selector Page */}

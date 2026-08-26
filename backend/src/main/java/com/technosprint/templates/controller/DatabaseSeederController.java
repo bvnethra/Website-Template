@@ -3113,6 +3113,43 @@ public class DatabaseSeederController {
             }
         }
 
+        Category transportationCategory = categoryRepository.findBySlug("transportation").orElse(null);
+        if (transportationCategory != null) {
+            String[][] transportationData = {
+                {"Voltway — Smart EV Transit & Logistics", "voltway", "Next-generation electric vehicle fleet operator dashboard and logistics solution portal featuring live charger mapping, battery state tracking, and smart scheduling integrations.", "transportation-1", "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80", "Transportation, EV, Transit, Logistics, React"},
+                {"Roadline — Modern Freight Operations", "roadline", "Modern heavy-freight and national trucking operations interface featuring route optimizations, shipment telemetry, and real-time delivery status alerts.", "transportation-2", "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80", "Transportation, Freight, Trucking, React"},
+                {"Fleetrise — Smart Fleet Intelligence & Analytics", "fleetrise", "Professional fleet tracking and diagnostic software layout featuring detailed driver safety telemetry, OBD metrics, and fuel consumption charts.", "transportation-3", "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=800&q=80", "Transportation, Fleet, Tracking, React"},
+                {"Skyroute — Global Air Charter Systems", "skyroute", "Luxury air charter registry and flight scheduling portal featuring private terminal bookings, cargo capacity calculations, and custom route quote estimators.", "transportation-4", "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80", "Transportation, Air Charter, Flight, React"},
+                {"Citymove — Local Courier & Moving Solutions", "citymove", "Sleek on-demand package courier and moving agency portal featuring weight pricing matrices, live distance estimations, and drop-off time selectors.", "transportation-5", "https://images.unsplash.com/photo-1527018601619-a508a2be00cd?auto=format&fit=crop&w=800&q=80", "Transportation, Courier, Moving, React"},
+                {"Transitflow — Regional Supply Chain Management", "transitflow", "Regional multi-modal hub distribution and sorting layout featuring custom transit timetables, warehouse capacity tracking, and carrier integration lists.", "transportation-6", "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80", "Transportation, Supply Chain, Logistics, React"},
+                {"Cargomax — Heavy Cargo & Shipping Enterprise", "cargomax", "Heavy cargo logistics and industrial distribution portal featuring customs form generators, dimensional weight calculators, and container lot registers.", "transportation-7", "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80", "Transportation, Shipping, Cargo, React"},
+                {"Rideora — Smart Urban Ride-Hailing Network", "rideora", "Interactive rideshare and taxi network portal featuring fare calculators, driver onboarding flows, regional service heatmaps, and ride booking previews.", "transportation-8", "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80", "Transportation, Ride Hailing, Rideshare, React"},
+                {"Railnova — Automated Rail Transit & Operations", "railnova", "Urban light rail and intercity rail operations platform featuring automated switchboard simulations, carriage occupancy metrics, and delay tracker alerts.", "transportation-9", "https://images.unsplash.com/photo-1515165504669-42308707f15c?auto=format&fit=crop&w=800&q=80", "Transportation, Rail, Subway, React"},
+                {"Oceanlink — International Maritime Operations", "oceanlink", "Global maritime freight, vessel scheduling, and seaport coordination system featuring cargo draft calculators, shipping lane weather overlays, and port ETA registries.", "transportation-10", "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=800&q=80", "Transportation, Maritime, Port, React"}
+            };
+
+            for (String[] data : transportationData) {
+                Template t = new Template();
+                t.setName(data[0]);
+                t.setSlug(data[1]);
+                t.setDescription(data[2]);
+                t.setCategory(transportationCategory);
+                t.setPrice(0.0);
+                t.setTemplateType("FREE");
+                t.setBootstrapVersion("React 19 / Vite / Tailwind CSS");
+                t.setDemoUrl("/templates/transportation/" + data[3] + "/index.html");
+                t.setDownloadFile("");
+                t.setPreviewImage(data[4]);
+                t.setVersion("1.0.0");
+                t.setStatus("PUBLISHED");
+                t.setPagesCount(1);
+                t.setDownloadsCount(1540);
+                t.setTags(new ArrayList<>(Arrays.asList(data[5].split(", "))));
+                templateRepository.save(t);
+                logs.put("template_" + data[1].replace("-", "_"), "Created");
+            }
+        }
+
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);
     }

@@ -1,212 +1,365 @@
-export const portfolioData = {
-  brand: {
-    siteName: "Evelyn Vance",
-    logoText: "EV",
-    email: "evelyn@vance.design",
-    phone: "+44 20 7946 0882",
-    location: "London, UK",
-    availability: "Available for design strategy"
-  },
-  
-  navigation: [
-    { label: "Home", path: "/" },
-    { label: "About", path: "/about" },
-    { label: "Resume", path: "/resume" },
-    { label: "Services", path: "/services" },
-    { label: "Portfolio", path: "/portfolio" },
-    { 
-      label: "Submenu", 
-      path: "#",
-      dropdown: [
-        { label: "Pricing Plan", path: "/pricing" },
-        { label: "Creative Team", path: "/team" }
-      ]
-    },
-    { label: "Contact", path: "/contact" }
+// Structured portfolio data for Noah Everwood (Fictional Wildlife Photographer)
+
+import heroImg from '../assets/images/hero_wilderness.jpg';
+import portraitImg from '../assets/images/noah_portrait.jpg';
+import projectGreenValley from '../assets/images/project_green_valley.jpg';
+import projectWingsRidge from '../assets/images/project_wings_ridge.jpg';
+import projectSilentRivers from '../assets/images/project_silent_rivers.jpg';
+
+export const PROFILE_DATA = {
+  name: "Noah Everwood",
+  title: "Wildlife Photographer & Documentary Storyteller",
+  tagline: "Stories from the places where the wild still speaks.",
+  location: "Queenstown, New Zealand",
+  experienceYears: "9+",
+  documentedRegions: "18 Fictional Regions",
+  specialty: "Wildlife Conservation & Environmental Stories",
+  bioHeadline: "Behind the Lens",
+  bioParagraphs: [
+    "Noah Everwood is a fictional wildlife photographer and visual storyteller focused on documenting the relationship between wildlife, landscapes, and the people working to protect them.",
+    "Over nine years in the field, Noah has braved extreme climates, remote wilderness corridors, and unpredictable mountain weather to capture unseen moments of natural resilience. His work bridges raw photojournalism with emotional environmental narratives.",
+    "Rooted in Queenstown, New Zealand, Noah approaches every assignment with a deep commitment to non-invasive wildlife observation, ethical field protocols, and patience—allowing nature to tell its own story without disturbance."
   ],
-  
-  socials: [
-    { name: "Facebook", icon: "Facebook", url: "https://facebook.com" },
-    { name: "Twitter", icon: "Twitter", url: "https://twitter.com" },
-    { name: "Instagram", icon: "Instagram", url: "https://instagram.com" },
-    { name: "GitHub", icon: "Github", url: "https://github.com" },
-    { name: "LinkedIn", icon: "Linkedin", url: "https://linkedin.com" }
-  ],
-  
-  hero: {
-    tagline: "Building cohesive visual ecosystems and full-stack software products.",
-    intro: "Hello, I'm Evelyn Vance, a Visual Architect based in London. I design beautiful grid systems, outline outline components, and write structural full-stack React code.",
-    backgroundPortrait: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85", // Large hero portrait
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80"
-  },
-  
-  about: {
-    eyebrow: "ABOUT ME",
-    heading: "Transforming Ideas into Digital Reality",
-    narrative1: "I establish unified design systems that ease handoff friction between engineering and product. My design methodology emphasizes high-contrast dark visual components, custom outline cards, and elegant serif typography.",
-    narrative2: "With a dual degree in fine arts and computer science, I balance graphic principles (symmetry, margins, scale) with robust, maintainable React coding. I partner with tech companies to define their UI frameworks from the ground up.",
-    stats: [
-      { value: "11+", label: "Years of Experience" },
-      { value: "140+", label: "Projects Completed" },
-      { value: "50+", label: "Happy Clients Globally" }
-    ]
-  },
-  
-  resume: {
-    experience: [
-      {
-        company: "Monolith Solutions",
-        role: "Lead Interface Architect",
-        dates: "2032 - Present",
-        description: "Directing the visual UI framework and design patterns library. Reduced CSS bundle size by 40% using custom Tailwind components."
-      },
-      {
-        company: "Vanguard Tech",
-        role: "Senior Full-Stack Engineer",
-        dates: "2029 - 2032",
-        description: "Developed and maintained responsive dashboards with React, Next.js, and Node.js. Integrated D3 analytics tools."
-      },
-      {
-        company: "Helix Studio",
-        role: "UI Engineer",
-        dates: "2026 - 2029",
-        description: "Created interactive campaign platforms and static landing pages using smooth scroll-triggered transitions."
-      }
-    ],
-    education: [
-      {
-        institution: "Imperial College London",
-        degree: "M.S. in Computer Science",
-        dates: "2024 - 2026",
-        description: "Specialized in Human-Computer Interaction models and user experience research patterns."
-      },
-      {
-        institution: "University of the Arts London",
-        degree: "B.A. in Graphic Communication",
-        dates: "2021 - 2024",
-        description: "Studied grid structures, editorial layout designs, and typography scale principles."
-      }
-    ],
-    skills: [
-      { name: "UI System Architecture", level: 95 },
-      { name: "React & Next.js Development", level: 90 },
-      { name: "Tailwind CSS & Layouts", level: 96 },
-      { name: "Node.js & API Integrations", level: 85 }
-    ]
-  },
-  
-  services: [
-    {
-      icon: "Layers",
-      title: "Visual Art Direction",
-      desc: "Creating distinct visual systems, layout alignments, typography grids, and product mockups."
-    },
-    {
-      icon: "Code",
-      title: "Front-End Engineering",
-      desc: "Developing performant, semantic, and fully responsive React layouts styled with Tailwind CSS."
-    },
-    {
-      icon: "Cpu",
-      title: "Full-Stack Development",
-      desc: "Integrating relational databases, designing REST endpoints, and coordinating secure server configurations."
-    }
-  ],
-  
-  projects: [
-    {
-      id: "proj-1",
-      title: "Cerebral Analytics Suite",
-      category: "Product",
-      tag: "product",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
-      description: "A comprehensive SaaS data analytics workspace, showing live streaming charts and system telemetries in high-contrast panels.",
-      specs: {
-        role: "Lead UI Developer",
-        stack: "React, D3.js, Tailwind",
-        year: "2035"
-      }
-    },
-    {
-      id: "proj-2",
-      title: "Nordic Design Catalog",
-      category: "Branding",
-      tag: "branding",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
-      description: "Rebranding and catalog layout for a modern furniture collective. Highlights pure geometric shapes and high contrast accents.",
-      specs: {
-        role: "Visual Designer",
-        client: "Nordic Collective",
-        year: "2034"
-      }
-    },
-    {
-      id: "proj-3",
-      title: "Vesper Mobile app",
-      category: "Mobile",
-      tag: "mobile",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
-      description: "A React Native app built to organize smart apartment ecosystems. Employs circular slider components and outline cards.",
-      specs: {
-        role: "Lead Engineer",
-        stack: "React Native, Tailwind",
-        year: "2033"
-      }
-    }
-  ],
-  
-  pricing: [
-    {
-      name: "Strategy Consult",
-      price: "$299",
-      period: "per session",
-      desc: "One-on-one architecture check, layout code review, and structural strategy map.",
-      features: [
-        "2-hour screen session",
-        "Code base review",
-        "Spacing system inspection",
-        "Design handoff checklist"
-      ]
-    },
-    {
-      name: "Product Design Block",
-      price: "$3,499",
-      period: "per month",
-      desc: "Retained front-end design and coding support. Translating mockups into production-ready React views.",
-      features: [
-        "15 hours per week",
-        "Slack/Discord channel sync",
-        "Daily code commits",
-        "Tailwind system creation"
-      ]
-    }
-  ],
-  
-  team: [
-    {
-      name: "Clara Oswald",
-      role: "Lead UX Researcher",
-      photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      name: "Sasha Grey",
-      role: "Brand Director",
-      photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
-    }
-  ]
+  heroImage: heroImg,
+  portraitImage: portraitImg,
 };
 
-export const projectFilters = ["All", "Product", "Branding", "Mobile"];
-export const filterMapping = {
-  "All": "all",
-  "Product": "product",
-  "Branding": "branding",
-  "Mobile": "mobile"
-};
-export const SOCIAL_FA_MAP = {
-  Facebook: "fa-brands fa-facebook-f",
-  Twitter: "fa-brands fa-twitter",
-  Instagram: "fa-brands fa-instagram",
-  GitHub: "fa-brands fa-github",
-  LinkedIn: "fa-brands fa-linkedin-in"
-};
+export const PROJECTS_DATA = [
+  {
+    id: "green-valley",
+    number: "01",
+    title: "THE LAST GREEN VALLEY",
+    year: "2025",
+    type: "Environmental Documentary",
+    location: "Silent Basin Corridor (Fictional)",
+    image: projectGreenValley,
+    description: "A fictional visual story exploring a remote valley where wildlife corridors and local communities coexist in delicate balance.",
+    story: "Over a 60-day wilderness residency in the Silent Basin, Noah documented the daily movement patterns of native species through old-growth rainforests. The resulting photo essay highlights the ecological vital signs of an intact river ecosystem.",
+    technical: "Medium format digital body, 24-70mm f/2.8 lens, natural morning ambient light, waterproof ground shelter.",
+    exhibitions: "Fictional Wildlife Storytellers Expo (2025)"
+  },
+  {
+    id: "wings-ridge",
+    number: "02",
+    title: "WINGS ABOVE THE RIDGE",
+    year: "2024",
+    type: "Wildlife Photography Series",
+    location: "Southern Crest Range (Fictional)",
+    image: projectWingsRidge,
+    description: "A fictional project documenting migratory bird populations across isolated mountain regions during autumn thermal drafts.",
+    story: "Perched on windy alpine ridges above cloud inversions, Noah spent weeks observing high-altitude avian thermals. The series captures dramatic aerial maneuvers and thermal soaring techniques of solitary mountain raptors.",
+    technical: "Fast shutter telephoto prime, 500mm f/4 lens, high-speed burst tracking, carbon fiber gimbal head.",
+    exhibitions: "Highland Avian Narrative Showcase (2024)"
+  },
+  {
+    id: "silent-rivers",
+    number: "03",
+    title: "SILENT RIVERS",
+    year: "2023",
+    type: "Environmental Storytelling",
+    location: "Silvermist Drainage System (Fictional)",
+    image: projectSilentRivers,
+    description: "A fictional visual study exploring changing freshwater ecosystems, glacial runoff, and riverbed flora.",
+    story: "Focusing on pristine mountain tributaries, this story captures underwater light interactions, moss-covered granite, and macro water clarity. It underscores the fragility of alpine headwaters under climate variation.",
+    technical: "Underwater housing unit, circular polarizer filter, 16-35mm ultra-wide, focus stacking techniques.",
+    exhibitions: "Freshwater Conservation Arts Forum (2023)"
+  },
+  {
+    id: "beyond-treeline",
+    number: "04",
+    title: "BEYOND THE TREELINE",
+    year: "2022",
+    type: "Long-form Documentary",
+    location: "High Alpine Tundra (Fictional)",
+    image: projectWingsRidge, // Visual reuse with custom filter
+    description: "A fictional expedition documenting wildlife adaptation in extreme highland environments above 2,500 meters.",
+    story: "Tracking mountain ungulates across windswept sub-alpine plateau, Noah recorded severe weather survival strategies during early autumn snowfalls.",
+    technical: "Weather-sealed dual body setup, solar charging pack, lightweight field gear.",
+    exhibitions: "Alpine Survival Photo Guild (2022)"
+  },
+  {
+    id: "night-forest",
+    number: "05",
+    title: "THE NIGHT FOREST",
+    year: "2021",
+    type: "Photography Collection",
+    location: "Shadowwood Sanctuary (Fictional)",
+    image: projectSilentRivers, // Visual reuse with atmospheric twilight filter
+    description: "A fictional nighttime wildlife series focused on unseen nocturnal forest ecosystems and bioluminescent flora.",
+    story: "Using silent low-light trigger systems, Noah captured nocturnal creatures navigating dark canopy paths under starlight and moonlit dew.",
+    technical: "Infrared low-light sensor, silent electronic shutter, dual fill warm LED accents.",
+    exhibitions: "Nocturnal Earth Exhibition (2021)"
+  }
+];
+
+export const GALLERY_DATA = [
+  {
+    id: "gal-1",
+    title: "Valley Mist at First Light",
+    subtitle: "Silent Basin, Fictional Region",
+    image: projectGreenValley,
+    meta: "ISO 200 | 35mm | f/8 | 1/250s",
+    caption: "Morning fog drifting through old-growth beech canopy as the valley wakes."
+  },
+  {
+    id: "gal-2",
+    title: "Alpine Raptor in Flight",
+    subtitle: "Southern Crest Peaks",
+    image: projectWingsRidge,
+    meta: "ISO 400 | 500mm | f/4 | 1/2000s",
+    caption: "Soaring at 2,400 meters elevation during peak evening thermal drafts."
+  },
+  {
+    id: "gal-3",
+    title: "Glacial Water Clarity",
+    subtitle: "Silvermist Tributary",
+    image: projectSilentRivers,
+    meta: "ISO 100 | 24mm | f/11 | 1/15s",
+    caption: "Granite riverbed smoothed over centuries of crystal-clear alpine runoff."
+  },
+  {
+    id: "gal-4",
+    title: "Highland Horizon",
+    subtitle: "Aurora Highlands Range",
+    image: heroImg,
+    meta: "ISO 100 | 16mm | f/9 | 1/500s",
+    caption: "Distant mountain reflections on silent waters before dawn."
+  }
+];
+
+export const FIELD_EXPERIENCE = [
+  {
+    period: "2023 — PRESENT",
+    role: "Lead Documentary Photographer",
+    organization: "Wild Horizon Collective",
+    type: "Fictional Environmental Storytelling Org",
+    description: "Leading multi-week wilderness field assignments, producing visual documentaries, and overseeing expedition logistics for non-profit nature conservation narratives.",
+    highlights: [
+      "Directing long-form photography projects across remote reserves",
+      "Mentoring junior field photographers on low-impact field ethics",
+      "Curating visual asset archives for global environmental education"
+    ]
+  },
+  {
+    period: "2020 — 2023",
+    role: "Documentary Photographer",
+    organization: "Terra Story Institute",
+    type: "Fictional Visual Research Org",
+    description: "Documented seasonal wildlife migration patterns and freshwater ecosystem health across 6 fictional biodiversity hot spots.",
+    highlights: [
+      "Produced 12 cover photo essays on ecosystem restoration",
+      "Collaborated with field biologists to map wildlife migration paths",
+      "Developed silent camera trap systems for rare species monitoring"
+    ]
+  },
+  {
+    period: "2018 — 2020",
+    role: "Wildlife Photography Contributor",
+    organization: "Open Earth Journal",
+    type: "Fictional Environmental Publication",
+    description: "Contributed monthly photo essays, editorial features, and wilderness field notes covering temperate rainforest ecosystems.",
+    highlights: [
+      "Authored 18 published visual stories on habitat protection",
+      "Captured exclusive imagery of highland bird nesting behaviors",
+      "Awarded Contributor of the Year (Fictional Award)"
+    ]
+  },
+  {
+    period: "2016 — 2018",
+    role: "Field Photography Assistant",
+    organization: "North Range Expeditions",
+    type: "Fictional Wilderness Production Team",
+    description: "Assisted senior natural history photographers with heavy field gear management, backcountry safety, equipment maintenance, and image cataloging.",
+    highlights: [
+      "Managed remote weather-proof camping & solar battery stations",
+      "Logged over 250 days in sub-alpine field conditions",
+      "Mastered wilderness survival & wilderness first aid protocols"
+    ]
+  }
+];
+
+export const EXPEDITIONS = [
+  {
+    id: "exp-1",
+    name: "Aurora Highlands",
+    coordinates: { x: 22, y: 30 },
+    year: "2025",
+    duration: "45 Days",
+    focus: "Sub-polar Wildlife & Glacial Valleys",
+    visual: heroImg,
+    summary: "A high-latitude expedition documenting winter wildlife adaptations, sub-polar vegetation, and glacial retreat in isolation."
+  },
+  {
+    id: "exp-2",
+    name: "Verdant Basin",
+    coordinates: { x: 45, y: 55 },
+    year: "2024",
+    duration: "30 Days",
+    focus: "Ancient Canopy & River Corridors",
+    visual: projectGreenValley,
+    summary: "Exploring dense temperate forest canopy layers and tracking rare arboreal species along pristine river corridors."
+  },
+  {
+    id: "exp-3",
+    name: "Silver Coast Range",
+    coordinates: { x: 75, y: 38 },
+    year: "2023",
+    duration: "60 Days",
+    focus: "Marine Birds & Seacoast Cliffs",
+    visual: projectWingsRidge,
+    summary: "Seacoast cliffside monitoring of migratory seabird colonies nesting along dramatic wave-swept rock formations."
+  },
+  {
+    id: "exp-4",
+    name: "Northern Mosslands",
+    coordinates: { x: 35, y: 78 },
+    year: "2022",
+    duration: "25 Days",
+    focus: "Peatland Ecosystems & Wetland Flora",
+    visual: projectSilentRivers,
+    summary: "A specialized botanical and amphibian visual research project across untouched peat bogs and silent moss wetlands."
+  },
+  {
+    id: "exp-5",
+    name: "Ember Valley",
+    coordinates: { x: 68, y: 72 },
+    year: "2021",
+    duration: "40 Days",
+    focus: "Geothermal Micro-climates & Fauna",
+    visual: projectGreenValley,
+    summary: "Investigating unique thermal stream microclimates and winter refuge behaviors of highland bird species."
+  }
+];
+
+export const EXPERTISE_SKILLS = [
+  {
+    category: "FIELD PHOTOGRAPHY",
+    icon: "Camera",
+    skills: [
+      "Wildlife Observation & Behavior",
+      "Natural Light & Weather Mastery",
+      "Long Telephoto Composition",
+      "Low-Impact Remote Field Planning"
+    ]
+  },
+  {
+    category: "DOCUMENTARY NARRATIVE",
+    icon: "BookOpen",
+    skills: [
+      "Visual Story Architecture",
+      "Field Interview Direction",
+      "Environmental Essay Sequencing",
+      "In-depth Conservation Research"
+    ]
+  },
+  {
+    category: "POST-PRODUCTION",
+    icon: "Sliders",
+    skills: [
+      "Raw Processing & Color Calibration",
+      "Non-destructive Image Editing",
+      "Visual Portfolio Curation",
+      "Digital Asset Archive Management"
+    ]
+  },
+  {
+    category: "FIELD OPERATIONS",
+    icon: "Compass",
+    skills: [
+      "Remote Wilderness Logistics",
+      "Backcountry Expedition Safety",
+      "Weather-sealed Equipment Care",
+      "Cross-disciplinary Team Leadership"
+    ]
+  }
+];
+
+export const EDUCATION_DATA = [
+  {
+    period: "2013 — 2016",
+    degree: "Bachelor of Visual Storytelling",
+    institution: "Southern Institute of Creative Media",
+    type: "Fictional Institution",
+    description: "Focus: Documentary Photography, Environmental Journalism & Visual Communication. Graduated with Honors."
+  },
+  {
+    period: "2017",
+    degree: "Advanced Field Storytelling Program",
+    institution: "Wilderness Media Academy",
+    type: "Fictional Academy",
+    description: "Intensive 6-month backcountry documentary training, ethics in wildlife photojournalism, and expedition logistics."
+  },
+  {
+    period: "2019",
+    degree: "Environmental Visual Research Program",
+    institution: "Pacific Story Lab",
+    type: "Fictional Research Lab",
+    description: "Specialized fellowship studying ecological storytelling, biodiversity mapping, and non-invasive wildlife tracking."
+  }
+];
+
+export const PUBLICATIONS_DATA = [
+  {
+    year: "2025",
+    publication: "Wild Terrain Quarterly",
+    storyTitle: "The Last Green Valley",
+    type: "Cover Feature & 14-Page Visual Essay",
+    note: "Fictional Publication"
+  },
+  {
+    year: "2024",
+    publication: "Field Notes Journal",
+    storyTitle: "Wings Above the Ridge",
+    type: "Avian Study Photo Spread",
+    note: "Fictional Publication"
+  },
+  {
+    year: "2023",
+    publication: "Earthline Stories",
+    storyTitle: "Silent Rivers",
+    type: "Freshwater Conservation Feature",
+    note: "Fictional Publication"
+  }
+];
+
+export const RECOGNITION_DATA = [
+  {
+    year: "2025",
+    award: "Visual Storytelling Award",
+    organization: "Global Nature Narrative Forum",
+    category: "Environmental Documentary Category",
+    note: "Fictional Recognition"
+  },
+  {
+    year: "2024",
+    award: "Field Documentary Recognition",
+    organization: "Environmental Media Assembly",
+    category: "Wildlife Portfolio Honors",
+    note: "Fictional Recognition"
+  },
+  {
+    year: "2022",
+    award: "Emerging Visual Storyteller",
+    organization: "Wild Lens Collective",
+    category: "Conservation Photojournalism",
+    note: "Fictional Recognition"
+  }
+];
+
+export const VALUES_DATA = [
+  {
+    title: "RESPECT",
+    tagline: "Approaching wildlife and natural environments responsibly.",
+    description: "The welfare of wildlife and integrity of natural habitats always supersede the desire for an image. We practice strict non-interference."
+  },
+  {
+    title: "PATIENCE",
+    tagline: "Allowing stories to unfold naturally over time.",
+    description: "True nature stories cannot be staged or rushed. Days of quiet waiting yield authentic moments of undisrupted wild behavior."
+  },
+  {
+    title: "RESPONSIBILITY",
+    tagline: "Using visual storytelling to encourage environmental awareness.",
+    description: "Photography serves a higher purpose: connecting people emotionally with remote ecosystems so they are inspired to preserve them."
+  }
+];

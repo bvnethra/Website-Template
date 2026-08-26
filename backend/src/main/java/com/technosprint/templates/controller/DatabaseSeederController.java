@@ -2966,21 +2966,21 @@ public class DatabaseSeederController {
 
             // Portfolio-5 (Multipage)
             Template port5 = new Template();
-            port5.setName("Evelyn Vance — Routed Multipage Portfolio");
+            port5.setName("Noah Everwood — Wildlife Photographer Portfolio");
             port5.setSlug("portfolio-5");
-            port5.setDescription("A fully routed multipage portfolio containing integrated Home, About, Projects, and Contact pages, custom transitions, and smooth global headers.");
+            port5.setDescription("A cinematic documentary-style portfolio for photographers and storytellers. Features horizontal gallery sliders, expedition maps, ambient nature audio, and structured narrative profiles.");
             port5.setCategory(portfolioCategory);
             port5.setPrice(0.0);
             port5.setTemplateType("FREE");
-            port5.setBootstrapVersion("React / Vite / Tailwind CSS / Router");
+            port5.setBootstrapVersion("React / Vite / CSS");
             port5.setDemoUrl("/templates/portfolio/portfolio-5/index.html");
             port5.setDownloadFile("");
-            port5.setPreviewImage("https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80");
+            port5.setPreviewImage("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80");
             port5.setVersion("1.0.0");
             port5.setStatus("PUBLISHED");
-            port5.setPagesCount(4);
+            port5.setPagesCount(1);
             port5.setDownloadsCount(1650);
-            port5.setTags(new ArrayList<>(Arrays.asList("Multipage", "Routing", "Transitions", "Vite", "React")));
+            port5.setTags(new ArrayList<>(Arrays.asList("Documentary", "Wildlife", "Horizontal Gallery", "Ambient Audio", "React")));
             templateRepository.save(port5);
             logs.put("template_portfolio_5", "Created");
 

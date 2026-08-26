@@ -1,76 +1,70 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { portfolioData, SOCIAL_FA_MAP } from '../data/portfolioData';
+import { PROFILE_DATA } from '../data/portfolioData';
+import { ArrowUp, ShieldAlert } from 'lucide-react';
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="bg-[#080808] border-t border-zinc-900 text-zinc-400 py-12 px-6 md:px-12 font-sans">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-        
-        {/* Brand info */}
-        <div className="col-span-12 md:col-span-5 flex flex-col items-start">
-          <Link to="/" className="flex items-center gap-2 mb-4 group">
-            <div className="w-8 h-8 rounded-full bg-[#e8583f]/10 border border-[#e8583f]/20 flex items-center justify-center font-bold text-[#e8583f] text-xs">
-              {portfolioData.brand.logoText}
+    <footer className="footer-section">
+      <div className="container">
+        <div className="footer-top-grid">
+          {/* Brand Info */}
+          <div className="footer-brand">
+            <a href="#hero" className="brand-logo footer-logo">
+              <span className="brand-initials">NE</span>
+              <div className="brand-text">
+                <span className="brand-name">{PROFILE_DATA.name}</span>
+                <span className="brand-subtitle">WILDLIFE STORYTELLER</span>
+              </div>
+            </a>
+            <p className="footer-tagline">"{PROFILE_DATA.tagline}"</p>
+            <span className="footer-loc">Queenstown, New Zealand</span>
+          </div>
+
+          {/* Nav Links */}
+          <div className="footer-nav">
+            <h4 className="footer-heading">DOCUMENTARY CHAPTERS</h4>
+            <div className="footer-links-grid">
+              <a href="#chapter-01">01. Behind the Lens</a>
+              <a href="#chapter-02">02. Visual Philosophy</a>
+              <a href="#chapter-03">03. Selected Stories</a>
+              <a href="#chapter-04">04. Field Experience</a>
+              <a href="#chapter-05">05. Field Journeys</a>
+              <a href="#chapter-06">06. Tools of the Story</a>
+              <a href="#chapter-07">07. Education</a>
+              <a href="#chapter-08">08. Publications</a>
+              <a href="#chapter-09">09. Recognition</a>
+              <a href="#contact">Contact & Inquiries</a>
             </div>
-            <span className="text-white font-black text-sm tracking-widest uppercase">
-              {portfolioData.brand.siteName}
-            </span>
-          </Link>
-          <p className="text-xs text-zinc-500 leading-relaxed max-w-sm">
-            Evelyn Vance Visual Studio. Constructing visual ecosystems and robust full-stack React components for digital projects.
-          </p>
-        </div>
+          </div>
 
-        {/* Quick Links */}
-        <div className="col-span-12 md:col-span-3 flex flex-col items-start">
-          <h4 className="text-[10px] font-sans tracking-widest uppercase font-bold text-white mb-4 border-b border-zinc-900 pb-1.5 w-full">
-            QUICK DIRECTORY
-          </h4>
-          <div className="flex flex-col gap-2">
-            {portfolioData.navigation.slice(0, 5).map((item, idx) => (
-              <Link
-                key={idx}
-                to={item.path}
-                className="text-xs text-zinc-500 hover:text-[#e8583f] transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
+          {/* Scroll Back to Top Button */}
+          <div className="footer-back-top">
+            <button className="back-top-btn" onClick={scrollToTop} aria-label="Scroll to top">
+              <ArrowUp size={20} />
+              <span>RETURN TO TOP</span>
+            </button>
           </div>
         </div>
 
-        {/* Contact Info socials */}
-        <div className="col-span-12 md:col-span-4 flex flex-col items-start">
-          <h4 className="text-[10px] font-sans tracking-widest uppercase font-bold text-white mb-4 border-b border-zinc-900 pb-1.5 w-full">
-            CONNECTION POINTS
-          </h4>
-          <span className="text-xs text-zinc-500 block mb-2 leading-relaxed">
-            London, United Kingdom // <a href={`mailto:${portfolioData.brand.email}`} className="text-white hover:text-[#e8583f] transition-colors">{portfolioData.brand.email}</a>
-          </span>
+        <hr className="footer-hr" />
 
-          <div className="flex gap-3.5 mt-4">
-            {portfolioData.socials.map((soc, idx) => {
-              const faClass = SOCIAL_FA_MAP[soc.name] || "fa-solid fa-link";
-              return (
-                <a
-                  key={idx}
-                  href={soc.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full border border-zinc-800 hover:border-zinc-700 bg-[#0d0d0d] text-zinc-500 hover:text-[#e8583f] flex items-center justify-center transition-all text-xs"
-                >
-                  <i className={faClass}></i>
-                </a>
-              );
-            })}
+        {/* Fictional Disclaimer & Copyright */}
+        <div className="footer-bottom">
+          <div className="footer-disclaimer-box">
+            <ShieldAlert size={16} className="shield-icon" />
+            <p className="disclaimer-text">
+              <strong>FICTIONAL DEMONSTRATION NOTICE:</strong> This is a fictional Resume/CV template demonstration. All names, organizations, projects, locations, publications, awards, and visuals are fictional or AI-generated for demonstration purposes.
+            </p>
+          </div>
+
+          <div className="footer-copy">
+            <span>© 2026 Noah Everwood. All Rights Reserved.</span>
           </div>
         </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto border-t border-zinc-900 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-[9px] font-sans tracking-widest uppercase font-bold text-zinc-600 gap-4">
-        <span>© {new Date().getFullYear()} EVELYN VANCE. ALL RIGHTS RESERVED.</span>
-        <span>MULTIPAGE ROUTED PORTFOLIO FRAMEWORK</span>
       </div>
     </footer>
   );

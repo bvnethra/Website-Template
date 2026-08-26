@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import useStylesheet from '../../../frontend/src/services/useStylesheet';
 
 export default function MySchoolPortal() {
-  useStylesheet('/templates/education/education-8/style.css');
+  useStylesheet('/templates/education/education-2/style.css');
 
   /* ==========================================
      Navigation Tabs state

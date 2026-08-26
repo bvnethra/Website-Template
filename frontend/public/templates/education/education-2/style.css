@@ -859,7 +859,7 @@ body {
    Sub-page Styles
    ========================================== */
 .page-header {
-  background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('/templates/education/education-8/hero-bg.jpg');
+  background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('/templates/education/education-2/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   padding: 85px 0;

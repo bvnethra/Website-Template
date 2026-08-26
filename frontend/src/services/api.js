@@ -925,7 +925,7 @@ const MOCK_TEMPLATES = [
     description: 'K-12 school portal featuring parent inquiry panels, progress logs, fee configurators, class curriculum schedules, and event boards.',
     bootstrapVersion: 'HTML5 / Vanilla CSS / JS',
     version: '1.0.0',
-    demoUrl: '/templates/education/education-8/index.html'
+    demoUrl: '/templates/education/education-2/index.html'
   },
   {
     id: 159,
@@ -940,7 +940,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium modern university portal with interactive research timelines, department directories, and full admission customizer panels.',
     bootstrapVersion: 'HTML5 / Tailwind CSS / Vanilla JS',
     version: '1.0.0',
-    demoUrl: '/templates/education/education-9/index.html'
+    demoUrl: '/templates/education/education-3/index.html'
   },
   {
     id: 160,
@@ -955,7 +955,7 @@ const MOCK_TEMPLATES = [
     description: 'Next-generation academic dashboard and campus administration hub. Features slot booking customizers, department catalogues, and advanced student registries.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/education/education-10/index.html'
+    demoUrl: '/templates/education/education-4/index.html'
   },
   {
     id: 171,

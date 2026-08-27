@@ -86,7 +86,7 @@ function AppContent() {
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/templates/agency/agency-6">
       <AppContent />
     </Router>
   );

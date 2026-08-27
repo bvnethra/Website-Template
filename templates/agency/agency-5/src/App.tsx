@@ -25,7 +25,7 @@ import { NotFound } from './pages/NotFound';
 
 export const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/templates/agency/agency-5">
       <CursorProvider>
         <ScrollToTop />
         <CustomCursor />

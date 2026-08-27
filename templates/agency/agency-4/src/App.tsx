@@ -17,7 +17,7 @@ import { ContactPage } from './pages/ContactPage';
 
 export const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/templates/agency/agency-4">
       <ScrollToTop />
       <div className="min-h-screen bg-[#FAF8F5] text-[#1A1918] flex flex-col font-sans selection:bg-[#D96B43] selection:text-white">
         <ScrollProgress />

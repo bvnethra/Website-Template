@@ -8,7 +8,7 @@ import App from "./App.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/templates/agency/agency-1">
       <App />
     </BrowserRouter>
   </StrictMode>,

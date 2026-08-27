@@ -2254,6 +2254,106 @@ public class DatabaseSeederController {
             edu4.setTags(new ArrayList<>(Arrays.asList("Student Portal", "Campus", "Management", "React", "Tailwind")));
             templateRepository.save(edu4);
             logs.put("template_education_4", "Created");
+
+            // education-5
+            Template edu5 = new Template();
+            edu5.setName("MelodyCademy — Music Academy Portal");
+            edu5.setSlug("melodycademy-music-portal");
+            edu5.setDescription("A premium, responsive music school and learning platform featuring interactive course registries, instrument catalogs, private class inquiry, and event timelines.");
+            edu5.setCategory(educationCategory);
+            edu5.setPrice(0.0);
+            edu5.setTemplateType("FREE");
+            edu5.setBootstrapVersion("React / Vite / CSS");
+            edu5.setDemoUrl("/templates/education/education-5/index.html");
+            edu5.setDownloadFile("");
+            edu5.setPreviewImage("https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80");
+            edu5.setVersion("1.0.0");
+            edu5.setStatus("PUBLISHED");
+            edu5.setPagesCount(1);
+            edu5.setDownloadsCount(1850);
+            edu5.setTags(new ArrayList<>(Arrays.asList("Music School", "Instrument Catalog", "React", "Vite")));
+            templateRepository.save(edu5);
+            logs.put("template_education_5", "Created");
+
+            // education-6
+            Template edu6 = new Template();
+            edu6.setName("BusinessCollege — Professional Academic Landing Page");
+            edu6.setSlug("business-college-landing");
+            edu6.setDescription("A clean, professional education and college landing page template with inquiry lead capture, testimonials carousel, and key highlights.");
+            edu6.setCategory(educationCategory);
+            edu6.setPrice(0.0);
+            edu6.setTemplateType("FREE");
+            edu6.setBootstrapVersion("React / Vite / CSS");
+            edu6.setDemoUrl("/templates/education/education-6/index.html");
+            edu6.setDownloadFile("");
+            edu6.setPreviewImage("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80");
+            edu6.setVersion("1.0.0");
+            edu6.setStatus("PUBLISHED");
+            edu6.setPagesCount(1);
+            edu6.setDownloadsCount(1900);
+            edu6.setTags(new ArrayList<>(Arrays.asList("College", "Landing Page", "Lead Capture", "React", "Vite")));
+            templateRepository.save(edu6);
+            logs.put("template_education_6", "Created");
+
+            // education-7
+            Template edu7 = new Template();
+            edu7.setName("Westridge — University Multi-page Portal");
+            edu7.setSlug("westridge-university-portal");
+            edu7.setDescription("A fully featured university website with 7 pages, including admissions guides, course search, events registers, and shop layouts.");
+            edu7.setCategory(educationCategory);
+            edu7.setPrice(0.0);
+            edu7.setTemplateType("FREE");
+            edu7.setBootstrapVersion("React / Vite / CSS");
+            edu7.setDemoUrl("/templates/education/education-7/index.html");
+            edu7.setDownloadFile("");
+            edu7.setPreviewImage("https://images.unsplash.com/photo-1498243691581-b145c3f54a5c?auto=format&fit=crop&w=800&q=80");
+            edu7.setVersion("1.0.0");
+            edu7.setStatus("PUBLISHED");
+            edu7.setPagesCount(7);
+            edu7.setDownloadsCount(2150);
+            edu7.setTags(new ArrayList<>(Arrays.asList("University", "Multi-page", "Admissions", "Shop", "React")));
+            templateRepository.save(edu7);
+            logs.put("template_education_7", "Created");
+
+            // education-8
+            Template edu8 = new Template();
+            edu8.setName("EdTech — Interactive E-Learning Platform");
+            edu8.setSlug("edtech-elearning-platform");
+            edu8.setDescription("An immersive learning dashboard template featuring progress trackers, interactive course syllabi, quizzes, and live tutor panels.");
+            edu8.setCategory(educationCategory);
+            edu8.setPrice(0.0);
+            edu8.setTemplateType("FREE");
+            edu8.setBootstrapVersion("React / Vite / CSS");
+            edu8.setDemoUrl("/templates/education/education-8/index.html");
+            edu8.setDownloadFile("");
+            edu8.setPreviewImage("https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80");
+            edu8.setVersion("1.0.0");
+            edu8.setStatus("PUBLISHED");
+            edu8.setPagesCount(1);
+            edu8.setDownloadsCount(2400);
+            edu8.setTags(new ArrayList<>(Arrays.asList("E-Learning", "Dashboard", "Quizzes", "React", "Vite")));
+            templateRepository.save(edu8);
+            logs.put("template_education_8", "Created");
+
+            // education-9
+            Template edu9 = new Template();
+            edu9.setName("LearningInMotion — Premium Gamified Education Dashboard");
+            edu9.setSlug("learning-in-motion");
+            edu9.setDescription("A premium interactive education portal with gamified features, integrated student dashboards, and clean modern aesthetic.");
+            edu9.setCategory(educationCategory);
+            edu9.setPrice(0.0);
+            edu9.setTemplateType("FREE");
+            edu9.setBootstrapVersion("React / Vite / CSS");
+            edu9.setDemoUrl("/templates/education/education-9/index.html");
+            edu9.setDownloadFile("");
+            edu9.setPreviewImage("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80");
+            edu9.setVersion("1.0.0");
+            edu9.setStatus("PUBLISHED");
+            edu9.setPagesCount(1);
+            edu9.setDownloadsCount(2800);
+            edu9.setTags(new ArrayList<>(Arrays.asList("Gamified", "Interactive", "Student Dashboard", "React", "Vite")));
+            templateRepository.save(edu9);
+            logs.put("template_education_9", "Created");
         }
 
         // Seed Coming Soon templates (comming-soon)

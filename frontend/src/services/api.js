@@ -2626,21 +2626,6 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Vite / CSS',
     version: '1.0.0',
     demoUrl: '/templates/resume/resume-8/index.html'
-  },
-  {
-    id: 9209,
-    name: 'TechnoSprint — Unified Resume Hub',
-    slug: 'resume-9',
-    previewImage: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80',
-    templateType: 'FREE',
-    price: 0,
-    category: { id: 20, name: 'Resume', slug: 'resume' },
-    pagesCount: 15,
-    downloadsCount: 1980,
-    description: 'A multi-page portfolio and resume hub template with integrated user dashboards, templates showcase, and interactive builder tool.',
-    bootstrapVersion: 'React / Vite / CSS',
-    version: '1.0.0',
-    demoUrl: '/templates/resume/resume-9/index.html'
   }
 ];
 

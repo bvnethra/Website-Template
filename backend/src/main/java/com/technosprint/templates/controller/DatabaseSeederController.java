@@ -3202,8 +3202,7 @@ public class DatabaseSeederController {
                 {"PixelCraft — Product Designer CV", "resume-5", "An elegant, typography-focused CV template for product designers featuring portfolio showcases, service grids, and experience milestones.", "resume-5", "https://images.unsplash.com/photo-1541462608141-2ff580ee0e66?auto=format&fit=crop&w=800&q=80", "Resume, Product Design, UX Portfolio, React"},
                 {"ApexExec — Executive Business Profile", "resume-6", "A corporate-ready executive profile template with a clean layout, highlights, professional overview, and structured career history.", "resume-6", "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80", "Resume, Executive, Corporate Profile, React"},
                 {"ChefAtelier — Culinary Artist CV", "resume-7", "A unique, image-rich culinary portfolio and CV template for chefs and culinary artists featuring signature dishes, concept timelines, and collaborations.", "resume-7", "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80", "Resume, Chef CV, Culinary Art, React"},
-                {"FocusStudio — Photographer CV", "resume-8", "A premium portfolio and resume template for visual creatives and photographers featuring elegant image galleries, CV modals, and lookbooks.", "resume-8", "https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=800&q=80", "Resume, Photography, Visual CV, React"},
-                {"TechnoSprint — Unified Resume Hub", "resume-9", "A multi-page portfolio and resume hub template with integrated user dashboards, templates showcase, and interactive builder tool.", "resume-9", "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80", "Resume, Resume Hub, Multi-page CV, React"}
+                {"FocusStudio — Photographer CV", "resume-8", "A premium portfolio and resume template for visual creatives and photographers featuring elegant image galleries, CV modals, and lookbooks.", "resume-8", "https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=800&q=80", "Resume, Photography, Visual CV, React"}
             };
 
             for (String[] data : resumeData) {
@@ -3220,7 +3219,7 @@ public class DatabaseSeederController {
                 t.setPreviewImage(data[4]);
                 t.setVersion("1.0.0");
                 t.setStatus("PUBLISHED");
-                t.setPagesCount(data[1].equals("resume-9") ? 15 : 1);
+                t.setPagesCount(1);
                 t.setDownloadsCount(1400);
                 t.setTags(new ArrayList<>(Arrays.asList(data[5].split(", "))));
                 templateRepository.save(t);

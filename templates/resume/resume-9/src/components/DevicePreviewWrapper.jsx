@@ -58,7 +58,7 @@ export default function DevicePreviewWrapper({ children }) {
         {/* Left Side Brand Logo */}
         <div>
           <a href="/templates" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-            <img src="/logo.jpg" alt="TechnoSprint Logo" style={{ height: '32px', borderRadius: '6px', border: '1px solid #e2e8f0' }} />
+            <img src="logo.jpg" alt="TechnoSprint Logo" style={{ height: '32px', borderRadius: '6px', border: '1px solid #e2e8f0' }} />
           </a>
         </div>
 

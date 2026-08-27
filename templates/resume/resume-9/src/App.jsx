@@ -65,7 +65,7 @@ function Header({ cartCount, user, onLogout }) {
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 40 }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/logo.png" alt="TechnoSprint Templates Logo" style={{ height: '32px' }} />
+          <img src="logo.png" alt="TechnoSprint Templates Logo" style={{ height: '32px' }} />
         </Link>
 
         {/* Global Search Bar */}
@@ -317,7 +317,7 @@ function Footer() {
       }}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
-            <img src="/logo.jpg" alt="Logo" style={{ height: '35px', borderRadius: '4px' }} />
+            <img src="logo.jpg" alt="Logo" style={{ height: '35px', borderRadius: '4px' }} />
           </div>
           <p style={{ fontSize: '0.85rem', color: '#94a3b8', lineHeight: 1.6, marginBottom: 20 }}>
             Professional website template marketplace. Modern, responsive, and easy to deploy templates for developers and businesses.

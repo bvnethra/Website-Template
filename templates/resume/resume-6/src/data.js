@@ -90,7 +90,7 @@ export const projects = [
     category: "Brand Identity & Digital Experience",
     year: "2024",
     description: "A complete visual identity and digital experience for a fictional contemporary arts institution — building a language as sophisticated as the work it represents.",
-    image: "/images/project_aurelia.jpg",
+    image: "images/project_aurelia.jpg",
     tags: ["Brand Identity", "Digital", "Cultural"],
   },
   {
@@ -99,7 +99,7 @@ export const projects = [
     category: "Editorial Strategy & Art Direction",
     year: "2023",
     description: "Editorial direction for an independent intellectual journal — creating a publication identity that balances intellectual depth with visual elegance.",
-    image: "/images/project_northarc.jpg",
+    image: "images/project_northarc.jpg",
     tags: ["Editorial", "Art Direction", "Publishing"],
   },
   {
@@ -108,7 +108,7 @@ export const projects = [
     category: "Lifestyle Brand Identity",
     year: "2023",
     description: "A nature-rooted lifestyle brand identity built on principles of quiet luxury, material honesty, and visual restraint.",
-    image: "/images/project_formfield.jpg",
+    image: "images/project_formfield.jpg",
     tags: ["Brand Identity", "Lifestyle", "Packaging"],
   },
   {
@@ -117,7 +117,7 @@ export const projects = [
     category: "Cultural Experience Campaign",
     year: "2022",
     description: "An expansive campaign for a fictional urban cultural district — transforming architecture into narrative through light, motion, and visual storytelling.",
-    image: "/images/project_lumen.jpg",
+    image: "images/project_lumen.jpg",
     tags: ["Campaign", "Cultural", "Experience"],
   },
   {
@@ -126,7 +126,7 @@ export const projects = [
     category: "Creative Identity System",
     year: "2022",
     description: "A bold, systematic visual identity for a fictional creative studio — a design language as dynamic and rigorous as the organization it represents.",
-    image: "/images/project_orbit.jpg",
+    image: "images/project_orbit.jpg",
     tags: ["Identity System", "Brand", "Motion"],
   },
 ];

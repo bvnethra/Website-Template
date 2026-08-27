@@ -78,7 +78,7 @@ export default function Auth({ onLogin }) {
         borderRadius: 20
       }}>
         <div style={{ textAlign: 'center', marginBottom: 30 }}>
-          <img src="/logo.jpg" alt="TechnoSprint Templates" style={{ height: 35, marginBottom: 20, borderRadius: '4px' }} />
+          <img src="logo.jpg" alt="TechnoSprint Templates" style={{ height: 35, marginBottom: 20, borderRadius: '4px' }} />
           <h2 style={{ fontSize: '1.6rem', fontWeight: 800 }}>
             {isLogin ? 'Sign In to Your Account' : 'Create an Account'}
           </h2>

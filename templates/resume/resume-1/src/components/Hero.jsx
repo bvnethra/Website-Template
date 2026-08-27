@@ -91,7 +91,7 @@ export default function Hero() {
               <div className="t1-hero-image-dots" aria-hidden="true" />
               <div className="t1-hero-image-frame">
                 <img
-                  src="/profile.jpg"
+                  src="profile.jpg"
                   alt="Jordan Davis — Software Engineer"
                   loading="eager"
                   fetchpriority="high"

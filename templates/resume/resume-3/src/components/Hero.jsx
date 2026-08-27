@@ -107,7 +107,7 @@ export default function Hero({ onOpenResume }) {
                 {/* Portrait Container */}
                 <div className="relative rounded overflow-hidden aspect-square border border-slate-300 shadow-inner group">
                   <img
-                    src="/images/arin_solberg_portrait.jpg"
+                    src="images/arin_solberg_portrait.jpg"
                     alt="Dr. Arin Solberg — Aerospace Systems Engineer"
                     className="w-full h-full object-cover object-center filter saturate-[0.95] contrast-[1.05] group-hover:scale-105 transition-transform duration-700"
                   />

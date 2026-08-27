@@ -60,7 +60,7 @@ export default function Hero() {
           <div className="em-hero__portrait-wrap">
             <div className="em-hero__portrait-frame">
               <img
-                src="/images/elena_portrait.jpg"
+                src="images/elena_portrait.jpg"
                 alt="Elena Marlowe — Creative Director & Brand Strategist"
                 className="em-hero__portrait-img"
               />

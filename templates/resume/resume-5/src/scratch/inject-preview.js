@@ -47,7 +47,7 @@ const scriptToInject = '  <!-- TechnoSprint Responsive Template Preview Wrapper 
 '          \n' +
 '          // Left side logo\n' +
 '          const logoDiv = document.createElement(\'div\');\n' +
-'          logoDiv.innerHTML = \'<a href="/templates" style="display: flex; align-items: center; text-decoration: none;"><img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" /></a>\';\n' +
+'          logoDiv.innerHTML = \'<a href="/templates" style="display: flex; align-items: center; text-decoration: none;"><img src="logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" /></a>\';\n' +
 '          topBar.appendChild(logoDiv);\n' +
 '          \n' +
 '          // Center Template Name\n' +

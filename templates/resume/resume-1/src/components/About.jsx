@@ -25,7 +25,7 @@ export default function About() {
           <div ref={imgRef} className="t1-about-image-col t1-fade-in">
             <div className="t1-about-image-box">
               <img
-                src="/profile.jpg"
+                src="profile.jpg"
                 alt="Jordan Davis — Professional portrait"
                 loading="lazy"
               />

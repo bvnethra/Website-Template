@@ -70,7 +70,7 @@ export default function Hero() {
             <div className="hero__portrait-bg" aria-hidden="true"></div>
             <div className="hero__portrait-frame">
               <img
-                src="/dr-maya-ellison.jpg"
+                src="dr-maya-ellison.jpg"
                 alt="Dr. Maya Ellison, Consultant Cardiologist"
                 className="hero__portrait-img"
                 loading="eager"

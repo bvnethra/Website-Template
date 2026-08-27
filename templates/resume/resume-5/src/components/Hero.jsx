@@ -97,7 +97,7 @@ export default function Hero({ onOpenCV, onExploreProjects }) {
             {/* Image Container */}
             <div className="portrait-image-container">
               <img 
-                src="/images/portrait.jpg" 
+                src="images/portrait.jpg" 
                 alt="Adrian Vale — Fictional Architect Portrait" 
                 className="portrait-img"
               />

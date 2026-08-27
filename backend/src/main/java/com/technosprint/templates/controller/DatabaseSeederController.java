@@ -3192,6 +3192,42 @@ public class DatabaseSeederController {
             }
         }
 
+        Category resumeCategory = categoryRepository.findBySlug("resume").orElse(null);
+        if (resumeCategory != null) {
+            String[][] resumeData = {
+                {"AeroResume — Sleek Minimalist CV", "resume-1", "A clean, professional minimalist resume template with smooth scroll navigation, detailed experience timeline, skills visualization, and contact form.", "resume-1", "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80", "Resume, Minimalist, CV, React"},
+                {"Dr. Maya Ellison — Professional Medical CV", "resume-2", "A self-contained professional medical CV template tailored for doctors and researchers featuring timeline accomplishments, certifications, and publications.", "resume-2", "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80", "Resume, Medical CV, Cardiologist, React"},
+                {"VividPortfolio — Creative Director CV", "resume-3", "A bold, high-contrast creative resume and portfolio template featuring asymmetrical sections, work lookbook, and contact overlays.", "resume-3", "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80", "Resume, Creative Director, Art Portfolio, React"},
+                {"DevStack — Software Engineer Resume", "resume-4", "A sleek dark-theme software developer resume template featuring interactive tech stack badges, GitHub project showcases, and career progress lines.", "resume-4", "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=800&q=80", "Resume, Software Engineer, GitHub, React"},
+                {"PixelCraft — Product Designer CV", "resume-5", "An elegant, typography-focused CV template for product designers featuring portfolio showcases, service grids, and experience milestones.", "resume-5", "https://images.unsplash.com/photo-1541462608141-2ff580ee0e66?auto=format&fit=crop&w=800&q=80", "Resume, Product Design, UX Portfolio, React"},
+                {"ApexExec — Executive Business Profile", "resume-6", "A corporate-ready executive profile template with a clean layout, highlights, professional overview, and structured career history.", "resume-6", "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80", "Resume, Executive, Corporate Profile, React"},
+                {"ChefAtelier — Culinary Artist CV", "resume-7", "A unique, image-rich culinary portfolio and CV template for chefs and culinary artists featuring signature dishes, concept timelines, and collaborations.", "resume-7", "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80", "Resume, Chef CV, Culinary Art, React"},
+                {"FocusStudio — Photographer CV", "resume-8", "A premium portfolio and resume template for visual creatives and photographers featuring elegant image galleries, CV modals, and lookbooks.", "resume-8", "https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=800&q=80", "Resume, Photography, Visual CV, React"},
+                {"TechnoSprint — Unified Resume Hub", "resume-9", "A multi-page portfolio and resume hub template with integrated user dashboards, templates showcase, and interactive builder tool.", "resume-9", "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80", "Resume, Resume Hub, Multi-page CV, React"}
+            };
+
+            for (String[] data : resumeData) {
+                Template t = new Template();
+                t.setName(data[0]);
+                t.setSlug(data[1]);
+                t.setDescription(data[2]);
+                t.setCategory(resumeCategory);
+                t.setPrice(0.0);
+                t.setTemplateType("FREE");
+                t.setBootstrapVersion("React / Vite / CSS");
+                t.setDemoUrl("/templates/resume/" + data[3] + "/index.html");
+                t.setDownloadFile("");
+                t.setPreviewImage(data[4]);
+                t.setVersion("1.0.0");
+                t.setStatus("PUBLISHED");
+                t.setPagesCount(data[1].equals("resume-9") ? 15 : 1);
+                t.setDownloadsCount(1400);
+                t.setTags(new ArrayList<>(Arrays.asList(data[5].split(", "))));
+                templateRepository.save(t);
+                logs.put("template_" + data[1].replace("-", "_"), "Created");
+            }
+        }
+
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);
     }

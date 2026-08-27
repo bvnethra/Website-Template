@@ -3327,6 +3327,42 @@ public class DatabaseSeederController {
             }
         }
 
+        Category agencyCategory = categoryRepository.findBySlug("agency").orElse(null);
+        if (agencyCategory == null) {
+            agencyCategory = catMap.get("agency");
+        }
+        if (agencyCategory != null) {
+            String[][] agencyData = {
+                {"PixelCraft — Creative Digital Agency", "agency-1", "A clean, modern digital agency template with portfolio filtering, project sliders, team sections, and custom contact forms.", "agency-1", "https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80", "Agency, Creative Studio, Portfolio, React, Vite"},
+                {"NexusMedia — Branding & Marketing Agency", "agency-2", "Immersive branding and digital marketing template featuring interactive service cards, case study lists, and detailed lead forms.", "agency-2", "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80", "Agency, Marketing, Branding, React, Tailwind"},
+                {"NovaDesign — Next-Gen Creative Agency", "agency-3", "A premium Next.js template for design agencies featuring smooth client-side routing, work showcases, client testimonial carousels, and services catalogs.", "agency-3", "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80", "Agency, Design Studio, NextJS, Tailwind"},
+                {"AuraStudio — Full-Service Production Agency", "agency-4", "Premium creative production agency layout featuring detailed team cards, client reviews, dynamic video portfolios, and consult bookings.", "agency-4", "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80", "Agency, Video Production, Creative, React"},
+                {"ApexConsult — Corporate Agency Hub", "agency-5", "Clean corporate consulting agency template with interactive client testimonials, department registers, and contact scheduling panels.", "agency-5", "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80", "Agency, Corporate, Consulting, React"},
+                {"VividPixel — Modern Interactive Agency", "agency-6", "Sleek interactive agency template featuring modern grid layouts, animated team member profiles, and detailed service timelines.", "agency-6", "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80", "Agency, Interactive, Tech, React"}
+            };
+
+            for (String[] data : agencyData) {
+                Template t = new Template();
+                t.setName(data[0]);
+                t.setSlug(data[1]);
+                t.setDescription(data[2]);
+                t.setCategory(agencyCategory);
+                t.setPrice(0.0);
+                t.setTemplateType("FREE");
+                t.setBootstrapVersion(data[1].equals("agency-3") ? "Next.js 15 / Tailwind CSS" : "React / Vite / CSS");
+                t.setDemoUrl("/templates/agency/" + data[3] + "/index.html");
+                t.setDownloadFile("");
+                t.setPreviewImage(data[4]);
+                t.setVersion("1.0.0");
+                t.setStatus("PUBLISHED");
+                t.setPagesCount(1);
+                t.setDownloadsCount(1700);
+                t.setTags(new ArrayList<>(Arrays.asList(data[5].split(", "))));
+                templateRepository.save(t);
+                logs.put("template_" + data[1].replace("-", "_"), "Created");
+            }
+        }
+
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);
     }

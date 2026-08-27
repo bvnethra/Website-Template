@@ -32,7 +32,7 @@ const Layout = ({ children }) => (
 );
 
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/templates/education/education-7">
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />

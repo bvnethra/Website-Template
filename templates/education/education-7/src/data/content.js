@@ -41,17 +41,17 @@ export const navLinks = [
 export const heroSlides = [
   {
     id: 1,
-    image: '/assets/hero-1.webp',
+    image: 'assets/hero-1.webp',
     alt: 'Students collaborating in a modern university library',
   },
   {
     id: 2,
-    image: '/assets/hero-2.webp',
+    image: 'assets/hero-2.webp',
     alt: 'A lecturer presenting to a full lecture hall',
   },
   {
     id: 3,
-    image: '/assets/hero-3.webp',
+    image: 'assets/hero-3.webp',
     alt: 'University campus courtyard on a sunny day',
   },
 ];
@@ -125,7 +125,7 @@ export const courses = [
     price: 1200,
     badge: 'Popular',
     description: 'A comprehensive introduction to core business principles, strategy, and organisational behaviour.',
-    image: '/assets/course-business.webp',
+    image: 'assets/course-business.webp',
   },
   {
     id: 'ECO201',
@@ -136,7 +136,7 @@ export const courses = [
     price: 1050,
     badge: 'New',
     description: 'Analyse consumer behaviour, market structures, and price mechanisms with real-world case studies.',
-    image: '/assets/course-economics.webp',
+    image: 'assets/course-economics.webp',
   },
   {
     id: 'MTH301',
@@ -147,7 +147,7 @@ export const courses = [
     price: 900,
     badge: null,
     description: 'Rigorous treatment of multivariable calculus, matrix theory, and their applications in science.',
-    image: '/assets/course-math.webp',
+    image: 'assets/course-math.webp',
   },
   {
     id: 'SCI110',
@@ -158,7 +158,7 @@ export const courses = [
     price: 980,
     badge: 'Popular',
     description: 'Classical mechanics, thermodynamics, and an introduction to quantum phenomena.',
-    image: '/assets/course-science.webp',
+    image: 'assets/course-science.webp',
   },
   {
     id: 'ENG220',
@@ -169,7 +169,7 @@ export const courses = [
     price: 1350,
     badge: null,
     description: 'Circuit analysis, electromagnetism, and digital systems for aspiring electrical engineers.',
-    image: '/assets/course-engineering.webp',
+    image: 'assets/course-engineering.webp',
   },
   {
     id: 'ART150',
@@ -180,7 +180,7 @@ export const courses = [
     price: 750,
     badge: 'New',
     description: 'From the Renaissance to contemporary movements — a survey of artistic traditions and cultural contexts.',
-    image: '/assets/course-arts.webp',
+    image: 'assets/course-arts.webp',
   },
   {
     id: 'LAW101',
@@ -191,7 +191,7 @@ export const courses = [
     price: 1100,
     badge: null,
     description: 'Fundamental principles of constitutional governance, rights, and judicial review.',
-    image: '/assets/course-law.webp',
+    image: 'assets/course-law.webp',
   },
   {
     id: 'TEC301',
@@ -202,7 +202,7 @@ export const courses = [
     price: 1800,
     badge: 'Popular',
     description: 'Build modern web applications with React, Node.js, and cloud deployment pipelines.',
-    image: '/assets/course-tech.webp',
+    image: 'assets/course-tech.webp',
   },
 ];
 
@@ -283,12 +283,12 @@ export const enrolledCourses = [
 
 // ─── Products / Shop ─────────────────────────────────────────────────────────
 export const products = [
-  { id: 1, title: 'WRU Crest Hoodie', price: 45.00, badge: 'Bestseller', image: '/assets/shop-hoodie.webp' },
-  { id: 2, title: 'Campus Tote Bag', price: 18.00, badge: null, image: '/assets/shop-tote.webp' },
-  { id: 3, title: 'Academic Planner 2025', price: 12.00, badge: 'New', image: '/assets/shop-planner.webp' },
-  { id: 4, title: 'WRU Branded Mug', price: 14.00, badge: null, image: '/assets/shop-mug.webp' },
-  { id: 5, title: 'University Polo Shirt', price: 35.00, badge: null, image: '/assets/shop-polo.webp' },
-  { id: 6, title: 'Research Compendium Vol. 4', price: 28.00, badge: 'New', image: '/assets/shop-book.webp' },
+  { id: 1, title: 'WRU Crest Hoodie', price: 45.00, badge: 'Bestseller', image: 'assets/shop-hoodie.webp' },
+  { id: 2, title: 'Campus Tote Bag', price: 18.00, badge: null, image: 'assets/shop-tote.webp' },
+  { id: 3, title: 'Academic Planner 2025', price: 12.00, badge: 'New', image: 'assets/shop-planner.webp' },
+  { id: 4, title: 'WRU Branded Mug', price: 14.00, badge: null, image: 'assets/shop-mug.webp' },
+  { id: 5, title: 'University Polo Shirt', price: 35.00, badge: null, image: 'assets/shop-polo.webp' },
+  { id: 6, title: 'Research Compendium Vol. 4', price: 28.00, badge: 'New', image: 'assets/shop-book.webp' },
 ];
 
 // ─── Testimonials ────────────────────────────────────────────────────────────
@@ -298,21 +298,21 @@ export const testimonials = [
     quote: 'Westridge gave me the tools, the network, and the confidence to launch my own firm within two years of graduating.',
     name: 'Amara D.',
     role: 'MBA Graduate, Class of 2022',
-    avatar: '/assets/avatar-1.webp',
+    avatar: 'assets/avatar-1.webp',
   },
   {
     id: 2,
     quote: 'The research facilities here are world-class. I published two papers before finishing my Master\'s degree.',
     name: 'Daniel K.',
     role: 'MSc Physics, Class of 2023',
-    avatar: '/assets/avatar-2.webp',
+    avatar: 'assets/avatar-2.webp',
   },
   {
     id: 3,
     quote: 'An incredibly supportive environment for international students. I felt at home from day one.',
     name: 'Mei-Ling T.',
     role: 'LLB Law, Class of 2024',
-    avatar: '/assets/avatar-3.webp',
+    avatar: 'assets/avatar-3.webp',
   },
 ];
 

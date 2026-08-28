@@ -214,6 +214,11 @@ export default function Home({ addToCart, cart }) {
     setActiveCategory(slug);
   };
 
+  const getCategoryCount = (slug) => {
+    if (slug === 'all') return templates.length;
+    return templates.filter(t => t.category && t.category.slug === slug).length;
+  };
+
   const filteredTemplates = activeCategory === 'all'
     ? templates
     : templates.filter(t => t.category.slug === activeCategory);
@@ -403,7 +408,7 @@ export default function Home({ addToCart, cart }) {
               transition: 'var(--transition)'
             }}
           >
-            All Templates
+            All Templates ({getCategoryCount('all')})
           </button>
           {categories.map(cat => (
             <button
@@ -422,7 +427,7 @@ export default function Home({ addToCart, cart }) {
                 transition: 'var(--transition)'
               }}
             >
-              {cat.name}
+              {cat.name} ({getCategoryCount(cat.slug)})
             </button>
           ))}
         </div>

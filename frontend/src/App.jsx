@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
-import { ShoppingCart, User as UserIcon, LogOut, Layout, Settings, Compass, HelpCircle, Bell, Heart } from 'lucide-react';
+import { ShoppingCart, User as UserIcon, LogOut, Layout, Settings, Compass, HelpCircle, Bell, Heart, Search, Sun, Moon } from 'lucide-react';
 import { api } from './services/api';
 import Home from './pages/Home';
 import Templates from './pages/Templates';
@@ -35,7 +35,7 @@ import CreativeMultipagePortfolio from './pages/CreativeMultipagePortfolio';
 import EdTechInteractiveTemplate from './pages/EdTechInteractiveTemplate';
 
 
-function Header({ cartCount, user, onLogout }) {
+function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
@@ -49,185 +49,224 @@ function Header({ cartCount, user, onLogout }) {
   };
 
   return (
-    <header className="glass-panel" style={{
+    <header style={{
       position: 'sticky',
       top: 0,
       zIndex: 1000,
       margin: 0,
-      padding: '16px 40px',
-      borderRadius: 0,
-      borderBottom: '1px solid #e2e8f0',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      background: 'rgba(255, 255, 255, 0.95)',
-      backdropFilter: 'blur(8px)',
-      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.02)'
+      padding: '16px 20px',
+      background: 'var(--header-bg, rgba(248, 250, 252, 0.8))',
+      backdropFilter: 'blur(12px)',
+      display: 'block'
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 40 }}>
-        <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/logo.png" alt="TechnoSprint Templates Logo" style={{ height: '32px' }} />
-        </Link>
-
-        {/* Global Search Bar */}
-        <form onSubmit={handleSearchSubmit} style={{ position: 'relative' }}>
-          <input
-            type="text"
-            placeholder="Search templates, e.g. 'SaaS landing page'"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            style={{
-              padding: '10px 18px',
-              width: '320px',
-              borderRadius: '99px',
-              border: '1px solid #e2e8f0',
-              fontSize: '0.85rem',
-              outline: 'none',
-              background: '#f8fafc'
-            }}
-          />
-          <button type="submit" style={{ display: 'none' }} />
-        </form>
-      </div>
-
-      <nav style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
-        <div className="nav-item-templates">
-          <Link to="/templates" style={{
-            fontSize: '0.9rem',
-            fontWeight: 600,
-            color: location.pathname === '/templates' ? 'var(--primary-color)' : 'var(--text-muted)',
-            borderBottom: location.pathname === '/templates' ? '2px solid var(--primary-color)' : 'none',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 4,
-            padding: '6px 0'
-          }}>
-            Templates <span style={{ fontSize: '0.75rem' }}>▼</span>
+      <div className="glass-panel" style={{
+        background: 'var(--header-capsule-bg, #ffffff)',
+        borderRadius: '99px',
+        border: '1px solid var(--border-color)',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+        padding: '6px 24px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        maxWidth: '1280px',
+        margin: '0 auto',
+        width: '100%',
+        height: '60px'
+      }}>
+        {/* Left Side: Logo and Main Links */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+            <img src="/logo.png" alt="TechnoSprint Templates Logo" style={{ height: '26px' }} />
           </Link>
-          <MegaMenu />
-        </div>
-        <Link to="/templates" style={{
-          fontSize: '0.9rem',
-          fontWeight: 600,
-          color: 'var(--text-muted)',
-          padding: '6px 0'
-        }}>
-          Premium
-        </Link>
-        <Link to="/templates" style={{
-          fontSize: '0.9rem',
-          fontWeight: 600,
-          color: 'var(--text-muted)',
-          padding: '6px 0'
-        }}>
-          Support
-        </Link>
-        <Link to="/templates" style={{
-          fontSize: '0.9rem',
-          fontWeight: 600,
-          color: 'var(--text-muted)',
-          padding: '6px 0'
-        }}>
-          Contact
-        </Link>
-      </nav>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-        {/* Wishlist Heart Icon */}
-        <Link to="/dashboard" style={{ display: 'flex', alignItems: 'center', color: '#64748b', transition: 'var(--transition)' }} title="Wishlist">
-          <Heart size={20} />
-        </Link>
-
-        {/* Notification Bell Icon */}
-        <div style={{ position: 'relative', display: 'flex', alignItems: 'center', color: '#64748b', cursor: 'pointer', transition: 'var(--transition)' }} title="Notifications">
-          <Bell size={20} />
-          <span style={{
-            position: 'absolute',
-            top: -2,
-            right: -2,
-            background: '#ef4444',
-            width: 8,
-            height: 8,
-            borderRadius: '50%',
-            border: '1.5px solid #fff'
-          }}></span>
-        </div>
-
-        {user ? (
-          <div style={{ position: 'relative' }}>
-            <button
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 8,
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                padding: '4px 8px',
-                borderRadius: '8px',
-                color: 'var(--text-main)',
+          <nav style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+            <div className="nav-item-templates" style={{ position: 'relative' }}>
+              <Link to="/templates" style={{
+                fontSize: '0.85rem',
                 fontWeight: 600,
-                fontSize: '0.9rem'
-              }}
-            >
-              <div style={{
-                width: 32,
-                height: 32,
-                borderRadius: '50%',
-                background: 'var(--primary-color)',
-                color: '#fff',
-                display: 'flex',
+                color: location.pathname === '/templates' ? 'var(--primary-color)' : 'var(--text-main)',
+                display: 'inline-flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                fontWeight: 700
+                gap: 4,
+                padding: '6px 0',
+                textDecoration: 'none'
               }}>
-                {user.name.charAt(0).toUpperCase()}
-              </div>
-              <span>{user.name.split(' ')[0]}</span>
-            </button>
+                Templates <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>▼</span>
+              </Link>
+              <MegaMenu />
+            </div>
+            <Link to="/templates" style={{
+              fontSize: '0.85rem',
+              fontWeight: 600,
+              color: 'var(--text-main)',
+              padding: '6px 0',
+              textDecoration: 'none'
+            }}>
+              Premium
+            </Link>
+            <Link to="/templates" style={{
+              fontSize: '0.85rem',
+              fontWeight: 600,
+              color: 'var(--text-main)',
+              padding: '6px 0',
+              textDecoration: 'none'
+            }}>
+              Support
+            </Link>
+            <Link to="/templates" style={{
+              fontSize: '0.85rem',
+              fontWeight: 600,
+              color: 'var(--text-main)',
+              padding: '6px 0',
+              textDecoration: 'none'
+            }}>
+              Contact
+            </Link>
+          </nav>
+        </div>
 
-            {dropdownOpen && (
-              <div style={{
-                position: 'absolute',
-                top: '100%',
-                right: 0,
-                marginTop: 8,
-                width: 220,
-                background: '#fff',
-                borderRadius: '12px',
-                boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
-                border: '1px solid #e2e8f0',
-                padding: '8px 0',
-                zIndex: 100
-              }}>
-                <div style={{ padding: '8px 16px', borderBottom: '1px solid #e2e8f0', marginBottom: 4 }}>
-                  <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-main)' }}>{user.name}</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{user.email}</div>
-                  <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--primary-color)', marginTop: 4 }}>
-                    Role: {user.role}
-                  </div>
+        {/* Right Side: Search and User Actions */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+          {/* Global Search Bar */}
+          <form onSubmit={handleSearchSubmit} style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={{
+                padding: '8px 36px 8px 16px',
+                width: '180px',
+                borderRadius: '99px',
+                border: '1px solid var(--border-color)',
+                fontSize: '0.85rem',
+                outline: 'none',
+                background: 'var(--bg-primary)',
+                color: 'var(--text-main)',
+                transition: 'all 0.3s ease'
+              }}
+              onFocus={(e) => {
+                e.target.style.width = '240px';
+                e.target.style.borderColor = 'var(--primary-color)';
+                e.target.style.background = 'var(--header-capsule-bg)';
+              }}
+              onBlur={(e) => {
+                e.target.style.width = '180px';
+                e.target.style.borderColor = 'var(--border-color)';
+                e.target.style.background = 'var(--bg-primary)';
+              }}
+            />
+            <Search size={16} style={{ position: 'absolute', right: 14, color: 'var(--text-muted)', pointerEvents: 'none' }} />
+            <button type="submit" style={{ display: 'none' }} />
+          </form>
+
+          {/* Theme Change Toggle Button */}
+          <button
+            onClick={() => setIsDarkMode(!isDarkMode)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: 'var(--text-muted)',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '6px',
+              borderRadius: '99px',
+              transition: 'background-color 0.2s, color 0.2s',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.05)';
+              e.currentTarget.style.color = 'var(--primary-color)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = 'var(--text-muted)';
+            }}
+            title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          >
+            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+
+          {/* Wishlist Heart Icon */}
+          <Link to="/dashboard" style={{ display: 'flex', alignItems: 'center', color: 'var(--text-muted)', transition: 'var(--transition)' }} title="Wishlist">
+            <Heart size={20} />
+          </Link>
+
+          {/* Notification Bell Icon */}
+          <div style={{ position: 'relative', display: 'flex', alignItems: 'center', color: 'var(--text-muted)', cursor: 'pointer', transition: 'var(--transition)' }} title="Notifications">
+            <Bell size={20} />
+            <span style={{
+              position: 'absolute',
+              top: -2,
+              right: -2,
+              background: '#ef4444',
+              width: 8,
+              height: 8,
+              borderRadius: '50%',
+              border: '1.5px solid var(--header-capsule-bg)'
+            }}></span>
+          </div>
+
+
+          {user ? (
+            <div style={{ position: 'relative' }}>
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '4px 8px',
+                  borderRadius: '8px',
+                  color: 'var(--text-main)',
+                  fontWeight: 600,
+                  fontSize: '0.9rem'
+                }}
+              >
+                <div style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: '50%',
+                  background: 'var(--primary-color)',
+                  color: '#fff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontWeight: 700
+                }}>
+                  {user.name.charAt(0).toUpperCase()}
                 </div>
+                <span style={{ color: '#334155' }}>{user.name.split(' ')[0]}</span>
+              </button>
 
-                <Link
-                  to="/dashboard"
-                  onClick={() => setDropdownOpen(false)}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 10,
-                    padding: '10px 16px',
-                    fontSize: '0.85rem',
-                    color: 'var(--text-main)',
-                    textDecoration: 'none'
-                  }}
-                >
-                  <Layout size={16} /> My Dashboard
-                </Link>
+              {dropdownOpen && (
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  right: 0,
+                  marginTop: 8,
+                  width: 220,
+                  background: '#fff',
+                  borderRadius: '12px',
+                  boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+                  border: '1px solid #e2e8f0',
+                  padding: '8px 0',
+                  zIndex: 100
+                }}>
+                  <div style={{ padding: '8px 16px', borderBottom: '1px solid #e2e8f0', marginBottom: 4 }}>
+                    <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-main)' }}>{user.name}</div>
+                    <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{user.email}</div>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--primary-color)', marginTop: 4 }}>
+                      Role: {user.role}
+                    </div>
+                  </div>
 
-                {user.role === 'ADMIN' && (
                   <Link
-                    to="/admin"
+                    to="/dashboard"
                     onClick={() => setDropdownOpen(false)}
                     style={{
                       display: 'flex',
@@ -239,61 +278,79 @@ function Header({ cartCount, user, onLogout }) {
                       textDecoration: 'none'
                     }}
                   >
-                    <Settings size={16} /> Admin Panel
+                    <Layout size={16} /> My Dashboard
                   </Link>
-                )}
 
-                <button
-                  onClick={() => {
-                    setDropdownOpen(false);
-                    onLogout();
-                  }}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 10,
-                    padding: '10px 16px',
-                    fontSize: '0.85rem',
-                    color: '#ef4444',
-                    background: 'none',
-                    border: 'none',
-                    width: '100%',
-                    textAlign: 'left',
-                    cursor: 'pointer',
-                    borderTop: '1px solid #e2e8f0',
-                    marginTop: 4
-                  }}
-                >
-                  <LogOut size={16} /> Sign Out
-                </button>
-              </div>
-            )}
-          </div>
-        ) : (
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <Link to="/auth" style={{
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              color: 'var(--text-main)',
-              textDecoration: 'none',
-              padding: '8px 14px'
-            }}>
-              Sign In
-            </Link>
-            <Link to="/auth" style={{
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              background: 'var(--primary-color)',
-              color: '#fff',
-              textDecoration: 'none',
-              padding: '8px 18px',
-              borderRadius: '8px',
-              boxShadow: '0 2px 8px rgba(37, 99, 235, 0.2)'
-            }}>
-              Get Started
-            </Link>
-          </div>
-        )}
+                  {user.role === 'ADMIN' && (
+                    <Link
+                      to="/admin"
+                      onClick={() => setDropdownOpen(false)}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 10,
+                        padding: '10px 16px',
+                        fontSize: '0.85rem',
+                        color: 'var(--text-main)',
+                        textDecoration: 'none'
+                      }}
+                    >
+                      <Settings size={16} /> Admin Panel
+                    </Link>
+                  )}
+
+                  <button
+                    onClick={() => {
+                      setDropdownOpen(false);
+                      onLogout();
+                    }}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 10,
+                      padding: '10px 16px',
+                      fontSize: '0.85rem',
+                      color: '#ef4444',
+                      background: 'none',
+                      border: 'none',
+                      width: '100%',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      borderTop: '1px solid #e2e8f0',
+                      marginTop: 4
+                    }}
+                  >
+                    <LogOut size={16} /> Sign Out
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <Link to="/auth" style={{
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                color: '#334155',
+                textDecoration: 'none',
+                padding: '8px 14px'
+              }}>
+                Sign In
+              </Link>
+              <Link to="/auth" style={{
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                background: 'var(--primary-color)',
+                color: '#fff',
+                textDecoration: 'none',
+                padding: '8px 18px',
+                borderRadius: '99px',
+                boxShadow: '0 2px 8px rgba(37, 99, 235, 0.2)'
+              }}>
+                Get Started
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );
@@ -381,6 +438,19 @@ function Footer() {
 
 function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLogin, handleLogout }) {
   const location = useLocation();
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem('theme') === 'dark';
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-theme');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDarkMode]);
   const isTemplateRoute = 
     location.pathname === '/hotel-template' ||
     location.pathname.startsWith('/templates/photography/photography-') ||
@@ -436,7 +506,7 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <Header cartCount={cart.length} user={user} onLogout={handleLogout} />
+      <Header cartCount={cart.length} user={user} onLogout={handleLogout} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       
       <main style={{ flex: 1, maxWidth: 1300, width: '100%', margin: '0 auto', padding: '0 20px' }}>
         <Routes>

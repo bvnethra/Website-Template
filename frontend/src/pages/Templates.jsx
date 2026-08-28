@@ -203,6 +203,7 @@ export default function Templates() {
   const navigate = useNavigate();
   const [templates, setTemplates] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [allTemplates, setAllTemplates] = useState([]);
   const [showFilterPanel, setShowFilterPanel] = useState(false);
   
   // States for filters
@@ -221,7 +222,14 @@ export default function Templates() {
   useEffect(() => {
     // Fetch categories
     api.getCategories().then(setCategories).catch(err => console.error(err));
+    // Fetch all templates to calculate category counts
+    api.getTemplates({}).then(setAllTemplates).catch(err => console.error(err));
   }, []);
+
+  const getCategoryCount = (slug) => {
+    if (slug === 'all') return allTemplates.length;
+    return allTemplates.filter(t => t.category && t.category.slug === slug).length;
+  };
 
   useEffect(() => {
     // Fetch filtered templates
@@ -294,66 +302,199 @@ export default function Templates() {
         <p style={{ color: 'var(--text-muted)' }}>Discover modern, responsive layouts for your next business, dashboard or creative project.</p>
       </div>
 
-      <div>
-        {/* Controls Bar */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 20,
-          marginBottom: 25,
-          background: 'white',
-          padding: '16px 24px',
-          borderRadius: '16px',
+      <div style={{
+        display: 'flex',
+        gap: 40,
+        alignItems: 'flex-start',
+        marginTop: 20
+      }}>
+        {/* Left Sidebar */}
+        <aside style={{
+          width: '280px',
+          flexShrink: 0,
+          background: 'var(--header-capsule-bg)',
+          borderRadius: '20px',
           border: '1px solid var(--border-color)',
-          boxShadow: 'var(--shadow-sm)'
+          padding: '24px',
+          boxShadow: '0 4px 20px rgba(15, 23, 42, 0.02)',
+          position: 'sticky',
+          top: 100,
+          boxSizing: 'border-box'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
-            {/* Filter Toggle Button */}
-            <button 
-              onClick={() => setShowFilterPanel(!showFilterPanel)}
+          {/* Search input in sidebar */}
+          <div style={{ position: 'relative', marginBottom: 24 }}>
+            <Search size={18} color="#94a3b8" style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)' }} />
+            <input
+              type="text"
+              placeholder="Search templates..."
+              value={searchQuery}
+              onChange={handleSearchChange}
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: showFilterPanel ? 'var(--primary-color)' : 'white',
-                color: showFilterPanel ? 'white' : 'var(--text-main)',
-                border: '1px solid #cbd5e1',
-                borderRadius: '8px',
-                width: '42px',
-                height: '42px',
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.02)'
+                padding: '10px 16px 10px 42px',
+                width: '100%',
+                borderRadius: '99px',
+                border: '1px solid var(--border-color)',
+                fontSize: '0.85rem',
+                outline: 'none',
+                background: 'var(--bg-primary)',
+                color: 'var(--text-main)',
+                boxSizing: 'border-box'
               }}
-              title="Toggle Filters Dropdown"
-            >
-              <SlidersHorizontal size={20} />
-            </button>
+            />
+          </div>
 
-            <div style={{ position: 'relative', width: '280px' }}>
-              <Search size={18} color="#94a3b8" style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)' }} />
-              <input
-                type="text"
-                placeholder="Search templates..."
-                value={searchQuery}
-                onChange={handleSearchChange}
+          {/* Categories List */}
+          <div style={{ marginBottom: 30 }}>
+            <h4 style={{ fontSize: '0.9rem', fontWeight: 800, marginBottom: 16, color: 'var(--text-main)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Categories</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, maxHeight: '480px', overflowY: 'auto', paddingRight: 4 }}>
+              {/* All Categories Row */}
+              <button
+                onClick={() => handleCategorySelect('all')}
                 style={{
-                  padding: '10px 16px 10px 42px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '10px 16px',
+                  borderRadius: '12px',
+                  border: 'none',
+                  background: selectedCategory === 'all' ? '#e0f2fe' : 'transparent',
+                  color: selectedCategory === 'all' ? 'var(--primary-color)' : 'var(--text-muted)',
+                  fontWeight: selectedCategory === 'all' ? 700 : 500,
+                  fontSize: '0.9rem',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  transition: 'all 0.2s ease',
                   width: '100%',
-                  borderRadius: '99px',
-                  border: '1px solid #cbd5e1',
-                  fontSize: '0.85rem',
-                  outline: 'none',
-                  background: '#f8fafc'
+                  boxSizing: 'border-box'
                 }}
-              />
+                onMouseEnter={(e) => {
+                  if (selectedCategory !== 'all') e.currentTarget.style.background = 'var(--bg-primary)';
+                }}
+                onMouseLeave={(e) => {
+                  if (selectedCategory !== 'all') e.currentTarget.style.background = 'transparent';
+                }}
+              >
+                <span>All Categories</span>
+                <span style={{
+                  fontSize: '0.75rem',
+                  background: selectedCategory === 'all' ? 'rgba(2, 132, 199, 0.15)' : 'var(--border-color)',
+                  color: selectedCategory === 'all' ? 'var(--primary-color)' : 'var(--text-muted)',
+                  padding: '2px 8px',
+                  borderRadius: '99px',
+                  fontWeight: 700
+                }}>
+                  {getCategoryCount('all')}
+                </span>
+              </button>
+
+              {/* Individual Category Rows */}
+              {categories.map(cat => {
+                const isActive = selectedCategory === cat.slug;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => handleCategorySelect(cat.slug)}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '10px 16px',
+                      borderRadius: '12px',
+                      border: 'none',
+                      background: isActive ? '#e0f2fe' : 'transparent',
+                      color: isActive ? 'var(--primary-color)' : 'var(--text-muted)',
+                      fontWeight: isActive ? 700 : 500,
+                      fontSize: '0.9rem',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      transition: 'all 0.2s ease',
+                      width: '100%',
+                      boxSizing: 'border-box'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isActive) e.currentTarget.style.background = 'var(--bg-primary)';
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isActive) e.currentTarget.style.background = 'transparent';
+                    }}
+                    title={cat.name}
+                  >
+                    <span style={{
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      maxWidth: '160px'
+                    }}>
+                      {cat.name}
+                    </span>
+                    <span style={{
+                      fontSize: '0.75rem',
+                      background: isActive ? 'rgba(2, 132, 199, 0.15)' : 'var(--border-color)',
+                      color: isActive ? 'var(--primary-color)' : 'var(--text-muted)',
+                      padding: '2px 8px',
+                      borderRadius: '99px',
+                      fontWeight: 700,
+                      flexShrink: 0
+                    }}>
+                      {getCategoryCount(cat.slug)}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+          {/* License Type section inside Sidebar bottom */}
+          <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: 20 }}>
+            <h4 style={{ fontSize: '0.9rem', fontWeight: 800, marginBottom: 16, color: 'var(--text-main)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>License Type</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.85rem', cursor: 'pointer', fontWeight: 500, color: 'var(--text-muted)' }}>
+                <input
+                  type="radio"
+                  name="type"
+                  checked={selectedType === 'all'}
+                  onChange={() => handleTypeSelect('all')}
+                  style={{ accentColor: 'var(--primary-color)' }}
+                />
+                All Licenses
+              </label>
+              <label style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.85rem', cursor: 'pointer', fontWeight: 500, color: 'var(--text-muted)' }}>
+                <input
+                  type="radio"
+                  name="type"
+                  checked={selectedType === 'FREE'}
+                  onChange={() => handleTypeSelect('FREE')}
+                  style={{ accentColor: 'var(--primary-color)' }}
+                />
+                Free Download
+              </label>
+              <label style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.85rem', cursor: 'pointer', fontWeight: 500, color: 'var(--text-muted)' }}>
+                <input
+                  type="radio"
+                  name="type"
+                  checked={selectedType === 'PREMIUM'}
+                  onChange={() => handleTypeSelect('PREMIUM')}
+                  style={{ accentColor: 'var(--primary-color)' }}
+                />
+                Premium Templates
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        {/* Right Main Content Area */}
+        <div style={{ flex: 1, minWidth: 0 }}>
+
+          {/* Showing Count / Sorting Bar */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 25,
+            paddingBottom: 15,
+            borderBottom: '1px solid #e2e8f0'
+          }}>
+            <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
               Showing <strong>{sortedTemplates.length}</strong> matching templates
             </span>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -378,134 +519,25 @@ export default function Templates() {
               </select>
             </div>
           </div>
-        </div>
 
-        {/* Collapsible Dropdown Filter Panel */}
-        {showFilterPanel && (
-          <div className="glass-panel" style={{
-            padding: '24px',
-            background: 'white',
-            borderRadius: '16px',
-            border: '1px solid var(--border-color)',
-            marginBottom: 30,
-            animation: 'fadeIn 0.2s ease-out'
-          }}>
-            <div className="filter-panel-layout" style={{
-              display: 'grid',
-              gridTemplateColumns: '3fr 1fr',
+          {/* Vertical Stack of Large Horizontal Cards */}
+          {sortedTemplates.length > 0 ? (
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
               gap: 40,
-              flexWrap: 'wrap'
+              width: '100%',
+              boxSizing: 'border-box'
             }}>
-              {/* Categories Grid */}
-              <div>
-                <h4 style={{ fontSize: '0.95rem', fontWeight: 800, marginBottom: 15, color: 'var(--secondary-color)' }}>Categories</h4>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
-                  gap: 10
-                }}>
-                  <button
-                    onClick={() => handleCategorySelect('all')}
-                    style={{
-                      padding: '8px 14px',
-                      borderRadius: '8px',
-                      border: selectedCategory === 'all' ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
-                      background: selectedCategory === 'all' ? 'var(--primary-color)' : '#f8fafc',
-                      color: selectedCategory === 'all' ? 'white' : 'var(--text-main)',
-                      fontSize: '0.8rem',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      textAlign: 'left',
-                      transition: 'all 0.2s'
-                    }}
-                  >
-                    All Categories
-                  </button>
-                  {categories.map(cat => (
-                    <button
-                      key={cat.id}
-                      onClick={() => handleCategorySelect(cat.slug)}
-                      style={{
-                        padding: '8px 14px',
-                        borderRadius: '8px',
-                        border: selectedCategory === cat.slug ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
-                        background: selectedCategory === cat.slug ? 'var(--primary-color)' : '#f8fafc',
-                        color: selectedCategory === cat.slug ? 'white' : 'var(--text-main)',
-                        fontSize: '0.8rem',
-                        fontWeight: 600,
-                        cursor: 'pointer',
-                        textAlign: 'left',
-                        transition: 'all 0.2s',
-                        whiteSpace: 'nowrap',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis'
-                      }}
-                      title={cat.name}
-                    >
-                      {cat.name}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* License Settings */}
-              <div style={{ borderLeft: '1px solid #f1f5f9', paddingLeft: 30 }}>
-                <h4 style={{ fontSize: '0.95rem', fontWeight: 800, marginBottom: 15, color: 'var(--secondary-color)' }}>License Type</h4>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.85rem', cursor: 'pointer', fontWeight: 500 }}>
-                    <input
-                      type="radio"
-                      name="type"
-                      checked={selectedType === 'all'}
-                      onChange={() => handleTypeSelect('all')}
-                      style={{ accentColor: 'var(--primary-color)' }}
-                    />
-                    All Licenses
-                  </label>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.85rem', cursor: 'pointer', fontWeight: 500 }}>
-                    <input
-                      type="radio"
-                      name="type"
-                      checked={selectedType === 'FREE'}
-                      onChange={() => handleTypeSelect('FREE')}
-                      style={{ accentColor: 'var(--primary-color)' }}
-                    />
-                    Free Download
-                  </label>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.85rem', cursor: 'pointer', fontWeight: 500 }}>
-                    <input
-                      type="radio"
-                      name="type"
-                      checked={selectedType === 'PREMIUM'}
-                      onChange={() => handleTypeSelect('PREMIUM')}
-                      style={{ accentColor: 'var(--primary-color)' }}
-                    />
-                    Premium Templates
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Vertical Stack of Large Horizontal Cards */}
-        {sortedTemplates.length > 0 ? (
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 40,
-            maxWidth: '1000px',
-            margin: '0 auto'
-          }}>
-            {sortedTemplates.map(template => {
-              const categorySlug = template.category.slug;
-              const theme = categoryThemes[categorySlug] || categoryThemes.default;
-              return (
+              {sortedTemplates.map(template => {
+                const categorySlug = template.category.slug;
+                const theme = categoryThemes[categorySlug] || categoryThemes.default;
+                return (
                 <div
                   key={template.id}
                   style={{
-                    backgroundColor: '#ffffff',
-                    border: `1px solid ${theme.cardBorder}`,
+                    backgroundColor: 'var(--header-capsule-bg)',
+                    border: `1px solid var(--border-color)`,
                     borderRadius: '24px',
                     padding: '32px',
                     display: 'grid',
@@ -526,206 +558,32 @@ export default function Templates() {
                     e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.03)';
                   }}
                 >
-                  {/* Left Section: Responsive Multi-Device CSS Mockup */}
+                  {/* Left Section: Browser Mockup Showcase with Hover Scroll */}
                   <div style={{
-                    position: 'relative',
                     width: '100%',
                     aspectRatio: '16/11',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    background: theme.background,
-                    borderRadius: '16px',
-                    overflow: 'hidden',
-                    border: '1px solid #f1f5f9',
-                    boxSizing: 'border-box',
-                    padding: '24px'
+                    boxSizing: 'border-box'
                   }}>
-                    {/* Category-specific animation overlay */}
-                    {renderCategoryAnimation(categorySlug)}
-
-                    {/* 1. Laptop Mockup Frame */}
-                    <div style={{
-                      position: 'relative',
-                      width: '72%',
-                      aspectRatio: '16/10',
-                      background: '#0f172a',
-                      borderRadius: '8px 8px 0 0',
-                      border: '4px solid #1e293b',
-                      boxShadow: '0 15px 35px rgba(0,0,0,0.12)',
-                      overflow: 'hidden',
-                      zIndex: 1,
-                      transform: 'translateX(-8%)',
-                      boxSizing: 'border-box'
-                    }}>
-                      <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
-                        {template.demoUrl ? (
-                          <iframe 
-                            src={template.demoUrl} 
-                            title={`${template.name} Desktop Preview`}
-                            style={{ 
-                              width: '1280px', 
-                              height: '800px', 
-                              border: 'none', 
-                              transform: 'scale(0.24)', 
-                              transformOrigin: 'top left',
-                              pointerEvents: 'none',
-                              position: 'absolute',
-                              top: 0,
-                              left: 0
-                            }} 
-                          />
-                        ) : (
-                          <img 
-                            src={template.previewImage} 
-                            alt={`${template.name} Desktop Preview`} 
-                            style={{ 
-                              width: '100%', 
-                              height: '112%', 
-                              objectFit: 'cover', 
-                              objectPosition: 'top',
-                              marginTop: '-12%' 
-                            }} 
-                            onError={(e) => {
-                              e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                            }}
-                          />
-                        )}
+                    <div className="browser-mockup">
+                      <div className="browser-topbar">
+                        <div className="browser-dots">
+                          <span className="browser-dot red"></span>
+                          <span className="browser-dot yellow"></span>
+                          <span className="browser-dot green"></span>
+                        </div>
+                        <span className="browser-address">
+                          preview-{template.category.slug || 'template'}-{template.id}.html
+                        </span>
                       </div>
-                      {/* Keyboard Base thin border */}
-                      <div style={{
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        height: '3px',
-                        background: '#64748b'
-                      }} />
-                    </div>
-
-                    {/* 2. Tablet Mockup Frame (overlaid on the right side) */}
-                    <div style={{
-                      position: 'absolute',
-                      right: '18%',
-                      bottom: '18%',
-                      width: '24%',
-                      aspectRatio: '3/4',
-                      background: '#0f172a',
-                      border: '4px solid #0f172a',
-                      borderRadius: '10px',
-                      boxShadow: '0 15px 25px rgba(0,0,0,0.18)',
-                      overflow: 'hidden',
-                      zIndex: 2,
-                      boxSizing: 'border-box'
-                    }}>
-                      {/* Camera sensor dot */}
-                      <div style={{
-                        position: 'absolute',
-                        top: '3px',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        width: '4px',
-                        height: '4px',
-                        borderRadius: '50%',
-                        background: '#334155',
-                        zIndex: 10
-                      }} />
-                      <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
-                        {template.demoUrl ? (
-                          <iframe 
-                            src={template.demoUrl} 
-                            title={`${template.name} Tablet Preview`}
-                            style={{ 
-                              width: '768px', 
-                              height: '1024px', 
-                              border: 'none', 
-                              transform: 'scale(0.18)', 
-                              transformOrigin: 'top left',
-                              pointerEvents: 'none',
-                              position: 'absolute',
-                              top: 0,
-                              left: 0
-                            }} 
-                          />
-                        ) : (
-                          <img 
-                            src={template.previewImage} 
-                            alt={`${template.name} Tablet Preview`} 
-                            style={{ 
-                              width: '100%', 
-                              height: '112%', 
-                              objectFit: 'cover', 
-                              objectPosition: 'top',
-                              marginTop: '-12%' 
-                            }} 
-                            onError={(e) => {
-                              e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                            }}
-                          />
-                        )}
-                      </div>
-                    </div>
-
-                    {/* 3. Mobile Mockup Frame (overlaid in front) */}
-                    <div style={{
-                      position: 'absolute',
-                      right: '6%',
-                      bottom: '12%',
-                      width: '15%',
-                      aspectRatio: '9/19',
-                      background: '#090d16',
-                      border: '3px solid #090d16',
-                      borderRadius: '12px',
-                      boxShadow: '0 15px 30px rgba(0,0,0,0.22)',
-                      overflow: 'hidden',
-                      zIndex: 3,
-                      boxSizing: 'border-box'
-                    }}>
-                      {/* Speaker pill notch */}
-                      <div style={{
-                        position: 'absolute',
-                        top: '2px',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        width: '18px',
-                        height: '3px',
-                        borderRadius: '99px',
-                        background: '#1e293b',
-                        zIndex: 10
-                      }} />
-                      <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
-                        {template.demoUrl ? (
-                          <iframe 
-                            src={template.demoUrl} 
-                            title={`${template.name} Mobile Preview`}
-                            style={{ 
-                              width: '375px', 
-                              height: '812px', 
-                              border: 'none', 
-                              transform: 'scale(0.18)', 
-                              transformOrigin: 'top left',
-                              pointerEvents: 'none',
-                              position: 'absolute',
-                              top: 0,
-                              left: 0
-                            }} 
-                          />
-                        ) : (
-                          <img 
-                            src={template.previewImage} 
-                            alt={`${template.name} Mobile Preview`} 
-                            style={{ 
-                              width: '100%', 
-                              height: '112%', 
-                              objectFit: 'cover', 
-                              objectPosition: 'top',
-                              marginTop: '-12%' 
-                            }} 
-                            onError={(e) => {
-                              e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                            }}
-                          />
-                        )}
+                      <div className="browser-content">
+                        <img 
+                          className="browser-preview-img"
+                          src={template.previewImage} 
+                          alt={`${template.name} Preview`}
+                          onError={(e) => {
+                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
@@ -872,7 +730,8 @@ export default function Templates() {
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Try modifying your filter settings or search query keywords.</p>
           </div>
         )}
-      </div>
+        </div> {/* closes Right Main Content Area */}
+      </div> {/* closes display: flex container */}
     </div>
   );
 }

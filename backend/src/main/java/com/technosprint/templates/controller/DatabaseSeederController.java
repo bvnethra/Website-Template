@@ -281,6 +281,46 @@ public class DatabaseSeederController {
             admin8.setTags(new ArrayList<>(Arrays.asList("Financial Ledger", "Inventory", "KPI Metrics", "React", "TS")));
             templateRepository.save(admin8);
             logs.put("template_admin_8", "Created");
+
+            // admin-9 (Vantage)
+            Template admin9 = new Template();
+            admin9.setName("Vantage — Premium Admin & Dashboard Hub");
+            admin9.setSlug("admin-9");
+            admin9.setDescription("An advanced corporate admin dashboard featuring real-time analytics, user management directories, customer profiling, and integrated messaging portals.");
+            admin9.setCategory(adminCategory);
+            admin9.setPrice(0.0);
+            admin9.setTemplateType("FREE");
+            admin9.setBootstrapVersion("React / Tailwind CSS / Recharts");
+            admin9.setDemoUrl("/templates/admin/admin-9/index.html");
+            admin9.setDownloadFile("");
+            admin9.setPreviewImage("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80");
+            admin9.setVersion("1.0.0");
+            admin9.setStatus("PUBLISHED");
+            admin9.setPagesCount(12);
+            admin9.setDownloadsCount(1320);
+            admin9.setTags(new ArrayList<>(Arrays.asList("Admin Dashboard", "Analytics", "React", "Spring Boot")));
+            templateRepository.save(admin9);
+            logs.put("template_admin_9", "Created");
+
+            // admin-10 (Apex)
+            Template admin10 = new Template();
+            admin10.setName("Apex — Animated Admin Dashboard Portal");
+            admin10.setSlug("admin-10");
+            admin10.setDescription("A high-end, premium administrative dashboard system featuring animated transitions, dynamic charts, live notifications, and complete workspace options.");
+            admin10.setCategory(adminCategory);
+            admin10.setPrice(0.0);
+            admin10.setTemplateType("FREE");
+            admin10.setBootstrapVersion("React / Recharts / Framer Motion");
+            admin10.setDemoUrl("/templates/admin/admin-10/index.html");
+            admin10.setDownloadFile("");
+            admin10.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
+            admin10.setVersion("1.0.0");
+            admin10.setStatus("PUBLISHED");
+            admin10.setPagesCount(14);
+            admin10.setDownloadsCount(1580);
+            admin10.setTags(new ArrayList<>(Arrays.asList("Admin Portal", "Recharts", "Framer Motion", "React")));
+            templateRepository.save(admin10);
+            logs.put("template_admin_10", "Created");
         }
 
         // 4. Seed Qure Nexa template under Medical category

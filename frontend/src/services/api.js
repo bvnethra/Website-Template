@@ -1637,6 +1637,36 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/admin/admin-8/index.html'
   },
   {
+    id: 9009,
+    name: 'Vantage — Premium Admin & Dashboard Hub',
+    slug: 'admin-9',
+    previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 1, name: 'Admin', slug: 'admin' },
+    pagesCount: 12,
+    downloadsCount: 1320,
+    description: 'An advanced corporate admin dashboard featuring real-time analytics, user management directories, customer profiling, and integrated messaging portals.',
+    bootstrapVersion: 'React / Tailwind CSS / Recharts',
+    version: '1.0.0',
+    demoUrl: '/templates/admin/admin-9/index.html'
+  },
+  {
+    id: 9010,
+    name: 'Apex — Animated Admin Dashboard Portal',
+    slug: 'admin-10',
+    previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 1, name: 'Admin', slug: 'admin' },
+    pagesCount: 14,
+    downloadsCount: 1580,
+    description: 'A high-end, premium administrative dashboard system featuring animated transitions, dynamic charts, live notifications, and complete workspace options.',
+    bootstrapVersion: 'React / Recharts / Framer Motion',
+    version: '1.0.0',
+    demoUrl: '/templates/admin/admin-10/index.html'
+  },
+  {
     id: 1001,
     name: 'Nexora — Premium Enterprise Corporate',
     slug: 'cooperate-1',

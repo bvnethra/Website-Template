@@ -3275,6 +3275,106 @@ public class DatabaseSeederController {
             op5.setTags(new ArrayList<>(Arrays.asList("Corporate", "Business Solutions", "Dashboard", "Vite")));
             templateRepository.save(op5);
             logs.put("template_onepage_5", "Created");
+
+            // onepage-6 (Intent v2)
+            Template op6 = new Template();
+            op6.setName("INTENT — Creative & Digital Strategy");
+            op6.setSlug("onepage-6");
+            op6.setDescription("A modern digital agency template with client-side portfolio grids, capabilities list, process maps, and custom client sections.");
+            op6.setCategory(onepageCategory);
+            op6.setPrice(0.0);
+            op6.setTemplateType("FREE");
+            op6.setBootstrapVersion("Next.js 16 / Tailwind CSS");
+            op6.setDemoUrl("/templates/onepage/onepage-6/index.html");
+            op6.setDownloadFile("");
+            op6.setPreviewImage("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80");
+            op6.setVersion("1.0.0");
+            op6.setStatus("PUBLISHED");
+            op6.setPagesCount(1);
+            op6.setDownloadsCount(1400);
+            op6.setTags(new ArrayList<>(Arrays.asList("Agency", "Creative Studio", "Next.js", "Tailwind")));
+            templateRepository.save(op6);
+            logs.put("template_onepage_6", "Created");
+
+            // onepage-7 (Fonix)
+            Template op7 = new Template();
+            op7.setName("Fonix 3D Landing Page & PRD Studio");
+            op7.setSlug("onepage-7");
+            op7.setDescription("Comprehensive Product Requirements Document (PRD) and live interactive 3D WebGL showcase for the Fonix one-page brand experience.");
+            op7.setCategory(onepageCategory);
+            op7.setPrice(0.0);
+            op7.setTemplateType("FREE");
+            op7.setBootstrapVersion("React / Vite / CSS");
+            op7.setDemoUrl("/templates/onepage/onepage-7/index.html");
+            op7.setDownloadFile("");
+            op7.setPreviewImage("https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80");
+            op7.setVersion("1.0.0");
+            op7.setStatus("PUBLISHED");
+            op7.setPagesCount(1);
+            op7.setDownloadsCount(1350);
+            op7.setTags(new ArrayList<>(Arrays.asList("3D Showcase", "PRD", "WebGL", "Vite")));
+            templateRepository.save(op7);
+            logs.put("template_onepage_7", "Created");
+
+            // onepage-8 (AI Human Machine CS Portfolio)
+            Template op8 = new Template();
+            op8.setName("AI // HUMAN // MACHINE - 3D Interactive AI/ML Portfolio");
+            op8.setSlug("onepage-8");
+            op8.setDescription("An immersive 3D interactive portfolio and digital laboratory for an AI/ML Computer Science Engineer and Developer, featuring real-time WebGL experiences.");
+            op8.setCategory(onepageCategory);
+            op8.setPrice(0.0);
+            op8.setTemplateType("FREE");
+            op8.setBootstrapVersion("React / Vite / CSS");
+            op8.setDemoUrl("/templates/onepage/onepage-8/index.html");
+            op8.setDownloadFile("");
+            op8.setPreviewImage("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80");
+            op8.setVersion("1.0.0");
+            op8.setStatus("PUBLISHED");
+            op8.setPagesCount(1);
+            op8.setDownloadsCount(1450);
+            op8.setTags(new ArrayList<>(Arrays.asList("AI Portfolio", "WebGL", "Computer Science", "Vite")));
+            templateRepository.save(op8);
+            logs.put("template_onepage_8", "Created");
+
+            // onepage-9 (Vertex v2 Strategy & Advisory)
+            Template op9 = new Template();
+            op9.setName("Vertex — Strategy & Advisory");
+            op9.setSlug("onepage-9");
+            op9.setDescription("A modern strategy & advisory corporate showcase with pricing schedules, team grids, performance dashboards, and interactive process timelines.");
+            op9.setCategory(onepageCategory);
+            op9.setPrice(0.0);
+            op9.setTemplateType("FREE");
+            op9.setBootstrapVersion("React / Vite / CSS");
+            op9.setDemoUrl("/templates/onepage/onepage-9/index.html");
+            op9.setDownloadFile("");
+            op9.setPreviewImage("https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80");
+            op9.setVersion("1.0.0");
+            op9.setStatus("PUBLISHED");
+            op9.setPagesCount(1);
+            op9.setDownloadsCount(1380);
+            op9.setTags(new ArrayList<>(Arrays.asList("Corporate", "Strategy", "Dashboard", "Vite")));
+            templateRepository.save(op9);
+            logs.put("template_onepage_9", "Created");
+
+            // onepage-10 (Aetheria v2)
+            Template op10 = new Template();
+            op10.setName("Aetheria — Digital Benchmark Platforms");
+            op10.setSlug("onepage-10");
+            op10.setDescription("A sleek interactive digital benchmark experiences platform featuring real-time metric counters, why us accordions, and custom client sections.");
+            op10.setCategory(onepageCategory);
+            op10.setPrice(0.0);
+            op10.setTemplateType("FREE");
+            op10.setBootstrapVersion("React / Vite / CSS");
+            op10.setDemoUrl("/templates/onepage/onepage-10/index.html");
+            op10.setDownloadFile("");
+            op10.setPreviewImage("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80");
+            op10.setVersion("1.0.0");
+            op10.setStatus("PUBLISHED");
+            op10.setPagesCount(1);
+            op10.setDownloadsCount(1420);
+            op10.setTags(new ArrayList<>(Arrays.asList("Benchmark", "Metrics", "WebGL", "Vite")));
+            templateRepository.save(op10);
+            logs.put("template_onepage_10", "Created");
         }
 
         // 19. Seed Real Estate templates
@@ -3398,7 +3498,8 @@ public class DatabaseSeederController {
                 {"NovaDesign — Next-Gen Creative Agency", "agency-3", "A premium Next.js template for design agencies featuring smooth client-side routing, work showcases, client testimonial carousels, and services catalogs.", "agency-3", "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80", "Agency, Design Studio, NextJS, Tailwind"},
                 {"AuraStudio — Full-Service Production Agency", "agency-4", "Premium creative production agency layout featuring detailed team cards, client reviews, dynamic video portfolios, and consult bookings.", "agency-4", "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80", "Agency, Video Production, Creative, React"},
                 {"ApexConsult — Corporate Agency Hub", "agency-5", "Clean corporate consulting agency template with interactive client testimonials, department registers, and contact scheduling panels.", "agency-5", "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80", "Agency, Corporate, Consulting, React"},
-                {"VividPixel — Modern Interactive Agency", "agency-6", "Sleek interactive agency template featuring modern grid layouts, animated team member profiles, and detailed service timelines.", "agency-6", "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80", "Agency, Interactive, Tech, React"}
+                {"VividPixel — Modern Interactive Agency", "agency-6", "Sleek interactive agency template featuring modern grid layouts, animated team member profiles, and detailed service timelines.", "agency-6", "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80", "Agency, Interactive, Tech, React"},
+                {"STRATA Agency — Spatial Design Studio", "agency-7", "An experimental, high-end 3D spatial design agency website featuring UI/UX case studies, interactive design wall, 3D entrance experience, and editorial design showcases.", "agency-7", "https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80", "3D, Spatial Design, Interactive, Vite"}
             };
 
             for (String[] data : agencyData) {

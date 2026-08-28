@@ -1,52 +1,75 @@
-import React from 'react';
-import { ModalProvider } from './context/ModalContext';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import TrustSection from './components/TrustSection';
-import Features from './components/Features';
-import ProductDeepDive from './components/ProductDeepDive';
-import HowItWorks from './components/HowItWorks';
+import DailyRhythm from './components/DailyRhythm';
+import AurelisMethod from './components/AurelisMethod';
+import Programs from './components/Programs';
+import CoachingJournal from './components/CoachingJournal';
+import ProgressStories from './components/ProgressStories';
+import CoachesGallery from './components/CoachesGallery';
+import JournalSection from './components/JournalSection';
+import CommunityCollage from './components/CommunityCollage';
 import Testimonials from './components/Testimonials';
-import Pricing from './components/Pricing';
-import FAQ from './components/FAQ';
-import Newsletter from './components/Newsletter';
 import FinalCTA from './components/FinalCTA';
+import PathModal from './components/PathModal';
 import Footer from './components/Footer';
-import AuthModal from './components/AuthModal';
-import DemoModal from './components/DemoModal';
-import FeatureModal from './components/FeatureModal';
-import Toast from './components/Toast';
 
 export default function App() {
+  const [isPathModalOpen, setIsPathModalOpen] = useState(false);
+
+  const handleOpenPathModal = () => {
+    setIsPathModalOpen(true);
+  };
+
+  const handleClosePathModal = () => {
+    setIsPathModalOpen(false);
+  };
+
   return (
-    <ModalProvider>
-      <div className="relative min-h-screen bg-[#050505] text-white selection:bg-amber-500 selection:text-black">
-        {/* Top Fixed Blurred Navbar */}
-        <Navbar />
+    <div className="min-h-screen bg-[#F3F0E8] text-[#171816] font-sans selection:bg-[#B56F4D] selection:text-[#F3F0E8]">
+      {/* Sticky Top Navbar */}
+      <Navbar onOpenPathModal={handleOpenPathModal} />
 
-        {/* Main Content Sections */}
-        <main id="main-content">
-          <Hero />
-          <TrustSection />
-          <Features />
-          <ProductDeepDive />
-          <HowItWorks />
-          <Testimonials />
-          <Pricing />
-          <FAQ />
-          <Newsletter />
-          <FinalCTA />
-        </main>
+      {/* Hero Section */}
+      <main>
+        <Hero onOpenPathModal={handleOpenPathModal} />
 
-        {/* Comprehensive Footer */}
-        <Footer />
+        {/* Signature Interaction: The Daily Rhythm */}
+        <DailyRhythm />
 
-        {/* Interactive Global Modals & Toast System */}
-        <AuthModal />
-        <DemoModal />
-        <FeatureModal />
-        <Toast />
-      </div>
-    </ModalProvider>
+        {/* The AURELIS Method (Four Foundations Accordion Stack) */}
+        <AurelisMethod />
+
+        {/* Coaching Pathways / Programs Section */}
+        <Programs onOpenPathModal={handleOpenPathModal} />
+
+        {/* Coaching Experience Journal View */}
+        <CoachingJournal />
+
+        {/* Progress Stories & Abstract Data Story */}
+        <ProgressStories />
+
+        {/* Coaches Gallery */}
+        <CoachesGallery />
+
+        {/* Journal Essays & Articles Section */}
+        <JournalSection />
+
+        {/* Community Parallax Collage */}
+        <CommunityCollage />
+
+        {/* Typographic Testimonials */}
+        <Testimonials />
+
+        {/* Final Breathing Motion CTA */}
+        <FinalCTA onOpenPathModal={handleOpenPathModal} />
+      </main>
+
+      {/* Footer */}
+      <Footer onOpenPathModal={handleOpenPathModal} />
+
+      {/* Onboarding Assessment Modal */}
+      <PathModal isOpen={isPathModalOpen} onClose={handleClosePathModal} />
+    </div>
   );
 }

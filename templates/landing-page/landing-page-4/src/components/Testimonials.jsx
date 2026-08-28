@@ -1,168 +1,111 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Star, Quote, Sparkles } from 'lucide-react';
-import { TESTIMONIALS } from '../data/testimonials';
+import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 export default function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const TESTIMONIALS = [
+    {
+      quote: "AURELIS helped me stop starting over. For the first time, movement became part of my life instead of something I had to force.",
+      author: "Mira Ellison",
+      role: "Momentum Member • Creative Director",
+      duration: "12-Week Program Completed"
+    },
+    {
+      quote: "I spent years jumping between extreme 6-day bodybuilder plans and complete burnouts. AURELIS taught me that 3 focused sessions and proper sleep beat chaotic intensity every time.",
+      author: "Leon Vance",
+      role: "Foundation Member • Systems Architect",
+      duration: "8-Week Program Completed"
+    },
+    {
+      quote: "The coaching isn't just workout routines. It's an entire philosophy on how to eat, sleep, and navigate heavy work travel without losing momentum.",
+      author: "Elena Rostova",
+      role: "Evolve Concierge Member • Founder",
+      duration: "Ongoing Coaching — 1 Year"
+    }
+  ];
 
-  const nextTestimonial = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % TESTIMONIALS.length);
   };
 
-  const prevTestimonial = () => {
+  const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
   };
 
-  // Autoplay
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    const interval = setInterval(nextTestimonial, 5000);
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, currentIndex]);
-
-  const current = TESTIMONIALS[currentIndex];
-
   return (
-    <section 
-      id="testimonials" 
-      className="py-24 md:py-32 relative bg-[#070709] border-t border-white/[0.06] overflow-hidden"
-      onMouseEnter={() => setIsAutoPlaying(false)}
-      onMouseLeave={() => setIsAutoPlaying(true)}
-    >
-      {/* Background Amber Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-amber-500/5 blur-[160px] pointer-events-none"></div>
+    <section className="py-28 md:py-36 bg-[#F3F0E8] text-[#171816] relative overflow-hidden border-t border-[#D8D4C8]">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
+        {/* Small Label */}
+        <span className="text-xs uppercase tracking-widest text-[#B56F4D] font-mono font-bold block mb-4">
+          MEMBER REFLECTIONS
+        </span>
 
-      <div className="container mx-auto px-4">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Sparkles size={14} />
-            Customer Proof & Reviews
-          </div>
+        <h2 className="text-3xl sm:text-5xl font-heading font-extrabold tracking-tight mb-16">
+          Change that <span className="editorial-italic font-normal text-[#3E5142]">fits real life.</span>
+        </h2>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-5">
-            Loved by Modern Teams{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">
-              Worldwide.
-            </span>
-          </h2>
-
-          <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
-            See how engineering leaders and product teams ship higher-quality releases with Flowzen.
-          </p>
-        </div>
-
-        {/* Testimonial Active Card Container */}
-        <div className="max-w-4xl mx-auto relative">
-          
+        {/* Cinematic Typographic Quote Carousel */}
+        <div className="relative min-h-[260px] flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
-              key={current.id}
-              initial={{ opacity: 0, x: 25, scale: 0.98 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: -25, scale: 0.98 }}
-              transition={{ duration: 0.35, ease: 'easeOut' }}
-              className="p-8 md:p-12 rounded-3xl bg-[#0d0d12]/90 border border-white/10 backdrop-blur-2xl shadow-2xl shadow-black/90 relative"
+              key={currentIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8"
             >
-              {/* Top Row: Stars + Quote Icon + Highlight Pill */}
-              <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-                <div className="flex items-center gap-1.5 text-amber-400">
-                  {[...Array(current.rating)].map((_, i) => (
-                    <Star key={i} size={18} fill="#F5A900" stroke="#F5A900" />
-                  ))}
-                  <span className="text-xs font-mono font-bold text-zinc-300 ml-2">5.0 Verified</span>
-                </div>
+              <Quote className="w-12 h-12 text-[#B56F4D]/40 mx-auto" />
 
-                <div className="px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-semibold">
-                  {current.highlight}
-                </div>
+              <blockquote className="text-2xl sm:text-4xl md:text-4xl font-heading font-normal leading-snug text-[#171816] max-w-3xl mx-auto">
+                "{TESTIMONIALS[currentIndex].quote}"
+              </blockquote>
+
+              <div className="space-y-1">
+                <p className="text-lg font-bold font-heading text-[#171816]">
+                  {TESTIMONIALS[currentIndex].author}
+                </p>
+                <p className="text-xs font-mono text-[#B56F4D] uppercase tracking-wider">
+                  {TESTIMONIALS[currentIndex].role} — {TESTIMONIALS[currentIndex].duration}
+                </p>
               </div>
-
-              {/* Quote Text */}
-              <p className="text-lg md:text-2xl text-zinc-100 font-medium leading-relaxed mb-10 tracking-tight">
-                "{current.quote}"
-              </p>
-
-              {/* Reviewer Details */}
-              <div className="flex items-center justify-between pt-6 border-t border-white/[0.08]">
-                <div className="flex items-center gap-4">
-                  <img
-                    src={current.avatar}
-                    alt={current.name}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-amber-500/40 shadow-lg shadow-amber-500/20"
-                    loading="lazy"
-                  />
-                  <div>
-                    <h4 className="text-base md:text-lg font-bold text-white">
-                      {current.name}
-                    </h4>
-                    <p className="text-xs md:text-sm text-zinc-400">
-                      {current.role} • <span className="text-amber-400 font-medium">{current.company}</span>
-                    </p>
-                  </div>
-                </div>
-
-                {/* Desktop Prev / Next Controls */}
-                <div className="hidden sm:flex items-center gap-2">
-                  <button
-                    onClick={prevTestimonial}
-                    className="p-3 rounded-full bg-white/[0.04] border border-white/10 hover:bg-amber-500 hover:text-black hover:border-amber-400 transition-all text-white"
-                    aria-label="Previous Testimonial"
-                  >
-                    <ChevronLeft size={18} />
-                  </button>
-                  <button
-                    onClick={nextTestimonial}
-                    className="p-3 rounded-full bg-white/[0.04] border border-white/10 hover:bg-amber-500 hover:text-black hover:border-amber-400 transition-all text-white"
-                    aria-label="Next Testimonial"
-                  >
-                    <ChevronRight size={18} />
-                  </button>
-                </div>
-              </div>
-
             </motion.div>
           </AnimatePresence>
-
-          {/* Dots Pagination & Mobile Buttons */}
-          <div className="flex items-center justify-center gap-3 mt-8">
-            <button
-              onClick={prevTestimonial}
-              className="sm:hidden p-2.5 rounded-full bg-white/[0.04] border border-white/10 text-white"
-              aria-label="Previous Testimonial"
-            >
-              <ChevronLeft size={16} />
-            </button>
-
-            <div className="flex items-center gap-2">
-              {TESTIMONIALS.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    currentIndex === idx 
-                      ? 'w-8 bg-amber-400' 
-                      : 'w-2 bg-white/20 hover:bg-white/40'
-                  }`}
-                  aria-label={`Go to testimonial ${idx + 1}`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={nextTestimonial}
-              className="sm:hidden p-2.5 rounded-full bg-white/[0.04] border border-white/10 text-white"
-              aria-label="Next Testimonial"
-            >
-              <ChevronRight size={16} />
-            </button>
-          </div>
-
         </div>
 
+        {/* Navigation Dots & Buttons */}
+        <div className="flex items-center justify-center gap-6 mt-12">
+          <button
+            onClick={handlePrev}
+            className="p-3 rounded-full border border-[#171816]/20 hover:bg-[#171816] hover:text-[#F3F0E8] transition-colors"
+            aria-label="Previous quote"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <div className="flex items-center gap-2">
+            {TESTIMONIALS.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  currentIndex === idx ? 'w-8 bg-[#B56F4D]' : 'w-2 bg-[#D8D4C8]'
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={handleNext}
+            className="p-3 rounded-full border border-[#171816]/20 hover:bg-[#171816] hover:text-[#F3F0E8] transition-colors"
+            aria-label="Next quote"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
       </div>
     </section>
   );

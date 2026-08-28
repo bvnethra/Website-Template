@@ -28,9 +28,9 @@ const MOCK_CATEGORIES = [
 const MOCK_TEMPLATES = [
   {
     id: 134,
-    name: 'TS Admin — Enterprise Command Center',
-    slug: 'ts-admin',
-    previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    name: 'CoreVista — Enterprise PM & Resource Intelligence System',
+    slug: 'admin-1',
+    previewImage: '/templates/admin/admin-1-preview.png',
     templateType: 'FREE',
     price: 0,
     category: { id: 1, name: 'Admin', slug: 'admin' },

@@ -3589,6 +3589,179 @@ public class DatabaseSeederController {
             logs.put("template_personal_1", "Created");
         }
 
+        // 8 New Templates Seeding Block
+        Category eduCat = categoryRepository.findBySlug("education").orElse(null);
+        if (eduCat == null) eduCat = catMap.get("education");
+        if (eduCat != null) {
+            Template t1 = new Template();
+            t1.setName("Eduora — Modern Academy Platform");
+            t1.setSlug("education-10");
+            t1.setDescription("A modern online education academy website featuring interactive course cards, filterable catalogs, and student portals.");
+            t1.setCategory(eduCat);
+            t1.setPrice(0.0);
+            t1.setTemplateType("FREE");
+            t1.setBootstrapVersion("React / Vite / CSS");
+            t1.setDemoUrl("/templates/education/education-10/index.html");
+            t1.setDownloadFile("");
+            t1.setPreviewImage("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80");
+            t1.setVersion("1.0.0");
+            t1.setStatus("PUBLISHED");
+            t1.setPagesCount(1);
+            t1.setDownloadsCount(1620);
+            t1.setTags(new ArrayList<>(Arrays.asList("Academy", "Online Courses", "Education", "React", "Vite")));
+            templateRepository.save(t1);
+            logs.put("template_education_10", "Created");
+        }
+
+        Category bizCat = categoryRepository.findBySlug("buisness").orElse(null);
+        if (bizCat == null) bizCat = catMap.get("buisness");
+        if (bizCat != null) {
+            Template t2 = new Template();
+            t2.setName("Ember & Olive — Premium Restaurant Website");
+            t2.setSlug("business-9");
+            t2.setDescription("A commercial-grade premium restaurant template with seasonal menu explorers, reservation booking controls, and custom gallery showcases.");
+            t2.setCategory(bizCat);
+            t2.setPrice(0.0);
+            t2.setTemplateType("FREE");
+            t2.setBootstrapVersion("React / Vite / CSS");
+            t2.setDemoUrl("/templates/buisness/Business-9/index.html");
+            t2.setDownloadFile("");
+            t2.setPreviewImage("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80");
+            t2.setVersion("1.0.0");
+            t2.setStatus("PUBLISHED");
+            t2.setPagesCount(1);
+            t2.setDownloadsCount(1450);
+            t2.setTags(new ArrayList<>(Arrays.asList("Restaurant", "Menu", "Booking", "React", "Vite")));
+            templateRepository.save(t2);
+            logs.put("template_business_9", "Created");
+
+            Template t3 = new Template();
+            t3.setName("NEXUS — Global Business Consultancy");
+            t3.setSlug("business-10");
+            t3.setDescription("A sleek enterprise consultancy template featuring interactive service grids, client success metrics, and booking systems.");
+            t3.setCategory(bizCat);
+            t3.setPrice(0.0);
+            t3.setTemplateType("FREE");
+            t3.setBootstrapVersion("React / Vite / CSS");
+            t3.setDemoUrl("/templates/buisness/Business-10/index.html");
+            t3.setDownloadFile("");
+            t3.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
+            t3.setVersion("1.0.0");
+            t3.setStatus("PUBLISHED");
+            t3.setPagesCount(1);
+            t3.setDownloadsCount(1530);
+            t3.setTags(new ArrayList<>(Arrays.asList("Consultancy", "Enterprise", "Business", "React", "Vite")));
+            templateRepository.save(t3);
+            logs.put("template_business_10", "Created");
+        }
+
+        Category landCat = categoryRepository.findBySlug("landing-page").orElse(null);
+        if (landCat == null) landCat = catMap.get("landing-page");
+        if (landCat != null) {
+            Template t4 = new Template();
+            t4.setName("ExquDrive — Luxury Vehicle Rental");
+            t4.setSlug("landing-page-9");
+            t4.setDescription("A high-impact cinematic vehicle rental landing page with animated stat banners, fleet showcase slideshows, and instant booking modal flows.");
+            t4.setCategory(landCat);
+            t4.setPrice(0.0);
+            t4.setTemplateType("FREE");
+            t4.setBootstrapVersion("React / Vite / CSS");
+            t4.setDemoUrl("/templates/landing-page/landing-page-9/index.html");
+            t4.setDownloadFile("");
+            t4.setPreviewImage("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80");
+            t4.setVersion("1.0.0");
+            t4.setStatus("PUBLISHED");
+            t4.setPagesCount(1);
+            t4.setDownloadsCount(1720);
+            t4.setTags(new ArrayList<>(Arrays.asList("Car Rental", "Luxury", "Automotive", "React", "Vite")));
+            templateRepository.save(t4);
+            logs.put("template_landing_page_9", "Created");
+
+            Template t5 = new Template();
+            t5.setName("Aurelia — Premium Wellness & Yoga Studio");
+            t5.setSlug("landing-page-10");
+            t5.setDescription("A premium luxury wellness landing page featuring programs gallery, daily rhythm grids, and client trust testimonies.");
+            t5.setCategory(landCat);
+            t5.setPrice(0.0);
+            t5.setTemplateType("FREE");
+            t5.setBootstrapVersion("React / Vite / CSS");
+            t5.setDemoUrl("/templates/landing-page/landing-page-10/index.html");
+            t5.setDownloadFile("");
+            t5.setPreviewImage("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80");
+            t5.setVersion("1.0.0");
+            t5.setStatus("PUBLISHED");
+            t5.setPagesCount(1);
+            t5.setDownloadsCount(1390);
+            t5.setTags(new ArrayList<>(Arrays.asList("Wellness", "Yoga", "Health", "React", "Vite")));
+            templateRepository.save(t5);
+            logs.put("template_landing_page_10", "Created");
+        }
+
+        Category medCat = categoryRepository.findBySlug("Medical").orElse(null);
+        if (medCat == null) medCat = catMap.get("Medical");
+        if (medCat != null) {
+            Template t6 = new Template();
+            t6.setName("PulseCare — Modern Healthcare Platform");
+            t6.setSlug("Medical-8");
+            t6.setDescription("A comprehensive medical hub featuring doctor discovery lists, secure health vault portals, and instant booking engines.");
+            t6.setCategory(medCat);
+            t6.setPrice(0.0);
+            t6.setTemplateType("FREE");
+            t6.setBootstrapVersion("React / Vite / CSS");
+            t6.setDemoUrl("/templates/Medical/Medical-8/index.html");
+            t6.setDownloadFile("");
+            t6.setPreviewImage("https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80");
+            t6.setVersion("1.0.0");
+            t6.setStatus("PUBLISHED");
+            t6.setPagesCount(1);
+            t6.setDownloadsCount(1800);
+            t6.setTags(new ArrayList<>(Arrays.asList("Healthcare", "Doctor booking", "Medical Portal", "HTML", "CSS")));
+            templateRepository.save(t6);
+            logs.put("template_Medical_8", "Created");
+        }
+
+        Category resCat = categoryRepository.findBySlug("resume").orElse(null);
+        if (resCat == null) resCat = catMap.get("resume");
+        if (resCat != null) {
+            Template t7 = new Template();
+            t7.setName("Mira — Creative Visual Portfolio");
+            t7.setSlug("resume-9");
+            t7.setDescription("A sleek visual artist resume with interactive grids, filterable portfolios, and custom contact sections.");
+            t7.setCategory(resCat);
+            t7.setPrice(0.0);
+            t7.setTemplateType("FREE");
+            t7.setBootstrapVersion("React / Vite / CSS");
+            t7.setDemoUrl("/templates/resume/resume-9/index.html");
+            t7.setDownloadFile("");
+            t7.setPreviewImage("https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80");
+            t7.setVersion("1.0.0");
+            t7.setStatus("PUBLISHED");
+            t7.setPagesCount(1);
+            t7.setDownloadsCount(1410);
+            t7.setTags(new ArrayList<>(Arrays.asList("Portfolio", "Artist", "Resume", "React", "Vite")));
+            templateRepository.save(t7);
+            logs.put("template_resume_9", "Created");
+
+            Template t8 = new Template();
+            t8.setName("FilmDirector — Cinematic Portfolio");
+            t8.setSlug("resume-10");
+            t8.setDescription("An editorial cinematic director resume showcasing movie portfolios, philosophy statements, and contact inquiries.");
+            t8.setCategory(resCat);
+            t8.setPrice(0.0);
+            t8.setTemplateType("FREE");
+            t8.setBootstrapVersion("React / Vite / CSS");
+            t8.setDemoUrl("/templates/resume/resume-10/index.html");
+            t8.setDownloadFile("");
+            t8.setPreviewImage("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80");
+            t8.setVersion("1.0.0");
+            t8.setStatus("PUBLISHED");
+            t8.setPagesCount(1);
+            t8.setDownloadsCount(1350);
+            t8.setTags(new ArrayList<>(Arrays.asList("Director", "Movie Portfolio", "Filmmaker", "React", "Vite")));
+            templateRepository.save(t8);
+            logs.put("template_resume_10", "Created");
+        }
+
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");
         return ResponseEntity.ok(logs);
     }

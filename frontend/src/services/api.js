@@ -2703,6 +2703,21 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/resume/resume-8/index.html'
   },
   {
+    id: 9209,
+    name: 'Dr. Mira Ellison — Academic & Research Portfolio',
+    slug: 'resume-9',
+    previewImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 20, name: 'Resume', slug: 'resume' },
+    pagesCount: 1,
+    downloadsCount: 1540,
+    description: 'A professional and clean academic/researcher portfolio and CV template featuring research areas map, interactive projects, publications list, and methodology showcase.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/resume/resume-9/index.html'
+  },
+  {
     id: 9301,
     name: 'PixelCraft — Creative Digital Agency',
     slug: 'agency-1',

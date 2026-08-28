@@ -1,6 +1,2 @@
-import React from 'react';
-import ComingSoonAureliaChronos from '../../../src/pages/coming-soon/ComingSoonAureliaChronos';
-
-export default function App() {
-  return <ComingSoonAureliaChronos />;
-}
+import App from './src/App';
+export default App;

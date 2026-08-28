@@ -44,12 +44,7 @@ export default function ProductTeaserShowcase({ currentPreset, lang = 'en', t })
       </div>
 
       {/* Main Interactive Stage */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'minmax(0, 1.4fr) minmax(0, 1fr)',
-        gap: '32px',
-        alignItems: 'center'
-      }}>
+      <div className="showcase-stage-grid">
         {/* Visual Showcase Card with 3D Tilt & Interactive Hotspots */}
         <div
           onMouseMove={handleMouseMove}

@@ -1,0 +1,239 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--nav-height) + 3rem);
+  padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(7, 152, 212, 0.08);
+  border: 1px solid rgba(7, 152, 212, 0.25);
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  color: var(--accent-cyan);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.hero-badge-icon {
+  color: var(--accent-blue);
+}
+
+.typewriter-text {
+  min-width: 180px;
+}
+
+.cursor-blink {
+  animation: blink 1s step-start infinite;
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.hero-headline {
+  font-size: 4rem;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+}
+
+.hero-gradient-text {
+  background: linear-gradient(135deg, #0F172A 0%, #0284C7 60%, #0369A1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-paragraph {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn-main .btn-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.hero-btn-main:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Right Column Visual Frame & Floating Cards */
+.hero-visual-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  aspect-ratio: 4 / 5;
+}
+
+.hero-image-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(7, 152, 212, 0.28) 0%, rgba(11, 21, 26, 0) 70%);
+  filter: blur(40px);
+  z-index: 1;
+}
+
+.hero-image-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1.5px solid var(--border-color);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 119, 238, 0.35);
+  z-index: 2;
+  background: var(--bg-card);
+}
+
+.hero-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.05) brightness(0.95);
+  transition: transform var(--transition-slow);
+}
+
+.hero-image-frame:hover .hero-portrait-img {
+  transform: scale(1.03);
+}
+
+.hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 21, 26, 0) 40%, rgba(11, 21, 26, 0.65) 100%);
+  pointer-events: none;
+}
+
+/* Positions for 3 Floating Cards around Hero Image */
+.card-pos-1 {
+  top: 10%;
+  left: -40px;
+}
+
+.card-pos-2 {
+  bottom: 12%;
+  right: -35px;
+}
+
+.card-pos-3 {
+  bottom: -20px;
+  left: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1100px) {
+  .hero-headline {
+    font-size: 3.25rem;
+  }
+
+  .card-pos-1 {
+    left: -20px;
+  }
+  .card-pos-2 {
+    right: -15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-headline {
+    font-size: 2.75rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual-wrapper {
+    max-width: 380px;
+  }
+
+  .card-pos-1 {
+    top: 5%;
+    left: -15px;
+  }
+
+  .card-pos-2 {
+    bottom: 8%;
+    right: -15px;
+  }
+
+  .card-pos-3 {
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-headline {
+    font-size: 2.2rem;
+  }
+  
+  .hero-paragraph {
+    font-size: 1rem;
+  }
+
+  .hero-visual-wrapper {
+    max-width: 320px;
+  }
+
+  .floating-card {
+    padding: 0.65rem 0.9rem;
+  }
+
+  .floating-card-title {
+    font-size: 0.85rem;
+  }
+
+  .card-pos-1 {
+    left: -10px;
+    top: 2%;
+  }
+  .card-pos-2 {
+    right: -10px;
+    bottom: 5%;
+  }
+}

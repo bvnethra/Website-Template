@@ -1518,7 +1518,7 @@ public class DatabaseSeederController {
             comingSoon.setCategory(commingSoonCategory);
             comingSoon.setPrice(0.0);
             comingSoon.setTemplateType("FREE");
-            comingSoon.setBootstrapVersion("HTML5 / Vanilla CSS");
+            comingSoon.setBootstrapVersion("React / Java Spring Boot");
             comingSoon.setDemoUrl("/templates/comming-soon/coming-soon-template/index.html");
             comingSoon.setPreviewImage("/templates/comming-soon/coming-soon-template/orange-cover.jpg");
             comingSoon.setVersion("1.0");
@@ -1535,7 +1535,7 @@ public class DatabaseSeederController {
             novaSoon.setCategory(commingSoonCategory);
             novaSoon.setPrice(0.0);
             novaSoon.setTemplateType("FREE");
-            novaSoon.setBootstrapVersion("React / Three.js / GSAP");
+            novaSoon.setBootstrapVersion("React / Java Spring Boot");
             novaSoon.setDemoUrl("/templates/comming-soon/cm-2/index.html");
             novaSoon.setPreviewImage("/templates/comming-soon/cm-2/car-cover.jpg");
             novaSoon.setVersion("1.0");
@@ -1552,7 +1552,7 @@ public class DatabaseSeederController {
             auraSoon.setCategory(commingSoonCategory);
             auraSoon.setPrice(0.0);
             auraSoon.setTemplateType("FREE");
-            auraSoon.setBootstrapVersion("HTML5 / Tailwind CSS");
+            auraSoon.setBootstrapVersion("React / Java Spring Boot");
             auraSoon.setDemoUrl("/templates/comming-soon/cm-3/index.html");
             auraSoon.setPreviewImage("/templates/comming-soon/cm-3/buliding-jpg/ezgif-frame-001.jpg");
             auraSoon.setVersion("1.0");
@@ -1569,7 +1569,7 @@ public class DatabaseSeederController {
             botanicalSoon.setCategory(commingSoonCategory);
             botanicalSoon.setPrice(0.0);
             botanicalSoon.setTemplateType("FREE");
-            botanicalSoon.setBootstrapVersion("HTML5 / Tailwind / Vanilla JS");
+            botanicalSoon.setBootstrapVersion("React / Java Spring Boot");
             botanicalSoon.setDemoUrl("/templates/comming-soon/cm-4/index.html");
             botanicalSoon.setPreviewImage("/templates/comming-soon/cm-4/botanical-cover.jpg");
             botanicalSoon.setVersion("1.0");
@@ -1586,7 +1586,7 @@ public class DatabaseSeederController {
             watchSoon.setCategory(commingSoonCategory);
             watchSoon.setPrice(0.0);
             watchSoon.setTemplateType("FREE");
-            watchSoon.setBootstrapVersion("HTML5 / Tailwind CSS / Vanilla JS");
+            watchSoon.setBootstrapVersion("React / Java Spring Boot");
             watchSoon.setDemoUrl("/templates/comming-soon/cm-5/index.html");
             watchSoon.setPreviewImage("/templates/comming-soon/cm-5/watch-hero.jpg");
             watchSoon.setVersion("1.0");
@@ -2407,7 +2407,7 @@ public class DatabaseSeederController {
             soon6.setCategory(commingSoonCategoryNew);
             soon6.setPrice(0.0);
             soon6.setTemplateType("FREE");
-            soon6.setBootstrapVersion("React / Three.js / Tailwind CSS / Vite");
+            soon6.setBootstrapVersion("React / Java Spring Boot");
             soon6.setDemoUrl("/templates/comming-soon/comingsoon-6/index.html");
             soon6.setDownloadFile("");
             soon6.setPreviewImage("https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=800&q=80");
@@ -2427,7 +2427,7 @@ public class DatabaseSeederController {
             soon7.setCategory(commingSoonCategoryNew);
             soon7.setPrice(0.0);
             soon7.setTemplateType("FREE");
-            soon7.setBootstrapVersion("React / Tailwind CSS / Vite");
+            soon7.setBootstrapVersion("React / Java Spring Boot");
             soon7.setDemoUrl("/templates/comming-soon/comingsoon-7/index.html");
             soon7.setDownloadFile("");
             soon7.setPreviewImage("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80");
@@ -2447,7 +2447,7 @@ public class DatabaseSeederController {
             soon8.setCategory(commingSoonCategoryNew);
             soon8.setPrice(0.0);
             soon8.setTemplateType("FREE");
-            soon8.setBootstrapVersion("React / Three.js / Tailwind CSS / Vite");
+            soon8.setBootstrapVersion("React / Java Spring Boot");
             soon8.setDemoUrl("/templates/comming-soon/comingsoon-8/index.html");
             soon8.setDownloadFile("");
             soon8.setPreviewImage("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80");
@@ -2467,7 +2467,7 @@ public class DatabaseSeederController {
             soon9.setCategory(commingSoonCategoryNew);
             soon9.setPrice(0.0);
             soon9.setTemplateType("FREE");
-            soon9.setBootstrapVersion("React / Tailwind CSS / Vite");
+            soon9.setBootstrapVersion("React / Java Spring Boot");
             soon9.setDemoUrl("/templates/comming-soon/comingsoon-9/index.html");
             soon9.setDownloadFile("");
             soon9.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
@@ -2487,7 +2487,7 @@ public class DatabaseSeederController {
             soon10.setCategory(commingSoonCategoryNew);
             soon10.setPrice(0.0);
             soon10.setTemplateType("FREE");
-            soon10.setBootstrapVersion("React / Tailwind CSS / Vite");
+            soon10.setBootstrapVersion("React / Java Spring Boot");
             soon10.setDemoUrl("/templates/comming-soon/comingsoon-10/index.html");
             soon10.setDownloadFile("");
             soon10.setPreviewImage("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80");

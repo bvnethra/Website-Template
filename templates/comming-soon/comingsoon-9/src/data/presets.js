@@ -1,3 +1,10 @@
+import heroTechAi from '../assets/images/hero_tech_ai.jpg';
+import heroSaasPlatform from '../assets/images/hero_saas_platform.jpg';
+import heroEcomLuxury from '../assets/images/hero_ecom_luxury.jpg';
+import heroCreativeAgency from '../assets/images/hero_creative_agency.jpg';
+import heroMobileApp from '../assets/images/hero_mobile_app.jpg';
+import heroPhysicalHardware from '../assets/images/hero_physical_hardware.jpg';
+
 export const PRODUCT_CATEGORIES = {
   tech_ai: {
     id: 'tech_ai',
@@ -6,7 +13,7 @@ export const PRODUCT_CATEGORIES = {
     categoryLabel: 'Tech / AI Startup',
     headline: 'The First Autonomous Neuromorphic Intelligence Engine',
     tagline: 'Orchestrating multi-modal neural weights at sub-millisecond latency. Built for next-generation frontier intelligence.',
-    image: '/assets/images/hero_tech_ai.jpg',
+    image: heroTechAi,
     initialWaitlistCount: 14820,
     vipSpotsRemaining: 48,
     activeVisitors: 182,
@@ -54,7 +61,7 @@ export const PRODUCT_CATEGORIES = {
     categoryLabel: 'SaaS Platform',
     headline: 'Unified Telemetry & Autonomous Infrastructure Control',
     tagline: 'One single pane of glass for 100M+ real-time microservice events, distributed traces, and AI-driven root-cause remediation.',
-    image: '/assets/images/hero_saas_platform.jpg',
+    image: heroSaasPlatform,
     initialWaitlistCount: 8940,
     vipSpotsRemaining: 32,
     activeVisitors: 124,
@@ -101,7 +108,7 @@ export const PRODUCT_CATEGORIES = {
     categoryLabel: 'Luxury E-Commerce',
     headline: 'Bespoke Horology & Architectural Obsidian Luxury',
     tagline: 'Hand-finished DLC titanium chronographs paired with certified Swiss tourbillon movements. Strictly limited to 500 numbered pieces worldwide.',
-    image: '/assets/images/hero_ecom_luxury.jpg',
+    image: heroEcomLuxury,
     initialWaitlistCount: 21350,
     vipSpotsRemaining: 18,
     activeVisitors: 295,
@@ -148,7 +155,7 @@ export const PRODUCT_CATEGORIES = {
     categoryLabel: 'Creative Agency',
     headline: 'Defying Visual Conventions with Spatial Brand Systems',
     tagline: 'We synthesize generative 3D aesthetics, custom typographic kinetics, and interactive WebGL experiences for tomorrow’s cultural icons.',
-    image: '/assets/images/hero_creative_agency.jpg',
+    image: heroCreativeAgency,
     initialWaitlistCount: 6420,
     vipSpotsRemaining: 12,
     activeVisitors: 98,
@@ -195,7 +202,7 @@ export const PRODUCT_CATEGORIES = {
     categoryLabel: 'Mobile App',
     headline: 'Sync Your Biology with Circadian Spatial Intelligence',
     tagline: 'Continuous heart-rate variability, neural sleep stages, and metabolic energy forecasting wrapped in an otherworldly spatial interface.',
-    image: '/assets/images/hero_mobile_app.jpg',
+    image: heroMobileApp,
     initialWaitlistCount: 38400,
     vipSpotsRemaining: 75,
     activeVisitors: 410,
@@ -242,7 +249,7 @@ export const PRODUCT_CATEGORIES = {
     categoryLabel: 'Physical Product Launch',
     headline: 'Magnetic Levitation Meets 360° Lossless Spatial Acoustics',
     tagline: 'Machined titanium housing floating in zero-friction electromagnetic suspension. Delivering room-filling 192kHz/24-bit holographic sound.',
-    image: '/assets/images/hero_physical_hardware.jpg',
+    image: heroPhysicalHardware,
     initialWaitlistCount: 16750,
     vipSpotsRemaining: 24,
     activeVisitors: 215,

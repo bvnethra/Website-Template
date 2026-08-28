@@ -564,10 +564,9 @@ export default function Templates() {
                           alt={`${template.name} Desktop Preview`} 
                           style={{ 
                             width: '100%', 
-                            height: '112%', 
+                            height: '100%', 
                             objectFit: 'cover', 
-                            objectPosition: 'top',
-                            marginTop: '-12%' 
+                            objectPosition: 'top'
                           }} 
                           onError={(e) => {
                             e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
@@ -618,10 +617,9 @@ export default function Templates() {
                           alt={`${template.name} Tablet Preview`} 
                           style={{ 
                             width: '100%', 
-                            height: '112%', 
+                            height: '100%', 
                             objectFit: 'cover', 
-                            objectPosition: 'top',
-                            marginTop: '-12%' 
+                            objectPosition: 'top'
                           }} 
                           onError={(e) => {
                             e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
@@ -663,10 +661,9 @@ export default function Templates() {
                           alt={`${template.name} Mobile Preview`} 
                           style={{ 
                             width: '100%', 
-                            height: '112%', 
+                            height: '100%', 
                             objectFit: 'cover', 
-                            objectPosition: 'top',
-                            marginTop: '-12%' 
+                            objectPosition: 'top'
                           }} 
                           onError={(e) => {
                             e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';

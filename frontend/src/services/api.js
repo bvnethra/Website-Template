@@ -2791,6 +2791,66 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Vite / CSS',
     version: '1.0.0',
     demoUrl: '/templates/agency/agency-6/index.html'
+  },
+  {
+    id: 9401,
+    name: 'INTENT — Creative Digital Agency',
+    slug: 'onepage-3',
+    previewImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 14, name: 'onepage', slug: 'onepage' },
+    pagesCount: 1,
+    downloadsCount: 1510,
+    description: 'A premium, high-impact Next.js one-page creative digital agency layout featuring dynamic motion animations, services lists, process grids, results counters, and contact booking panels.',
+    bootstrapVersion: 'Next.js 15 / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/onepage/onepage-3/index.html'
+  },
+  {
+    id: 9402,
+    name: 'Aetheria — Next-Gen Product & Brand Agency',
+    slug: 'onepage-4',
+    previewImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 14, name: 'onepage', slug: 'onepage' },
+    pagesCount: 1,
+    downloadsCount: 1490,
+    description: 'An elegant, futuristic digital product and brand showcase with ambient particle canvases, responsive service grids, team sliders, and custom project modals.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/onepage/onepage-4/index.html'
+  },
+  {
+    id: 9403,
+    name: 'Vertex — Business Solutions & Digital Showcase',
+    slug: 'onepage-5',
+    previewImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 14, name: 'onepage', slug: 'onepage' },
+    pagesCount: 1,
+    downloadsCount: 1380,
+    description: 'A sleek corporate business solutions layout featuring performance dashboards, interactive pricing matrices, logo clouds, FAQ accordions, and clean service grids.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/onepage/onepage-5/index.html'
+  },
+  {
+    id: 9501,
+    name: 'Julian Riviera — Cinematic Personal Portfolio',
+    slug: 'personal-1',
+    previewImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 22, name: 'Personal', slug: 'personal' },
+    pagesCount: 1,
+    downloadsCount: 1480,
+    description: 'An ultra-premium, cinematic personal showcase with editorial layout columns, asymmetric case study explorers, custom cursor physics, and contact scheduling panels.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/personal/personal-1/index.html'
   }
 ];
 

@@ -3215,6 +3215,66 @@ public class DatabaseSeederController {
             op2.setTags(new ArrayList<>(Arrays.asList("Storytelling", "Narrative", "Tailwind", "React")));
             templateRepository.save(op2);
             logs.put("template_onepage_2", "Created");
+
+            // onepage-3 (INTENT)
+            Template op3 = new Template();
+            op3.setName("INTENT — Creative Digital Agency");
+            op3.setSlug("onepage-3");
+            op3.setDescription("A premium, high-impact Next.js one-page creative digital agency layout featuring dynamic motion animations, services lists, process grids, results counters, and contact booking panels.");
+            op3.setCategory(onepageCategory);
+            op3.setPrice(0.0);
+            op3.setTemplateType("FREE");
+            op3.setBootstrapVersion("Next.js 15 / Tailwind CSS");
+            op3.setDemoUrl("/templates/onepage/onepage-3/index.html");
+            op3.setDownloadFile("");
+            op3.setPreviewImage("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80");
+            op3.setVersion("1.0.0");
+            op3.setStatus("PUBLISHED");
+            op3.setPagesCount(1);
+            op3.setDownloadsCount(1510);
+            op3.setTags(new ArrayList<>(Arrays.asList("Agency", "Creative", "Single Page", "NextJS")));
+            templateRepository.save(op3);
+            logs.put("template_onepage_3", "Created");
+
+            // onepage-4 (Aetheria)
+            Template op4 = new Template();
+            op4.setName("Aetheria — Next-Gen Product & Brand Agency");
+            op4.setSlug("onepage-4");
+            op4.setDescription("An elegant, futuristic digital product and brand showcase with ambient particle canvases, responsive service grids, team sliders, and custom project modals.");
+            op4.setCategory(onepageCategory);
+            op4.setPrice(0.0);
+            op4.setTemplateType("FREE");
+            op4.setBootstrapVersion("React / Vite / CSS");
+            op4.setDemoUrl("/templates/onepage/onepage-4/index.html");
+            op4.setDownloadFile("");
+            op4.setPreviewImage("https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80");
+            op4.setVersion("1.0.0");
+            op4.setStatus("PUBLISHED");
+            op4.setPagesCount(1);
+            op4.setDownloadsCount(1490);
+            op4.setTags(new ArrayList<>(Arrays.asList("Brand Agency", "Future", "Particle Canvas", "Vite")));
+            templateRepository.save(op4);
+            logs.put("template_onepage_4", "Created");
+
+            // onepage-5 (Vertex)
+            Template op5 = new Template();
+            op5.setName("Vertex — Business Solutions & Digital Showcase");
+            op5.setSlug("onepage-5");
+            op5.setDescription("A sleek corporate business solutions layout featuring performance dashboards, interactive pricing matrices, logo clouds, FAQ accordions, and clean service grids.");
+            op5.setCategory(onepageCategory);
+            op5.setPrice(0.0);
+            op5.setTemplateType("FREE");
+            op5.setBootstrapVersion("React / Vite / CSS");
+            op5.setDemoUrl("/templates/onepage/onepage-5/index.html");
+            op5.setDownloadFile("");
+            op5.setPreviewImage("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80");
+            op5.setVersion("1.0.0");
+            op5.setStatus("PUBLISHED");
+            op5.setPagesCount(1);
+            op5.setDownloadsCount(1380);
+            op5.setTags(new ArrayList<>(Arrays.asList("Corporate", "Business Solutions", "Dashboard", "Vite")));
+            templateRepository.save(op5);
+            logs.put("template_onepage_5", "Created");
         }
 
         // 19. Seed Real Estate templates
@@ -3361,6 +3421,31 @@ public class DatabaseSeederController {
                 templateRepository.save(t);
                 logs.put("template_" + data[1].replace("-", "_"), "Created");
             }
+        }
+
+        Category personalCategory = categoryRepository.findBySlug("personal").orElse(null);
+        if (personalCategory == null) {
+            personalCategory = catMap.get("personal");
+        }
+        if (personalCategory != null) {
+            Template t = new Template();
+            t.setName("Julian Riviera — Cinematic Personal Portfolio");
+            t.setSlug("personal-1");
+            t.setDescription("An ultra-premium, cinematic personal showcase with editorial layout columns, asymmetric case study explorers, custom cursor physics, and contact scheduling panels.");
+            t.setCategory(personalCategory);
+            t.setPrice(0.0);
+            t.setTemplateType("FREE");
+            t.setBootstrapVersion("React / Vite / CSS");
+            t.setDemoUrl("/templates/personal/personal-1/index.html");
+            t.setDownloadFile("");
+            t.setPreviewImage("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80");
+            t.setVersion("1.0.0");
+            t.setStatus("PUBLISHED");
+            t.setPagesCount(1);
+            t.setDownloadsCount(1480);
+            t.setTags(new ArrayList<>(Arrays.asList("Personal Showcase", "Cinematic", "3D Elements", "Vite")));
+            templateRepository.save(t);
+            logs.put("template_personal_1", "Created");
         }
 
         logs.put("status", "Database Seeding Completed Successfully! All templates seeded.");

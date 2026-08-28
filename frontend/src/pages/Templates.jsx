@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams, Link, useNavigate } from 'react-router-dom';
-import { api } from '../services/api';
+import { api, extractTemplateNumber } from '../services/api';
 import { Search, SlidersHorizontal } from 'lucide-react';
 
 const categoryThemes = {
@@ -277,7 +277,14 @@ export default function Templates() {
     } else if (sortBy === 'price-high') {
       return b.price - a.price;
     }
-    return 0;
+    const catA = (a.category?.slug || a.category?.name || '').toLowerCase();
+    const catB = (b.category?.slug || b.category?.name || '').toLowerCase();
+    if (catA !== catB) {
+      return catA.localeCompare(catB);
+    }
+    const numA = extractTemplateNumber(a);
+    const numB = extractTemplateNumber(b);
+    return numA - numB;
   });
 
   return (

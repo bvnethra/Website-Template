@@ -3256,6 +3256,49 @@ const handleResponse = async (response) => {
   return response.json().catch(() => ({}));
 };
 
+
+export const extractTemplateNumber = (t) => {
+  if (!t) return 999;
+  const demo = t.demoUrl || '';
+  const slug = t.slug || '';
+  
+  const demoMatch = demo.match(/[-_](\d+)(?:\/index\.html)?$/);
+  if (demoMatch) return parseInt(demoMatch[1], 10);
+
+  const slugMatch = slug.match(/[-_](\d+)$/);
+  if (slugMatch) return parseInt(slugMatch[1], 10);
+
+  const numMatch = slug.match(/(\d+)/);
+  if (numMatch) return parseInt(numMatch[1], 10);
+
+  return 999;
+};
+
+export const sortTemplatesNumerically = (arr) => {
+  if (!Array.isArray(arr)) return arr;
+  return [...arr].sort((a, b) => {
+    const catA = (a.category?.slug || a.category?.name || '').toLowerCase();
+    const catB = (b.category?.slug || b.category?.name || '').toLowerCase();
+    if (catA !== catB) {
+      return catA.localeCompare(catB);
+    }
+    const numA = extractTemplateNumber(a);
+    const numB = extractTemplateNumber(b);
+    return numA - numB;
+  });
+};
+
+MOCK_TEMPLATES.sort((a, b) => {
+  const catA = (a.category?.slug || a.category?.name || '').toLowerCase();
+  const catB = (b.category?.slug || b.category?.name || '').toLowerCase();
+  if (catA !== catB) {
+    return catA.localeCompare(catB);
+  }
+  const numA = extractTemplateNumber(a);
+  const numB = extractTemplateNumber(b);
+  return numA - numB;
+});
+
 export const api = {
   // Auth
   async login(email, password) {
@@ -3335,7 +3378,7 @@ export const api = {
       });
       const data = await handleResponse(res);
       if (Array.isArray(data) && data.length > 0) {
-        return data;
+        return sortTemplatesNumerically(data);
       }
       let filtered = [...MOCK_TEMPLATES];
       if (params.category && params.category !== 'all') {
@@ -3352,7 +3395,7 @@ export const api = {
           t.category.name.toLowerCase().includes(queryStr)
         );
       }
-      return filtered;
+      return sortTemplatesNumerically(filtered);
     } catch (err) {
       console.warn("API templates fetch failed, utilizing mock fallback:", err);
       let filtered = [...MOCK_TEMPLATES];
@@ -3370,7 +3413,7 @@ export const api = {
           (t.category && t.category.name && t.category.name.toLowerCase().includes(queryStr))
         );
       }
-      return filtered;
+      return sortTemplatesNumerically(filtered);
     }
   },
 
@@ -3381,7 +3424,7 @@ export const api = {
       });
       const data = await handleResponse(res);
       if (Array.isArray(data) && data.length > 0) {
-        return data;
+        return sortTemplatesNumerically(data);
       }
       return MOCK_TEMPLATES.filter(t => t.category.slug === category);
     } catch (err) {

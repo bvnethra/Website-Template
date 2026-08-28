@@ -1,0 +1,39 @@
+1:"$Sreact.fragment"
+2:I[36191,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js","/_next/static/chunks/43mc0d1sk1c2z.js"],""]
+3:I[81128,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js","/_next/static/chunks/43mc0d1sk1c2z.js"],"default"]
+4:I[60556,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js","/_next/static/chunks/43mc0d1sk1c2z.js"],"ProductDetailClient"]
+5:I[38226,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+a:I[38226,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js"],"ViewportBoundary"]
+b:I[38226,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js"],"MetadataBoundary"]
+9:X
+1c:X
+1c:C
+0:{"buildId":"7BUmkVyZBsml3UpzcsOnk","data":[{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"min-h-screen bg-brand-bg py-6 sm:py-10","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"FolliGrow Hair Strengthening Oil\",\"description\":\"Reduces hair fall, promotes growth\",\"image\":\"/api/placeholder/Hair%20Oil%20Bottle\",\"brand\":{\"@type\":\"Brand\",\"name\":\"FolliGrow\"},\"offers\":{\"@type\":\"Offer\",\"price\":299,\"priceCurrency\":\"INR\",\"availability\":\"https://schema.org/InStock\"},\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":4.1,\"reviewCount\":567}}"}}],["$","div",null,{"className":"container-page","children":[["$","div",null,{"className":"mb-6","children":["$","$L2",null,{"href":"/","className":"inline-flex items-center gap-2 text-xs font-semibold text-navy-500 hover:text-mint-600 transition-colors","children":[["$","$L3",null,{"iconNode":[["path",{"d":"m12 19-7-7 7-7","key":"1l729n"}],["path",{"d":"M19 12H5","key":"x3x0zl"}]],"className":"lucide-arrow-left w-4 h-4"}],"Back to Home"]}]}],["$","$L4",null,{"product":{"id":"prod-15","slug":"folligrow-hair-oil","name":"FolliGrow Hair Strengthening Oil","genericName":"Hair Oil","brand":"FolliGrow","category":"hair-care","shortDescription":"Reduces hair fall, promotes growth","description":"FolliGrow Hair Strengthening Oil is a blend of bhringraj, amla, coconut, and argan oils that nourishes hair roots, reduces breakage, and promotes thicker, healthier hair.","form":"other","packSize":"100ml","mrp":399,"salePrice":299,"discount":25,"rating":4.1,"reviewCount":567,"inStock":true,"requiresPrescription":false,"isVerified":true,"imageUrl":"/api/placeholder/Hair%20Oil%20Bottle","images":["/api/placeholder/Hair%20Oil%20Bottle"],"ingredients":["Coconut Oil","Bhringraj Extract","Amla Extract","Argan Oil","Vitamin E"],"usage":"Massage into scalp 2-3 times per week. Leave for at least 1 hour before washing.","warnings":["For external use only","Patch test before first use"],"manufacturer":"FolliGrow Naturals","storage":"Store in a cool, dry place.","tags":["hair oil","hair growth","anti hair fall","ayurvedic"]}}],false,["$","div",null,{"className":"mt-10 max-w-4xl mx-auto bg-navy-50 rounded-2xl p-6 border border-brand-border text-left","children":["$","div",null,{"className":"flex items-start gap-3","children":[["$","$L3",null,{"iconNode":[["path",{"d":"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z","key":"oel41y"}],["path",{"d":"m9 12 2 2 4-4","key":"dzmm74"}]],"className":"lucide-shield-check w-5 h-5 text-mint-500 shrink-0 mt-0.5"}],["$","div",null,{"children":[["$","h4",null,{"className":"text-xs font-bold text-navy-800 uppercase tracking-wider mb-1","children":"Medical Disclaimer & Verification"}],["$","p",null,{"className":"text-xs text-navy-500 leading-relaxed","children":"The information provided above is based on official manufacturer details and clinical databases. It is intended for general understanding only and must not replace professional medical advice, diagnosis, or treatment. Always consult a qualified physician or healthcare specialist before starting, changing, or stopping any healthcare regimen or medication. MediNova does not assume liability for self-medication decisions."}]]}]]}]}]]}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/43mc0d1sk1c2z.js","async":true}]],["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],"isPartial":"$@8","staleTime":"$9","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$La",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"FolliGrow Hair Strengthening Oil — Order Online | MediNova"}],"$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12","$L13","$L14","$L15","$L16","$L17"]}]}]}],"$L18"]}],"isPartial":"$@19","staleTime":"$9","varyParams":null},{"rsc":"$L1a","isPartial":"$@1b","staleTime":"$9","varyParams":"$1c"},{"rsc":"$L1d","isPartial":"$@1e","staleTime":"$9","varyParams":"$1c"}],"isUpgradeableISRFallback":false,"a":"$@1f","rootVaryParams":null,"needsRuntimeRequest":"$@20"}
+21:I[17623,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js"],"IconMark"]
+22:I[58264,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js"],"default"]
+23:I[7914,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js"],"default"]
+7:null
+c:["$","meta","1",{"name":"description","content":"Reduces hair fall, promotes growth"}]
+d:["$","meta","2",{"name":"keywords","content":"online pharmacy,medicines,healthcare,diagnostics,lab tests,doctor consultation,wellness"}]
+e:["$","meta","3",{"name":"robots","content":"index, follow"}]
+f:["$","meta","4",{"property":"og:title","content":"FolliGrow Hair Strengthening Oil | MediNova Pharmacy"}]
+10:["$","meta","5",{"property":"og:description","content":"Reduces hair fall, promotes growth"}]
+11:["$","meta","6",{"property":"og:image","content":"http://localhost:3000/api/placeholder/Hair%20Oil%20Bottle"}]
+12:["$","meta","7",{"name":"twitter:card","content":"summary_large_image"}]
+13:["$","meta","8",{"name":"twitter:title","content":"FolliGrow Hair Strengthening Oil | MediNova Pharmacy"}]
+14:["$","meta","9",{"name":"twitter:description","content":"Reduces hair fall, promotes growth"}]
+15:["$","meta","10",{"name":"twitter:image","content":"http://localhost:3000/api/placeholder/Hair%20Oil%20Bottle"}]
+16:["$","link","11",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}]
+17:["$","$L21","12",{}]
+18:["$","meta",null,{"name":"next-size-adjust","content":""}]
+1a:["$","$1","c",{"children":[null,["$","$L22",null,{"parallelRouterKey":"children","template":["$","$L23",null,{}]}]]}]
+1d:["$","$1","c",{"children":[null,["$","$L22",null,{"parallelRouterKey":"children","template":["$","$L23",null,{}]}]]}]
+20:true
+9:300
+9:C
+1f:0
+19:"$undefined"
+1b:"$undefined"
+1e:"$undefined"
+8:"$undefined"

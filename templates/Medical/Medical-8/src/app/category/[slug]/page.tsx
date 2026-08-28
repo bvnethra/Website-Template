@@ -13,6 +13,11 @@ interface PageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
+export async function generateStaticParams() {
+  const { categories } = await import('@/data/categories');
+  return categories.map((c) => ({ slug: c.slug }));
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const category = categories.find((c) => c.slug === slug);

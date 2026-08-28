@@ -1,3 +1,4 @@
+export async function generateStaticParams() { return [{ name: 'placeholder' }]; }
 import { NextRequest, NextResponse } from 'next/server';
 
 // Generates branded placeholder images as SVG

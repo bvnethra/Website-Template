@@ -2703,6 +2703,21 @@ const MOCK_TEMPLATES = [
     demoUrl: '/templates/resume/resume-8/index.html'
   },
   {
+    id: 9210,
+    name: 'Elias Rowan — Film Director & Visual Storyteller Portfolio & Resume',
+    slug: 'resume-10',
+    previewImage: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 20, name: 'Resume', slug: 'resume' },
+    pagesCount: 1,
+    downloadsCount: 1320,
+    description: 'A professional portfolio and resume template for film directors and visual storytellers featuring screenplays, filmography galleries, and director logs.',
+    bootstrapVersion: 'React / Vite / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/resume/resume-10/index.html'
+  },
+  {
     id: 9301,
     name: 'PixelCraft — Creative Digital Agency',
     slug: 'agency-1',

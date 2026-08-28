@@ -47,7 +47,7 @@ export default function Hero({ onOpenVideoModal }) {
           loop 
           muted 
           playsInline 
-          poster="./assets/images/arcstone-villa.jpg"
+          poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
           style={{ transform: videoTransform }}
         >
           <source src="./assets/videos/luxury-villa.mp4" type="video/mp4" />
@@ -55,7 +55,7 @@ export default function Hero({ onOpenVideoModal }) {
         <div 
           className="hero-bg-poster" 
           style={{ 
-            backgroundImage: "url('./assets/images/arcstone-villa.jpg')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80')",
             transform: videoTransform
           }}
         ></div>

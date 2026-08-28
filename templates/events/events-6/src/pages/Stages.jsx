@@ -24,7 +24,7 @@ export default function Stages() {
       artists: ['Elio Vane', 'Aria Noir', 'Acoustic Collective'],
       schedule: '5:30 PM - 11:00 PM',
       specs: 'Warm Acoustic Array, Natural Golden Spotlights, Surround Sound Canopy',
-      image: '/images/hero_performer.jpg',
+      image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80',
     },
     {
       id: 3,

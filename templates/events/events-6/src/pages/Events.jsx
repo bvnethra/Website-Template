@@ -12,7 +12,7 @@ export default function Events() {
       venue: 'Aurora Sound Arena (Main Stage)',
       description: 'The centerpiece festival experience featuring Lyra Voss, The Silver Room, Mira Vale, and 15,000 music lovers under the stars.',
       price: 1499,
-      image: '/images/hero_performer.jpg',
+      image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80',
     },
     {
       id: 2,
@@ -45,7 +45,7 @@ export default function Events() {
       venue: 'Echo Stage',
       description: 'Intimate acoustic sessions from indie singer-songwriters Elio Vane and Aria Noir under warm golden spotlights.',
       price: 1499,
-      image: '/images/hero_performer.jpg',
+      image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80',
     },
     {
       id: 5,

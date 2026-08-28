@@ -33,7 +33,7 @@ export default function VillaPortfolio() {
             poolSpec: '25 M Infinity Pool',
             energyRating: 'Swiss Minergie-P',
             tags: ['Lakefront', 'Yakisugi Timber', 'Swiss Minergie-P', 'Reflection Basin'],
-            image: './assets/images/hero-villa.jpg'
+            image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80'
           },
           {
             id: 'villa-02',
@@ -49,7 +49,7 @@ export default function VillaPortfolio() {
             poolSpec: 'Mirror Reflection Pond',
             energyRating: 'Passive House Plus',
             tags: ['Solid Cedar', 'Geothermal', '4 Suites', 'Cliffside Glass'],
-            image: './assets/images/hero-villa.jpg'
+            image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80'
           },
           {
             id: 'villa-03',
@@ -65,7 +65,7 @@ export default function VillaPortfolio() {
             poolSpec: 'Subterranean Thermal SPA',
             energyRating: 'Swiss Zero-Carbon',
             tags: ['Swiss Granite', 'Wine Vault', '6 Suites', 'Thermal Spa'],
-            image: './assets/images/hero-villa.jpg'
+            image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80'
           }
         ]);
         setLoading(false);
@@ -101,7 +101,7 @@ export default function VillaPortfolio() {
               <div className="villa-feature-hero">
                 <div className="villa-feature-visual">
                   <img
-                    src={featureVilla.image || './assets/images/hero-villa.jpg'}
+                    src={featureVilla.image || 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80'}
                     alt={featureVilla.title}
                     className="feature-img"
                   />
@@ -152,7 +152,7 @@ export default function VillaPortfolio() {
                 >
                   <div className="v-compact-img-box">
                     <img
-                      src={villa.image || './assets/images/hero-villa.jpg'}
+                      src={villa.image || 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80'}
                       alt={villa.title}
                     />
                     <span className="compact-geo-tag">

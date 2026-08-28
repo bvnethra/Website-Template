@@ -21,7 +21,7 @@ export default function Hero({ onOpenVideo }) {
         {/* Center Floating Visual with Amber Glow Ring */}
         <div className="hero-image-wrap">
           <div className="glow-ring"></div>
-          <img src="./assets/images/hero-villa.jpg" alt="BuildHub Landmark Villa" />
+          <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80" alt="BuildHub Landmark Villa" />
         </div>
 
         {/* Right Column */}

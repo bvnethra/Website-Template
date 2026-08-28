@@ -12,7 +12,7 @@ export const NewsCard = ({ item }) => {
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           onError={(e) => {
             e.target.onerror = null;
-            e.target.src = '/images/arena-bg.jpg';
+            e.target.src = 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=1400&q=80';
           }}
         />
         <span className="badge-live" style={{ position: 'absolute', top: '12px', left: '12px', background: '#ff4d00', color: '#050505', fontWeight: 900 }}>

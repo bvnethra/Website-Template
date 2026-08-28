@@ -38,7 +38,7 @@ export default function ShowcaseSection({ onOpenVideoModal, stats }) {
             </div>
 
             <div className="card-right-preview" onClick={onOpenVideoModal} title="Watch Skyline Tower Walkthrough">
-              <img src="./assets/images/skyline-tower.jpg" alt="Skyline Tower Commercial Complex" />
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80" alt="Skyline Tower Commercial Complex" />
               <div className="play-overlay-button">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--accent-blue)">
                   <polygon points="6 3 20 12 6 21"/>

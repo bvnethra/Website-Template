@@ -61,6 +61,13 @@ export default function CostEstimator() {
   const formattedEng = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(engineeringFee);
   const formattedContingency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(contingencyBuffer);
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmitBid = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
+
   return (
     <section className="estimator-section" id="calculator">
       <div className="container">
@@ -208,14 +215,62 @@ export default function CostEstimator() {
                 </div>
               </div>
 
-              <a href="#contact" className="btn-submit-tender">
+              <button type="button" onClick={handleSubmitBid} className="btn-submit-tender" style={{ width: '100%', border: 'none', cursor: 'pointer' }}>
                 <span>SUBMIT FOR OFFICIAL BID PDF</span>
                 <span>→</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      {isSubmitted && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0,0,0,0.75)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 9999,
+          padding: '20px'
+        }}>
+          <div style={{
+            background: '#0f172a',
+            border: '1px solid #38bdf8',
+            borderRadius: '16px',
+            padding: '32px',
+            maxWidth: '480px',
+            textAlign: 'center',
+            color: '#ffffff',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.5)'
+          }}>
+            <div style={{ fontSize: '48px', marginBottom: '16px' }}>🎉</div>
+            <h3 style={{ fontSize: '24px', color: '#38bdf8', marginBottom: '12px' }}>OFFICIAL TENDER BID SUBMITTED!</h3>
+            <p style={{ color: '#94a3b8', fontSize: '15px', lineHeight: '1.6', marginBottom: '24px' }}>
+              Your parametric estimate of <strong style={{ color: '#ffffff' }}>{formattedTotal}</strong> has been logged to the engineering dispatch system. Our senior project lead will send the official PDF tender packet to your email shortly.
+            </p>
+            <button 
+              onClick={() => setIsSubmitted(false)} 
+              style={{
+                background: '#38bdf8',
+                color: '#0f172a',
+                border: 'none',
+                fontWeight: '700',
+                fontSize: '15px',
+                padding: '12px 28px',
+                borderRadius: '8px',
+                cursor: 'pointer'
+              }}
+            >
+              CLOSE ESTIMATOR CONFIRMATION
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

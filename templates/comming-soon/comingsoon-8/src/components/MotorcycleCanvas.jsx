@@ -1,17 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { RotateCw, Compass, Sliders, Eye } from 'lucide-react';
 import { audioEngine } from './AudioEngine';
+import frontImg from '../assets/images/ktm_front.jpg';
+import front34Img from '../assets/images/ktm_front_34.jpg';
+import sideImg from '../assets/images/ktm_side.jpg';
+import rear34Img from '../assets/images/ktm_rear_34.jpg';
+import rearImg from '../assets/images/ktm_rear.jpg';
 
 // Authentic Multi-Angle Studio Sequence for full 360° turntable
 const ANGLE_FRAMES = [
-  { id: 'front', label: 'FRONT', src: '/images/ktm_front.jpg', angleDeg: 0, isMirrored: false },
-  { id: 'front-34-r', label: 'FRONT 3/4', src: '/images/ktm_front_34.jpg', angleDeg: 45, isMirrored: false },
-  { id: 'side-r', label: 'SIDE PROFILE', src: '/images/ktm_side.jpg', angleDeg: 90, isMirrored: false },
-  { id: 'rear-34-r', label: 'REAR 3/4', src: '/images/ktm_rear_34.jpg', angleDeg: 135, isMirrored: false },
-  { id: 'rear', label: 'REAR', src: '/images/ktm_rear.jpg', angleDeg: 180, isMirrored: false },
-  { id: 'rear-34-l', label: 'REAR 3/4', src: '/images/ktm_rear_34.jpg', angleDeg: 225, isMirrored: true },
-  { id: 'side-l', label: 'SIDE PROFILE', src: '/images/ktm_side.jpg', angleDeg: 270, isMirrored: true },
-  { id: 'front-34-l', label: 'FRONT 3/4', src: '/images/ktm_front_34.jpg', angleDeg: 315, isMirrored: true }
+  { id: 'front', label: 'FRONT', src: frontImg, angleDeg: 0, isMirrored: false },
+  { id: 'front-34-r', label: 'FRONT 3/4', src: front34Img, angleDeg: 45, isMirrored: false },
+  { id: 'side-r', label: 'SIDE PROFILE', src: sideImg, angleDeg: 90, isMirrored: false },
+  { id: 'rear-34-r', label: 'REAR 3/4', src: rear34Img, angleDeg: 135, isMirrored: false },
+  { id: 'rear', label: 'REAR', src: rearImg, angleDeg: 180, isMirrored: false },
+  { id: 'rear-34-l', label: 'REAR 3/4', src: rear34Img, angleDeg: 225, isMirrored: true },
+  { id: 'side-l', label: 'SIDE PROFILE', src: sideImg, angleDeg: 270, isMirrored: true },
+  { id: 'front-34-l', label: 'FRONT 3/4', src: front34Img, angleDeg: 315, isMirrored: true }
 ];
 
 export default function MotorcycleCanvas({

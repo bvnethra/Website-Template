@@ -23,14 +23,14 @@ export default function VideoPlayerModal({ isOpen, onClose, onOpenQuote, addToas
       label: '🏢 02: Commercial Complex',
       title: 'Metropolitan Commercial High-Rise Complex',
       desc: 'Ultra-HD 4K architectural drone survey of a 12-story commercial complex with double-glazed acoustic glass curtain walls.',
-      imageSrc: './assets/images/commercial.jpg'
+      imageSrc: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80'
     },
     {
       id: 'construction',
       label: '🏗️ 03: Construction Site Drone',
       title: 'Tower Crane & High-Rise Steel Superstructure Survey',
       desc: 'Live high-altitude drone inspection of active tower cranes, jump-form concrete core climbing, and structural steel erection.',
-      imageSrc: './assets/images/interior.jpg'
+      imageSrc: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80'
     }
   ];
 

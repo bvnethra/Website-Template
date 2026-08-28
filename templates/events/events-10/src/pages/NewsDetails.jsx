@@ -42,7 +42,7 @@ export const NewsDetails = () => {
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = '/images/arena-bg.jpg';
+                  e.target.src = 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=1400&q=80';
                 }}
               />
             </div>

@@ -12,7 +12,7 @@ export default function News() {
       subtitle: 'Meet the first wave of artists joining Midnight Echo 2026.',
       category: 'ANNOUNCEMENT',
       date: '15 AUGUST 2026',
-      image: '/images/hero_performer.jpg',
+      image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80',
       fullText: 'Velora Live is thrilled to announce the official first phase lineup for Midnight Echo 2026! Headlined by indie pop icon Lyra Voss and electronic producer Kael Nova, this year features 30+ artists performing across three custom sound arenas in Chennai.',
     },
     {

@@ -10,7 +10,7 @@ export default function ProjectsSection({ projects }) {
       category: 'ALPINE RESIDENTIAL',
       location: 'Zermatt, Swiss Alps',
       scale: '8,400 sq ft',
-      image: './assets/images/arcstone-villa.jpg',
+      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
       description: 'Cantilevered luxury chalet with floor-to-ceiling glass and alpine thermal design.'
     },
     {

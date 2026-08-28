@@ -205,7 +205,7 @@ export const AIRobotCompanion = ({ activePage = 'home' }) => {
           }}
         >
           <img
-            src="/ai_robot.jpg"
+            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
             alt="Futuristic AI Humanoid Robot"
             style={{
               width: '100%',

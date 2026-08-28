@@ -39,7 +39,7 @@ export default function VideoModal({ isOpen, onClose }) {
           ref={videoRef}
           className="modal-video-player" 
           controls 
-          poster="./assets/images/arcstone-villa.jpg"
+          poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
         >
           <source src="./assets/videos/luxury-villa.mp4" type="video/mp4" />
         </video>

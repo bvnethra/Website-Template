@@ -31,7 +31,7 @@ export const PRODUCT_DATA = {
       angles: [
         { id: "lateral", name: "Lateral Profile", image: "/assets/images/shoe-cyber-volt.jpg", description: "Aerodynamic silhouette showing carbon speed plate curvature" },
         { id: "motion", name: "Kinetic In-Motion", image: "/assets/images/running-stride-motion.jpg", description: "Real-world heel strike deformation and rapid spring recoil" },
-        { id: "outsole", name: "Traction Outsole", image: "/assets/images/shoe-outsole.jpg", description: "Engineered micro-lug grip matrix with exposed carbon rigidity bridges" },
+        { id: "outsole", name: "Traction Outsole", image: "/assets/imageshttps://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80", description: "Engineered micro-lug grip matrix with exposed carbon rigidity bridges" },
         { id: "heel", name: "Rear Heel Counter", image: "/assets/images/shoe-heel-detail.jpg", description: "3D molded heel spoiler & energy lockdown collar" }
       ],
       stockWarning: "Only 14 pairs left in batch 01"
@@ -48,7 +48,7 @@ export const PRODUCT_DATA = {
       angles: [
         { id: "lateral", name: "Lateral Profile", image: "/assets/images/shoe-obsidian-cyan.jpg", description: "Nocturnal cyan light-piping and sculpted aerostride chassis" },
         { id: "motion", name: "Kinetic In-Motion", image: "/assets/images/running-stride-motion.jpg", description: "Dynamic stride capture during sub-4:00/km midnight tempo" },
-        { id: "outsole", name: "Traction Outsole", image: "/assets/images/shoe-outsole.jpg", description: "Wet-asphalt ultra-tack compound formulation" },
+        { id: "outsole", name: "Traction Outsole", image: "/assets/imageshttps://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80", description: "Wet-asphalt ultra-tack compound formulation" },
         { id: "heel", name: "Rear Heel Counter", image: "/assets/images/shoe-heel-detail.jpg", description: "Anatomical heel cup stabilizing lateral foot roll" }
       ],
       stockWarning: "Selling fast • 82% reserved"
@@ -65,7 +65,7 @@ export const PRODUCT_DATA = {
       angles: [
         { id: "lateral", name: "Lateral Profile", image: "/assets/images/shoe-hyper-crimson.jpg", description: "Aggressive flame-gradient rocker geometry for rapid roll-through" },
         { id: "motion", name: "Kinetic In-Motion", image: "/assets/images/running-stride-motion.jpg", description: "Explosive toe-off energy vector demonstration" },
-        { id: "outsole", name: "Traction Outsole", image: "/assets/images/shoe-outsole.jpg", description: "Multi-directional heat-dispersal siping grooves" },
+        { id: "outsole", name: "Traction Outsole", image: "/assets/imageshttps://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80", description: "Multi-directional heat-dispersal siping grooves" },
         { id: "heel", name: "Rear Heel Counter", image: "/assets/images/shoe-heel-detail.jpg", description: "High-density medial bumper preventing over-pronation" }
       ],
       stockWarning: "New release • Ships in 24 hours"
@@ -125,7 +125,7 @@ export const PRODUCT_DATA = {
         description: "Bespoke variable-stiffness carbon weave flexes longitudinally while resisting torsional twist, locking the ankle axis.",
         metric: "3.2x Torsional Rigidity",
         diagramIcon: "Layers",
-        detailImage: "/assets/images/shoe-outsole.jpg"
+        detailImage: "/assets/imageshttps://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80"
       }
     },
     {

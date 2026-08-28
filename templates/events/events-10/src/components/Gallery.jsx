@@ -28,7 +28,7 @@ export const Gallery = () => {
       id: 4,
       title: 'Vortex Arena Crowd',
       category: 'FANS',
-      url: '/images/arena-bg.jpg',
+      url: 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=1400&q=80',
     },
     {
       id: 5,

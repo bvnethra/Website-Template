@@ -18,7 +18,7 @@ const fallbackProjects = [
     category: 'URBAN PENTHOUSE',
     location: 'Tribeca, New York',
     area: '6,800 sq ft',
-    image: './assets/images/commercial.jpg',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
     description: 'Triplex penthouse crafted with structural steel columns, double-height bookmatched Calacatta marble hearth, and glass-encased rooftop solarium.',
     year: 2024
   },
@@ -28,7 +28,7 @@ const fallbackProjects = [
     category: 'BESPOKE INTERIOR',
     location: 'Aspen, Colorado',
     area: '7,500 sq ft',
-    image: './assets/images/interior.jpg',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
     description: 'Subterranean alpine retreat featuring hand-chiseled slate walls, integrated hydronic heating, and custom rift-sawn white oak millwork.',
     year: 2025
   },
@@ -38,7 +38,7 @@ const fallbackProjects = [
     category: 'CUSTOM RESIDENCE',
     location: 'Bel Air, California',
     area: '11,400 sq ft',
-    image: './assets/images/residential.jpg',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
     description: 'Organic modern compound featuring geometric courtyards, automated climate-controlled wine gallery, and panoramic canyon vistas.',
     year: 2026
   }

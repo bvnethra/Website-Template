@@ -39,11 +39,11 @@ const MOCK_TEMPLATES = [
     description: 'A complete premium luxury resort and hotel sanctuary template featuring clifftop parallax headers, interactive booking widgets, responsive room selectors, masonry filtering galleries with lightboxes, count-up statistics, and custom mixology menus.',
     bootstrapVersion: 'React / Tailwind CSS / Motion',
     version: '1.0.0',
-    demoUrl: '/templates/hotel/hotel-7/index.html'
+    demoUrl: '/templates/hotel/hotel-7/index.html',
   },
   {
     id: 1,
-    name: 'SnapFolio  -  Dark Minimalist Portfolio',
+    name: 'SnapFolio — Dark Minimalist Portfolio',
     slug: 'photography-1',
     previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -54,11 +54,11 @@ const MOCK_TEMPLATES = [
     description: 'A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.',
     bootstrapVersion: 'HTML5 / Tailwind CSS',
     version: '1.0',
-    demoUrl: '/templates/photography/photography-1/index.html'
+    demoUrl: '/templates/photography/photography-1/index.html',
   },
   {
     id: 2,
-    name: 'Photo  -  Editorial Photography Studio',
+    name: 'Photo — Editorial Photography Studio',
     slug: 'photography-2',
     previewImage: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -69,7 +69,7 @@ const MOCK_TEMPLATES = [
     description: 'A high-end, editorial landing page template for creative photography studios. Features Sphere-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0',
-    demoUrl: '/templates/photography/photography-2/index.html'
+    demoUrl: '/templates/photography/photography-2/index.html',
   },
   {
     id: 3,
@@ -84,7 +84,7 @@ const MOCK_TEMPLATES = [
     description: 'A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.',
     bootstrapVersion: 'HTML5 / Tailwind CSS',
     version: '1.0',
-    demoUrl: '/templates/photography/photography-3/index.html'
+    demoUrl: '/templates/photography/photography-3/index.html',
   },
   {
     id: 124,
@@ -99,11 +99,11 @@ const MOCK_TEMPLATES = [
     description: 'A high-end cinematic wedding photography portfolio template with immersive slideshows, custom transitions, and smooth galleries.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0.0',
-    demoUrl: '/templates/photography/photography-4/index.html'
+    demoUrl: '/templates/photography/photography-4/index.html',
   },
   {
     id: 125,
-    name: 'AURA — Premium Fine Art Studio',
+    name: 'Aura — Premium Fine Art Studio',
     slug: 'photography-5',
     previewImage: '/fineart_cover.png',
     templateType: 'FREE',
@@ -114,7 +114,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium fine art and editorial studio portfolio featuring elegant dark-theme aesthetics, grid catalogs, and custom zoom-in lightboxes.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0.0',
-    demoUrl: '/templates/photography/photography-5/index.html'
+    demoUrl: '/templates/photography/photography-5/index.html',
   },
   {
     id: 145,
@@ -129,7 +129,7 @@ const MOCK_TEMPLATES = [
     description: 'A fashion-focused editorial photography portfolio with clean minimalist grids, typography layouts, and interactive sliders.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0.0',
-    demoUrl: '/templates/photography/photography-7/index.html'
+    demoUrl: '/templates/photography/photography-7/index.html',
   },
   {
     id: 127,
@@ -144,11 +144,11 @@ const MOCK_TEMPLATES = [
     description: 'A modern, interactive photography portfolio featuring advanced 3D orbital interactions, custom cursor shaders, and horizontal scroll grids.',
     bootstrapVersion: 'HTML5 / Three.js / Vanilla JS',
     version: '1.0.0',
-    demoUrl: '/templates/photography/photography-6/index.html'
+    demoUrl: '/templates/photography/photography-6/index.html',
   },
   {
     id: 4,
-    name: 'Qure Nexa — Advanced Medical & Healthcare Platform',
+    name: 'PulseCare — Modern Healthcare Platform',
     slug: 'medical-1',
     previewImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -174,7 +174,7 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     demoUrl: '/templates/medical/medical-2/index.html',
     downloadFile: 'medicio-healthcare.zip',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9003,
@@ -190,7 +190,7 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     demoUrl: '/templates/medical/medical-3/index.html',
     downloadFile: 'aurevia-health.zip',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9004,
@@ -206,7 +206,7 @@ const MOCK_TEMPLATES = [
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     demoUrl: '/templates/medical/medical-4/index.html',
     downloadFile: 'veylora-health.zip',
-    version: '1.0'
+    version: '1.0',
   },
 
 
@@ -223,7 +223,7 @@ const MOCK_TEMPLATES = [
     description: 'A high-end Next.js beauty and skincare storefront featuring dewy-gloss styles, peptide bundle builders, marquee notification bars, interactive review boards, and smooth scroll animations.',
     bootstrapVersion: 'Next.js / React / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/ecommerce/ecommerce-1/index.html'
+    demoUrl: '/templates/ecommerce/ecommerce-1/index.html',
   },
   {
     id: 8,
@@ -238,7 +238,7 @@ const MOCK_TEMPLATES = [
     description: 'An editorial, dark-themed e-commerce experience dedicated to premium acoustics, luxury timepieces, and structural apparel. Built with interactive cart drawers, wishlist triggers, and gold gradient finishes.',
     bootstrapVersion: 'React / React Router / CSS Modules',
     version: '1.0.0',
-    demoUrl: '/templates/ecommerce/ecommerce-6/index.html'
+    demoUrl: '/templates/ecommerce/ecommerce-6/index.html',
   },
   {
     id: 9,
@@ -253,7 +253,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium, dark emerald & gold themed e-commerce template for high-end luxury jewelry, diamonds, and bridal collections. Styled with custom drawers, search overlay, and elegant product filters.',
     bootstrapVersion: 'React / React Router / Vanilla CSS',
     version: '1.0.0',
-    demoUrl: '/templates/ecommerce/ecommerce-2/index.html'
+    demoUrl: '/templates/ecommerce/ecommerce-2/index.html',
   },
 
   {
@@ -267,7 +267,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 8,
     downloadsCount: 3200,
     description: 'A vibrant and interactive online storefront designed for modern toy stores and hobby shops. Features a custom 3D flying toy canvas, whimsical category lists, responsive cart drawer, and interactive tracking.',
-    demoUrl: '/templates/ecommerce/ecommerce-8/index.html'
+    demoUrl: '/templates/ecommerce/ecommerce-8/index.html',
   },
   {
     id: 12,
@@ -280,7 +280,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 4,
     downloadsCount: 4100,
     description: 'A futuristic and clean electronic product storefront dedicated to premium devices and smart ecosystem components. Features automated command search overlays, compare modals, interactive specifications, and cart drawers.',
-    demoUrl: '/templates/ecommerce/ecommerce-3/index.html'
+    demoUrl: '/templates/ecommerce/ecommerce-3/index.html',
   },
   {
     id: 13,
@@ -293,7 +293,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 14,
     downloadsCount: 5120,
     description: 'A cinematic and immersive e-commerce storefront for lifestyle and fashion concept brands. Features rich animations, cinematic video hero headers, product quick view modals, interactive sorting, and detailed item configuration options.',
-    demoUrl: '/templates/ecommerce/ecommerce-4/index.html'
+    demoUrl: '/templates/ecommerce/ecommerce-4/index.html',
   },
   {
     id: 14,
@@ -306,7 +306,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 10,
     downloadsCount: 3820,
     description: 'A minimalist, structured e-commerce storefront for organic fashion and lifestyle labels. Features smooth scroll reveals, custom cursors, floating filter panels, and color/size cart controls.',
-    demoUrl: '/templates/ecommerce/ecommerce-5/index.html'
+    demoUrl: '/templates/ecommerce/ecommerce-5/index.html',
   },
   {
     id: 15,
@@ -319,7 +319,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 8,
     downloadsCount: 2950,
     description: 'An elegant, full-featured artisan restaurant and gathering venue template. Features fine dining menu displays, inline reservation requests, slideshow lookbooks, team/chef highlights, and clean typography.',
-    demoUrl: '/templates/restaurant/restaurant-1/index.html'
+    demoUrl: '/templates/restaurant/restaurant-1/index.html',
   },
   {
     id: 16,
@@ -332,7 +332,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 6,
     downloadsCount: 9500,
     description: 'An elegant, premium React-refactored restaurant template featuring signature dish modals, scroll progress cursors, reservation sections, event highlights, and a gorgeous lightbox gallery.',
-    demoUrl: '/templates/restaurant/restaurant-2/index.html'
+    demoUrl: '/templates/restaurant/restaurant-2/index.html',
   },
   {
     id: 17,
@@ -345,7 +345,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1840,
     description: 'An immersive and cinematic restaurant concept showcase template. Features custom dynamic cursors, interactive floating dish hover cards, smooth scroll reveals, custom reservation modals, and structured storytelling panels.',
-    demoUrl: '/templates/restaurant/restaurant-3/index.html'
+    demoUrl: '/templates/restaurant/restaurant-3/index.html',
   },
   {
     id: 18,
@@ -358,7 +358,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1450,
     description: 'A contemporary garden restaurant template styled in dark editorial aesthetics. Features botanical garden themes, interactive curatorial grids, testimonial slide bars, custom cursors, and reservation capture forms.',
-    demoUrl: '/templates/restaurant/restaurant-4/index.html'
+    demoUrl: '/templates/restaurant/restaurant-4/index.html',
   },
   {
     id: 19,
@@ -371,7 +371,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1200,
     description: 'An premium, unconventional, and moody restaurant template featuring custom ambient audio lounge music, live fireplace hearth sections, dynamic parallax scroll effects, menu showcases, and reservation builders.',
-    demoUrl: '/templates/restaurant/restaurant-5/index.html'
+    demoUrl: '/templates/restaurant/restaurant-5/index.html',
   },
   {
     id: 128,
@@ -384,7 +384,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1650,
     description: 'An elegant, premium React-refactored restaurant template featuring custom ambient audio lounge music, live fireplace hearth sections, dynamic parallax scroll effects, menu showcases, and reservation builders.',
-    demoUrl: '/templates/restaurant/restaurant-6/index.html'
+    demoUrl: '/templates/restaurant/restaurant-6/index.html',
   },
   {
     id: 129,
@@ -397,7 +397,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1950,
     description: 'A contemporary chic Indian fusion culinary studio in Mumbai. Asymmetric layouts, truffle paneer tikka, saffron cheesecake, and modern craft mocktails.',
-    demoUrl: '/templates/restaurant/restaurant-7/index.html'
+    demoUrl: '/templates/restaurant/restaurant-7/index.html',
   },
   {
     id: 130,
@@ -410,7 +410,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 2200,
     description: 'A luxury Rajasthani heritage restaurant from Jaipur. Maroon-gold archways, traditional Dal Baati Churma dishes, and premium royal dining layouts.',
-    demoUrl: '/templates/restaurant/restaurant-8/index.html'
+    demoUrl: '/templates/restaurant/restaurant-8/index.html',
   },
   {
     id: 131,
@@ -423,7 +423,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 2800,
     description: 'A high-end regal Mughlai dining experience located in New Delhi. Sophisticated gold-burgundy color palettes, buttery rich dal makhani, and premium tandoor grills.',
-    demoUrl: '/templates/restaurant/restaurant-9/index.html'
+    demoUrl: '/templates/restaurant/restaurant-9/index.html',
   },
   {
     id: 132,
@@ -436,7 +436,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 3100,
     description: 'A premium modern South Indian culinary experience from Chennai. Features a golden ghee roast Dosa showcase, claypot idlis, filter coffee, and warm terracotta design accents.',
-    demoUrl: '/templates/restaurant/restaurant-10/index.html'
+    demoUrl: '/templates/restaurant/restaurant-10/index.html',
   },
   {
     id: 133,
@@ -449,7 +449,7 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1850,
     description: 'A premium, interactive React travel platform featuring dynamic page transitions, an interactive cyber world map, a custom trip builder, hotel booking cards, and stunning visual layouts.',
-    demoUrl: '/templates/travels/travel-1/index.html'
+    demoUrl: '/templates/travels/travel-1/index.html',
   },
   {
     id: 20,
@@ -464,7 +464,7 @@ const MOCK_TEMPLATES = [
     description: 'A modern, gorgeous online learning platform with university programs, certified courses, industry mentorship, and dynamic bento animations.',
     bootstrapVersion: 'React / TypeScript / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/education/education-1/index.html'
+    demoUrl: '/templates/education/education-1/index.html',
   },
   {
     id: 101,
@@ -479,7 +479,7 @@ const MOCK_TEMPLATES = [
     description: 'A high-end, futuristic e-commerce showroom for devices and electronics. Features holographic UI styling, detailed product catalogs across 8 categories, interactive specification panels, and a sleek dark theme.',
     bootstrapVersion: 'React / Framer Motion / Vanilla CSS',
     version: '1.0.0',
-    demoUrl: '/templates/ecommerce/ecommerce-9/index.html'
+    demoUrl: '/templates/ecommerce/ecommerce-9/index.html',
   },
   {
     id: 102,
@@ -494,7 +494,7 @@ const MOCK_TEMPLATES = [
     description: 'A modern, responsive e-commerce storefront dedicated to family fashion and kids wear. Features animated custom cursors, product quick-view modals, search overlays, a wishlist manager, and a Spring Boot backend.',
     bootstrapVersion: 'React / Tailwind / Spring Boot',
     version: '1.0.0',
-    demoUrl: '/templates/ecommerce/ecommerce-10/index.html'
+    demoUrl: '/templates/ecommerce/ecommerce-10/index.html',
   },
   {
     id: 103,
@@ -509,7 +509,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium tech and leadership event launching platform. Features dynamic schedules, speaker registries, digital ticket cards, countdown timers, and reservation capture modals.',
     bootstrapVersion: 'React / Tailwind / Plus Jakarta Sans',
     version: '1.0.0',
-    demoUrl: '/templates/events/events-1/index.html'
+    demoUrl: '/templates/events/events-1/index.html',
   },
   {
     id: 104,
@@ -524,7 +524,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium, high-tech event landing page for technology and AI conferences. Features interactive scroll spies, customized cursor indicators, schedule registries, and ticket reservation forms.',
     bootstrapVersion: 'React / Vanilla CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/events/events-2/index.html'
+    demoUrl: '/templates/events/events-2/index.html',
   },
   {
     id: 105,
@@ -539,7 +539,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium, light/dark responsive robotics and quantum technology event template. Features quantum style grid animations, particle canvas backgrounds, dynamic tracks, speaker panels, and a sleek modern dark mode design.',
     bootstrapVersion: 'React / Space Grotesk / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/events/events-3/index.html'
+    demoUrl: '/templates/events/events-3/index.html',
   },
   {
     id: 106,
@@ -554,7 +554,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium athletic and fitness challenge event launching template. Features trainer portfolios, class schedules, program cards, equipment showcases, pricing tables, and registration capture.',
     bootstrapVersion: 'React / Tailwind / Montserrat',
     version: '1.0.0',
-    demoUrl: '/templates/events/events-4/index.html'
+    demoUrl: '/templates/events/events-4/index.html',
   },
   {
     id: 107,
@@ -569,7 +569,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium automotive wash, detailing, and paint studio platform. Features services grids, pricing cards, equipment showcases, paint studios, booking panels, and a reactive dark mode design.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/events/events-5/index.html'
+    demoUrl: '/templates/events/events-5/index.html',
   },
   {
     id: 108,
@@ -584,7 +584,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium commercial construction and heavy engineering landing page. Features customized pricing cost-estimators, milestone trackers, service portfolios, and a full dark mode design system.',
     bootstrapVersion: 'React / Outfit / Plus Jakarta Sans',
     version: '1.0.0',
-    demoUrl: '/templates/construction/construction-1/index.html'
+    demoUrl: '/templates/construction/construction-1/index.html',
   },
   {
     id: 109,
@@ -599,7 +599,7 @@ const MOCK_TEMPLATES = [
     description: 'An elegant, high-end fine art wedding photography showcase template. Features delicate earthy desaturated filters, parallax image carousels, custom cursor indicators, and responsive testimonial sliders.',
     bootstrapVersion: 'React / Tailwind CSS / Motion',
     version: '1.0.0',
-    demoUrl: '/templates/photography/photography-8/index.html'
+    demoUrl: '/templates/photography/photography-8/index.html',
   },
   {
     id: 110,
@@ -614,7 +614,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium React wedding photography template featuring romantic blush and warm ivory tones, editorial serif typography, interactive booking forms, and dynamic parallax portfolio galleries.',
     bootstrapVersion: 'React / Tailwind CSS / Motion',
     version: '1.0.0',
-    demoUrl: '/templates/photography/photography-9/index.html'
+    demoUrl: '/templates/photography/photography-9/index.html',
   },
   {
     id: 111,
@@ -629,7 +629,7 @@ const MOCK_TEMPLATES = [
     description: 'A high-end, editorial photography showcase template. Features custom slide overlays, parallax grid systems, desaturated earthy image styling, and elegant typewriter layout design.',
     bootstrapVersion: 'React / Tailwind CSS / Motion',
     version: '1.0.0',
-    demoUrl: '/templates/photography/photography-10/index.html'
+    demoUrl: '/templates/photography/photography-10/index.html',
   },
   {
     id: 112,
@@ -644,7 +644,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium React architectural and construction design studio template. Features an interactive 3D digital twin BIM model preview, cost calculators, structural project showcases, and a responsive theme toggle.',
     bootstrapVersion: 'React / Three.js / Lucide',
     version: '1.0.0',
-    demoUrl: '/templates/construction/construction-2/index.html'
+    demoUrl: '/templates/construction/construction-2/index.html',
   },
   {
     id: 113,
@@ -659,7 +659,7 @@ const MOCK_TEMPLATES = [
     description: 'Next-generation commercial construction and BIM engineering landing page with real-time 3D telemetry, parametric cost estimator, live statistics, and Java Spring Boot REST backend.',
     bootstrapVersion: 'React / Three.js / Glassmorphism',
     version: '1.0.0',
-    demoUrl: '/templates/construction/construction-3/index.html'
+    demoUrl: '/templates/construction/construction-3/index.html',
   },
   {
     id: 117,
@@ -674,7 +674,7 @@ const MOCK_TEMPLATES = [
     description: 'A luxury architecture and bespoke general contracting landing page. Features dynamic villa portfolios, 3D BIM integration methodology showcases, on-time milestone stats, and custom consultation request flow.',
     bootstrapVersion: 'React / Tailwind CSS / Ambient',
     version: '1.0.0',
-    demoUrl: '/templates/construction/construction-4/index.html'
+    demoUrl: '/templates/construction/construction-4/index.html',
   },
   {
     id: 118,
@@ -689,7 +689,7 @@ const MOCK_TEMPLATES = [
     description: 'A luxury lakefront residential and bespoke architectural configurator landing page. Features interactive 3D style customizer, geo-coordinates villa catalog, and RESTful configurator server.',
     bootstrapVersion: 'React / Tailwind CSS / Configurator',
     version: '1.0.0',
-    demoUrl: '/templates/construction/construction-5/index.html'
+    demoUrl: '/templates/construction/construction-5/index.html',
   },
   {
     id: 119,
@@ -704,7 +704,7 @@ const MOCK_TEMPLATES = [
     description: 'A luxury residential and commercial architecture studio landing page. Features scroll-bound video transformations, custom lightboxes, bento portfolios, and RESTful project server.',
     bootstrapVersion: 'React / Vanilla CSS / Scroll Video',
     version: '1.0.0',
-    demoUrl: '/templates/construction/construction-6/index.html'
+    demoUrl: '/templates/construction/construction-6/index.html',
   },
   {
     id: 120,
@@ -719,7 +719,7 @@ const MOCK_TEMPLATES = [
     description: 'A luxury boutique sanctuary resort landing page. Features responsive editorial slideshows, immersive accommodation galleries, interactive basalt thermal spa sections, and fine dining reservation flow.',
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     version: '1.0.0',
-    demoUrl: '/templates/hotel/hotel-1/index.html'
+    demoUrl: '/templates/hotel/hotel-1/index.html',
   },
   {
     id: 121,
@@ -734,7 +734,7 @@ const MOCK_TEMPLATES = [
     description: 'Aethelred Resort is an original luxury hotel and resort website template featuring booking bar, room showcase, amenities list, dining highlights, testimonials, and gallery.',
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     version: '1.0.0',
-    demoUrl: '/templates/hotel/hotel-2/index.html'
+    demoUrl: '/templates/hotel/hotel-2/index.html',
   },
   {
     id: 122,
@@ -749,7 +749,7 @@ const MOCK_TEMPLATES = [
     description: 'A private refuge offering luxury architectural pods crafted from volcanic stone, glass canopies, and polished teakwood.',
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     version: '1.0.0',
-    demoUrl: '/templates/hotel/hotel-3/index.html'
+    demoUrl: '/templates/hotel/hotel-3/index.html',
   },
   {
     id: 123,
@@ -764,7 +764,7 @@ const MOCK_TEMPLATES = [
     description: 'An elegant, full-featured luxury forest sanctuary and wellness retreat template. Features bento-style accommodation cards, immersive experience sections, smooth scroll indicates, and responsive layouts.',
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     version: '1.0.0',
-    demoUrl: '/templates/hotel/hotel-4/index.html'
+    demoUrl: '/templates/hotel/hotel-4/index.html',
   },
   {
     id: 134,
@@ -779,7 +779,7 @@ const MOCK_TEMPLATES = [
     description: 'A comprehensive corporate and analytics administrative platform featuring sales intelligence, GPU computing, conversion tracking, chat dashboard, and settings panel.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/admin/admin-1/index.html'
+    demoUrl: '/templates/admin/admin-1/index.html',
   },
   {
     id: 135,
@@ -794,7 +794,7 @@ const MOCK_TEMPLATES = [
     description: 'A beautiful editorial command operating system and science archive built using custom React state views, featuring editorial pipeline, task manager, media library, and workspace options.',
     bootstrapVersion: 'React 19 / TypeScript / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/admin/admin-2/index.html'
+    demoUrl: '/templates/admin/admin-2/index.html',
   },
   {
     id: 136,
@@ -809,7 +809,7 @@ const MOCK_TEMPLATES = [
     description: 'A gorgeous, responsive typography-first blog and magazine publishing platform, designed with customizable reading progress bars, trending topic pills, and article bookmarking.',
     bootstrapVersion: 'React 19 / TypeScript / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/block-magazine/blog-1/index.html'
+    demoUrl: '/templates/block-magazine/blog-1/index.html',
   },
   {
     id: 137,
@@ -824,7 +824,7 @@ const MOCK_TEMPLATES = [
     description: 'A clean, modern science and technology magazine featuring card galleries, layout options, reading time estimation, newsletter box subscription, and dark mode support.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/block-magazine/blog-2/index.html'
+    demoUrl: '/templates/block-magazine/blog-2/index.html',
   },
   {
     id: 138,
@@ -839,7 +839,7 @@ const MOCK_TEMPLATES = [
     description: 'An immersive digital magazine layout with rich background visuals, interactive company metrics, tools directory, subscription overlay, and fluid animations.',
     bootstrapVersion: 'React 19 / Vite / Vanilla CSS',
     version: '1.0.0',
-    demoUrl: '/templates/block-magazine/blog-3/index.html'
+    demoUrl: '/templates/block-magazine/blog-3/index.html',
   },
   {
     id: 140,
@@ -852,9 +852,9 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1200,
     description: 'A new experience of performance, photography and design is about to arrive. Explore the revolutionary Orange 16 with White and Black Titanium craft, O18 Pro chip, slow-motion video, and exploded engineering architecture.',
-    bootstrapVersion: 'HTML5 / Vanilla CSS',
+    bootstrapVersion: 'React / Java Spring Boot',
     version: '1.0',
-    demoUrl: '/templates/comming-soon/coming-soon-template/index.html'
+    demoUrl: '/templates/comming-soon/coming-soon-template/index.html',
   },
   {
     id: 141,
@@ -867,9 +867,9 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1850,
     description: 'A production-quality futuristic automotive showroom template. Explore the NOVA X1 electric SUV with interactive 3D WebGL visuals, scroll-driven camera reveals, dynamic paint customizer, performance analytics, and pre-booking capture.',
-    bootstrapVersion: 'React / Three.js / GSAP',
+    bootstrapVersion: 'React / Java Spring Boot',
     version: '1.0',
-    demoUrl: '/templates/comming-soon/cm-2/index.html'
+    demoUrl: '/templates/comming-soon/cm-2/index.html',
   },
   {
     id: 142,
@@ -882,9 +882,9 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 950,
     description: 'Create a modern, premium, cinematic coming soon website for luxury real-estate projects. Features continuous slow-motion building rendering background loops, Lenis smooth scrolling, architectural specification grids, and modular registration capture forms.',
-    bootstrapVersion: 'HTML5 / Tailwind CSS',
+    bootstrapVersion: 'React / Java Spring Boot',
     version: '1.0',
-    demoUrl: '/templates/comming-soon/cm-3/index.html'
+    demoUrl: '/templates/comming-soon/cm-3/index.html',
   },
   {
     id: 143,
@@ -897,9 +897,9 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1420,
     description: 'An exquisite collector’s edition book coming soon website template. Features interactive 9-frame video background engine, live millisecond-precision countdown timer, Linnean author showcase, antiquarian Web Audio synthesizer, botanical plate inspector modal, and responsive laptop/tab/phone preview.',
-    bootstrapVersion: 'HTML5 / Tailwind / Vanilla JS',
+    bootstrapVersion: 'React / Java Spring Boot',
     version: '1.0',
-    demoUrl: '/templates/comming-soon/cm-4/index.html'
+    demoUrl: '/templates/comming-soon/cm-4/index.html',
   },
   {
     id: 144,
@@ -912,9 +912,9 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1680,
     description: 'A luxurious 18k solid gold watch launch template. Features weightless floating antigravity 3D physics, interactive 360-degree studio orbit rotation, fluted crown and sunburst guilloché macro lens inspectors, 28,800 vph mechanical escapement audio synthesizer, and VIP allocation reservation capture.',
-    bootstrapVersion: 'HTML5 / Tailwind CSS / Vanilla JS',
+    bootstrapVersion: 'React / Java Spring Boot',
     version: '1.0',
-    demoUrl: '/templates/comming-soon/cm-5/index.html'
+    demoUrl: '/templates/comming-soon/cm-5/index.html',
   },
   {
     id: 158,
@@ -929,7 +929,7 @@ const MOCK_TEMPLATES = [
     description: 'K-12 school portal featuring parent inquiry panels, progress logs, fee configurators, class curriculum schedules, and event boards.',
     bootstrapVersion: 'HTML5 / Vanilla CSS / JS',
     version: '1.0.0',
-    demoUrl: '/templates/education/education-2/index.html'
+    demoUrl: '/templates/education/education-2/index.html',
   },
   {
     id: 159,
@@ -944,7 +944,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium modern university portal with interactive research timelines, department directories, and full admission customizer panels.',
     bootstrapVersion: 'HTML5 / Tailwind CSS / Vanilla JS',
     version: '1.0.0',
-    demoUrl: '/templates/education/education-3/index.html'
+    demoUrl: '/templates/education/education-3/index.html',
   },
   {
     id: 160,
@@ -959,7 +959,82 @@ const MOCK_TEMPLATES = [
     description: 'Next-generation academic dashboard and campus administration hub. Features slot booking customizers, department catalogues, and advanced student registries.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/education/education-4/index.html'
+    demoUrl: '/templates/education/education-4/index.html',
+  },
+  {
+    id: 161,
+    name: 'MelodyCademy — Music Academy Portal',
+    slug: 'melodycademy-music-portal',
+    previewImage: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 10, name: 'Education', slug: 'education' },
+    pagesCount: 1,
+    downloadsCount: 1850,
+    description: 'A premium, responsive music school and learning platform featuring interactive course registries, instrument catalogs, private class inquiry, and event timelines.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/education/education-5/index.html',
+  },
+  {
+    id: 162,
+    name: 'BusinessCollege — Professional Academic Landing Page',
+    slug: 'business-college-landing',
+    previewImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 10, name: 'Education', slug: 'education' },
+    pagesCount: 1,
+    downloadsCount: 1900,
+    description: 'A clean, professional education and college landing page template with inquiry lead capture, testimonials carousel, and key highlights.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/education/education-6/index.html',
+  },
+  {
+    id: 163,
+    name: 'Westridge — University Multi-page Portal',
+    slug: 'westridge-university-portal',
+    previewImage: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 10, name: 'Education', slug: 'education' },
+    pagesCount: 7,
+    downloadsCount: 2150,
+    description: 'A fully featured university website with 7 pages, including admissions guides, course search, events registers, and shop layouts.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/education/education-7/index.html',
+  },
+  {
+    id: 164,
+    name: 'EdTech — Interactive E-Learning Platform',
+    slug: 'edtech-elearning-platform',
+    previewImage: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 10, name: 'Education', slug: 'education' },
+    pagesCount: 1,
+    downloadsCount: 2400,
+    description: 'An immersive learning dashboard template featuring progress trackers, interactive course syllabi, quizzes, and live tutor panels.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/education/education-8/index.html',
+  },
+  {
+    id: 165,
+    name: 'LearningInMotion — Premium Gamified Education Dashboard',
+    slug: 'learning-in-motion',
+    previewImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 10, name: 'Education', slug: 'education' },
+    pagesCount: 1,
+    downloadsCount: 2800,
+    description: 'A premium interactive education portal with gamified features, integrated student dashboards, and clean modern aesthetic.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/education/education-9/index.html',
   },
   {
     id: 161,
@@ -989,7 +1064,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium, high-end renovation and heritage contracting atelier template. Features interactive restoration comparisons, craft galleries, masonry portfolios, and consultation booking.',
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     version: '1.0.0',
-    demoUrl: '/templates/construction/construction-7/index.html'
+    demoUrl: '/templates/construction/construction-7/index.html',
   },
   {
     id: 172,
@@ -1004,7 +1079,7 @@ const MOCK_TEMPLATES = [
     description: 'A sustainable architecture landing page featuring living biophilic facade simulators, aerodynamic estimators, telemetry HUDs, and biophilic design specification cards.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/construction/construction-8/index.html'
+    demoUrl: '/templates/construction/construction-8/index.html',
   },
   {
     id: 173,
@@ -1019,7 +1094,7 @@ const MOCK_TEMPLATES = [
     description: 'A brutalist architectural and engineering showcase template. Features custom brutalist typography, concrete telemetry estimation simulators, weather atmosphere dashboards, and live HUD trackers.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/construction/construction-9/index.html'
+    demoUrl: '/templates/construction/construction-9/index.html',
   },
   {
     id: 174,
@@ -1034,7 +1109,7 @@ const MOCK_TEMPLATES = [
     description: 'Next-generation aerodynamic skyrise portal. Features biophilic 3D kinetic facade simulators, aerodynamic estimators, machinery fleet telemetry hubs, and wind tunnel streamlined overlays.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/construction/construction-10/index.html'
+    demoUrl: '/templates/construction/construction-10/index.html',
   },
   {
     id: 175,
@@ -1049,7 +1124,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium tech and leadership event launching platform. Features dynamic schedules, speaker registries, digital ticket cards, countdown timers, and reservation capture modals.',
     bootstrapVersion: 'React / Tailwind / Plus Jakarta Sans',
     version: '1.0.0',
-    demoUrl: '/templates/events/events-6/index.html'
+    demoUrl: '/templates/events/events-6/index.html',
   },
   {
     id: 176,
@@ -1064,7 +1139,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium, high-tech event landing page for technology and AI conferences. Features interactive scroll spies, customized cursor indicators, schedule registries, and ticket reservation forms.',
     bootstrapVersion: 'React / Vanilla CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/events/events-7/index.html'
+    demoUrl: '/templates/events/events-7/index.html',
   },
   {
     id: 177,
@@ -1079,7 +1154,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium, light/dark responsive robotics and quantum technology event template. Features quantum style grid animations, particle canvas backgrounds, dynamic tracks, speaker panels, and a sleek modern dark mode design.',
     bootstrapVersion: 'React / Space Grotesk / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/events/events-8/index.html'
+    demoUrl: '/templates/events/events-8/index.html',
   },
   {
     id: 178,
@@ -1094,7 +1169,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium athletic and fitness challenge event launching template. Features trainer portfolios, class schedules, program cards, equipment showcases, pricing tables, and registration capture.',
     bootstrapVersion: 'React / Tailwind / Montserrat',
     version: '1.0.0',
-    demoUrl: '/templates/events/events-9/index.html'
+    demoUrl: '/templates/events/events-9/index.html',
   },
   {
     id: 179,
@@ -1109,7 +1184,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium automotive wash, detailing, and paint studio platform. Features services grids, pricing cards, equipment showcases, paint studios, booking panels, and a reactive dark mode design.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/events/events-10/index.html'
+    demoUrl: '/templates/events/events-10/index.html',
   },
   {
     id: 180,
@@ -1122,9 +1197,9 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 2450,
     description: 'A beautiful 3D interactive hardware and smartphone coming soon launch platform. Features a responsive 3D interactive model previewer, countdown launch timer, product specifications tray, and subscription capture form.',
-    bootstrapVersion: 'React / Three.js / Tailwind CSS / Vite',
+    bootstrapVersion: 'React / Java Spring Boot',
     version: '1.0.0',
-    demoUrl: '/templates/comming-soon/comingsoon-6/index.html'
+    demoUrl: '/templates/comming-soon/comingsoon-6/index.html',
   },
   {
     id: 181,
@@ -1137,9 +1212,9 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1980,
     description: 'A stunning sportswear and footwear launch teaser landing page. Features digital interactive shoe galleries, pre-launch countdown, interactive specs drawer, customer review sliders, and product pre-order capture forms.',
-    bootstrapVersion: 'React / Tailwind CSS / Vite',
+    bootstrapVersion: 'React / Java Spring Boot',
     version: '1.0.0',
-    demoUrl: '/templates/comming-soon/comingsoon-7/index.html'
+    demoUrl: '/templates/comming-soon/comingsoon-7/index.html',
   },
   {
     id: 182,
@@ -1154,7 +1229,7 @@ const MOCK_TEMPLATES = [
     description: 'A beautiful lifestyle, blogging, and digital storytelling platform. Features rich article layouts, bookmark contexts, 3D card interactions, category grids, and subscription modals.',
     bootstrapVersion: 'React / Tailwind CSS / Motion',
     version: '1.0.0',
-    demoUrl: '/templates/block-magazine/blog-4/index.html'
+    demoUrl: '/templates/block-magazine/blog-4/index.html',
   },
   {
     id: 183,
@@ -1169,7 +1244,7 @@ const MOCK_TEMPLATES = [
     description: 'Next-generation spatial editorial portfolio. Features 3D coverflow stacks, logo canvas renders, reading progress monitors, saved drawers, and full-screen overlay menus.',
     bootstrapVersion: 'React / Three.js / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/block-magazine/blog-5/index.html'
+    demoUrl: '/templates/block-magazine/blog-5/index.html',
   },
   {
     id: 184,
@@ -1184,7 +1259,7 @@ const MOCK_TEMPLATES = [
     description: 'An editorial design and architecture portfolio platform. Features cinematic parallax galleries, tactile bento grids, key takeaways blocks, mega menus, and an immersive dark mode.',
     bootstrapVersion: 'React / Tailwind CSS / Framer Motion / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/block-magazine/blog-6/index.html'
+    demoUrl: '/templates/block-magazine/blog-6/index.html',
   },
   {
     id: 185,
@@ -1199,7 +1274,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium opinion, journalism, and news publishing hub. Features category spread grids, audio player bars, breaks tickers, opinion rails, bookmark drawers, and velocity carousels.',
     bootstrapVersion: 'React / SCSS / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/block-magazine/blog-7/index.html'
+    demoUrl: '/templates/block-magazine/blog-7/index.html',
   },
   {
     id: 186,
@@ -1214,11 +1289,11 @@ const MOCK_TEMPLATES = [
     description: 'A high-energy maximalist fashion, art, and dopamine culture journal. Features asymmetrical bento feeds, kinetic ribbon overlays, velocity text carousels, full-screen menus, and page transitions.',
     bootstrapVersion: 'React / Framer Motion / Tailwind / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/block-magazine/blog-8/index.html'
+    demoUrl: '/templates/block-magazine/blog-8/index.html',
   },
   {
     id: 9109,
-    name: 'Explorer — Interactive Science & Field Notes',
+    name: 'CHRONICLE — Premium Editorial & News Platform',
     slug: 'blog-9',
     previewImage: 'https://images.unsplash.com/photo-1507633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1229,11 +1304,11 @@ const MOCK_TEMPLATES = [
     description: 'A beautiful science and adventure storytelling journal. Features halftone reveals, depth carousels, immersive aura backdrops, and interactive article pages.',
     bootstrapVersion: 'React / Vite / CSS',
     version: '1.0.0',
-    demoUrl: '/templates/block-magazine/blog-9/index.html'
+    demoUrl: '/templates/block-magazine/blog-9/index.html',
   },
   {
     id: 9110,
-    name: 'Horizon Journal — Sunset Editorial',
+    name: 'TERRA Magazine',
     slug: 'blog-10',
     previewImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1244,11 +1319,11 @@ const MOCK_TEMPLATES = [
     description: 'An elegant editorial template featuring responsive full-screen drawer panels, custom search modals, bookmarks drawer, and sunset boulevard aura backgrounds.',
     bootstrapVersion: 'React / Tailwind / Vite / TS',
     version: '1.0.0',
-    demoUrl: '/templates/block-magazine/blog-10/index.html'
+    demoUrl: '/templates/block-magazine/blog-10/index.html',
   },
   {
     id: 9111,
-    name: 'AgriTech — Cybernetic Smart Farming Journal',
+    name: 'Chronicle & Co. Magazine',
     slug: 'blog-11',
     previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1259,7 +1334,7 @@ const MOCK_TEMPLATES = [
     description: 'A high-tech agricultural research and smart farming science magazine. Features timeline explorers, interactive hotspots, bookmark drawers, and custom media grids.',
     bootstrapVersion: 'React / Tailwind / Vite / TS',
     version: '1.0.0',
-    demoUrl: '/templates/block-magazine/blog-11/index.html'
+    demoUrl: '/templates/block-magazine/blog-11/index.html',
   },
   {
     id: 187,
@@ -1274,7 +1349,7 @@ const MOCK_TEMPLATES = [
     description: 'A beautiful and fully-featured travel booking and tour discovery platform. Features custom-themed cursors, favorite wishlist managers, package filters, and travel guides.',
     bootstrapVersion: 'React / Tailwind CSS / Motion',
     version: '1.0.0',
-    demoUrl: '/templates/travels/travel-2/index.html'
+    demoUrl: '/templates/travels/travel-2/index.html',
   },
   {
     id: 188,
@@ -1289,7 +1364,7 @@ const MOCK_TEMPLATES = [
     description: 'A stunning adventure and wild tourism showcase page. Features smooth scroll-driven parallax layouts, booking forms, testimonials, and category galleries.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/travels/travel-3/index.html'
+    demoUrl: '/templates/travels/travel-3/index.html',
   },
   {
     id: 189,
@@ -1304,7 +1379,7 @@ const MOCK_TEMPLATES = [
     description: 'An elegant destination directory and trekking agency web application. Features package overlays, custom sliders, contact forms, and a responsive booking widget.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/travels/travel-4/index.html'
+    demoUrl: '/templates/travels/travel-4/index.html',
   },
   {
     id: 190,
@@ -1319,7 +1394,7 @@ const MOCK_TEMPLATES = [
     description: 'A beautiful animated outdoor, national park, and wilderness tourism platform. Features rich SVG animations, stats bands, destination overlays, and testimonial rails.',
     bootstrapVersion: 'React / Framer Motion / Tailwind / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/travels/travel-5/index.html'
+    demoUrl: '/templates/travels/travel-5/index.html',
   },
   {
     id: 191,
@@ -1334,7 +1409,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium interactive travel planning and itinerary creation platform. Features dynamic stats bands, reviews drawers, custom destination galleries, and newsletter CTAs.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/travels/travel-6/index.html'
+    demoUrl: '/templates/travels/travel-6/index.html',
   },
   {
     id: 192,
@@ -1349,7 +1424,7 @@ const MOCK_TEMPLATES = [
     description: 'A beautiful destination blogging and hiking journal application. Features interactive maps, story lists, review grids, and pre-booking overlays.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/travels/travel-7/index.html'
+    demoUrl: '/templates/travels/travel-7/index.html',
   },
   {
     id: 193,
@@ -1364,7 +1439,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium luxury travel agency and high-end resort booking platform. Features minimalist layouts, destination galleries, pricing packages, and review carousels.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/travels/travel-8/index.html'
+    demoUrl: '/templates/travels/travel-8/index.html',
   },
   {
     id: 194,
@@ -1379,7 +1454,7 @@ const MOCK_TEMPLATES = [
     description: 'An advanced trekking, hiking, and mountain guide pre-booking platform. Features immersive background hero sections, interactive gear guides, and customer reviews.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/travels/travel-9/index.html'
+    demoUrl: '/templates/travels/travel-9/index.html',
   },
   {
     id: 195,
@@ -1394,7 +1469,7 @@ const MOCK_TEMPLATES = [
     description: 'Next-generation adventure travel journal. Features dynamic scroll-driven parallax layouts, background environmental loops, booking widgets, and rich animations.',
     bootstrapVersion: 'React / Tailwind CSS / Framer Motion / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/travels/travel-10/index.html'
+    demoUrl: '/templates/travels/travel-10/index.html',
   },
   {
     id: 196,
@@ -1409,7 +1484,7 @@ const MOCK_TEMPLATES = [
     description: 'An ultra-luxury coastal sanctuary resort perched on the cliffs of Uluwatu, Bali. Features Italian luxury editorial typography, Obsidian Sanctuary dark mode, top-arched photo frames, interactive booking engine with live bill calculation, Michelin-level dining, and Ayurvedic spa reservations.',
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     version: '1.0.0',
-    demoUrl: '/templates/hotel/hotel-5/index.html'
+    demoUrl: '/templates/hotel/hotel-5/index.html',
   },
   {
     id: 197,
@@ -1424,7 +1499,7 @@ const MOCK_TEMPLATES = [
     description: 'An ultra-premium Mediterranean luxury villa and resort template. Features an editorial architectural layout, Spacious and cozy room category showcase, panoramic twilight reviews banner, curated experiences, and real-time interactive booking engine.',
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     version: '1.0.0',
-    demoUrl: '/templates/hotel/hotel-6/index.html'
+    demoUrl: '/templates/hotel/hotel-6/index.html',
   },
   {
     id: 198,
@@ -1439,7 +1514,7 @@ const MOCK_TEMPLATES = [
     description: 'Ananthara Heritage Hotel is a ultra-luxury traditional resort situated in the heart of Udaipur. Features interactive card scanning chamber entry, overview slides, fine dining, spa, courtyard pools, and luxury booking overlays.',
     bootstrapVersion: 'React / Modern CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/hotel/hotel-8/index.html'
+    demoUrl: '/templates/hotel/hotel-8/index.html',
   },
   {
     id: 199,
@@ -1454,7 +1529,7 @@ const MOCK_TEMPLATES = [
     description: 'An exclusive sanctuary carved into the coastline, where architecture merges with nature and time slows to a whisper. Features responsive editorial slideshows, immersive accommodation galleries, interactive basalt thermal spa sections, and fine dining reservation flow.',
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     version: '1.0.0',
-    demoUrl: '/templates/hotel/hotel-9/index.html'
+    demoUrl: '/templates/hotel/hotel-9/index.html',
   },
   {
     id: 200,
@@ -1469,7 +1544,7 @@ const MOCK_TEMPLATES = [
     description: 'A luxury boutique sanctuary resort landing page. Features a floating booking widget, interactive guest popup, suite class selector, responsive editorial slideshows, and immersive accommodation galleries.',
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     version: '1.0.0',
-    demoUrl: '/templates/hotel/hotel-10/index.html'
+    demoUrl: '/templates/hotel/hotel-10/index.html',
   },
   {
     id: 201,
@@ -1484,7 +1559,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium high-fashion boutique and e-commerce portal. Features custom glassmorphic navigation, product showcase grids, dynamic cart and checkout flows, wishlist managers, and order tracking.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/ecommerce/ecommerce-7/index.html'
+    demoUrl: '/templates/ecommerce/ecommerce-7/index.html',
   },
   {
     id: 202,
@@ -1499,11 +1574,11 @@ const MOCK_TEMPLATES = [
     description: 'An intelligent science magazine super admin dashboard and editorial observatory with ice-and-paper aesthetics, live newsroom signals, story velocity analytics, and interactive publishing workflows.',
     bootstrapVersion: 'React 19 / TypeScript / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/admin/admin-3/index.html'
+    demoUrl: '/templates/admin/admin-3/index.html',
   },
   {
     id: 9004,
-    name: 'CoreVista — Premium Project Management & ERP',
+    name: 'CoreVista — Enterprise PM & Resource Intelligence System',
     slug: 'admin-4',
     previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1514,11 +1589,11 @@ const MOCK_TEMPLATES = [
     description: 'A multi-functional enterprise project management and ERP panel. Features 10 main controller modules with 50 sub-pages total, custom client portfolios, and secure authorization screens.',
     bootstrapVersion: 'React / Tailwind / Vite / TS',
     version: '1.0.0',
-    demoUrl: '/templates/admin/admin-4/index.html'
+    demoUrl: '/templates/admin/admin-4/index.html',
   },
   {
     id: 9005,
-    name: 'ApexAdmin — Multipurpose Enterprise Command Panel',
+    name: 'CoreVista — Enterprise PM & Resource Intelligence System',
     slug: 'admin-5',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1529,11 +1604,11 @@ const MOCK_TEMPLATES = [
     description: 'A comprehensive multipurpose administrative control system. Features 7 dashboard view presets, client message boxes, custom user/role directories, and dynamic utility modules.',
     bootstrapVersion: 'React / Vite / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/admin/admin-5/index.html'
+    demoUrl: '/templates/admin/admin-5/index.html',
   },
   {
     id: 9006,
-    name: 'Horizon — Global Operations Command',
+    name: 'ApexAdmin — Enterprise Operations Dashboard',
     slug: 'admin-6',
     previewImage: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1544,11 +1619,11 @@ const MOCK_TEMPLATES = [
     description: 'A premium operations command center dashboard. Features dark theme aesthetics, custom authentication routes, live search indices, and dynamic task scoping selectors.',
     bootstrapVersion: 'React / Tailwind / Vite / TS',
     version: '1.0.0',
-    demoUrl: '/templates/admin/admin-6/index.html'
+    demoUrl: '/templates/admin/admin-6/index.html',
   },
   {
     id: 9007,
-    name: 'Elysium — Unified Cloud Analytics Engine',
+    name: 'SprintAdmin — Agile Workspace & Sprint Command',
     slug: 'admin-7',
     previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1559,11 +1634,11 @@ const MOCK_TEMPLATES = [
     description: 'A clean and professional cloud infrastructure analytics dashboard. Features system telemetry, task queues, HR analytics, and messages views under a state-based layout shell.',
     bootstrapVersion: 'React / Tailwind / Vite / TS',
     version: '1.0.0',
-    demoUrl: '/templates/admin/admin-7/index.html'
+    demoUrl: '/templates/admin/admin-7/index.html',
   },
   {
     id: 9008,
-    name: 'Ember — Premium Financial Operations Ledger',
+    name: 'Ember Glow — Dark Analytics Dashboard',
     slug: 'admin-8',
     previewImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1574,11 +1649,41 @@ const MOCK_TEMPLATES = [
     description: 'An advanced financial ledger and inventory system. Features custom date range filters, transaction exports, dynamic KPIs, and product performance cards.',
     bootstrapVersion: 'React / Tailwind / Vite / TS',
     version: '1.0.0',
-    demoUrl: '/templates/admin/admin-8/index.html'
+    demoUrl: '/templates/admin/admin-8/index.html',
+  },
+  {
+    id: 9009,
+    name: 'Vantage — Premium Admin & Dashboard Hub',
+    slug: 'admin-9',
+    previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 1, name: 'Admin', slug: 'admin' },
+    pagesCount: 12,
+    downloadsCount: 1320,
+    description: 'An advanced corporate admin dashboard featuring real-time analytics, user management directories, customer profiling, and integrated messaging portals.',
+    bootstrapVersion: 'React / Tailwind CSS / Recharts',
+    version: '1.0.0',
+    demoUrl: '/templates/admin/admin-9/index.html',
+  },
+  {
+    id: 9010,
+    name: 'Apex — Animated Admin Dashboard Portal',
+    slug: 'admin-10',
+    previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 1, name: 'Admin', slug: 'admin' },
+    pagesCount: 14,
+    downloadsCount: 1580,
+    description: 'A high-end, premium administrative dashboard system featuring animated transitions, dynamic charts, live notifications, and complete workspace options.',
+    bootstrapVersion: 'React / Recharts / Framer Motion',
+    version: '1.0.0',
+    demoUrl: '/templates/admin/admin-10/index.html',
   },
   {
     id: 1001,
-    name: 'Nexora — Premium Enterprise Corporate',
+    name: 'AURA — Executive Enterprise & Consultancy',
     slug: 'cooperate-1',
     previewImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1589,11 +1694,11 @@ const MOCK_TEMPLATES = [
     description: 'A premium enterprise consulting and corporate website featuring 13+ production-ready pages, services bento grids, and career portals.',
     bootstrapVersion: 'React / Tailwind CSS / Vite / React Router',
     version: '1.0.0',
-    demoUrl: '/templates/cooperate/cooperate-1/index.html'
+    demoUrl: '/templates/cooperate/cooperate-1/index.html',
   },
   {
     id: 1002,
-    name: 'Orion — Corporate Strategy Showcase',
+    name: 'NEXUS — Global Business & Financial Advisory',
     slug: 'cooperate-2',
     previewImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1604,11 +1709,11 @@ const MOCK_TEMPLATES = [
     description: 'A clean, executive strategy and consulting template featuring bento portfolio layouts, interactive solution selectors, and case study detail views.',
     bootstrapVersion: 'React / Tailwind CSS / Vite / React Router',
     version: '1.0.0',
-    demoUrl: '/templates/cooperate/cooperate-2/index.html'
+    demoUrl: '/templates/cooperate/cooperate-2/index.html',
   },
   {
     id: 1003,
-    name: 'Vantage — Global Business Transformation',
+    name: 'VORTEX — Industrial & Technology Holdings',
     slug: 'cooperate-3',
     previewImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1619,11 +1724,11 @@ const MOCK_TEMPLATES = [
     description: 'An elegant corporate consulting and global advisory template featuring capability checklists, transition timelines, and leadership boards.',
     bootstrapVersion: 'React / Tailwind CSS / Vite / React Router',
     version: '1.0.0',
-    demoUrl: '/templates/cooperate/cooperate-3/index.html'
+    demoUrl: '/templates/cooperate/cooperate-3/index.html',
   },
   {
     id: 1004,
-    name: 'Kinesis Global — Enterprise AI & Systems',
+    name: 'PULSE — Global Logistics & Supply Chain Solutions',
     slug: 'cooperate-4',
     previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1634,11 +1739,11 @@ const MOCK_TEMPLATES = [
     description: 'A high-tech digital systems engineering and corporate AI consultant website featuring dark mode details, dynamic capability stacks, and interactive project brief builders.',
     bootstrapVersion: 'React / Tailwind CSS / Vite / React Router',
     version: '1.0.0',
-    demoUrl: '/templates/cooperate/cooperate-4/index.html'
+    demoUrl: '/templates/cooperate/cooperate-4/index.html',
   },
   {
     id: 1005,
-    name: 'Axiom Systems — Global Enterprise Technology',
+    name: 'ELEVATE — Modern Asset Management & Private Equity',
     slug: 'cooperate-5',
     previewImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1649,11 +1754,11 @@ const MOCK_TEMPLATES = [
     description: 'A premium corporate systems integration and partner platform featuring vertical solutions, global offices catalog, and interactive inquiry selectors.',
     bootstrapVersion: 'React / Tailwind CSS / Vite / React Router',
     version: '1.0.0',
-    demoUrl: '/templates/cooperate/cooperate-5/index.html'
+    demoUrl: '/templates/cooperate/cooperate-5/index.html',
   },
   {
     id: 1006,
-    name: 'Vanguard — Corporate Mobility Solutions',
+    name: 'Aurelia Journeys',
     slug: 'cooperate-6',
     previewImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1664,11 +1769,11 @@ const MOCK_TEMPLATES = [
     description: 'A premium corporate travel management and executive mobility showcase. Built with React, Tailwind CSS, and React Router, featuring custom consultation modules and route safety logs.',
     bootstrapVersion: 'React / Tailwind / Vite / TS',
     version: '1.0.0',
-    demoUrl: '/templates/cooperate/cooperate-6/index.html'
+    demoUrl: '/templates/cooperate/cooperate-6/index.html',
   },
   {
     id: 1007,
-    name: 'Apex Solutions — Enterprise Tech Consultant',
+    name: 'Straventa',
     slug: 'cooperate-7',
     previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1679,11 +1784,11 @@ const MOCK_TEMPLATES = [
     description: 'A clean and professional corporate solutions and tech consulting landing page. Features a complete set of service outlines, client portfolios, interactive career boards, and legal policies.',
     bootstrapVersion: 'React / Tailwind / Vite / TS',
     version: '1.0.0',
-    demoUrl: '/templates/cooperate/cooperate-7/index.html'
+    demoUrl: '/templates/cooperate/cooperate-7/index.html',
   },
   {
     id: 1008,
-    name: 'Sync Agency — Strategic Business Advisors',
+    name: 'Remix Vertexa — Technology & Systems',
     slug: 'cooperate-8',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1694,11 +1799,11 @@ const MOCK_TEMPLATES = [
     description: 'A modern strategy, branding, and business consulting portfolio. Built with React, Tailwind CSS, and Framer Motion, featuring custom interactive capability highlights and scoping modals.',
     bootstrapVersion: 'React / Tailwind / Vite / TS',
     version: '1.0.0',
-    demoUrl: '/templates/cooperate/cooperate-8/index.html'
+    demoUrl: '/templates/cooperate/cooperate-8/index.html',
   },
   {
     id: 1009,
-    name: 'Finora — Premium Corporate Finance',
+    name: 'Finora',
     slug: 'cooperate-9',
     previewImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1709,11 +1814,11 @@ const MOCK_TEMPLATES = [
     description: 'A beautiful financial advisory and corporate strategy portal. Features clean typography, bento performance metrics, and a custom interactive booking system.',
     bootstrapVersion: 'React / Tailwind / Vite / TS',
     version: '1.0.0',
-    demoUrl: '/templates/cooperate/cooperate-9/index.html'
+    demoUrl: '/templates/cooperate/cooperate-9/index.html',
   },
   {
     id: 1010,
-    name: 'Aurelia Capital — Institutional Asset Management',
+    name: 'Apex Wealth & Investment Management',
     slug: 'cooperate-10',
     previewImage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1724,11 +1829,11 @@ const MOCK_TEMPLATES = [
     description: 'An advanced institutional wealth management and investment advisory platform. Features live stock index ribbons, interactive retirement calculators, comparison matrix portals, and detailed client reporting views.',
     bootstrapVersion: 'React / Tailwind / Vite / TS',
     version: '1.0.0',
-    demoUrl: '/templates/cooperate/cooperate-10/index.html'
+    demoUrl: '/templates/cooperate/cooperate-10/index.html',
   },
   {
     id: 1008,
-    name: 'HTM 350 DUDE — 3D Interactive Riding Showcase',
+    name: '—H—T—M— —3—5—0— —D—U—D—E— —/—/— —T—h—e— —F—u—t—u—r—e— —o—f— —R—i—d—i—n—g— —-— —3—6—0—°— —E—x—p—e—r—i—e—n—c—e—',
     slug: 'comingsoon-8',
     previewImage: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1737,13 +1842,13 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 2540,
     description: 'A premium interactive motorcycle showcase and coming soon page. Features a fully controllable 3D motorcycle model canvas, interactive control dock, and reservation modal.',
-    bootstrapVersion: 'React / Three.js / Tailwind CSS / Vite',
+    bootstrapVersion: 'React / Java Spring Boot',
     version: '1.0.0',
-    demoUrl: '/templates/comming-soon/comingsoon-8/index.html'
+    demoUrl: '/templates/comming-soon/comingsoon-8/index.html',
   },
   {
     id: 1009,
-    name: 'Aura — Next-Gen Multipurpose Launchpad',
+    name: '—A—U—R—A— —/—/— —N—e—x—t—-—G—e—n— —M—u—l—t—i—p—u—r—p—o—s—e— —L—a—u—n—c—h—p—a—d— —&— —C—o—m—i—n—g— —S—o—o—n— —E—x—p—e—r—i—e—n—c—e—',
     slug: 'comingsoon-9',
     previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1752,13 +1857,13 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 2120,
     description: 'An elegant multipurpose pre-launch landing page. Features modern typography, countdown timer, responsive visual showcases, and newsletter capture forms.',
-    bootstrapVersion: 'React / Tailwind CSS / Vite',
+    bootstrapVersion: 'React / Java Spring Boot',
     version: '1.0.0',
-    demoUrl: '/templates/comming-soon/comingsoon-9/index.html'
+    demoUrl: '/templates/comming-soon/comingsoon-9/index.html',
   },
   {
     id: 1010,
-    name: 'Studio 10 — Multipurpose Event Coming Soon Teaser',
+    name: '—C—o—m—i—n—g— —S—o—o—n— —E—v—e—n—t— —L—a—n—d—i—n—g— —P—a—g—e— —T—e—m—p—l—a—t—e—s— —|— —M—u—l—t—i—-—D—e—s—i—g—n— —S—t—u—d—i—o—',
     slug: 'comingsoon-10',
     previewImage: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1767,14 +1872,14 @@ const MOCK_TEMPLATES = [
     pagesCount: 1,
     downloadsCount: 1890,
     description: 'A premium multi-design landing page template for events coming soon showcases. Features clean grids, responsive visual transitions, and client contact selectors.',
-    bootstrapVersion: 'React / Tailwind CSS / Vite',
+    bootstrapVersion: 'React / Java Spring Boot',
     version: '1.0.0',
-    demoUrl: '/templates/comming-soon/comingsoon-10/index.html'
+    demoUrl: '/templates/comming-soon/comingsoon-10/index.html',
   },
   {
     id: 1101,
-    name: 'ABC Business — Premium Corporate Systems',
-    slug: 'Business-1',
+    name: 'AURA — Modern Corporate Business Template',
+    slug: 'business-1',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -1784,12 +1889,12 @@ const MOCK_TEMPLATES = [
     description: 'A premium corporate systems and business advisory platform featuring custom page transitions, services showcases, and client inquiry panels.',
     bootstrapVersion: 'React / Tailwind CSS / Framer Motion / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/buisness/Business-1/index.html'
+    demoUrl: '/templates/buisness/Business-1/index.html',
   },
   {
     id: 1102,
-    name: 'Agency Prime — Creative & Digital Hub',
-    slug: 'Business-2',
+    name: 'NEXUS — Premium Enterprise Business Template',
+    slug: 'business-2',
     previewImage: 'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -1799,12 +1904,12 @@ const MOCK_TEMPLATES = [
     description: 'An elegant digital agency and portfolio template. Features interactive counters, animated page entries, custom project detail overlays, and responsive contact forms.',
     bootstrapVersion: 'React / Tailwind CSS / Framer Motion / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/buisness/Business-2/index.html'
+    demoUrl: '/templates/buisness/Business-2/index.html',
   },
   {
     id: 1103,
-    name: 'Enterprise Apex — Professional Consulting Platform',
-    slug: 'Business-3',
+    name: 'VORTEX — Dynamic Tech & Agency Business Template',
+    slug: 'business-3',
     previewImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -1814,12 +1919,12 @@ const MOCK_TEMPLATES = [
     description: 'A premium corporate consulting and financial advisory template featuring interactive counter animations, project showcase galleries, and structured service modules.',
     bootstrapVersion: 'React / Tailwind CSS / Framer Motion / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/buisness/Business-3/index.html'
+    demoUrl: '/templates/buisness/Business-3/index.html',
   },
   {
     id: 1104,
-    name: 'Aurelis — Premium Business Showcase',
-    slug: 'Business-4',
+    name: 'PULSE — Sleek Creative Business Studio Template',
+    slug: 'business-4',
     previewImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -1829,12 +1934,12 @@ const MOCK_TEMPLATES = [
     description: 'A premium, modern showcase template for corporate systems, advisory firms, and agencies. Built with React, Tailwind CSS, and Framer Motion, featuring smooth animations and custom page sections.',
     bootstrapVersion: 'React / Tailwind CSS / Framer Motion / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/buisness/Business-4/index.html'
+    demoUrl: '/templates/buisness/Business-4/index.html',
   },
   {
     id: 1105,
-    name: 'Lumora Labs — Advanced Technology Hub',
-    slug: 'Business-5',
+    name: 'Lumora Labs — Premium Venture Studio Template',
+    slug: 'business-5',
     previewImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -1844,12 +1949,12 @@ const MOCK_TEMPLATES = [
     description: 'An animated technology startup showcase featuring custom interactive elements, team bios, services slider, and client contact integration.',
     bootstrapVersion: 'React / GSAP / Spring Boot',
     version: '1.0.0',
-    demoUrl: '/templates/buisness/Business-5/index.html'
+    demoUrl: '/templates/buisness/Business-5/index.html',
   },
   {
     id: 1106,
-    name: 'Nexora — Enterprise Technology Solutions',
-    slug: 'Business-6',
+    name: 'APEX — High-Impact Corporate Business Hub',
+    slug: 'business-6',
     previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -1859,12 +1964,12 @@ const MOCK_TEMPLATES = [
     description: 'A modern, dark-themed corporate technology platform featuring interactive charts, custom layouts, and a clean minimalist design for enterprise services.',
     bootstrapVersion: 'React / Tailwind CSS / Framer Motion / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/buisness/Business-6/index.html'
+    demoUrl: '/templates/buisness/Business-6/index.html',
   },
   {
     id: 1107,
-    name: 'Strativa — Modern Consulting Platform',
-    slug: 'Business-7',
+    name: 'LUMEN — Minimalist Enterprise Business Template',
+    slug: 'business-7',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -1874,12 +1979,12 @@ const MOCK_TEMPLATES = [
     description: 'A clean corporate consulting and strategic advisory platform featuring interactive bento grids, client reviews, capability lists, and dynamic query builders.',
     bootstrapVersion: 'React / Tailwind CSS / Framer Motion / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/buisness/Business-7/index.html'
+    demoUrl: '/templates/buisness/Business-7/index.html',
   },
   {
     id: 1108,
-    name: 'Vanta Studio — Premium Business Showcase',
-    slug: 'Business-8',
+    name: 'SYNERGY — Strategic Business Consultancy Template',
+    slug: 'business-8',
     previewImage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
@@ -1889,7 +1994,7 @@ const MOCK_TEMPLATES = [
     description: 'A premium, modern showcase template for design collectives, digital-first brands, and agencies. Built with React, Tailwind CSS, and Framer Motion, featuring smooth animations and a dark editorial layout.',
     bootstrapVersion: 'React / Tailwind CSS / Framer Motion / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/buisness/Business-8/index.html'
+    demoUrl: '/templates/buisness/Business-8/index.html',
   },
   {
     id: 150,
@@ -1904,11 +2009,11 @@ const MOCK_TEMPLATES = [
     description: 'A minimalist architecture and luxury property design portfolio featuring custom horizontal slide entries, detailed structural specification tables, and interactive project image modal previews.',
     bootstrapVersion: 'React / Vite / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/portfolio/portfolio-1/index.html'
+    demoUrl: '/templates/portfolio/portfolio-1/index.html',
   },
   {
     id: 151,
-    name: 'Aiden Drake — Modern Dark Personal Portfolio',
+    name: 'Aiden Drake — Product Designer & Developer',
     slug: 'portfolio-2',
     previewImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1919,11 +2024,11 @@ const MOCK_TEMPLATES = [
     description: 'A modern, high-contrast dark theme developer and visual designer personal bio page. Features animated skill progress bars, structured project tags, and custom card grids.',
     bootstrapVersion: 'React / Vite / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/portfolio/portfolio-2/index.html'
+    demoUrl: '/templates/portfolio/portfolio-2/index.html',
   },
   {
     id: 152,
-    name: 'Sasha Grey — Bold High-Contrast Creative Portfolio',
+    name: 'Sasha Grey — Creative Visual Director',
     slug: 'portfolio-3',
     previewImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1934,11 +2039,11 @@ const MOCK_TEMPLATES = [
     description: 'A bold, high-contrast modern portfolio built for designers and creators. Features responsive interactive masonry layout, detailed project image lightbox zooms, and structured work archive pages.',
     bootstrapVersion: 'React / Vite / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/portfolio/portfolio-3/index.html'
+    demoUrl: '/templates/portfolio/portfolio-3/index.html',
   },
   {
     id: 153,
-    name: 'Clara Oswald — Airy Minimalist Portfolio',
+    name: 'Clara Oswald — Minimalist UI Designer',
     slug: 'portfolio-4',
     previewImage: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1949,11 +2054,11 @@ const MOCK_TEMPLATES = [
     description: 'An airy, clean minimalist layout with spacious grids and light backgrounds. Perfect for copywriters, writers, and digital consultants.',
     bootstrapVersion: 'React / Vite / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/portfolio/portfolio-4/index.html'
+    demoUrl: '/templates/portfolio/portfolio-4/index.html',
   },
   {
     id: 154,
-    name: 'Evelyn Vance — Routed Multipage Portfolio',
+    name: 'Evelyn Vance — Full-Stack Visual Architect',
     slug: 'portfolio-5',
     previewImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1964,11 +2069,11 @@ const MOCK_TEMPLATES = [
     description: 'A fully routed multipage portfolio containing integrated Home, About, Projects, and Contact pages, custom transitions, and smooth global headers.',
     bootstrapVersion: 'React / Vite / Tailwind CSS / Router',
     version: '1.0.0',
-    demoUrl: '/templates/portfolio/portfolio-5/index.html'
+    demoUrl: '/templates/portfolio/portfolio-5/index.html',
   },
   {
     id: 155,
-    name: 'Synthetix — Tech-Forward Software Agency',
+    name: 'Synthetix — Tech-Forward SaaS & Software Agency',
     slug: 'portfolio-6',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1979,11 +2084,11 @@ const MOCK_TEMPLATES = [
     description: 'A tech-forward, modern multipage digital agency and portfolio template. Features interactive skill bars, animated company grids, custom project card showcases, and responsive newsletter forms.',
     bootstrapVersion: 'React / Vite / Tailwind CSS / Router',
     version: '1.0.0',
-    demoUrl: '/templates/portfolio/portfolio-6/index.html'
+    demoUrl: '/templates/portfolio/portfolio-6/index.html',
   },
   {
     id: 156,
-    name: 'Jared Vance — Warm Gradient Portfolio',
+    name: 'Jared Vance — Creative Director & Visual Designer',
     slug: 'portfolio-7',
     previewImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1994,11 +2099,11 @@ const MOCK_TEMPLATES = [
     description: 'A beautiful personal showcase featuring warm CSS mesh gradients, elegant editorial serif typography, interactive case study cards, and sleek contact links.',
     bootstrapVersion: 'React / Vite / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/portfolio/portfolio-7/index.html'
+    demoUrl: '/templates/portfolio/portfolio-7/index.html',
   },
   {
     id: 157,
-    name: 'Evelyn Oswald — Editorial Operations Portfolio',
+    name: 'Evelyn Oswald — Executive Assistant & Operations',
     slug: 'portfolio-8',
     previewImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2009,11 +2114,11 @@ const MOCK_TEMPLATES = [
     description: 'A modern typography-first layout with high-end editorial grids and subtle hover interactions, perfect for project managers and operation leads.',
     bootstrapVersion: 'React / Vite / Tailwind CSS',
     version: '1.0.0',
-    demoUrl: '/templates/portfolio/portfolio-8/index.html'
+    demoUrl: '/templates/portfolio/portfolio-8/index.html',
   },
   {
     id: 158,
-    name: 'Sasha Grey — Monochrome Editorial Photography',
+    name: 'Sasha Grey — Minimalist Portrait Photographer',
     slug: 'portfolio-9',
     previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2024,11 +2129,11 @@ const MOCK_TEMPLATES = [
     description: 'An elegant black-and-white theme photography portfolio template featuring structured photo galleries, horizontal slider interactions, and styled info pages.',
     bootstrapVersion: 'React / Vite / Tailwind CSS / Router',
     version: '1.0.0',
-    demoUrl: '/templates/portfolio/portfolio-9/index.html'
+    demoUrl: '/templates/portfolio/portfolio-9/index.html',
   },
   {
     id: 159,
-    name: 'Sasha Grey — Creative Multipage Portfolio',
+    name: 'Sasha Grey Studio — Creative Director & Photographer',
     slug: 'portfolio-10',
     previewImage: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2039,11 +2144,11 @@ const MOCK_TEMPLATES = [
     description: 'An premium, clean-cut creative multipage digital agency and portfolio template. Features interactive work grids, detail modals, team showcases, and custom contact forms.',
     bootstrapVersion: 'React / Vite / Tailwind CSS / Router',
     version: '1.0.0',
-    demoUrl: '/templates/portfolio/portfolio-10/index.html'
+    demoUrl: '/templates/portfolio/portfolio-10/index.html',
   },
   {
     id: 9005,
-    name: 'Aura Health - Lilac Frost Medical Platform',
+    name: 'PulseCare — Modern Healthcare Platform',
     slug: 'medical-5',
     previewImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2054,11 +2159,11 @@ const MOCK_TEMPLATES = [
     description: 'A premium, calm, and modern medical healthcare platform template with Lilac Frost aesthetic, specialist booking, patient portal, medical records, and clinical services.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     demoUrl: '/templates/medical/medical-5/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9007,
-    name: 'ApexHealth — Modern Dynamic Medical Platform',
+    name: 'PulseCare — Modern Healthcare Platform',
     slug: 'medical-6',
     previewImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2069,11 +2174,11 @@ const MOCK_TEMPLATES = [
     description: 'Modern Dynamic Medical Platform for Patients, Doctors, and Healthcare Administrators. Real-time slot booking, doctor discovery, and patient portals.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     demoUrl: '/templates/medical/medical-6/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9008,
-    name: 'PulseCare — Modern Dynamic Healthcare Platform',
+    name: 'PulseCare — Modern Healthcare Platform',
     slug: 'medical-7',
     previewImage: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2084,11 +2189,11 @@ const MOCK_TEMPLATES = [
     description: 'Discover top doctors, compare availability, book instant appointments, and manage health records securely with PulseCare Healthcare Platform.',
     bootstrapVersion: 'HTML5 / CSS3 / Vanilla JS',
     demoUrl: '/templates/medical/medical-7/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9201,
-    name: 'Booky — Lead Generation & Authors Platform',
+    name: 'Flowly AI — The Intelligent Workspace for Modern Teams',
     slug: 'landing-page-1',
     previewImage: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2099,11 +2204,11 @@ const MOCK_TEMPLATES = [
     description: 'A professional and clean landing page for authors, books, and publications. Features call-to-action buttons, pricing tables, chapter highlights, and reviews.',
     bootstrapVersion: 'React / Tailwind / Vite',
     demoUrl: '/templates/landing-page/landing-page-1/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9202,
-    name: 'StatusBusy — Lead Capture & App Promotion',
+    name: 'Busy Status Bar — Productivity Multi-Tool Device',
     slug: 'landing-page-2',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2114,11 +2219,11 @@ const MOCK_TEMPLATES = [
     description: 'A modern SaaS and app promotion landing page with clean lead-capture forms, dynamic feature lists, pricing matrices, and clean typography.',
     bootstrapVersion: 'React / Vite / CSS',
     demoUrl: '/templates/landing-page/landing-page-2/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9203,
-    name: 'ExquDrive — Dynamic Product Landing Page',
+    name: 'ExquDrive — Feel The Luxury Cars We Have',
     slug: 'landing-page-3',
     previewImage: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2129,26 +2234,12 @@ const MOCK_TEMPLATES = [
     description: 'An elegant product launch landing page featuring immersive product grids, dynamic feature comparison tables, interactive customer reviews, and contact sections.',
     bootstrapVersion: 'React / Vite / CSS',
     demoUrl: '/templates/landing-page/landing-page-3/index.html',
-    version: '1.0'
+    version: '1.0',
   },
-  {
-    id: 9205,
-    name: 'AuraLanding — Interactive Conversion Portal',
-    slug: 'landing-page-5',
-    previewImage: 'https://images.unsplash.com/photo-1507633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
-    templateType: 'FREE',
-    price: 0,
-    category: { id: 15, name: 'landing page', slug: 'landing-page' },
-    pagesCount: 1,
-    downloadsCount: 1470,
-    description: 'A high-converting product promo landing page with interactive product display panels, dynamic custom search modals, and clean responsive grids.',
-    bootstrapVersion: 'React / Tailwind / Vite',
-    demoUrl: '/templates/landing-page/landing-page-5/index.html',
-    version: '1.0'
-  },
+
   {
     id: 9206,
-    name: 'Lunara Press — Author & Book Landing Page',
+    name: 'The Echoes of Tomorrow — A Novel by Mira Rowan',
     slug: 'landing-page-6',
     previewImage: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2159,11 +2250,56 @@ const MOCK_TEMPLATES = [
     description: 'A gorgeous book launch and author promotional landing page featuring a virtual 3D flip-book preview, interactive story timelines, chapters explorer, and reviews.',
     bootstrapVersion: 'React / Vite / CSS',
     demoUrl: '/templates/landing-page/landing-page-6/index.html',
-    version: '1.0'
+    version: '1.0',
+  },
+  {
+    id: 9204,
+    name: 'Flowzen — Turn Complex Work Into Simple Momentum',
+    slug: 'landing-page-4',
+    previewImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 15, name: 'landing page', slug: 'landing-page' },
+    pagesCount: 1,
+    downloadsCount: 1420,
+    description: 'A premium SaaS and product landing page with modern dark mode aesthetic, interactive features list, custom modal overlays, and pricing calculator.',
+    bootstrapVersion: 'React / Tailwind / Vite',
+    demoUrl: '/templates/landing-page/landing-page-4/index.html',
+    version: '1.0',
+  },
+  {
+    id: 9207,
+    name: 'Flowly AI — Intelligent Workspace for Modern Teams',
+    slug: 'landing-page-7',
+    previewImage: 'https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 15, name: 'landing page', slug: 'landing-page' },
+    pagesCount: 1,
+    downloadsCount: 1390,
+    description: 'A premium tech startup landing page featuring rich pricing sliders, interactive product showcases, statistics panels, and testimonials carousel.',
+    bootstrapVersion: 'React / CSS / Vite',
+    demoUrl: '/templates/landing-page/landing-page-7/index.html',
+    version: '1.0',
+  },
+  {
+    id: 9208,
+    name: 'Vanta Studio — Independent Creative Agency',
+    slug: 'landing-page-8',
+    previewImage: 'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 15, name: 'landing page', slug: 'landing-page' },
+    pagesCount: 1,
+    downloadsCount: 1410,
+    description: 'Ultra-premium creative agency showcase and digital portfolio landing page featuring sleek dark design, interactive casework grids, and immersive contact CTA layouts.',
+    bootstrapVersion: 'React / Tailwind / Vite',
+    demoUrl: '/templates/landing-page/landing-page-8/index.html',
+    version: '1.0',
   },
   {
     id: 9301,
-    name: 'Dharma — Zen & Wellness Onepage Scroll',
+    name: 'AURA — Creative Design Studio',
     slug: 'onepage-1',
     previewImage: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2174,11 +2310,11 @@ const MOCK_TEMPLATES = [
     description: 'A calm, serene Zen meditation and health retreat single-page website. Features smooth scroll navigation, detailed program cards, and interactive schedule boards.',
     bootstrapVersion: 'React / Tailwind / Vite',
     demoUrl: '/templates/onepage/onepage-1/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9302,
-    name: 'Echoes — Modern Narrative Onepage Portal',
+    name: 'Asme — Innovation, Research & Design Studio',
     slug: 'onepage-2',
     previewImage: 'https://images.unsplash.com/photo-1542204172-e7052809f852?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2189,7 +2325,7 @@ const MOCK_TEMPLATES = [
     description: 'A minimalist horizontal scrolling storytelling landing page featuring high-definition custom video banners, bento grids, and responsive contact overlays.',
     bootstrapVersion: 'React / Tailwind / Vite / TS',
     demoUrl: '/templates/onepage/onepage-2/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9501,
@@ -2204,7 +2340,7 @@ const MOCK_TEMPLATES = [
     description: 'Confidential premium estate listing portal featuring luxury residential showcases, dynamic specifications, and booking tour capture.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     demoUrl: '/templates/real-estate/real-estate-1/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9502,
@@ -2219,7 +2355,7 @@ const MOCK_TEMPLATES = [
     description: 'A sophisticated urban residential and condominium directory featuring premium neighborhood stats, pricing calculators, and interactive slot bookings.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     demoUrl: '/templates/real-estate/real-estate-2/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9503,
@@ -2234,7 +2370,7 @@ const MOCK_TEMPLATES = [
     description: 'Elite real estate showcase tailored for ultra-high-net-worth acquisitions, featuring full-screen immersive galleries, BIM integration, and private consultation forms.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     demoUrl: '/templates/real-estate/real-estate-3/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9504,
@@ -2249,7 +2385,7 @@ const MOCK_TEMPLATES = [
     description: 'Premium property list curated for penthouses and sky-high luxury suites, featuring custom height inspectors, wind-load data, and private tour registries.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     demoUrl: '/templates/real-estate/real-estate-4/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9505,
@@ -2264,7 +2400,7 @@ const MOCK_TEMPLATES = [
     description: 'Sustainably built family houses and residential community layouts, featuring carbon offset stats, solar energy calculators, and garden lot customizers.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     demoUrl: '/templates/real-estate/real-estate-5/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9506,
@@ -2279,7 +2415,7 @@ const MOCK_TEMPLATES = [
     description: 'A minimalist loft and modern downtown apartment guide, featuring smart home spec lists, interactive room planners, and neighborhood commute estimators.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     demoUrl: '/templates/real-estate/real-estate-6/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9507,
@@ -2294,7 +2430,7 @@ const MOCK_TEMPLATES = [
     description: 'Classic Tudor, Victorian, and mid-century modern historical restoration listings, featuring historical context timelines and materials registers.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     demoUrl: '/templates/real-estate/real-estate-7/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9508,
@@ -2309,7 +2445,7 @@ const MOCK_TEMPLATES = [
     description: 'Premium warehouse, office park, and co-working property listings, featuring custom floor space calculators and lease term customizers.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     demoUrl: '/templates/real-estate/real-estate-8/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9509,
@@ -2324,7 +2460,7 @@ const MOCK_TEMPLATES = [
     description: 'Elite waterfront property directory featuring sea-level stats, private beach indices, boat slip availability, and seasonal booking calculators.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     demoUrl: '/templates/real-estate/real-estate-9/index.html',
-    version: '1.0'
+    version: '1.0',
   },
   {
     id: 9510,
@@ -2339,7 +2475,846 @@ const MOCK_TEMPLATES = [
     description: 'Ultra-luxury castle, château, and private island listings, featuring gatehouse specs, helipad registries, and confidentiality agreements.',
     bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
     demoUrl: '/templates/real-estate/real-estate-10/index.html',
-    version: '1.0'
+    version: '1.0',
+  },
+  {
+    id: 9601,
+    name: 'Voltway — Smart EV Transit & Logistics',
+    slug: 'voltway',
+    previewImage: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 21, name: 'Transportation', slug: 'transportation' },
+    pagesCount: 1,
+    downloadsCount: 1540,
+    description: 'Next-generation electric vehicle fleet operator dashboard and logistics solution portal featuring live charger mapping, battery state tracking, and smart scheduling integrations.',
+    bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
+    demoUrl: '/templates/transportation/transportation-1/index.html',
+    version: '1.0',
+  },
+  {
+    id: 9602,
+    name: 'Roadline — Modern Freight Operations',
+    slug: 'roadline',
+    previewImage: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 21, name: 'Transportation', slug: 'transportation' },
+    pagesCount: 1,
+    downloadsCount: 1540,
+    description: 'Modern heavy-freight and national trucking operations interface featuring route optimizations, shipment telemetry, and real-time delivery status alerts.',
+    bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
+    demoUrl: '/templates/transportation/transportation-2/index.html',
+    version: '1.0',
+  },
+  {
+    id: 9603,
+    name: 'Fleetrise — Smart Fleet Intelligence & Analytics',
+    slug: 'fleetrise',
+    previewImage: 'https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 21, name: 'Transportation', slug: 'transportation' },
+    pagesCount: 1,
+    downloadsCount: 1540,
+    description: 'Professional fleet tracking and diagnostic software layout featuring detailed driver safety telemetry, OBD metrics, and fuel consumption charts.',
+    bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
+    demoUrl: '/templates/transportation/transportation-3/index.html',
+    version: '1.0',
+  },
+  {
+    id: 9604,
+    name: 'Skyroute — Global Air Charter Systems',
+    slug: 'skyroute',
+    previewImage: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 21, name: 'Transportation', slug: 'transportation' },
+    pagesCount: 1,
+    downloadsCount: 1540,
+    description: 'Luxury air charter registry and flight scheduling portal featuring private terminal bookings, cargo capacity calculations, and custom route quote estimators.',
+    bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
+    demoUrl: '/templates/transportation/transportation-4/index.html',
+    version: '1.0',
+  },
+  {
+    id: 9605,
+    name: 'Citymove — Local Courier & Moving Solutions',
+    slug: 'citymove',
+    previewImage: 'https://images.unsplash.com/photo-1527018601619-a508a2be00cd?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 21, name: 'Transportation', slug: 'transportation' },
+    pagesCount: 1,
+    downloadsCount: 1540,
+    description: 'Sleek on-demand package courier and moving agency portal featuring weight pricing matrices, live distance estimations, and drop-off time selectors.',
+    bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
+    demoUrl: '/templates/transportation/transportation-5/index.html',
+    version: '1.0',
+  },
+  {
+    id: 9606,
+    name: 'Transitflow — Regional Supply Chain Management',
+    slug: 'transitflow',
+    previewImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 21, name: 'Transportation', slug: 'transportation' },
+    pagesCount: 1,
+    downloadsCount: 1540,
+    description: 'Regional multi-modal hub distribution and sorting layout featuring custom transit timetables, warehouse capacity tracking, and carrier integration lists.',
+    bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
+    demoUrl: '/templates/transportation/transportation-6/index.html',
+    version: '1.0',
+  },
+  {
+    id: 9607,
+    name: 'Cargomax — Heavy Cargo & Shipping Enterprise',
+    slug: 'cargomax',
+    previewImage: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 21, name: 'Transportation', slug: 'transportation' },
+    pagesCount: 1,
+    downloadsCount: 1540,
+    description: 'Heavy cargo logistics and industrial distribution portal featuring customs form generators, dimensional weight calculators, and container lot registers.',
+    bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
+    demoUrl: '/templates/transportation/transportation-7/index.html',
+    version: '1.0',
+  },
+  {
+    id: 9608,
+    name: 'Rideora — Smart Urban Ride-Hailing Network',
+    slug: 'rideora',
+    previewImage: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 21, name: 'Transportation', slug: 'transportation' },
+    pagesCount: 1,
+    downloadsCount: 1540,
+    description: 'Interactive rideshare and taxi network portal featuring fare calculators, driver onboarding flows, regional service heatmaps, and ride booking previews.',
+    bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
+    demoUrl: '/templates/transportation/transportation-8/index.html',
+    version: '1.0',
+  },
+  {
+    id: 9609,
+    name: 'Railnova — Automated Rail Transit & Operations',
+    slug: 'railnova',
+    previewImage: 'https://images.unsplash.com/photo-1515165504669-42308707f15c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 21, name: 'Transportation', slug: 'transportation' },
+    pagesCount: 1,
+    downloadsCount: 1540,
+    description: 'Urban light rail and intercity rail operations platform featuring automated switchboard simulations, carriage occupancy metrics, and delay tracker alerts.',
+    bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
+    demoUrl: '/templates/transportation/transportation-9/index.html',
+    version: '1.0',
+  },
+  {
+    id: 9610,
+    name: 'Oceanlink — International Maritime Operations',
+    slug: 'oceanlink',
+    previewImage: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 21, name: 'Transportation', slug: 'transportation' },
+    pagesCount: 1,
+    downloadsCount: 1540,
+    description: 'Global maritime freight, vessel scheduling, and seaport coordination system featuring cargo draft calculators, shipping lane weather overlays, and port ETA registries.',
+    bootstrapVersion: 'React 19 / Vite / Tailwind CSS',
+    demoUrl: '/templates/transportation/transportation-10/index.html',
+    version: '1.0',
+  },
+  {
+    id: 9201,
+    name: 'Jordan Davis — Software Engineer & Full Stack Developer',
+    slug: 'resume-1',
+    previewImage: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 20, name: 'Resume', slug: 'resume' },
+    pagesCount: 1,
+    downloadsCount: 1450,
+    description: 'A clean, professional minimalist resume template with smooth scroll navigation, detailed experience timeline, skills visualization, and contact form.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/resume/resume-1/index.html',
+  },
+  {
+    id: 9202,
+    name: 'Dr. Maya Ellison — Consultant Cardiologist',
+    slug: 'resume-2',
+    previewImage: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 20, name: 'Resume', slug: 'resume' },
+    pagesCount: 1,
+    downloadsCount: 1200,
+    description: 'A self-contained professional medical CV template tailored for doctors and researchers featuring timeline accomplishments, certifications, and publications.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/resume/resume-2/index.html',
+  },
+  {
+    id: 9203,
+    name: 'Dr. Arin Solberg — Aerospace Systems Engineer',
+    slug: 'resume-3',
+    previewImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 20, name: 'Resume', slug: 'resume' },
+    pagesCount: 1,
+    downloadsCount: 1650,
+    description: 'A bold, high-contrast creative resume and portfolio template featuring asymmetrical sections, work lookbook, and contact overlays.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/resume/resume-3/index.html',
+  },
+  {
+    id: 9204,
+    name: 'Noah Everwood — Wildlife Photographer & Storyteller',
+    slug: 'resume-4',
+    previewImage: 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 20, name: 'Resume', slug: 'resume' },
+    pagesCount: 1,
+    downloadsCount: 1850,
+    description: 'A sleek dark-theme software developer resume template featuring interactive tech stack badges, GitHub project showcases, and career progress lines.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/resume/resume-4/index.html',
+  },
+  {
+    id: 9205,
+    name: 'Adrian Vale — Architect & Spatial Designer',
+    slug: 'resume-5',
+    previewImage: 'https://images.unsplash.com/photo-1541462608141-2ff580ee0e66?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 20, name: 'Resume', slug: 'resume' },
+    pagesCount: 1,
+    downloadsCount: 1540,
+    description: 'An elegant, typography-focused CV template for product designers featuring portfolio showcases, service grids, and experience milestones.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/resume/resume-5/index.html',
+  },
+  {
+    id: 9206,
+    name: 'Elena Marlowe — Creative Director & Brand Strategist',
+    slug: 'resume-6',
+    previewImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 20, name: 'Resume', slug: 'resume' },
+    pagesCount: 1,
+    downloadsCount: 1390,
+    description: 'A corporate-ready executive profile template with a clean layout, highlights, professional overview, and structured career history.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/resume/resume-6/index.html',
+  },
+  {
+    id: 9207,
+    name: 'Lucien Moreau — Executive Chef & Culinary Director',
+    slug: 'resume-7',
+    previewImage: 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 20, name: 'Resume', slug: 'resume' },
+    pagesCount: 1,
+    downloadsCount: 1480,
+    description: 'A unique, image-rich culinary portfolio and CV template for chefs and culinary artists featuring signature dishes, concept timelines, and collaborations.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/resume/resume-7/index.html',
+  },
+  {
+    id: 9208,
+    name: 'Elara Voss — Fashion Designer & Creative Director',
+    slug: 'resume-8',
+    previewImage: 'https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 20, name: 'Resume', slug: 'resume' },
+    pagesCount: 1,
+    downloadsCount: 1610,
+    description: 'A premium portfolio and resume template for visual creatives and photographers featuring elegant image galleries, CV modals, and lookbooks.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/resume/resume-8/index.html',
+  },
+  {
+    id: 9301,
+    name: 'PixelCraft — Creative Digital Agency',
+    slug: 'agency-1',
+    previewImage: 'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 17, name: 'agency', slug: 'agency' },
+    pagesCount: 1,
+    downloadsCount: 1700,
+    description: 'A clean, modern digital agency template with portfolio filtering, project sliders, team sections, and custom contact forms.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/agency/agency-1/index.html',
+  },
+  {
+    id: 9302,
+    name: 'NexusMedia — Branding & Marketing Agency',
+    slug: 'agency-2',
+    previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 17, name: 'agency', slug: 'agency' },
+    pagesCount: 1,
+    downloadsCount: 1700,
+    description: 'Immersive branding and digital marketing template featuring interactive service cards, case study lists, and detailed lead forms.',
+    bootstrapVersion: 'React / Vite / CSS / Tailwind',
+    version: '1.0.0',
+    demoUrl: '/templates/agency/agency-2/index.html',
+  },
+  {
+    id: 9303,
+    name: 'NovaDesign — Next-Gen Creative Agency',
+    slug: 'agency-3',
+    previewImage: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 17, name: 'agency', slug: 'agency' },
+    pagesCount: 1,
+    downloadsCount: 1700,
+    description: 'A premium Next.js template for design agencies featuring smooth client-side routing, work showcases, client testimonial carousels, and services catalogs.',
+    bootstrapVersion: 'Next.js 15 / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/agency/agency-3/index.html',
+  },
+  {
+    id: 9304,
+    name: 'AuraStudio — Full-Service Production Agency',
+    slug: 'agency-4',
+    previewImage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 17, name: 'agency', slug: 'agency' },
+    pagesCount: 1,
+    downloadsCount: 1700,
+    description: 'Premium creative production agency layout featuring detailed team cards, client reviews, dynamic video portfolios, and consult bookings.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/agency/agency-4/index.html',
+  },
+  {
+    id: 9305,
+    name: 'ApexConsult — Corporate Agency Hub',
+    slug: 'agency-5',
+    previewImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 17, name: 'agency', slug: 'agency' },
+    pagesCount: 1,
+    downloadsCount: 1700,
+    description: 'Clean corporate consulting agency template with interactive client testimonials, department registers, and contact scheduling panels.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/agency/agency-5/index.html',
+  },
+  {
+    id: 9306,
+    name: 'VANTA FORM — Premium Digital Agency',
+    slug: 'agency-6',
+    previewImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 17, name: 'agency', slug: 'agency' },
+    pagesCount: 1,
+    downloadsCount: 1700,
+    description: 'Sleek interactive agency template featuring modern grid layouts, animated team member profiles, and detailed service timelines.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/agency/agency-6/index.html',
+  },
+  {
+    id: 9307,
+    name: 'STRATA Agency — Spatial Design Studio',
+    slug: 'agency-7',
+    previewImage: 'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 17, name: 'agency', slug: 'agency' },
+    pagesCount: 1,
+    downloadsCount: 1700,
+    description: 'An experimental, high-end 3D spatial design agency website featuring UI/UX case studies, interactive design wall, 3D entrance experience, and editorial design showcases.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/agency/agency-7/index.html',
+  },
+  {
+    id: 9401,
+    name: 'INTENT — Creative Digital Agency',
+    slug: 'onepage-3',
+    previewImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 14, name: 'onepage', slug: 'onepage' },
+    pagesCount: 1,
+    downloadsCount: 1510,
+    description: 'A premium, high-impact Next.js one-page creative digital agency layout featuring dynamic motion animations, services lists, process grids, results counters, and contact booking panels.',
+    bootstrapVersion: 'Next.js 15 / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/onepage/onepage-3/index.html',
+  },
+  {
+    id: 9402,
+    name: 'AETHERIA — Next-Gen Digital Product & Brand Agency',
+    slug: 'onepage-4',
+    previewImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 14, name: 'onepage', slug: 'onepage' },
+    pagesCount: 1,
+    downloadsCount: 1490,
+    description: 'An elegant, futuristic digital product and brand showcase with ambient particle canvases, responsive service grids, team sliders, and custom project modals.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/onepage/onepage-4/index.html',
+  },
+  {
+    id: 9403,
+    name: 'Vertex — Business Solutions & Digital Transformation',
+    slug: 'onepage-5',
+    previewImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 14, name: 'onepage', slug: 'onepage' },
+    pagesCount: 1,
+    downloadsCount: 1380,
+    description: 'A sleek corporate business solutions layout featuring performance dashboards, interactive pricing matrices, logo clouds, FAQ accordions, and clean service grids.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/onepage/onepage-5/index.html',
+  },
+  {
+    id: 9404,
+    name: 'ELEVATE — Strategic Branding Agency',
+    slug: 'onepage-6',
+    previewImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 14, name: 'onepage', slug: 'onepage' },
+    pagesCount: 1,
+    downloadsCount: 1400,
+    description: 'A modern digital agency template with client-side portfolio grids, capabilities list, process maps, and custom client sections.',
+    bootstrapVersion: 'Next.js 16 / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/onepage/onepage-6/index.html',
+  },
+  {
+    id: 9405,
+    name: 'Fonix — Spatial Sound Synthesis & 3D Web Experience',
+    slug: 'onepage-7',
+    previewImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 14, name: 'onepage', slug: 'onepage' },
+    pagesCount: 1,
+    downloadsCount: 1350,
+    description: 'Comprehensive Product Requirements Document (PRD) and live interactive 3D WebGL showcase for the Fonix one-page brand experience.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/onepage/onepage-7/index.html',
+  },
+  {
+    id: 9406,
+    name: 'AI // HUMAN // MACHINE — AI & ML Engineer Portfolio',
+    slug: 'onepage-8',
+    previewImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 14, name: 'onepage', slug: 'onepage' },
+    pagesCount: 1,
+    downloadsCount: 1450,
+    description: 'An immersive 3D interactive portfolio and digital laboratory for an AI/ML Computer Science Engineer and Developer, featuring real-time WebGL experiences.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/onepage/onepage-8/index.html',
+  },
+  {
+    id: 9407,
+    name: 'Vertex — Business Solutions & Digital Transformation',
+    slug: 'onepage-9',
+    previewImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 14, name: 'onepage', slug: 'onepage' },
+    pagesCount: 1,
+    downloadsCount: 1380,
+    description: 'A modern strategy & advisory corporate showcase with pricing schedules, team grids, performance dashboards, and interactive process timelines.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/onepage/onepage-9/index.html',
+  },
+  {
+    id: 9408,
+    name: 'AETHERIA — Next-Gen Digital Product & Brand Agency',
+    slug: 'onepage-10',
+    previewImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 14, name: 'onepage', slug: 'onepage' },
+    pagesCount: 1,
+    downloadsCount: 1420,
+    description: 'A sleek interactive digital benchmark experiences platform featuring real-time metric counters, why us accordions, and custom client sections.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/onepage/onepage-10/index.html',
+  },
+  {
+    id: 9501,
+    name: 'JULIAN RIVIERA — Creative Technologist & AI Architect',
+    slug: 'personal-1',
+    previewImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 22, name: 'Personal', slug: 'personal' },
+    pagesCount: 1,
+    downloadsCount: 1480,
+    description: 'An ultra-premium, cinematic personal showcase with editorial layout columns, asymmetric case study explorers, custom cursor physics, and contact scheduling panels.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/personal/personal-1/index.html',
+  },
+  {
+    id: 9502,
+    name: 'Arjun Mehta — AI Engineer & Full-Stack Developer',
+    slug: 'personal-2',
+    previewImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 22, name: 'Personal', slug: 'personal' },
+    pagesCount: 1,
+    downloadsCount: 1650,
+    description: 'A cutting-edge personal portfolio for AI engineers featuring research showcases, interactive neural node graphs, and project timelines.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/personal/personal-2/index.html',
+  },
+  {
+    id: 9503,
+    name: 'THE STORYBOARD — Siddharth Mehta Creative Developer',
+    slug: 'personal-3',
+    previewImage: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 22, name: 'Personal', slug: 'personal' },
+    pagesCount: 1,
+    downloadsCount: 1520,
+    description: 'A premium interactive digital magazine personal showcase layout built with React and custom CSS animation panels.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/personal/personal-3/index.html',
+  },
+  {
+    id: 9504,
+    name: 'Soleil — Premium Animated Personal Portfolio',
+    slug: 'personal-4',
+    previewImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 22, name: 'Personal', slug: 'personal' },
+    pagesCount: 1,
+    downloadsCount: 1780,
+    description: 'An experimental interactive digital universe portfolio with ambient canvas shaders, laboratory projects, and audio engines.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/personal/personal-4/index.html',
+  },
+  {
+    id: 9505,
+    name: 'Aetherius — Experimental Digital Universe Portfolio',
+    slug: 'personal-5',
+    previewImage: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 22, name: 'Personal', slug: 'personal' },
+    pagesCount: 1,
+    downloadsCount: 1490,
+    description: 'A creative digital canvas personal portfolio showcasing work collections, philosophy walls, and interactive contact portals.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/personal/personal-5/index.html',
+  },
+  {
+    id: 9506,
+    name: 'Living Digital Canvas — Animated Portfolio',
+    slug: 'personal-6',
+    previewImage: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 22, name: 'Personal', slug: 'personal' },
+    pagesCount: 1,
+    downloadsCount: 1390,
+    description: 'A minimalist creative showcase template featuring smooth scroll animations, experience timelines, and skill matrices.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/personal/personal-6/index.html',
+  },
+  {
+    id: 9507,
+    name: 'Alex Vance — Interactive 3D Creative Studio Portfolio',
+    slug: 'personal-7',
+    previewImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 22, name: 'Personal', slug: 'personal' },
+    pagesCount: 1,
+    downloadsCount: 1820,
+    description: 'An interactive desk setup personal portfolio featuring vector workspace widgets, growth journey plants, and custom audio keycaps.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/personal/personal-7/index.html',
+  },
+  {
+    id: 9508,
+    name: 'Kaelen — Interactive Personal Showcase',
+    slug: 'personal-8',
+    previewImage: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 22, name: 'Personal', slug: 'personal' },
+    pagesCount: 1,
+    downloadsCount: 1560,
+    description: 'A modern developer portfolio featuring day/night theme toggles, project filter cards, and interactive milestone trackers.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/personal/personal-8/index.html',
+  },
+  {
+    id: 9509,
+    name: 'Arjun Mehta — AI Engineer & Full-Stack Developer',
+    slug: 'personal-9',
+    previewImage: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 22, name: 'Personal', slug: 'personal' },
+    pagesCount: 1,
+    downloadsCount: 1410,
+    description: 'A sleek developer portfolio with dark theme aesthetic, project grids, and downloadable CV modal integrations.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/personal/personal-9/index.html',
+  },
+  {
+    id: 9510,
+    name: 'Arjun Dev — Full Stack Developer & UI/UX Enthusiast',
+    slug: 'personal-10',
+    previewImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 22, name: 'Personal', slug: 'personal' },
+    pagesCount: 1,
+    downloadsCount: 1680,
+    description: 'A futuristic tech portfolio showcasing system engineering skills, project case studies, and interactive contact forms.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/personal/personal-10/index.html',
+  },
+  {
+    id: 9110,
+    name: 'Eduora — Modern Academy Platform',
+    slug: 'education-10',
+    previewImage: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 18, name: 'education', slug: 'education' },
+    pagesCount: 1,
+    downloadsCount: 1620,
+    description: 'A modern online education academy website featuring interactive course cards, filterable catalogs, and student portals.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/education/education-10/index.html',
+  },
+  {
+    id: 9209,
+    name: 'Ember & Olive — Premium Restaurant Website',
+    slug: 'business-9',
+    previewImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 16, name: 'buisness', slug: 'buisness' },
+    pagesCount: 1,
+    downloadsCount: 1450,
+    description: 'A commercial-grade premium restaurant template with seasonal menu explorers, reservation booking controls, and custom gallery showcases.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/buisness/Business-9/index.html',
+  },
+  {
+    id: 9210,
+    name: 'NEXUS — Global Business Consultancy',
+    slug: 'business-10',
+    previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 16, name: 'buisness', slug: 'buisness' },
+    pagesCount: 1,
+    downloadsCount: 1530,
+    description: 'A sleek enterprise consultancy template featuring interactive service grids, client success metrics, and booking systems.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/buisness/Business-10/index.html',
+  },
+  {
+    id: 9509,
+    name: 'ExquDrive — Feel The Luxury Cars We Have',
+    slug: 'landing-page-9',
+    previewImage: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 15, name: 'landing-page', slug: 'landing-page' },
+    pagesCount: 1,
+    downloadsCount: 1720,
+    description: 'A high-impact cinematic vehicle rental landing page with animated stat banners, fleet showcase slideshows, and instant booking modal flows.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/landing-page/landing-page-9/index.html',
+  },
+  {
+    id: 9510,
+    name: 'Aurelis — Build a Stronger Way of Living',
+    slug: 'landing-page-10',
+    previewImage: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 15, name: 'landing-page', slug: 'landing-page' },
+    pagesCount: 1,
+    downloadsCount: 1390,
+    description: 'A premium luxury wellness landing page featuring programs gallery, daily rhythm grids, and client trust testimonies.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/landing-page/landing-page-10/index.html',
+  },
+  {
+    id: 9608,
+    name: 'PulseCare — Modern Healthcare Platform',
+    slug: 'medical-8',
+    previewImage: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 2, name: 'Medical', slug: 'medical' },
+    pagesCount: 1,
+    downloadsCount: 1800,
+    description: 'A comprehensive medical hub featuring doctor discovery lists, secure health vault portals, and instant booking engines.',
+    bootstrapVersion: 'React / Next.js / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/medical/medical-8/index.html',
+  },
+  {
+    id: 9009,
+    name: 'PulseCare — Medical Specialist Hub',
+    slug: 'medical-9',
+    previewImage: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 2, name: 'Medical', slug: 'medical' },
+    pagesCount: 1,
+    downloadsCount: 1920,
+    description: 'An advanced clinical dashboard and patient care platform with appointment scheduling and telemedicine support.',
+    bootstrapVersion: 'React / Vite / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/medical/medical-9/index.html',
+  },
+  {
+    id: 9010,
+    name: 'PulseCare — Integrated Health Suite',
+    slug: 'medical-10',
+    previewImage: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 2, name: 'Medical', slug: 'medical' },
+    pagesCount: 1,
+    downloadsCount: 2050,
+    description: 'A modern medical clinic landing page with doctor directory, specialty services, and online consultation booking.',
+    bootstrapVersion: 'React / Vite / Tailwind CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/medical/medical-10/index.html',
+  },
+  {
+    id: 1008,
+    name: 'Nexus — Creative Studio & Digital Agency',
+    slug: 'agency-8',
+    previewImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 1, name: 'Agency', slug: 'agency' },
+    pagesCount: 1,
+    downloadsCount: 1890,
+    description: 'A sleek, modern creative agency showcase featuring project portfolios, team profiles, and service cards.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/agency/agency-8/index.html',
+  },
+  {
+    id: 1009,
+    name: 'Agency 9 — Spatial Interactive Studio',
+    slug: 'agency-9',
+    previewImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 1, name: 'Agency', slug: 'agency' },
+    pagesCount: 1,
+    downloadsCount: 2110,
+    description: 'An immersive spatial interactive agency template with dynamic metric cards, team showcases, and services matrix.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/agency/agency-9/index.html',
+  },
+  {
+    id: 1010,
+    name: 'Vanguard — Full-Service Digital Innovation Agency',
+    slug: 'agency-10',
+    previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 1, name: 'Agency', slug: 'agency' },
+    pagesCount: 1,
+    downloadsCount: 2340,
+    description: 'A bold, high-converting digital agency template with animated hero, client case studies, and lead capture forms.',
+    bootstrapVersion: 'React / Vite / Tailwind CSS',
+    version: '1.0.0',
+  },
+  {
+    id: 9709,
+    name: 'Dr. Mira Ellison — Behavioral Researcher',
+    slug: 'resume-9',
+    previewImage: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 19, name: 'resume', slug: 'resume' },
+    pagesCount: 1,
+    downloadsCount: 1410,
+    description: 'A sleek visual artist resume with interactive grids, filterable portfolios, and custom contact sections.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/resume/resume-9/index.html',
+  },
+  {
+    id: 9710,
+    name: 'Elias Rowan — Film Director & Visual Storyteller',
+    slug: 'resume-10',
+    previewImage: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80',
+    templateType: 'FREE',
+    price: 0,
+    category: { id: 19, name: 'resume', slug: 'resume' },
+    pagesCount: 1,
+    downloadsCount: 1350,
+    description: 'An editorial cinematic director resume showcasing movie portfolios, philosophy statements, and contact inquiries.',
+    bootstrapVersion: 'React / Vite / CSS',
+    version: '1.0.0',
+    demoUrl: '/templates/resume/resume-10/index.html',
   }
 ];
 
@@ -2369,6 +3344,49 @@ const handleResponse = async (response) => {
   
   return response.json().catch(() => ({}));
 };
+
+
+export const extractTemplateNumber = (t) => {
+  if (!t) return 999;
+  const demo = t.demoUrl || '';
+  const slug = t.slug || '';
+  
+  const demoMatch = demo.match(/[-_](\d+)(?:\/index\.html)?$/);
+  if (demoMatch) return parseInt(demoMatch[1], 10);
+
+  const slugMatch = slug.match(/[-_](\d+)$/);
+  if (slugMatch) return parseInt(slugMatch[1], 10);
+
+  const numMatch = slug.match(/(\d+)/);
+  if (numMatch) return parseInt(numMatch[1], 10);
+
+  return 999;
+};
+
+export const sortTemplatesNumerically = (arr) => {
+  if (!Array.isArray(arr)) return arr;
+  return [...arr].sort((a, b) => {
+    const catA = (a.category?.slug || a.category?.name || '').toLowerCase();
+    const catB = (b.category?.slug || b.category?.name || '').toLowerCase();
+    if (catA !== catB) {
+      return catA.localeCompare(catB);
+    }
+    const numA = extractTemplateNumber(a);
+    const numB = extractTemplateNumber(b);
+    return numA - numB;
+  });
+};
+
+MOCK_TEMPLATES.sort((a, b) => {
+  const catA = (a.category?.slug || a.category?.name || '').toLowerCase();
+  const catB = (b.category?.slug || b.category?.name || '').toLowerCase();
+  if (catA !== catB) {
+    return catA.localeCompare(catB);
+  }
+  const numA = extractTemplateNumber(a);
+  const numB = extractTemplateNumber(b);
+  return numA - numB;
+});
 
 export const api = {
   // Auth
@@ -2449,7 +3467,7 @@ export const api = {
       });
       const data = await handleResponse(res);
       if (Array.isArray(data) && data.length > 0) {
-        return data;
+        return sortTemplatesNumerically(data);
       }
       let filtered = [...MOCK_TEMPLATES];
       if (params.category && params.category !== 'all') {
@@ -2466,7 +3484,7 @@ export const api = {
           t.category.name.toLowerCase().includes(queryStr)
         );
       }
-      return filtered;
+      return sortTemplatesNumerically(filtered);
     } catch (err) {
       console.warn("API templates fetch failed, utilizing mock fallback:", err);
       let filtered = [...MOCK_TEMPLATES];
@@ -2484,7 +3502,7 @@ export const api = {
           (t.category && t.category.name && t.category.name.toLowerCase().includes(queryStr))
         );
       }
-      return filtered;
+      return sortTemplatesNumerically(filtered);
     }
   },
 
@@ -2495,7 +3513,7 @@ export const api = {
       });
       const data = await handleResponse(res);
       if (Array.isArray(data) && data.length > 0) {
-        return data;
+        return sortTemplatesNumerically(data);
       }
       return MOCK_TEMPLATES.filter(t => t.category.slug === category);
     } catch (err) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams, Link, useNavigate } from 'react-router-dom';
-import { api } from '../services/api';
+import { api, extractTemplateNumber } from '../services/api';
 import { Search, SlidersHorizontal } from 'lucide-react';
 
 const categoryThemes = {
@@ -277,7 +277,14 @@ export default function Templates() {
     } else if (sortBy === 'price-high') {
       return b.price - a.price;
     }
-    return 0;
+    const catA = (a.category?.slug || a.category?.name || '').toLowerCase();
+    const catB = (b.category?.slug || b.category?.name || '').toLowerCase();
+    if (catA !== catB) {
+      return catA.localeCompare(catB);
+    }
+    const numA = extractTemplateNumber(a);
+    const numB = extractTemplateNumber(b);
+    return numA - numB;
   });
 
   return (
@@ -551,21 +558,39 @@ export default function Templates() {
                       transform: 'translateX(-8%)',
                       boxSizing: 'border-box'
                     }}>
-                      <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative' }}>
-                        <img 
-                          src={template.previewImage} 
-                          alt={`${template.name} Desktop Preview`} 
-                          style={{ 
-                            width: '100%', 
-                            height: '112%', 
-                            objectFit: 'cover', 
-                            objectPosition: 'top',
-                            marginTop: '-12%' 
-                          }} 
-                          onError={(e) => {
-                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                          }}
-                        />
+                      <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
+                        {template.demoUrl ? (
+                          <iframe 
+                            src={template.demoUrl} 
+                            title={`${template.name} Desktop Preview`}
+                            style={{ 
+                              width: '1280px', 
+                              height: '800px', 
+                              border: 'none', 
+                              transform: 'scale(0.24)', 
+                              transformOrigin: 'top left',
+                              pointerEvents: 'none',
+                              position: 'absolute',
+                              top: 0,
+                              left: 0
+                            }} 
+                          />
+                        ) : (
+                          <img 
+                            src={template.previewImage} 
+                            alt={`${template.name} Desktop Preview`} 
+                            style={{ 
+                              width: '100%', 
+                              height: '112%', 
+                              objectFit: 'cover', 
+                              objectPosition: 'top',
+                              marginTop: '-12%' 
+                            }} 
+                            onError={(e) => {
+                              e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
+                            }}
+                          />
+                        )}
                       </div>
                       {/* Keyboard Base thin border */}
                       <div style={{
@@ -605,21 +630,39 @@ export default function Templates() {
                         background: '#334155',
                         zIndex: 10
                       }} />
-                      <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-                        <img 
-                          src={template.previewImage} 
-                          alt={`${template.name} Tablet Preview`} 
-                          style={{ 
-                            width: '100%', 
-                            height: '112%', 
-                            objectFit: 'cover', 
-                            objectPosition: 'top',
-                            marginTop: '-12%' 
-                          }} 
-                          onError={(e) => {
-                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                          }}
-                        />
+                      <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
+                        {template.demoUrl ? (
+                          <iframe 
+                            src={template.demoUrl} 
+                            title={`${template.name} Tablet Preview`}
+                            style={{ 
+                              width: '768px', 
+                              height: '1024px', 
+                              border: 'none', 
+                              transform: 'scale(0.18)', 
+                              transformOrigin: 'top left',
+                              pointerEvents: 'none',
+                              position: 'absolute',
+                              top: 0,
+                              left: 0
+                            }} 
+                          />
+                        ) : (
+                          <img 
+                            src={template.previewImage} 
+                            alt={`${template.name} Tablet Preview`} 
+                            style={{ 
+                              width: '100%', 
+                              height: '112%', 
+                              objectFit: 'cover', 
+                              objectPosition: 'top',
+                              marginTop: '-12%' 
+                            }} 
+                            onError={(e) => {
+                              e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
+                            }}
+                          />
+                        )}
                       </div>
                     </div>
 
@@ -650,21 +693,39 @@ export default function Templates() {
                         background: '#1e293b',
                         zIndex: 10
                       }} />
-                      <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-                        <img 
-                          src={template.previewImage} 
-                          alt={`${template.name} Mobile Preview`} 
-                          style={{ 
-                            width: '100%', 
-                            height: '112%', 
-                            objectFit: 'cover', 
-                            objectPosition: 'top',
-                            marginTop: '-12%' 
-                          }} 
-                          onError={(e) => {
-                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                          }}
-                        />
+                      <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
+                        {template.demoUrl ? (
+                          <iframe 
+                            src={template.demoUrl} 
+                            title={`${template.name} Mobile Preview`}
+                            style={{ 
+                              width: '375px', 
+                              height: '812px', 
+                              border: 'none', 
+                              transform: 'scale(0.18)', 
+                              transformOrigin: 'top left',
+                              pointerEvents: 'none',
+                              position: 'absolute',
+                              top: 0,
+                              left: 0
+                            }} 
+                          />
+                        ) : (
+                          <img 
+                            src={template.previewImage} 
+                            alt={`${template.name} Mobile Preview`} 
+                            style={{ 
+                              width: '100%', 
+                              height: '112%', 
+                              objectFit: 'cover', 
+                              objectPosition: 'top',
+                              marginTop: '-12%' 
+                            }} 
+                            onError={(e) => {
+                              e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
+                            }}
+                          />
+                        )}
                       </div>
                     </div>
                   </div>

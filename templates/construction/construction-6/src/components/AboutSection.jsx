@@ -35,7 +35,7 @@ export default function AboutSection() {
 
           <div className="about-image-col">
             <div className="about-img-frame">
-              <img src="./assets/images/arcstone-villa.jpg" alt="Arcstone Villa Design" />
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" alt="Arcstone Villa Design" />
               <div className="about-card-badge">
                 <span className="badge-num">2026</span>
                 <span className="badge-lbl">ARCHITECTURAL DESIGN EXCELLENCE</span>

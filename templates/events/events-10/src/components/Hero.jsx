@@ -11,7 +11,7 @@ export const Hero = () => {
       {/* Stadium Background Image */}
       <div className="hero-video-wrapper">
         <img
-          src="/images/arena-bg.jpg"
+          src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=1400&q=80"
           alt="Thunder Arena Stadium Background"
           className="hero-background-img"
         />

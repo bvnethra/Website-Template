@@ -75,7 +75,7 @@ export const VideoMotionShowcase = ({
       };
     } else {
       return {
-        image: '/assets/images/shoe-outsole.jpg',
+        image: '/assets/imageshttps://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80',
         name: 'Traction Outsole & Carbon Grid',
         phase: 'PHASE 04 • ROAD GRIP & PROPULSION',
         title: 'LIQUIDTACK™ WET-ROAD COMPOUND',

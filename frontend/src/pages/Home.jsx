@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { api } from '../services/api';
 import { ArrowRight, Star, ArrowUpRight, Flame, Shield, Zap, Sparkles } from 'lucide-react';
+import SafeImage from '../components/SafeImage';
+
 
 const categoryThemes = {
   travels: {
@@ -498,9 +500,11 @@ export default function Home({ addToCart, cart }) {
                   boxSizing: 'border-box'
                 }}>
                   <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative' }}>
-                    <img 
+                    <SafeImage 
                       src={template.previewImage} 
                       alt={`${template.name} Desktop Preview`} 
+                      templateSlug={template.slug}
+                      categorySlug={categorySlug}
                       style={{ 
                         width: '100%', 
                         height: '112%', 
@@ -508,9 +512,6 @@ export default function Home({ addToCart, cart }) {
                         objectPosition: 'top',
                         marginTop: '-12%' 
                       }} 
-                      onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                      }}
                     />
                   </div>
                   {/* Keyboard Base thin border */}
@@ -552,9 +553,11 @@ export default function Home({ addToCart, cart }) {
                     zIndex: 10
                   }} />
                   <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-                    <img 
+                    <SafeImage 
                       src={template.previewImage} 
                       alt={`${template.name} Tablet Preview`} 
+                      templateSlug={template.slug}
+                      categorySlug={categorySlug}
                       style={{ 
                         width: '100%', 
                         height: '112%', 
@@ -562,9 +565,6 @@ export default function Home({ addToCart, cart }) {
                         objectPosition: 'top',
                         marginTop: '-12%' 
                       }} 
-                      onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                      }}
                     />
                   </div>
                 </div>
@@ -597,9 +597,11 @@ export default function Home({ addToCart, cart }) {
                     zIndex: 10
                   }} />
                   <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-                    <img 
+                    <SafeImage 
                       src={template.previewImage} 
                       alt={`${template.name} Mobile Preview`} 
+                      templateSlug={template.slug}
+                      categorySlug={categorySlug}
                       style={{ 
                         width: '100%', 
                         height: '112%', 
@@ -607,9 +609,6 @@ export default function Home({ addToCart, cart }) {
                         objectPosition: 'top',
                         marginTop: '-12%' 
                       }} 
-                      onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                      }}
                     />
                   </div>
                 </div>

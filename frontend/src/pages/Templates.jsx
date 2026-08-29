@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams, Link, useNavigate } from 'react-router-dom';
 import { api, extractTemplateNumber } from '../services/api';
 import { Search, SlidersHorizontal } from 'lucide-react';
+import SafeImage from '../components/SafeImage';
+
 
 const categoryThemes = {
   travels: {
@@ -559,18 +561,17 @@ export default function Templates() {
                       boxSizing: 'border-box'
                     }}>
                       <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
-                        <img 
+                        <SafeImage 
                           src={template.previewImage} 
                           alt={`${template.name} Desktop Preview`} 
+                          templateSlug={template.slug}
+                          categorySlug={categorySlug}
                           style={{ 
                             width: '100%', 
                             height: '100%', 
                             objectFit: 'cover', 
                             objectPosition: 'top'
                           }} 
-                          onError={(e) => {
-                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                          }}
                         />
                       </div>
                       {/* Keyboard Base thin border */}
@@ -612,18 +613,17 @@ export default function Templates() {
                         zIndex: 10
                       }} />
                       <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
-                        <img 
+                        <SafeImage 
                           src={template.previewImage} 
                           alt={`${template.name} Tablet Preview`} 
+                          templateSlug={template.slug}
+                          categorySlug={categorySlug}
                           style={{ 
                             width: '100%', 
                             height: '100%', 
                             objectFit: 'cover', 
                             objectPosition: 'top'
                           }} 
-                          onError={(e) => {
-                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                          }}
                         />
                       </div>
                     </div>
@@ -656,18 +656,17 @@ export default function Templates() {
                         zIndex: 10
                       }} />
                       <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
-                        <img 
+                        <SafeImage 
                           src={template.previewImage} 
                           alt={`${template.name} Mobile Preview`} 
+                          templateSlug={template.slug}
+                          categorySlug={categorySlug}
                           style={{ 
                             width: '100%', 
                             height: '100%', 
                             objectFit: 'cover', 
                             objectPosition: 'top'
                           }} 
-                          onError={(e) => {
-                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                          }}
                         />
                       </div>
                     </div>

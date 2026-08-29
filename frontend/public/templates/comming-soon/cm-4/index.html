@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- React Router Nested Folder SPA URL Fix -->
+    <script>
+      if (window.location.pathname.endsWith('/index.html')) {
+        const newPath = window.location.pathname.replace(/\/index\.html$/, '/');
+        window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
+      }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOTANICAL STUDIES | The Heritage Folio - Coming Soon</title>
@@ -620,7 +628,7 @@
         <div class="mt-4 flex items-center justify-center gap-4 text-[0.75rem] font-mono text-stone-600">
           <span><i class="fas fa-shield-alt text-emerald-700"></i> No Spam Guarantee</span>
           <span>•</span>
-          <a href="rosa-canina.jpg" download="Botanical_Studies_Heritage_Sampler.jpg" class="text-amber-800 hover:text-amber-950 font-semibold underline decoration-amber-600/50 cursor-pointer flex items-center gap-1.5"><i class="fas fa-gift text-amber-700"></i> Free Digital Chapter Sample</a>
+          <a href="rosa-canina.jpg" download="book.jpg" class="text-amber-800 hover:text-amber-950 font-semibold underline decoration-amber-600/50 cursor-pointer flex items-center gap-1.5"><i class="fas fa-gift text-amber-700"></i> Free Digital Chapter Sample</a>
         </div>
       </div>
     </section>

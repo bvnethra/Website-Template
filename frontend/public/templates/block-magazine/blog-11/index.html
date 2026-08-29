@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
+    <!-- React Router Nested Folder SPA URL Fix -->
+    <script>
+      if (window.location.pathname.endsWith('/index.html')) {
+        const newPath = window.location.pathname.replace(/\/index\.html$/, '/');
+        window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
+      }
+    </script>
+
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/templates/block-magazine/blog-11/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

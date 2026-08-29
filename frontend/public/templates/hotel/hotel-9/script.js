@@ -12,7 +12,7 @@ const ROOMS_DATA = [
     capacity: 2,
     sizeSqFt: 1800,
     bedType: '1 King Bed',
-    image: '/ao_amber_canopy.jpg',
+    image: '/hotel_hero.jpg',
     amenities: ['Private Plunge Pool', 'Butler Service', 'Outdoor Limestone Shower', 'Curated Wine Bar', 'Wellness Deck']
   },
   {
@@ -25,7 +25,7 @@ const ROOMS_DATA = [
     capacity: 2,
     sizeSqFt: 1200,
     bedType: '1 King Bed',
-    image: '/ao_champagne_suite.jpg',
+    image: '/hotel_suite.jpg',
     amenities: ['Ocean-Facing Terrace', 'Copper Soaking Tub', 'In-room Fireplace', 'Bose Sound System', 'Espresso Station']
   },
   {
@@ -38,7 +38,7 @@ const ROOMS_DATA = [
     capacity: 4,
     sizeSqFt: 3200,
     bedType: '2 King Beds',
-    image: '/ao_obsidian_sanctuary.jpg',
+    image: '/hotel_pool.jpg',
     amenities: ['Panoramic Sunset Patio', 'Infinity Plunge Pool', 'Dedicated Private Chef', 'Private Fitness Room', 'Starlight Lounge']
   },
   {
@@ -51,7 +51,7 @@ const ROOMS_DATA = [
     capacity: 2,
     sizeSqFt: 2000,
     bedType: '1 King Bed',
-    image: '/ao_velvet_villa.jpg',
+    image: '/hotel_spa.jpg',
     amenities: ['Direct Cove Access', 'Stone Outdoor Bath', 'Private Lagoon Pool', 'Private Massage Sala', 'Wine Cellar Cabinet']
   },
   {
@@ -64,7 +64,7 @@ const ROOMS_DATA = [
     capacity: 3,
     sizeSqFt: 1400,
     bedType: '1 King Bed + 1 Daybed',
-    image: '/aura_haven_suite.jpg',
+    image: '/hotel_suite.jpg',
     amenities: ['Cliffside Hammock Lounge', 'Steam Shower Suite', 'Wellness Treatment Area', 'Smart Tablet Concierge', 'Valet service']
   }
 ];

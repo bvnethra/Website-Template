@@ -3,8 +3,8 @@ const BASE_URL = 'http://localhost:8080/api';
 const MOCK_CATEGORIES = [
   { id: 1, name: 'Admin', slug: 'admin' },
   { id: 2, name: 'Medical', slug: 'medical' },
-  { id: 3, name: 'Block magazine', slug: 'block-magazine' },
-  { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+  { id: 3, name: 'Block Magazine', slug: 'block-magazine' },
+  { id: 4, name: 'Coming Soon', slug: 'comming-soon' },
   { id: 5, name: 'Travels', slug: 'travels' },
   { id: 6, name: 'Hotel', slug: 'hotel' },
   { id: 7, name: 'Events', slug: 'events' },
@@ -13,12 +13,12 @@ const MOCK_CATEGORIES = [
   { id: 10, name: 'Education', slug: 'education' },
   { id: 11, name: 'Restaurant', slug: 'restaurant' },
   { id: 12, name: 'Ecommerce', slug: 'ecommerce' },
-  { id: 13, name: 'Buisness', slug: 'buisness' },
-  { id: 14, name: 'onepage', slug: 'onepage' },
-  { id: 15, name: 'landing page', slug: 'landing-page' },
-  { id: 16, name: 'cooperate', slug: 'cooperate' },
-  { id: 17, name: 'agency', slug: 'agency' },
-  { id: 18, name: 'portfolio', slug: 'portfolio' },
+  { id: 13, name: 'Business', slug: 'buisness' },
+  { id: 14, name: 'One Page', slug: 'onepage' },
+  { id: 15, name: 'Landing Page', slug: 'landing-page' },
+  { id: 16, name: 'Corporate', slug: 'cooperate' },
+  { id: 17, name: 'Agency', slug: 'agency' },
+  { id: 18, name: 'Portfolio', slug: 'portfolio' },
   { id: 19, name: 'Real Estate', slug: 'real-estate' },
   { id: 20, name: 'Resume', slug: 'resume' },
   { id: 21, name: 'Transportation', slug: 'transportation' },
@@ -28,7 +28,7 @@ const MOCK_CATEGORIES = [
 const MOCK_TEMPLATES = [
   {
     id: 134,
-    name: 'TS Admin â€” Enterprise Command Center',
+    name: 'TS Admin — Enterprise Command Center',
     slug: 'ts-admin',
     previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -43,7 +43,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 135,
-    name: 'Elemental â€” Editorial Command Center',
+    name: 'Elemental — Editorial Command Center',
     slug: 'elemental-admin',
     previewImage: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -58,7 +58,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 202,
-    name: 'Arctic Frost â€” Editorial Command Center',
+    name: 'Arctic Frost — Editorial Command Center',
     slug: 'arctic-frost-admin',
     previewImage: 'https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -73,7 +73,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9004,
-    name: 'CoreVista â€” Enterprise PM & Resource Intelligence System',
+    name: 'CoreVista — Enterprise PM & Resource Intelligence System',
     slug: 'admin-4',
     previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -88,7 +88,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9005,
-    name: 'CoreVista â€” Enterprise PM & Resource Intelligence System',
+    name: 'CoreVista — Enterprise PM & Resource Intelligence System',
     slug: 'admin-5',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -103,7 +103,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9006,
-    name: 'ApexAdmin â€” Enterprise Operations Dashboard',
+    name: 'ApexAdmin — Enterprise Operations Dashboard',
     slug: 'admin-6',
     previewImage: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -118,7 +118,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9007,
-    name: 'SprintAdmin â€” Agile Workspace & Sprint Command',
+    name: 'SprintAdmin — Agile Workspace & Sprint Command',
     slug: 'admin-7',
     previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -133,7 +133,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9008,
-    name: 'Ember Glow â€” Dark Analytics Dashboard',
+    name: 'Ember Glow — Dark Analytics Dashboard',
     slug: 'admin-8',
     previewImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -148,7 +148,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9009,
-    name: 'Vantage â€” Premium Admin & Dashboard Hub',
+    name: 'Vantage — Premium Admin & Dashboard Hub',
     slug: 'admin-9',
     previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -163,7 +163,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9010,
-    name: 'Apex â€” Animated Admin Dashboard Portal',
+    name: 'Apex — Animated Admin Dashboard Portal',
     slug: 'admin-10',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -178,7 +178,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9301,
-    name: 'PixelCraft â€” Creative Digital Agency',
+    name: 'PixelCraft — Creative Digital Agency',
     slug: 'agency-1',
     previewImage: 'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -193,7 +193,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9302,
-    name: 'NexusMedia â€” Branding & Marketing Agency',
+    name: 'NexusMedia — Branding & Marketing Agency',
     slug: 'agency-2',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -208,7 +208,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9303,
-    name: 'NovaDesign â€” Next-Gen Creative Agency',
+    name: 'NovaDesign — Next-Gen Creative Agency',
     slug: 'agency-3',
     previewImage: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -223,7 +223,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9304,
-    name: 'AuraStudio â€” Full-Service Production Agency',
+    name: 'AuraStudio — Full-Service Production Agency',
     slug: 'agency-4',
     previewImage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -238,7 +238,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9305,
-    name: 'ApexConsult â€” Corporate Agency Hub',
+    name: 'ApexConsult — Corporate Agency Hub',
     slug: 'agency-5',
     previewImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -253,7 +253,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9306,
-    name: 'VANTA FORM â€” Premium Digital Agency',
+    name: 'VANTA FORM — Premium Digital Agency',
     slug: 'agency-6',
     previewImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -268,7 +268,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9307,
-    name: 'STRATA Agency â€” Spatial Design Studio',
+    name: 'STRATA Agency — Spatial Design Studio',
     slug: 'agency-7',
     previewImage: 'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -283,7 +283,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1008,
-    name: 'Nexus â€” Creative Studio & Digital Agency',
+    name: 'Nexus — Creative Studio & Digital Agency',
     slug: 'agency-8',
     previewImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -298,7 +298,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1009,
-    name: 'Agency 9 â€” Spatial Interactive Studio',
+    name: 'Agency 9 — Spatial Interactive Studio',
     slug: 'agency-9',
     previewImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -313,7 +313,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1010,
-    name: 'Vanguard â€” Full-Service Digital Innovation Agency',
+    name: 'Vanguard — Full-Service Digital Innovation Agency',
     slug: 'agency-10',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -327,7 +327,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 136,
-    name: 'Chronicle â€” Typography-First Magazine',
+    name: 'Chronicle — Typography-First Magazine',
     slug: 'chronicle-magazine',
     previewImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -342,7 +342,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 137,
-    name: 'Elemental â€” Stories Behind the Science',
+    name: 'Elemental — Stories Behind the Science',
     slug: 'elemental-science',
     previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -357,7 +357,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 138,
-    name: 'Future Intelligence â€” AI & Future Tech Magazine',
+    name: 'Future Intelligence — AI & Future Tech Magazine',
     slug: 'future-intelligence',
     previewImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -372,7 +372,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 182,
-    name: 'Storiva â€” Digital Storytelling & Lifestyle Journal',
+    name: 'Storiva — Digital Storytelling & Lifestyle Journal',
     slug: 'storiva-lifestyle',
     previewImage: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -387,7 +387,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 183,
-    name: 'Z-MAG â€” Spatial Fashion & Architecture Monograph',
+    name: 'Z-MAG — Spatial Fashion & Architecture Monograph',
     slug: 'zmag-spatial',
     previewImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -402,7 +402,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 184,
-    name: 'Design Mag â€” High-End Architecture & Design Dispatches',
+    name: 'Design Mag — High-End Architecture & Design Dispatches',
     slug: 'designmag-dispatches',
     previewImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -417,7 +417,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 185,
-    name: 'The Blog Observer â€” Modern Editorial & Opinion Hub',
+    name: 'The Blog Observer — Modern Editorial & Opinion Hub',
     slug: 'blog-observer',
     previewImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -432,7 +432,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 186,
-    name: 'Xtra â€” Dopamine Maximalist Fashion & Culture Journal',
+    name: 'Xtra — Dopamine Maximalist Fashion & Culture Journal',
     slug: 'xtra-fashion',
     previewImage: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -447,7 +447,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9109,
-    name: 'CHRONICLE â€” Premium Editorial & News Platform',
+    name: 'CHRONICLE — Premium Editorial & News Platform',
     slug: 'blog-9',
     previewImage: 'https://images.unsplash.com/photo-1507633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -492,7 +492,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1101,
-    name: 'AURA â€” Modern Corporate Business Template',
+    name: 'AURA — Modern Corporate Business Template',
     slug: 'business-1',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -507,7 +507,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1102,
-    name: 'NEXUS â€” Premium Enterprise Business Template',
+    name: 'NEXUS — Premium Enterprise Business Template',
     slug: 'business-2',
     previewImage: 'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -522,7 +522,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1103,
-    name: 'VORTEX â€” Dynamic Tech & Agency Business Template',
+    name: 'VORTEX — Dynamic Tech & Agency Business Template',
     slug: 'business-3',
     previewImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -537,7 +537,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1104,
-    name: 'PULSE â€” Sleek Creative Business Studio Template',
+    name: 'PULSE — Sleek Creative Business Studio Template',
     slug: 'business-4',
     previewImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -552,7 +552,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1105,
-    name: 'Lumora Labs â€” Premium Venture Studio Template',
+    name: 'Lumora Labs — Premium Venture Studio Template',
     slug: 'business-5',
     previewImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -567,7 +567,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1106,
-    name: 'APEX â€” High-Impact Corporate Business Hub',
+    name: 'APEX — High-Impact Corporate Business Hub',
     slug: 'business-6',
     previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -582,7 +582,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1107,
-    name: 'LUMEN â€” Minimalist Enterprise Business Template',
+    name: 'LUMEN — Minimalist Enterprise Business Template',
     slug: 'business-7',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -597,7 +597,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1108,
-    name: 'SYNERGY â€” Strategic Business Consultancy Template',
+    name: 'SYNERGY — Strategic Business Consultancy Template',
     slug: 'business-8',
     previewImage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -612,7 +612,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9209,
-    name: 'Ember & Olive â€” Premium Restaurant Website',
+    name: 'Ember & Olive — Premium Restaurant Website',
     slug: 'business-9',
     previewImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -627,7 +627,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9210,
-    name: 'NEXUS â€” Global Business Consultancy',
+    name: 'NEXUS — Global Business Consultancy',
     slug: 'business-10',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -717,7 +717,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 180,
-    name: 'Aura Pro X1 â€” Next-Gen 3D Device Launch Hub',
+    name: 'Aura Pro X1 — Next-Gen 3D Device Launch Hub',
     slug: 'aura-pro-x1',
     previewImage: 'https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -732,7 +732,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 181,
-    name: 'AeroStride â€” Premium Sportswear Store Pre-launch Showcase',
+    name: 'AeroStride — Premium Sportswear Store Pre-launch Showcase',
     slug: 'aerostride-prelaunch',
     previewImage: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -747,7 +747,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1008,
-    name: 'â€”Hâ€”Tâ€”Mâ€” â€”3â€”5â€”0â€” â€”Dâ€”Uâ€”Dâ€”Eâ€” â€”/â€”/â€” â€”Tâ€”hâ€”eâ€” â€”Fâ€”uâ€”tâ€”uâ€”râ€”eâ€” â€”oâ€”fâ€” â€”Râ€”iâ€”dâ€”iâ€”nâ€”gâ€” â€”-â€” â€”3â€”6â€”0â€”Â°â€” â€”Eâ€”xâ€”pâ€”eâ€”râ€”iâ€”eâ€”nâ€”câ€”eâ€”',
+    name: 'HTM 350 DUDE — 3D Interactive Riding Showcase',
     slug: 'comingsoon-8',
     previewImage: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -762,7 +762,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1009,
-    name: 'â€”Aâ€”Uâ€”Râ€”Aâ€” â€”/â€”/â€” â€”Nâ€”eâ€”xâ€”tâ€”-â€”Gâ€”eâ€”nâ€” â€”Mâ€”uâ€”lâ€”tâ€”iâ€”pâ€”uâ€”râ€”pâ€”oâ€”sâ€”eâ€” â€”Lâ€”aâ€”uâ€”nâ€”câ€”hâ€”pâ€”aâ€”dâ€” â€”&â€” â€”Câ€”oâ€”mâ€”iâ€”nâ€”gâ€” â€”Sâ€”oâ€”oâ€”nâ€” â€”Eâ€”xâ€”pâ€”eâ€”râ€”iâ€”eâ€”nâ€”câ€”eâ€”',
+    name: 'Aura — Next-Gen Multipurpose Launchpad',
     slug: 'comingsoon-9',
     previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -777,7 +777,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1010,
-    name: 'â€”Câ€”oâ€”mâ€”iâ€”nâ€”gâ€” â€”Sâ€”oâ€”oâ€”nâ€” â€”Eâ€”vâ€”eâ€”nâ€”tâ€” â€”Lâ€”aâ€”nâ€”dâ€”iâ€”nâ€”gâ€” â€”Pâ€”aâ€”gâ€”eâ€” â€”Tâ€”eâ€”mâ€”pâ€”lâ€”aâ€”tâ€”eâ€”sâ€” â€”|â€” â€”Mâ€”uâ€”lâ€”tâ€”iâ€”-â€”Dâ€”eâ€”sâ€”iâ€”gâ€”nâ€” â€”Sâ€”tâ€”uâ€”dâ€”iâ€”oâ€”',
+    name: 'Coming Soon Event Landing Page Templates | Multi-Design Studio',
     slug: 'comingsoon-10',
     previewImage: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -792,7 +792,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 108,
-    name: 'Advanced Construction â€” Heavy Civil Engineering & Crane Infrastructure',
+    name: 'Advanced Construction — Heavy Civil Engineering & Crane Infrastructure',
     slug: 'advanced-construction',
     previewImage: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -807,7 +807,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 112,
-    name: 'BuildHub Constructions â€” Premier Architecture & 3D BIM',
+    name: 'BuildHub Constructions — Premier Architecture & 3D BIM',
     slug: 'buildhub-construction',
     previewImage: 'https://images.unsplash.com/photo-1503387762-592dec58ef4e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -822,7 +822,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 113,
-    name: 'Futurix Constructions â€” 3D BIM Technology',
+    name: 'Futurix Constructions — 3D BIM Technology',
     slug: 'futurix-constructions',
     previewImage: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -837,7 +837,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 117,
-    name: 'Knack Design Build â€” Bespoke Architecture',
+    name: 'Knack Design Build — Bespoke Architecture',
     slug: 'knack-design-build',
     previewImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -852,7 +852,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 118,
-    name: 'Bespoke Lakefront Villas â€” Swiss Design Studio',
+    name: 'Bespoke Lakefront Villas — Swiss Design Studio',
     slug: 'swiss-lakefront-villas',
     previewImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -867,7 +867,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 119,
-    name: 'Arcstone Architects â€” Luxury Residential Design',
+    name: 'Arcstone Architects — Luxury Residential Design',
     slug: 'arcstone-architects',
     previewImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -882,7 +882,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 171,
-    name: 'Aurelius â€” High-End Historical Renovation & Heritage Atelier',
+    name: 'Aurelius — High-End Historical Renovation & Heritage Atelier',
     slug: 'aurelius-renovation',
     previewImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -897,7 +897,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 172,
-    name: 'BuildX â€” Sustainable Biophilic Architecture & Living Facades',
+    name: 'BuildX — Sustainable Biophilic Architecture & Living Facades',
     slug: 'buildx-biophilic',
     previewImage: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -912,7 +912,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 173,
-    name: 'Chronos â€” Monolithic Brutalist Architecture & Concrete Engineering',
+    name: 'Chronos — Monolithic Brutalist Architecture & Concrete Engineering',
     slug: 'chronos-brutalist',
     previewImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -927,7 +927,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 174,
-    name: 'Aerovision â€” Kinetic Skyrise & Aerodynamic Architecture',
+    name: 'Aerovision — Kinetic Skyrise & Aerodynamic Architecture',
     slug: 'aerovision-skyrise',
     previewImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -942,7 +942,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1001,
-    name: 'AURA â€” Executive Enterprise & Consultancy',
+    name: 'AURA — Executive Enterprise & Consultancy',
     slug: 'cooperate-1',
     previewImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -957,7 +957,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1002,
-    name: 'NEXUS â€” Global Business & Financial Advisory',
+    name: 'NEXUS — Global Business & Financial Advisory',
     slug: 'cooperate-2',
     previewImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -972,7 +972,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1003,
-    name: 'VORTEX â€” Industrial & Technology Holdings',
+    name: 'VORTEX — Industrial & Technology Holdings',
     slug: 'cooperate-3',
     previewImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -987,7 +987,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1004,
-    name: 'PULSE â€” Global Logistics & Supply Chain Solutions',
+    name: 'PULSE — Global Logistics & Supply Chain Solutions',
     slug: 'cooperate-4',
     previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1002,7 +1002,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1005,
-    name: 'ELEVATE â€” Modern Asset Management & Private Equity',
+    name: 'ELEVATE — Modern Asset Management & Private Equity',
     slug: 'cooperate-5',
     previewImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1047,7 +1047,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1008,
-    name: 'Remix Vertexa â€” Technology & Systems',
+    name: 'Remix Vertexa — Technology & Systems',
     slug: 'cooperate-8',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1092,7 +1092,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 7,
-    name: 'Soft Glow â€” Clean Beauty & Skin-First Hydration',
+    name: 'Soft Glow — Clean Beauty & Skin-First Hydration',
     slug: 'soft-glow',
     previewImage: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1107,7 +1107,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9,
-    name: 'AURELIA â€” Luxury Jewelry & Emerald Archive',
+    name: 'AURELIA — Luxury Jewelry & Emerald Archive',
     slug: 'aurelia-commerce',
     previewImage: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1122,7 +1122,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 12,
-    name: 'NOVA â€” Futuristic Device & Ecosystem Store',
+    name: 'NOVA — Futuristic Device & Ecosystem Store',
     slug: 'nova-store',
     previewImage: '/templates/ecommerce/ecommerce-3/images/nova_x1_front.webp',
     templateType: 'FREE',
@@ -1135,7 +1135,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 13,
-    name: 'Orvana â€” Premium Design & Lifestyle Concept Store',
+    name: 'Orvana — Premium Design & Lifestyle Concept Store',
     slug: 'orvana-store',
     previewImage: 'https://images.unsplash.com/photo-1441984969733-d4df530a7731?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1148,7 +1148,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 14,
-    name: 'AUREL â€” Minimalist Fashion & Lifestyle Store',
+    name: 'AUREL — Minimalist Fashion & Lifestyle Store',
     slug: 'aurel-store',
     previewImage: 'https://images.unsplash.com/photo-1598554747436-c9293d6a588f?q=80&w=800&auto=format&fit=crop',
     templateType: 'FREE',
@@ -1161,7 +1161,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 8,
-    name: 'AURA â€” Premium Acoustic & Luxury Archive',
+    name: 'AURA — Premium Acoustic & Luxury Archive',
     slug: 'aura-commerce',
     previewImage: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1176,7 +1176,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 201,
-    name: 'Maison de L\'Ã‰clat â€” Premium High-Fashion Boutique & E-Commerce Hub',
+    name: 'Maison de L\'Ã‰clat — Premium High-Fashion Boutique & E-Commerce Hub',
     slug: 'maison-eclat-ecommerce',
     previewImage: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1191,7 +1191,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 11,
-    name: 'ToyVerse â€” Interactive Toy & Hobby Store',
+    name: 'ToyVerse — Interactive Toy & Hobby Store',
     slug: 'toy-store',
     previewImage: 'https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1204,7 +1204,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 101,
-    name: 'BLUECORE â€” Futuristic Device & Electronics Showroom',
+    name: 'BLUECORE — Futuristic Device & Electronics Showroom',
     slug: 'bluecore-showroom',
     previewImage: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1219,7 +1219,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 102,
-    name: 'E-Commerce Hub â€” Modern Kids & Family Fashion Store',
+    name: 'E-Commerce Hub — Modern Kids & Family Fashion Store',
     slug: 'ecom-hub-fashion',
     previewImage: 'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1234,7 +1234,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 20,
-    name: 'Skillora â€” Online Education & Learning Platform',
+    name: 'Skillora — Online Education & Learning Platform',
     slug: 'skillora-education',
     previewImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1249,7 +1249,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 158,
-    name: 'MySchool â€” Parent Inquiry & K-12 School Portal',
+    name: 'MySchool — Parent Inquiry & K-12 School Portal',
     slug: 'myschool-parent-portal',
     previewImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1264,7 +1264,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 159,
-    name: 'Modern University â€” Premium Academic & Research Hub',
+    name: 'Modern University — Premium Academic & Research Hub',
     slug: 'modern-university-hub',
     previewImage: 'https://images.unsplash.com/photo-1541178735483-a7bbd74c9e59?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1279,7 +1279,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 160,
-    name: 'EduNexus â€” Next-Gen Student Portal & Campus Management',
+    name: 'EduNexus — Next-Gen Student Portal & Campus Management',
     slug: 'edunexus-student-portal',
     previewImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1294,7 +1294,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 161,
-    name: 'MelodyCademy â€” Music Academy Portal',
+    name: 'MelodyCademy — Music Academy Portal',
     slug: 'melodycademy-music-portal',
     previewImage: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1309,7 +1309,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 162,
-    name: 'BusinessCollege â€” Professional Academic Landing Page',
+    name: 'BusinessCollege — Professional Academic Landing Page',
     slug: 'business-college-landing',
     previewImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1324,7 +1324,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 163,
-    name: 'Westridge â€” University Multi-page Portal',
+    name: 'Westridge — University Multi-page Portal',
     slug: 'westridge-university-portal',
     previewImage: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1339,7 +1339,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 164,
-    name: 'EdTech â€” Interactive E-Learning Platform',
+    name: 'EdTech — Interactive E-Learning Platform',
     slug: 'edtech-elearning-platform',
     previewImage: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1354,7 +1354,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 165,
-    name: 'LearningInMotion â€” Premium Gamified Education Dashboard',
+    name: 'LearningInMotion — Premium Gamified Education Dashboard',
     slug: 'learning-in-motion',
     previewImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1369,7 +1369,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9110,
-    name: 'Eduora â€” Modern Academy Platform',
+    name: 'Eduora — Modern Academy Platform',
     slug: 'education-10',
     previewImage: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1384,7 +1384,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 103,
-    name: 'Eventora â€” Premier Tech & Leadership Summit Launch Platform',
+    name: 'Eventora — Premier Tech & Leadership Summit Launch Platform',
     slug: 'eventora-event',
     previewImage: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1399,7 +1399,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 104,
-    name: 'CYBERNEXUS â€” Global Technology & Intelligence Summit',
+    name: 'CYBERNEXUS — Global Technology & Intelligence Summit',
     slug: 'cybernexus-event',
     previewImage: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1414,7 +1414,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 105,
-    name: 'VERTEX â€” Robotics & Quantum Tech Summit',
+    name: 'VERTEX — Robotics & Quantum Tech Summit',
     slug: 'vertex-event',
     previewImage: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1429,7 +1429,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 106,
-    name: 'VORTEX FORGE FITNESS â€” IRON ASCENT 2026',
+    name: 'VORTEX FORGE FITNESS — IRON ASCENT 2026',
     slug: 'iron-ascent-event',
     previewImage: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1444,7 +1444,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 107,
-    name: 'AQUAVEXA AUTO SPA â€” Premium Car Wash & Detailing Studio',
+    name: 'AQUAVEXA AUTO SPA — Premium Car Wash & Detailing Studio',
     slug: 'aquavexa-autospa',
     previewImage: 'https://images.unsplash.com/photo-1520340356584-f9917d1eed69?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1459,7 +1459,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 175,
-    name: 'Innovate SF â€” Global Tech Summit & Startup Launchpad',
+    name: 'Innovate SF — Global Tech Summit & Startup Launchpad',
     slug: 'innovate-sf',
     previewImage: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1474,7 +1474,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 176,
-    name: 'Quantum Sphere â€” Physics & Deep Tech Colloquium',
+    name: 'Quantum Sphere — Physics & Deep Tech Colloquium',
     slug: 'quantum-sphere',
     previewImage: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1489,7 +1489,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 177,
-    name: 'Aero Ascent â€” Vertical Flight & Drone Expo',
+    name: 'Aero Ascent — Vertical Flight & Drone Expo',
     slug: 'aero-ascent',
     previewImage: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1504,7 +1504,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 178,
-    name: 'Apex Fit â€” Global Hybrid Functional Fitness Showcase',
+    name: 'Apex Fit — Global Hybrid Functional Fitness Showcase',
     slug: 'apex-fit',
     previewImage: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1519,7 +1519,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 179,
-    name: 'Hydro Shine â€” Premier Car Detailing & Wash Studio Platform',
+    name: 'Hydro Shine — Premier Car Detailing & Wash Studio Platform',
     slug: 'hydro-shine',
     previewImage: 'https://images.unsplash.com/photo-1520340356584-f9917d1eed69?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1534,7 +1534,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 120,
-    name: 'Aura Haven Resorts â€” Luxury Sanctuary Resort',
+    name: 'Aura Haven Resorts — Luxury Sanctuary Resort',
     slug: 'aura-haven-resorts',
     previewImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1549,7 +1549,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 121,
-    name: 'Aethelred Resort â€” Luxury Hotel & Lodging',
+    name: 'Aethelred Resort — Luxury Hotel & Lodging',
     slug: 'aethelred-resort',
     previewImage: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1564,7 +1564,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 122,
-    name: 'Aurelia Velvet Obsidian Resort â€” Ultra-Luxury Sanctuary',
+    name: 'Aurelia Velvet Obsidian Resort — Ultra-Luxury Sanctuary',
     slug: 'aurelia-velvet-obsidian-resort',
     previewImage: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1579,7 +1579,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 123,
-    name: 'Solitude Haven â€” Luxury Forest Sanctuary',
+    name: 'Solitude Haven — Luxury Forest Sanctuary',
     slug: 'solitude-haven',
     previewImage: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1594,7 +1594,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 196,
-    name: 'Suara Ulu â€” Ultra-Luxury Wellness & Spa Resort',
+    name: 'Suara Ulu — Ultra-Luxury Wellness & Spa Resort',
     slug: 'suara-ulu-resort',
     previewImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1609,7 +1609,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 197,
-    name: 'VillaBliss â€” Luxury Mediterranean Villa & Exclusive Resort',
+    name: 'VillaBliss — Luxury Mediterranean Villa & Exclusive Resort',
     slug: 'villabliss-luxury-resort',
     previewImage: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1624,7 +1624,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 126,
-    name: 'Aurelia Haven â€” Luxury Resort & Sanctuary',
+    name: 'Aurelia Haven — Luxury Resort & Sanctuary',
     slug: 'aurelia-haven',
     previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1654,7 +1654,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 199,
-    name: 'HavenLuxe Retreat & Sanctuary â€” Luxury Boutique Resort',
+    name: 'HavenLuxe Retreat & Sanctuary — Luxury Boutique Resort',
     slug: 'havenluxe-retreat',
     previewImage: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1669,7 +1669,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 200,
-    name: 'Aetheria Haven Resorts â€” Weightless Luxury, Timeless Solitude',
+    name: 'Aetheria Haven Resorts — Weightless Luxury, Timeless Solitude',
     slug: 'aetheria-haven-resorts',
     previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1684,7 +1684,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9201,
-    name: 'Flowly AI â€” The Intelligent Workspace for Modern Teams',
+    name: 'Flowly AI — The Intelligent Workspace for Modern Teams',
     slug: 'landing-page-1',
     previewImage: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1699,7 +1699,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9202,
-    name: 'Busy Status Bar â€” Productivity Multi-Tool Device',
+    name: 'Busy Status Bar — Productivity Multi-Tool Device',
     slug: 'landing-page-2',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1714,7 +1714,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9203,
-    name: 'ExquDrive â€” Feel The Luxury Cars We Have',
+    name: 'ExquDrive — Feel The Luxury Cars We Have',
     slug: 'landing-page-3',
     previewImage: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1759,7 +1759,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9206,
-    name: 'The Echoes of Tomorrow â€” A Novel by Mira Rowan',
+    name: 'The Echoes of Tomorrow — A Novel by Mira Rowan',
     slug: 'landing-page-6',
     previewImage: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1774,7 +1774,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9207,
-    name: 'Flowly AI â€” Intelligent Workspace for Modern Teams',
+    name: 'Flowly AI — Intelligent Workspace for Modern Teams',
     slug: 'landing-page-7',
     previewImage: 'https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1789,7 +1789,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9208,
-    name: 'Vanta Studio â€” Independent Creative Agency',
+    name: 'Vanta Studio — Independent Creative Agency',
     slug: 'landing-page-8',
     previewImage: 'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1804,7 +1804,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9509,
-    name: 'ExquDrive â€” Feel The Luxury Cars We Have',
+    name: 'ExquDrive — Feel The Luxury Cars We Have',
     slug: 'landing-page-9',
     previewImage: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1819,7 +1819,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9510,
-    name: 'Aurelis â€” Build a Stronger Way of Living',
+    name: 'Aurelis — Build a Stronger Way of Living',
     slug: 'landing-page-10',
     previewImage: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1834,7 +1834,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 4,
-    name: 'PulseCare â€” Modern Healthcare Platform',
+    name: 'PulseCare — Modern Healthcare Platform',
     slug: 'medical-1',
     previewImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1848,7 +1848,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9002,
-    name: 'Medicio Healthcare â€” Advanced Medical Center Platform',
+    name: 'Medicio Healthcare — Advanced Medical Center Platform',
     slug: 'medicio-healthcare',
     previewImage: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1864,7 +1864,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9003,
-    name: 'Aurevia Health â€” Premium Healthcare Technology Platform',
+    name: 'Aurevia Health — Premium Healthcare Technology Platform',
     slug: 'aurevia-health',
     previewImage: 'https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1880,7 +1880,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9004,
-    name: 'Veylora Health â€” Multi-Speciality Hospital Platform',
+    name: 'Veylora Health — Multi-Speciality Hospital Platform',
     slug: 'veylora-health',
     previewImage: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce2?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1896,7 +1896,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9005,
-    name: 'PulseCare â€” Modern Healthcare Platform',
+    name: 'PulseCare — Modern Healthcare Platform',
     slug: 'medical-5',
     previewImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1911,7 +1911,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9007,
-    name: 'PulseCare â€” Modern Healthcare Platform',
+    name: 'PulseCare — Modern Healthcare Platform',
     slug: 'medical-6',
     previewImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1926,7 +1926,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9008,
-    name: 'PulseCare â€” Modern Healthcare Platform',
+    name: 'PulseCare — Modern Healthcare Platform',
     slug: 'medical-7',
     previewImage: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1941,7 +1941,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9608,
-    name: 'PulseCare â€” Modern Healthcare Platform',
+    name: 'PulseCare — Modern Healthcare Platform',
     slug: 'medical-8',
     previewImage: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1956,7 +1956,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9009,
-    name: 'PulseCare â€” Medical Specialist Hub',
+    name: 'PulseCare — Medical Specialist Hub',
     slug: 'medical-9',
     previewImage: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1971,7 +1971,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9010,
-    name: 'PulseCare â€” Integrated Health Suite',
+    name: 'PulseCare — Integrated Health Suite',
     slug: 'medical-10',
     previewImage: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1986,7 +1986,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9301,
-    name: 'AURA â€” Creative Design Studio',
+    name: 'AURA — Creative Design Studio',
     slug: 'onepage-1',
     previewImage: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2001,7 +2001,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9302,
-    name: 'Asme â€” Innovation, Research & Design Studio',
+    name: 'Asme — Innovation, Research & Design Studio',
     slug: 'onepage-2',
     previewImage: 'https://images.unsplash.com/photo-1542204172-e7052809f852?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2016,7 +2016,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9401,
-    name: 'INTENT â€” Creative Digital Agency',
+    name: 'INTENT — Creative Digital Agency',
     slug: 'onepage-3',
     previewImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2031,7 +2031,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9402,
-    name: 'AETHERIA â€” Next-Gen Digital Product & Brand Agency',
+    name: 'AETHERIA — Next-Gen Digital Product & Brand Agency',
     slug: 'onepage-4',
     previewImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2046,7 +2046,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9403,
-    name: 'Vertex â€” Business Solutions & Digital Transformation',
+    name: 'Vertex — Business Solutions & Digital Transformation',
     slug: 'onepage-5',
     previewImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2061,7 +2061,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9404,
-    name: 'ELEVATE â€” Strategic Branding Agency',
+    name: 'ELEVATE — Strategic Branding Agency',
     slug: 'onepage-6',
     previewImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2076,7 +2076,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9405,
-    name: 'Fonix â€” Spatial Sound Synthesis & 3D Web Experience',
+    name: 'Fonix — Spatial Sound Synthesis & 3D Web Experience',
     slug: 'onepage-7',
     previewImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2091,7 +2091,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9406,
-    name: 'AI // HUMAN // MACHINE â€” AI & ML Engineer Portfolio',
+    name: 'AI // HUMAN // MACHINE — AI & ML Engineer Portfolio',
     slug: 'onepage-8',
     previewImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2106,7 +2106,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9407,
-    name: 'Vertex â€” Business Solutions & Digital Transformation',
+    name: 'Vertex — Business Solutions & Digital Transformation',
     slug: 'onepage-9',
     previewImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2121,7 +2121,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9408,
-    name: 'AETHERIA â€” Next-Gen Digital Product & Brand Agency',
+    name: 'AETHERIA — Next-Gen Digital Product & Brand Agency',
     slug: 'onepage-10',
     previewImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2136,7 +2136,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9501,
-    name: 'JULIAN RIVIERA â€” Creative Technologist & AI Architect',
+    name: 'JULIAN RIVIERA — Creative Technologist & AI Architect',
     slug: 'personal-1',
     previewImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2151,7 +2151,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9502,
-    name: 'Arjun Mehta â€” AI Engineer & Full-Stack Developer',
+    name: 'Arjun Mehta — AI Engineer & Full-Stack Developer',
     slug: 'personal-2',
     previewImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2166,7 +2166,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9503,
-    name: 'THE STORYBOARD â€” Siddharth Mehta Creative Developer',
+    name: 'THE STORYBOARD — Siddharth Mehta Creative Developer',
     slug: 'personal-3',
     previewImage: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2181,7 +2181,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9504,
-    name: 'Soleil â€” Premium Animated Personal Portfolio',
+    name: 'Soleil — Premium Animated Personal Portfolio',
     slug: 'personal-4',
     previewImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2196,7 +2196,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9505,
-    name: 'Aetherius â€” Experimental Digital Universe Portfolio',
+    name: 'Aetherius — Experimental Digital Universe Portfolio',
     slug: 'personal-5',
     previewImage: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2211,7 +2211,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9506,
-    name: 'Living Digital Canvas â€” Animated Portfolio',
+    name: 'Living Digital Canvas — Animated Portfolio',
     slug: 'personal-6',
     previewImage: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2226,7 +2226,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9507,
-    name: 'Alex Vance â€” Interactive 3D Creative Studio Portfolio',
+    name: 'Alex Vance — Interactive 3D Creative Studio Portfolio',
     slug: 'personal-7',
     previewImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2241,7 +2241,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9508,
-    name: 'Kaelen â€” Interactive Personal Showcase',
+    name: 'Kaelen — Interactive Personal Showcase',
     slug: 'personal-8',
     previewImage: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2256,7 +2256,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9509,
-    name: 'Arjun Mehta â€” AI Engineer & Full-Stack Developer',
+    name: 'Arjun Mehta — AI Engineer & Full-Stack Developer',
     slug: 'personal-9',
     previewImage: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2271,7 +2271,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9510,
-    name: 'Arjun Dev â€” Full Stack Developer & UI/UX Enthusiast',
+    name: 'Arjun Dev — Full Stack Developer & UI/UX Enthusiast',
     slug: 'personal-10',
     previewImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2286,7 +2286,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 1,
-    name: 'SnapFolio â€” Dark Minimalist Portfolio',
+    name: 'SnapFolio — Dark Minimalist Portfolio',
     slug: 'photography-1',
     previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2301,7 +2301,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 2,
-    name: 'Photo â€” Editorial Photography Studio',
+    name: 'Photo — Editorial Photography Studio',
     slug: 'photography-2',
     previewImage: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2316,7 +2316,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 3,
-    name: 'LumiÃ¨re â€” High-End Wedding & Event Photography',
+    name: 'LumiÃ¨re — High-End Wedding & Event Photography',
     slug: 'photography-3',
     previewImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2331,7 +2331,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 124,
-    name: 'Eden Rose â€” Cinematic Luxury Wedding Portfolio',
+    name: 'Eden Rose — Cinematic Luxury Wedding Portfolio',
     slug: 'photography-4',
     previewImage: '/cinematic_cover.png',
     templateType: 'FREE',
@@ -2346,7 +2346,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 125,
-    name: 'Aura â€” Premium Fine Art Studio',
+    name: 'Aura — Premium Fine Art Studio',
     slug: 'photography-5',
     previewImage: '/fineart_cover.png',
     templateType: 'FREE',
@@ -2361,7 +2361,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 127,
-    name: 'Kairo â€” Modern 3D Photography Portfolio',
+    name: 'Kairo — Modern 3D Photography Portfolio',
     slug: 'photography-6',
     previewImage: '/kairo_cover.png',
     templateType: 'FREE',
@@ -2376,7 +2376,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 145,
-    name: 'Lume Studio â€” Fashion & Editorial Portfolio',
+    name: 'Lume Studio — Fashion & Editorial Portfolio',
     slug: 'photography-7',
     previewImage: '/lume_cover.png',
     templateType: 'FREE',
@@ -2391,7 +2391,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 109,
-    name: 'Sage & Shutter â€” Fine Art Wedding Photography',
+    name: 'Sage & Shutter — Fine Art Wedding Photography',
     slug: 'sage-shutter-photography',
     previewImage: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2406,7 +2406,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 110,
-    name: 'Blush Lens â€” Fine Art Wedding Photography',
+    name: 'Blush Lens — Fine Art Wedding Photography',
     slug: 'blush-lens-photography',
     previewImage: '/wedding_cover.png',
     templateType: 'FREE',
@@ -2421,7 +2421,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 111,
-    name: 'Aether Studio â€” Fine Art Editorial Photography',
+    name: 'Aether Studio — Fine Art Editorial Photography',
     slug: 'aether-studio-photography',
     previewImage: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2436,7 +2436,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 150,
-    name: 'Aethelgard â€” Minimalist Architecture Portfolio',
+    name: 'Aethelgard — Minimalist Architecture Portfolio',
     slug: 'portfolio-1',
     previewImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2451,7 +2451,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 151,
-    name: 'Aiden Drake â€” Product Designer & Developer',
+    name: 'Aiden Drake — Product Designer & Developer',
     slug: 'portfolio-2',
     previewImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2466,7 +2466,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 152,
-    name: 'Sasha Grey â€” Creative Visual Director',
+    name: 'Sasha Grey — Creative Visual Director',
     slug: 'portfolio-3',
     previewImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2481,7 +2481,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 153,
-    name: 'Clara Oswald â€” Minimalist UI Designer',
+    name: 'Clara Oswald — Minimalist UI Designer',
     slug: 'portfolio-4',
     previewImage: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2496,7 +2496,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 154,
-    name: 'Evelyn Vance â€” Full-Stack Visual Architect',
+    name: 'Evelyn Vance — Full-Stack Visual Architect',
     slug: 'portfolio-5',
     previewImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2511,7 +2511,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 155,
-    name: 'Synthetix â€” Tech-Forward SaaS & Software Agency',
+    name: 'Synthetix — Tech-Forward SaaS & Software Agency',
     slug: 'portfolio-6',
     previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2526,7 +2526,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 156,
-    name: 'Jared Vance â€” Creative Director & Visual Designer',
+    name: 'Jared Vance — Creative Director & Visual Designer',
     slug: 'portfolio-7',
     previewImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2541,7 +2541,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 157,
-    name: 'Evelyn Oswald â€” Executive Assistant & Operations',
+    name: 'Evelyn Oswald — Executive Assistant & Operations',
     slug: 'portfolio-8',
     previewImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2556,7 +2556,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 158,
-    name: 'Sasha Grey â€” Minimalist Portrait Photographer',
+    name: 'Sasha Grey — Minimalist Portrait Photographer',
     slug: 'portfolio-9',
     previewImage: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2571,7 +2571,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 159,
-    name: 'Sasha Grey Studio â€” Creative Director & Photographer',
+    name: 'Sasha Grey Studio — Creative Director & Photographer',
     slug: 'portfolio-10',
     previewImage: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2586,7 +2586,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9501,
-    name: 'Estate Prime â€” Signature Real Estate Branding',
+    name: 'Estate Prime — Signature Real Estate Branding',
     slug: 'estate-prime',
     previewImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2601,7 +2601,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9502,
-    name: 'Urbanova â€” Cosmopolitan Property Collection',
+    name: 'Urbanova — Cosmopolitan Property Collection',
     slug: 'urbanova',
     previewImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2616,7 +2616,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9503,
-    name: 'Luxora Estates â€” Elite Architectural Portfolios',
+    name: 'Luxora Estates — Elite Architectural Portfolios',
     slug: 'luxora-estates',
     previewImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2631,7 +2631,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9504,
-    name: 'Skyline Collective â€” Metropolitan Penthouse Suites',
+    name: 'Skyline Collective — Metropolitan Penthouse Suites',
     slug: 'skyline-collective',
     previewImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2646,7 +2646,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9505,
-    name: 'Terra Living â€” Eco-Friendly Residential Designs',
+    name: 'Terra Living — Eco-Friendly Residential Designs',
     slug: 'terra-living',
     previewImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2661,7 +2661,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9506,
-    name: 'MetroHaus â€” Smart Urban Apartments & Lofts',
+    name: 'MetroHaus — Smart Urban Apartments & Lofts',
     slug: 'metrohaus',
     previewImage: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2676,7 +2676,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9507,
-    name: 'Heritage Homes â€” Restored Classic Estates',
+    name: 'Heritage Homes — Restored Classic Estates',
     slug: 'heritage-homes',
     previewImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2691,7 +2691,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9508,
-    name: 'Vertex Properties â€” Industrial & Commercial Spaces',
+    name: 'Vertex Properties — Industrial & Commercial Spaces',
     slug: 'vertex-properties',
     previewImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2706,7 +2706,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9509,
-    name: 'Haven Realty â€” Coastal Vacation Homes & Villas',
+    name: 'Haven Realty — Coastal Vacation Homes & Villas',
     slug: 'haven-realty',
     previewImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2721,7 +2721,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9510,
-    name: 'Monument Estates â€” Historic Castle & Manor Listings',
+    name: 'Monument Estates — Historic Castle & Manor Listings',
     slug: 'monument-estates',
     previewImage: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2736,7 +2736,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 15,
-    name: 'Ember House â€” Artisan Dining & Gathering Space',
+    name: 'Ember House — Artisan Dining & Gathering Space',
     slug: 'ember-house',
     previewImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2749,7 +2749,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 16,
-    name: 'Ember & Olive â€” Artisan Seasonal Restaurant',
+    name: 'Ember & Olive — Artisan Seasonal Restaurant',
     slug: 'ember-and-olive-react',
     previewImage: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2762,7 +2762,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 17,
-    name: 'LumiÃ¨re â€” Modern Culinary Concept Store',
+    name: 'LumiÃ¨re — Modern Culinary Concept Store',
     slug: 'lumiere-restaurant',
     previewImage: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2775,7 +2775,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 18,
-    name: 'Ember House Noire â€” Contemporary Garden Restaurant',
+    name: 'Ember House Noire — Contemporary Garden Restaurant',
     slug: 'ember-house-noire',
     previewImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2788,7 +2788,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 19,
-    name: 'NOIRE â€” Nocturnal Garden Bar & Grill',
+    name: 'NOIRE — Nocturnal Garden Bar & Grill',
     slug: 'noire-restaurant',
     previewImage: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2801,7 +2801,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 128,
-    name: 'Konkan Coast â€” Coastal Cuisine & Modern Table',
+    name: 'Konkan Coast — Coastal Cuisine & Modern Table',
     slug: 'konkan-coast',
     previewImage: '/templates/restaurant/restaurant-6/assets/images/hero.jpg',
     templateType: 'FREE',
@@ -2814,7 +2814,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 129,
-    name: 'Masala Atelier â€” Modern Indian Fusion',
+    name: 'Masala Atelier — Modern Indian Fusion',
     slug: 'masala-atelier',
     previewImage: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2827,7 +2827,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 130,
-    name: 'Rang Mahal â€” Traditional Rajasthani',
+    name: 'Rang Mahal — Traditional Rajasthani',
     slug: 'rang-mahal',
     previewImage: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2840,7 +2840,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 131,
-    name: 'The Royal Tandoor â€” Luxury North Indian',
+    name: 'The Royal Tandoor — Luxury North Indian',
     slug: 'the-royal-tandoor',
     previewImage: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2853,7 +2853,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 132,
-    name: 'Southern Ember â€” Modern South Indian',
+    name: 'Southern Ember — Modern South Indian',
     slug: 'southern-ember',
     previewImage: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2866,7 +2866,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9201,
-    name: 'Jordan Davis â€” Software Engineer & Full Stack Developer',
+    name: 'Jordan Davis — Software Engineer & Full Stack Developer',
     slug: 'resume-1',
     previewImage: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2881,7 +2881,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9202,
-    name: 'Dr. Maya Ellison â€” Consultant Cardiologist',
+    name: 'Dr. Maya Ellison — Consultant Cardiologist',
     slug: 'resume-2',
     previewImage: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2896,7 +2896,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9203,
-    name: 'Dr. Arin Solberg â€” Aerospace Systems Engineer',
+    name: 'Dr. Arin Solberg — Aerospace Systems Engineer',
     slug: 'resume-3',
     previewImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2911,7 +2911,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9204,
-    name: 'Noah Everwood â€” Wildlife Photographer & Storyteller',
+    name: 'Noah Everwood — Wildlife Photographer & Storyteller',
     slug: 'resume-4',
     previewImage: 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2926,7 +2926,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9205,
-    name: 'Adrian Vale â€” Architect & Spatial Designer',
+    name: 'Adrian Vale — Architect & Spatial Designer',
     slug: 'resume-5',
     previewImage: 'https://images.unsplash.com/photo-1541462608141-2ff580ee0e66?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2941,7 +2941,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9206,
-    name: 'Elena Marlowe â€” Creative Director & Brand Strategist',
+    name: 'Elena Marlowe — Creative Director & Brand Strategist',
     slug: 'resume-6',
     previewImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2956,7 +2956,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9207,
-    name: 'Lucien Moreau â€” Executive Chef & Culinary Director',
+    name: 'Lucien Moreau — Executive Chef & Culinary Director',
     slug: 'resume-7',
     previewImage: 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -2971,7 +2971,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9208,
-    name: 'Elara Voss â€” Fashion Designer & Creative Director',
+    name: 'Elara Voss — Fashion Designer & Creative Director',
     slug: 'resume-8',
     previewImage: 'https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3016,7 +3016,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9601,
-    name: 'Voltway â€” Smart EV Transit & Logistics',
+    name: 'Voltway — Smart EV Transit & Logistics',
     slug: 'voltway',
     previewImage: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3031,7 +3031,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9602,
-    name: 'Roadline â€” Modern Freight Operations',
+    name: 'Roadline — Modern Freight Operations',
     slug: 'roadline',
     previewImage: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3046,7 +3046,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9603,
-    name: 'Fleetrise â€” Smart Fleet Intelligence & Analytics',
+    name: 'Fleetrise — Smart Fleet Intelligence & Analytics',
     slug: 'fleetrise',
     previewImage: 'https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3061,7 +3061,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9604,
-    name: 'Skyroute â€” Global Air Charter Systems',
+    name: 'Skyroute — Global Air Charter Systems',
     slug: 'skyroute',
     previewImage: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3076,7 +3076,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9605,
-    name: 'Citymove â€” Local Courier & Moving Solutions',
+    name: 'Citymove — Local Courier & Moving Solutions',
     slug: 'citymove',
     previewImage: 'https://images.unsplash.com/photo-1527018601619-a508a2be00cd?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3091,7 +3091,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9606,
-    name: 'Transitflow â€” Regional Supply Chain Management',
+    name: 'Transitflow — Regional Supply Chain Management',
     slug: 'transitflow',
     previewImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3106,7 +3106,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9607,
-    name: 'Cargomax â€” Heavy Cargo & Shipping Enterprise',
+    name: 'Cargomax — Heavy Cargo & Shipping Enterprise',
     slug: 'cargomax',
     previewImage: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3121,7 +3121,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9608,
-    name: 'Rideora â€” Smart Urban Ride-Hailing Network',
+    name: 'Rideora — Smart Urban Ride-Hailing Network',
     slug: 'rideora',
     previewImage: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3136,7 +3136,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9609,
-    name: 'Railnova â€” Automated Rail Transit & Operations',
+    name: 'Railnova — Automated Rail Transit & Operations',
     slug: 'railnova',
     previewImage: 'https://images.unsplash.com/photo-1515165504669-42308707f15c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3151,7 +3151,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 9610,
-    name: 'Oceanlink â€” International Maritime Operations',
+    name: 'Oceanlink — International Maritime Operations',
     slug: 'oceanlink',
     previewImage: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3166,7 +3166,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 133,
-    name: 'Travelverse â€” Interactive Travel & Trip Planner',
+    name: 'Travelverse — Interactive Travel & Trip Planner',
     slug: 'travelverse',
     previewImage: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3179,7 +3179,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 187,
-    name: 'Roamify â€” Immersive Travel & Tour Agency Portal',
+    name: 'Roamify — Immersive Travel & Tour Agency Portal',
     slug: 'roamify-travels',
     previewImage: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3194,7 +3194,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 188,
-    name: 'Wayfarer â€” Immersive Parallax Adventure Guide',
+    name: 'Wayfarer — Immersive Parallax Adventure Guide',
     slug: 'wayfarer-adventure',
     previewImage: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3209,7 +3209,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 189,
-    name: 'Exploria â€” Modern Destination & Trekking Agency Hub',
+    name: 'Exploria — Modern Destination & Trekking Agency Hub',
     slug: 'exploria-trekking',
     previewImage: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3224,7 +3224,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 190,
-    name: 'Wilderness â€” Animated Outdoor Tourism Portal',
+    name: 'Wilderness — Animated Outdoor Tourism Portal',
     slug: 'wilderness-tourism',
     previewImage: 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3239,7 +3239,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 191,
-    name: 'Nomad â€” Interactive Travel Planner & Booking Hub',
+    name: 'Nomad — Interactive Travel Planner & Booking Hub',
     slug: 'nomad-planner',
     previewImage: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3254,7 +3254,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 192,
-    name: 'Wanderlust Tales â€” Elegant Travel & Hiking Blog Platform',
+    name: 'Wanderlust Tales — Elegant Travel & Hiking Blog Platform',
     slug: 'wanderlust-tales',
     previewImage: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3269,7 +3269,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 193,
-    name: 'Aether â€” Minimalist Luxury Travel & Resort Agency',
+    name: 'Aether — Minimalist Luxury Travel & Resort Agency',
     slug: 'aether-resort',
     previewImage: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3284,7 +3284,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 194,
-    name: 'Exploria Pro â€” Premium Hiking & Mountain Guide Showcase',
+    name: 'Exploria Pro — Premium Hiking & Mountain Guide Showcase',
     slug: 'exploria-pro',
     previewImage: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -3299,7 +3299,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 195,
-    name: 'Adventure Parallax â€” Immersive Parallax Outdoor Journal',
+    name: 'Adventure Parallax — Immersive Parallax Outdoor Journal',
     slug: 'adventure-parallax',
     previewImage: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { api } from '../services/api';
+import SafeImage from '../components/SafeImage';
 import { ArrowLeft, Check, Download, ExternalLink, Globe, Layout, ShieldCheck, ShoppingCart } from 'lucide-react';
 
 export default function TemplateDetails({ addToCart, cart }) {
@@ -106,13 +107,12 @@ export default function TemplateDetails({ addToCart, cart }) {
             marginBottom: 35,
             background: 'white'
           }}>
-            <img
+            <SafeImage
               src={template.previewImage}
               alt={template.name}
+              templateSlug={template.slug}
+              categorySlug={template.category?.name}
               style={{ width: '100%', borderRadius: 12, display: 'block', maxHeight: '420px', objectFit: 'cover' }}
-              onError={(e) => {
-                e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-              }}
             />
           </div>
 

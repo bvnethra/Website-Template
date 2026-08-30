@@ -245,7 +245,7 @@ export default function SnapfolioTemplate() {
         <div className="space-y-6">
           <div className="flex items-center gap-3 justify-center">
             {['instagram', 'behance', 'unsplash', 'linkedin-in'].map(social => (
-              <a key={social} href="#" className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors">
+              <a key={social} href={`https://${social.replace('-in', '')}.com`} className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors" target="_blank" rel="noopener noreferrer">
                 <i className={`fa-brands fa-${social} text-lg`}></i>
               </a>
             ))}

@@ -24,14 +24,14 @@ const RAW_PRODUCTS = [
     weight: "189g",
     features: ["Quantum Engine", "Ice Cooling V2", "Titanium Frame", "Neural OS"],
     images: [
-      "/images/nova_x1_front.webp",
-      "/images/nova_x1_rear.webp",
-      "/images/nova_x1_angle.webp",
-      "/images/nova_x1_side.webp",
-      "/images/nova_x1_camera.webp",
-      "/images/nova_x1_lifestyle.webp",
-      "/images/nova_x1_detail.webp",
-      "/images/nova_x1_packaging.webp"
+      "./images/nova_x1_front.webp",
+      "./images/nova_x1_rear.webp",
+      "./images/nova_x1_angle.webp",
+      "./images/nova_x1_side.webp",
+      "./images/nova_x1_camera.webp",
+      "./images/nova_x1_lifestyle.webp",
+      "./images/nova_x1_detail.webp",
+      "./images/nova_x1_packaging.webp"
     ],
     headline: "THE FUTURE FITS IN YOUR HANDS.",
     description: "Engineered with precision-milled titanium and powered by the proprietary Quantum C1 Chip. The NOVA X1 redefines tactile feedback, thermal endurance, and silent computation.",
@@ -63,12 +63,12 @@ const RAW_PRODUCTS = [
     weight: "205g",
     features: ["5x Optical Periscope", "Vapor Chamber Cooling", "Ceramic Shield", "Ray Tracing GPU"],
     images: [
-      "/images/nova_x1_pro_front.webp",
-      "/images/nova_x1_pro_rear.webp",
-      "/images/nova_x1_pro_angle.webp",
-      "/images/nova_x1_pro_camera.webp",
-      "/images/nova_x1_pro_lifestyle.webp",
-      "/images/nova_x1_pro_detail.webp"
+      "./images/nova_x1_pro_front.webp",
+      "./images/nova_x1_pro_rear.webp",
+      "./images/nova_x1_pro_angle.webp",
+      "./images/nova_x1_pro_camera.webp",
+      "./images/nova_x1_pro_lifestyle.webp",
+      "./images/nova_x1_pro_detail.webp"
     ],
     headline: "UNCOMPROMISING CREATIVE POWER.",
     description: "The peak of portable computation. Designed for filmmakers, creators, and power users who demand zero frame drops and studio-grade optics.",
@@ -99,10 +99,10 @@ const RAW_PRODUCTS = [
     weight: "162g",
     features: ["One-Handed Ergonomics", "Graphene Heat Dissipation", "IP68 Water Resistance"],
     images: [
-      "/images/nova_edge_front.webp",
-      "/images/nova_edge_rear.webp",
-      "/images/nova_edge_angle.webp",
-      "/images/nova_edge_detail.webp"
+      "./images/nova_edge_front.webp",
+      "./images/nova_edge_rear.webp",
+      "./images/nova_edge_angle.webp",
+      "./images/nova_edge_detail.webp"
     ],
     headline: "PURE EFFICIENCY IN A COMPACT FRAME.",
     description: "Compact in hand, massive in potential. Featherlight titanium composite shell with all-day endurance.",
@@ -134,14 +134,14 @@ const RAW_PRODUCTS = [
     weight: "1.18 kg",
     features: ["Silent Fanless Design", "Haptic Glass Trackpad", "Spatial Quad Speakers"],
     images: [
-      "/images/nova_book_air_open.webp",
-      "/images/nova_book_air_closed.webp",
-      "/images/nova_book_air_angle.webp",
-      "/images/nova_book_air_keyboard.webp",
-      "/images/nova_book_air_display.webp",
-      "/images/nova_book_air_side.webp",
-      "/images/nova_book_air_ports.webp",
-      "/images/nova_book_air_lifestyle.webp"
+      "./images/nova_book_air_open.webp",
+      "./images/nova_book_air_closed.webp",
+      "./images/nova_book_air_angle.webp",
+      "./images/nova_book_air_keyboard.webp",
+      "./images/nova_book_air_display.webp",
+      "./images/nova_book_air_side.webp",
+      "./images/nova_book_air_ports.webp",
+      "./images/nova_book_air_lifestyle.webp"
     ],
     headline: "WHISPER QUIET. IMMENSELY FAST.",
     description: "Constructed from a single block of recycled magnesium alloy. The NOVA Book Air combines desktop-class performance with 18 hours of continuous battery longevity.",
@@ -172,11 +172,11 @@ const RAW_PRODUCTS = [
     weight: "1.85 kg",
     features: ["Dual Turbo Fan V3", "Thunderbolt 5 Ports", "Mechanical-Feel Keyboard"],
     images: [
-      "/images/nova_book_pro_open.webp",
-      "/images/nova_book_pro_closed.webp",
-      "/images/nova_book_pro_angle.webp",
-      "/images/nova_book_pro_detail.webp",
-      "/images/nova_book_pro_lifestyle.webp"
+      "./images/nova_book_pro_open.webp",
+      "./images/nova_book_pro_closed.webp",
+      "./images/nova_book_pro_angle.webp",
+      "./images/nova_book_pro_detail.webp",
+      "./images/nova_book_pro_lifestyle.webp"
     ],
     headline: "THE ULTIMATE MOBILE WORKSTATION.",
     description: "Designed for intense video rendering, 3D compilation, and machine learning models on the move.",
@@ -208,11 +208,11 @@ const RAW_PRODUCTS = [
     weight: "4.8g per earbud",
     features: ["Active Noise Cancellation 50dB", "Lossless Audio Streaming", "Spatial Head Tracking"],
     images: [
-      "/images/nova_buds_pro_open.webp",
-      "/images/nova_buds_pro_closed.webp",
-      "/images/nova_buds_pro_earbuds.webp",
-      "/images/nova_buds_pro_detail.webp",
-      "/images/nova_buds_pro_lifestyle.webp"
+      "./images/nova_buds_pro_open.webp",
+      "./images/nova_buds_pro_closed.webp",
+      "./images/nova_buds_pro_earbuds.webp",
+      "./images/nova_buds_pro_detail.webp",
+      "./images/nova_buds_pro_lifestyle.webp"
     ],
     headline: "SILENCE THE WORLD. HEAR THE TRUTH.",
     description: "High-resolution custom planarmagnetic drivers paired with active noise cancellation up to 50dB.",
@@ -242,12 +242,12 @@ const RAW_PRODUCTS = [
     weight: "4.2g",
     features: ["Quick Pair", "Touch Gestures", "IP54 Sweatproof"],
     images: [
-      "/images/nova_buds_open.webp",
-      "/images/nova_buds_closed.webp",
-      "/images/nova_buds_earbuds.webp",
-      "/images/nova_buds_angle.webp",
-      "/images/nova_buds_detail.webp",
-      "/images/nova_buds_lifestyle.webp"
+      "./images/nova_buds_open.webp",
+      "./images/nova_buds_closed.webp",
+      "./images/nova_buds_earbuds.webp",
+      "./images/nova_buds_angle.webp",
+      "./images/nova_buds_detail.webp",
+      "./images/nova_buds_lifestyle.webp"
     ],
     headline: "EVERYDAY ESSENTIAL AUDIO.",
     description: "Lightweight, clear acoustics, instant pairing across all your NOVA devices.",
@@ -279,12 +279,12 @@ const RAW_PRODUCTS = [
     weight: "42g",
     features: ["Sapphire Crystal Glass", "ECG Bio Tracker", "Dual-Band GPS", "50m Water Resistance"],
     images: [
-      "/images/nova_watch_x_front.webp",
-      "/images/nova_watch_x_side.webp",
-      "/images/nova_watch_x_rear.webp",
-      "/images/nova_watch_x_detail.webp",
-      "/images/nova_watch_x_lifestyle.webp",
-      "/images/nova_watch_x_charging.webp"
+      "./images/nova_watch_x_front.webp",
+      "./images/nova_watch_x_side.webp",
+      "./images/nova_watch_x_rear.webp",
+      "./images/nova_watch_x_detail.webp",
+      "./images/nova_watch_x_lifestyle.webp",
+      "./images/nova_watch_x_charging.webp"
     ],
     headline: "BIOMETRIC PRECISION ON YOUR WRIST.",
     description: "Crafted with aerospace titanium and sapphire crystal glass. Monitors heart rate variability, blood oxygen, and sleep telemetry in real-time.",
@@ -314,10 +314,10 @@ const RAW_PRODUCTS = [
     weight: "58g",
     features: ["100m Water Resistance", "Emergency Satellite Beacon", "Action Button"],
     images: [
-      "/images/nova_watch_pro_front.webp",
-      "/images/nova_watch_pro_side.webp",
-      "/images/nova_watch_pro_angle.webp",
-      "/images/nova_watch_pro_lifestyle.webp"
+      "./images/nova_watch_pro_front.webp",
+      "./images/nova_watch_pro_side.webp",
+      "./images/nova_watch_pro_angle.webp",
+      "./images/nova_watch_pro_lifestyle.webp"
     ],
     headline: "BUILT FOR THE MOST EXTREME CONDITIONS.",
     description: "Ruggedized Grade 5 titanium housing built to withstand severe shock, underwater diving, and extreme temperature variations.",
@@ -347,12 +347,12 @@ const RAW_PRODUCTS = [
     weight: "520g",
     features: ["NOVA Pen 2 Support", "Quad Studio Speakers", "Multi-Window OS"],
     images: [
-      "/images/nova_tab_12_front.webp",
-      "/images/nova_tab_12_rear.webp",
-      "/images/nova_tab_12_side.webp",
-      "/images/nova_tab_12_angle.webp",
-      "/images/nova_tab_12_detail.webp",
-      "/images/nova_tab_12_lifestyle.webp"
+      "./images/nova_tab_12_front.webp",
+      "./images/nova_tab_12_rear.webp",
+      "./images/nova_tab_12_side.webp",
+      "./images/nova_tab_12_angle.webp",
+      "./images/nova_tab_12_detail.webp",
+      "./images/nova_tab_12_lifestyle.webp"
     ],
     headline: "CANVAS FOR DIGITAL CREATORS.",
     description: "Vibrant high-contrast OLED display with ultra-low latency stylus input for sketching, drafting, and document editing.",
@@ -382,11 +382,11 @@ const RAW_PRODUCTS = [
     weight: "220g",
     features: ["Hall Effect Joysticks", "Mechanical Hair-Triggers", "Programmable Back Paddles"],
     images: [
-      "/images/nova_gamepad_front.webp",
-      "/images/nova_gamepad_rear.webp",
-      "/images/nova_gamepad_side.webp",
-      "/images/nova_gamepad_detail.webp",
-      "/images/nova_gamepad_lifestyle.webp"
+      "./images/nova_gamepad_front.webp",
+      "./images/nova_gamepad_rear.webp",
+      "./images/nova_gamepad_side.webp",
+      "./images/nova_gamepad_detail.webp",
+      "./images/nova_gamepad_lifestyle.webp"
     ],
     headline: "ZERO DRIFT. INSTANT RESPONSE.",
     description: "Equipped with Hall Effect magnetic sensors to completely eliminate stick drift. Features tactile microswitch buttons for competitive gaming.",
@@ -416,11 +416,11 @@ const RAW_PRODUCTS = [
     weight: "8.5 kg",
     features: ["Liquid Loop Cooling", "Toolless Upgrade Chassis", "Wi-Fi 7 Ready"],
     images: [
-      "/images/nova_core_hero.webp",
-      "/images/nova_core_front.webp",
-      "/images/nova_core_back.webp",
-      "/images/nova_core_ports.webp",
-      "/images/nova_core_lifestyle.webp"
+      "./images/nova_core_hero.webp",
+      "./images/nova_core_front.webp",
+      "./images/nova_core_back.webp",
+      "./images/nova_core_ports.webp",
+      "./images/nova_core_lifestyle.webp"
     ],
     headline: "RAW POWER IN AN ARCHITECTURAL CHASSIS.",
     description: "Compact desktop powerhouse with custom liquid cooling loop, engineered to run high-frame-rate 4K games and heavy render workloads effortlessly.",
@@ -450,11 +450,11 @@ const RAW_PRODUCTS = [
     weight: "3.2 kg",
     features: ["Dolby Atmos Support", "Wireless Subwoofer Sync", "HDMI eARC"],
     images: [
-      "/images/nova_sound_front.webp",
-      "/images/nova_sound_side.webp",
-      "/images/nova_sound_angle.webp",
-      "/images/nova_sound_detail.webp",
-      "/images/nova_sound_lifestyle.webp"
+      "./images/nova_sound_front.webp",
+      "./images/nova_sound_side.webp",
+      "./images/nova_sound_angle.webp",
+      "./images/nova_sound_detail.webp",
+      "./images/nova_sound_lifestyle.webp"
     ],
     headline: "CINEMATIC ACOUSTICS FOR MODERN SPACES.",
     description: "Fills your living space with multi-dimensional spatial sound, wrapped in acoustically transparent dark metallic mesh.",
@@ -485,11 +485,11 @@ const RAW_PRODUCTS = [
     weight: "295g",
     features: ["Custom 45mm Drivers", "Memory Foam Ear Cushions", "Ultra-Lossless DAC Mode"],
     images: [
-      "/images/nova_max_front.webp",
-      "/images/nova_max_side.webp",
-      "/images/nova_max_angle.webp",
-      "/images/nova_max_detail.webp",
-      "/images/nova_max_lifestyle.webp"
+      "./images/nova_max_front.webp",
+      "./images/nova_max_side.webp",
+      "./images/nova_max_angle.webp",
+      "./images/nova_max_detail.webp",
+      "./images/nova_max_lifestyle.webp"
     ],
     headline: "STUDIO REFERENCE SOUND. UNPARALLELED COMFORT.",
     description: "Precision-tuned over-ear headphones featuring acoustic mesh headbands and high-fidelity lossless drivers.",
@@ -519,11 +519,11 @@ const RAW_PRODUCTS = [
     weight: "340g",
     features: ["Universal Matter Standard", "Local Offline Processing", "Encrypted Voice Engine"],
     images: [
-      "/images/nova_hub_hero.webp",
-      "/images/nova_hub_front.webp",
-      "/images/nova_hub_side.webp",
-      "/images/nova_hub_ports.webp",
-      "/images/nova_hub_lifestyle.webp"
+      "./images/nova_hub_hero.webp",
+      "./images/nova_hub_front.webp",
+      "./images/nova_hub_side.webp",
+      "./images/nova_hub_ports.webp",
+      "./images/nova_hub_lifestyle.webp"
     ],
     headline: "THE NERVE CENTER OF YOUR CONNECTED HOME.",
     description: "Unifies all your smart lights, climate controls, and security sensors under local zero-latency encryption.",
@@ -553,9 +553,9 @@ const RAW_PRODUCTS = [
     weight: "1.9 kg",
     features: ["2500 ANSI Lumens Laser", "Built-in Speaker by NOVA Sound", "Google TV OS"],
     images: [
-      "/images/nova_beam_hero.webp",
-      "/images/nova_beam_angle.webp",
-      "/images/nova_beam_lifestyle.webp"
+      "./images/nova_beam_hero.webp",
+      "./images/nova_beam_angle.webp",
+      "./images/nova_beam_lifestyle.webp"
     ],
     headline: "A 150-INCH THEATER IN A FLOATING DESIGN.",
     description: "Compact laser projector with instant auto-focus and room calibration. Cinema visuals anywhere.",
@@ -585,9 +585,9 @@ const RAW_PRODUCTS = [
     weight: "185g",
     features: ["HDMI 2.1 4K@120Hz", "10Gbps USB-C", "SD Express Card Reader"],
     images: [
-      "/images/nova_dock_hero.webp",
-      "/images/nova_dock_angle.webp",
-      "/images/nova_dock_detail.webp"
+      "./images/nova_dock_hero.webp",
+      "./images/nova_dock_angle.webp",
+      "./images/nova_dock_detail.webp"
     ],
     headline: "EXPAND YOUR WORKSPACE POTENTIAL.",
     description: "Precision CNC aluminium dock with integrated NVMe SSD enclosure and 100W pass-through charging.",
@@ -617,9 +617,9 @@ const RAW_PRODUCTS = [
     weight: "140g",
     features: ["3 USB-C + 1 USB-A", "Real-Time Power Display", "Thermal Shield V2"],
     images: [
-      "/images/nova_power_hero.webp",
-      "/images/nova_power_angle.webp",
-      "/images/nova_power_detail.webp"
+      "./images/nova_power_hero.webp",
+      "./images/nova_power_angle.webp",
+      "./images/nova_power_detail.webp"
     ],
     headline: "POCKET-SIZED POWER FOR ALL YOUR DEVICES.",
     description: "Compact Gallium Nitride adapter capable of charging a phone, laptop, and watch simultaneously at full speed.",
@@ -649,10 +649,10 @@ const RAW_PRODUCTS = [
     weight: "340g",
     features: ["Eye-Tracking Control", "Spatial Audio", "Hand Gesture Tracking"],
     images: [
-      "/images/nova_vision_hero.webp",
-      "/images/nova_vision_front.webp",
-      "/images/nova_vision_detail.webp",
-      "/images/nova_vision_lifestyle.webp"
+      "./images/nova_vision_hero.webp",
+      "./images/nova_vision_front.webp",
+      "./images/nova_vision_detail.webp",
+      "./images/nova_vision_lifestyle.webp"
     ],
     headline: "SPATIAL COMPUTING REDEFINED.",
     description: "Ultra-lightweight mixed reality headset delivering photorealistic passthrough and seamless spatial multi-tasking.",
@@ -682,9 +682,9 @@ const RAW_PRODUCTS = [
     weight: "7.2 kg",
     features: ["High-Airflow Mesh Front", "Quiet Fan Array", "Modular Expansion"],
     images: [
-      "/images/nova_rig_hero.webp",
-      "/images/nova_rig_side.webp",
-      "/images/nova_rig_detail.webp"
+      "./images/nova_rig_hero.webp",
+      "./images/nova_rig_side.webp",
+      "./images/nova_rig_detail.webp"
     ],
     headline: "HIGH-PERFORMANCE GAMING BASESTATION.",
     description: "Sleek dark steel gaming tower with clean internal cable routing and optimized thermal pressure.",
@@ -714,9 +714,9 @@ const RAW_PRODUCTS = [
     weight: "4.5 kg",
     features: ["HEPA H14 Filter", "Carbon Odor Filtration", "Whisper Quiet 20dB Night Mode"],
     images: [
-      "/images/nova_air_purifier_hero.webp",
-      "/images/nova_air_purifier_detail.webp",
-      "/images/nova_air_purifier_lifestyle.webp"
+      "./images/nova_air_purifier_hero.webp",
+      "./images/nova_air_purifier_detail.webp",
+      "./images/nova_air_purifier_lifestyle.webp"
     ],
     headline: "CLEAN AIR. QUIET PRECISION.",
     description: "Eliminates 99.97% of airborne micro-particles while maintaining silent airflow in your modern space.",
@@ -747,10 +747,10 @@ const RAW_PRODUCTS = [
     weight: "4g",
     features: ["Sleep Recovery Score", "Skin Temperature Sensing", "100m Water Resistance"],
     images: [
-      "/images/nova_ring_hero.webp",
-      "/images/nova_ring_angle.webp",
-      "/images/nova_ring_detail.webp",
-      "/images/nova_ring_lifestyle.webp"
+      "./images/nova_ring_hero.webp",
+      "./images/nova_ring_angle.webp",
+      "./images/nova_ring_detail.webp",
+      "./images/nova_ring_lifestyle.webp"
     ],
     headline: "TELEMETRY DISGUISED AS JEWELRY.",
     description: "Forged from grade 5 titanium, NOVA Ring tracks sleep depth, HRV, and strain with zero screen distraction.",
@@ -780,9 +780,9 @@ const RAW_PRODUCTS = [
     weight: "160g",
     features: ["HDR 10-Bit Color", "AI Auto-Framing", "Dual Studio Microphones"],
     images: [
-      "/images/nova_cam_hero.webp",
-      "/images/nova_cam_angle.webp",
-      "/images/nova_cam_detail.webp"
+      "./images/nova_cam_hero.webp",
+      "./images/nova_cam_angle.webp",
+      "./images/nova_cam_detail.webp"
     ],
     headline: "STUDIO QUALITY BROADCASTING.",
     description: "Large 1/1.8\" sensor webcam delivering DSLR-like background bokeh and crisp low-light clarity.",
@@ -812,9 +812,9 @@ const RAW_PRODUCTS = [
     weight: "110g",
     features: ["Screen Mirror Sync", "Matter Compatible", "Cut-to-Size Modular"],
     images: [
-      "/images/nova_light_strip_hero.webp",
-      "/images/nova_light_strip_detail.webp",
-      "/images/nova_light_strip_lifestyle.webp"
+      "./images/nova_light_strip_hero.webp",
+      "./images/nova_light_strip_detail.webp",
+      "./images/nova_light_strip_lifestyle.webp"
     ],
     headline: "ATMOSPHERIC LIGHTING FOR YOUR LAB.",
     description: "Ultra-dense LED strip with smooth diffusion lens to illuminate monitors, desks, and shelving.",
@@ -844,9 +844,9 @@ const RAW_PRODUCTS = [
     weight: "24g",
     features: ["50 Workout Modes", "Stress Monitoring", "Auto Run Detection"],
     images: [
-      "/images/nova_fit_hero.webp",
-      "/images/nova_fit_angle.webp",
-      "/images/nova_fit_lifestyle.webp"
+      "./images/nova_fit_hero.webp",
+      "./images/nova_fit_angle.webp",
+      "./images/nova_fit_lifestyle.webp"
     ],
     headline: "ESSENTIAL FITNESS INSIGHTS.",
     description: "Slim, lightweight fitness tracker for continuous activity monitoring and recovery metrics.",
@@ -876,9 +876,9 @@ const RAW_PRODUCTS = [
     weight: "1.24 kg",
     features: ["Silent Thermal Design", "Backlit Keyboard", "Dual USB-C Ports"],
     images: [
-      "/images/nova_book_go_open.webp",
-      "/images/nova_book_go_angle.webp",
-      "/images/nova_book_go_detail.webp"
+      "./images/nova_book_go_open.webp",
+      "./images/nova_book_go_angle.webp",
+      "./images/nova_book_go_detail.webp"
     ],
     headline: "EVERYDAY PERFORMANCE. ALL-DAY WEAR.",
     description: "Sleek metal build with ultra-clear Retina display, built to power long study sessions and remote work.",
@@ -908,9 +908,9 @@ const RAW_PRODUCTS = [
     weight: "215g",
     features: ["Hardware Cryptographic Chip", "Dual SIM + eSIM", "Satellite Calling"],
     images: [
-      "/images/nova_ultra_front.webp",
-      "/images/nova_ultra_rear.webp",
-      "/images/nova_ultra_detail.webp"
+      "./images/nova_ultra_front.webp",
+      "./images/nova_ultra_rear.webp",
+      "./images/nova_ultra_detail.webp"
     ],
     headline: "ENTERPRISE SECURITY. ZERO COMPROMISE.",
     description: "Built for executives and security professionals with hardware encryption module and satellite communication capability.",
@@ -940,9 +940,9 @@ const RAW_PRODUCTS = [
     weight: "320g",
     features: ["50mm Beryllium Drivers", "Open-Back Architectural Housing", "Planar Spatial Balance"],
     images: [
-      "/images/nova_studio_hero.webp",
-      "/images/nova_studio_angle.webp",
-      "/images/nova_studio_detail.webp"
+      "./images/nova_studio_hero.webp",
+      "./images/nova_studio_angle.webp",
+      "./images/nova_studio_detail.webp"
     ],
     headline: "OPEN-BACK ACOUSTIC PURITY.",
     description: "Designed for sound engineers and audio purists. Delivers ruler-flat frequency response with zero distortion.",
@@ -972,9 +972,9 @@ const RAW_PRODUCTS = [
     weight: "172g",
     features: ["Thin Bezel", "33W Fast Charge", "Clean Neural OS"],
     images: [
-      "/images/nova_lite_front.webp",
-      "/images/nova_lite_rear.webp",
-      "/images/nova_lite_angle.webp"
+      "./images/nova_lite_front.webp",
+      "./images/nova_lite_rear.webp",
+      "./images/nova_lite_angle.webp"
     ],
     headline: "EVERYTHING YOU NEED. NOTHING EXTRA.",
     description: "Pure dark titanium finish with intuitive Neural OS software, delivering dependable speed every single day.",
@@ -1004,9 +1004,9 @@ const RAW_PRODUCTS = [
     weight: "2.1 kg",
     features: ["Dual Touch Screens", "Detachable Wireless Keyboard", "Digital Canvas Stylus Mode"],
     images: [
-      "/images/nova_book_studio_open.webp",
-      "/images/nova_book_studio_angle.webp",
-      "/images/nova_book_studio_detail.webp"
+      "./images/nova_book_studio_open.webp",
+      "./images/nova_book_studio_angle.webp",
+      "./images/nova_book_studio_detail.webp"
     ],
     headline: "REDEFINING DUAL-SCREEN CREATIVITY.",
     description: "Two breathtaking 4K OLED screens connected by a seamless 360-degree titanium hinge for ultimate multi-app productivity.",

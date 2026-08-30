@@ -1,5 +1,41 @@
 const BASE_URL = 'http://localhost:8080/api';
 
+const getHeaders = () => {
+  const headers = {
+    'Content-Type': 'application/json',
+  };
+  const token = localStorage.getItem('ts_token');
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+  return headers;
+};
+
+const handleResponse = async (response) => {
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(errorText || `Request failed with status ${response.status}`);
+  }
+  const contentType = response.headers.get('content-type');
+  if (contentType && contentType.includes('application/json')) {
+    return await response.json();
+  }
+  return response;
+};
+
+const logUnreachableWarning = (endpoint, err) => {
+  if (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    console.error(
+      `%c[API Connection Error] Production backend API is unreachable at ${endpoint}. Bypassing to mock data for demonstration.`,
+      "color: #7f1d1d; font-size: 14px; font-weight: bold; background-color: #fee2e2; border: 1px solid #f87171; padding: 10px; border-radius: 6px; display: block;"
+    );
+    console.error(err);
+  } else {
+    console.warn(`Connection failed to ${endpoint}, bypassing to mock data:`, err);
+  }
+};
+
+
 const MOCK_CATEGORIES = [
   { id: 1, name: 'Admin', slug: 'admin' },
   { id: 2, name: 'Medical', slug: 'medical' },
@@ -647,13 +683,13 @@ const MOCK_TEMPLATES = [
     previewImage: '/templates/comming-soon/coming-soon-template/orange-cover.jpg',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Coming soon', slug: 'comming-soon' },
     pagesCount: 1,
     downloadsCount: 1200,
     description: 'A new experience of performance, photography and design is about to arrive. Explore the revolutionary Orange 16 with White and Black Titanium craft, O18 Pro chip, slow-motion video, and exploded engineering architecture.',
     bootstrapVersion: 'React / Java Spring Boot',
     version: '1.0',
-    demoUrl: '/templates/comming-soon/comingsoon-1/index.html',
+    demoUrl: '/templates/comming-soon/coming-soon-template/index.html',
   },
   {
     id: 141,
@@ -662,7 +698,7 @@ const MOCK_TEMPLATES = [
     previewImage: '/templates/comming-soon/cm-2/car-cover.jpg',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Coming soon', slug: 'comming-soon' },
     pagesCount: 1,
     downloadsCount: 1850,
     description: 'A production-quality futuristic automotive showroom template. Explore the NOVA X1 electric SUV with interactive 3D WebGL visuals, scroll-driven camera reveals, dynamic paint customizer, performance analytics, and pre-booking capture.',
@@ -677,7 +713,7 @@ const MOCK_TEMPLATES = [
     previewImage: '/templates/comming-soon/cm-3/buliding-jpg/ezgif-frame-001.jpg',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Coming soon', slug: 'comming-soon' },
     pagesCount: 1,
     downloadsCount: 950,
     description: 'Create a modern, premium, cinematic coming soon website for luxury real-estate projects. Features continuous slow-motion building rendering background loops, Lenis smooth scrolling, architectural specification grids, and modular registration capture forms.',
@@ -692,7 +728,7 @@ const MOCK_TEMPLATES = [
     previewImage: '/templates/comming-soon/cm-4/botanical-cover.jpg',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Coming soon', slug: 'comming-soon' },
     pagesCount: 1,
     downloadsCount: 1420,
     description: 'An exquisite collectorâ€™s edition book coming soon website template. Features interactive 9-frame video background engine, live millisecond-precision countdown timer, Linnean author showcase, antiquarian Web Audio synthesizer, botanical plate inspector modal, and responsive laptop/tab/phone preview.',
@@ -707,7 +743,7 @@ const MOCK_TEMPLATES = [
     previewImage: '/templates/comming-soon/cm-5/watch-hero.jpg',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Coming soon', slug: 'comming-soon' },
     pagesCount: 1,
     downloadsCount: 1680,
     description: 'A luxurious 18k solid gold watch launch template. Features weightless floating antigravity 3D physics, interactive 360-degree studio orbit rotation, fluted crown and sunburst guillochÃ© macro lens inspectors, 28,800 vph mechanical escapement audio synthesizer, and VIP allocation reservation capture.',
@@ -722,7 +758,7 @@ const MOCK_TEMPLATES = [
     previewImage: 'https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Coming soon', slug: 'comming-soon' },
     pagesCount: 1,
     downloadsCount: 2450,
     description: 'A beautiful 3D interactive hardware and smartphone coming soon launch platform. Features a responsive 3D interactive model previewer, countdown launch timer, product specifications tray, and subscription capture form.',
@@ -737,7 +773,7 @@ const MOCK_TEMPLATES = [
     previewImage: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Coming soon', slug: 'comming-soon' },
     pagesCount: 1,
     downloadsCount: 1980,
     description: 'A stunning sportswear and footwear launch teaser landing page. Features digital interactive shoe galleries, pre-launch countdown, interactive specs drawer, customer review sliders, and product pre-order capture forms.',
@@ -752,7 +788,7 @@ const MOCK_TEMPLATES = [
     previewImage: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Coming soon', slug: 'comming-soon' },
     pagesCount: 1,
     downloadsCount: 2540,
     description: 'A premium interactive motorcycle showcase and coming soon page. Features a fully controllable 3D motorcycle model canvas, interactive control dock, and reservation modal.',
@@ -767,7 +803,7 @@ const MOCK_TEMPLATES = [
     previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Coming soon', slug: 'comming-soon' },
     pagesCount: 1,
     downloadsCount: 2120,
     description: 'An elegant multipurpose pre-launch landing page. Features modern typography, countdown timer, responsive visual showcases, and newsletter capture forms.',
@@ -782,7 +818,7 @@ const MOCK_TEMPLATES = [
     previewImage: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Coming soon', slug: 'comming-soon' },
     pagesCount: 1,
     downloadsCount: 1890,
     description: 'A premium multi-design landing page template for events coming soon showcases. Features clean grids, responsive visual transitions, and client contact selectors.',
@@ -3377,7 +3413,7 @@ export const api = {
       }
       return data;
     } catch (err) {
-      console.warn("Auth failed, using mock auth:", err);
+      logUnreachableWarning(`${BASE_URL}/auth/login`, err);
       if (email === 'admin@technosprint.com' && password === 'adminpassword') {
         const mockUser = { id: 99, name: 'Admin User', email: 'admin@technosprint.com', role: 'ROLE_ADMIN' };
         localStorage.setItem('ts_token', 'mock-jwt-token');
@@ -3406,7 +3442,7 @@ export const api = {
       });
       return await handleResponse(res);
     } catch (err) {
-      console.warn("Register connection failed, bypassing for mock:", err);
+      logUnreachableWarning(`${BASE_URL}/auth/register`, err);
       return { message: "User registered successfully!" };
     }
   },
@@ -3454,7 +3490,7 @@ export const api = {
       }
       return sortTemplatesNumerically(filtered);
     } catch (err) {
-      console.warn("API templates fetch failed, utilizing mock fallback:", err);
+      logUnreachableWarning(`${BASE_URL}/templates`, err);
       let filtered = [...MOCK_TEMPLATES];
       if (params.category && params.category !== 'all') {
         filtered = filtered.filter(t => t.category.slug === params.category);

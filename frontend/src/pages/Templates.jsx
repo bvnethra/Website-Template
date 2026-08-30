@@ -340,6 +340,7 @@ export default function Templates() {
                 type="text"
                 placeholder="Search templates..."
                 value={searchQuery}
+                aria-label="Search templates"
                 onChange={handleSearchChange}
                 style={{
                   padding: '10px 16px 10px 42px',
@@ -409,7 +410,7 @@ export default function Templates() {
                   <button
                     onClick={() => handleCategorySelect('all')}
                     style={{
-                      padding: '8px 14px',
+                      padding: '12px 16px',
                       borderRadius: '8px',
                       border: selectedCategory === 'all' ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
                       background: selectedCategory === 'all' ? 'var(--primary-color)' : '#f8fafc',
@@ -428,7 +429,7 @@ export default function Templates() {
                       key={cat.id}
                       onClick={() => handleCategorySelect(cat.slug)}
                       style={{
-                        padding: '8px 14px',
+                        padding: '12px 16px',
                         borderRadius: '8px',
                         border: selectedCategory === cat.slug ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
                         background: selectedCategory === cat.slug ? 'var(--primary-color)' : '#f8fafc',
@@ -505,19 +506,11 @@ export default function Templates() {
               return (
                 <div
                   key={template.id}
+                  className="template-card"
                   style={{
                     backgroundColor: '#ffffff',
                     border: `1px solid ${theme.cardBorder}`,
-                    borderRadius: '24px',
-                    padding: '32px',
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-                    gap: '36px',
-                    alignItems: 'center',
-                    boxShadow: '0 4px 20px rgba(15, 23, 42, 0.03)',
-                    width: '100%',
-                    transition: 'all 0.3s ease-in-out',
-                    boxSizing: 'border-box'
+                    borderRadius: '24px'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = theme.cardHoverBorder;

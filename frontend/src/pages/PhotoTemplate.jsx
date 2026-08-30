@@ -335,20 +335,20 @@ export default function PhotoTemplate() {
       {/* Header */}
       <header className="photo-editorial-header">
         <div className="photo-header-logo">
-          <a href="#">Photo</a>
+          <a href="#top">Photo</a>
         </div>
         <nav className="photo-header-nav">
-          <a href="#" className="photo-nav-link active">Home</a>
+          <a href="#top" className="photo-nav-link active">Home</a>
           <a href="#about" className="photo-nav-link">Pages</a>
           <a href="#albums" className="photo-nav-link">Albums</a>
           <a href="#galleries" className="photo-nav-link">Galleries</a>
           <a href="#blog" className="photo-nav-link">Blog</a>
           <a href="#contact" className="photo-nav-link">Contact</a>
-          <a href="#" className="photo-nav-btn-buy">Buy Now</a>
+          <a href="#contact" className="photo-nav-btn-buy">Buy Now</a>
         </nav>
         <div className="photo-header-socials">
           {['facebook-f', 'twitter', 'instagram', 'envelope'].map((icon, i) => (
-            <a key={i} href="#" aria-label={icon}>
+            <a key={i} href="#contact" aria-label={icon}>
               <i className={`fa-brands fa-${icon === 'envelope' ? 'envelope' : icon} text-lg`}></i>
             </a>
           ))}
@@ -572,7 +572,7 @@ export default function PhotoTemplate() {
                     <span className="text-zinc-500 text-[10px] uppercase font-bold tracking-wider">{post.date} — Journal</span>
                     <h3 className="photo-serif text-xl text-white hover:text-indigo-400 cursor-pointer font-semibold leading-snug">{post.title}</h3>
                     <p className="text-zinc-400 text-xs leading-relaxed">{post.desc}</p>
-                    <a href="#" className="text-xs font-semibold text-indigo-400 hover:text-white transition-colors inline-block mt-2">Read Journal →</a>
+                    <a href="#blog" className="text-xs font-semibold text-indigo-400 hover:text-white transition-colors inline-block mt-2">Read Journal →</a>
                   </div>
                 </div>
               ))}
@@ -665,9 +665,9 @@ export default function PhotoTemplate() {
                 </div>
                 <div className="flex flex-col gap-2 pl-6">
                   <span className="font-semibold text-[10px] uppercase text-zinc-500 tracking-wider">Connect</span>
-                  <a href="#" className="text-xs text-zinc-600 hover:text-white">Instagram</a>
-                  <a href="#" className="text-xs text-zinc-600 hover:text-white">Pinterest</a>
-                  <a href="#" className="text-xs text-zinc-600 hover:text-white">Contact</a>
+                  <a href="https://instagram.com" className="text-xs text-zinc-600 hover:text-white" target="_blank" rel="noopener noreferrer">Instagram</a>
+                  <a href="https://pinterest.com" className="text-xs text-zinc-600 hover:text-white" target="_blank" rel="noopener noreferrer">Pinterest</a>
+                  <a href="#contact" className="text-xs text-zinc-600 hover:text-white">Contact</a>
                 </div>
               </div>
             </div>

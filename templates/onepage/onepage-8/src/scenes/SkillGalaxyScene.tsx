@@ -259,8 +259,28 @@ export const SkillGalaxyScene: React.FC<SkillGalaxySceneProps> = ({
     window.addEventListener('resize', handleResize);
 
     // Render Loop
+    let isInView = true;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isInView = entry.isIntersecting;
+        if (isInView) {
+          if (!reqIdRef.current) {
+            clock.start();
+            animate();
+          }
+        } else {
+          if (reqIdRef.current) {
+            cancelAnimationFrame(reqIdRef.current);
+            reqIdRef.current = null;
+          }
+        }
+      });
+    }, { threshold: 0.02 });
+    observer.observe(container);
+
     let clock = new THREE.Clock();
     const animate = () => {
+      if (!isInView) { reqIdRef.current = null; return; }
       reqIdRef.current = requestAnimationFrame(animate);
       const elapsed = clock.getElapsedTime();
 
@@ -283,6 +303,7 @@ export const SkillGalaxyScene: React.FC<SkillGalaxySceneProps> = ({
       domElement.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
       window.removeEventListener('resize', handleResize);
+      observer.disconnect();
       if (reqIdRef.current) cancelAnimationFrame(reqIdRef.current);
       renderer.dispose();
     };

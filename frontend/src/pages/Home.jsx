@@ -223,14 +223,7 @@ export default function Home({ addToCart, cart }) {
   return (
     <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
       {/* Hero Section */}
-      <section style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        alignItems: 'center',
-        gap: 50,
-        padding: '60px 0',
-        minHeight: '520px'
-      }}>
+      <section className="hero-section">
         <div>
           <div style={{
             display: 'inline-flex',
@@ -393,7 +386,7 @@ export default function Home({ addToCart, cart }) {
           <button
             onClick={() => handleCategoryClick('all')}
             style={{
-              padding: '8px 18px',
+              padding: '12px 20px',
               borderRadius: '99px',
               border: activeCategory === 'all' ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
               background: activeCategory === 'all' ? 'var(--primary-color)' : 'white',
@@ -412,7 +405,7 @@ export default function Home({ addToCart, cart }) {
               key={cat.id}
               onClick={() => handleCategoryClick(cat.slug)}
               style={{
-                padding: '8px 18px',
+                padding: '12px 20px',
                 borderRadius: '99px',
                 border: activeCategory === cat.slug ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
                 background: activeCategory === cat.slug ? 'var(--primary-color)' : 'white',
@@ -444,19 +437,11 @@ export default function Home({ addToCart, cart }) {
           return (
             <div
               key={template.id}
+              className="template-card"
               style={{
                 backgroundColor: '#ffffff',
                 border: `1px solid ${theme.cardBorder}`,
-                borderRadius: '24px',
-                padding: '32px',
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-                gap: '36px',
-                alignItems: 'center',
-                boxShadow: '0 4px 20px rgba(15, 23, 42, 0.03)',
-                width: '100%',
-                transition: 'all 0.3s ease-in-out',
-                boxSizing: 'border-box'
+                borderRadius: '24px'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = theme.cardHoverBorder;

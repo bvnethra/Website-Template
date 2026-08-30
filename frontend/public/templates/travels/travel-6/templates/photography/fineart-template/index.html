@@ -31,6 +31,7 @@
         
         window.addEventListener('DOMContentLoaded', () => {
           const currentUrl = new URL(window.location.href);
+          if (!currentUrl.pathname.endsWith('index.html')) { currentUrl.pathname = currentUrl.pathname.replace(/\/?$/, '/index.html'); }
           currentUrl.searchParams.set('iframe', 'true');
           
           const body = document.body;

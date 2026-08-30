@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
-import { ShoppingCart, User as UserIcon, LogOut, Layout, Settings, Compass, HelpCircle, Bell, Heart } from 'lucide-react';
+import { ShoppingCart, User as UserIcon, LogOut, Layout, Settings, Compass, HelpCircle, Bell, Heart, Menu, X } from 'lucide-react';
 import { api } from './services/api';
 import Home from './pages/Home';
 import Templates from './pages/Templates';
@@ -37,8 +37,61 @@ import CreativeMultipagePortfolio from './pages/CreativeMultipagePortfolio';
 function Header({ cartCount, user, onLogout }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  
+  const drawerRef = useRef(null);
+  const toggleButtonRef = useRef(null);
+
+  // Focus trapping for mobile menu
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setMobileMenuOpen(false);
+        toggleButtonRef.current?.focus();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        const focusableElements = drawerRef.current?.querySelectorAll(
+          'a[href], button:not([disabled]), textarea, input, select'
+        );
+        if (!focusableElements || focusableElements.length === 0) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            lastElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            firstElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    
+    // Focus first element inside the drawer
+    const focusable = drawerRef.current?.querySelectorAll('a[href], button, input');
+    if (focusable && focusable.length > 0) {
+      setTimeout(() => {
+        focusable[0].focus();
+      }, 50);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -74,6 +127,7 @@ function Header({ cartCount, user, onLogout }) {
             type="text"
             placeholder="Search templates, e.g. 'SaaS landing page'"
             value={searchQuery}
+            aria-label="Search templates"
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{
               padding: '10px 18px',
@@ -89,7 +143,7 @@ function Header({ cartCount, user, onLogout }) {
         </form>
       </div>
 
-      <nav style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+      <nav className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
         <div className="nav-item-templates">
           <Link to="/templates" style={{
             fontSize: '0.9rem',
@@ -133,12 +187,26 @@ function Header({ cartCount, user, onLogout }) {
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
         {/* Wishlist Heart Icon */}
-        <Link to="/dashboard" style={{ display: 'flex', alignItems: 'center', color: '#64748b', transition: 'var(--transition)' }} title="Wishlist">
+        <Link to="/dashboard" style={{ display: 'flex', alignItems: 'center', color: '#64748b', transition: 'var(--transition)' }} title="Wishlist" aria-label="Wishlist">
           <Heart size={20} />
         </Link>
 
         {/* Notification Bell Icon */}
-        <div style={{ position: 'relative', display: 'flex', alignItems: 'center', color: '#64748b', cursor: 'pointer', transition: 'var(--transition)' }} title="Notifications">
+        <button
+          style={{
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            color: '#64748b',
+            cursor: 'pointer',
+            transition: 'var(--transition)',
+            background: 'none',
+            border: 'none',
+            padding: 0
+          }}
+          title="Notifications"
+          aria-label="Notifications"
+        >
           <Bell size={20} />
           <span style={{
             position: 'absolute',
@@ -150,7 +218,7 @@ function Header({ cartCount, user, onLogout }) {
             borderRadius: '50%',
             border: '1.5px solid #fff'
           }}></span>
-        </div>
+        </button>
 
         {user ? (
           <div style={{ position: 'relative' }}>
@@ -293,7 +361,89 @@ function Header({ cartCount, user, onLogout }) {
             </Link>
           </div>
         )}
+
+        {/* Mobile Navigation Menu Toggle Button */}
+        <button
+          ref={toggleButtonRef}
+          className="mobile-nav-toggle"
+          onClick={() => setMobileMenuOpen(true)}
+          aria-label="Open menu"
+          aria-expanded={mobileMenuOpen}
+        >
+          <Menu size={24} />
+        </button>
       </div>
+
+      {/* Mobile Navigation Drawer */}
+      {mobileMenuOpen && (
+        <div className="mobile-drawer-overlay" onClick={() => setMobileMenuOpen(false)}>
+          <div
+            className="mobile-drawer"
+            onClick={(e) => e.stopPropagation()}
+            ref={drawerRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile Navigation"
+          >
+            <div className="mobile-drawer-header">
+              <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                <img src="/logo.png" alt="TechnoSprint Templates Logo" style={{ height: '28px' }} />
+              </Link>
+              <button
+                className="mobile-drawer-close"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  toggleButtonRef.current?.focus();
+                }}
+                aria-label="Close menu"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            <div className="mobile-nav-links">
+              <Link to="/templates" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                Templates <span>→</span>
+              </Link>
+              <Link to="/templates" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                Premium
+              </Link>
+              <Link to="/templates" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                Support
+              </Link>
+              <Link to="/templates" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                Contact
+              </Link>
+
+              <div className="mobile-menu-categories-title">Categories</div>
+              <div className="mobile-categories-grid">
+                <Link to="/templates/admin" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Admin</Link>
+                <Link to="/templates/medical" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Medical</Link>
+                <Link to="/templates/block-magazine" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Magazine</Link>
+                <Link to="/templates/comming-soon" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Coming Soon</Link>
+                <Link to="/templates/travels" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Travels</Link>
+                <Link to="/templates/hotel" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Hotel</Link>
+                <Link to="/templates/real-estate" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Real Estate</Link>
+                <Link to="/templates/events" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Events</Link>
+                <Link to="/templates/photography" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Photography</Link>
+                <Link to="/templates/construction" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Construction</Link>
+                <Link to="/templates/education" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Education</Link>
+                <Link to="/templates/restaurant" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Restaurant</Link>
+                <Link to="/templates/ecommerce" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Ecommerce</Link>
+                <Link to="/templates/resume" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Resume</Link>
+                <Link to="/templates/buisness" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Business</Link>
+                <Link to="/templates/onepage" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>One Page</Link>
+                <Link to="/templates/landing-page" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Landing Page</Link>
+                <Link to="/templates/cooperate" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Corporate</Link>
+                <Link to="/templates/agency" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Agency</Link>
+                <Link to="/templates/portfolio" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Portfolio</Link>
+                <Link to="/templates/transportation" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Transport</Link>
+                <Link to="/templates/personal" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Personal</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
@@ -330,7 +480,7 @@ function Footer() {
             <li><Link to="/templates?category=admin" style={{ color: '#94a3b8' }}>Admin & Dashboards</Link></li>
             <li><Link to="/templates?category=medical" style={{ color: '#94a3b8' }}>Medical & Health</Link></li>
             <li><Link to="/templates?category=block-magazine" style={{ color: '#94a3b8' }}>Block magazine</Link></li>
-            <li><Link to="/templates?category=comming-soon" style={{ color: '#94a3b8' }}>Comming soon</Link></li>
+            <li><Link to="/templates?category=comming-soon" style={{ color: '#94a3b8' }}>Coming soon</Link></li>
             <li><Link to="/templates?category=travels" style={{ color: '#94a3b8' }}>Travel & Tourism</Link></li>
             <li><Link to="/templates?category=hotel" style={{ color: '#94a3b8' }}>Hotel & Lodging</Link></li>
           </ul>
@@ -431,9 +581,10 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <Header cartCount={cart.length} user={user} onLogout={handleLogout} />
       
-      <main style={{ flex: 1, maxWidth: 1300, width: '100%', margin: '0 auto', padding: '0 20px' }}>
+      <main id="main-content" style={{ flex: 1, maxWidth: 1300, width: '100%', margin: '0 auto', padding: '0 20px' }}>
         <Routes>
           <Route path="/" element={<Home addToCart={addToCart} cart={cart} />} />
           <Route path="/templates" element={<Templates />} />

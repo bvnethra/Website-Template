@@ -346,9 +346,9 @@ export default function WeddingTemplate() {
           <span className="text-[8px] uppercase tracking-[0.3em] text-[#666666]">Timeless Fine Art Photography</span>
         </div>
         <div className="flex items-center justify-center gap-6 text-xs text-[#666666]">
-          <a href="#" className="hover:text-[#1F1F1F] transition-colors">Instagram</a>
-          <a href="#" class="hover:text-[#1F1F1F] transition-colors">Vimeo</a>
-          <a href="#" class="hover:text-[#1F1F1F] transition-colors">Pinterest</a>
+          <a href="https://instagram.com" className="hover:text-[#1F1F1F] transition-colors" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://vimeo.com" className="hover:text-[#1F1F1F] transition-colors" target="_blank" rel="noopener noreferrer">Vimeo</a>
+          <a href="https://pinterest.com" className="hover:text-[#1F1F1F] transition-colors" target="_blank" rel="noopener noreferrer">Pinterest</a>
         </div>
         <p className="text-[10px] text-zinc-400 font-medium">&copy; 2026 Lumière Studios. All rights reserved. Created in partnership with WebTemplates.</p>
       </footer>

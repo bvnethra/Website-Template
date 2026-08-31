@@ -1,13 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- React Router Nested Folder SPA URL Fix -->
-    <script>
-      if (window.location.pathname.endsWith('/index.html')) {
-        const newPath = window.location.pathname.replace(/\/index\.html$/, '/');
-        window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
-      }
-    </script>
+    
 
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,6 +10,133 @@
     <title>NexusPro Enterprise Admin Dashboard</title>
     <script type="module" crossorigin src="/templates/admin/admin-6/assets/index-BMexPerz.js"></script>
     <link rel="stylesheet" crossorigin href="/templates/admin/admin-6/assets/index-BWDPttwD.css">
+  
+    <!-- Client-Side Routing & Mock API Interceptor for Standalone Execution -->
+    <script>
+      (function() {
+        // 1. SPA Subfolder Pathname Normalizer for React Router
+        try {
+          const origPathname = Object.getOwnPropertyDescriptor(Location.prototype, 'pathname');
+          const match = window.location.pathname.match(/^(\/templates\/[^\/]+\/[^\/]+)/);
+          if (match && match[1]) {
+            const templateBase = match[1];
+            Object.defineProperty(window.location, 'pathname', {
+              get: function() {
+                let p = origPathname.get.call(this);
+                if (p.startsWith(templateBase)) {
+                  p = p.slice(templateBase.length);
+                  if (!p.startsWith('/')) p = '/' + p;
+                }
+                return p;
+              },
+              configurable: true
+            });
+          }
+        } catch (e) {
+          console.warn('Pathname override warning:', e);
+        }
+
+        // 2. Mock API Interceptor for offline/standalone execution
+        const mockResponses = {
+          '/analytics/summary': {
+            revenue: { value: 128450, change: 12.5, isIncrease: true, comparison: "vs last month" },
+            orders: { value: 1420, change: 8.2, isIncrease: true, comparison: "vs last month" },
+            customers: { value: 892, change: 5.1, isIncrease: true, comparison: "vs last month" },
+            users: { value: 3410, change: 14.3, isIncrease: true, comparison: "vs last month" }
+          },
+          '/analytics/revenue-chart': [
+            { label: "Jan", revenue: 12000 },
+            { label: "Feb", revenue: 19000 },
+            { label: "Mar", revenue: 15000 },
+            { label: "Apr", revenue: 22000 },
+            { label: "May", revenue: 28000 },
+            { label: "Jun", revenue: 34000 }
+          ],
+          '/analytics/category-distribution': [
+            { name: "Electronics", value: 400 },
+            { name: "Fashion", value: 300 },
+            { name: "Home & Garden", value: 200 },
+            { name: "Sports", value: 150 }
+          ],
+          '/orders': {
+            content: [
+              {
+                id: 1001,
+                customer: { name: "Alex Johnson", profileImage: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150" },
+                orderDate: "2026-08-30T10:00:00Z",
+                amount: 299.99,
+                paymentStatus: "COMPLETED",
+                orderStatus: "DELIVERED"
+              },
+              {
+                id: 1002,
+                customer: { name: "Sarah Miller", profileImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" },
+                orderDate: "2026-08-31T14:30:00Z",
+                amount: 149.50,
+                paymentStatus: "COMPLETED",
+                orderStatus: "PROCESSING"
+              }
+            ],
+            totalPages: 1,
+            totalElements: 2
+          },
+          '/users': [
+            { id: 1, username: 'admin', email: 'admin@technosprint.com', role: 'ROLE_ADMIN', status: 'ACTIVE' }
+          ],
+          '/customers': {
+            content: [
+              { id: 1, name: "Alex Johnson", email: "alex@example.com", status: "ACTIVE", totalOrders: 12, totalSpending: 2450.00 }
+            ]
+          },
+          '/products': {
+            content: [
+              { id: 1, name: "Wireless Headphones", price: 129.99, discount: 10, stock: 45, status: "IN_STOCK", category: { id: 1, name: "Electronics" } }
+            ]
+          }
+        };
+
+        // Intercept XMLHttpRequest (for Axios)
+        const origOpen = XMLHttpRequest.prototype.open;
+        const origSend = XMLHttpRequest.prototype.send;
+        XMLHttpRequest.prototype.open = function(method, url) {
+          this._url = url;
+          return origOpen.apply(this, arguments);
+        };
+        XMLHttpRequest.prototype.send = function(body) {
+          const self = this;
+          for (const [endpoint, data] of Object.entries(mockResponses)) {
+            if (self._url && self._url.includes(endpoint)) {
+              setTimeout(() => {
+                Object.defineProperty(self, 'readyState', { value: 4 });
+                Object.defineProperty(self, 'status', { value: 200 });
+                Object.defineProperty(self, 'responseText', { value: JSON.stringify(data) });
+                Object.defineProperty(self, 'response', { value: JSON.stringify(data) });
+                if (typeof self.onreadystatechange === 'function') self.onreadystatechange();
+                if (typeof self.onload === 'function') self.onload();
+              }, 100);
+              return;
+            }
+          }
+          return origSend.apply(this, arguments);
+        };
+
+        // Intercept fetch
+        const origFetch = window.fetch;
+        window.fetch = function(input, init) {
+          const urlStr = typeof input === 'string' ? input : (input && input.url ? input.url : '');
+          for (const [endpoint, data] of Object.entries(mockResponses)) {
+            if (urlStr.includes(endpoint)) {
+              return Promise.resolve(new Response(JSON.stringify(data), {
+                status: 200,
+                headers: { 'Content-Type': 'application/json' }
+              }));
+            }
+          }
+          return origFetch.apply(this, arguments);
+        };
+      })();
+    </script>
+
   </head>
   <body>
     <div id="root"></div>

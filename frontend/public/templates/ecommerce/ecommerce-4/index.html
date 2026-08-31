@@ -1,8 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- React Router Nested Folder SPA URL Fix -->
+    <script>
+      if (window.location.pathname.endsWith('/index.html')) {
+        const newPath = window.location.pathname.replace(/\/index\.html$/, '/');
+        window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
+      }
+    </script>
+
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NEXORA — Everything. Curated For You.</title>
     <meta name="description" content="Discover technology, fashion, home, beauty, sports, and daily rituals across NEXORA, the premium digital marketplace." />
@@ -23,6 +31,7 @@
         
         window.addEventListener('DOMContentLoaded', () => {
           const currentUrl = new URL(window.location.href);
+          if (!currentUrl.pathname.endsWith('index.html')) { currentUrl.pathname = currentUrl.pathname.replace(/\/?$/, '/index.html'); }
           currentUrl.searchParams.set('iframe', 'true');
           
           const body = document.body;

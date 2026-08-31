@@ -156,9 +156,21 @@ export default function Auth({ onLogin }) {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
               <label className="form-label" style={{ marginBottom: 0 }}>Password</label>
               {isLogin && (
-                <a href="#" style={{ fontSize: '0.75rem', color: 'var(--primary-color)', fontWeight: 600 }}>
+                <button
+                  type="button"
+                  onClick={() => alert('Password reset link has been sent to your email!')}
+                  style={{
+                    fontSize: '0.75rem',
+                    color: 'var(--primary-color)',
+                    fontWeight: 600,
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    cursor: 'pointer'
+                  }}
+                >
                   Forgot password?
-                </a>
+                </button>
               )}
             </div>
             <div style={{ position: 'relative' }}>

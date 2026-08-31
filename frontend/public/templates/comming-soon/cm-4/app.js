@@ -231,28 +231,28 @@ document.addEventListener('DOMContentLoaded', () => {
             subtitle: 'Specimen collected in Berkshire Foothills, 1884',
             desc: 'Renowned for its delicate five-petaled blush corolla, curative rosehips high in botanical oils, and serrated oval leaflets. Hand-engraved copper plate with original watercolor wash.',
             image: 'rosa-canina.jpg',
-            filename: 'Plate_IV_Rosa_Canina_Botanical_Studies_1884.jpg'
+            filename: 'rosa-canina.jpg'
         },
         'lavandula': {
             title: 'Plate VII: Lavandula Angustifolia (English Lavender)',
             subtitle: 'Specimen from Royal Botanical Greenhouse, 1891',
             desc: 'Features slender whorled purple inflorescence spikelets and aromatic linear leaves. Coveted by Victorian herbalists for essential oil distillation and calmative tisanes.',
             image: 'lavandula.jpg',
-            filename: 'Plate_VII_Lavandula_Angustifolia_Botanical_Studies_1891.jpg'
+            filename: 'lavandula.jpg'
         },
         'fagus': {
             title: 'Plate V: Fagus Sylvatica (European Beech Folio)',
             subtitle: 'Arboreal Collection, Black Forest Expedition, 1887',
             desc: 'Depicting autumnal golden venation and pressed foliage specimens. Demonstrates cellular leaf architecture and ancient preservation drying methods.',
             image: 'fagus-sylvatica.jpg',
-            filename: 'Plate_V_Fagus_Sylvatica_Botanical_Studies_1887.jpg'
+            filename: 'fagus-sylvatica.jpg'
         },
         'cover': {
             title: 'Hand-Tooled Calfskin Heritage Binding',
             subtitle: 'Guild of London Bookbinders, Master Exemplar',
             desc: 'Full grain Moroccan leather with 24-karat gold leaf foil stamping, raised spine bands, hand-marbled Italian endpapers, and hand-gilded page deckles.',
             image: 'book.jpg',
-            filename: 'Botanical_Studies_Heritage_Binding_Cover.jpg'
+            filename: 'book-cover.jpg'
         }
     };
 

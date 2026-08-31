@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { api } from '../services/api';
 import { ArrowRight, Star, ArrowUpRight, Flame, Shield, Zap, Sparkles } from 'lucide-react';
+import SafeImage from '../components/SafeImage';
+
 
 const categoryThemes = {
   travels: {
@@ -226,14 +228,7 @@ export default function Home({ addToCart, cart }) {
   return (
     <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
       {/* Hero Section */}
-      <section style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        alignItems: 'center',
-        gap: 50,
-        padding: '60px 0',
-        minHeight: '520px'
-      }}>
+      <section className="hero-section">
         <div>
           <div style={{
             display: 'inline-flex',
@@ -396,7 +391,7 @@ export default function Home({ addToCart, cart }) {
           <button
             onClick={() => handleCategoryClick('all')}
             style={{
-              padding: '8px 18px',
+              padding: '12px 20px',
               borderRadius: '99px',
               border: activeCategory === 'all' ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
               background: activeCategory === 'all' ? 'var(--primary-color)' : 'white',
@@ -415,7 +410,7 @@ export default function Home({ addToCart, cart }) {
               key={cat.id}
               onClick={() => handleCategoryClick(cat.slug)}
               style={{
-                padding: '8px 18px',
+                padding: '12px 20px',
                 borderRadius: '99px',
                 border: activeCategory === cat.slug ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
                 background: activeCategory === cat.slug ? 'var(--primary-color)' : 'white',
@@ -447,19 +442,11 @@ export default function Home({ addToCart, cart }) {
           return (
             <div
               key={template.id}
+              className="template-card"
               style={{
                 backgroundColor: '#ffffff',
                 border: `1px solid ${theme.cardBorder}`,
-                borderRadius: '24px',
-                padding: '32px',
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-                gap: '36px',
-                alignItems: 'center',
-                boxShadow: '0 4px 20px rgba(15, 23, 42, 0.03)',
-                width: '100%',
-                transition: 'all 0.3s ease-in-out',
-                boxSizing: 'border-box'
+                borderRadius: '24px'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = theme.cardHoverBorder;
@@ -503,9 +490,11 @@ export default function Home({ addToCart, cart }) {
                   boxSizing: 'border-box'
                 }}>
                   <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative' }}>
-                    <img 
+                    <SafeImage 
                       src={template.previewImage} 
                       alt={`${template.name} Desktop Preview`} 
+                      templateSlug={template.slug}
+                      categorySlug={categorySlug}
                       style={{ 
                         width: '100%', 
                         height: '112%', 
@@ -513,9 +502,6 @@ export default function Home({ addToCart, cart }) {
                         objectPosition: 'top',
                         marginTop: '-12%' 
                       }} 
-                      onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                      }}
                     />
                   </div>
                   {/* Keyboard Base thin border */}
@@ -557,9 +543,11 @@ export default function Home({ addToCart, cart }) {
                     zIndex: 10
                   }} />
                   <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-                    <img 
+                    <SafeImage 
                       src={template.previewImage} 
                       alt={`${template.name} Tablet Preview`} 
+                      templateSlug={template.slug}
+                      categorySlug={categorySlug}
                       style={{ 
                         width: '100%', 
                         height: '112%', 
@@ -567,9 +555,6 @@ export default function Home({ addToCart, cart }) {
                         objectPosition: 'top',
                         marginTop: '-12%' 
                       }} 
-                      onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                      }}
                     />
                   </div>
                 </div>
@@ -602,9 +587,11 @@ export default function Home({ addToCart, cart }) {
                     zIndex: 10
                   }} />
                   <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-                    <img 
+                    <SafeImage 
                       src={template.previewImage} 
                       alt={`${template.name} Mobile Preview`} 
+                      templateSlug={template.slug}
+                      categorySlug={categorySlug}
                       style={{ 
                         width: '100%', 
                         height: '112%', 
@@ -612,9 +599,6 @@ export default function Home({ addToCart, cart }) {
                         objectPosition: 'top',
                         marginTop: '-12%' 
                       }} 
-                      onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                      }}
                     />
                   </div>
                 </div>

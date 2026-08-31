@@ -925,7 +925,7 @@ function HtFooter() {
             <div className="ht-footer-col-title">Explore</div>
             <ul className="ht-footer-links">
               {['Rooms & Suites', 'Dining', 'Spa & Wellness', 'Pool & Beach', 'Events & Weddings', 'Photo Gallery'].map(l => (
-                <li key={l}><a href="#">{l}</a></li>
+                <li key={l}><a href={`#${l.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}>{l}</a></li>
               ))}
             </ul>
           </div>
@@ -935,7 +935,7 @@ function HtFooter() {
             <div className="ht-footer-col-title">Guest Services</div>
             <ul className="ht-footer-links">
               {['Check Availability', 'Cancellation Policy', 'Transfer Booking', 'Special Requests', 'FAQs', 'Contact Concierge'].map(l => (
-                <li key={l}><a href="#">{l}</a></li>
+                <li key={l}><a href={`#${l.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}>{l}</a></li>
               ))}
             </ul>
           </div>
@@ -973,7 +973,7 @@ function HtFooter() {
           <span>© {new Date().getFullYear()} Aura Resort & Spa. All rights reserved.</span>
           <div style={{ display: 'flex', gap: 24 }}>
             {['Privacy Policy', 'Terms of Service', 'Cookie Preferences'].map(l => (
-              <a key={l} href="#" style={{ color: 'var(--ht-text-muted)', fontSize: '0.78rem' }}>{l}</a>
+              <a key={l} href={`#${l.toLowerCase().replace(/ /g, '-')}`} style={{ color: 'var(--ht-text-muted)', fontSize: '0.78rem' }}>{l}</a>
             ))}
           </div>
         </div>

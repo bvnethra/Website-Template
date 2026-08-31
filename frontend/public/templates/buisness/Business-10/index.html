@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- React Router Nested Folder SPA URL Fix -->
+    <script>
+      if (window.location.pathname.endsWith('/index.html')) {
+        const newPath = window.location.pathname.replace(/\/index\.html$/, '/');
+        window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
+      }
+    </script>
+
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/templates/buisness/Business-10/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +26,7 @@
     <meta property="og:url" content="https://nexusdigital.io/" />
     <meta property="og:title" content="NeXus Digital — Enterprise Technology Solutions" />
     <meta property="og:description" content="We build enterprise-grade software, mobile apps, and cloud infrastructure that powers ambitious businesses to scale without limits." />
-    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:image" content="/templates/buisness/Business-10-preview.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />

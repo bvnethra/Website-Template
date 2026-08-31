@@ -207,9 +207,29 @@ export const HeroScene: React.FC<HeroSceneProps> = ({
     window.addEventListener('resize', handleResize);
 
     // Animation Loop
+    let isInView = true;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isInView = entry.isIntersecting;
+        if (isInView) {
+          if (!reqIdRef.current) {
+            clock.start();
+            animate();
+          }
+        } else {
+          if (reqIdRef.current) {
+            cancelAnimationFrame(reqIdRef.current);
+            reqIdRef.current = null;
+          }
+        }
+      });
+    }, { threshold: 0.02 });
+    observer.observe(container);
+
     let clock = new THREE.Clock();
 
     const animate = () => {
+      if (!isInView) { reqIdRef.current = null; return; }
       reqIdRef.current = requestAnimationFrame(animate);
       const elapsedTime = clock.getElapsedTime();
 
@@ -260,6 +280,7 @@ export const HeroScene: React.FC<HeroSceneProps> = ({
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      observer.disconnect();
       if (reqIdRef.current) cancelAnimationFrame(reqIdRef.current);
       renderer.dispose();
       particleGeo.dispose();

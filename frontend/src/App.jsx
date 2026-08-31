@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
-import { ShoppingCart, User as UserIcon, LogOut, Layout, Settings, Compass, HelpCircle, Bell, Heart, Search, Sun, Moon } from 'lucide-react';
+import { ShoppingCart, User as UserIcon, LogOut, Layout, Settings, Compass, HelpCircle, Bell, Heart, Search, Sun, Moon, Menu, X } from 'lucide-react';
 import { api } from './services/api';
 import Home from './pages/Home';
 import Templates from './pages/Templates';
@@ -38,8 +38,66 @@ import EdTechInteractiveTemplate from './pages/EdTechInteractiveTemplate';
 function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  
+  const drawerRef = useRef(null);
+  const toggleButtonRef = useRef(null);
+
+  // Automatically close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
+
+  // Focus trapping for mobile menu
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setMobileMenuOpen(false);
+        toggleButtonRef.current?.focus();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        const focusableElements = drawerRef.current?.querySelectorAll(
+          'a[href], button:not([disabled]), textarea, input, select'
+        );
+        if (!focusableElements || focusableElements.length === 0) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            lastElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            firstElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    
+    // Focus first element inside the drawer
+    const focusable = drawerRef.current?.querySelectorAll('a[href], button, input');
+    if (focusable && focusable.length > 0) {
+      setTimeout(() => {
+        focusable[0].focus();
+      }, 50);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -49,7 +107,7 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
   };
 
   return (
-    <header style={{
+    <header className="platform-header" style={{
       position: 'sticky',
       top: 0,
       zIndex: 1000,
@@ -79,7 +137,7 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
             <img src="/logo.png" alt="TechnoSprint Templates Logo" style={{ height: '26px' }} />
           </Link>
 
-          <nav style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+          <nav className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
             <div className="nav-item-templates" style={{ position: 'relative' }}>
               <Link to="/templates" style={{
                 fontSize: '0.85rem',
@@ -126,17 +184,18 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
         </div>
 
         {/* Right Side: Search and User Actions */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-          {/* Global Search Bar */}
-          <form onSubmit={handleSearchSubmit} style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          {/* Global Search Bar (Desktop) */}
+          <form onSubmit={handleSearchSubmit} className="desktop-nav" style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
             <input
               type="text"
               placeholder="Search..."
               value={searchQuery}
+              aria-label="Search templates"
               onChange={(e) => setSearchQuery(e.target.value)}
               style={{
                 padding: '8px 36px 8px 16px',
-                width: '180px',
+                width: '160px',
                 borderRadius: '99px',
                 border: '1px solid var(--border-color)',
                 fontSize: '0.85rem',
@@ -146,12 +205,12 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
                 transition: 'all 0.3s ease'
               }}
               onFocus={(e) => {
-                e.target.style.width = '240px';
+                e.target.style.width = '220px';
                 e.target.style.borderColor = 'var(--primary-color)';
                 e.target.style.background = 'var(--header-capsule-bg)';
               }}
               onBlur={(e) => {
-                e.target.style.width = '180px';
+                e.target.style.width = '160px';
                 e.target.style.borderColor = 'var(--border-color)';
                 e.target.style.background = 'var(--bg-primary)';
               }}
@@ -184,17 +243,18 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
               e.currentTarget.style.color = 'var(--text-muted)';
             }}
             title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            aria-label={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
           >
             {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
 
           {/* Wishlist Heart Icon */}
-          <Link to="/dashboard" style={{ display: 'flex', alignItems: 'center', color: 'var(--text-muted)', transition: 'var(--transition)' }} title="Wishlist">
+          <Link to="/dashboard" style={{ display: 'flex', alignItems: 'center', color: 'var(--text-muted)', transition: 'var(--transition)' }} title="Wishlist" aria-label="Wishlist">
             <Heart size={20} />
           </Link>
 
           {/* Notification Bell Icon */}
-          <div style={{ position: 'relative', display: 'flex', alignItems: 'center', color: 'var(--text-muted)', cursor: 'pointer', transition: 'var(--transition)' }} title="Notifications">
+          <div style={{ position: 'relative', display: 'flex', alignItems: 'center', color: 'var(--text-muted)', cursor: 'pointer', transition: 'var(--transition)' }} title="Notifications" aria-label="Notifications">
             <Bell size={20} />
             <span style={{
               position: 'absolute',
@@ -207,7 +267,6 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
               border: '1.5px solid var(--header-capsule-bg)'
             }}></span>
           </div>
-
 
           {user ? (
             <div style={{ position: 'relative' }}>
@@ -226,6 +285,8 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
                   fontWeight: 600,
                   fontSize: '0.9rem'
                 }}
+                aria-expanded={dropdownOpen}
+                aria-label="User menu"
               >
                 <div style={{
                   width: 32,
@@ -240,7 +301,7 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
                 }}>
                   {user.name.charAt(0).toUpperCase()}
                 </div>
-                <span style={{ color: '#334155' }}>{user.name.split(' ')[0]}</span>
+                <span className="desktop-nav" style={{ color: 'var(--text-main)' }}>{user.name.split(' ')[0]}</span>
               </button>
 
               {dropdownOpen && (
@@ -250,14 +311,14 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
                   right: 0,
                   marginTop: 8,
                   width: 220,
-                  background: '#fff',
+                  background: 'var(--header-capsule-bg, #fff)',
                   borderRadius: '12px',
                   boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
-                  border: '1px solid #e2e8f0',
+                  border: '1px solid var(--border-color, #e2e8f0)',
                   padding: '8px 0',
                   zIndex: 100
                 }}>
-                  <div style={{ padding: '8px 16px', borderBottom: '1px solid #e2e8f0', marginBottom: 4 }}>
+                  <div style={{ padding: '8px 16px', borderBottom: '1px solid var(--border-color, #e2e8f0)', marginBottom: 4 }}>
                     <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-main)' }}>{user.name}</div>
                     <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{user.email}</div>
                     <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--primary-color)', marginTop: 4 }}>
@@ -316,7 +377,7 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
                       width: '100%',
                       textAlign: 'left',
                       cursor: 'pointer',
-                      borderTop: '1px solid #e2e8f0',
+                      borderTop: '1px solid var(--border-color, #e2e8f0)',
                       marginTop: 4
                     }}
                   >
@@ -326,11 +387,11 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
               )}
             </div>
           ) : (
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
               <Link to="/auth" style={{
                 fontSize: '0.85rem',
                 fontWeight: 600,
-                color: '#334155',
+                color: 'var(--text-main)',
                 textDecoration: 'none',
                 padding: '8px 14px'
               }}>
@@ -350,29 +411,121 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
               </Link>
             </div>
           )}
+
+          {/* Mobile Navigation Menu Toggle Button */}
+          <button
+            ref={toggleButtonRef}
+            className="mobile-nav-toggle"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <Menu size={24} />
+          </button>
         </div>
       </div>
+
+      {/* Mobile Navigation Drawer */}
+      {mobileMenuOpen && (
+        <div className="mobile-drawer-overlay" onClick={() => setMobileMenuOpen(false)}>
+          <div
+            className="mobile-drawer"
+            onClick={(e) => e.stopPropagation()}
+            ref={drawerRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile Navigation"
+          >
+            <div className="mobile-drawer-header">
+              <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                <img src="/logo.png" alt="TechnoSprint Templates Logo" style={{ height: '28px' }} />
+              </Link>
+              <button
+                className="mobile-drawer-close"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  toggleButtonRef.current?.focus();
+                }}
+                aria-label="Close menu"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            {/* Mobile Search Bar */}
+            <form onSubmit={handleSearchSubmit} style={{ position: 'relative', marginBottom: 24 }}>
+              <input
+                type="text"
+                placeholder="Search templates..."
+                value={searchQuery}
+                aria-label="Search templates mobile"
+                onChange={(e) => setSearchQuery(e.target.value)}
+                style={{
+                  padding: '10px 18px',
+                  width: '100%',
+                  borderRadius: '99px',
+                  border: '1px solid var(--border-color, #e2e8f0)',
+                  fontSize: '0.85rem',
+                  outline: 'none',
+                  background: 'var(--bg-primary, #f8fafc)',
+                  color: 'var(--text-main)',
+                  boxSizing: 'border-box'
+                }}
+              />
+              <button type="submit" style={{ display: 'none' }} />
+            </form>
+
+            <div className="mobile-nav-links">
+              <Link to="/templates" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                Templates <span>→</span>
+              </Link>
+              <Link to="/templates" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                Premium
+              </Link>
+              <Link to="/templates" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                Support
+              </Link>
+              <Link to="/templates" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                Contact
+              </Link>
+
+              <div className="mobile-menu-categories-title">Categories</div>
+              <div className="mobile-categories-grid">
+                <Link to="/templates/admin" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Admin</Link>
+                <Link to="/templates/medical" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Medical</Link>
+                <Link to="/templates/block-magazine" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Magazine</Link>
+                <Link to="/templates/comming-soon" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Coming Soon</Link>
+                <Link to="/templates/travels" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Travels</Link>
+                <Link to="/templates/hotel" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Hotel</Link>
+                <Link to="/templates/real-estate" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Real Estate</Link>
+                <Link to="/templates/events" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Events</Link>
+                <Link to="/templates/photography" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Photography</Link>
+                <Link to="/templates/construction" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Construction</Link>
+                <Link to="/templates/education" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Education</Link>
+                <Link to="/templates/restaurant" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Restaurant</Link>
+                <Link to="/templates/ecommerce" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Ecommerce</Link>
+                <Link to="/templates/resume" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Resume</Link>
+                <Link to="/templates/buisness" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Business</Link>
+                <Link to="/templates/onepage" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>One Page</Link>
+                <Link to="/templates/landing-page" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Landing Page</Link>
+                <Link to="/templates/cooperate" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Corporate</Link>
+                <Link to="/templates/agency" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Agency</Link>
+                <Link to="/templates/portfolio" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Portfolio</Link>
+                <Link to="/templates/transportation" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Transport</Link>
+                <Link to="/templates/personal" className="mobile-category-item" onClick={() => setMobileMenuOpen(false)}>Personal</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
 
 function Footer() {
   return (
-    <footer style={{
-      background: '#0f172a',
-      color: '#cbd5e1',
-      padding: '60px 40px 30px',
-      marginTop: 'auto',
-      borderTop: '1px solid #1e293b'
-    }}>
-      <div style={{
-        maxWidth: 1300,
-        margin: '0 auto',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        gap: 40,
-        marginBottom: 60
-      }}>
+    <footer className="platform-footer">
+      <div className="footer-grid">
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
             <img src="/logo.jpg" alt="Logo" style={{ height: '35px', borderRadius: '4px' }} />
@@ -388,7 +541,7 @@ function Footer() {
             <li><Link to="/templates?category=admin" style={{ color: '#94a3b8' }}>Admin & Dashboards</Link></li>
             <li><Link to="/templates?category=medical" style={{ color: '#94a3b8' }}>Medical & Health</Link></li>
             <li><Link to="/templates?category=block-magazine" style={{ color: '#94a3b8' }}>Block magazine</Link></li>
-            <li><Link to="/templates?category=comming-soon" style={{ color: '#94a3b8' }}>Comming soon</Link></li>
+            <li><Link to="/templates?category=comming-soon" style={{ color: '#94a3b8' }}>Coming soon</Link></li>
             <li><Link to="/templates?category=travels" style={{ color: '#94a3b8' }}>Travel & Tourism</Link></li>
             <li><Link to="/templates?category=hotel" style={{ color: '#94a3b8' }}>Hotel & Lodging</Link></li>
           </ul>
@@ -416,19 +569,7 @@ function Footer() {
         </div>
       </div>
 
-      <div style={{
-        maxWidth: 1300,
-        margin: '0 auto',
-        paddingTop: 30,
-        borderTop: '1px solid #1e293b',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'between',
-        flexWrap: 'wrap',
-        gap: 20,
-        fontSize: '0.8rem',
-        color: '#94a3b8'
-      }}>
+      <div className="footer-bottom">
         <span>&copy; {new Date().getFullYear()} TechnoSprint Templates. All Rights Reserved.</span>
         <span>Built with React + Spring Boot + MySQL + PHP contact forms.</span>
       </div>
@@ -506,9 +647,10 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <Header cartCount={cart.length} user={user} onLogout={handleLogout} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       
-      <main style={{ flex: 1, maxWidth: 1300, width: '100%', margin: '0 auto', padding: '0 20px' }}>
+      <main id="main-content" style={{ flex: 1, maxWidth: 1300, width: '100%', margin: '0 auto', padding: '0 20px' }}>
         <Routes>
           <Route path="/" element={<Home addToCart={addToCart} cart={cart} />} />
           <Route path="/templates" element={<Templates />} />

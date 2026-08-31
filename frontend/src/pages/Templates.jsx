@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams, Link, useNavigate } from 'react-router-dom';
 import { api, extractTemplateNumber } from '../services/api';
 import { Search, SlidersHorizontal } from 'lucide-react';
+import SafeImage from '../components/SafeImage';
+
 
 const categoryThemes = {
   travels: {
@@ -535,8 +537,9 @@ export default function Templates() {
                 return (
                 <div
                   key={template.id}
+                  className="template-card"
                   style={{
-                    backgroundColor: 'var(--header-capsule-bg)',
+                    backgroundColor: 'var(--header-capsule-bg, #ffffff)',
                     border: `1px solid var(--border-color)`,
                     borderRadius: '24px',
                     padding: '32px',
@@ -576,13 +579,12 @@ export default function Templates() {
                         </span>
                       </div>
                       <div className="browser-content">
-                        <img 
+                        <SafeImage 
                           className="browser-preview-img"
                           src={template.previewImage} 
                           alt={`${template.name} Preview`}
-                          onError={(e) => {
-                            e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                          }}
+                          templateSlug={template.slug}
+                          categorySlug={categorySlug}
                         />
                       </div>
                     </div>

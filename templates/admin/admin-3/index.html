@@ -13,29 +13,30 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" crossorigin href="./assets/index-Dzx4pk02.css">
   
-    <!-- Client-Side Routing & Mock API Interceptor for Standalone Execution -->
+    
+
+  
+    <!-- Client-Side Routing & Mock API Interceptor -->
     <script>
       (function() {
-        // 1. SPA Subfolder Pathname Normalizer for React Router
+        // 1. Universal SPA Subfolder Pathname Normalizer on Location.prototype
         try {
-          const origPathname = Object.getOwnPropertyDescriptor(Location.prototype, 'pathname');
-          const match = window.location.pathname.match(/^(\/templates\/[^\/]+\/[^\/]+)/);
-          if (match && match[1]) {
-            const templateBase = match[1];
-            Object.defineProperty(window.location, 'pathname', {
-              get: function() {
-                let p = origPathname.get.call(this);
-                if (p.startsWith(templateBase)) {
-                  p = p.slice(templateBase.length);
-                  if (!p.startsWith('/')) p = '/' + p;
-                }
-                return p;
-              },
-              configurable: true
-            });
-          }
+          const origGetter = Object.getOwnPropertyDescriptor(Location.prototype, 'pathname').get;
+          Object.defineProperty(Location.prototype, 'pathname', {
+            get: function() {
+              let p = origGetter.call(this);
+              const match = p.match(/^(\/templates\/[^\/]+\/[^\/]+)/);
+              if (match && match[1]) {
+                p = p.slice(match[1].length);
+                if (p.endsWith('/index.html')) p = p.slice(0, -11);
+                if (!p || !p.startsWith('/')) p = '/' + p;
+              }
+              return p;
+            },
+            configurable: true
+          });
         } catch (e) {
-          console.warn('Pathname override warning:', e);
+          console.warn('Pathname override error:', e);
         }
 
         // 2. Mock API Interceptor for offline/standalone execution

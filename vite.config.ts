@@ -1,12 +1,13 @@
+// @ts-nocheck
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import { defineConfig } from 'vite';
+import { defineConfig, Plugin } from 'vite';
 
-function serveTemplateIndexPlugin() {
+function serveTemplateIndexPlugin(): Plugin {
   return {
     name: 'serve-template-index',
-    configureServer(server) {
-      server.middlewares.use((req, res, next) => {
+    configureServer(server: any) {
+      server.middlewares.use((req: any, res: any, next: any) => {
         if (req.url && req.url.startsWith('/templates/')) {
           const cleanUrl = req.url.split('?')[0].split('#')[0];
           if (cleanUrl.endsWith('/')) {

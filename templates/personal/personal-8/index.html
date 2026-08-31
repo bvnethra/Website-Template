@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- React Router Nested Folder SPA URL Fix -->
+    <script>
+      if (window.location.pathname.endsWith('/index.html')) {
+        const newPath = window.location.pathname.replace(/\/index\.html$/, '/');
+        window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
+      }
+    </script>
+
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/templates/personal/personal-8/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>frontend</title>
+    <script type="module" crossorigin src="/templates/personal/personal-8/assets/index-DZn2f9O-.js"></script>
+    <link rel="stylesheet" crossorigin href="/templates/personal/personal-8/assets/index-BmFNHNUW.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

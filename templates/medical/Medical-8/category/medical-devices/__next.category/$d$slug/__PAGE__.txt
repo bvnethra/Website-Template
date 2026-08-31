@@ -1,0 +1,32 @@
+1:"$Sreact.fragment"
+2:I[36191,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js","/_next/static/chunks/44g2xwof1khd3.js"],""]
+3:I[81128,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js","/_next/static/chunks/44g2xwof1khd3.js"],"default"]
+4:I[28399,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js","/_next/static/chunks/44g2xwof1khd3.js"],"CategoryPageClient"]
+5:I[38226,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+a:I[38226,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js"],"ViewportBoundary"]
+b:I[38226,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js"],"MetadataBoundary"]
+9:X
+15:X
+15:C
+0:{"buildId":"7BUmkVyZBsml3UpzcsOnk","data":[{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"min-h-screen bg-brand-bg py-6 sm:py-10","children":["$","div",null,{"className":"container-page","children":[["$","div",null,{"className":"flex items-center gap-1.5 text-xs text-navy-400 font-semibold mb-6","children":[["$","$L2",null,{"href":"/","className":"hover:text-mint-600","children":"Home"}],["$","$L3",null,{"iconNode":[["path",{"d":"m9 18 6-6-6-6","key":"mthhwq"}]],"className":"lucide-chevron-right w-3.5 h-3.5 text-navy-300"}],["$","span",null,{"className":"text-navy-700","children":"Medical Devices"}]]}],["$","div",null,{"className":"mb-8 text-left","children":[["$","h1",null,{"className":"text-2xl sm:text-3xl font-extrabold text-navy-900 tracking-tight","children":"Medical Devices"}],["$","p",null,{"className":"text-xs sm:text-sm text-navy-500 mt-1.5 leading-relaxed","children":"Home monitoring and medical equipment"}]]}],["$","$L4",null,{"category":{"id":"cat-14","slug":"medical-devices","name":"Medical Devices","description":"Home monitoring and medical equipment","icon":"medical-devices","color":"bg-slate-50 text-slate-600","productCount":20},"initialProducts":[{"id":"prod-12","slug":"novacare-digital-thermometer","name":"NovaCare Digital Thermometer","genericName":"Digital Thermometer","brand":"NovaCare","category":"medical-devices","shortDescription":"Fast, accurate temperature reading","description":"NovaCare Digital Thermometer provides accurate temperature readings in 60 seconds with a flexible tip for comfort. Features fever alert beep and last-reading memory.","form":"device","packSize":"1 Unit","mrp":199,"salePrice":149,"discount":25,"rating":4.2,"reviewCount":3410,"inStock":true,"requiresPrescription":false,"isVerified":true,"imageUrl":"/api/placeholder/Digital%20Thermometer","images":["/api/placeholder/Digital%20Thermometer","/api/placeholder/Thermometer%20Display"],"manufacturer":"NovaCare Medical Devices Pvt. Ltd.","storage":"Keep in protective case. Replace battery when display dims.","tags":["thermometer","fever","temperature","digital"]},{"id":"prod-13","slug":"novacare-bp-monitor","name":"NovaCare Automatic BP Monitor","genericName":"Blood Pressure Monitor","brand":"NovaCare","category":"medical-devices","shortDescription":"Upper-arm digital BP monitoring","description":"NovaCare Automatic BP Monitor features a large LCD display, irregular heartbeat detection, and stores up to 120 readings for two users. One-touch operation with adjustable cuff.","form":"device","packSize":"1 Unit","mrp":2499,"salePrice":1749,"discount":30,"rating":4.5,"reviewCount":892,"inStock":true,"requiresPrescription":false,"isVerified":true,"imageUrl":"/api/placeholder/BP%20Monitor","images":["/api/placeholder/BP%20Monitor","/api/placeholder/BP%20Monitor%20Display","/api/placeholder/BP%20Monitor%20Cuff"],"manufacturer":"NovaCare Medical Devices Pvt. Ltd.","storage":"Store in a clean, dry place. Remove batteries if not in use for extended periods.","tags":["bp monitor","blood pressure","heart health","hypertension"]}]}]]}]}],[["$","script","script-0",{"src":"/_next/static/chunks/44g2xwof1khd3.js","async":true}]],["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],"isPartial":"$@8","staleTime":"$9","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$La",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Medical Devices Essentials — MediNova Pharmacy | MediNova"}],["$","meta","1",{"name":"description","content":"Home monitoring and medical equipment"}],["$","meta","2",{"name":"keywords","content":"online pharmacy,medicines,healthcare,diagnostics,lab tests,doctor consultation,wellness"}],["$","meta","3",{"name":"robots","content":"index, follow"}],["$","meta","4",{"property":"og:title","content":"Medical Devices | MediNova Pharmacy"}],["$","meta","5",{"property":"og:description","content":"Home monitoring and medical equipment"}],"$Lc","$Ld","$Le","$Lf","$L10"]}]}]}],"$L11"]}],"isPartial":"$@12","staleTime":"$9","varyParams":null},{"rsc":"$L13","isPartial":"$@14","staleTime":"$9","varyParams":"$15"},{"rsc":"$L16","isPartial":"$@17","staleTime":"$9","varyParams":"$15"}],"isUpgradeableISRFallback":false,"a":"$@18","rootVaryParams":null,"needsRuntimeRequest":"$@19"}
+1a:I[17623,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js"],"IconMark"]
+1b:I[58264,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js"],"default"]
+1c:I[7914,["/_next/static/chunks/03nqt3_t6rl26.js","/_next/static/chunks/3z8k8p_099xb3.js"],"default"]
+7:null
+c:["$","meta","6",{"name":"twitter:card","content":"summary"}]
+d:["$","meta","7",{"name":"twitter:title","content":"Medical Devices | MediNova Pharmacy"}]
+e:["$","meta","8",{"name":"twitter:description","content":"Home monitoring and medical equipment"}]
+f:["$","link","9",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}]
+10:["$","$L1a","10",{}]
+11:["$","meta",null,{"name":"next-size-adjust","content":""}]
+13:["$","$1","c",{"children":[null,["$","$L1b",null,{"parallelRouterKey":"children","template":["$","$L1c",null,{}]}]]}]
+16:["$","$1","c",{"children":[null,["$","$L1b",null,{"parallelRouterKey":"children","template":["$","$L1c",null,{}]}]]}]
+19:true
+9:300
+9:C
+18:0
+12:"$undefined"
+14:"$undefined"
+17:"$undefined"
+8:"$undefined"

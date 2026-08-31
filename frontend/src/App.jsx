@@ -107,7 +107,7 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
   };
 
   return (
-    <header className="platform-header" style={{
+    <header style={{
       position: 'sticky',
       top: 0,
       zIndex: 1000,
@@ -183,9 +183,9 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
           </nav>
         </div>
 
-        {/* Right Side: Search and User Actions */}
+        {/* Right Side: Search, Theme Toggle, Wishlist, Notifications, User Menu, Hamburger */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          {/* Global Search Bar (Desktop) */}
+          {/* Global Search Bar */}
           <form onSubmit={handleSearchSubmit} className="desktop-nav" style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
             <input
               type="text"
@@ -195,7 +195,7 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
               onChange={(e) => setSearchQuery(e.target.value)}
               style={{
                 padding: '8px 36px 8px 16px',
-                width: '160px',
+                width: '180px',
                 borderRadius: '99px',
                 border: '1px solid var(--border-color)',
                 fontSize: '0.85rem',
@@ -205,12 +205,12 @@ function Header({ cartCount, user, onLogout, isDarkMode, setIsDarkMode }) {
                 transition: 'all 0.3s ease'
               }}
               onFocus={(e) => {
-                e.target.style.width = '220px';
+                e.target.style.width = '240px';
                 e.target.style.borderColor = 'var(--primary-color)';
                 e.target.style.background = 'var(--header-capsule-bg)';
               }}
               onBlur={(e) => {
-                e.target.style.width = '160px';
+                e.target.style.width = '180px';
                 e.target.style.borderColor = 'var(--border-color)';
                 e.target.style.background = 'var(--bg-primary)';
               }}
@@ -548,40 +548,47 @@ function Footer() {
         </div>
 
         <div>
-          <h4 style={{ color: '#fff', fontSize: '0.95rem', fontWeight: 600, marginBottom: 16 }}>More Categories</h4>
+          <h4 style={{ color: '#fff', fontSize: '0.95rem', fontWeight: 600, marginBottom: 16 }}>Popular Layouts</h4>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.85rem' }}>
-            <li><Link to="/templates?category=events" style={{ color: '#94a3b8' }}>Events & Conferences</Link></li>
-            <li><Link to="/templates/photography" style={{ color: '#94a3b8' }}>Photography Portfolio</Link></li>
-            <li><Link to="/templates?category=construction" style={{ color: '#94a3b8' }}>Construction & Real Estate</Link></li>
+            <li><Link to="/templates?category=restaurant" style={{ color: '#94a3b8' }}>Restaurant & Cafe</Link></li>
+            <li><Link to="/templates?category=ecommerce" style={{ color: '#94a3b8' }}>E-Commerce Store</Link></li>
+            <li><Link to="/templates?category=portfolio" style={{ color: '#94a3b8' }}>Portfolio & Agency</Link></li>
+            <li><Link to="/templates?category=landing-page" style={{ color: '#94a3b8' }}>Landing Pages</Link></li>
             <li><Link to="/templates?category=education" style={{ color: '#94a3b8' }}>Education & LMS</Link></li>
-            <li><Link to="/templates?category=restaurant" style={{ color: '#94a3b8' }}>Restaurant & Food</Link></li>
-            <li><Link to="/templates?category=ecommerce" style={{ color: '#94a3b8' }}>Ecommerce & Retail</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 style={{ color: '#fff', fontSize: '0.95rem', fontWeight: 600, marginBottom: 16 }}>Platform</h4>
+          <h4 style={{ color: '#fff', fontSize: '0.95rem', fontWeight: 600, marginBottom: 16 }}>Company</h4>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.85rem' }}>
-            <li><Link to="/builder" style={{ color: '#94a3b8' }}>Template Builder</Link></li>
-            <li><Link to="/dashboard" style={{ color: '#94a3b8' }}>User Dashboard</Link></li>
-            <li><Link to="/auth" style={{ color: '#94a3b8' }}>Create Account</Link></li>
+            <li><a href="#" style={{ color: '#94a3b8', textDecoration: 'none' }}>About Us</a></li>
+            <li><a href="#" style={{ color: '#94a3b8', textDecoration: 'none' }}>License Terms</a></li>
+            <li><a href="#" style={{ color: '#94a3b8', textDecoration: 'none' }}>Privacy Policy</a></li>
+            <li><a href="#" style={{ color: '#94a3b8', textDecoration: 'none' }}>Support Center</a></li>
           </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <span>&copy; {new Date().getFullYear()} TechnoSprint Templates. All Rights Reserved.</span>
-        <span>Built with React + Spring Boot + MySQL + PHP contact forms.</span>
+        <div>
+          © 2026 TechnoSprint Templates. All rights reserved.
+        </div>
+        <div style={{ display: 'flex', gap: 20 }}>
+          <a href="#" style={{ color: '#94a3b8', textDecoration: 'none' }}>Twitter</a>
+          <a href="#" style={{ color: '#94a3b8', textDecoration: 'none' }}>GitHub</a>
+          <a href="#" style={{ color: '#94a3b8', textDecoration: 'none' }}>Discord</a>
+        </div>
       </div>
     </footer>
   );
 }
 
 function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLogin, handleLogout }) {
-  const location = useLocation();
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    return localStorage.getItem('theme') === 'dark';
+    return localStorage.getItem('theme') === 'dark' || false;
   });
+
+  const location = useLocation();
 
   useEffect(() => {
     if (isDarkMode) {

@@ -206,7 +206,6 @@ export default function Templates() {
   const [templates, setTemplates] = useState([]);
   const [categories, setCategories] = useState([]);
   const [allTemplates, setAllTemplates] = useState([]);
-  const [showFilterPanel, setShowFilterPanel] = useState(false);
   
   // States for filters
   const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
@@ -330,6 +329,7 @@ export default function Templates() {
               type="text"
               placeholder="Search templates..."
               value={searchQuery}
+              aria-label="Search templates"
               onChange={handleSearchChange}
               style={{
                 padding: '10px 16px 10px 42px',
@@ -535,203 +535,203 @@ export default function Templates() {
                 const categorySlug = template.category.slug;
                 const theme = categoryThemes[categorySlug] || categoryThemes.default;
                 return (
-                <div
-                  key={template.id}
-                  className="template-card"
-                  style={{
-                    backgroundColor: 'var(--header-capsule-bg, #ffffff)',
-                    border: `1px solid var(--border-color)`,
-                    borderRadius: '24px',
-                    padding: '32px',
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-                    gap: '36px',
-                    alignItems: 'center',
-                    boxShadow: '0 4px 20px rgba(15, 23, 42, 0.03)',
-                    width: '100%',
-                    transition: 'all 0.3s ease-in-out',
-                    boxSizing: 'border-box'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = theme.cardHoverBorder;
-                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.06)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = theme.cardBorder;
-                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.03)';
-                  }}
-                >
-                  {/* Left Section: Browser Mockup Showcase with Hover Scroll */}
-                  <div style={{
-                    width: '100%',
-                    aspectRatio: '16/11',
-                    boxSizing: 'border-box'
-                  }}>
-                    <div className="browser-mockup">
-                      <div className="browser-topbar">
-                        <div className="browser-dots">
-                          <span className="browser-dot red"></span>
-                          <span className="browser-dot yellow"></span>
-                          <span className="browser-dot green"></span>
+                  <div
+                    key={template.id}
+                    className="template-card"
+                    style={{
+                      backgroundColor: 'var(--header-capsule-bg, #ffffff)',
+                      border: `1px solid var(--border-color)`,
+                      borderRadius: '24px',
+                      padding: '32px',
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+                      gap: '36px',
+                      alignItems: 'center',
+                      boxShadow: '0 4px 20px rgba(15, 23, 42, 0.03)',
+                      width: '100%',
+                      transition: 'all 0.3s ease-in-out',
+                      boxSizing: 'border-box'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = theme.cardHoverBorder;
+                      e.currentTarget.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.06)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = theme.cardBorder;
+                      e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.03)';
+                    }}
+                  >
+                    {/* Left Section: Browser Mockup Showcase with Hover Scroll */}
+                    <div style={{
+                      width: '100%',
+                      aspectRatio: '16/11',
+                      boxSizing: 'border-box'
+                    }}>
+                      <div className="browser-mockup">
+                        <div className="browser-topbar">
+                          <div className="browser-dots">
+                            <span className="browser-dot red"></span>
+                            <span className="browser-dot yellow"></span>
+                            <span className="browser-dot green"></span>
+                          </div>
+                          <span className="browser-address">
+                            preview-{template.category.slug || 'template'}-{template.id}.html
+                          </span>
                         </div>
-                        <span className="browser-address">
-                          preview-{template.category.slug || 'template'}-{template.id}.html
+                        <div className="browser-content">
+                          <SafeImage 
+                            className="browser-preview-img"
+                            src={template.previewImage} 
+                            alt={`${template.name} Preview`}
+                            templateSlug={template.slug}
+                            categorySlug={categorySlug}
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right Section: Information & Action */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                      
+                      {/* 1. Small feature/category badges at the top */}
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                        <span style={{
+                          padding: '4px 10px',
+                          borderRadius: '99px',
+                          backgroundColor: theme.badgeBg,
+                          color: theme.badgeColor,
+                          fontSize: '10px',
+                          fontWeight: '700',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.5px'
+                        }}>
+                          {template.category.name}
+                        </span>
+                        <span style={{
+                          padding: '4px 10px',
+                          borderRadius: '99px',
+                          backgroundColor: template.templateType === 'FREE' ? 'rgba(34, 197, 94, 0.08)' : 'rgba(234, 179, 8, 0.08)',
+                          color: template.templateType === 'FREE' ? '#22c55e' : '#ca8a04',
+                          fontSize: '10px',
+                          fontWeight: '700',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.5px'
+                        }}>
+                          {template.templateType === 'FREE' ? 'Free' : 'Premium'}
                         </span>
                       </div>
-                      <div className="browser-content">
-                        <SafeImage 
-                          className="browser-preview-img"
-                          src={template.previewImage} 
-                          alt={`${template.name} Preview`}
-                          templateSlug={template.slug}
-                          categorySlug={categorySlug}
-                        />
-                      </div>
-                    </div>
-                  </div>
 
-                  {/* Right Section: Information & Action */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-                    
-                    {/* 1. Small feature/category badges at the top */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                      <span style={{
-                        padding: '4px 10px',
-                        borderRadius: '99px',
-                        backgroundColor: theme.badgeBg,
-                        color: theme.badgeColor,
-                        fontSize: '10px',
-                        fontWeight: '700',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px'
-                      }}>
-                        {template.category.name}
-                      </span>
-                      <span style={{
-                        padding: '4px 10px',
-                        borderRadius: '99px',
-                        backgroundColor: template.templateType === 'FREE' ? 'rgba(34, 197, 94, 0.08)' : 'rgba(234, 179, 8, 0.08)',
-                        color: template.templateType === 'FREE' ? '#22c55e' : '#ca8a04',
-                        fontSize: '10px',
-                        fontWeight: '700',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px'
-                      }}>
-                        {template.templateType === 'FREE' ? 'Free' : 'Premium'}
-                      </span>
-                    </div>
-
-                    {/* 2. Template Name & details link */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      <h3 style={{
-                        fontSize: '1.6rem',
-                        fontWeight: '800',
-                        color: '#0f172a',
-                        margin: 0,
-                        fontFamily: 'var(--font-title)',
-                        lineHeight: '1.25'
-                      }}>
-                        <Link 
-                          to={`/templates/${template.slug}`} 
-                          style={{ color: '#0f172a', transition: 'color 0.2s', textDecoration: 'none' }}
-                          onMouseEnter={(e) => e.currentTarget.style.color = theme.accent}
-                          onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
-                        >
-                          {template.name}
-                        </Link>
-                      </h3>
-                      
-                      {/* Updated metadata */}
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#64748b' }}>
-                        <i className="fa-regular fa-clock" style={{ fontSize: '0.85rem' }}></i>
-                        <span>Updated recently</span>
-                      </div>
-
-                      {/* Display Technologies, Page Count and Features */}
-                      <div style={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        gap: '15px',
-                        alignItems: 'center',
-                        marginTop: '6px',
-                        padding: '8px 0',
-                        borderTop: '1px solid #f1f5f9',
-                        borderBottom: '1px solid #f1f5f9'
-                      }}>
-                        <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                          <strong>Pages:</strong> {template.pagesCount || 1}
+                      {/* 2. Template Name & details link */}
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <h3 style={{
+                          fontSize: '1.6rem',
+                          fontWeight: '800',
+                          color: 'var(--text-main, #0f172a)',
+                          margin: 0,
+                          fontFamily: 'var(--font-title)',
+                          lineHeight: '1.25'
+                        }}>
+                          <Link 
+                            to={`/templates/${template.slug}`} 
+                            style={{ color: 'var(--text-main, #0f172a)', transition: 'color 0.2s', textDecoration: 'none' }}
+                            onMouseEnter={(e) => e.currentTarget.style.color = theme.accent}
+                            onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-main, #0f172a)'}
+                          >
+                            {template.name}
+                          </Link>
+                        </h3>
+                        
+                        {/* Updated metadata */}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: 'var(--text-muted, #64748b)' }}>
+                          <i className="fa-regular fa-clock" style={{ fontSize: '0.85rem' }}></i>
+                          <span>Updated recently</span>
                         </div>
-                        <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
-                        <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                          <strong>Stack:</strong> {template.bootstrapVersion}
-                        </div>
-                        <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
-                        <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                          <strong>Downloads:</strong> {template.downloadsCount}
-                        </div>
-                      </div>
 
-                      {/* 4. Short Description of the Template */}
-                      <p style={{
-                        fontSize: '0.88rem',
-                        color: '#64748b',
-                        lineHeight: '1.7',
-                        margin: '6px 0 0 0',
-                        fontWeight: 400
-                      }}>
-                        {template.description}
-                      </p>
-                    </div>
-
-                    {/* 5. Live Demo Button */}
-                    <div style={{ marginTop: '10px' }}>
-                      <a
-                        href={template.demoUrl}
-                        style={{
+                        {/* Display Technologies, Page Count and Features */}
+                        <div style={{
                           display: 'flex',
+                          flexWrap: 'wrap',
+                          gap: '15px',
                           alignItems: 'center',
-                          justifyContent: 'center',
-                          gap: '6px',
-                          padding: '12px 24px',
-                          backgroundColor: theme.accent,
-                          color: 'white',
-                          borderRadius: '99px',
-                          border: 'none',
-                          fontWeight: '600',
-                          fontSize: '0.85rem',
-                          cursor: 'pointer',
-                          transition: 'all 0.2s',
-                          textDecoration: 'none',
-                          boxShadow: `0 4px 12px ${theme.accent}40`
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.filter = 'brightness(1.15)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.filter = 'none';
-                        }}
-                      >
-                        Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
-                      </a>
-                    </div>
+                          marginTop: '6px',
+                          padding: '8px 0',
+                          borderTop: '1px solid var(--border-color, #f1f5f9)',
+                          borderBottom: '1px solid var(--border-color, #f1f5f9)'
+                        }}>
+                          <div style={{ fontSize: '0.8rem', color: 'var(--text-muted, #64748b)' }}>
+                            <strong>Pages:</strong> {template.pagesCount || 1}
+                          </div>
+                          <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
+                          <div style={{ fontSize: '0.8rem', color: 'var(--text-muted, #64748b)' }}>
+                            <strong>Stack:</strong> {template.bootstrapVersion}
+                          </div>
+                          <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
+                          <div style={{ fontSize: '0.8rem', color: 'var(--text-muted, #64748b)' }}>
+                            <strong>Downloads:</strong> {template.downloadsCount}
+                          </div>
+                        </div>
 
+                        {/* 4. Short Description of the Template */}
+                        <p style={{
+                          fontSize: '0.88rem',
+                          color: 'var(--text-muted, #64748b)',
+                          lineHeight: '1.7',
+                          margin: '6px 0 0 0',
+                          fontWeight: 400
+                        }}>
+                          {template.description}
+                        </p>
+                      </div>
+
+                      {/* 5. Live Demo Button */}
+                      <div style={{ marginTop: '10px' }}>
+                        <a
+                          href={template.demoUrl}
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '6px',
+                            padding: '12px 24px',
+                            backgroundColor: theme.accent,
+                            color: 'white',
+                            borderRadius: '99px',
+                            border: 'none',
+                            fontWeight: '600',
+                            fontSize: '0.85rem',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s',
+                            textDecoration: 'none',
+                            boxShadow: `0 4px 12px ${theme.accent}40`
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.filter = 'brightness(1.15)';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.filter = 'none';
+                          }}
+                        >
+                          Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
+                        </a>
+                      </div>
+
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          <div style={{
-            textAlign: 'center',
-            padding: '60px 20px',
-            background: 'white',
-            borderRadius: 16,
-            border: '1px dashed #cbd5e1'
-          }}>
-            <h3 style={{ marginBottom: 10 }}>No Templates Found</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Try modifying your filter settings or search query keywords.</p>
-          </div>
-        )}
+                );
+              })}
+            </div>
+          ) : (
+            <div style={{
+              textAlign: 'center',
+              padding: '60px 20px',
+              background: 'var(--header-capsule-bg, white)',
+              borderRadius: 16,
+              border: '1px dashed var(--border-color, #cbd5e1)'
+            }}>
+              <h3 style={{ marginBottom: 10, color: 'var(--text-main)' }}>No Templates Found</h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Try modifying your filter settings or search query keywords.</p>
+            </div>
+          )}
         </div> {/* closes Right Main Content Area */}
       </div> {/* closes display: flex container */}
     </div>

@@ -937,4 +937,111 @@ a {
   color: var(--primary-color);
 }
 
+/* ─── Responsive Header Styling ─── */
+.platform-header {
+  position: sticky !important;
+  top: 0;
+  z-index: 1000;
+  margin: 0;
+  padding: 12px 20px !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+@media (min-width: 1024px) {
+  .platform-header {
+    padding: 16px 40px !important;
+  }
+}
+
+/* Mobile search bar hidden in main header */
+@media (max-width: 767px) {
+  .platform-header form {
+    display: none !important;
+  }
+}
+
+/* Tablet nav link and search bar compression */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .platform-header {
+    padding: 12px 20px !important;
+  }
+  .platform-header input[type="text"] {
+    width: 200px !important;
+  }
+  .platform-header > div:first-child {
+    gap: 16px !important;
+  }
+  .desktop-nav {
+    gap: 12px !important;
+  }
+  .platform-header > div:last-child {
+    gap: 12px !important;
+  }
+}
+
+/* ─── Responsive Footer Styling ─── */
+.platform-footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 40px 20px 24px;
+  margin-top: auto;
+  border-top: 1px solid #1e293b;
+}
+
+@media (min-width: 768px) {
+  .platform-footer {
+    padding: 60px 40px 30px;
+  }
+}
+
+.footer-grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer-bottom {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
 

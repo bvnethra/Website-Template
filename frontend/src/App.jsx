@@ -44,6 +44,11 @@ function Header({ cartCount, user, onLogout }) {
   const drawerRef = useRef(null);
   const toggleButtonRef = useRef(null);
 
+  // Automatically close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
+
   // Focus trapping for mobile menu
   useEffect(() => {
     if (!mobileMenuOpen) return;
@@ -101,21 +106,7 @@ function Header({ cartCount, user, onLogout }) {
   };
 
   return (
-    <header className="glass-panel" style={{
-      position: 'sticky',
-      top: 0,
-      zIndex: 1000,
-      margin: 0,
-      padding: '16px 40px',
-      borderRadius: 0,
-      borderBottom: '1px solid #e2e8f0',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      background: 'rgba(255, 255, 255, 0.95)',
-      backdropFilter: 'blur(8px)',
-      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.02)'
-    }}>
+    <header className="platform-header glass-panel">
       <div style={{ display: 'flex', alignItems: 'center', gap: 40 }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
           <img src="/logo.png" alt="TechnoSprint Templates Logo" style={{ height: '32px' }} />
@@ -401,6 +392,28 @@ function Header({ cartCount, user, onLogout }) {
               </button>
             </div>
 
+            {/* Mobile Search Bar */}
+            <form onSubmit={handleSearchSubmit} style={{ position: 'relative', marginBottom: 24 }}>
+              <input
+                type="text"
+                placeholder="Search templates..."
+                value={searchQuery}
+                aria-label="Search templates mobile"
+                onChange={(e) => setSearchQuery(e.target.value)}
+                style={{
+                  padding: '10px 18px',
+                  width: '100%',
+                  borderRadius: '99px',
+                  border: '1px solid #e2e8f0',
+                  fontSize: '0.85rem',
+                  outline: 'none',
+                  background: '#f8fafc',
+                  boxSizing: 'border-box'
+                }}
+              />
+              <button type="submit" style={{ display: 'none' }} />
+            </form>
+
             <div className="mobile-nav-links">
               <Link to="/templates" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
                 Templates <span>→</span>
@@ -450,21 +463,8 @@ function Header({ cartCount, user, onLogout }) {
 
 function Footer() {
   return (
-    <footer style={{
-      background: '#0f172a',
-      color: '#cbd5e1',
-      padding: '60px 40px 30px',
-      marginTop: 'auto',
-      borderTop: '1px solid #1e293b'
-    }}>
-      <div style={{
-        maxWidth: 1300,
-        margin: '0 auto',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        gap: 40,
-        marginBottom: 60
-      }}>
+    <footer className="platform-footer">
+      <div className="footer-grid">
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
             <img src="/logo.jpg" alt="Logo" style={{ height: '35px', borderRadius: '4px' }} />
@@ -508,19 +508,7 @@ function Footer() {
         </div>
       </div>
 
-      <div style={{
-        maxWidth: 1300,
-        margin: '0 auto',
-        paddingTop: 30,
-        borderTop: '1px solid #1e293b',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'between',
-        flexWrap: 'wrap',
-        gap: 20,
-        fontSize: '0.8rem',
-        color: '#94a3b8'
-      }}>
+      <div className="footer-bottom">
         <span>&copy; {new Date().getFullYear()} TechnoSprint Templates. All Rights Reserved.</span>
         <span>Built with React + Spring Boot + MySQL + PHP contact forms.</span>
       </div>

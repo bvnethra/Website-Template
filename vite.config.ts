@@ -1,33 +1,36 @@
-import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig} from 'vite';
+import { defineConfig } from 'vite';
+
+function serveTemplateIndexPlugin() {
+  return {
+    name: 'serve-template-index',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (req.url && req.url.startsWith('/templates/')) {
+          const cleanUrl = req.url.split('?')[0].split('#')[0];
+          if (cleanUrl.endsWith('/')) {
+            req.url = req.url.replace(cleanUrl, cleanUrl + 'index.html');
+          } else if (!path.extname(cleanUrl)) {
+            req.url = req.url.replace(cleanUrl, cleanUrl + '/index.html');
+          }
+        }
+        next();
+      });
+    }
+  };
+}
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [serveTemplateIndexPlugin(), react()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
       },
     },
-    build: {
-      rollupOptions: {
-        input: {
-          main: path.resolve(__dirname, 'index.html'),
-          about: path.resolve(__dirname, 'about.html'),
-          menu: path.resolve(__dirname, 'menu.html'),
-          events: path.resolve(__dirname, 'events.html'),
-          gallery: path.resolve(__dirname, 'gallery.html'),
-          contact: path.resolve(__dirname, 'contact.html'),
-        },
-      },
-    },
     server: {
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
-      // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
   };

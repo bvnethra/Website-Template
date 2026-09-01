@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>APEX Admin Pro - CyberMetrics & Platform Suite</title>
+  <title>CYBERGRID - Logistics & Operations Command Center</title>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -18,727 +18,526 @@
 
   <style>
     :root {
-      --bg-body: #0b0f19;
-      --bg-card: rgba(17, 24, 39, 0.85);
-      --bg-sidebar: #0f172a;
-      --border-color: rgba(255, 255, 255, 0.08);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --primary: #3b82f6;
-      --primary-glow: rgba(59, 130, 246, 0.35);
-      --pink: #ec4899;
-      --purple: #8b5cf6;
-      --accent: #10b981;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
-      --radius: 16px;
-    }
-
-    html.light {
-      --bg-body: #f8fafc;
-      --bg-card: rgba(255, 255, 255, 0.95);
-      --bg-sidebar: #ffffff;
-      --border-color: rgba(0, 0, 0, 0.08);
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --primary: #2563eb;
-      --primary-glow: rgba(37, 99, 235, 0.15);
-      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+      --bg-main: #050811;
+      --bg-card: rgba(10, 17, 32, 0.85);
+      --bg-card-hover: rgba(16, 26, 48, 0.95);
+      --border-glow: rgba(56, 189, 248, 0.15);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --cyan: #38bdf8;
+      --pink: #f43f5e;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --purple: #c084fc;
+      --radius: 14px;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Inter', sans-serif;
-      transition: background-color 0.25s ease, border-color 0.25s ease;
+      font-family: 'Space Grotesk', sans-serif;
     }
 
     body {
-      background-color: var(--bg-body);
-      color: var(--text-main);
-      display: flex;
+      background-color: var(--bg-main);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(244, 63, 94, 0.08) 0%, transparent 40%);
+      color: var(--text-primary);
       min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      background-color: var(--bg-sidebar);
-      border-right: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
-      padding: 24px 16px;
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 100;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 0 12px 24px 12px;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .brand-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--primary), var(--pink));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      color: white;
-      box-shadow: 0 0 15px var(--primary-glow);
-    }
-
-    .brand-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #fff, var(--text-muted));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .nav-list {
-      list-style: none;
-      margin-top: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .nav-item a {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 12px 16px;
-      border-radius: 12px;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 14px;
-      transition: all 0.2s ease;
-    }
-
-    .nav-item a:hover, .nav-item.active a {
-      background: linear-gradient(90deg, rgba(59, 130, 246, 0.15), transparent);
-      color: var(--text-main);
-      border-left: 3px solid var(--primary);
-    }
-
-    .nav-item a i {
-      font-size: 16px;
-      width: 20px;
-      text-align: center;
-    }
-
-    .nav-item.active a i {
-      color: var(--primary);
-    }
-
-    /* Main Content */
-    .main-wrapper {
-      margin-left: 260px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-
-    /* Header */
-    header {
-      height: 76px;
+    /* Top Horizontal Bar Navigation */
+    .top-navbar {
+      height: 72px;
       padding: 0 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--border-color);
-      background-color: var(--bg-card);
-      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-glow);
+      background-color: rgba(5, 8, 17, 0.8);
+      backdrop-filter: blur(16px);
       position: sticky;
       top: 0;
-      z-index: 90;
+      z-index: 100;
     }
 
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: 20px;
-      background-color: rgba(16, 185, 129, 0.15);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: var(--accent);
-      box-shadow: 0 0 8px var(--accent);
-    }
-
-    .header-actions {
+    .brand-group {
       display: flex;
       align-items: center;
       gap: 16px;
     }
 
-    .btn-icon {
+    .brand-logo {
       width: 40px;
       height: 40px;
-      border-radius: 50%;
-      border: 1px solid var(--border-color);
-      background-color: transparent;
-      color: var(--text-main);
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--cyan), var(--pink));
       display: flex;
       align-items: center;
       justify-content: center;
+      color: white;
+      font-size: 20px;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    }
+
+    .brand-name {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #fff, var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-pills {
+      display: flex;
+      gap: 8px;
+      background-color: rgba(255, 255, 255, 0.03);
+      padding: 6px;
+      border-radius: 30px;
+      border: 1px solid var(--border-glow);
+    }
+
+    .pill-item {
+      padding: 8px 18px;
+      border-radius: 20px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
       cursor: pointer;
-      position: relative;
+      text-decoration: none;
       transition: all 0.2s ease;
     }
 
-    .btn-icon:hover {
-      background-color: var(--border-color);
-      transform: translateY(-2px);
+    .pill-item.active, .pill-item:hover {
+      background-color: var(--cyan);
+      color: #050811;
     }
 
-    .profile-card {
+    .nav-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 6px 12px;
-      border-radius: 30px;
-      border: 1px solid var(--border-color);
-      cursor: pointer;
+      gap: 16px;
     }
 
-    .profile-avatar {
-      width: 36px;
-      height: 36px;
+    .live-pulse {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background-color: rgba(244, 63, 94, 0.15);
+      border: 1px solid rgba(244, 63, 94, 0.3);
+      color: var(--pink);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--pink);
+      animation: blink 1.2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .user-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 12px;
+      border-radius: 24px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glow);
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       object-fit: cover;
     }
 
-    .profile-info {
-      line-height: 1.2;
-    }
-
-    .profile-name {
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .profile-role {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    /* Container Body */
-    .content-area {
+    /* Main Container Layout */
+    .dashboard-container {
       padding: 32px;
       display: flex;
       flex-direction: column;
       gap: 28px;
+      max-width: 1600px;
+      margin: 0 auto;
+      width: 100%;
     }
 
-    .page-header {
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(244, 63, 94, 0.05));
+      border: 1px solid var(--border-glow);
+      border-radius: var(--radius);
+      padding: 28px 36px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .page-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 26px;
-      font-weight: 800;
+    .hero-title {
+      font-size: 28px;
+      font-weight: 700;
     }
 
-    .page-subtitle {
+    .hero-desc {
+      color: var(--text-secondary);
       font-size: 14px;
-      color: var(--text-muted);
       margin-top: 4px;
     }
 
-    /* Metrics Grid */
-    .metrics-grid {
+    /* 3-Column Grid */
+    .grid-3col {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: 280px 1fr 340px;
+      gap: 24px;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
       gap: 20px;
     }
 
-    .metric-card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--card-shadow);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .metric-header {
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .metric-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+    /* Progress Ring Widget */
+    .target-ring {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 0;
     }
 
-    .metric-icon-wrap {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
+    .percent-number {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--cyan);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .stat-mini {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background-color: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      font-size: 13px;
+    }
+
+    .chart-box {
+      height: 320px;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Feed List */
+    .feed-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .feed-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      background-color: rgba(255, 255, 255, 0.02);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .feed-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      font-size: 14px;
+      flex-shrink: 0;
     }
 
-    .metric-value {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
+    .feed-time {
+      font-size: 11px;
+      color: var(--text-secondary);
+      font-family: 'JetBrains Mono', monospace;
     }
 
-    .metric-footer {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-    }
-
-    .trend-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 4px 8px;
-      border-radius: 20px;
-      font-weight: 700;
-    }
-
-    .trend-up {
-      background-color: rgba(16, 185, 129, 0.15);
-      color: var(--accent);
-    }
-
-    /* Charts Section */
-    .charts-grid {
+    /* Bottom Grid */
+    .grid-2col {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 20px;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
     }
 
-    .chart-card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--card-shadow);
+    .inventory-bar-wrap {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 8px;
     }
 
-    .chart-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .progress-bar-bg {
+      height: 8px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      overflow: hidden;
     }
 
-    .chart-title {
-      font-size: 16px;
-      font-weight: 700;
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 10px;
     }
 
-    .btn-sm {
-      padding: 6px 14px;
+    .btn-action {
+      padding: 8px 16px;
       border-radius: 8px;
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-glow);
       background-color: transparent;
-      color: var(--text-muted);
-      font-size: 12px;
+      color: var(--cyan);
       font-weight: 600;
+      font-size: 13px;
       cursor: pointer;
+      transition: all 0.2s ease;
     }
 
-    .btn-sm.active, .btn-sm:hover {
-      background-color: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-
-    .chart-container {
-      position: relative;
-      height: 300px;
-      width: 100%;
-    }
-
-    /* Table Section */
-    .table-card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--card-shadow);
-    }
-
-    .table-responsive {
-      width: 100%;
-      overflow-x: auto;
-      margin-top: 16px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    th {
-      padding: 12px 16px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    td {
-      padding: 16px;
-      font-size: 14px;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    .user-cell {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .avatar-sm {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-    }
-
-    .status-badge {
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .status-completed {
-      background-color: rgba(16, 185, 129, 0.15);
-      color: var(--accent);
-    }
-
-    .status-processing {
-      background-color: rgba(59, 130, 246, 0.15);
-      color: var(--primary);
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
+    .btn-action:hover {
+      background-color: var(--cyan);
+      color: #050811;
     }
   </style>
 </head>
 <body>
 
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="brand">
-      <div class="brand-icon">
-        <i class="fa-solid fa-bolt"></i>
+  <!-- Top Navbar -->
+  <header class="top-navbar">
+    <div class="brand-group">
+      <div class="brand-logo">
+        <i class="fa-solid fa-cube"></i>
       </div>
-      <div class="brand-title">APEX PRO</div>
+      <div class="brand-name">CYBERGRID</div>
     </div>
 
-    <ul class="nav-list">
-      <li class="nav-item active" data-tab="overview">
-        <a href="#overview"><i class="fa-solid fa-gauge-high"></i> Overview</a>
-      </li>
-      <li class="nav-item" data-tab="analytics">
-        <a href="#analytics"><i class="fa-solid fa-chart-simple"></i> Analytics</a>
-      </li>
-      <li class="nav-item" data-tab="customers">
-        <a href="#customers"><i class="fa-solid fa-user-group"></i> Customers</a>
-      </li>
-      <li class="nav-item" data-tab="orders">
-        <a href="#orders"><i class="fa-solid fa-cart-flatbed"></i> Orders</a>
-      </li>
-      <li class="nav-item" data-tab="finances">
-        <a href="#finances"><i class="fa-solid fa-wallet"></i> Finances</a>
-      </li>
-      <li class="nav-item" data-tab="settings">
-        <a href="#settings"><i class="fa-solid fa-gear"></i> Settings</a>
-      </li>
-    </ul>
-  </aside>
+    <!-- Navigation Pills -->
+    <nav class="nav-pills">
+      <a class="pill-item active" href="#">Control Hub</a>
+      <a class="pill-item" href="#">Logistics Stream</a>
+      <a class="pill-item" href="#">Inventory</a>
+      <a class="pill-item" href="#">Security Logs</a>
+      <a class="pill-item" href="#">Settings</a>
+    </nav>
 
-  <!-- Main Wrapper -->
-  <div class="main-wrapper">
+    <div class="nav-actions">
+      <div class="live-pulse">
+        <span class="pulse-dot"></span> LIVE DATA STREAM
+      </div>
+
+      <div class="user-badge">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" class="user-avatar" />
+        <span style="font-size: 13px; font-weight: 600;">Command Officer</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dashboard Container -->
+  <main class="dashboard-container">
     
-    <!-- Top Header Bar -->
-    <header>
-      <div class="status-pill">
-        <span class="status-dot"></span> System Operational 99.99%
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Logistics & Regional Supply Matrix</h1>
+        <p class="hero-desc">Real-time fulfillment tracking across 14 global distribution nodes.</p>
       </div>
+      <button class="btn-action" style="padding: 12px 24px; font-size: 14px;">
+        <i class="fa-solid fa-satellite-dish"></i> Sync Warehouses
+      </button>
+    </div>
 
-      <div class="header-actions">
-        <button class="btn-icon" id="themeToggle" title="Toggle Theme">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-
-        <button class="btn-icon" title="Notifications">
-          <i class="fa-solid fa-bell"></i>
-        </button>
-
-        <div class="profile-card">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150" alt="Avatar" class="profile-avatar" />
-          <div class="profile-info">
-            <div class="profile-name">Marcus Vance</div>
-            <div class="profile-role">Super Admin</div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Content Body Area -->
-    <main class="content-area">
+    <!-- 3-Column Grid -->
+    <div class="grid-3col">
       
-      <!-- OVERVIEW TAB -->
-      <div class="tab-content active" id="tab-overview">
-        <div class="page-header">
-          <div>
-            <h1 class="page-title">Platform Overview</h1>
-            <p class="page-subtitle">Real-time stats, revenue performance, and customer trends.</p>
-          </div>
-          <button class="btn-sm active" style="padding: 10px 20px; font-size: 14px;">
-            <i class="fa-solid fa-plus"></i> New Campaign
-          </button>
+      <!-- Left Column: Targets & Gauges -->
+      <div class="card">
+        <div class="card-title">
+          <span>Monthly Target</span>
+          <i class="fa-solid fa-bullseye" style="color: var(--cyan);"></i>
         </div>
 
-        <!-- Metric Cards -->
-        <div class="metrics-grid" style="margin-top: 24px;">
-          <div class="metric-card">
-            <div class="metric-header">
-              <span class="metric-title">Gross Revenue</span>
-              <div class="metric-icon-wrap" style="background: rgba(59, 130, 246, 0.15); color: var(--primary);">
-                <i class="fa-solid fa-chart-line"></i>
-              </div>
-            </div>
-            <div class="metric-value">$248,600.00</div>
-            <div class="metric-footer">
-              <span class="trend-badge trend-up"><i class="fa-solid fa-arrow-up"></i> 18.5%</span>
-              <span style="color: var(--text-muted);">vs last month</span>
-            </div>
-          </div>
-
-          <div class="metric-card">
-            <div class="metric-header">
-              <span class="metric-title">Active Subscriptions</span>
-              <div class="metric-icon-wrap" style="background: rgba(236, 72, 153, 0.15); color: var(--pink);">
-                <i class="fa-solid fa-crown"></i>
-              </div>
-            </div>
-            <div class="metric-value">4,120</div>
-            <div class="metric-footer">
-              <span class="trend-badge trend-up"><i class="fa-solid fa-arrow-up"></i> 11.2%</span>
-              <span style="color: var(--text-muted);">vs last month</span>
-            </div>
-          </div>
-
-          <div class="metric-card">
-            <div class="metric-header">
-              <span class="metric-title">Avg Order Value</span>
-              <div class="metric-icon-wrap" style="background: rgba(16, 185, 129, 0.15); color: var(--accent);">
-                <i class="fa-solid fa-receipt"></i>
-              </div>
-            </div>
-            <div class="metric-value">$142.50</div>
-            <div class="metric-footer">
-              <span class="trend-badge trend-up"><i class="fa-solid fa-arrow-up"></i> 5.4%</span>
-              <span style="color: var(--text-muted);">vs last month</span>
-            </div>
-          </div>
-
-          <div class="metric-card">
-            <div class="metric-header">
-              <span class="metric-title">Server Uptime</span>
-              <div class="metric-icon-wrap" style="background: rgba(139, 92, 246, 0.15); color: var(--purple);">
-                <i class="fa-solid fa-server"></i>
-              </div>
-            </div>
-            <div class="metric-value">99.98%</div>
-            <div class="metric-footer">
-              <span class="trend-badge trend-up"><i class="fa-solid fa-check"></i> Optimal</span>
-              <span style="color: var(--text-muted);">Last 30 days</span>
-            </div>
-          </div>
+        <div class="target-ring">
+          <div class="percent-number">86.4%</div>
+          <span style="font-size: 13px; color: var(--text-secondary);">$420,000 / $500,000</span>
         </div>
 
-        <!-- Charts Section -->
-        <div class="charts-grid" style="margin-top: 24px;">
-          <div class="chart-card">
-            <div class="chart-header">
-              <div class="chart-title">Revenue Forecast</div>
-              <div style="display: flex; gap: 8px;">
-                <button class="btn-sm active">Monthly</button>
-                <button class="btn-sm">Quarterly</button>
-              </div>
-            </div>
-            <div class="chart-container">
-              <canvas id="apexRevenueChart"></canvas>
-            </div>
-          </div>
-
-          <div class="chart-card">
-            <div class="chart-header">
-              <div class="chart-title">Traffic Distribution</div>
-            </div>
-            <div class="chart-container">
-              <canvas id="apexTrafficChart"></canvas>
-            </div>
-          </div>
+        <div class="stat-mini">
+          <span style="color: var(--text-secondary);">Dispatched Today</span>
+          <span style="font-weight: 700; color: var(--emerald);">1,842 Units</span>
         </div>
 
-        <!-- Recent Customers Table -->
-        <div class="table-card" style="margin-top: 24px;">
-          <div class="chart-header">
-            <div class="chart-title">Recent Subscriptions</div>
-            <button class="btn-sm active">Export CSV</button>
-          </div>
-
-          <div class="table-responsive">
-            <table>
-              <thead>
-                <tr>
-                  <th>User ID</th>
-                  <th>Customer Name</th>
-                  <th>Plan</th>
-                  <th>Joined Date</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>#USR-501</td>
-                  <td>
-                    <div class="user-cell">
-                      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" class="avatar-sm" />
-                      <span>Elena Rostova</span>
-                    </div>
-                  </td>
-                  <td>Enterprise Pro</td>
-                  <td>Sep 01, 2026</td>
-                  <td><span class="status-badge status-completed">Active</span></td>
-                  <td><button class="btn-sm">Manage</button></td>
-                </tr>
-                <tr>
-                  <td>#USR-502</td>
-                  <td>
-                    <div class="user-cell">
-                      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" class="avatar-sm" />
-                      <span>Liam Hemsworth</span>
-                    </div>
-                  </td>
-                  <td>Business Growth</td>
-                  <td>Sep 01, 2026</td>
-                  <td><span class="status-badge status-processing">Processing</span></td>
-                  <td><button class="btn-sm">Manage</button></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="stat-mini">
+          <span style="color: var(--text-secondary);">In Transit</span>
+          <span style="font-weight: 700; color: var(--amber);">412 Orders</span>
         </div>
 
+        <div class="stat-mini">
+          <span style="color: var(--text-secondary);">Exceptions</span>
+          <span style="font-weight: 700; color: var(--pink);">3 Cases</span>
+        </div>
       </div>
 
-    </main>
-  </div>
+      <!-- Middle Column: Main Area Performance Chart -->
+      <div class="card">
+        <div class="card-title">
+          <span>Fulfillment & Throughput</span>
+          <button class="btn-action">Export Telemetry</button>
+        </div>
+        <div class="chart-box">
+          <canvas id="cyberChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Right Column: Live Feed -->
+      <div class="card">
+        <div class="card-title">
+          <span>Live Operations Feed</span>
+          <i class="fa-solid fa-rss" style="color: var(--pink);"></i>
+        </div>
+
+        <div class="feed-list">
+          <div class="feed-item">
+            <div class="feed-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald);">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <div>
+              <div style="font-size: 13px; font-weight: 600;">Node #04 Dispatched</div>
+              <div class="feed-time">12 seconds ago • Frankfurt Hub</div>
+            </div>
+          </div>
+
+          <div class="feed-item">
+            <div class="feed-icon" style="background: rgba(56, 189, 248, 0.15); color: var(--cyan);">
+              <i class="fa-solid fa-barcode"></i>
+            </div>
+            <div>
+              <div style="font-size: 13px; font-weight: 600;">Scan Verified #8921</div>
+              <div class="feed-time">1 min ago • Tokyo Depot</div>
+            </div>
+          </div>
+
+          <div class="feed-item">
+            <div class="feed-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--amber);">
+              <i class="fa-solid fa-box-archive"></i>
+            </div>
+            <div>
+              <div style="font-size: 13px; font-weight: 600;">Stock Warning: Sector B</div>
+              <div class="feed-time">4 mins ago • London Depot</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom 2-Column Grid -->
+    <div class="grid-2col">
+      
+      <!-- Warehouse Capacity -->
+      <div class="card">
+        <div class="card-title">Warehouse Capacity Overview</div>
+        
+        <div class="inventory-bar-wrap">
+          <div style="display: flex; justify-content: space-between; font-size: 13px;">
+            <span>North America Hub (Chicago)</span>
+            <span style="font-weight: 700; color: var(--cyan);">84% Capacity</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: 84%; background-color: var(--cyan);"></div>
+          </div>
+        </div>
+
+        <div class="inventory-bar-wrap">
+          <div style="display: flex; justify-content: space-between; font-size: 13px;">
+            <span>European Central (Frankfurt)</span>
+            <span style="font-weight: 700; color: var(--emerald);">62% Capacity</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: 62%; background-color: var(--emerald);"></div>
+          </div>
+        </div>
+
+        <div class="inventory-bar-wrap">
+          <div style="display: flex; justify-content: space-between; font-size: 13px;">
+            <span>Asia Pacific (Singapore)</span>
+            <span style="font-weight: 700; color: var(--pink);">92% Capacity (High)</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: 92%; background-color: var(--pink);"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regional Distribution Chart -->
+      <div class="card">
+        <div class="card-title">Global Dispatch Distribution</div>
+        <div class="chart-box" style="height: 180px;">
+          <canvas id="regionChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
 
   <script>
-    // Tab Switching
-    const navItems = document.querySelectorAll('.nav-item');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    navItems.forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.preventDefault();
-        const tab = item.getAttribute('data-tab');
-
-        navItems.forEach(i => i.classList.remove('active'));
-        tabContents.forEach(c => c.classList.remove('active'));
-
-        item.classList.add('active');
-        const targetTab = document.getElementById('tab-' + tab);
-        if (targetTab) targetTab.classList.add('active');
-      });
-    });
-
-    // Theme Toggle
-    const themeBtn = document.getElementById('themeToggle');
-    themeBtn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('light');
-      const icon = themeBtn.querySelector('i');
-      if (document.documentElement.classList.contains('light')) {
-        icon.className = 'fa-solid fa-sun';
-      } else {
-        icon.className = 'fa-solid fa-moon';
-      }
-    });
-
-    // Charts Initialization
     window.addEventListener('load', () => {
-      // Revenue Chart
-      const ctxRev = document.getElementById('apexRevenueChart').getContext('2d');
-      new Chart(ctxRev, {
-        type: 'bar',
+      // Main Area Chart
+      const ctx1 = document.getElementById('cyberChart').getContext('2d');
+      new Chart(ctx1, {
+        type: 'line',
         data: {
-          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+          labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00', '24:00'],
           datasets: [{
-            label: 'Revenue ($)',
-            data: [22000, 29000, 25000, 34000, 42000, 38000, 52000, 58000, 64000],
-            backgroundColor: '#3b82f6',
-            borderRadius: 8
+            label: 'Packages Shipped',
+            data: [1200, 1900, 3400, 4800, 4200, 5600, 6100],
+            borderColor: '#38bdf8',
+            backgroundColor: 'rgba(56, 189, 248, 0.15)',
+            fill: true,
+            tension: 0.4
           }, {
-            label: 'Expenses ($)',
-            data: [10000, 14000, 12000, 15000, 18000, 16000, 21000, 23000, 25000],
-            backgroundColor: '#ec4899',
-            borderRadius: 8
+            label: 'Returns Processed',
+            data: [120, 190, 240, 310, 280, 350, 400],
+            borderColor: '#f43f5e',
+            backgroundColor: 'rgba(244, 63, 94, 0.15)',
+            fill: true,
+            tension: 0.4
           }]
         },
         options: {
@@ -752,21 +551,26 @@
         }
       });
 
-      // Traffic Doughnut Chart
-      const ctxTraffic = document.getElementById('apexTrafficChart').getContext('2d');
-      new Chart(ctxTraffic, {
-        type: 'doughnut',
+      // Regional Bar Chart
+      const ctx2 = document.getElementById('regionChart').getContext('2d');
+      new Chart(ctx2, {
+        type: 'bar',
         data: {
-          labels: ['Direct', 'Organic Search', 'Social Media', 'Referrals'],
+          labels: ['North America', 'Europe', 'Asia Pacific', 'Latin America', 'Middle East'],
           datasets: [{
-            data: [45, 30, 15, 10],
-            backgroundColor: ['#3b82f6', '#ec4899', '#8b5cf6', '#10b981']
+            data: [4200, 3100, 2800, 1400, 900],
+            backgroundColor: ['#38bdf8', '#10b981', '#f43f5e', '#f59e0b', '#c084fc'],
+            borderRadius: 6
           }]
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8' } } }
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { color: 'rgba(255, 255, 255, 0.05)' } },
+            y: { grid: { color: 'rgba(255, 255, 255, 0.05)' } }
+          }
         }
       });
     });

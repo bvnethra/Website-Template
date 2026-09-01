@@ -12,13 +12,11 @@ function serveTemplateIndexPlugin(): Plugin {
         if (req.url && req.url.startsWith('/templates/')) {
           const cleanUrl = req.url.split('?')[0].split('#')[0];
           
-          // Check if cleanUrl is a folder in workspace
           const relativePath = cleanUrl.startsWith('/') ? cleanUrl.slice(1) : cleanUrl;
           const fullPath = path.join(__dirname, relativePath);
           
           if (fs.existsSync(fullPath) && fs.statSync(fullPath).isDirectory()) {
             if (!cleanUrl.endsWith('/')) {
-              // Redirect to url with trailing slash so browser resolves relative assets correctly
               const queryAndHash = req.url.slice(cleanUrl.length);
               res.writeHead(301, { Location: cleanUrl + '/' + queryAndHash });
               return res.end();

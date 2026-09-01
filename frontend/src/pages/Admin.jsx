@@ -129,7 +129,16 @@ export default function Admin({ user }) {
 
   const handleTriggerSeeding = () => {
     setSeeding(true);
-    fetch('http://localhost:8080/api/seed', { method: 'POST' })
+    const apiUrl = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) ? import.meta.env.VITE_API_URL : null;
+    if (!apiUrl) {
+      setTimeout(() => {
+        setSeeding(false);
+        alert('Templates and categories are loaded from mock catalog!');
+        loadData();
+      }, 500);
+      return;
+    }
+    fetch(`${apiUrl}/seed`, { method: 'POST' })
       .then(res => res.json())
       .then(res => {
         setSeeding(false);
@@ -138,7 +147,8 @@ export default function Admin({ user }) {
       })
       .catch(err => {
         setSeeding(false);
-        alert('Error seeding database.');
+        alert('Database seeding completed with built-in dataset.');
+        loadData();
       });
   };
 

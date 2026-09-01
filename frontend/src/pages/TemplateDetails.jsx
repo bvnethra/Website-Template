@@ -277,13 +277,13 @@ export default function TemplateDetails({ addToCart, cart }) {
 
             {/* Actions */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 30 }}>
-              <a
-                href={template.demoUrl}
+              <Link
+                to={`/preview?url=${encodeURIComponent(template.demoUrl)}&name=${encodeURIComponent(template.name)}&slug=${template.slug}&category=${template.category?.slug || ''}`}
                 className="btn btn-primary"
                 style={{ width: '100%', padding: '12px 0', justifyContent: 'center' }}
               >
                 <Globe size={18} /> Live Interactive Demo <ExternalLink size={14} />
-              </a>
+              </Link>
             </div>
 
             {/* Info Table */}

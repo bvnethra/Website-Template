@@ -432,44 +432,43 @@ export default function Home({ addToCart, cart }) {
         margin: '30px auto 60px auto'
       }}>
         {filteredTemplates.map(template => {
-          const categorySlug = template.category.slug;
-          const theme = categoryThemes[categorySlug] || categoryThemes.default;
+          const categorySlug = template.category?.slug || 'default';
+          const templateTags = Array.isArray(template.tags) && template.tags.length > 0
+            ? template.tags
+            : [
+                template.category?.name || 'Modern',
+                template.templateType === 'FREE' ? 'Free Download' : 'Premium Template',
+                template.bootstrapVersion || 'HTML5 / CSS3'
+              ];
+
           return (
             <div
               key={template.id}
-              className="template-card"
               style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gap: '30px',
                 backgroundColor: '#ffffff',
-                border: `1px solid ${theme.cardBorder}`,
-                borderRadius: '24px'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = theme.cardHoverBorder;
-                e.currentTarget.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.06)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = theme.cardBorder;
-                e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.03)';
+                borderRadius: '20px',
+                border: '1px solid #e2e8f0',
+                padding: '24px',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+                transition: 'transform 0.2s, box-shadow 0.2s'
               }}
             >
-              {/* Left Section: Responsive Multi-Device CSS Mockup */}
+              {/* Left Column: Device Mockups Container */}
               <div style={{
                 position: 'relative',
                 width: '100%',
-                aspectRatio: '16/11',
+                minHeight: '260px',
+                backgroundColor: '#f8fafc',
+                borderRadius: '16px',
+                overflow: 'hidden',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: theme.background,
-                borderRadius: '16px',
-                overflow: 'hidden',
-                border: '1px solid #f1f5f9',
-                boxSizing: 'border-box',
-                padding: '24px'
+                padding: '20px'
               }}>
-                {/* Category-specific animation overlay */}
-                {renderCategoryAnimation(categorySlug)}
-
                 {/* 1. Laptop Mockup Frame */}
                 <div style={{
                   position: 'relative',
@@ -484,7 +483,7 @@ export default function Home({ addToCart, cart }) {
                   transform: 'translateX(-8%)',
                   boxSizing: 'border-box'
                 }}>
-                  <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative' }}>
+                  <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
                     <SafeImage 
                       src={template.previewImage} 
                       alt={`${template.name} Desktop Preview`} 
@@ -492,25 +491,16 @@ export default function Home({ addToCart, cart }) {
                       categorySlug={categorySlug}
                       style={{ 
                         width: '100%', 
-                        height: '112%', 
+                        height: '100%', 
                         objectFit: 'cover', 
-                        objectPosition: 'top',
-                        marginTop: '-12%' 
+                        objectPosition: 'top'
                       }} 
                     />
                   </div>
-                  {/* Keyboard Base thin border */}
-                  <div style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    height: '3px',
-                    background: '#64748b'
-                  }} />
+                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '3px', background: '#64748b' }} />
                 </div>
 
-                {/* 2. Tablet Mockup Frame (overlaid on the right side) */}
+                {/* 2. Tablet Mockup Frame */}
                 <div style={{
                   position: 'absolute',
                   right: '18%',
@@ -525,19 +515,7 @@ export default function Home({ addToCart, cart }) {
                   zIndex: 2,
                   boxSizing: 'border-box'
                 }}>
-                  {/* Camera sensor dot */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '3px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '4px',
-                    height: '4px',
-                    borderRadius: '50%',
-                    background: '#334155',
-                    zIndex: 10
-                  }} />
-                  <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+                  <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
                     <SafeImage 
                       src={template.previewImage} 
                       alt={`${template.name} Tablet Preview`} 
@@ -545,16 +523,15 @@ export default function Home({ addToCart, cart }) {
                       categorySlug={categorySlug}
                       style={{ 
                         width: '100%', 
-                        height: '112%', 
+                        height: '100%', 
                         objectFit: 'cover', 
-                        objectPosition: 'top',
-                        marginTop: '-12%' 
+                        objectPosition: 'top'
                       }} 
                     />
                   </div>
                 </div>
 
-                {/* 3. Mobile Mockup Frame (overlaid in front) */}
+                {/* 3. Mobile Mockup Frame */}
                 <div style={{
                   position: 'absolute',
                   right: '6%',
@@ -569,19 +546,7 @@ export default function Home({ addToCart, cart }) {
                   zIndex: 3,
                   boxSizing: 'border-box'
                 }}>
-                  {/* Speaker pill notch */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '2px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '18px',
-                    height: '3px',
-                    borderRadius: '99px',
-                    background: '#1e293b',
-                    zIndex: 10
-                  }} />
-                  <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+                  <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
                     <SafeImage 
                       src={template.previewImage} 
                       alt={`${template.name} Mobile Preview`} 
@@ -589,48 +554,35 @@ export default function Home({ addToCart, cart }) {
                       categorySlug={categorySlug}
                       style={{ 
                         width: '100%', 
-                        height: '112%', 
+                        height: '100%', 
                         objectFit: 'cover', 
-                        objectPosition: 'top',
-                        marginTop: '-12%' 
+                        objectPosition: 'top'
                       }} 
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Right Section: Information & Action */}
+              {/* Right Column: Title, Metadata, Description & Pill Buttons */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                 
-                {/* 1. Small feature/category badges at the top */}
+                {/* Badges / Tags */}
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                  <span style={{
-                    padding: '4px 10px',
-                    borderRadius: '99px',
-                    backgroundColor: theme.badgeBg,
-                    color: theme.badgeColor,
-                    fontSize: '10px',
-                    fontWeight: '700',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px'
-                  }}>
-                    {template.category.name}
-                  </span>
-                  <span style={{
-                    padding: '4px 10px',
-                    borderRadius: '99px',
-                    backgroundColor: template.templateType === 'FREE' ? 'rgba(34, 197, 94, 0.08)' : 'rgba(234, 179, 8, 0.08)',
-                    color: template.templateType === 'FREE' ? '#22c55e' : '#ca8a04',
-                    fontSize: '10px',
-                    fontWeight: '700',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px'
-                  }}>
-                    {template.templateType === 'FREE' ? 'Free' : 'Premium'}
-                  </span>
+                  {templateTags.map((tag) => (
+                    <span key={tag} style={{
+                      padding: '4px 10px',
+                      borderRadius: '99px',
+                      backgroundColor: '#eff6ff',
+                      color: '#1d4ed8',
+                      fontSize: '10px',
+                      fontWeight: '700',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px'
+                    }}>{tag}</span>
+                  ))}
                 </div>
 
-                {/* 2. Template Name & details link */}
+                {/* Typography */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <h3 style={{
                     fontSize: '1.6rem',
@@ -641,46 +593,20 @@ export default function Home({ addToCart, cart }) {
                     lineHeight: '1.25'
                   }}>
                     <Link 
-                      to={`/templates/${template.slug}`} 
-                      style={{ color: '#0f172a', transition: 'color 0.2s', textDecoration: 'none' }}
-                      onMouseEnter={(e) => e.currentTarget.style.color = theme.accent}
+                      to={`/preview?url=${encodeURIComponent(template.demoUrl)}&name=${encodeURIComponent(template.name)}&slug=${template.slug}&category=${categorySlug}`}
+                      style={{ color: '#0f172a', textDecoration: 'none', transition: 'color 0.2s' }}
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
                       onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
                     >
                       {template.name}
                     </Link>
                   </h3>
                   
-                  {/* Updated metadata */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#64748b' }}>
                     <i className="fa-regular fa-clock" style={{ fontSize: '0.85rem' }}></i>
                     <span>Updated recently</span>
                   </div>
 
-                  {/* Display Technologies, Page Count and Features */}
-                  <div style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '15px',
-                    alignItems: 'center',
-                    marginTop: '6px',
-                    padding: '8px 0',
-                    borderTop: '1px solid #f1f5f9',
-                    borderBottom: '1px solid #f1f5f9'
-                  }}>
-                    <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                      <strong>Pages:</strong> {template.pagesCount || 1}
-                    </div>
-                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
-                    <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                      <strong>Stack:</strong> {template.bootstrapVersion}
-                    </div>
-                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
-                    <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                      <strong>Downloads:</strong> {template.downloadsCount}
-                    </div>
-                  </div>
-
-                  {/* 4. Short Description of the Template */}
                   <p style={{
                     fontSize: '0.88rem',
                     color: '#64748b',
@@ -692,17 +618,17 @@ export default function Home({ addToCart, cart }) {
                   </p>
                 </div>
 
-                {/* 5. Live Demo Button */}
+                {/* Action Buttons */}
                 <div style={{ marginTop: '10px' }}>
-                  <a
-                    href={template.demoUrl}
+                  <Link 
+                    to={`/preview?url=${encodeURIComponent(template.demoUrl)}&name=${encodeURIComponent(template.name)}&slug=${template.slug}&category=${categorySlug}`}
                     style={{
-                      display: 'flex',
+                      display: 'inline-flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       gap: '6px',
                       padding: '12px 24px',
-                      backgroundColor: theme.accent,
+                      backgroundColor: '#1e40af',
                       color: 'white',
                       borderRadius: '99px',
                       border: 'none',
@@ -711,17 +637,17 @@ export default function Home({ addToCart, cart }) {
                       cursor: 'pointer',
                       transition: 'all 0.2s',
                       textDecoration: 'none',
-                      boxShadow: `0 4px 12px ${theme.accent}40`
+                      boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.filter = 'brightness(1.15)';
+                      e.currentTarget.style.backgroundColor = '#1d4ed8';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.filter = 'none';
+                      e.currentTarget.style.backgroundColor = '#1e40af';
                     }}
                   >
                     Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
-                  </a>
+                  </Link>
                 </div>
 
               </div>

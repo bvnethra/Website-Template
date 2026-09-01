@@ -17,8 +17,9 @@ import PhotoTemplate from './pages/PhotoTemplate';
 import FineArtTemplate from './pages/FineArtTemplate';
 import CinematicWedding from './pages/CinematicWedding';
 import KairoPhotography from './pages/KairoPhotography';
-import ISteadyGimbal from './pages/ISteadyGimbal';
 import DevicePreviewWrapper from './components/DevicePreviewWrapper';
+import TemplatePreviewWrapper from './components/TemplatePreviewWrapper';
+import TemplatePreviewPage from './pages/TemplatePreviewPage';
 import MegaMenu from './components/MegaMenu';
 
 // Portfolio templates
@@ -532,6 +533,7 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
   const location = useLocation();
   const isTemplateRoute = 
     location.pathname === '/hotel-template' ||
+    location.pathname.startsWith('/preview') ||
     location.pathname.startsWith('/templates/photography/photography-') ||
     location.pathname.startsWith('/templates/portfolio/portfolio-');
 
@@ -539,42 +541,48 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
   if (isTemplateRoute) {
     return (
       <Routes>
-        <Route path="/hotel-template" element={<DevicePreviewWrapper><HotelTemplate /></DevicePreviewWrapper>} />
+        {/* Universal Preview routes for any template across all categories */}
+        <Route path="/preview" element={<TemplatePreviewPage />} />
+        <Route path="/preview/:categorySlug/:templateSlug" element={<TemplatePreviewPage />} />
+        <Route path="/preview/:slug" element={<TemplatePreviewPage />} />
+        <Route path="/templates/:categorySlug/:templateSlug/preview" element={<TemplatePreviewPage />} />
+
+        <Route path="/hotel-template" element={<TemplatePreviewWrapper templateTitle="Grand Horizon Luxury Hotel & Resort" categoryName="Hotel" categorySlug="hotel" templateSlug="hotel-template"><HotelTemplate /></TemplatePreviewWrapper>} />
 
         {/* Photography templates */}
-        <Route path="/templates/photography/photography-1" element={<DevicePreviewWrapper><SnapfolioTemplate /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-1/index.html" element={<DevicePreviewWrapper><SnapfolioTemplate /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-2" element={<DevicePreviewWrapper><PhotoTemplate /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-2/index.html" element={<DevicePreviewWrapper><PhotoTemplate /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-3" element={<DevicePreviewWrapper><WeddingTemplate /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-3/index.html" element={<DevicePreviewWrapper><WeddingTemplate /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-4" element={<DevicePreviewWrapper><CinematicWedding /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-4/index.html" element={<DevicePreviewWrapper><CinematicWedding /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-4/:subpage" element={<DevicePreviewWrapper><CinematicWedding /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-5" element={<DevicePreviewWrapper><FineArtTemplate /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-5/index.html" element={<DevicePreviewWrapper><FineArtTemplate /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-6" element={<DevicePreviewWrapper><KairoPhotography /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-6/index.html" element={<DevicePreviewWrapper><KairoPhotography /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-7" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
-        <Route path="/templates/photography/photography-7/index.html" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/photography-1" element={<TemplatePreviewWrapper templateTitle="Snapfolio Photography" categoryName="Photography" categorySlug="photography" templateSlug="photography-1"><SnapfolioTemplate /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-1/index.html" element={<TemplatePreviewWrapper templateTitle="Snapfolio Photography" categoryName="Photography" categorySlug="photography" templateSlug="photography-1"><SnapfolioTemplate /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-2" element={<TemplatePreviewWrapper templateTitle="Lumina Frame Photography" categoryName="Photography" categorySlug="photography" templateSlug="photography-2"><PhotoTemplate /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-2/index.html" element={<TemplatePreviewWrapper templateTitle="Lumina Frame Photography" categoryName="Photography" categorySlug="photography" templateSlug="photography-2"><PhotoTemplate /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-3" element={<TemplatePreviewWrapper templateTitle="Elegance Wedding Photography" categoryName="Photography" categorySlug="photography" templateSlug="photography-3"><WeddingTemplate /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-3/index.html" element={<TemplatePreviewWrapper templateTitle="Elegance Wedding Photography" categoryName="Photography" categorySlug="photography" templateSlug="photography-3"><WeddingTemplate /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-4" element={<TemplatePreviewWrapper templateTitle="Cinematic Wedding Portfolio" categoryName="Photography" categorySlug="photography" templateSlug="photography-4"><CinematicWedding /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-4/index.html" element={<TemplatePreviewWrapper templateTitle="Cinematic Wedding Portfolio" categoryName="Photography" categorySlug="photography" templateSlug="photography-4"><CinematicWedding /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-4/:subpage" element={<TemplatePreviewWrapper templateTitle="Cinematic Wedding Portfolio" categoryName="Photography" categorySlug="photography" templateSlug="photography-4"><CinematicWedding /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-5" element={<TemplatePreviewWrapper templateTitle="Fine Art Visual Studio" categoryName="Photography" categorySlug="photography" templateSlug="photography-5"><FineArtTemplate /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-5/index.html" element={<TemplatePreviewWrapper templateTitle="Fine Art Visual Studio" categoryName="Photography" categorySlug="photography" templateSlug="photography-5"><FineArtTemplate /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-6" element={<TemplatePreviewWrapper templateTitle="Kairo Modern 3D Photography" categoryName="Photography" categorySlug="photography" templateSlug="photography-6"><KairoPhotography /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-6/index.html" element={<TemplatePreviewWrapper templateTitle="Kairo Modern 3D Photography" categoryName="Photography" categorySlug="photography" templateSlug="photography-6"><KairoPhotography /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-7" element={<TemplatePreviewWrapper templateTitle="Lume Studio Editorial" categoryName="Photography" categorySlug="photography" templateSlug="photography-7"><FineArtTemplate /></TemplatePreviewWrapper>} />
+        <Route path="/templates/photography/photography-7/index.html" element={<TemplatePreviewWrapper templateTitle="Lume Studio Editorial" categoryName="Photography" categorySlug="photography" templateSlug="photography-7"><FineArtTemplate /></TemplatePreviewWrapper>} />
 
         {/* Portfolio templates */}
-        <Route path="/templates/portfolio/portfolio-1" element={<DevicePreviewWrapper><ArchitecturePortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-1/index.html" element={<DevicePreviewWrapper><ArchitecturePortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-2" element={<DevicePreviewWrapper><PersonalPortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-2/index.html" element={<DevicePreviewWrapper><PersonalPortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-3" element={<DevicePreviewWrapper><CreativePortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-3/index.html" element={<DevicePreviewWrapper><CreativePortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-4" element={<DevicePreviewWrapper><MinimalPortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-4/index.html" element={<DevicePreviewWrapper><MinimalPortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-5/*" element={<DevicePreviewWrapper><MultipagePortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-6/*" element={<DevicePreviewWrapper><AgencyPortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-7" element={<DevicePreviewWrapper><GradientPortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-7/index.html" element={<DevicePreviewWrapper><GradientPortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-8" element={<DevicePreviewWrapper><EditorialPortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-8/index.html" element={<DevicePreviewWrapper><EditorialPortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-9/*" element={<DevicePreviewWrapper><PhotographyPortfolio /></DevicePreviewWrapper>} />
-        <Route path="/templates/portfolio/portfolio-10/*" element={<DevicePreviewWrapper><CreativeMultipagePortfolio /></DevicePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-1" element={<TemplatePreviewWrapper templateTitle="Arch Studio Architecture" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-1"><ArchitecturePortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-1/index.html" element={<TemplatePreviewWrapper templateTitle="Arch Studio Architecture" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-1"><ArchitecturePortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-2" element={<TemplatePreviewWrapper templateTitle="Alex Morgan Personal Portfolio" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-2"><PersonalPortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-2/index.html" element={<TemplatePreviewWrapper templateTitle="Alex Morgan Personal Portfolio" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-2"><PersonalPortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-3" element={<TemplatePreviewWrapper templateTitle="Vibrant Interactive Creative Portfolio" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-3"><CreativePortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-3/index.html" element={<TemplatePreviewWrapper templateTitle="Vibrant Interactive Creative Portfolio" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-3"><CreativePortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-4" element={<TemplatePreviewWrapper templateTitle="Zenith Minimalist Portfolio" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-4"><MinimalPortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-4/index.html" element={<TemplatePreviewWrapper templateTitle="Zenith Minimalist Portfolio" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-4"><MinimalPortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-5/*" element={<TemplatePreviewWrapper templateTitle="Multipage Agency Portfolio" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-5"><MultipagePortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-6/*" element={<TemplatePreviewWrapper templateTitle="Digital Agency Showcase" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-6"><AgencyPortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-7" element={<TemplatePreviewWrapper templateTitle="Gradient Visual Showcase" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-7"><GradientPortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-7/index.html" element={<TemplatePreviewWrapper templateTitle="Gradient Visual Showcase" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-7"><GradientPortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-8" element={<TemplatePreviewWrapper templateTitle="Editorial Serif Portfolio" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-8"><EditorialPortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-8/index.html" element={<TemplatePreviewWrapper templateTitle="Editorial Serif Portfolio" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-8"><EditorialPortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-9/*" element={<TemplatePreviewWrapper templateTitle="Visual Storyteller Portfolio" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-9"><PhotographyPortfolio /></TemplatePreviewWrapper>} />
+        <Route path="/templates/portfolio/portfolio-10/*" element={<TemplatePreviewWrapper templateTitle="Interactive 3D Portfolio" categoryName="Portfolio" categorySlug="portfolio" templateSlug="portfolio-10"><CreativeMultipagePortfolio /></TemplatePreviewWrapper>} />
       </Routes>
     );
   }

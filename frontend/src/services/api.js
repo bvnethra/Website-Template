@@ -1,4 +1,6 @@
-const BASE_URL = 'http://localhost:8080/api';
+const BASE_URL = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) 
+  ? import.meta.env.VITE_API_URL 
+  : null;
 
 const getHeaders = () => {
   const headers = {
@@ -24,6 +26,7 @@ const handleResponse = async (response) => {
 };
 
 const logUnreachableWarning = (endpoint, err) => {
+  if (!BASE_URL) return;
   if (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
     console.error(
       `%c[API Connection Error] Production backend API is unreachable at ${endpoint}. Bypassing to mock data for demonstration.`,
@@ -3395,56 +3398,60 @@ MOCK_TEMPLATES.sort((a, b) => {
 export const api = {
   // Auth
   async login(email, password) {
-    try {
-      const res = await fetch(`${BASE_URL}/auth/login`, {
-        method: 'POST',
-        headers: getHeaders(),
-        body: JSON.stringify({ email, password }),
-      });
-      const data = await handleResponse(res);
-      if (data.token) {
-        localStorage.setItem('ts_token', data.token);
-        localStorage.setItem('ts_user', JSON.stringify({
-          id: data.id,
-          name: data.name,
-          email: data.email,
-          role: data.role
-        }));
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/auth/login`, {
+          method: 'POST',
+          headers: getHeaders(),
+          body: JSON.stringify({ email, password }),
+        });
+        const data = await handleResponse(res);
+        if (data.token) {
+          localStorage.setItem('ts_token', data.token);
+          localStorage.setItem('ts_user', JSON.stringify({
+            id: data.id,
+            name: data.name,
+            email: data.email,
+            role: data.role
+          }));
+        }
+        return data;
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/auth/login`, err);
       }
-      return data;
-    } catch (err) {
-      logUnreachableWarning(`${BASE_URL}/auth/login`, err);
-      if (email === 'admin@technosprint.com' && password === 'adminpassword') {
-        const mockUser = { id: 99, name: 'Admin User', email: 'admin@technosprint.com', role: 'ROLE_ADMIN' };
-        localStorage.setItem('ts_token', 'mock-jwt-token');
-        localStorage.setItem('ts_user', JSON.stringify(mockUser));
-        return mockUser;
-      }
-      if (email === 'admin@admin.com') {
-        const dummyAdmin = { token: 'mock-token', id: 99, name: 'Admin User', email: 'admin@admin.com', role: 'ROLE_ADMIN' };
-        localStorage.setItem('ts_token', dummyAdmin.token);
-        localStorage.setItem('ts_user', JSON.stringify(dummyAdmin));
-        return dummyAdmin;
-      }
-      const dummyUser = { token: 'mock-token', id: 100, name: 'Test User', email: email, role: 'ROLE_USER' };
-      localStorage.setItem('ts_token', dummyUser.token);
-      localStorage.setItem('ts_user', JSON.stringify(dummyUser));
-      return dummyUser;
     }
+    if (email === 'admin@technosprint.com' && password === 'adminpassword') {
+      const mockUser = { id: 99, name: 'Admin User', email: 'admin@technosprint.com', role: 'ROLE_ADMIN' };
+      localStorage.setItem('ts_token', 'mock-jwt-token');
+      localStorage.setItem('ts_user', JSON.stringify(mockUser));
+      return mockUser;
+    }
+    if (email === 'admin@admin.com') {
+      const dummyAdmin = { token: 'mock-token', id: 99, name: 'Admin User', email: 'admin@admin.com', role: 'ROLE_ADMIN' };
+      localStorage.setItem('ts_token', dummyAdmin.token);
+      localStorage.setItem('ts_user', JSON.stringify(dummyAdmin));
+      return dummyAdmin;
+    }
+    const dummyUser = { token: 'mock-token', id: 100, name: 'Test User', email: email, role: 'ROLE_USER' };
+    localStorage.setItem('ts_token', dummyUser.token);
+    localStorage.setItem('ts_user', JSON.stringify(dummyUser));
+    return dummyUser;
   },
 
   async register(name, email, password) {
-    try {
-      const res = await fetch(`${BASE_URL}/auth/register`, {
-        method: 'POST',
-        headers: getHeaders(),
-        body: JSON.stringify({ name, email, password }),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      logUnreachableWarning(`${BASE_URL}/auth/register`, err);
-      return { message: "User registered successfully!" };
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/auth/register`, {
+          method: 'POST',
+          headers: getHeaders(),
+          body: JSON.stringify({ name, email, password }),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/auth/register`, err);
+      }
     }
+    return { message: "User registered successfully!" };
   },
 
   logout() {
@@ -3460,305 +3467,357 @@ export const api = {
 
   // Templates
   async getTemplates(params = {}) {
-    try {
-      const query = new URLSearchParams();
-      if (params.category) query.append('category', params.category);
-      if (params.search) query.append('search', params.search);
-      if (params.type) query.append('type', params.type);
-      
-      const res = await fetch(`${BASE_URL}/templates?${query.toString()}`, {
-        headers: getHeaders(),
-      });
-      const data = await handleResponse(res);
-      if (Array.isArray(data) && data.length > 0) {
-        return sortTemplatesNumerically(data);
+    if (BASE_URL) {
+      try {
+        const query = new URLSearchParams();
+        if (params.category) query.append('category', params.category);
+        if (params.search) query.append('search', params.search);
+        if (params.type) query.append('type', params.type);
+        
+        const res = await fetch(`${BASE_URL}/templates?${query.toString()}`, {
+          headers: getHeaders(),
+        });
+        const data = await handleResponse(res);
+        if (Array.isArray(data) && data.length > 0) {
+          return sortTemplatesNumerically(data);
+        }
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/templates`, err);
       }
-      let filtered = [...MOCK_TEMPLATES];
-      if (params.category && params.category !== 'all') {
-        filtered = filtered.filter(t => t.category.slug === params.category);
-      }
-      if (params.type && params.type !== 'all') {
-        filtered = filtered.filter(t => t.templateType === params.type);
-      }
-      if (params.search) {
-        const queryStr = params.search.toLowerCase();
-        filtered = filtered.filter(t => 
-          t.name.toLowerCase().includes(queryStr) || 
-          t.description.toLowerCase().includes(queryStr) ||
-          t.category.name.toLowerCase().includes(queryStr)
-        );
-      }
-      return sortTemplatesNumerically(filtered);
-    } catch (err) {
-      logUnreachableWarning(`${BASE_URL}/templates`, err);
-      let filtered = [...MOCK_TEMPLATES];
-      if (params.category && params.category !== 'all') {
-        filtered = filtered.filter(t => t.category.slug === params.category);
-      }
-      if (params.type && params.type !== 'all') {
-        filtered = filtered.filter(t => t.templateType === params.type);
-      }
-      if (params.search) {
-        const queryStr = params.search.toLowerCase();
-        filtered = filtered.filter(t => 
-          t.name.toLowerCase().includes(queryStr) || 
-          t.description.toLowerCase().includes(queryStr) ||
-          (t.category && t.category.name && t.category.name.toLowerCase().includes(queryStr))
-        );
-      }
-      return sortTemplatesNumerically(filtered);
     }
+    let filtered = [...MOCK_TEMPLATES];
+    if (params.category && params.category !== 'all') {
+      filtered = filtered.filter(t => t.category.slug === params.category);
+    }
+    if (params.type && params.type !== 'all') {
+      filtered = filtered.filter(t => t.templateType === params.type);
+    }
+    if (params.search) {
+      const queryStr = params.search.toLowerCase();
+      filtered = filtered.filter(t => 
+        t.name.toLowerCase().includes(queryStr) || 
+        t.description.toLowerCase().includes(queryStr) ||
+        (t.category && t.category.name && t.category.name.toLowerCase().includes(queryStr))
+      );
+    }
+    return sortTemplatesNumerically(filtered);
   },
 
   async getTemplatesByCategory(category) {
-    try {
-      const res = await fetch(`${BASE_URL}/templates/category/${category}`, {
-        headers: getHeaders(),
-      });
-      const data = await handleResponse(res);
-      if (Array.isArray(data) && data.length > 0) {
-        return sortTemplatesNumerically(data);
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/templates/category/${category}`, {
+          headers: getHeaders(),
+        });
+        const data = await handleResponse(res);
+        if (Array.isArray(data) && data.length > 0) {
+          return sortTemplatesNumerically(data);
+        }
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/templates/category/${category}`, err);
       }
-      return MOCK_TEMPLATES.filter(t => t.category.slug === category);
-    } catch (err) {
-      console.warn("API templates by category fetch failed, utilizing mock fallback:", err);
-      return MOCK_TEMPLATES.filter(t => t.category.slug === category);
     }
+    return MOCK_TEMPLATES.filter(t => t.category.slug === category);
   },
 
   async getTemplateById(id) {
-    try {
-      const res = await fetch(`${BASE_URL}/templates/${id}`, {
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      console.warn("API templates fetch failed, utilizing mock fallback:", err);
-      return MOCK_TEMPLATES.find(t => t.id === Number(id)) || MOCK_TEMPLATES[0];
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/templates/${id}`, {
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/templates/${id}`, err);
+      }
     }
+    return MOCK_TEMPLATES.find(t => t.id === Number(id)) || MOCK_TEMPLATES[0];
   },
 
   async getTemplateBySlug(slug) {
-    try {
-      const res = await fetch(`${BASE_URL}/templates/slug/${slug}`, {
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      console.warn("API templates fetch failed, utilizing mock fallback:", err);
-      return MOCK_TEMPLATES.find(t => t.slug === slug) || MOCK_TEMPLATES[0];
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/templates/slug/${slug}`, {
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/templates/slug/${slug}`, err);
+      }
     }
+    return MOCK_TEMPLATES.find(t => t.slug === slug) || MOCK_TEMPLATES[0];
   },
 
   async createTemplate(dto) {
-    try {
-      const res = await fetch(`${BASE_URL}/templates`, {
-        method: 'POST',
-        headers: getHeaders(),
-        body: JSON.stringify(dto),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      console.error("Failed to create template:", err);
-      throw err;
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/templates`, {
+          method: 'POST',
+          headers: getHeaders(),
+          body: JSON.stringify(dto),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        console.error("Failed to create template:", err);
+        throw err;
+      }
     }
+    const newId = Math.max(...MOCK_TEMPLATES.map(t => t.id), 0) + 1;
+    const newTemplate = { id: newId, ...dto };
+    MOCK_TEMPLATES.unshift(newTemplate);
+    return newTemplate;
   },
 
   async updateTemplate(id, dto) {
-    try {
-      const res = await fetch(`${BASE_URL}/templates/${id}`, {
-        method: 'PUT',
-        headers: getHeaders(),
-        body: JSON.stringify(dto),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      console.error("Failed to update template:", err);
-      throw err;
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/templates/${id}`, {
+          method: 'PUT',
+          headers: getHeaders(),
+          body: JSON.stringify(dto),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        console.error("Failed to update template:", err);
+        throw err;
+      }
     }
+    const index = MOCK_TEMPLATES.findIndex(t => t.id === Number(id));
+    if (index !== -1) {
+      MOCK_TEMPLATES[index] = { ...MOCK_TEMPLATES[index], ...dto };
+      return MOCK_TEMPLATES[index];
+    }
+    return dto;
   },
 
   async deleteTemplate(id) {
-    try {
-      const res = await fetch(`${BASE_URL}/templates/${id}`, {
-        method: 'DELETE',
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      console.error("Failed to delete template:", err);
-      throw err;
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/templates/${id}`, {
+          method: 'DELETE',
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        console.error("Failed to delete template:", err);
+        throw err;
+      }
     }
+    const index = MOCK_TEMPLATES.findIndex(t => t.id === Number(id));
+    if (index !== -1) {
+      MOCK_TEMPLATES.splice(index, 1);
+    }
+    return { success: true };
   },
 
   // Categories
   async getCategories() {
-    try {
-      const res = await fetch(`${BASE_URL}/categories`, {
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      console.warn("API categories fetch failed, utilizing mock fallback:", err);
-      return MOCK_CATEGORIES;
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/categories`, {
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/categories`, err);
+      }
     }
+    return MOCK_CATEGORIES;
   },
 
   // Orders
   async createOrder(templateIds) {
-    try {
-      const res = await fetch(`${BASE_URL}/orders`, {
-        method: 'POST',
-        headers: getHeaders(),
-        body: JSON.stringify({ templateIds }),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      console.warn("API order failed, using mock:", err);
-      return { id: 88, status: 'PENDING', templateIds };
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/orders`, {
+          method: 'POST',
+          headers: getHeaders(),
+          body: JSON.stringify({ templateIds }),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/orders`, err);
+      }
     }
+    return { id: 88, status: 'PENDING', templateIds };
   },
 
   async confirmPayment(orderId) {
-    try {
-      const res = await fetch(`${BASE_URL}/orders/${orderId}/confirm`, {
-        method: 'POST',
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      return { id: orderId, status: 'PAID' };
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/orders/${orderId}/confirm`, {
+          method: 'POST',
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/orders/${orderId}/confirm`, err);
+      }
     }
+    return { id: orderId, status: 'PAID' };
   },
 
   async getMyOrders() {
-    try {
-      const res = await fetch(`${BASE_URL}/orders`, {
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      return [];
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/orders`, {
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/orders`, err);
+      }
     }
+    return [];
   },
 
   async getAllOrders() {
-    try {
-      const res = await fetch(`${BASE_URL}/orders/all`, {
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      return [];
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/orders/all`, {
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/orders/all`, err);
+      }
     }
+    return [];
   },
 
   // Licenses
   async getMyLicenses() {
-    try {
-      const res = await fetch(`${BASE_URL}/licenses`, {
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      return [];
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/licenses`, {
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/licenses`, err);
+      }
     }
+    return [];
   },
 
   async validateLicense(key) {
-    try {
-      const res = await fetch(`${BASE_URL}/licenses/validate/${key}`, {
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      return { valid: true, licenseKey: key };
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/licenses/validate/${key}`, {
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/licenses/validate/${key}`, err);
+      }
     }
+    return { valid: true, licenseKey: key };
   },
 
   // Downloads
   async getDownloadToken(templateId) {
-    try {
-      const res = await fetch(`${BASE_URL}/templates/${templateId}/download-token`, {
-        method: 'POST',
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      return { token: 'mock-download-token' };
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/templates/${templateId}/download-token`, {
+          method: 'POST',
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/templates/${templateId}/download-token`, err);
+      }
     }
+    return { token: 'mock-download-token' };
   },
 
   async getMyDownloadsHistory() {
-    try {
-      const res = await fetch(`${BASE_URL}/templates/downloads-history`, {
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      return [];
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/templates/downloads-history`, {
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/templates/downloads-history`, err);
+      }
     }
+    return [];
   },
 
   // Projects / Builder
   async getMyProjects() {
-    try {
-      const res = await fetch(`${BASE_URL}/projects`, {
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      return [];
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/projects`, {
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/projects`, err);
+      }
     }
+    return [];
   },
 
   async saveProject(projectName, templateId, projectData) {
-    try {
-      const res = await fetch(`${BASE_URL}/projects`, {
-        method: 'POST',
-        headers: getHeaders(),
-        body: JSON.stringify({ projectName, templateId, projectData }),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      return { id: 77, projectName, templateId, projectData };
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/projects`, {
+          method: 'POST',
+          headers: getHeaders(),
+          body: JSON.stringify({ projectName, templateId, projectData }),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/projects`, err);
+      }
     }
+    return { id: 77, projectName, templateId, projectData };
   },
 
   async updateProject(id, projectName, projectData) {
-    try {
-      const res = await fetch(`${BASE_URL}/projects/${id}`, {
-        method: 'PUT',
-        headers: getHeaders(),
-        body: JSON.stringify({ projectName, projectData }),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      return { id, projectName, projectData };
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/projects/${id}`, {
+          method: 'PUT',
+          headers: getHeaders(),
+          body: JSON.stringify({ projectName, projectData }),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/projects/${id}`, err);
+      }
     }
+    return { id, projectName, projectData };
   },
 
   async deleteProject(id) {
-    try {
-      const res = await fetch(`${BASE_URL}/projects/${id}`, {
-        method: 'DELETE',
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      return { success: true };
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/projects/${id}`, {
+          method: 'DELETE',
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/projects/${id}`, err);
+      }
     }
+    return { success: true };
   },
 
   async exportProject(id) {
-    try {
-      const res = await fetch(`${BASE_URL}/projects/${id}/export`, {
-        method: 'POST',
-        headers: getHeaders(),
-      });
-      return await handleResponse(res);
-    } catch (err) {
-      return new Blob();
+    if (BASE_URL) {
+      try {
+        const res = await fetch(`${BASE_URL}/projects/${id}/export`, {
+          method: 'POST',
+          headers: getHeaders(),
+        });
+        return await handleResponse(res);
+      } catch (err) {
+        logUnreachableWarning(`${BASE_URL}/projects/${id}/export`, err);
+      }
     }
+    return new Blob();
   }
 };

@@ -394,8 +394,8 @@ export default function PhotographyCatalog() {
 
               {/* Action Buttons */}
               <div style={{ marginTop: '10px' }}>
-                <a 
-                  href={tpl.demoUrl} 
+                <Link 
+                  to={`/preview?url=${encodeURIComponent(tpl.demoUrl)}&name=${encodeURIComponent(tpl.name)}&slug=${tpl.slug}&category=photography`} 
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -421,7 +421,7 @@ export default function PhotographyCatalog() {
                   }}
                 >
                   Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
-                </a>
+                </Link>
               </div>
 
             </div>

@@ -1,22 +1,775 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- React Router Nested Folder SPA URL Fix -->
-    <script>
-      if (window.location.pathname.endsWith('/index.html')) {
-        const newPath = window.location.pathname.replace(/\/index\.html$/, '/');
-        window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
-      }
-    </script>
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APEX Admin Pro - CyberMetrics & Platform Suite</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
-    <script type="module" crossorigin src="/templates/admin/admin-9/assets/index-BJ3iaLvJ.js"></script>
-    <link rel="stylesheet" crossorigin href="/templates/admin/admin-9/assets/index-DdKRwUiJ.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+  <style>
+    :root {
+      --bg-body: #0b0f19;
+      --bg-card: rgba(17, 24, 39, 0.85);
+      --bg-sidebar: #0f172a;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #3b82f6;
+      --primary-glow: rgba(59, 130, 246, 0.35);
+      --pink: #ec4899;
+      --purple: #8b5cf6;
+      --accent: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+      --radius: 16px;
+    }
+
+    html.light {
+      --bg-body: #f8fafc;
+      --bg-card: rgba(255, 255, 255, 0.95);
+      --bg-sidebar: #ffffff;
+      --border-color: rgba(0, 0, 0, 0.08);
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --primary: #2563eb;
+      --primary-glow: rgba(37, 99, 235, 0.15);
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background-color: var(--bg-sidebar);
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      padding: 24px 16px;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 12px 24px 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: white;
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .brand-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #fff, var(--text-muted));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-list {
+      list-style: none;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .nav-item a {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-item a:hover, .nav-item.active a {
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.15), transparent);
+      color: var(--text-main);
+      border-left: 3px solid var(--primary);
+    }
+
+    .nav-item a i {
+      font-size: 16px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .nav-item.active a i {
+      color: var(--primary);
+    }
+
+    /* Main Content */
+    .main-wrapper {
+      margin-left: 260px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    /* Header */
+    header {
+      height: 76px;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--bg-card);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 90;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background-color: rgba(16, 185, 129, 0.15);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      background-color: transparent;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .btn-icon:hover {
+      background-color: var(--border-color);
+      transform: translateY(-2px);
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 6px 12px;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+    }
+
+    .profile-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-info {
+      line-height: 1.2;
+    }
+
+    .profile-name {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .profile-role {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Container Body */
+    .content-area {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .page-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .page-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Metrics Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .metric-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .metric-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .metric-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .metric-value {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .metric-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .trend-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+
+    .trend-up {
+      background-color: rgba(16, 185, 129, 0.15);
+      color: var(--accent);
+    }
+
+    /* Charts Section */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
+
+    .chart-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .chart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .chart-title {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .btn-sm {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background-color: transparent;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-sm.active, .btn-sm:hover {
+      background-color: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .chart-container {
+      position: relative;
+      height: 300px;
+      width: 100%;
+    }
+
+    /* Table Section */
+    .table-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th {
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    td {
+      padding: 16px;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .user-cell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar-sm {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+    }
+
+    .status-badge {
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .status-completed {
+      background-color: rgba(16, 185, 129, 0.15);
+      color: var(--accent);
+    }
+
+    .status-processing {
+      background-color: rgba(59, 130, 246, 0.15);
+      color: var(--primary);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">
+        <i class="fa-solid fa-bolt"></i>
+      </div>
+      <div class="brand-title">APEX PRO</div>
+    </div>
+
+    <ul class="nav-list">
+      <li class="nav-item active" data-tab="overview">
+        <a href="#overview"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+      </li>
+      <li class="nav-item" data-tab="analytics">
+        <a href="#analytics"><i class="fa-solid fa-chart-simple"></i> Analytics</a>
+      </li>
+      <li class="nav-item" data-tab="customers">
+        <a href="#customers"><i class="fa-solid fa-user-group"></i> Customers</a>
+      </li>
+      <li class="nav-item" data-tab="orders">
+        <a href="#orders"><i class="fa-solid fa-cart-flatbed"></i> Orders</a>
+      </li>
+      <li class="nav-item" data-tab="finances">
+        <a href="#finances"><i class="fa-solid fa-wallet"></i> Finances</a>
+      </li>
+      <li class="nav-item" data-tab="settings">
+        <a href="#settings"><i class="fa-solid fa-gear"></i> Settings</a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Main Wrapper -->
+  <div class="main-wrapper">
+    
+    <!-- Top Header Bar -->
+    <header>
+      <div class="status-pill">
+        <span class="status-dot"></span> System Operational 99.99%
+      </div>
+
+      <div class="header-actions">
+        <button class="btn-icon" id="themeToggle" title="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="btn-icon" title="Notifications">
+          <i class="fa-solid fa-bell"></i>
+        </button>
+
+        <div class="profile-card">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150" alt="Avatar" class="profile-avatar" />
+          <div class="profile-info">
+            <div class="profile-name">Marcus Vance</div>
+            <div class="profile-role">Super Admin</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content Body Area -->
+    <main class="content-area">
+      
+      <!-- OVERVIEW TAB -->
+      <div class="tab-content active" id="tab-overview">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Platform Overview</h1>
+            <p class="page-subtitle">Real-time stats, revenue performance, and customer trends.</p>
+          </div>
+          <button class="btn-sm active" style="padding: 10px 20px; font-size: 14px;">
+            <i class="fa-solid fa-plus"></i> New Campaign
+          </button>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="metrics-grid" style="margin-top: 24px;">
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-title">Gross Revenue</span>
+              <div class="metric-icon-wrap" style="background: rgba(59, 130, 246, 0.15); color: var(--primary);">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+            </div>
+            <div class="metric-value">$248,600.00</div>
+            <div class="metric-footer">
+              <span class="trend-badge trend-up"><i class="fa-solid fa-arrow-up"></i> 18.5%</span>
+              <span style="color: var(--text-muted);">vs last month</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-title">Active Subscriptions</span>
+              <div class="metric-icon-wrap" style="background: rgba(236, 72, 153, 0.15); color: var(--pink);">
+                <i class="fa-solid fa-crown"></i>
+              </div>
+            </div>
+            <div class="metric-value">4,120</div>
+            <div class="metric-footer">
+              <span class="trend-badge trend-up"><i class="fa-solid fa-arrow-up"></i> 11.2%</span>
+              <span style="color: var(--text-muted);">vs last month</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-title">Avg Order Value</span>
+              <div class="metric-icon-wrap" style="background: rgba(16, 185, 129, 0.15); color: var(--accent);">
+                <i class="fa-solid fa-receipt"></i>
+              </div>
+            </div>
+            <div class="metric-value">$142.50</div>
+            <div class="metric-footer">
+              <span class="trend-badge trend-up"><i class="fa-solid fa-arrow-up"></i> 5.4%</span>
+              <span style="color: var(--text-muted);">vs last month</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-title">Server Uptime</span>
+              <div class="metric-icon-wrap" style="background: rgba(139, 92, 246, 0.15); color: var(--purple);">
+                <i class="fa-solid fa-server"></i>
+              </div>
+            </div>
+            <div class="metric-value">99.98%</div>
+            <div class="metric-footer">
+              <span class="trend-badge trend-up"><i class="fa-solid fa-check"></i> Optimal</span>
+              <span style="color: var(--text-muted);">Last 30 days</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-grid" style="margin-top: 24px;">
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title">Revenue Forecast</div>
+              <div style="display: flex; gap: 8px;">
+                <button class="btn-sm active">Monthly</button>
+                <button class="btn-sm">Quarterly</button>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="apexRevenueChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title">Traffic Distribution</div>
+            </div>
+            <div class="chart-container">
+              <canvas id="apexTrafficChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Customers Table -->
+        <div class="table-card" style="margin-top: 24px;">
+          <div class="chart-header">
+            <div class="chart-title">Recent Subscriptions</div>
+            <button class="btn-sm active">Export CSV</button>
+          </div>
+
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>User ID</th>
+                  <th>Customer Name</th>
+                  <th>Plan</th>
+                  <th>Joined Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#USR-501</td>
+                  <td>
+                    <div class="user-cell">
+                      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" class="avatar-sm" />
+                      <span>Elena Rostova</span>
+                    </div>
+                  </td>
+                  <td>Enterprise Pro</td>
+                  <td>Sep 01, 2026</td>
+                  <td><span class="status-badge status-completed">Active</span></td>
+                  <td><button class="btn-sm">Manage</button></td>
+                </tr>
+                <tr>
+                  <td>#USR-502</td>
+                  <td>
+                    <div class="user-cell">
+                      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" class="avatar-sm" />
+                      <span>Liam Hemsworth</span>
+                    </div>
+                  </td>
+                  <td>Business Growth</td>
+                  <td>Sep 01, 2026</td>
+                  <td><span class="status-badge status-processing">Processing</span></td>
+                  <td><button class="btn-sm">Manage</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    // Tab Switching
+    const navItems = document.querySelectorAll('.nav-item');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    navItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const tab = item.getAttribute('data-tab');
+
+        navItems.forEach(i => i.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+
+        item.classList.add('active');
+        const targetTab = document.getElementById('tab-' + tab);
+        if (targetTab) targetTab.classList.add('active');
+      });
+    });
+
+    // Theme Toggle
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('light');
+      const icon = themeBtn.querySelector('i');
+      if (document.documentElement.classList.contains('light')) {
+        icon.className = 'fa-solid fa-sun';
+      } else {
+        icon.className = 'fa-solid fa-moon';
+      }
+    });
+
+    // Charts Initialization
+    window.addEventListener('load', () => {
+      // Revenue Chart
+      const ctxRev = document.getElementById('apexRevenueChart').getContext('2d');
+      new Chart(ctxRev, {
+        type: 'bar',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+          datasets: [{
+            label: 'Revenue ($)',
+            data: [22000, 29000, 25000, 34000, 42000, 38000, 52000, 58000, 64000],
+            backgroundColor: '#3b82f6',
+            borderRadius: 8
+          }, {
+            label: 'Expenses ($)',
+            data: [10000, 14000, 12000, 15000, 18000, 16000, 21000, 23000, 25000],
+            backgroundColor: '#ec4899',
+            borderRadius: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { position: 'top', labels: { color: '#94a3b8' } } },
+          scales: {
+            x: { grid: { color: 'rgba(255, 255, 255, 0.05)' } },
+            y: { grid: { color: 'rgba(255, 255, 255, 0.05)' } }
+          }
+        }
+      });
+
+      // Traffic Doughnut Chart
+      const ctxTraffic = document.getElementById('apexTrafficChart').getContext('2d');
+      new Chart(ctxTraffic, {
+        type: 'doughnut',
+        data: {
+          labels: ['Direct', 'Organic Search', 'Social Media', 'Referrals'],
+          datasets: [{
+            data: [45, 30, 15, 10],
+            backgroundColor: ['#3b82f6', '#ec4899', '#8b5cf6', '#10b981']
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8' } } }
+        }
+      });
+    });
+  </script>
+</body>
 </html>

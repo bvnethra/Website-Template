@@ -1,6 +1,7 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+import fs from 'fs';
 
 function serveTemplateIndexPlugin() {
   return {
@@ -9,10 +10,17 @@ function serveTemplateIndexPlugin() {
       server.middlewares.use((req, res, next) => {
         if (req.url && req.url.startsWith('/templates/')) {
           const cleanUrl = req.url.split('?')[0].split('#')[0];
-          if (cleanUrl.endsWith('/')) {
+          
+          const relativePath = cleanUrl.startsWith('/') ? cleanUrl.slice(1) : cleanUrl;
+          const fullPath = path.join(__dirname, 'public', relativePath);
+          
+          if (fs.existsSync(fullPath) && fs.statSync(fullPath).isDirectory()) {
+            if (!cleanUrl.endsWith('/')) {
+              const queryAndHash = req.url.slice(cleanUrl.length);
+              res.writeHead(301, { Location: cleanUrl + '/' + queryAndHash });
+              return res.end();
+            }
             req.url = req.url.replace(cleanUrl, cleanUrl + 'index.html');
-          } else if (!path.extname(cleanUrl)) {
-            req.url = req.url.replace(cleanUrl, cleanUrl + '/index.html');
           }
         }
         next();
@@ -21,8 +29,6 @@ function serveTemplateIndexPlugin() {
   };
 }
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [serveTemplateIndexPlugin(), react()],
-})
-
+});

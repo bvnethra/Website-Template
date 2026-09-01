@@ -37,6 +37,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Space Grotesk', sans-serif;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
     }
 
     body {
@@ -58,7 +59,7 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--border-glow);
-      background-color: rgba(5, 8, 17, 0.8);
+      background-color: rgba(5, 8, 17, 0.85);
       backdrop-filter: blur(16px);
       position: sticky;
       top: 0;
@@ -103,19 +104,21 @@
     }
 
     .pill-item {
-      padding: 8px 18px;
+      padding: 8px 20px;
       border-radius: 20px;
       color: var(--text-secondary);
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
-      text-decoration: none;
+      border: none;
+      background: transparent;
       transition: all 0.2s ease;
     }
 
     .pill-item.active, .pill-item:hover {
       background-color: var(--cyan);
       color: #050811;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
     }
 
     .nav-actions {
@@ -177,6 +180,23 @@
       max-width: 1600px;
       margin: 0 auto;
       width: 100%;
+    }
+
+    /* Tab Sections */
+    .tab-section {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-section.active {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero-banner {
@@ -334,6 +354,69 @@
       background-color: var(--cyan);
       color: #050811;
     }
+
+    /* Tables */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th {
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-glow);
+    }
+
+    td {
+      padding: 16px;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-glow);
+    }
+
+    .badge-pill {
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    .badge-transit { background: rgba(56, 189, 248, 0.15); color: var(--cyan); }
+    .badge-delivered { background: rgba(16, 185, 129, 0.15); color: var(--emerald); }
+    .badge-delayed { background: rgba(244, 63, 94, 0.15); color: var(--pink); }
+    .badge-warning { background: rgba(245, 158, 11, 0.15); color: var(--amber); }
+
+    /* Form Styles */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .form-group input, .form-group select {
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border-glow);
+      background-color: rgba(0, 0, 0, 0.2);
+      color: var(--text-primary);
+      outline: none;
+    }
   </style>
 </head>
 <body>
@@ -349,11 +432,11 @@
 
     <!-- Navigation Pills -->
     <nav class="nav-pills">
-      <a class="pill-item active" href="#">Control Hub</a>
-      <a class="pill-item" href="#">Logistics Stream</a>
-      <a class="pill-item" href="#">Inventory</a>
-      <a class="pill-item" href="#">Security Logs</a>
-      <a class="pill-item" href="#">Settings</a>
+      <button class="pill-item active" data-tab="control-hub">Control Hub</button>
+      <button class="pill-item" data-tab="logistics-stream">Logistics Stream</button>
+      <button class="pill-item" data-tab="inventory">Inventory</button>
+      <button class="pill-item" data-tab="security-logs">Security Logs</button>
+      <button class="pill-item" data-tab="settings">Settings</button>
     </nav>
 
     <div class="nav-actions">
@@ -371,154 +454,329 @@
   <!-- Dashboard Container -->
   <main class="dashboard-container">
     
-    <!-- Hero Banner -->
-    <div class="hero-banner">
-      <div>
-        <h1 class="hero-title">Logistics & Regional Supply Matrix</h1>
-        <p class="hero-desc">Real-time fulfillment tracking across 14 global distribution nodes.</p>
-      </div>
-      <button class="btn-action" style="padding: 12px 24px; font-size: 14px;">
-        <i class="fa-solid fa-satellite-dish"></i> Sync Warehouses
-      </button>
-    </div>
-
-    <!-- 3-Column Grid -->
-    <div class="grid-3col">
-      
-      <!-- Left Column: Targets & Gauges -->
-      <div class="card">
-        <div class="card-title">
-          <span>Monthly Target</span>
-          <i class="fa-solid fa-bullseye" style="color: var(--cyan);"></i>
+    <!-- 1. CONTROL HUB TAB -->
+    <div class="tab-section active" id="tab-control-hub">
+      <div class="hero-banner">
+        <div>
+          <h1 class="hero-title">Logistics & Regional Supply Matrix</h1>
+          <p class="hero-desc">Real-time fulfillment tracking across 14 global distribution nodes.</p>
         </div>
-
-        <div class="target-ring">
-          <div class="percent-number">86.4%</div>
-          <span style="font-size: 13px; color: var(--text-secondary);">$420,000 / $500,000</span>
-        </div>
-
-        <div class="stat-mini">
-          <span style="color: var(--text-secondary);">Dispatched Today</span>
-          <span style="font-weight: 700; color: var(--emerald);">1,842 Units</span>
-        </div>
-
-        <div class="stat-mini">
-          <span style="color: var(--text-secondary);">In Transit</span>
-          <span style="font-weight: 700; color: var(--amber);">412 Orders</span>
-        </div>
-
-        <div class="stat-mini">
-          <span style="color: var(--text-secondary);">Exceptions</span>
-          <span style="font-weight: 700; color: var(--pink);">3 Cases</span>
-        </div>
+        <button class="btn-action" style="padding: 12px 24px; font-size: 14px;">
+          <i class="fa-solid fa-satellite-dish"></i> Sync Warehouses
+        </button>
       </div>
 
-      <!-- Middle Column: Main Area Performance Chart -->
-      <div class="card">
-        <div class="card-title">
-          <span>Fulfillment & Throughput</span>
-          <button class="btn-action">Export Telemetry</button>
-        </div>
-        <div class="chart-box">
-          <canvas id="cyberChart"></canvas>
-        </div>
-      </div>
-
-      <!-- Right Column: Live Feed -->
-      <div class="card">
-        <div class="card-title">
-          <span>Live Operations Feed</span>
-          <i class="fa-solid fa-rss" style="color: var(--pink);"></i>
-        </div>
-
-        <div class="feed-list">
-          <div class="feed-item">
-            <div class="feed-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald);">
-              <i class="fa-solid fa-truck-fast"></i>
-            </div>
-            <div>
-              <div style="font-size: 13px; font-weight: 600;">Node #04 Dispatched</div>
-              <div class="feed-time">12 seconds ago • Frankfurt Hub</div>
-            </div>
-          </div>
-
-          <div class="feed-item">
-            <div class="feed-icon" style="background: rgba(56, 189, 248, 0.15); color: var(--cyan);">
-              <i class="fa-solid fa-barcode"></i>
-            </div>
-            <div>
-              <div style="font-size: 13px; font-weight: 600;">Scan Verified #8921</div>
-              <div class="feed-time">1 min ago • Tokyo Depot</div>
-            </div>
-          </div>
-
-          <div class="feed-item">
-            <div class="feed-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--amber);">
-              <i class="fa-solid fa-box-archive"></i>
-            </div>
-            <div>
-              <div style="font-size: 13px; font-weight: 600;">Stock Warning: Sector B</div>
-              <div class="feed-time">4 mins ago • London Depot</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Bottom 2-Column Grid -->
-    <div class="grid-2col">
-      
-      <!-- Warehouse Capacity -->
-      <div class="card">
-        <div class="card-title">Warehouse Capacity Overview</div>
+      <!-- 3-Column Grid -->
+      <div class="grid-3col">
         
-        <div class="inventory-bar-wrap">
-          <div style="display: flex; justify-content: space-between; font-size: 13px;">
-            <span>North America Hub (Chicago)</span>
-            <span style="font-weight: 700; color: var(--cyan);">84% Capacity</span>
+        <!-- Left Column: Targets & Gauges -->
+        <div class="card">
+          <div class="card-title">
+            <span>Monthly Target</span>
+            <i class="fa-solid fa-bullseye" style="color: var(--cyan);"></i>
           </div>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" style="width: 84%; background-color: var(--cyan);"></div>
+
+          <div class="target-ring">
+            <div class="percent-number">86.4%</div>
+            <span style="font-size: 13px; color: var(--text-secondary);">$420,000 / $500,000</span>
+          </div>
+
+          <div class="stat-mini">
+            <span style="color: var(--text-secondary);">Dispatched Today</span>
+            <span style="font-weight: 700; color: var(--emerald);">1,842 Units</span>
+          </div>
+
+          <div class="stat-mini">
+            <span style="color: var(--text-secondary);">In Transit</span>
+            <span style="font-weight: 700; color: var(--amber);">412 Orders</span>
+          </div>
+
+          <div class="stat-mini">
+            <span style="color: var(--text-secondary);">Exceptions</span>
+            <span style="font-weight: 700; color: var(--pink);">3 Cases</span>
           </div>
         </div>
 
-        <div class="inventory-bar-wrap">
-          <div style="display: flex; justify-content: space-between; font-size: 13px;">
-            <span>European Central (Frankfurt)</span>
-            <span style="font-weight: 700; color: var(--emerald);">62% Capacity</span>
+        <!-- Middle Column: Main Area Performance Chart -->
+        <div class="card">
+          <div class="card-title">
+            <span>Fulfillment & Throughput</span>
+            <button class="btn-action">Export Telemetry</button>
           </div>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" style="width: 62%; background-color: var(--emerald);"></div>
+          <div class="chart-box">
+            <canvas id="cyberChart"></canvas>
           </div>
         </div>
 
-        <div class="inventory-bar-wrap">
-          <div style="display: flex; justify-content: space-between; font-size: 13px;">
-            <span>Asia Pacific (Singapore)</span>
-            <span style="font-weight: 700; color: var(--pink);">92% Capacity (High)</span>
+        <!-- Right Column: Live Feed -->
+        <div class="card">
+          <div class="card-title">
+            <span>Live Operations Feed</span>
+            <i class="fa-solid fa-rss" style="color: var(--pink);"></i>
           </div>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" style="width: 92%; background-color: var(--pink);"></div>
+
+          <div class="feed-list">
+            <div class="feed-item">
+              <div class="feed-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald);">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <div>
+                <div style="font-size: 13px; font-weight: 600;">Node #04 Dispatched</div>
+                <div class="feed-time">12 seconds ago • Frankfurt Hub</div>
+              </div>
+            </div>
+
+            <div class="feed-item">
+              <div class="feed-icon" style="background: rgba(56, 189, 248, 0.15); color: var(--cyan);">
+                <i class="fa-solid fa-barcode"></i>
+              </div>
+              <div>
+                <div style="font-size: 13px; font-weight: 600;">Scan Verified #8921</div>
+                <div class="feed-time">1 min ago • Tokyo Depot</div>
+              </div>
+            </div>
+
+            <div class="feed-item">
+              <div class="feed-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--amber);">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <div>
+                <div style="font-size: 13px; font-weight: 600;">Stock Warning: Sector B</div>
+                <div class="feed-time">4 mins ago • London Depot</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom 2-Column Grid -->
+      <div class="grid-2col">
+        <div class="card">
+          <div class="card-title">Warehouse Capacity Overview</div>
+          
+          <div class="inventory-bar-wrap">
+            <div style="display: flex; justify-content: space-between; font-size: 13px;">
+              <span>North America Hub (Chicago)</span>
+              <span style="font-weight: 700; color: var(--cyan);">84% Capacity</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 84%; background-color: var(--cyan);"></div>
+            </div>
+          </div>
+
+          <div class="inventory-bar-wrap">
+            <div style="display: flex; justify-content: space-between; font-size: 13px;">
+              <span>European Central (Frankfurt)</span>
+              <span style="font-weight: 700; color: var(--emerald);">62% Capacity</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 62%; background-color: var(--emerald);"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Global Dispatch Distribution</div>
+          <div class="chart-box" style="height: 180px;">
+            <canvas id="regionChart"></canvas>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Regional Distribution Chart -->
+    <!-- 2. LOGISTICS STREAM TAB -->
+    <div class="tab-section" id="tab-logistics-stream">
       <div class="card">
-        <div class="card-title">Global Dispatch Distribution</div>
-        <div class="chart-box" style="height: 180px;">
-          <canvas id="regionChart"></canvas>
+        <div class="card-title">
+          <span>Active Freight Dispatches</span>
+          <button class="btn-action"><i class="fa-solid fa-filter"></i> Filter Streams</button>
+        </div>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Tracking Code</th>
+                <th>Origin -> Destination</th>
+                <th>Carrier</th>
+                <th>ETA</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--cyan);">#TRK-98012</td>
+                <td>Chicago, US ➔ Frankfurt, DE</td>
+                <td>AeroCargo Express</td>
+                <td>Sep 02, 14:00 GMT</td>
+                <td><span class="badge-pill badge-transit">IN TRANSIT</span></td>
+                <td><button class="btn-action">Track Live</button></td>
+              </tr>
+              <tr>
+                <td style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--cyan);">#TRK-98013</td>
+                <td>Tokyo, JP ➔ Singapore, SG</td>
+                <td>Pacific Maritime</td>
+                <td>Sep 01, 18:30 GMT</td>
+                <td><span class="badge-pill badge-delivered">DELIVERED</span></td>
+                <td><button class="btn-action">Manifest</button></td>
+              </tr>
+              <tr>
+                <td style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--cyan);">#TRK-98014</td>
+                <td>London, UK ➔ New York, US</td>
+                <td>Atlantic Logistics</td>
+                <td>Sep 03, 09:15 GMT</td>
+                <td><span class="badge-pill badge-delayed">CUSTOMS HOLD</span></td>
+                <td><button class="btn-action" style="color: var(--pink); border-color: var(--pink);">Clearance</button></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+    </div>
 
+    <!-- 3. INVENTORY TAB -->
+    <div class="tab-section" id="tab-inventory">
+      <div class="card">
+        <div class="card-title">
+          <span>Warehouse Stock Management</span>
+          <button class="btn-action"><i class="fa-solid fa-plus"></i> Add New SKU</button>
+        </div>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>SKU Code</th>
+                <th>Item Description</th>
+                <th>Warehouse Zone</th>
+                <th>Stock Level</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-family: 'JetBrains Mono', monospace;">SKU-8821-X</td>
+                <td>Quantum Core Processor v2</td>
+                <td>Zone A - Aisle 4</td>
+                <td>420 / 500 units</td>
+                <td><span class="badge-pill badge-delivered">OPTIMAL</span></td>
+                <td><button class="btn-action">Reorder</button></td>
+              </tr>
+              <tr>
+                <td style="font-family: 'JetBrains Mono', monospace;">SKU-4410-B</td>
+                <td>Optic Fiber Interconnect Cables</td>
+                <td>Zone C - Aisle 12</td>
+                <td>45 / 300 units</td>
+                <td><span class="badge-pill badge-delayed">LOW STOCK</span></td>
+                <td><button class="btn-action" style="color: var(--pink); border-color: var(--pink);">Urgent Restock</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. SECURITY LOGS TAB -->
+    <div class="tab-section" id="tab-security-logs">
+      <div class="card">
+        <div class="card-title">
+          <span>System Security Telemetry & Audit Trail</span>
+          <span style="font-size: 12px; color: var(--emerald);"><i class="fa-solid fa-shield-halved"></i> Firewall Active</span>
+        </div>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>IP Address</th>
+                <th>Event Description</th>
+                <th>Severity</th>
+                <th>Action Taken</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-family: 'JetBrains Mono', monospace;">2026-09-01 04:22:10</td>
+                <td style="font-family: 'JetBrains Mono', monospace;">192.168.1.104</td>
+                <td>Admin Session Authenticated (OAuth2)</td>
+                <td><span class="badge-pill badge-delivered">INFO</span></td>
+                <td>Allowed</td>
+              </tr>
+              <tr>
+                <td style="font-family: 'JetBrains Mono', monospace;">2026-09-01 04:15:02</td>
+                <td style="font-family: 'JetBrains Mono', monospace;">45.142.120.9</td>
+                <td>Rate limit exceeded on /api/telemetry</td>
+                <td><span class="badge-pill badge-warning">WARNING</span></td>
+                <td>Throttled</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. SETTINGS TAB -->
+    <div class="tab-section" id="tab-settings">
+      <div class="card" style="max-width: 800px; margin: 0 auto; width: 100%;">
+        <div class="card-title">Command Center Preferences</div>
+        
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="form-group">
+            <label>Command Center Title</label>
+            <input type="text" value="CYBERGRID - Logistics Command Center" />
+          </div>
+
+          <div class="form-group">
+            <label>Telemetry Refresh Rate</label>
+            <select>
+              <option>Real-Time (WebSocket Push)</option>
+              <option>Every 5 Seconds</option>
+              <option>Every 30 Seconds</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Primary Telemetry Webhook URL</label>
+            <input type="text" value="https://api.cybergrid.io/v1/telemetry-hook" />
+          </div>
+
+          <button class="btn-action" style="padding: 12px; background: var(--cyan); color: #050811; font-weight: 700; margin-top: 10px;">
+            Save Preferences
+          </button>
+        </div>
+      </div>
     </div>
 
   </main>
 
   <script>
+    // Tab Switching Logic for Navigation Pills
+    const pillItems = document.querySelectorAll('.pill-item');
+    const tabSections = document.querySelectorAll('.tab-section');
+
+    pillItems.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const targetTabId = pill.getAttribute('data-tab');
+
+        // Remove active class from all pills & sections
+        pillItems.forEach(p => p.classList.remove('active'));
+        tabSections.forEach(s => s.classList.remove('active'));
+
+        // Add active class to clicked pill & target section
+        pill.classList.add('active');
+        const targetSection = document.getElementById('tab-' + targetTabId);
+        if (targetSection) {
+          targetSection.classList.add('active');
+        }
+      });
+    });
+
+    // Charts Initialization
     window.addEventListener('load', () => {
-      // Main Area Chart
       const ctx1 = document.getElementById('cyberChart').getContext('2d');
       new Chart(ctx1, {
         type: 'line',
@@ -551,7 +809,6 @@
         }
       });
 
-      // Regional Bar Chart
       const ctx2 = document.getElementById('regionChart').getContext('2d');
       new Chart(ctx2, {
         type: 'bar',
